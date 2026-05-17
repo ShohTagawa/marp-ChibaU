@@ -1,0 +1,20 @@
+{
+  "markdown.marp.themes": [
+    "./theme/academic.css"
+  ],
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "pdf",
+  "markdown.marp.pdf.outlines": "both",
+  "markdown.marp.html": {
+    "br": [],
+    "img": ["class", "alt", "src", "style"],
+    "div": ["class", "style"],
+    "span": ["class", "style"],
+    "p": ["class", "style"],
+    "strong": ["class", "style"],
+    "u": ["class", "style"]
+  },
+  "files.associations": {
+    "*.md": "markdown"
+  }
+}

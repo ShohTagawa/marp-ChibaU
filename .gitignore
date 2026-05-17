@@ -1,0 +1,20 @@
+# Marp output
+*.pdf
+*.html
+*.pptx
+slides/*.png
+slides/*.001.png
+slides/*.002.png
+slides/*.003.png
+slides/*.004.png
+slides/intro-demo.[0-9][0-9][0-9].png
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+.idea/
+
+# Node
+node_modules/
+package-lock.json

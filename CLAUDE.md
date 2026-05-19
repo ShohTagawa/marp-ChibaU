@@ -9,13 +9,24 @@
 1. 新しいスライドを作る・既存スライドを編集するときは、必ず **`marp-academic-slides`** スキルを起動する(`.claude/skills/marp-academic-slides/` にプロジェクト同梱)
 2. スキル内の `references/patterns.md` と `references/density-guide.md` を読んでからスライド構造を決める
 3. テーマ CSS は **`theme/academic.css`** を使う(スキル内の `assets/academic.css` ではなく、こちらが正本)
-4. 新しいスライドは **`slides/`** ディレクトリ配下に書く。ファイル名は `YYYYMMDD_<イベント略号>_<時刻/コマ>_<内容>.md` 形式（例：`20260519_ALC_1210_AI-function.md`）
-5. **素材（画像・動画）の配置ルール**：
-   - **既定**：mdファイルと同階層に **同名のフォルダ** を作り、その中に素材を入れる。md内では `./<mdと同名>/ファイル名` で参照する
-     - 例：`slides/20260519_ALC_1210_AI-function.md` の素材は `slides/20260519_ALC_1210_AI-function/` に置く
-   - 素材名は **半角英数・ハイフン** のみ。全角文字・空白は禁止（リンク切れの原因になるため）
-   - 命名は内容を反映：`fig{番号}-{内容}.{ext}`（例：`fig05-learnlm-demo.mov`、`fig02-capability-overhang.png`）
-   - **複数スライドで共有する素材のみ** `slides/assets/`（ロゴ・共通アイコン等）に置く
+4. 新しいスライドは **`slides/`** 配下に「**1デック = 1ディレクトリ**」で作る。ディレクトリ名は `YYYYMMDD_<イベント略号>_<時刻orコマ>_<内容>` 形式（例：`20260519_ALC_1210_AI-function`）
+5. **1デックの内部構造**：
+   ```
+   slides/
+     20260519_ALC_1210_AI-function/             ← デックのルート
+       20260519_ALC_1210_AI-function.md         ← 同名のmd
+       src/                                      ← 入力素材（画像・動画・固有ロゴ等）
+         fig01a-gemini-data-protection.png
+         fig05-learnlm-demo.mov
+         ...
+       out/                                      ← 出力先（PDF / HTML / PNG）
+         20260519_ALC_1210_AI-function.pdf
+   ```
+   - md内では `./src/ファイル名` で素材を参照する
+   - PDF/HTML出力は `-o ./out/<deck-name>.<ext>` で `out/` に書き出す
+   - 素材名は **半角英数・ハイフン** のみ。全角・空白・括弧は禁止（リンク切れの原因）
+   - 命名規則：`fig{番号}-{内容}.{ext}`（例：`fig02-capability-overhang.png`、`fig05-learnlm-demo.mov`）。番号はスライド出現順、a/bで枝番
+6. **複数デックで共有する素材のみ** `slides/assets/`（千葉大ロゴ・共通アイコン等）に置く
 
 ### フォントサイズの厳守ルール
 
@@ -36,8 +47,10 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
-header: '<div class="hdr-left">デックタイトル</div><img class="hdr-logo" src="./assets/chiba-logo.png" alt="千葉大学">'
-# ↑ ロゴ等の共通素材は ./assets/ 配下。個別スライド固有の素材は ./<mdと同名フォルダ>/ 配下。
+header: '<div class="hdr-left">デックタイトル</div><img class="hdr-logo" src="../assets/chiba-logo.png" alt="千葉大学">'
+# ↑ mdは slides/<deck-name>/<deck-name>.md にあるので、
+#    共通ロゴ → ../assets/chiba-logo.png
+#    デック固有素材 → ./src/figXX-....png
 footer: ''
 ---
 ```
@@ -57,14 +70,18 @@ footer: ''
 ## プレビュー・出力コマンド
 
 ```bash
+# 変数（このDIRが正本ルート）
+DECK=slides/<deck-name>
+
 # プレビュー
-npx @marp-team/marp-cli@latest slides/<name>.md --theme-set theme/academic.css --preview
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --preview
 
-# PNG
-npx @marp-team/marp-cli@latest slides/<name>.md --theme-set theme/academic.css --images png --allow-local-files
+# PDF を out/ に書き出す
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --pdf --allow-local-files -o "$DECK/out/<deck-name>.pdf"
 
-# PDF
-npx @marp-team/marp-cli@latest slides/<name>.md --theme-set theme/academic.css --pdf --allow-local-files
+# HTML / PNG も同様に -o で out/ を指定
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --allow-local-files -o "$DECK/out/<deck-name>.html"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
 
 VS Code では `.vscode/settings.json` で `markdown.marp.themes` が `./theme/academic.css` を指しているので、Marp 拡張のプレビューがそのまま使える。

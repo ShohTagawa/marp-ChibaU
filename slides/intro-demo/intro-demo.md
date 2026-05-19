@@ -3,7 +3,7 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
-header: '<div class="hdr-left">生物論文 - AI</div><img class="hdr-logo" src="./assets/chiba-logo.png" alt="千葉大学">'
+header: '<div class="hdr-left">生物論文 - AI</div><img class="hdr-logo" src="../assets/chiba-logo.png" alt="千葉大学">'
 footer: ''
 style: |
   /* デモ用：右カラムを画像オーバーレイ風に見せるための追加スタイル */
@@ -72,7 +72,7 @@ style: |
 </div>
 <div class="col fig-col">
 
-<img class="bg-img" src="./assets/space-placeholder.jpg" alt="原始太陽系">
+<img class="bg-img" src="./src/space-placeholder.jpg" alt="原始太陽系">
 
 <div class="overlay">
 何がいまのこの惑星（ほし）を、<br>

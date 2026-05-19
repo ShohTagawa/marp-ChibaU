@@ -49,6 +49,43 @@ marp-academic-slides/
 - **スピーカーノートは Marp 標準の HTML コメント** `<!-- ノート本文 -->` をスライド末尾に書く。Marp Preview や PDF 出力時に発表者ノートとして扱われる。
 - 文字数上限（patterns.md 記載）を超えるなら **スライドを分割** する。詰め込まない。
 
+### 素材（画像・動画）の配置ルール【重要】
+
+リンク切れの最大要因は「全角・空白を含むファイル名」と「素材の置き場所がバラバラ」の2つ。**1デック=1ディレクトリ**で完結させる。
+
+**標準構造（必ずこの形）**：
+
+```
+slides/
+  YYYYMMDD_<略号>_<時刻>_<内容>/                ← デックのルート（ディレクトリ）
+    YYYYMMDD_<略号>_<時刻>_<内容>.md            ← ルートと同名のmd
+    src/                                         ← 入力素材（画像・動画・固有ロゴ）
+      fig01-...png
+      fig05-...mov
+    out/                                         ← 出力（PDF/HTML/PNG）
+      <deck-name>.pdf
+```
+
+例：`slides/20260519_ALC_1210_AI-function/20260519_ALC_1210_AI-function.md` → 素材は `slides/20260519_ALC_1210_AI-function/src/fig05-learnlm-demo.mov`
+
+**ルール**：
+
+1. **デック名**：`YYYYMMDD_<イベント略号>_<時刻orコマ>_<内容>` 形式。半角英数・ハイフン・アンダースコアのみ
+2. **md内の素材参照**：`./src/ファイル名` で書く
+3. **素材ファイル名**：半角英数とハイフンのみ。全角・空白・括弧・記号は禁止
+   - 命名規則：`fig{番号}-{内容を表す英単語}.{ext}`（例：`fig02-capability-overhang.png`、`fig09-canvas-translation.mov`）
+   - 番号はスライド出現順、a/bで枝番（例：`fig01a-...`, `fig01b-...`）
+4. **共通素材**：複数デックで再利用するロゴ・アイコンは `slides/assets/` に置く（例：`chiba-logo.png`）。デック固有素材はここに置かない
+5. **ユーザーから素材を受け取ったとき**：`画面収録 YYYY-MM-DD HH.MM.SS.mov` のような名前で渡されることが多い。即、上記命名規則でリネームして `src/` に移すことを提案する
+6. **出力（PDF/HTML/PNG）**：`out/` フォルダに書き出す。Marp CLIの `-o` フラグで指定：
+   ```bash
+   npx @marp-team/marp-cli@latest slides/<deck>/<deck>.md --pdf --allow-local-files -o slides/<deck>/out/<deck>.pdf
+   ```
+7. **新規デック作成手順**：
+   1. `mkdir -p slides/<deck-name>/{src,out}` でフォルダを先に作る
+   2. md は `slides/<deck-name>/<deck-name>.md` に書く
+   3. frontmatterのロゴ：共通素材なら `../assets/chiba-logo.png`、デック固有なら `./src/logo.png`（mdから見た相対パス）
+
 ### Frontmatter テンプレ
 
 `header:` には **デックタイトル（発表全体の名前）と ロゴ** だけを置く。ページタイトル（スライド固有のタイトル）は本文側で `<div class="page-title">` を使う。

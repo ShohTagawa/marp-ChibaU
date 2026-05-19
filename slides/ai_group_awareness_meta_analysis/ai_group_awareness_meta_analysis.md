@@ -3,7 +3,7 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
-header: '<div class="hdr-left">教室の協働学習に生成AIを活かす</div><img class="hdr-logo" src="./assets/chiba-logo.png" alt="千葉大学">'
+header: '<div class="hdr-left">教室の協働学習に生成AIを活かす</div><img class="hdr-logo" src="../assets/chiba-logo.png" alt="千葉大学">'
 footer: ''
 style: |
   :root {

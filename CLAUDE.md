@@ -9,8 +9,13 @@
 1. 新しいスライドを作る・既存スライドを編集するときは、必ず **`marp-academic-slides`** スキルを起動する(`.claude/skills/marp-academic-slides/` にプロジェクト同梱)
 2. スキル内の `references/patterns.md` と `references/density-guide.md` を読んでからスライド構造を決める
 3. テーマ CSS は **`theme/academic.css`** を使う(スキル内の `assets/academic.css` ではなく、こちらが正本)
-4. 新しいスライドは **`slides/`** ディレクトリ配下に書く
-5. 画像は **`slides/assets/`** に配置する(ロゴは既に `slides/assets/chiba-logo.png` にあり)
+4. 新しいスライドは **`slides/`** ディレクトリ配下に書く。ファイル名は `YYYYMMDD_<イベント略号>_<時刻/コマ>_<内容>.md` 形式（例：`20260519_ALC_1210_AI-function.md`）
+5. **素材（画像・動画）の配置ルール**：
+   - **既定**：mdファイルと同階層に **同名のフォルダ** を作り、その中に素材を入れる。md内では `./<mdと同名>/ファイル名` で参照する
+     - 例：`slides/20260519_ALC_1210_AI-function.md` の素材は `slides/20260519_ALC_1210_AI-function/` に置く
+   - 素材名は **半角英数・ハイフン** のみ。全角文字・空白は禁止（リンク切れの原因になるため）
+   - 命名は内容を反映：`fig{番号}-{内容}.{ext}`（例：`fig05-learnlm-demo.mov`、`fig02-capability-overhang.png`）
+   - **複数スライドで共有する素材のみ** `slides/assets/`（ロゴ・共通アイコン等）に置く
 
 ### フォントサイズの厳守ルール
 
@@ -32,6 +37,7 @@ theme: academic
 paginate: true
 size: 16:9
 header: '<div class="hdr-left">デックタイトル</div><img class="hdr-logo" src="./assets/chiba-logo.png" alt="千葉大学">'
+# ↑ ロゴ等の共通素材は ./assets/ 配下。個別スライド固有の素材は ./<mdと同名フォルダ>/ 配下。
 footer: ''
 ---
 ```

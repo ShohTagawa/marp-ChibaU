@@ -3,7 +3,7 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
-header: '<div class="hdr-left">生成AIを使ってみよう</div><img class="hdr-logo" src="./assets/akalin.png" alt="あかりんアワー">'
+header: '<div class="hdr-left">生成AIを使ってみよう</div><img class="hdr-logo" src="./20260519_ALC_1210_AI-function/akalin.png" alt="あかりんアワー">'
 footer: ''
 style: |
   /* デックタイトル左帯を広く */
@@ -90,7 +90,7 @@ style: |
 
 <div class="title-foot">
 <div class="title-photo">
-<img src="./assets/profile.jpg" alt="田川 翔">
+<img src="./20260519_ALC_1210_AI-function/profile.jpg" alt="田川 翔">
 </div>
 <div class="title-meta">
 <div class="title-event">アカデミック・リンク企画<br>1210あかりんアワー</div>
@@ -228,8 +228,8 @@ style: |
 <div class="split-body">
 <div class="left">
 
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](20260519_ALC_1210_AI-function/fig01a-gemini-data-protection.png)
+![alt text](20260519_ALC_1210_AI-function/fig01b-copilot-shield.png)
 </div>
 <div class="right">
 
@@ -324,7 +324,7 @@ style: |
 <center>AIを入れたのに、効果が出ない事例が企業で多発<br>
 そもそも、<b>AIを使いこなせていない</b>のでは？<br>
 
-<img src="image-8.png" alt="alt text" width="630">
+<img src="20260519_ALC_1210_AI-function/fig02-capability-overhang.png" alt="alt text" width="630">
 </center>
 
 <div class="caption">図2. AI capability vs. organizational adoption（Anthropic）<br> この隙間をどう埋める？「コンサル」「フォワードデプロイドエンジニア」「内製」？</div>
@@ -364,7 +364,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-![alt text](image-9.png)
+![alt text](20260519_ALC_1210_AI-function/fig03-prompt-template.png)
 <div class="caption">図3. おすすめな簡易プロンプト</div>
 
 </div>
@@ -399,7 +399,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-![alt text](image-10.png)
+![alt text](20260519_ALC_1210_AI-function/fig04a-at-mention-calendar.png)
 
 <div class="caption">図4. ＠で呼び出せるGoogleカレンダー</div>
 
@@ -410,7 +410,7 @@ style: |
 
 - Gemini設定の**外側＋内側の連携ボタン**
 - Gmailの**スマート機能をON**
-<img src="image-11.png" alt="alt text" width="330">
+<img src="20260519_ALC_1210_AI-function/fig04b-gmail-smart-features.png" alt="alt text" width="330">
 ### できること
 
 - 授業日程を**Classroomに一括投入**/予定確認
@@ -440,7 +440,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 11.19.32.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig05-learnlm-demo.mov" title="Title"></video>
 
 <div class="caption">図5. LearnLM：教えるのではなく問い返す</div>
 
@@ -525,7 +525,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="Beyond_the_Frame.mp4" title="Title" width="330"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig06-music-generation.mp4" title="Title" width="330"></video>
 
 <div class="caption">図6. 30秒の音楽生成（学校アカウント）</div>
 
@@ -565,7 +565,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<img src="image-12.png" alt="alt text" width="630">
+<img src="20260519_ALC_1210_AI-function/fig07-web-search.png" alt="alt text" width="630">
 
 <div class="caption">図7. Web search：カットオフを乗り越えて最新情報が出る</div>
 
@@ -605,7 +605,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <div class="split-body">
 <div class="left">
-<video controls src="画面収録 2026-05-19 11.34.18.mov" title="Title" width="630"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig08-domain-scoped-search.mov" title="Title" width="630"></video>
 <div class="caption">図8. ドメイン指定で根拠の出所を縛る</div>
 
 </div>
@@ -641,7 +641,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 11.37.30.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig09-canvas-spreadsheet-translation.mov" title="Title"></video>
 
 <div class="caption">図9. 省略を防ぐ2つの定石</div>
 
@@ -685,7 +685,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="left">
 
 
-<video controls src="画面収録 2026-05-19 11.46.22.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig10-qualitative-analysis.mov" title="Title"></video>
 
 <div class="caption">図10. 自由記述の質的分析を数分で</div>
 
@@ -726,7 +726,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 11.42.10.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig11-canvas-editing.mov" title="Title"></video>
 <div class="caption">図11. AIが横で添削役を務める</div>
 
 </div>
@@ -761,7 +761,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 11.56.25.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig12-audio-ocr.mov" title="Title"></video>
 
 <div class="caption">図12. 音声・画像をテキスト化</div>
 
@@ -802,7 +802,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 11.50.36.mov" title="
+<video controls src="20260519_ALC_1210_AI-function/fig13-browser-extension.mov" title="
 "></video>
 <div class="caption">図13. ブラウザ拡張としてのGemini</div>
 
@@ -853,7 +853,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-![](image-14.png)
+![](20260519_ALC_1210_AI-function/fig14-kakenhi-advisor.png)
 <div class="caption">図14. 自分用の研究費レビュアー</div>
 
 </div>
@@ -893,7 +893,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-![alt text](image-15.png)
+![alt text](20260519_ALC_1210_AI-function/fig15-teaching-material.png)
 
 <div class="caption">図15. 教材の構造可視化</div>
 
@@ -929,7 +929,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-<video controls src="画面収録 2026-05-19 12.00.01.mov" title="Title"></video>
+<video controls src="20260519_ALC_1210_AI-function/fig16-manual-bot.mov" title="Title"></video>
 
 <div class="caption">図16. 引用付き回答で根拠を担保</div>
 
@@ -970,7 +970,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-![alt text](image-16.png)
+![alt text](20260519_ALC_1210_AI-function/fig17-notebooklm-sharing.png)
 <div class="caption">図17. Googleドキュメントと同じ共有モデル</div>
 
 </div>
@@ -1260,7 +1260,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="split-body">
 <div class="left">
 
-![alt text](image-13.png)
+![alt text](20260519_ALC_1210_AI-function/fig23-ooda-loop.png)
 <div class="caption">図23. 高校教科書にも載るOODAループ</div>
 
 </div>

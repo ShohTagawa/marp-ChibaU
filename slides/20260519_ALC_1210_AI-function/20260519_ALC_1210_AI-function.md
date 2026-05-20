@@ -1357,7 +1357,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <div class="page-title">OODAループと生成AI</div>
 
-## OODAループでAIと関わってみるのはどうか
+## OODAループでAI agentと関わってみるのはどうか
 
 <div class="split-body">
 <div class="left">

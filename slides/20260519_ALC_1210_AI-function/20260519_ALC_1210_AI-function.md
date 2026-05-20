@@ -19,6 +19,7 @@ style: |
   /* ========== 表紙レイアウト（cover-hero） ========== */
   section.cover-hero {
     padding-top: calc(var(--header-h) + 60px);
+    --hdr-left-w: 26%; /* 1枚目だけ赤い枠の横幅を短く（デフォルト34%から28%に） */
   }
   /* 表紙はpage-titleトラペゾイドが無いので、赤線を左端から右端まで伸ばす */
   section.cover-hero > header::after {
@@ -113,9 +114,9 @@ style: |
 <div class="page-title">本日の進め方</div>
 
 <div class="callout-gray">
-<strong>形式</strong>：動画を流しながら、解説のサイクルを繰り返します。<br>
-この時間中に試してみようと思わないで下さい。<br>
-内容は少しずつ高度になります。まずは、全体像を掴んでいただければと思います。
+<strong>本日の形式</strong>：機能ごとに、解説のサイクルを繰り返します。<br>
+この時間中に生成AIで試してみようと思わないで下さい。<br>
+スクリーンの内容に集中して頂き、全体像を掴んでいただければと思います。
 </div>
 <br>
 
@@ -128,9 +129,9 @@ style: |
 
 1. 大学が提供する生成AIと安全性（3分）
 2. 性能 vs 活用のギャップ（2分）
-3. **Gemini基本編：13ユースケース**（8分）
+3. **Gemini基本編：14ユースケース**（8分）
 4. **Copilot基本編：2ユースケース**（3分）
-5. **NotebookLM：4ユースケース**（3分）
+5. **NotebookLM：3ユースケース**（3分）
 6. **上級編：Gems / iPaaS / CLI**（7分）
 7. OODAループ（2分）
 8. まとめ・質疑応答
@@ -144,13 +145,14 @@ style: |
 
 - すべて**千葉大アカウント**で再現可能
 - すべて**学習されない・広告に使われない**領域
-**手元で15ミニッツセッション**を申し込んでください
 - このセッション**だけ**ではわからない→**触ること**が必要
+▶ 関心をお持ちの方は、ALC 15 minsセッションへ!   
+「学びを変える！研究を深める！生成AI活用術」
 
 <br>
 
 ## お願い
-- zoom参加者の方、反応下さい<br>→使っている👍️、使ってみたい♥️
+  - zoom参加者の方、反応下さい<br>→使っている👍️、使ってみたい♥️、面白い🦀
 
 </div>
 </div>
@@ -167,7 +169,7 @@ style: |
 
 <div class="chapter-num">CHAPTER 1</div>
 
-# 大学が提供する2つのAI
+# 千葉大学で提供されている2つのAI
 
 ## 安全に、ライセンスを理解して使う
 
@@ -190,12 +192,12 @@ style: |
 
 ### Gemini（Google）
 
-- **Google Workspace**と一体（Gmail/Drive/Calendar）
+- **Google Workspace**と一体（Gmail/Drive/Calendarなど- [コアサービス](https://edu.google.com/intl/ALL_jp/workspace-for-education/editions/overview/)）
 - 日本語：ジェミニ／英語：ジェミナイ
-- **アプリ連携・LearnLM・NotebookLM**が強い
-- 長文・大規模コンテキストに強い
-- 学校版は**個人版より制限あり**だが、**教育用にチューニング**
-- 「答えを直接渡さない」依存性低めの設計
+- **アプリ連携・LearnLM・NotebookLM**が強み
+- 長文・大規模コンテキストに強い一方、価格が安い
+- 学校版は、**教育用にチューニング**されている
+  - 答えを直接渡さず、迎合性も低い
 
 </div>
 
@@ -204,8 +206,9 @@ style: |
 ### Copilot（Microsoft）
 
 - 裏側は **OpenAI（ChatGPT系）**
-- **Office連携**（Word/Excel/Teams）
-- 学校に役立つ機能が多い
+- 有料版では、**Office連携**（Word/Excel/Teams）が可能
+- 学校に役立つ機能が多い ※**個人版より制限あり**
+- 画像生成とクリエイティブな要素で直感的に使いやすい
 
 </div>
 
@@ -229,23 +232,28 @@ style: |
 <div class="left">
 
 ![alt text](src/fig01a-gemini-data-protection.png)
-![alt text](src/fig01b-copilot-shield.png)
+<img src="src/fig01b-copilot-shield.png" alt="Capability Overhang" width="230" >
+<div class="caption">図1. 入力情報の扱われ方 (大学版Gemini/Copilot)</div>
 </div>
 <div class="right">
 
 ### 確認すべき3点
 
-- **学習に使われない**：あなたの入力がモデル学習に転用されない
+- **学習に不使用**：入力がモデル学習に転用されない
 - **データ保護適用**：Gmailと同等の保護水準
 - **広告に使われない**：将来のステマ的回答も発生しない
 
-<br>
-※補足：全く誰も見れないわけではない！<br>
-規約違反・法的な問題がある場合には確認されうる。
+<div class="sec-box" style="background:#fff8e1; border-radius:10px; padding:10px 16px; border:none;">
+これらの仕様は、個人版のAIと異なっている。<br>
+かなり厳しい米国内のFERPA準拠。
+</div>
 
 <br>
+※補足：誰も見れないわけではない！<br>
+<small><a href="https://gemini.google/jp/policy-guidelines/?hl=ja">規約違反</a>・法的な問題がある場合には確認されうる。</small>
+<br>
 
-<div class="caption">◀ 図1. 入力情報の扱われ方</div>
+
 
 </div>
 </div>
@@ -265,7 +273,7 @@ style: |
 
 <div class="page-title">ライセンス</div>
 
-## 同じGoogleアカウントでも、サービスごとに規約が違う
+## 同じアカウントでログインしても、サービスごとに規約が違う
 
 <div class="sections">
 
@@ -273,9 +281,9 @@ style: |
 
 ### 安全な範囲
 
-- **Google Workspaceコアサービス**：Gmail、Drive、Gemini、NotebookLM
+- **Google Workspaceコアサービス**：Gmail、Drive、Gemini、NotebookLMなど
 - **Copilot（学校版）**：Microsoft 365テナント内
-- ここに打ち込む内容はGmailと**同レベルで保護**
+- ここに打ち込む内容はメールと**同レベルで保護**
 
 </div>
 
@@ -284,14 +292,15 @@ style: |
 ### 注意が必要な範囲
 
 - 「Googleでログイン」した**外部サービス**は別ライセンス
+  - たとえ、Googleのアカウントでログインしても、別の会社のサービスの場合は、**個社の規約**が適用される
 - **Antigravity**など、Google製でも**非コア**の製品への入出力は次のシステムへの改善資料になりうる
-- たとえ、Googleのアカウントでログインしても、別の会社のサービスの場合は、**個社の規約**が適用される
+  - ログイン時点で、別のプライバシーポリシーが表示されている。
 
 </div>
 
 </div>
 
-<div class="takeaway">分からない時はライセンス本文をAIに貼って「私の情報はどう使われる？」と聞く</div>
+<div class="takeaway">分からない時は規約・プライバシーポリシー本文を生成AIに貼って<br>「私の情報はどう使われる？」と尋ねる</div>
 
 <!--
 - 多くの人は「学校のGmailで登録したから安全」と誤解している。が、ログイン先のサービスのライセンスが適用される。これは毎回別物。
@@ -305,7 +314,7 @@ style: |
 
 <div class="chapter-num">CHAPTER 2</div>
 
-# 性能と中身のギャップ
+# 性能と活用のギャップ
 
 ## なぜ私たちはAIを使いこなせていないのか
 
@@ -324,12 +333,11 @@ style: |
 <center>AIを入れたのに、効果が出ない事例が企業で多発<br>
 そもそも、<b>AIを使いこなせていない</b>のでは？<br>
 
-<img src="src/fig02-capability-overhang.png" alt="alt text" width="630">
+<img src="src/fig02-capability-overhang.svg" alt="Capability Overhang" width="580" >
 </center>
+<div class="caption">図2. AI capability vs. organizational adoption（by Anthropic）<br> この隙間をどう埋める？「コンサル」「フォワードデプロイドエンジニア」「内製」？</div>
 
-<div class="caption">図2. AI capability vs. organizational adoption（Anthropic）<br> この隙間をどう埋める？「コンサル」「フォワードデプロイドエンジニア」「内製」？</div>
-
-<div class="takeaway">今日は、使いこなすコツをお知らせします！</div>
+<div class="takeaway">今日は、大学の文脈の中で、使いこなすコツをお知らせします！</div>
 
 <!--
 - Anthropicが公開している有名な図。AIの性能は指数関数的に伸びる一方、組織がそれを使う速度は線形にしか伸びない。
@@ -346,7 +354,7 @@ style: |
 
 # Gemini 基本編
 
-## 13のユースケースを駆け抜ける
+## 14のユースケースを駆け抜ける
 
 <!--
 - ここからユースケース集。動画を1本ずつ見せながら、解説を被せていく。
@@ -357,7 +365,7 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">UC①：文脈質問</div>
+<div class="page-title">ケース①：質問</div>
 
 ## Google検索の「キーワード」ではなく、人に教える文体で
 
@@ -370,17 +378,19 @@ style: |
 </div>
 <div class="right">
 
-### 良いプロンプトの型
+### 良いプロンプトの型（Google 4要素）
 
-- **背景**：私は何者で、何のため
-- **入力**：このファイル／このデータを見て
-- **タスク**：何を、どんな形式で出して
-- **制約**：文字数、語調、参考にする範囲
+- **ペルソナ**：AIに何者として振る舞ってほしいか
+- **タスク**：何をしてほしいか
+- **背景情報**：判断に必要な前提・参考資料
+- **形式**：文字数・構造・語調
+
+<small>出所：[Google プロンプト初級ガイド](https://support.google.com/a/users/answer/14200040)</small>
 
 </div>
 </div>
 
-<div class="takeaway">「マニュアルで人に教えるように」打つと、回答品質が一段上がる</div>
+<div class="takeaway">「マニュアルで人に教えるように」プロンプトを打つと、回答品質が一段上がる</div>
 
 <!--
 - 多くの人がGoogle検索の延長でAIに「○○ ○○ ○○」とキーワードを投げている。これだとAIは推測で動くので、品質が落ちる。
@@ -392,7 +402,7 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">UC②：アプリ連携</div>
+<div class="page-title">ケース②：アプリ連携</div>
 
 ## ＠でClassroom・Drive・Gmailを呼び出す
 
@@ -433,14 +443,14 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">UC③：LearnLM</div>
+<div class="page-title">ケース③：LearnLM</div>
 
-## 答えを「教えない」ようにチューニングされたAI
+## 答えを「教えず」「学びを支援する」ようにチューニングされたAI
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig05-learnlm-demo.mov" title="Title"></video>
+<video controls src="src/fig05-learnlm-demo.mov" poster="src/fig05-learnlm-demo.png" width="580" title="Title"></video>
 
 <div class="caption">図5. LearnLM：教えるのではなく問い返す</div>
 
@@ -455,7 +465,8 @@ style: |
 - **好奇心を刺激**する
 - **メタ認知**を深める
 
-Arizona State Univ.等で**教育効果を実証**
+Arizona State Univ.等で**教育効果を実証** 
+<small>※[Google DeepMindによるLearnLM論文 (arXiv:2412.16429)](https://arxiv.org/abs/2412.16429)</small>
 
 </div>
 </div>
@@ -473,7 +484,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: summary -->
 
-<div class="page-title">UC④〜⑥：3つの学び</div>
+<div class="page-title">ケース④〜⑥：3つの学び</div>
 
 ## 概念整理・暗記補助・問題演習を1つのAIで
 
@@ -518,14 +529,14 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑦：歌を作る</div>
+<div class="page-title">ケース⑦：歌を作る</div>
 
-## 30秒の短曲で、概念に音をつける</p>
+## 30秒の短曲で、概念に音をつける
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig06-music-generation.mp4" title="Title" width="330"></video>
+<video controls src="src/fig06-music-generation.mp4" poster="src/fig06-music-generation.png" width="380" title="Title"></video>
 
 <div class="caption">図6. 30秒の音楽生成（学校アカウント）</div>
 
@@ -534,11 +545,8 @@ Arizona State Univ.等で**教育効果を実証**
 
 ### 教育での使いどころ
 
-- 用語の**ジングル**（記憶定着）
-- 授業の**オープニング動画**用BGM
-- 学生プロジェクトの**プロトタイプ提示**
-- **多言語学習**でフレーズに節をつける
-
+- 授業のBGM
+- 暗記用の曲
 ### 注意
 
 - 類似曲がある場合、著作権・商用利用は要確認
@@ -558,7 +566,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑧：Web検索/Deep Research</div>
+<div class="page-title">ケース⑧：Web検索/Deep Research</div>
 
 ## カットオフを超えて、いまの情報に触る
 
@@ -574,7 +582,8 @@ Arizona State Univ.等で**教育効果を実証**
 
 ### 2段階で使い分ける
 
-- **Web検索**：「裏取りしてよ」で1往復
+- **Web検索**：「裏取りして、出典だしてよ」が可能に
+  - 但し、ベストな論文が取り出せるわけではない
 - **Deep Research**：複数ソース横断、構造化レポート
 - 「今日の天気予報」のような**リアルタイム情報**もOK
 - **カットオフ後**の出来事にも対応
@@ -582,12 +591,12 @@ Arizona State Univ.等で**教育効果を実証**
 ### Deep Researchの注意
 
 - 月あたりの利用回数に上限あり
-- 重要な調査でまとめて使う
+- 一気に情報を俯瞰したいとき、まとめて使う
 
 </div>
 </div>
 
-<div class="takeaway">AIは「過去の知識」ではなく「いま検索する」エージェントになれる</div>
+<div class="takeaway">AIは「過去の知識」ではなく「いまを検索する」エージェントになれる</div>
 
 <!--
 - 昔のAIには「知識のカットオフ」があった。今は四則演算的な基礎能力を持ったAIが、Web検索を呼び出して情報を加工して返してくる。
@@ -599,13 +608,13 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑨：範囲指定検索</div>
+<div class="page-title">ケース⑨：範囲指定検索</div>
 
 ## URLスコープを指定して、信頼できる範囲だけ読ませる
 
 <div class="split-body">
 <div class="left">
-<video controls src="src/fig08-domain-scoped-search.mov" title="Title" width="630"></video>
+<video controls src="src/fig08-domain-scoped-search.mov" poster="src/fig08-domain-scoped-search.png" width="580" title="Title"></video>
 <div class="caption">図8. ドメイン指定で根拠の出所を縛る</div>
 
 </div>
@@ -614,15 +623,16 @@ Arizona State Univ.等で**教育効果を実証**
 ### 使い方
 
 - **ドメインを指定**して情報源を縛る
-- 例：千葉大の各学科のDP本文を取得
-- **Claude**等では、さらに**全学科のDPを文字数比較**まで一気に可能
-- 学内マニュアル調査・FD用資料作成に最適
-- 参照可能なGoogle doc/slideなども貼れる
+  - 例：千葉大の各学科のDP本文を取得
+- 参照可能なGoogle doc/slideなども引用できる。
+  - URLを貼るだけ
+- コンテキストを充実でき、性能を引き出しやすい
+  - クロール不可などで一部参照できない場合がある
 
 </div>
 </div>
 
-<div class="takeaway">「どこから取ったか」を制御できれば、AI出力は引用に近づく</div>
+<div class="takeaway">「どこから取ったか」を制御できれば、AIの出力が利用しやすくなる</div>
 
 <!--
 - URLやドメインを指定すると、AIはそこだけを読みに行く。出所が分かるので、引用としても使える。
@@ -634,37 +644,42 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑩：長文翻訳</div>
+<div class="page-title">ケース⑩：長文翻訳</div>
 
 ## CanvasとSpreadsheetで、全文を1行も落とさない
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig09-canvas-spreadsheet-translation.mov" title="Title"></video>
+<video controls src="src/fig09-canvas-spreadsheet-translation.mov" poster="src/fig09-canvas-spreadsheet-translation.png" width="580" title="Title"></video>
 
-<div class="caption">図9. 省略を防ぐ2つの定石</div>
+<div class="caption">図9. 省略を防ぐ定石：Canvasに出力する</div>
 
 </div>
 <div class="right">
 
 ### なぜ省略が起きる？
 
-- AIは「会話文」で答えると**要約してしまう**
-- 「省略するな」と言っても省略する
+- 生成AIはチャット内で答える際、**要約しがち**
+  - 「省略するな」と言っても省略する
 
 ### 解決法
 
 - **Canvas**で書き出し領域を分ける
-  - 文字起こしを行う場合に便利
+  - 文字起こしを行う場合や翻訳に便利
 - **Spreadsheet**：原文を行に貼り、**隣セルに翻訳関数**
   - 1行＝1単位なので、**漏れない**
 
+<div style="background:#fff8e1; border-radius:10px; padding:10px 14px; margin-top:8px; font-size:0.78em;">
+<b>関数の形</b><br>
+<code>=AI("英訳して", A1)</code> — プロンプト＋参照セル<br>
+<code>=GOOGLETRANSLATE(A1, "ja", "en")</code> — 原文・元言語・訳先
+</div>
 
 </div>
 </div>
 
-<div class="takeaway">文章の構造に合わせて「書く場所」を分けるのがコツ</div>
+<div class="takeaway">文章の構造に合わせて出力先を使い分けるのがコツ</div>
 
 <!--
 - AIに「省略するな」と言っても、会話モードでは省略してくる。これは仕様。
@@ -677,7 +692,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑪：回答傾向分析</div>
+<div class="page-title">ケース⑪：回答傾向分析</div>
 
 ## Spreadsheetを「集計AI」として使う
 
@@ -685,7 +700,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="left">
 
 
-<video controls src="src/fig10-qualitative-analysis.mov" title="Title"></video>
+<video controls src="src/fig10-qualitative-analysis.mov" poster="src/fig10-qualitative-analysis.png" width="580" title="Title"></video>
 
 <div class="caption">図10. 自由記述の質的分析を数分で</div>
 
@@ -697,17 +712,21 @@ Arizona State Univ.等で**教育効果を実証**
 - 講座後のリフレクション（自由記述）
 - 演習の解答パターン
 - 学生からの質問ログ
+- グループワークの気づき一覧
 
-### Geminiができること
+### AIで近似的にできること
 
-- **頻出テーマ**の抽出
-- **満足度の理由**分類
-- **未解決の疑問**のリスト化
+- **頻出テーマ**の抽出・リスト化
+- **記入内容**の分類
+
+<div style="background:#fff8e1; border-radius:10px; padding:10px 14px; margin-top:8px; font-size:0.78em;">
+<b>コツ</b>：分類軸・観点・参考資料など<b>どのコンテキストを足すと回答がどう変わるか</b>を、隣列で比較すれば簡単に検証できる。
+</div>
 
 </div>
 </div>
 
-<div class="takeaway">「回答を読む時間」が、「解釈する時間」に置き換わる</div>
+<div class="takeaway">全体を容易に掴むことで、「解釈する時間」が生まれる</div>
 
 <!--
 - これまで自由記述アンケートは「読むのが大変」だった。Geminiで一気に俯瞰できる。
@@ -719,14 +738,14 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑫：Canvas編集</div>
+<div class="page-title">ケース⑫：Canvas編集</div>
 
 ## 「キャッチーに」「短く」「論理的に」を即時反映、AIと共同編集
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig11-canvas-editing.mov" title="Title"></video>
+<video controls src="src/fig11-canvas-editing.mov" poster="src/fig11-canvas-editing.png" width="580" title="Title"></video>
 <div class="caption">図11. AIが横で添削役を務める</div>
 
 </div>
@@ -736,13 +755,14 @@ Arizona State Univ.等で**教育効果を実証**
 
 - 草稿をCanvasに出す
 - 「**もっとキャッチーに**」「**論理を強化**」と指示
-- 差分が見えるので**学習にもなる**
-- 学生のレポート指導でも応用可
+- Geminiがその指示に従って書き換える
+- 人間側も同じ文章を編集可能
+  - 差分が見えるので**苦手な点に気づける**
 
 </div>
 </div>
 
-<div class="takeaway">「最終文」ではなく「編集プロセス」を共有するAI</div>
+<div class="takeaway">「編集プロセス」を伴走することが生成AIで可能</div>
 
 <!--
 - これは「文章を書く」のではなく「文章を磨く」AIの使い方。
@@ -754,14 +774,14 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑬：音声・OCR</div>
+<div class="page-title">ケース⑬：音声・OCR</div>
 
 ## m4aもJPEGも、そのまま投げ込む
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig12-audio-ocr.mov" title="Title"></video>
+<video controls src="src/fig12-audio-ocr.mov" poster="src/fig12-audio-ocr.png" width="580" title="Title"></video>
 
 <div class="caption">図12. 音声・画像をテキスト化</div>
 
@@ -771,19 +791,21 @@ Arizona State Univ.等で**教育効果を実証**
 ### できること
 
 - **議事録**：会議録音→構造化要約
-- **インタビュー**：話者識別＋書き起こし
 - **手書きノート**：撮影→OCR→検索可能化
 - **板書**：写真→学生配布用テキスト
+  - 課題の添削理由を理解するのに、学生も使える
 
 ### 注意
 
 - 個人情報を含む音声は要事前確認
-- 学内コアサービス内で完結させる
+- 動画をまとめられるかは、以下の点で微妙
+  - 秒数がずれる、要約される
+  - 動画の画面の認識と合わない
 
 </div>
 </div>
 
-<div class="takeaway">「アナログ素材を一気にデジタル化」する入口</div>
+<div class="takeaway">「アナログ素材を一気にデジタル化」する入口としても機能する</div>
 
 <!--
 - 音声・画像から構造化テキストを出せる。研究のインタビュー文字起こしに非常に強い。
@@ -795,15 +817,14 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑭：ページ内相談</div>
+<div class="page-title">ケース⑭：ページ内相談</div>
 
 ## 開いているWebページ・PDFについて、その場で質問
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig13-browser-extension.mov" title="
-"></video>
+<video controls src="src/fig13-browser-extension.mov" poster="src/fig13-browser-extension.png" width="580" poster="src/fig13-browser-extension.png" title="ブラウザ拡張"></video>
 <div class="caption">図13. ブラウザ拡張としてのGemini</div>
 
 </div>
@@ -812,14 +833,15 @@ Arizona State Univ.等で**教育効果を実証**
 ### 典型シナリオ
 
 - 長いマニュアルから**該当箇所を抽出**
-- 論文ページから**要約と批評**
+- 論文ページから**要約と質問**
 - 学内Webサイトの**該当規程**を即答
 - 英語ニュース記事の**3行サマリ**
+- 規則や法律など長文の**要点把握と検索**
 
 </div>
 </div>
 
-<div class="takeaway">「読む前にAIに聞く」が選択肢に加わる</div>
+<div class="takeaway">「AIと一緒に情報を処理する」ことができる</div>
 
 <!--
 - ブラウザ右上のGeminiアイコンから、いま開いているページについて質問できる。
@@ -833,9 +855,105 @@ Arizona State Univ.等で**教育効果を実証**
 
 <div class="chapter-num">CHAPTER 4</div>
 
-# NotebookLM 中級編
+# Copilot 基本編
 
-## 「資料群」をAIに与えるとどうなるか
+## Office連携と教育ツール
+
+<!--
+- ここからCopilot。OpenAIモデルを裏側に、Microsoft 365エコシステムと深く連携。
+- Geminiとの一番大きな違いは「教育ツール」が標準で揃っていること。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース⑮：作成（Copilot Stories）</div>
+
+## 画像・動画・インフォグラフィック・ストーリーを一気に
+
+<div class="split-body">
+<div class="left">
+
+![Copilot 作成ハブ](src/fig14-copilot-create.png)
+<div class="caption">図14. Copilotの「作成」ハブ</div>
+
+</div>
+<div class="right">
+
+### 出力の種類
+
+- **画像／インフォグラフィック**
+- **ストーリー**：複数画像で構成する視覚的ナラティブ
+- **ポスター**／**画像編集**
+
+### 使いどころ
+
+- 授業のオープニング・アイキャッチ
+- 学内広報の叩き台
+- 学生プロジェクトのプロトタイプ
+
+</div>
+</div>
+
+<div class="takeaway">「説明する素材」を、テキストから直感的に視覚化できる</div>
+
+<!--
+- Copilotの「作成」は、画像・動画・ストーリーまでをひとつのUIで触れる。
+- 学校アカウントで広告なし・データ保護下で使えるのが利点。
+- 学生に渡すというより、まず教員が試作してみるのに向いている。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース⑯：指導（教育ツール）</div>
+
+## カリキュラム計画・教材調整・宿題評価まで標準装備
+
+<div class="split-body">
+<div class="left">
+
+![Copilot 教育ツール](src/fig15-copilot-edu.png)
+<div class="caption">図15. Copilotの「教育ツール」</div>
+
+</div>
+<div class="right">
+
+### 4カテゴリ
+
+- **カリキュラム計画**
+- **既存のコンテンツを変更**
+- **宿題と評価**
+- **学習アクティビティ**
+  - 教育標準（Standards）との整合機能あり<br>
+
+### Geminiにも類似機能あり
+※ Google側の類似機能は **Gemini in Classroom**
+（Classroom内から使える課題生成・採点支援）
+※ 学習指導要領に対応し、科目を跨いだ評価が可能
+
+</div>
+</div>
+
+<div class="takeaway">Copilotは「教育用のAI機能テンプレ集」をすぐに使える</div>
+
+<!--
+- これはCopilotの真骨頂。Geminiにも同等のことはできるが、Copilotは教育向けUIが前に出ている。
+- 既存教材の難易度調整（読み取りレベル変更、サポート例の追加）は、ユニバーサルデザインの観点でも有用。
+- 教員が「最初に開く画面」としての敷居が低い。
+-->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">CHAPTER 5</div>
+
+# NotebookLM編
+
+## 「資料群」をコンテキストとして、AIに与えるとどうなるか
 
 <!--
 - ここからNotebookLM。これまでは「単発の質問」だったが、NotebookLMは「資料を束で渡してAIに読ませる」モデル。
@@ -846,23 +964,26 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑮：科研費アドバイザー</div>
+<div class="page-title">ケース⑰：科研費アドバイザー</div>
 
-## 過去の採択計画書を読ませて、自分の草稿を診断
+## 採択計画書を読ませて、自分の草稿をメタ的に認識
 
 <div class="split-body">
 <div class="left">
 
 ![](src/fig14-kakenhi-advisor.png)
-<div class="caption">図14. 自分用の研究費レビュアー</div>
+<div class="caption">図16. 自分用の研究費レビュアー</div>
 
 </div>
 <div class="right">
 
-### 投入する資料
+### これから出す予算にも、内容の検討にも
+- インフォグラフを作成し自分の意図が伝わるか確認
+- 予算を書く際の伴走の道具にも出来る
 
+### 投入する資料の事例
 - 公募要領・審査基準
-- 過去の自分の申請書
+- 自身の関心
 - 自分の研究を支える論文
 
 ### 引き出す出力
@@ -874,7 +995,7 @@ Arizona State Univ.等で**教育効果を実証**
 </div>
 </div>
 
-<div class="takeaway">「もう一人の自分」が、夜中に査読してくれる</div>
+<div class="takeaway">「もう一人の自分」として、壁打ちできる</div>
 
 <!--
 - NotebookLMは「ソース」を起点に動く。自分の科研費草稿＋関連論文＋公募要領を入れると、AIがその範囲で議論してくれる。
@@ -886,31 +1007,35 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑯：教材解説</div>
+<div class="page-title">ケース⑱：解説</div>
 
-## 著作権フリー素材を「俯瞰の道具」に変える
+## 情報の「俯瞰の道具」になる
 
 <div class="split-body">
 <div class="left">
 
 ![alt text](src/fig15-teaching-material.png)
 
-<div class="caption">図15. 教材の構造可視化</div>
+<div class="caption">図17. 情報の可視化</div>
 
 </div>
 <div class="right">
 
 ### できること
+- ソースに入れた情報をコンテキストに変換する
+  - **要点と相互関係**をマインドマップに抽出
+  - 学習向けの**質問プロンプト**や問題も出せる
+  - 動画や音声、スライドで内容を俯瞰
 
-- 章ごとの**要点と相互関係**を抽出
-- 学生向けの**質問プロンプト**生成
-- 学習者の**レベル別解説**を出力
-- **マインドマップ**でテーマ俯瞰
+### Google Classroom・Moodleとの連携
+- 授業スライドを教員がNotebookLMに取り込むと、学生の質問に回答するチャットボットが出来る
+  - 中高の学びの復習に提供している大学もある
+- Moodleとの連携もGoogleが開発中
 
 </div>
 </div>
 
-<div class="takeaway">「読む順番」と「読まなくていい所」が見える</div>
+<div class="takeaway">自分がより学ぶために、情報と相互作用する道具</div>
 
 <!--
 - 著作権フリー教材や、自分が著作権を持つ教材を投入する。
@@ -922,16 +1047,16 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑰：マニュアルBot</div>
+<div class="page-title">ケース⑲：マニュアルBot</div>
 
 ## 千葉大の事務マニュアルを「対話で引ける」状態に
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="src/fig16-manual-bot.mov" title="Title"></video>
+<video controls src="src/fig16-manual-bot.mov" poster="src/fig16-manual-bot.png" width="580" title="Title"></video>
 
-<div class="caption">図16. 引用付き回答で根拠を担保</div>
+<div class="caption">図18. 引用付き回答で根拠を担保</div>
 
 </div>
 <div class="right">
@@ -947,11 +1072,12 @@ Arizona State Univ.等で**教育効果を実証**
 
 - 新人の**問い合わせ激減**
 - ベテランの**応答工数削減**
+- 作業者の「いつもの質問」の低減
 
 </div>
 </div>
 
-<div class="takeaway">「マニュアルを読む文化」を「マニュアルに聞く文化」に</div>
+<div class="takeaway">「マニュアルを読む」から、「マニュアルを探す」へ</div>
 
 <!--
 - これは事務作業を本当に変える。千葉大の支払マニュアル、出張マニュアル、研究費マニュアルなど、どれも投入できる。
@@ -963,7 +1089,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑱：共有</div>
+<div class="page-title">補足：NotebookLMの共有</div>
 
 ## ワンクリックで部署・授業内に展開
 
@@ -971,16 +1097,20 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="left">
 
 ![alt text](src/fig17-notebooklm-sharing.png)
-<div class="caption">図17. Googleドキュメントと同じ共有モデル</div>
+<div class="caption">図19. Googleドキュメントと同じ共有モデル</div>
 
 </div>
 <div class="right">
 
 ### 共有モデル
 
-- リンクを知っている人が閲覧
-- 部署メンバーで編集
-- 授業のクラスに**学習支援Bot**を配布
+- リンクを知っている人が閲覧・質問可能
+- 部署メンバーで編集も可能
+
+### 他校活用例
+- 過去の議事録を保存し、一括検索する
+- 質問に答えてくれるbotとして活用する
+- 授業内で学生に配布する
 
 ### 注意
 
@@ -990,7 +1120,7 @@ Arizona State Univ.等で**教育効果を実証**
 </div>
 </div>
 
-<div class="takeaway">作ったNotebookは「資産」。1人で抱えない</div>
+<div class="takeaway">作ったNotebookが、人に伝える道具になる</div>
 
 <!--
 - 作ったNotebookLMを共有すれば、組織のナレッジ資産になる。
@@ -1002,31 +1132,31 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: divider -->
 
-<div class="chapter-num">CHAPTER 5</div>
+<div class="chapter-num">CHAPTER 6</div>
 
 # 上級編：Gems / iPaaS / CLI
 
-## 「AIを自分で組み立てる」段階へ
+## 「AIアプリを自分で組み立てる」段階へ
 
 <!--
 - ここから上級編。AIを「使う」から「組み立てる」段階。
-- Gems（カスタムAI）、Workspace Studio（自動化）、Gemini CLI（コード生成）の3本柱。
+- Gems（カスタムAI）、Workspace Studio（自動化）の2本柱。
 -->
 
 ---
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑲：Gems</div>
+<div class="page-title">ケース⑳：Gems</div>
 
 ## シラバスチェッカー、暗記Bot、自分専用アシスタント
 
 <div class="split-body">
 <div class="left">
 
-<div class="placeholder">[Gem作成画面：左に指示文、<br>右にプレビューチャットが並ぶUI]</div>
+<video controls src="src/fig20-gem-syllabus.mov" poster="src/fig20-gem-syllabus.png" width="580" title="Gem シラバスチェック"></video>
 
-<div class="caption">図18. 役割を固定したAIインスタンス</div>
+<div class="caption">図20. 生成AIによる本学のシラバスチェック <br>(シラバスをアップロードすると、AIが内容を解析し、評価を行う)</div>
 
 </div>
 <div class="right">
@@ -1035,13 +1165,15 @@ Arizona State Univ.等で**教育効果を実証**
 
 - **シラバスチェッカー**（教員向け）
 - **4択問題出題者**（学生向け）
-- **メール下書きアシスタント**
+- **授業中ワークの伴走者** (授業向け)
 - **Gemを作るGem**（メタGem）
 
 ### コツ
-
 - 毎回打つプロンプトを**Gem化**
-- レベルを少しずつ上げて**進化**
+- 回答精度を少しずつ上げて**進化**
+- Gemも千葉大学内に共有できる。
+
+※ Copilot側の類似機能はエージェント
 
 </div>
 </div>
@@ -1059,22 +1191,22 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC⑳：スライド生成</div>
+<div class="page-title">ケース㉑：スライド生成</div>
 
-## NotebookLMは画像、GemはGoogleスライド形式
+## Google Slideでのスライド自動生成
 
 <div class="split-body">
 <div class="left">
 
-<div class="placeholder">[Gemから生成された<br>Googleスライド（編集可能）の画面]</div>
+<video controls src="src/fig21-slide-generation.mov" poster="src/fig21-slide-generation.png" width="580" title="スライド自動生成"></video>
 
-<div class="caption">図19. 編集可能形式でのスライド出力</div>
+<div class="caption">図21. 編集可能形式でのスライド出力</div>
 
 </div>
 <div class="right">
 
-### 2つの出口
-
+### 3つの出口
+- **Slide**：編集可能なスライドで出力
 - **NotebookLM**：画像形式（PNG）として出力
 - **Gem経由**：**Googleスライド形式**で編集可能
 
@@ -1084,10 +1216,14 @@ Arizona State Univ.等で**教育効果を実証**
 - 会議資料の**叩き台**
 - 学生発表の**テンプレ**配布
 
+<div class="callout-yellow" style="font-size: 18px; padding: 10px 16px; margin-top: 10px;">
+スライドの構成などの悩みが減り、左上から右下へ情報が流れるようになる。
+</div>
+
 </div>
 </div>
 
-<div class="takeaway">「ゼロから書く」のではなく「叩き台を直す」へ</div>
+<div class="takeaway">「ゼロから書く」のではなく「AIが作った叩き台を直す」へ</div>
 
 <!--
 - NotebookLMでもスライド生成はできるが、画像で出てくるので編集不可。
@@ -1099,16 +1235,16 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">UC㉑：iPaaS自動化</div>
+<div class="page-title">ケース㉒：iPaaSでの自動化</div>
 
 ## メール・ファイル・カレンダーをAIで自動連結
 
 <div class="split-body">
 <div class="left">
 
-<div class="placeholder">[Workspace Studioのフロー画面：<br>「メール受信→AI判定→自動返信下書き」<br>のノードがつながっているUI]</div>
+![iPaaS フロー](src/fig22-ipaas-flow.png)
 
-<div class="caption">図20. ノーコードでAI自動化</div>
+<div class="caption">図22. ノーコードでAI自動化</div>
 
 </div>
 <div class="right">
@@ -1125,7 +1261,51 @@ Arizona State Univ.等で**教育効果を実証**
 </div>
 </div>
 
-<div class="takeaway">AIが「待機する社員」のようにバックグラウンドで動く</div>
+<div class="takeaway">AIが自動でトリガーされ、バックグラウンドで動く</div>
+
+<!--
+- Workspace StudioはiPaaS（Integration Platform as a Service）として機能する。
+- ノードを繋いで「○○が起きたら○○する」を組める。コードは不要。
+- 私のメール下書きは、いまほぼ全てAIが生成している。確認して送信ボタンを押すだけ。
+- これも全部コアサービスの内側で動くので、データ保護はそのまま。
+-->
+
+---
+<!-- _class: split -->
+
+<div class="page-title">ケース㉓：CLIやIDE連携</div>
+
+## PCでの操作やファイルの編集の自動化
+
+<div class="split-body">
+<div class="left">
+
+<video controls src="src/fig23-cli-ide.mov" poster="src/fig23-cli-ide.png" width="580" title="CLI/IDE連携"></video>
+
+<div class="caption">図23. このスライドの作り方</div>
+
+</div>
+<div class="right">
+
+### Gemini CLI (6/15まで利用可能)
+- Googleの提供するCLIツール。
+  - Claude Codeがこの領域では有名
+- 古いファイルを移動やテキストの管理も頼める
+- システムの開発などでも使える
+  - 複数ファイルを参照出来る
+### 使用例
+- 本スライドもClaude CodeとAntigravityで編集
+  - Claudeがデザイン作成、ファイル管理を自動化
+  - Marpでの入力をAntigravityが支援
+
+<div class="callout-yellow" style="font-size: 18px; padding: 10px 16px; margin-top: 10px;">
+但し、機密情報の取り扱いは不可
+</div>
+
+</div>
+</div>
+
+<div class="takeaway">AIがPCの様々な作業を支援できる状態に</div>
 
 <!--
 - Workspace StudioはiPaaS（Integration Platform as a Service）として機能する。
@@ -1136,92 +1316,13 @@ Arizona State Univ.等で**教育効果を実証**
 
 ---
 
-<!-- _class: split -->
-
-<div class="page-title">UC㉒：Gemini CLI</div>
-
-## ターミナルから「アプリを作って」と頼む
-
-<div class="split-body">
-<div class="left">
-
-<div class="placeholder">[Gemini CLIでアプリ生成し、<br>右側にできあがったWebアプリが<br>表示されている画面]</div>
-
-<div class="caption">図21. プロンプト1本でWebアプリ</div>
-
-</div>
-<div class="right">
-
-### できること
-
-- **小ツール**：ストップウォッチ、抽選器
-- **教材アプリ**：演習問題ジェネレータ
-- **ダッシュボード**：データ可視化試作
-- **ゲーム**：授業導入の小ネタ
-
-### Canvas版もある
-
-ブラウザ内で完結（**右ペインに即プレビュー**）
-
-</div>
-</div>
-
-<div class="takeaway">「コードが書けない」が、アプリ制作の壁ではなくなった</div>
-
-<!--
-- Gemini CLIはターミナルで動くツール。学校アカウントでログインすれば学習されない。
-- 「ジャンケンゲーム作って」「タイマーアプリ作って」と頼むと、コードが書かれて動くものができる。
-- ブラウザ派には、GeminiのCanvas機能で同じことができる。右ペインに即プレビュー。
-- 教員：授業の導入で使える小ツールが10分でできる時代。
--->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">UC㉓：Copilot教育</div>
-
-## 指導案・教科コンテンツ・学習指導要領との接続
-
-<div class="split-body">
-<div class="left">
-
-<div class="placeholder">[CopilotのAgents一覧、<br>「指導案の作成」「教科コンテンツ」<br>ボタンが並ぶ画面]</div>
-
-<div class="caption">図22. Microsoft Education連携</div>
-
-</div>
-<div class="right">
-
-### 強み
-
-- **指導案作成**：学習指導要領と紐付け
-- **小中高向け**コンテンツが豊富
-- **Classroom連携**機能
-- **依存性を抑える**会話設計
-
-千葉大版Copilotは**個人版より制限あり**だが、教育設計が緻密
-
-</div>
-</div>
-
-<div class="takeaway">小中高への展開を考えるなら、Copilotが一歩リード</div>
-
-<!--
-- Microsoft Copilotは学校版で個人版より制限はあるが、教育コンテンツの設計が非常に良くできている。
-- 特に小中高向けには「学習指導要領との紐付け」がデフォルトで効くので、指導案作成が早い。
-- 大学教員でも、附属学校や高大連携を考えるなら知っておくべき。
--->
-
----
-
 <!-- _class: divider -->
 
-<div class="chapter-num">CHAPTER 6</div>
+<div class="chapter-num">CHAPTER 7</div>
 
-# AIリテラシーの本質
+# AI agent時代のAIリテラシーへ
 
-## 「使い方」の上にある、もう一段の話
+## 「倫理」「使い方」の上にある、「AIとの関わり方・学び方」のリテラシー
 
 <!--
 - 最後の章。ユースケースを駆け抜けたが、本質はそこではない。
@@ -1233,14 +1334,15 @@ Arizona State Univ.等で**教育効果を実証**
 <!-- _class: message -->
 
 # AIの出力を、評価できますか？
-
-## 詳しければ評価できる。詳しくなければブラックボックス。
+## 分野に詳しければ評価できる。詳しくなければ判断が難しい。だから相変わらず知識が重要。
 <br>
 
+# AIを使う、使わないを判断できますか？
+## 常にAIを使う必要はない。「不便」や「今できないことの実現」に、道具として活用する。
+<br>
 
 # AIであなたは何を創りますか？
-
-## 深く学び、創造性を磨く道具へ
+## 深く学び、創造性を発揮する際の「道具」として使う。効率化のみならず、自分の成長のために。
 
 <!--
 - AIの答えが正しいかを「考える」のはレベル1。
@@ -1253,15 +1355,15 @@ Arizona State Univ.等で**教育効果を実証**
 
 <!-- _class: split -->
 
-<div class="page-title">OODAループ</div>
+<div class="page-title">OODAループと生成AI</div>
 
-## OODAループでAIと関わる
+## OODAループでAIと関わってみるのはどうか
 
 <div class="split-body">
 <div class="left">
 
-![alt text](src/fig23-ooda-loop.png)
-<div class="caption">図23. 高校教科書にも載るOODAループ</div>
+<img src="src/fig24-ooda-loop.svg" alt="OODA Loop" width="480">
+<div class="caption">図24. OODAループをAI活用の観点で修正したもの</div>
 
 </div>
 <div class="right">
@@ -1273,16 +1375,17 @@ Arizona State Univ.等で**教育効果を実証**
 - **Decide**：採用／修正／棄却を決める
 - **Act**：使う、または再プロンプト
 
-カリキュラムを順番に消化する発想は、AIの学習には合わない
-自分が評価できるようになることが大切
-評価できる範囲で行う
-
-出力は、一歩立ち止まって考えてみる
+### 積上げ式に学ぶ発想は、AIの学習には合わない
+- まずは使って、使えるか判断する
+- 自分が評価できるようになることが大切
+  - 活用は、評価できる範囲で行う
+- 出力は、一歩立ち止まって考えてみる
+  - ハルシネーションやバイアスはいまだある
 
 </div>
 </div>
 
-<div class="takeaway">「触る → 評価する → 再投入」を回す人が伸びる</div>
+<div class="takeaway">「使ってみる → 評価する → 工夫する」サイクルを持つことが、AI活用力を高める鍵</div>
 
 <!--
 - AI学習にはマニュアルがない。順番に学ぶカリキュラム発想では追いつけない。
@@ -1298,32 +1401,17 @@ Arizona State Univ.等で**教育効果を実証**
 
 ## まとめ
 
-- 千葉大はGeminiとCopilotを**コアサービス**で提供（学習されない・広告なし）
-- AIの**性能は指数関数的**、**活用は線形**——ギャップを自分で埋めよう
-- Gemini基本編：**13のユースケース**を駆け抜けた
-- NotebookLMで**資料群を対話可能**にできる
-- Gems・iPaaS・CLIで**自分専用のAI**を組み立てる
-- 学び方は**OODAループ**。触ること、評価することが本質
+- 千葉大はGeminiとCopilotを**コアサービス**で提供（学習されない・安全に保管・広告なし）
+- AIの**性能は指数関数的**、**活用は線形**——ギャップを埋めよう
+- Gemini基本編：**14のユースケース**を駆け抜けた
+- Copilotは作成（Stories）と指導（教育ツール）が良い
+- NotebookLMで**資料群を対話可能**にできる（＋共有で組織の情報活用に貢献）
+- Gems・iPaaS・CLIで**自分専用のAI**を組み立てることができる
+- 学び方は**OODAループ**的→使ってみること、評価することが大切
+- 実践しながら学んで見たい方は、ぜひ、ALCの15 minsを受講してみてください
 
 <!--
 - 30分で22以上のユースケースを見せた。これは「全部覚える」ためではない。
 - 「こんなことができるんだ」という地図を持って帰り、自分の業務・学びで「これだ」と思った1つから触り始めてほしい。
 - 大学アカウントは安全な環境を用意してくれている。臆せず触ること。
--->
-
----
-
-<!-- _class: qa -->
-
-<div class="page-title">Q&amp;A</div>
-
-# Q&A
-
-## 連絡先：tagawa.s@faculty.gs.chiba-u.jp
-## 15ミニッツセッション：アカデミック・リンク・センターまで
-
-<!--
-- 質疑応答。
-- 個別の業務シナリオは15ミニッツセッションで深掘りできることを再案内する。
-- 録画が公開されたら手元で試してほしい旨を最後に伝える。
 -->

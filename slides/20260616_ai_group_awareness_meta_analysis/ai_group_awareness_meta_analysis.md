@@ -7,11 +7,11 @@ header: '<div class="hdr-left">教室の協働学習に生成AIを活かす</div
 footer: ''
 style: |
   :root {
-    --hdr-left-w: 56%;
+    --hdr-left-w: 36%;
     --hdr-slant: 14px;
   }
   section > header .hdr-left { padding: 0 12px 0 32px; }
-  section .page-title { left: 50%; width: 32%; }
+  section .page-title { left: 34%; width: 32%; }
 ---
 
 <!-- _class: cover -->

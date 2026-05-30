@@ -1,6 +1,7 @@
 {
   "markdown.marp.themes": [
-    "./theme/academic.css"
+    "./theme/academic.css",
+    "./theme/ponchie.css"
   ],
   "markdown.marp.enableHtml": true,
   "markdown.marp.exportType": "pdf",
@@ -12,7 +13,26 @@
     "span": ["class", "style"],
     "p": ["class", "style"],
     "strong": ["class", "style"],
-    "u": ["class", "style"]
+    "u": ["class", "style"],
+    "svg": ["class", "style", "viewBox", "xmlns", "width", "height"],
+    "image": ["href", "x", "y", "width", "height"],
+    "g": ["fill", "stroke", "font-size", "font-weight", "transform", "opacity"],
+    "rect": ["x", "y", "width", "height", "rx", "ry", "fill", "stroke", "stroke-width", "filter", "opacity"],
+    "circle": ["cx", "cy", "r", "fill", "stroke", "stroke-width", "filter", "opacity"],
+    "ellipse": ["cx", "cy", "rx", "ry", "fill", "stroke", "stroke-width", "opacity"],
+    "line": ["x1", "y1", "x2", "y2", "stroke", "stroke-width", "stroke-dasharray", "stroke-linecap"],
+    "path": ["d", "fill", "stroke", "stroke-width", "stroke-dasharray", "stroke-linecap", "marker-end", "filter", "opacity"],
+    "polyline": ["points", "fill", "stroke", "stroke-width"],
+    "polygon": ["points", "fill", "stroke", "stroke-width", "opacity"],
+    "text": ["x", "y", "fill", "font-size", "font-weight", "text-anchor", "opacity"],
+    "tspan": ["x", "y", "dx", "dy", "fill", "font-size", "font-weight"],
+    "defs": [],
+    "marker": ["id", "markerWidth", "markerHeight", "refX", "refY", "orient"],
+    "linearGradient": ["id", "x1", "y1", "x2", "y2", "gradientUnits"],
+    "radialGradient": ["id", "cx", "cy", "r", "fx", "fy", "gradientUnits"],
+    "stop": ["offset", "stop-color", "stop-opacity"],
+    "filter": ["id", "x", "y", "width", "height"],
+    "feDropShadow": ["dx", "dy", "stdDeviation", "flood-color", "flood-opacity"]
   },
   "files.associations": {
     "*.md": "markdown"

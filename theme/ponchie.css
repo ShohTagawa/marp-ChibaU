@@ -1,0 +1,43 @@
+/* @theme ponchie */
+/* Marp theme for single-sheet conceptual infographics (ポンチ絵). */
+/* The whole slide is ONE full-bleed <svg>. This theme only resets the page  */
+/* and sizes the SVG; all visual design lives inside the SVG itself.          */
+
+@import "default";
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
+
+:root {
+  --accent: #1A7A5E;       /* primary */
+  --accent-dark: #125642;  /* gradient end / deep */
+  --accent-soft: #E4F2EC;  /* light tint */
+  --warn: #E07B39;         /* problem / attention (warm) */
+  --warn-soft: #FBEDE2;
+  --ink: #1f2937;          /* body text */
+  --muted: #6b7280;
+  --font-jp: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Noto Sans JP", "Meiryo", sans-serif;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  width: 1280px;
+  height: 720px;
+  background: #ffffff;
+  font-family: var(--font-jp);
+  display: block;
+  overflow: hidden;
+}
+
+/* Hide the academic header/footer band machinery entirely. */
+section header, section footer { display: none !important; }
+section::after { display: none; }   /* page number */
+
+/* The single hero SVG fills the slide. */
+section > svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* SVG text should inherit the Japanese font stack. */
+svg text { font-family: var(--font-jp); }

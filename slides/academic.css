@@ -19,7 +19,7 @@
   --side-pad: 56px;
   --bottom-pad: 100px;        /* 下部余白（takeaway固定位置のため） */
   --takeaway-bottom: 28px;    /* takeaway帯のスライド下端からの距離（固定） */
-  --hdr-left-w: 38%;          /* 左側タイトル（生物論文 - AI）の幅 */
+  --hdr-left-w: 28%;          /* 左側タイトル（生物論文 - AI）の幅 */
   --hdr-slant: 22px;          /* 斜めカットの幅（傾きの強さ） */
   --hdr-gap: 4px;             /* 2つのブロック間の白抜きの隙間幅 */
 
@@ -93,6 +93,7 @@ section em { color: var(--accent-dark); font-style: normal; font-weight: 600; }
   row-gap: 14px;
   margin: 16px 0;
   align-items: start;
+  font-size: 25px;
   line-height: 1.55;
 }
 .qa-grid > :nth-child(odd) { font-weight: 700; }
@@ -167,9 +168,9 @@ section > header .hdr-logo {
 section .page-title {
   position: absolute;
   top: 0;
-  /* スライド横幅の30%〜58%を占める濃赤ブロック */
-  left: 30%;
-  width: 28%;       /* 58% - 30% */
+  /* スライド横幅の18%〜50%を占める濃赤ブロック */
+  left: 18%;
+  width: 32%;       /* 50% - 18% */
   height: var(--header-h);
   min-height: var(--header-h);
   max-height: var(--header-h);
@@ -263,7 +264,7 @@ section blockquote {
   padding: 14px 28px;
   border-radius: 10px;
   margin: 12px 0;
-  font-size: 23px;     /* 原則 23px。強調したい場合は inline で上書き */
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -326,7 +327,7 @@ section blockquote {
   font-weight: 700;
   color: var(--accent-dark);
   text-align: center;
-  font-size: 28px;     /* takeaway は固定 28px */
+  font-size: 26px;
   margin: 0;
   z-index: 5;
 }

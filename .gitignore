@@ -18,3 +18,6 @@ slides/intro-demo.[0-9][0-9][0-9].png
 # Node
 node_modules/
 package-lock.json
+
+# 著作権物（再配布禁止・マスタリングTCP/IP 入門編 第6版 図面ファイル）
+tcpip-kyozai/

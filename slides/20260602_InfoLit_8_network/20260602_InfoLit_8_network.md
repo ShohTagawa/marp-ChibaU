@@ -50,18 +50,50 @@ style: |
   .episode .h { font-weight:700; color:var(--accent); font-size:16px; letter-spacing:.04em; }
   .demo { background:#FFF6E5; border:2px solid #D98A2B; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:19px; font-weight:700; }
   .demo::before { content:"🎬 録画デモ "; color:#D98A2B; }
+  /* まとめ(wrap)は1枚のみ。箇条書きが多いので少し詰める（最小18px厳守） */
+  section.wrap ul { font-size:20px; }
+  section.wrap ul li { margin:6px 0; line-height:1.4; padding-left:28px; }
+  section.wrap .grid2 { gap:24px; }
+  section.wrap .episode { font-size:18px; margin:6px 0; }
+  /* ========== 表紙レイアウト（cover-hero） ========== */
+  section.cover-hero {
+    padding-top: calc(var(--header-h) + 60px);
+    --hdr-left-w: 19%; /* 表紙は中央タイトル帯が無いので、文字幅に合わせて赤帯を短くする */
+  }
+  /* 表紙はpage-titleトラペゾイドが無いので、赤線を左端から右端まで伸ばす */
+  section.cover-hero > header::after { left: 0; right: 0; }
+  section.cover-hero .title-hero { text-align: center; margin-bottom: 60px; }
+  section.cover-hero .title-small { font-size: 40px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
+  section.cover-hero .title-big { font-size: 72px; font-weight: 800; line-height: 1.2; letter-spacing: 0.02em; }
+  section.cover-hero .title-foot { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; padding: 0 60px; }
+  section.cover-hero .title-photo {
+    width: 240px; height: 240px; border-radius: 50%; overflow: hidden;
+    background: #ffffff; border: 3px solid #D9EAD3;
+    display: flex; align-items: center; justify-content: center; color: #777; font-size: 16px;
+  }
+  section.cover-hero .title-photo img { width: 84%; height: 84%; object-fit: contain; /* 情報リテラシーのアイコンを全体表示 */ }
+  section.cover-hero .title-meta { font-size: 26px; line-height: 1.7; text-align: center; }
+  section.cover-hero .title-event { color: #e65100; font-weight: 700; margin-bottom: 16px; }
+  section.cover-hero .title-affil { margin-top: 8px; }
 ---
 
 
-<!-- _class: cover -->
+<!-- _class: cover-hero -->
 
-# ネットワークの仕組みと<br>インターネット
+<div class="title-hero">
+<div class="title-small">情報リテラシ 第8回 ／ オンデマンド</div>
+<div class="title-big">ネットワークの仕組みと<br>インターネット</div>
+</div>
 
-## 情報リテラシ 第8回 ／ 完全オンデマンド講義（動画 全10本）
-
-### 千葉大学 工学部 1年（医工学 ／ 都市環境システム ／ 応用化学）
-
-<div class="meta">第2ターム ・ 1本 約8〜18分（合計 約130分）／ slido は使いません。動画の語りで進みます</div>
+<div class="title-foot">
+<div class="title-photo">
+<img src="../assets/logo-info-literacy-icon.svg" alt="情報リテラシー">
+</div>
+<div class="title-meta">
+<div class="title-event">23 & 24クラス<br>（医工学 ／ 都市環境システム ／ 応用化学）</div>
+<div class="title-affil">担当：千葉大学 国際未来教育基幹<br>田川 翔（専門：高等教育論・地球惑星科学）</div>
+</div>
+</div>
 
 ---
 

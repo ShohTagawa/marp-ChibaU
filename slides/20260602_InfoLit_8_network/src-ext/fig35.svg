@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="100%" style="max-height:230px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-family="Menlo,monospace" font-size="30" font-weight="700">
+    <text x="40" y="80" fill="#3C8A57">https://</text>
+    <text x="220" y="80" fill="#3E78B2">www.example.jp</text>
+    <text x="540" y="80" fill="#D98A2B">/joho/</text><text x="680" y="80" fill="#A6192E">index.html</text>
+  </g>
+  <g font-size="16" text-anchor="middle">
+    <line x1="110" y1="96" x2="110" y2="122" stroke="#3C8A57" stroke-width="2"/><text x="110" y="146" fill="#3C8A57" font-weight="700">① プロトコル</text><text x="110" y="168" fill="#777" font-size="15">http / https / ftp</text>
+    <line x1="380" y1="96" x2="380" y2="122" stroke="#3E78B2" stroke-width="2"/><text x="380" y="146" fill="#3E78B2" font-weight="700">② ドメイン名</text><text x="380" y="168" fill="#777" font-size="15">IP直指定も可</text>
+    <line x1="595" y1="96" x2="595" y2="122" stroke="#D98A2B" stroke-width="2"/><text x="595" y="146" fill="#D98A2B" font-weight="700">③ パス</text><text x="595" y="168" fill="#777" font-size="15">どのフォルダか</text>
+    <line x1="775" y1="96" x2="775" y2="122" stroke="#A6192E" stroke-width="2"/><text x="775" y="146" fill="#A6192E" font-weight="700">④ ファイル名</text><text x="775" y="168" fill="#777" font-size="15">省略でトップへ</text>
+  </g>
+</svg>

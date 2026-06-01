@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" width="100%" style="max-height:330px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- HTTP -->
+  <text x="230" y="28" font-size="17" text-anchor="middle" fill="#A6192E" font-weight="700">http:// （暗号化なし）</text>
+  <rect class="card" x="40" y="44" width="120" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="100" y="74" font-size="15" text-anchor="middle">あなた</text>
+  <rect class="card" x="300" y="44" width="120" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="360" y="74" font-size="15" text-anchor="middle">サーバ</text>
+  <line x1="160" y1="69" x2="298" y2="69" stroke="#A6192E" stroke-width="2.5" marker-end="url(#h1)"/>
+  <text x="230" y="60" font-size="15" text-anchor="middle" fill="#A6192E" font-weight="700">平文：盗聴・改ざん可</text>
+  <rect x="40" y="108" width="380" height="26" rx="5" fill="#F8E5EA"/><text x="230" y="126" font-size="14" text-anchor="middle" fill="#A6192E" font-weight="700">パスワードもそのまま流れる ＝ 危険</text>
+  <!-- 区切り -->
+  <line x1="460" y1="40" x2="460" y2="140" stroke="#ddd" stroke-width="2"/>
+  <!-- HTTPS -->
+  <text x="690" y="28" font-size="17" text-anchor="middle" fill="#3C8A57" font-weight="700">🔒 https:// （TLSで暗号化）</text>
+  <rect class="card" x="500" y="44" width="120" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="560" y="74" font-size="15" text-anchor="middle">あなた</text>
+  <rect class="card" x="760" y="44" width="120" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="820" y="74" font-size="15" text-anchor="middle">サーバ</text>
+  <line x1="620" y1="69" x2="758" y2="69" stroke="#3C8A57" stroke-width="3.5" marker-end="url(#h2)"/>
+  <text x="690" y="60" font-size="15" text-anchor="middle" fill="#3C8A57" font-weight="700">🔒 暗号トンネル</text>
+  <rect x="500" y="108" width="380" height="26" rx="5" fill="#DDEBC8"/><text x="690" y="126" font-size="14" text-anchor="middle" fill="#1a1a1a" font-weight="700">盗み見ても暗号文 ＝ 中身は読めない</text>
+  <!-- SSL/TLS と VPN -->
+  <rect class="card" x="40" y="162" width="400" height="110" rx="10" fill="#eef7ef" stroke="#3C8A57" stroke-width="1.5"/>
+  <text x="240" y="186" font-size="16" text-anchor="middle" fill="#3C8A57" font-weight="700">SSL / TLS</text>
+  <text x="60" y="212" font-size="14" fill="#555">・公開鍵で「共通鍵」を安全に交換する決まり</text>
+  <text x="60" y="234" font-size="14" fill="#555">・利用ページのURLは https、ブラウザに 🔒</text>
+  <text x="60" y="256" font-size="14" fill="#555">・銀行・クレカ・ログインで必須</text>
+  <rect class="card" x="480" y="162" width="400" height="110" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="1.5"/>
+  <text x="680" y="186" font-size="16" text-anchor="middle" fill="#3E78B2" font-weight="700">VPN</text>
+  <text x="500" y="212" font-size="14" fill="#555">・通信全体を暗号化して専用線のように使う</text>
+  <text x="500" y="234" font-size="14" fill="#555">・拠点間だけでなく「個人端末→社内」も</text>
+  <text x="500" y="256" font-size="14" fill="#555">・公衆Wi-Fiでの保険として有効</text>
+  <defs><marker id="h1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker><marker id="h2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker></defs>
+</svg>

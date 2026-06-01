@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u2sc-grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
+    <marker id="u2sc-org" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#D98A2B"/></marker>
+  </defs>
+  <rect class="card" x="6" y="104" width="104" height="80" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/>
+  <text x="58" y="139" font-size="16" font-weight="700" text-anchor="middle">クライアント</text>
+  <text x="58" y="164" font-size="14" fill="#777" text-anchor="middle">利用する側</text>
+  <rect class="card" x="250" y="104" width="104" height="80" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/>
+  <text x="302" y="139" font-size="16" font-weight="700" text-anchor="middle">サーバ</text>
+  <text x="302" y="164" font-size="14" fill="#777" text-anchor="middle">提供する側</text>
+  <text x="180" y="119" font-size="14" text-anchor="middle" fill="#3C8A57" font-weight="700">リクエスト</text>
+  <line x1="112" y1="134" x2="248" y2="134" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u2sc-grn)"/>
+  <line x1="250" y1="156" x2="114" y2="156" stroke="#D98A2B" stroke-width="2.5" marker-end="url(#u2sc-org)"/>
+  <text x="180" y="178" font-size="14" text-anchor="middle" fill="#D98A2B" font-weight="700">レスポンス</text>
+  <rect x="40" y="225" width="280" height="46" rx="8" fill="#F6F7F9" stroke="#ccc" stroke-width="1.5"/>
+  <text x="180" y="244" font-size="16" fill="#555" text-anchor="middle">ネットに繋がる全機器</text>
+  <text x="180" y="264" font-size="16" font-weight="700" fill="#333" text-anchor="middle">＝「ホスト」</text>
+</svg>

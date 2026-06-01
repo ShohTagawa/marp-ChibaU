@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" width="100%" style="max-height:130px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-family="Menlo,monospace" font-size="34" font-weight="700" text-anchor="middle">
+    <text x="120" y="58" fill="#6B6F76">www</text><text x="212" y="58">.</text>
+    <text x="330" y="58" fill="#3C8A57">kantei</text><text x="438" y="58">.</text>
+    <text x="520" y="58" fill="#D98A2B">go</text><text x="575" y="58">.</text>
+    <text x="660" y="58" fill="#3E78B2">jp</text>
+  </g>
+  <line x1="730" y1="46" x2="850" y2="46" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u6dom)"/>
+  <text x="790" y="90" font-size="16" fill="#A6192E" font-weight="700" text-anchor="middle">大きい区分へ</text>
+  <g font-size="16" text-anchor="middle">
+    <text x="120" y="92" fill="#6B6F76" font-weight="700">サーバ名</text>
+    <text x="330" y="92" fill="#3C8A57" font-weight="700">組織名</text>
+    <text x="520" y="92" fill="#D98A2B" font-weight="700">組織の種類</text>
+    <text x="660" y="92" fill="#3E78B2" font-weight="700">国名</text>
+  </g>
+  <defs><marker id="u6dom" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker></defs>
+</svg>

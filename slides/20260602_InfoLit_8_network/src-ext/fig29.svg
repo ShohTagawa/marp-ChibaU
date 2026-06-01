@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 130" width="100%" style="max-height:140px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <line x1="80" y1="14" x2="80" y2="120" stroke="#ccc" stroke-width="2"/><line x1="340" y1="14" x2="340" y2="120" stroke="#ccc" stroke-width="2"/>
+  <text x="80" y="12" font-size="15" text-anchor="middle">送信</text><text x="340" y="12" font-size="15" text-anchor="middle">受信</text>
+  <defs>
+    <marker id="u5grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
+    <marker id="u5blu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3E78B2"/></marker>
+  </defs>
+  <line x1="80" y1="30" x2="340" y2="44" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u5grn)"/><text x="210" y="30" font-size="14" fill="#3C8A57" text-anchor="middle">パケット1</text>
+  <line x1="340" y1="52" x2="80" y2="66" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u5blu)"/><text x="210" y="52" font-size="14" fill="#3E78B2" text-anchor="middle">ACK（届いたよ）</text>
+  <line x1="80" y1="78" x2="250" y2="90" stroke="#A6192E" stroke-width="2.5" stroke-dasharray="5 3"/><text x="180" y="78" font-size="14" fill="#A6192E" text-anchor="middle">2（消失）</text>
+  <text x="266" y="96" font-size="16" fill="#A6192E">✕</text>
+  <line x1="80" y1="108" x2="340" y2="120" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u5grn)"/><text x="210" y="108" font-size="14" fill="#3C8A57" text-anchor="middle">2 を再送</text>
+</svg>

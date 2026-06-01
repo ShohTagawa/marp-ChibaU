@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" style="max-height:320px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 桁重みヘッダ -->
+  <g text-anchor="middle" font-family="Menlo,monospace">
+    <text x="450" y="30" font-size="18" font-weight="700" font-family="var(--font-jp)">8ビットの各桁には「重み」がある（左が大きい）</text>
+    <g font-size="17" fill="#6B6F76">
+      <text x="80" y="66">128</text><text x="180" y="66">64</text><text x="280" y="66">32</text><text x="380" y="66">16</text><text x="480" y="66">8</text><text x="580" y="66">4</text><text x="680" y="66">2</text><text x="780" y="66">1</text>
+      <text x="80" y="86" font-size="14">2⁷</text><text x="180" y="86" font-size="14">2⁶</text><text x="280" y="86" font-size="14">2⁵</text><text x="380" y="86" font-size="14">2⁴</text><text x="480" y="86" font-size="14">2³</text><text x="580" y="86" font-size="14">2²</text><text x="680" y="86" font-size="14">2¹</text><text x="780" y="86" font-size="14">2⁰</text>
+    </g>
+    <!-- ビットセル -->
+    <g font-family="Menlo,monospace" font-size="30" font-weight="800">
+      <rect class="card" x="42" y="100" width="76" height="58" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="80" y="140" fill="#7d1322">1</text>
+      <rect class="card" x="142" y="100" width="76" height="58" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="180" y="140" fill="#7d1322">1</text>
+      <rect x="242" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="280" y="140" fill="#999">0</text>
+      <rect x="342" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="380" y="140" fill="#999">0</text>
+      <rect x="442" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="480" y="140" fill="#999">0</text>
+      <rect x="542" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="580" y="140" fill="#999">0</text>
+      <rect x="642" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="680" y="140" fill="#999">0</text>
+      <rect x="742" y="100" width="76" height="58" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="780" y="140" fill="#999">0</text>
+    </g>
+    <!-- 計算結果 -->
+    <text x="80" y="186" font-size="16" fill="#A6192E" font-weight="700">128</text>
+    <text x="180" y="186" font-size="16" fill="#A6192E" font-weight="700">64</text>
+    <text x="450" y="232" font-size="22" font-weight="800" font-family="var(--font-jp)">1×128 ＋ 1×64 ＝ <tspan fill="#A6192E">192</tspan></text>
+  </g>
+  <rect x="120" y="252" width="660" height="36" rx="6" fill="#eef7ef"/>
+  <text x="450" y="276" font-size="16" text-anchor="middle" fill="#3C8A57" font-weight="700" font-family="var(--font-jp)">同じ手順で 11111111 ＝ 128+64+…+1 ＝ 255（オクテットの最大値）</text>
+</svg>

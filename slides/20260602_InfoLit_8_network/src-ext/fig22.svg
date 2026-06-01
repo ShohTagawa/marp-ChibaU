@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="100%" style="max-height:215px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="210" y="22" font-size="17" font-weight="700" text-anchor="middle">パケット交換（インターネット）</text>
+  <circle cx="48" cy="100" r="26" fill="#fff" stroke="#3C8A57" stroke-width="2.5" class="card"/><text x="48" y="106" font-size="16" text-anchor="middle">A</text>
+  <circle cx="372" cy="100" r="26" fill="#fff" stroke="#3C8A57" stroke-width="2.5" class="card"/><text x="372" y="106" font-size="16" text-anchor="middle">B</text>
+  <g font-size="15" fill="#fff" text-anchor="middle" font-weight="700">
+    <rect x="100" y="58" width="40" height="26" rx="6" fill="#3E78B2"/><text x="120" y="76">1</text>
+    <rect x="170" y="110" width="40" height="26" rx="6" fill="#D98A2B"/><text x="190" y="128">2</text>
+    <rect x="235" y="62" width="40" height="26" rx="6" fill="#3C8A57"/><text x="255" y="80">3</text>
+    <rect x="300" y="112" width="40" height="26" rx="6" fill="#A6192E"/><text x="320" y="130">4</text>
+  </g>
+  <text x="210" y="172" font-size="15" fill="#3C8A57" text-anchor="middle" font-weight="700">小分けして各自バラバラに発送 → 共有できる</text>
+</svg>

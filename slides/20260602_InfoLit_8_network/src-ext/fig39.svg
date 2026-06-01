@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" width="100%" style="max-height:320px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 共通鍵 -->
+  <text x="190" y="22" font-size="16" font-weight="700" text-anchor="middle" fill="#D98A2B">共通鍵暗号（同じ鍵）</text>
+  <rect class="card" x="20" y="36" width="90" height="46" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="65" y="64" font-size="15" text-anchor="middle" fill="#3C8A57">Aさん</text>
+  <rect class="card" x="270" y="36" width="90" height="46" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="315" y="64" font-size="15" text-anchor="middle" fill="#3E78B2">Bさん</text>
+  <line x1="110" y1="59" x2="270" y2="59" stroke="#bbb" stroke-width="2"/>
+  <text x="190" y="52" font-size="22" text-anchor="middle">🔑</text>
+  <text x="190" y="100" font-size="12" text-anchor="middle" fill="#A6192E" font-weight="700">同じ鍵を共有 → 配送中に盗まれたら全開放</text>
+  <!-- 公開鍵 -->
+  <text x="190" y="120" font-size="16" font-weight="700" text-anchor="middle" fill="#3C8A57">公開鍵暗号（鍵がペア）</text>
+  <rect class="card" x="20" y="136" width="90" height="46" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="65" y="164" font-size="15" text-anchor="middle" fill="#3C8A57">Aさん</text>
+  <rect class="card" x="270" y="136" width="90" height="46" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="315" y="164" font-size="15" text-anchor="middle" fill="#3E78B2">Bさん</text>
+  <line x1="110" y1="159" x2="270" y2="159" stroke="#A6192E" stroke-width="2.5" marker-end="url(#k1)"/>
+  <text x="170" y="150" font-size="22" text-anchor="middle">🔒</text>
+  <text x="170" y="200" font-size="13" text-anchor="middle" fill="#555">Bの公開鍵で施錠</text>
+  <text x="315" y="200" font-size="22" text-anchor="middle">🔑</text>
+  <text x="315" y="218" font-size="13" text-anchor="middle" fill="#3E78B2">Bの秘密鍵で開錠</text>
+  <rect x="20" y="240" width="340" height="64" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="1.5"/>
+  <text x="190" y="262" font-size="14" text-anchor="middle" fill="#3C8A57" font-weight="700">公開鍵は誰に配ってもよい</text>
+  <text x="190" y="284" font-size="14" text-anchor="middle" fill="#555">鍵を安全に渡す問題が消える</text>
+  <defs><marker id="k1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker></defs>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" width="100%" style="max-height:250px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="190" y="22" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">デジタル署名（暗号化と鍵が逆）</text>
+  <rect class="card" x="20" y="44" width="130" height="66" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="85" y="72" font-size="15" text-anchor="middle" fill="#3C8A57" font-weight="700">送り手 A</text><text x="85" y="94" font-size="13" text-anchor="middle" fill="#555">🔑 秘密鍵で署名</text>
+  <rect class="card" x="230" y="44" width="130" height="66" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="295" y="72" font-size="15" text-anchor="middle" fill="#3E78B2" font-weight="700">受け手 B</text><text x="295" y="94" font-size="13" text-anchor="middle" fill="#555">🔓 Aの公開鍵で検証</text>
+  <line x1="150" y1="77" x2="230" y2="77" stroke="#A6192E" stroke-width="2.5" marker-end="url(#s1)"/>
+  <text x="190" y="68" font-size="13" text-anchor="middle" fill="#A6192E">署名つき</text>
+  <!-- なりすまし問題 → CA -->
+  <rect x="20" y="140" width="340" height="44" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="1.5"/><text x="190" y="158" font-size="13" text-anchor="middle" fill="#A6192E" font-weight="700">なりすまし：XがAを名乗り公開鍵を公開？</text><text x="190" y="176" font-size="13" text-anchor="middle" fill="#555">→ その公開鍵が本物かを誰が保証する？</text>
+  <line x1="190" y1="184" x2="190" y2="214" stroke="#bbb" stroke-width="2" marker-end="url(#s2)"/>
+  <rect class="card" x="60" y="216" width="260" height="84" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="190" y="244" font-size="16" text-anchor="middle" font-weight="700" fill="#3E78B2">認証局（CA）</text><text x="190" y="268" font-size="14" text-anchor="middle" fill="#555">第三者として「これはAの公開鍵」を保証</text><text x="190" y="288" font-size="14" text-anchor="middle" fill="#555">＝ 電子証明書を発行</text>
+  <defs><marker id="s1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker><marker id="s2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#bbb"/></marker></defs>
+</svg>

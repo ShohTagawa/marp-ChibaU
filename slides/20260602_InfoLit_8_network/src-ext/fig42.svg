@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 320" width="100%" style="max-height:350px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- カフェ/公衆AP -->
+  <text x="460" y="24" font-size="16" text-anchor="middle" fill="#555" font-weight="700">同じアクセスポイント（公衆Wi-Fi）に繋ぐ全員が、電波を受信できる</text>
+  <ellipse cx="460" cy="120" rx="70" ry="44" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/><text x="460" y="116" font-size="16" text-anchor="middle" fill="#D98A2B" font-weight="700">公衆AP</text><text x="460" y="138" font-size="14" text-anchor="middle" fill="#555">無料Wi-Fi</text>
+  <!-- あなた -->
+  <rect class="card" x="40" y="92" width="120" height="56" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="100" y="116" font-size="15" text-anchor="middle" font-weight="700">あなた</text><text x="100" y="136" font-size="13" text-anchor="middle" fill="#555">ログイン送信</text>
+  <line x1="160" y1="120" x2="388" y2="120" stroke="#888" stroke-width="2" stroke-dasharray="5 4"/>
+  <!-- 盗聴者 -->
+  <rect class="card" x="40" y="220" width="150" height="64" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/><text x="115" y="246" font-size="15" text-anchor="middle" fill="#A6192E" font-weight="700">悪意の他人</text><text x="115" y="268" font-size="13" text-anchor="middle" fill="#7d1322">パケットを傍受</text>
+  <line x1="190" y1="230" x2="395" y2="150" stroke="#A6192E" stroke-width="2.5" marker-end="url(#w1)"/><text x="300" y="210" font-size="14" fill="#A6192E" font-weight="700" text-anchor="middle">盗聴(キャプチャ)</text>
+  <!-- 偽AP -->
+  <rect class="card" x="730" y="220" width="150" height="64" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/><text x="805" y="246" font-size="15" text-anchor="middle" fill="#A6192E" font-weight="700">偽AP(Evil Twin)</text><text x="805" y="268" font-size="13" text-anchor="middle" fill="#7d1322">中間者になりすまし</text>
+  <line x1="730" y1="240" x2="528" y2="150" stroke="#A6192E" stroke-width="2.5" marker-end="url(#w1)"/>
+  <!-- インターネット -->
+  <rect class="card" x="760" y="92" width="120" height="56" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="820" y="124" font-size="15" text-anchor="middle" font-weight="700">サーバ</text>
+  <line x1="532" y1="120" x2="758" y2="120" stroke="#888" stroke-width="2" stroke-dasharray="5 4"/>
+  <!-- ハガキ vs 封筒 メタファ -->
+  <rect x="40" y="294" width="420" height="24" rx="5" fill="#F8E5EA"/><text x="250" y="311" font-size="14" text-anchor="middle" fill="#A6192E" font-weight="700">HTTP＝ハガキ：途中の誰でも内容が読める</text>
+  <rect x="480" y="294" width="400" height="24" rx="5" fill="#DDEBC8"/><text x="680" y="311" font-size="14" text-anchor="middle" fill="#1a1a1a" font-weight="700">HTTPS＝封筒：中身が暗号化され読めない</text>
+  <defs><marker id="w1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker></defs>
+</svg>

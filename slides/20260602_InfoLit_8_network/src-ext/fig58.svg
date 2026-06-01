@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="100%" style="max-height:200px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs><marker id="u9c" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 Z" fill="#D98A2B"/></marker></defs>
+  <text x="140" y="18" font-size="14" font-weight="700" text-anchor="middle">見かけの相関（交絡）</text>
+  <rect class="card" x="95" y="34" width="90" height="38" rx="8" fill="#D98A2B"/><text x="140" y="59" font-size="15" fill="#fff" font-weight="700" text-anchor="middle">暑さ（真因）</text>
+  <rect class="card" x="8" y="128" width="110" height="40" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="63" y="153" font-size="14" text-anchor="middle">アイス消費</text>
+  <rect class="card" x="162" y="128" width="110" height="40" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="217" y="153" font-size="14" text-anchor="middle">水難事故</text>
+  <line x1="118" y1="72" x2="72" y2="126" stroke="#D98A2B" stroke-width="2.5" marker-end="url(#u9c)"/>
+  <line x1="162" y1="72" x2="208" y2="126" stroke="#D98A2B" stroke-width="2.5" marker-end="url(#u9c)"/>
+  <line x1="120" y1="148" x2="160" y2="148" stroke="#A6192E" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="140" y="192" font-size="14" fill="#A6192E" text-anchor="middle">見かけの相関（因果なし）</text>
+</svg>

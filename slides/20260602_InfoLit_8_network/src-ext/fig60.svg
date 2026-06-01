@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 320" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 凡例（色＝役割を図内に固定） -->
+  <g font-size="16">
+    <rect x="250" y="8" width="22" height="16" rx="3" fill="#FAE1E2" stroke="#A6192E"/><text x="280" y="21" fill="#7d1322">自分が管理</text>
+    <rect x="430" y="8" width="22" height="16" rx="3" fill="#DDEBC8" stroke="#3C8A57"/><text x="460" y="21" fill="#2f6b43">事業者が管理（おまかせ）</text>
+  </g>
+  <!-- 列見出し -->
+  <g font-size="18" font-weight="700" text-anchor="middle">
+    <text x="170" y="56">IaaS</text>
+    <text x="470" y="56">PaaS</text>
+    <text x="770" y="56">SaaS</text>
+  </g>
+  <g font-size="15" text-anchor="middle" fill="#555">
+    <text x="170" y="76">基盤を借りる</text>
+    <text x="470" y="76">土台＋実行環境を借りる</text>
+    <text x="770" y="76">完成品を使うだけ</text>
+  </g>
+  <!-- 4層の行ラベル -->
+  <g font-size="15" text-anchor="end" fill="#555">
+    <text x="56" y="108">アプリ</text>
+    <text x="56" y="150">OS</text>
+    <text x="56" y="192">仮想マシン</text>
+    <text x="56" y="234">物理・電源</text>
+  </g>
+  <!-- IaaS 列：上2層=自分、下2層=事業者 -->
+  <g font-size="15" text-anchor="middle">
+    <rect class="card" x="64" y="90" width="212" height="34" rx="6" fill="#FAE1E2" stroke="#A6192E"/><text x="170" y="112">アプリ（自分）</text>
+    <rect class="card" x="64" y="132" width="212" height="34" rx="6" fill="#FAE1E2" stroke="#A6192E"/><text x="170" y="154">OS（自分）</text>
+    <rect class="card" x="64" y="174" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="170" y="196">仮想マシン（事業者）</text>
+    <rect class="card" x="64" y="216" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="170" y="238">物理・電源（事業者）</text>
+    <text x="170" y="276" font-size="15" fill="#555">例：仮想サーバ（VM）を借りる</text>
+  </g>
+  <!-- PaaS 列：上1層=自分、下3層=事業者 -->
+  <g font-size="15" text-anchor="middle">
+    <rect class="card" x="364" y="90" width="212" height="34" rx="6" fill="#FAE1E2" stroke="#A6192E"/><text x="470" y="112">アプリ（自分）</text>
+    <rect class="card" x="364" y="132" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="470" y="154">実行環境（事業者）</text>
+    <rect class="card" x="364" y="174" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="470" y="196">OS（事業者）</text>
+    <rect class="card" x="364" y="216" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="470" y="238">基盤（事業者）</text>
+    <text x="470" y="276" font-size="15" fill="#555">例：コードだけ置けば動く土台</text>
+  </g>
+  <!-- SaaS 列：全層=事業者 -->
+  <g font-size="15" text-anchor="middle">
+    <rect class="card" x="664" y="90" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="770" y="112">アプリ（事業者）</text>
+    <rect class="card" x="664" y="132" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="770" y="154">実行環境（事業者）</text>
+    <rect class="card" x="664" y="174" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="770" y="196">OS（事業者）</text>
+    <rect class="card" x="664" y="216" width="212" height="34" rx="6" fill="#DDEBC8" stroke="#3C8A57"/><text x="770" y="238">基盤（事業者）</text>
+    <text x="770" y="276" font-size="15" fill="#555">例：Gmail・Google ドキュメント</text>
+  </g>
+  <!-- 右向き「おまかせが増える」矢印 -->
+  <text x="470" y="306" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">→ 右へ行くほど赤（自分の管理）が減り、緑（おまかせ）が増える</text>
+</svg>

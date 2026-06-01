@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 372 352" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
+  <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
+  <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">5つのモード</text>
+  <g text-anchor="middle">
+    <line x1="180" y1="114" x2="180" y2="62" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="112" y="20" width="136" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="46" font-size="15" font-weight="700">① 実験する</text>
+    <line x1="232" y1="138" x2="300" y2="98" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="246" y="74" width="112" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="302" y="100" font-size="15" font-weight="700">② ネット</text>
+    <line x1="236" y1="202" x2="305" y2="240" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="252" y="218" width="106" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="305" y="244" font-size="15" font-weight="700">③ AI</text>
+    <line x1="180" y1="226" x2="180" y2="278" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="110" y="278" width="140" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="304" font-size="15" font-weight="700">④ 人に聞く</text>
+    <line x1="124" y1="202" x2="55" y2="240" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="2" y="218" width="116" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="60" y="244" font-size="15" font-weight="700">⑤ 本・論文</text>
+  </g>
+</svg>

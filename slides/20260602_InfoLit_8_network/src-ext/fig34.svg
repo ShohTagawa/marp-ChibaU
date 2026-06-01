@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" width="100%" style="max-height:180px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-size="15" text-anchor="middle">
+    <rect class="card" x="14" y="70" width="100" height="56" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2"/><text x="64" y="94" font-weight="700">ブラウザ</text><text x="64" y="113" font-size="13" fill="#777">あなた</text>
+    <rect class="card" x="246" y="70" width="100" height="56" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="296" y="94" font-weight="700">Webサーバ</text>
+    <line x1="114" y1="86" x2="244" y2="86" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u6h1)"/><text x="180" y="76" font-size="14" fill="#3E78B2">GET（要求）</text>
+    <line x1="246" y1="112" x2="116" y2="112" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u6h2)"/><text x="180" y="128" font-size="14" fill="#3C8A57">HTML（応答）</text>
+    <rect x="120" y="150" width="120" height="34" rx="6" fill="#eef7ef" stroke="#3C8A57"/><text x="180" y="172" font-size="14" fill="#3C8A57">🔒 HTTPS＝暗号化</text>
+  </g>
+  <defs>
+    <marker id="u6h1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3E78B2"/></marker>
+    <marker id="u6h2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
+  </defs>
+</svg>

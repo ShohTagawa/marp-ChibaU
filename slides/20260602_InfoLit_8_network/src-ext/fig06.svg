@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u2arr-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- 旅プログレスバー（端末→Wi-Fi/LAN 点灯） -->
+  <g font-size="16" text-anchor="middle">
+    <line x1="60" y1="32" x2="920" y2="32" stroke="#ddd" stroke-width="2"/>
+    <circle cx="80"  cy="32" r="7" fill="#A6192E"/><text x="80"  y="18" fill="#A6192E" font-weight="700">端末</text>
+    <circle cx="260" cy="32" r="7" fill="#A6192E"/><text x="260" y="18" fill="#A6192E" font-weight="700">Wi-Fi/LAN</text>
+    <circle cx="440" cy="32" r="6" fill="#ccc"/><text x="440" y="18" fill="#999">DNS</text>
+    <circle cx="620" cy="32" r="6" fill="#ccc"/><text x="620" y="18" fill="#999">Internet</text>
+    <circle cx="800" cy="32" r="6" fill="#ccc"/><text x="800" y="18" fill="#999">サーバ</text>
+    <circle cx="920" cy="32" r="6" fill="#ccc"/><text x="920" y="18" fill="#999">表示</text>
+  </g>
+  <!-- 家のLAN -->
+  <ellipse class="card" cx="165" cy="180" rx="140" ry="92" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <text x="165" y="108" font-size="18" font-weight="700" text-anchor="middle" fill="#3E78B2">家庭の LAN</text>
+  <g fill="#3E78B2"><circle cx="110" cy="170" r="13"/><circle cx="165" cy="205" r="13"/><circle cx="220" cy="170" r="13"/></g>
+  <text x="165" y="252" font-size="16" text-anchor="middle" fill="#3E78B2">PC・スマホ・TV</text>
+  <!-- 大学のLAN -->
+  <ellipse class="card" cx="815" cy="180" rx="140" ry="92" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+  <text x="815" y="108" font-size="18" font-weight="700" text-anchor="middle" fill="#3C8A57">大学の LAN（別のネットワーク）</text>
+  <g fill="#3C8A57"><circle cx="760" cy="170" r="13"/><circle cx="815" cy="205" r="13"/><circle cx="870" cy="170" r="13"/></g>
+  <text x="815" y="252" font-size="16" text-anchor="middle" fill="#3C8A57">研究室・図書館の機器</text>
+  <!-- WAN（中央） -->
+  <ellipse class="card" cx="490" cy="180" rx="158" ry="74" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <text x="490" y="172" font-size="20" font-weight="800" text-anchor="middle" fill="#D98A2B">WAN（広域網）</text>
+  <text x="490" y="200" font-size="16" text-anchor="middle" fill="#a06a1d">通信事業者の回線でLAN同士を繋ぐ</text>
+  <!-- ルータ -->
+  <line x1="305" y1="180" x2="332" y2="180" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
+  <rect class="card" x="295" y="162" width="40" height="36" rx="8" fill="#A6192E"/><text x="315" y="185" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
+  <line x1="648" y1="180" x2="675" y2="180" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
+  <rect class="card" x="665" y="162" width="40" height="36" rx="8" fill="#A6192E"/><text x="685" y="185" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
+</svg>

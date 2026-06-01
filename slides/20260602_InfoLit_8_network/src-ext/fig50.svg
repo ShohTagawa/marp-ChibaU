@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u9a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- POS chain -->
+  <text x="270" y="28" font-size="18" font-weight="700" text-anchor="middle" fill="#1a1a1a">① POSシステム（販売時点情報管理）</text>
+  <rect class="card" x="20" y="50" width="150" height="74" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/>
+  <text x="95" y="82" font-size="17" font-weight="700" text-anchor="middle">店舗レジ</text>
+  <text x="95" y="106" font-size="15" fill="#555" text-anchor="middle">バーコード読取</text>
+  <rect class="card" x="210" y="50" width="170" height="74" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
+  <text x="295" y="82" font-size="17" font-weight="700" text-anchor="middle" fill="#A6192E">本部センター</text>
+  <text x="295" y="106" font-size="15" fill="#555" text-anchor="middle">販売データを集約</text>
+  <rect class="card" x="420" y="50" width="160" height="74" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+  <text x="500" y="82" font-size="17" font-weight="700" text-anchor="middle">発注・配送</text>
+  <text x="500" y="106" font-size="15" fill="#555" text-anchor="middle">在庫・最適配送</text>
+  <line x1="172" y1="87" x2="206" y2="87" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u9a)"/>
+  <line x1="382" y1="87" x2="416" y2="87" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u9a)"/>
+  <text x="300" y="150" font-size="15" fill="#555" text-anchor="middle">何が・いつ・いくつ売れたか → 代金精算と同時に受発注・在庫・本部集約</text>
+  <!-- other systems -->
+  <text x="800" y="28" font-size="18" font-weight="700" text-anchor="middle" fill="#1a1a1a">② 位置・予約のシステム</text>
+  <rect class="card" x="650" y="46" width="300" height="40" rx="6" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
+  <text x="800" y="71" font-size="16" font-weight="700" text-anchor="middle">🛰 GPS／道路交通システム（カーナビ・渋滞）</text>
+  <rect class="card" x="650" y="96" width="300" height="40" rx="6" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <text x="800" y="121" font-size="16" font-weight="700" text-anchor="middle">予約システム（座席・蔵書をリアルタイム）</text>
+  <text x="800" y="160" font-size="15" fill="#555" text-anchor="middle">限られた資源を、自宅から検索・予約できる</text>
+  <!-- big data funnel -->
+  <rect class="card" x="20" y="180" width="930" height="56" rx="10" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/>
+  <text x="485" y="205" font-size="18" font-weight="700" text-anchor="middle" fill="#A6192E">POS ＋ SNSの書き込み ＋ GPS … 日々たまる膨大なデータ ＝ ビッグデータ</text>
+  <text x="485" y="226" font-size="15" fill="#555" text-anchor="middle">分析して洞察を引き出す専門家 ＝ データサイエンティスト（新製品・販売戦略のヒント）</text>
+</svg>

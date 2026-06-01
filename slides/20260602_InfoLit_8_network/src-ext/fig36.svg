@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 旅プログレスバー（現在地=表示） -->
+  <g font-size="14" text-anchor="middle">
+    <line x1="70" y1="24" x2="830" y2="24" stroke="#ccc" stroke-width="2"/>
+    <g fill="#aaa"><circle cx="70" cy="24" r="6"/><circle cx="222" cy="24" r="6"/><circle cx="374" cy="24" r="6"/><circle cx="526" cy="24" r="6"/><circle cx="678" cy="24" r="6"/></g>
+    <circle cx="830" cy="24" r="9" fill="#A6192E"/>
+    <g fill="#999"><text x="70" y="12">端末</text><text x="222" y="12">Wi-Fi</text><text x="374" y="12">DNS</text><text x="526" y="12">Internet</text><text x="678" y="12">サーバ</text></g>
+    <text x="830" y="12" fill="#A6192E" font-weight="700">表示 ◀ いまここ</text>
+  </g>
+  <!-- 表示までの5ステップ -->
+  <g font-size="16" text-anchor="middle">
+    <rect class="card" x="20" y="70" width="150" height="86" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2"/><text x="95" y="100" font-weight="700">① URL入力</text><text x="95" y="124" font-size="15" fill="#777">https://example.jp</text>
+    <rect class="card" x="200" y="70" width="150" height="86" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="275" y="100" font-weight="700">② DNS</text><text x="275" y="124" font-size="15" fill="#777">名前→IP</text>
+    <rect class="card" x="380" y="70" width="150" height="86" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/><text x="455" y="100" font-weight="700">③ サーバ接続</text><text x="455" y="124" font-size="15" fill="#777">そのIPへHTTP</text>
+    <rect class="card" x="560" y="70" width="150" height="86" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="635" y="100" font-weight="700">④ ファイル送信</text><text x="635" y="124" font-size="15" fill="#777">HTML/CSSを受信</text>
+    <rect class="card" x="740" y="70" width="150" height="86" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/><text x="815" y="100" font-weight="700">⑤ 表示</text><text x="815" y="124" font-size="15" fill="#777">ブラウザが描画</text>
+    <g stroke="#A6192E" stroke-width="2.5" marker-end="url(#u6flow)">
+      <line x1="170" y1="113" x2="198" y2="113"/><line x1="350" y1="113" x2="378" y2="113"/><line x1="530" y1="113" x2="558" y2="113"/><line x1="710" y1="113" x2="738" y2="113"/>
+    </g>
+  </g>
+  <!-- HTML+CSS→ブラウザ描画 の補足 -->
+  <g font-size="16" text-anchor="middle">
+    <rect x="120" y="200" width="170" height="44" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="205" y="220" font-weight="700">HTML</text><text x="205" y="238" font-size="14" fill="#777">タグで構造</text>
+    <rect x="320" y="200" width="170" height="44" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="405" y="220" font-weight="700">CSS</text><text x="405" y="238" font-size="14" fill="#777">色・配置の装飾</text>
+    <line x1="490" y1="222" x2="586" y2="222" stroke="#6B6F76" stroke-width="2.5" marker-end="url(#u6flow2)"/>
+    <rect class="card" x="590" y="196" width="200" height="52" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2.5"/><text x="690" y="218" font-weight="700">ブラウザが解釈</text><text x="690" y="238" font-size="14" fill="#777">見えるページに組み立てる</text>
+  </g>
+  <defs>
+    <marker id="u6flow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+    <marker id="u6flow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B6F76"/></marker>
+  </defs>
+</svg>

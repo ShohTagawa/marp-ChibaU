@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 旅プログレスバー：現在地=安全 -->
+  <g font-size="14" text-anchor="middle">
+    <line x1="60" y1="26" x2="860" y2="26" stroke="#ddd" stroke-width="3"/>
+    <g fill="#888"><circle cx="60" cy="26" r="6"/><circle cx="220" cy="26" r="6"/><circle cx="380" cy="26" r="6"/><circle cx="540" cy="26" r="6"/></g>
+    <circle cx="700" cy="26" r="9" fill="#A6192E"/>
+    <circle cx="860" cy="26" r="6" fill="#888"/>
+    <g fill="#999" font-size="13"><text x="60" y="50">端末</text><text x="220" y="50">Wi-Fi</text><text x="380" y="50">DNS</text><text x="540" y="50">Internet</text></g>
+    <text x="700" y="50" fill="#A6192E" font-size="14" font-weight="700">安全(暗号)</text>
+    <text x="860" y="50" fill="#999" font-size="13">表示</text>
+  </g>
+  <!-- 暗号フロー -->
+  <g font-size="17" text-anchor="middle">
+    <rect class="card" x="40" y="110" width="190" height="70" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="135" y="142" font-weight="700" fill="#3C8A57">平文（ひらぶん）</text><text x="135" y="166" font-size="16" fill="#555">「こんにちは」</text>
+    <rect class="card" x="365" y="110" width="190" height="70" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/><text x="460" y="142" font-weight="700" fill="#A6192E">暗号文</text><text x="460" y="166" font-size="16" fill="#7d1322" font-family="Menlo,monospace">&amp;SAKHXC$E</text>
+    <rect class="card" x="690" y="110" width="190" height="70" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="785" y="142" font-weight="700" fill="#3C8A57">平文</text><text x="785" y="166" font-size="16" fill="#555">「こんにちは」</text>
+  </g>
+  <line x1="230" y1="145" x2="360" y2="145" stroke="#A6192E" stroke-width="2.5" marker-end="url(#e1)"/><text x="295" y="132" font-size="16" text-anchor="middle" fill="#A6192E">🔒 暗号化</text>
+  <line x1="555" y1="145" x2="685" y2="145" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#e2)"/><text x="620" y="132" font-size="16" text-anchor="middle" fill="#3E78B2">🔑 復号</text>
+  <!-- 用語の対応 -->
+  <g font-size="15" text-anchor="middle" fill="#555">
+    <text x="135" y="220" font-weight="700" fill="#3C8A57">元の情報</text>
+    <text x="295" y="220">手順・データ＝<tspan fill="#A6192E" font-weight="700">鍵</tspan></text>
+    <text x="460" y="220" font-weight="700" fill="#A6192E">読めない情報</text>
+    <text x="620" y="220">対の<tspan fill="#3E78B2" font-weight="700">鍵</tspan>で戻す</text>
+    <text x="785" y="220" font-weight="700" fill="#3C8A57">元に戻った</text>
+  </g>
+  <rect x="40" y="245" width="840" height="34" rx="6" fill="#F8E5EA"/><text x="460" y="267" font-size="16" text-anchor="middle" font-weight="700" fill="#7d1322">平文＝green ／ 暗号文＝赤 で色を固定（この講義を通して同じ意味）</text>
+  <defs>
+    <marker id="e1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+    <marker id="e2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3E78B2"/></marker>
+  </defs>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 280" width="100%" style="max-height:285px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 旅バー -->
+  <g font-size="16" text-anchor="middle">
+    <text x="60" y="22" fill="#888">端末</text><text x="118" y="22" fill="#bbb">›</text>
+    <text x="190" y="22" fill="#A6192E" font-weight="800">Wi-Fi/ルータ（住所変換）</text><text x="335" y="22" fill="#bbb">›</text>
+    <text x="430" y="22" fill="#888">DNS</text><text x="490" y="22" fill="#bbb">›</text>
+    <text x="585" y="22" fill="#A6192E" font-weight="800">Internet</text><text x="680" y="22" fill="#bbb">›</text>
+    <text x="770" y="22" fill="#888">サーバ</text><text x="845" y="22" fill="#bbb">›</text><text x="900" y="22" fill="#888">表示</text>
+  </g>
+  <line x1="30" y1="34" x2="910" y2="34" stroke="#eee" stroke-width="2"/>
+  <!-- 家のLAN -->
+  <rect class="card" x="20" y="56" width="300" height="178" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <text x="170" y="80" font-size="17" font-weight="700" text-anchor="middle" fill="#3E78B2">家のLAN（プライベートIP）</text>
+  <g font-family="Menlo,monospace" font-size="16" text-anchor="middle" font-weight="700">
+    <rect class="card" x="42" y="98" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="107" y="121" fill="#2a5680">192.168.0.2</text>
+    <rect class="card" x="42" y="146" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="107" y="169" fill="#2a5680">192.168.0.3</text>
+    <rect class="card" x="186" y="122" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="251" y="145" fill="#2a5680">192.168.0.4</text>
+  </g>
+  <text x="170" y="214" font-size="15" text-anchor="middle" fill="#3E78B2">外には出られない／家庭内で何度でも再利用OK</text>
+  <!-- ルータ NAT -->
+  <rect class="card" x="356" y="120" width="130" height="74" rx="8" fill="#A6192E"/><text x="421" y="152" font-size="18" fill="#fff" font-weight="700" text-anchor="middle">ルータ</text><text x="421" y="176" font-size="16" fill="#fff" text-anchor="middle">NAT変換</text>
+  <line x1="320" y1="157" x2="356" y2="157" stroke="#888" stroke-width="3"/>
+  <line x1="486" y1="157" x2="556" y2="157" stroke="#888" stroke-width="3"/>
+  <!-- グローバルIP -->
+  <g font-family="Menlo,monospace" font-size="17" text-anchor="middle" font-weight="700"><rect class="card" x="556" y="135" width="170" height="44" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/><text x="641" y="163" fill="#a06a1d">203.0.113.7</text></g>
+  <text x="641" y="200" font-size="16" text-anchor="middle" fill="#a06a1d" font-weight="700">グローバルIP（世界に1つ）</text>
+  <line x1="726" y1="157" x2="786" y2="157" stroke="#888" stroke-width="3"/>
+  <ellipse cx="868" cy="157" rx="58" ry="46" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="868" y="163" font-size="17" font-weight="700" text-anchor="middle" fill="#A6192E">Internet</text>
+  <text x="600" y="262" font-size="16" text-anchor="middle" fill="#7d1322" font-weight="700">多数のプライベートIP → 1つのグローバルIPに付け替え</text>
+</svg>

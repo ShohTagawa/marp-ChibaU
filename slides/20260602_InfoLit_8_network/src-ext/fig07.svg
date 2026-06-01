@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- LAN -->
+  <rect class="card" x="20" y="20" width="320" height="118" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <text x="40" y="48" font-size="17" font-weight="700" fill="#3E78B2">LAN（Local Area Network）</text>
+  <text x="40" y="74" font-size="15" fill="#333">範囲＝家・学校・企業など限定</text>
+  <text x="40" y="98" font-size="15" fill="#333">持ち主＝自分／組織が占有・管理</text>
+  <text x="40" y="122" font-size="15" fill="#333">例：自宅Wi-Fi・研究室の有線</text>
+  <!-- WAN -->
+  <rect class="card" x="20" y="160" width="320" height="118" rx="10" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
+  <text x="40" y="188" font-size="17" font-weight="700" fill="#D98A2B">WAN（Wide Area Network）</text>
+  <text x="40" y="214" font-size="15" fill="#333">範囲＝都市・国をまたぐ広域</text>
+  <text x="40" y="238" font-size="15" fill="#333">持ち主＝通信事業者が提供</text>
+  <text x="40" y="262" font-size="15" fill="#333">例：光回線・モバイル網</text>
+</svg>

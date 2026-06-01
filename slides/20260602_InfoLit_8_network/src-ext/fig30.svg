@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" width="100%" style="max-height:140px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-family="Menlo,monospace" text-anchor="middle">
+    <!-- 7ビットを1セルずつ -->
+    <g font-size="26" font-weight="700">
+      <rect x="40" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="64" y="57">1</text>
+      <rect x="96" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="120" y="57">0</text>
+      <rect x="152" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="176" y="57">1</text>
+      <rect x="208" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="232" y="57">1</text>
+      <rect x="264" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="288" y="57">0</text>
+      <rect x="320" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="344" y="57">0</text>
+      <rect x="376" y="24" width="48" height="48" rx="6" fill="#eef4fa" stroke="#3E78B2"/><text x="400" y="57">1</text>
+    </g>
+    <text x="470" y="56" font-size="30" fill="#A6192E" font-weight="800">+</text>
+    <g font-size="26" font-weight="700">
+      <rect x="500" y="24" width="48" height="48" rx="6" fill="#DDEBC8" stroke="#3C8A57" stroke-width="2.5"/><text x="524" y="57" fill="#3C8A57">0</text>
+    </g>
+    <text x="700" y="56" font-size="20" fill="#A6192E" font-weight="800" font-family="var(--font-jp)">→ 送信 10110010</text>
+  </g>
+  <text x="232" y="105" font-size="16" fill="#555" text-anchor="middle" font-family="var(--font-jp)">1の個数 = <tspan font-weight="700">4個（偶数）</tspan></text>
+  <text x="524" y="105" font-size="16" fill="#3C8A57" text-anchor="middle" font-weight="700" font-family="var(--font-jp)">P=0（偶数だから足すのは0）</text>
+  <text x="524" y="20" font-size="15" fill="#777" text-anchor="middle" font-family="var(--font-jp)">パリティ</text>
+</svg>

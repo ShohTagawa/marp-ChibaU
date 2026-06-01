@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 240" width="100%" style="max-height:240px;margin-top:28px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="190" y="20" font-size="16" font-weight="700" text-anchor="middle">B町の6店（数直線）</text>
+  <line x1="30" y1="140" x2="355" y2="140" stroke="#888" stroke-width="2"/>
+  <g font-size="14" fill="#555" text-anchor="middle"><text x="44" y="162">100</text><text x="262" y="162">260</text><text x="330" y="162">300</text></g>
+  <g fill="#D98A2B"><circle cx="44" cy="140" r="7"/><circle cx="262" cy="140" r="7"/><circle cx="277" cy="140" r="7"/><circle cx="292" cy="126" r="7"/><circle cx="292" cy="140" r="7"/><circle cx="292" cy="154" r="7"/></g>
+  <text x="44" y="118" font-size="15" font-weight="700" fill="#A6192E" text-anchor="middle">外れ値</text>
+  <line x1="206" y1="60" x2="206" y2="140" stroke="#A6192E" stroke-width="2.5" stroke-dasharray="5 3"/><text x="206" y="50" font-size="15" font-weight="700" fill="#A6192E" text-anchor="middle">平均 245</text>
+  <line x1="285" y1="200" x2="285" y2="140" stroke="#3C8A57" stroke-width="2.5" stroke-dasharray="5 3"/><text x="285" y="220" font-size="15" font-weight="700" fill="#3C8A57" text-anchor="middle">中央値 275</text>
+  <text x="125" y="200" font-size="14" fill="#555" text-anchor="middle">たった1店の100円が</text>
+  <text x="125" y="218" font-size="14" fill="#555" text-anchor="middle">平均を35円も引き下げる</text>
+</svg>

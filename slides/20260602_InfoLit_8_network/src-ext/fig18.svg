@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" style="max-height:330px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="200" y="24" font-size="18" font-weight="700" text-anchor="middle">TCP/IP（4階層）</text>
+  <text x="680" y="24" font-size="18" font-weight="700" text-anchor="middle">OSI参照モデル（7階層・ISO策定）</text>
+  <!-- TCP/IP 4層 -->
+  <g font-size="16" fill="#fff" text-anchor="middle">
+    <rect x="40" y="40" width="320" height="58" rx="8" fill="#3E78B2" class="card"/><text x="200" y="65" font-weight="700">アプリケーション層</text><text x="200" y="86" font-size="15">HTTP / DNS / FTP</text>
+    <rect x="40" y="106" width="320" height="50" rx="8" fill="#3C8A57" class="card"/><text x="200" y="136" font-weight="700">トランスポート層　TCP / UDP</text>
+    <rect x="40" y="164" width="320" height="50" rx="8" fill="#D98A2B" class="card"/><text x="200" y="194" font-weight="700">インターネット層　IP</text>
+    <rect x="40" y="222" width="320" height="58" rx="8" fill="#6B6F76" class="card"/><text x="200" y="247" font-weight="700">ネットワークIF層</text><text x="200" y="268" font-size="15">Ethernet / Wi-Fi</text>
+  </g>
+  <!-- OSI 7層 -->
+  <g font-size="16" fill="#fff" text-anchor="middle">
+    <rect x="540" y="40" width="320" height="20" rx="5" fill="#3E78B2" class="card"/><text x="700" y="55" font-size="15">7 アプリケーション層</text>
+    <rect x="540" y="63" width="320" height="20" rx="5" fill="#3E78B2"/><text x="700" y="78" font-size="15">6 プレゼンテーション層</text>
+    <rect x="540" y="86" width="320" height="20" rx="5" fill="#3E78B2"/><text x="700" y="101" font-size="15">5 セッション層</text>
+    <rect x="540" y="112" width="320" height="44" rx="6" fill="#3C8A57" class="card"/><text x="700" y="140" font-weight="700">4 トランスポート層</text>
+    <rect x="540" y="164" width="320" height="50" rx="8" fill="#D98A2B" class="card"/><text x="700" y="194" font-weight="700">3 ネットワーク層</text>
+    <rect x="540" y="222" width="320" height="26" rx="5" fill="#6B6F76" class="card"/><text x="700" y="240" font-size="15">2 データリンク層</text>
+    <rect x="540" y="252" width="320" height="28" rx="5" fill="#6B6F76"/><text x="700" y="271" font-size="15">1 物理層</text>
+  </g>
+  <!-- 対応線 -->
+  <g stroke="#A6192E" stroke-width="2.5" stroke-dasharray="5 3">
+    <line x1="360" y1="69" x2="540" y2="73"/>
+    <line x1="360" y1="131" x2="540" y2="134"/>
+    <line x1="360" y1="189" x2="540" y2="189"/>
+    <line x1="360" y1="251" x2="540" y2="251"/>
+  </g>
+  <text x="450" y="300" font-size="15" fill="#7d1322" text-anchor="middle" font-weight="700">OSIの7層をまとめると、ちょうどTCP/IPの4層になる</text>
+</svg>

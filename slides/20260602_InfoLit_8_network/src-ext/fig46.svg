@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" width="100%" style="max-height:280px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u08-arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B6F76"/></marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect class="card" x="14" y="24" width="90" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="59" y="51" font-size="16" font-weight="700">利用者A</text>
+    <rect class="card" x="14" y="118" width="90" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="59" y="145" font-size="16" font-weight="700">利用者B</text>
+    <rect class="card" x="14" y="212" width="90" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="59" y="239" font-size="16" font-weight="700">利用者C</text>
+    <line x1="104" y1="46" x2="142" y2="120" stroke="#6B6F76" stroke-width="2" marker-end="url(#u08-arr2)"/>
+    <line x1="104" y1="139" x2="140" y2="139" stroke="#6B6F76" stroke-width="2" marker-end="url(#u08-arr2)"/>
+    <line x1="104" y1="232" x2="142" y2="158" stroke="#6B6F76" stroke-width="2" marker-end="url(#u08-arr2)"/>
+    <rect class="card" x="146" y="92" width="120" height="96" rx="10" fill="#A6192E"/>
+    <text x="206" y="128" font-size="21" font-weight="800" fill="#fff">DBMS</text>
+    <text x="206" y="154" font-size="15" fill="#fff">問い合わせを</text>
+    <text x="206" y="174" font-size="15" fill="#fff">仲介・制御する</text>
+    <line x1="266" y1="139" x2="296" y2="139" stroke="#6B6F76" stroke-width="2" marker-end="url(#u08-arr2)"/>
+    <ellipse cx="318" cy="112" rx="38" ry="13" fill="#DDEBC8" stroke="#3C8A57" stroke-width="2"/>
+    <path d="M280 112 v56 a38 13 0 0 0 76 0 v-56" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="318" y="150" font-size="16" font-weight="700" fill="#3C8A57">DB</text>
+  </g>
+</svg>

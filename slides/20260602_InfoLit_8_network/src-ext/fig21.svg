@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="100%" style="max-height:215px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="210" y="22" font-size="17" font-weight="700" text-anchor="middle">回線交換（電話）</text>
+  <circle cx="48" cy="100" r="26" fill="#fff" stroke="#6B6F76" stroke-width="2" class="card"/><text x="48" y="106" font-size="16" text-anchor="middle">A</text>
+  <circle cx="372" cy="100" r="26" fill="#fff" stroke="#6B6F76" stroke-width="2" class="card"/><text x="372" y="106" font-size="16" text-anchor="middle">B</text>
+  <line x1="76" y1="100" x2="344" y2="100" stroke="#A6192E" stroke-width="9"/>
+  <text x="210" y="92" font-size="15" fill="#A6192E" text-anchor="middle" font-weight="700">2者で1本を占有</text>
+  <text x="210" y="150" font-size="15" fill="#555" text-anchor="middle">つなぐ間ずっと専有</text>
+  <text x="210" y="172" font-size="15" fill="#D98A2B" text-anchor="middle">→ 他の人は「話し中」</text>
+</svg>

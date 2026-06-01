@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="100%" style="max-height:200px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="140" y="18" font-size="14" font-weight="700" text-anchor="middle">負の相関 ／ 相関なし</text>
+  <line x1="34" y1="165" x2="262" y2="165" stroke="#888"/><line x1="34" y1="165" x2="34" y2="30" stroke="#888"/>
+  <g fill="#3C8A57"><circle cx="58" cy="55" r="4"/><circle cx="86" cy="74" r="4"/><circle cx="112" cy="90" r="4"/><circle cx="140" cy="106" r="4"/><circle cx="172" cy="128" r="4"/><circle cx="208" cy="146" r="4"/></g>
+  <g fill="#999"><circle cx="74" cy="116" r="3.5"/><circle cx="118" cy="62" r="3.5"/><circle cx="160" cy="138" r="3.5"/><circle cx="202" cy="74" r="3.5"/><circle cx="224" cy="120" r="3.5"/></g>
+  <text x="140" y="190" font-size="14" text-anchor="middle"><tspan fill="#3C8A57">緑＝負</tspan><tspan fill="#555"> ／ 灰＝なし</tspan></text>
+</svg>

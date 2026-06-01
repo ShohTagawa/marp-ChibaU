@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 340" width="100%" style="max-height:360px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u10arr-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+    <marker id="u10arr-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B6F76"/></marker>
+  </defs>
+  <!-- 旅プログレスバー：終点（サーバ・表示）を赤で点灯 -->
+  <g font-size="16" text-anchor="middle">
+    <line x1="60" y1="30" x2="900" y2="30" stroke="#ddd" stroke-width="2"/>
+    <circle cx="80"  cy="30" r="6" fill="#ccc"/><text x="80"  y="16" fill="#999">端末</text>
+    <circle cx="244" cy="30" r="6" fill="#ccc"/><text x="244" y="16" fill="#999">Wi-Fi</text>
+    <circle cx="408" cy="30" r="6" fill="#ccc"/><text x="408" y="16" fill="#999">DNS</text>
+    <circle cx="572" cy="30" r="6" fill="#ccc"/><text x="572" y="16" fill="#999">Internet</text>
+    <circle cx="736" cy="30" r="7" fill="#A6192E"/><text x="736" y="16" fill="#A6192E" font-weight="700">サーバ</text>
+    <circle cx="900" cy="30" r="7" fill="#A6192E"/><text x="900" y="16" fill="#A6192E" font-weight="700">表示</text>
+  </g>
+  <!-- 左：自前で「所有」 -->
+  <text x="225" y="78" font-size="18" font-weight="700" text-anchor="middle" fill="#6B6F76">これまで：自前で所有（オンプレミス）</text>
+  <rect class="card" x="70" y="92" width="310" height="210" rx="10" fill="#fff" stroke="#6B6F76" stroke-width="2"/>
+  <g fill="#6B6F76"><rect x="120" y="118" width="210" height="26" rx="4"/><rect x="120" y="150" width="210" height="26" rx="4"/><rect x="120" y="182" width="210" height="26" rx="4"/></g>
+  <g font-size="15" fill="#fff" text-anchor="middle"><text x="225" y="136">サーバを買う</text><text x="225" y="168">設置・電源・空調</text><text x="225" y="200">保守・故障対応</text></g>
+  <text x="225" y="236" font-size="16" text-anchor="middle" fill="#555">初期費用が大・ピークに合わせ過剰に用意</text>
+  <text x="225" y="262" font-size="16" text-anchor="middle" fill="#555">余れば無駄／足りなければ即増設できない</text>
+  <text x="225" y="290" font-size="16" font-weight="700" text-anchor="middle" fill="#6B6F76">＝ 機械を「持つ」</text>
+  <!-- 矢印 -->
+  <line x1="392" y1="200" x2="448" y2="200" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u10arr-red)"/>
+  <text x="420" y="186" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">利用へ</text>
+  <!-- 右：クラウド＝インターネットの雲から借りる -->
+  <text x="700" y="78" font-size="18" font-weight="700" text-anchor="middle" fill="#A6192E">クラウド：ネット越しに利用</text>
+  <ellipse class="card" cx="700" cy="180" rx="180" ry="86" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
+  <text x="700" y="150" font-size="20" font-weight="800" text-anchor="middle" fill="#A6192E">事業者の巨大データセンター</text>
+  <text x="700" y="178" font-size="16" text-anchor="middle" fill="#7d1322">サーバ・電源・保守は事業者がまとめて運用</text>
+  <text x="700" y="204" font-size="16" text-anchor="middle" fill="#7d1322">使った分だけ課金／一瞬で増減できる</text>
+  <!-- 利用者端末 -->
+  <rect class="card" x="610" y="288" width="60" height="40" rx="6" fill="#3E78B2"/><text x="640" y="313" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">PC</text>
+  <rect class="card" x="730" y="288" width="60" height="40" rx="6" fill="#3E78B2"/><text x="760" y="313" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">スマホ</text>
+  <line x1="640" y1="288" x2="675" y2="256" stroke="#6B6F76" stroke-width="2" marker-end="url(#u10arr-gray)"/>
+  <line x1="760" y1="288" x2="725" y2="256" stroke="#6B6F76" stroke-width="2" marker-end="url(#u10arr-gray)"/>
+  <text x="700" y="338" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">＝ 機能を「使う」</text>
+</svg>

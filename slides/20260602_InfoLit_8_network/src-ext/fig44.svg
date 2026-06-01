@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 300" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="190" y="22" font-size="16" font-weight="700" text-anchor="middle" fill="#3C8A57">家庭の無線LANルータ</text>
+  <rect class="card" x="20" y="120" width="80" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="60" y="150" font-size="14" text-anchor="middle">スマホ/PC</text>
+  <!-- ルータ -->
+  <rect class="card" x="150" y="110" width="90" height="70" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2.5"/><text x="195" y="138" font-size="15" text-anchor="middle" fill="#3C8A57" font-weight="700">ルータ</text><text x="195" y="160" font-size="13" text-anchor="middle" fill="#555">192.168.x.1</text>
+  <!-- 電波（green=Wi-Fi） -->
+  <g stroke="#3C8A57" stroke-width="2" fill="none"><path d="M110 145 q14 0 14 -14"/><path d="M110 152 q22 0 22 -22"/><path d="M110 159 q30 0 30 -30"/></g>
+  <ellipse cx="320" cy="145" rx="40" ry="26" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="320" y="150" font-size="14" text-anchor="middle" fill="#A6192E" font-weight="700">Internet</text>
+  <line x1="240" y1="145" x2="280" y2="145" stroke="#888" stroke-width="2"/>
+  <!-- 守りの2点 -->
+  <rect x="20" y="200" width="340" height="40" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="1.5"/><text x="190" y="225" font-size="14" text-anchor="middle" fill="#3C8A57" font-weight="700">① 暗号方式 = WPA2 / WPA3（WEPは×）</text>
+  <rect x="20" y="248" width="340" height="40" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="1.5"/><text x="190" y="273" font-size="14" text-anchor="middle" fill="#3E78B2" font-weight="700">② 管理画面の初期パスワードを変更</text>
+</svg>

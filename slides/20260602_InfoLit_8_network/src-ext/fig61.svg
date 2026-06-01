@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u10arr-d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- 巨大クラウド -->
+  <ellipse class="card" cx="180" cy="70" rx="150" ry="52" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
+  <text x="180" y="60" font-size="17" font-weight="800" text-anchor="middle" fill="#A6192E">巨大クラウド基盤</text>
+  <text x="180" y="84" font-size="14" text-anchor="middle" fill="#7d1322">DNS・経路・設定を1か所で集中管理</text>
+  <!-- 依存する多数サービス -->
+  <g font-size="14" text-anchor="middle">
+    <rect class="card" x="20"  y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="66"  y="194">SNS・配信</text>
+    <rect class="card" x="134" y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="180" y="194">決済・予約</text>
+    <rect class="card" x="248" y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="294" y="194">業務・行政</text>
+  </g>
+  <line x1="120" y1="118" x2="70"  y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <line x1="180" y1="122" x2="180" y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <line x1="240" y1="118" x2="290" y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <text x="180" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#A6192E">1か所の設定ミス → 一斉に停止</text>
+  <text x="180" y="270" font-size="14" text-anchor="middle" fill="#555">便利な集約は、同時に「単一障害点」</text>
+</svg>

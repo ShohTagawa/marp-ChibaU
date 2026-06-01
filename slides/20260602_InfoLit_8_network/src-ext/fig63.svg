@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="arrow-grn-end" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
+  </defs>
+  <!-- 旅プログレスバー：全6点が点灯（緑＝到着済み）、最終地点だけ赤で強調 -->
+  <text x="490" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#3C8A57">旅プログレスバー：全行程クリア</text>
+  <line x1="60" y1="78" x2="920" y2="78" stroke="#3C8A57" stroke-width="3"/>
+  <g font-size="16" text-anchor="middle">
+    <g><rect class="card" x="40" y="50" width="120" height="56" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="100" y="74" font-weight="700">端末</text><text x="100" y="95" font-size="15" fill="#555">スマホ/PC</text></g>
+    <text x="178" y="84" fill="#3C8A57" font-size="22" font-weight="800">→</text>
+    <g><rect class="card" x="196" y="50" width="120" height="56" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="256" y="74" font-weight="700">Wi-Fi / LAN</text><text x="256" y="95" font-size="15" fill="#555">ルータ</text></g>
+    <text x="334" y="84" fill="#3C8A57" font-size="22" font-weight="800">→</text>
+    <g><rect class="card" x="352" y="50" width="120" height="56" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="412" y="74" font-weight="700">DNS</text><text x="412" y="95" font-size="15" fill="#555">名前→IP</text></g>
+    <text x="490" y="84" fill="#3C8A57" font-size="22" font-weight="800">→</text>
+    <g><rect class="card" x="508" y="50" width="140" height="56" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="578" y="74" font-weight="700">インターネット</text><text x="578" y="95" font-size="15" fill="#555">ルータのリレー</text></g>
+    <text x="666" y="84" fill="#3C8A57" font-size="22" font-weight="800">→</text>
+    <g><rect class="card" x="684" y="50" width="120" height="56" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="744" y="74" font-weight="700">Webサーバ</text><text x="744" y="95" font-size="15" fill="#555">HTML/HTTPS</text></g>
+    <text x="822" y="84" fill="#A6192E" font-size="22" font-weight="800">→</text>
+    <g><rect class="card" x="840" y="50" width="100" height="56" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/><text x="890" y="83" font-weight="700" fill="#A6192E">表示</text></g>
+  </g>
+  <!-- 3つのPartで回収 -->
+  <g font-size="16" text-anchor="middle" fill="#333">
+    <rect class="card" x="60" y="150" width="420" height="92" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+    <text x="270" y="176" font-weight="700" font-size="17">Part 1 ネットワークの旅（動画1〜7）</text>
+    <text x="270" y="200" fill="#555">基礎 → IP・ポート → TCP/IP・OSI → パケット配送</text>
+    <text x="270" y="222" fill="#555">→ DNS・URL・HTML → 暗号・公開鍵・署名で安全に</text>
+    <rect class="card" x="500" y="150" width="220" height="92" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="610" y="176" font-weight="700" font-size="17">Part 2 データ（動画8〜9）</text>
+    <text x="610" y="200" fill="#555">DB・SQLで構造化</text>
+    <text x="610" y="222" fill="#555">分析＝相関≠因果</text>
+    <rect class="card" x="740" y="150" width="180" height="92" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
+    <text x="830" y="176" font-weight="700" font-size="17">Part 3 クラウド</text>
+    <text x="830" y="200" fill="#555">IaaS/PaaS/SaaS</text>
+    <text x="830" y="222" fill="#555">GCPで実験（動画10）</text>
+  </g>
+  <text x="490" y="268" text-anchor="middle" font-size="16" fill="#A6192E" font-weight="700">バラバラに見えた10本の動画が、1本の「旅」でつながった</text>
+</svg>

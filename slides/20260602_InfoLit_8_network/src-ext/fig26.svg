@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 572 262" width="100%" style="max-height:265px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-size="16" text-anchor="middle">
+    <rect x="10" y="100" width="96" height="48" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5" class="card"/><text x="58" y="129" font-weight="700">あなたのPC</text>
+    <circle cx="190" cy="62" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="190" y="68">R1</text>
+    <circle cx="190" cy="186" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="190" y="192">R2</text>
+    <circle cx="330" cy="124" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="330" y="130">R3</text>
+    <circle cx="455" cy="62" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="455" y="68">R4</text>
+    <circle cx="455" cy="186" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="455" y="192">R5</text>
+    <rect x="500" y="100" width="60" height="48" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2" class="card"/><text x="530" y="129" font-weight="700">サーバ</text>
+  </g>
+  <!-- 中立配線 -->
+  <g stroke="#ccc" stroke-width="2" fill="none">
+    <line x1="106" y1="120" x2="166" y2="180"/><line x1="216" y1="180" x2="306" y2="140"/>
+    <line x1="216" y1="62" x2="427" y2="62"/><line x1="352" y1="146" x2="430" y2="180"/><line x1="481" y1="186" x2="500" y2="135"/>
+  </g>
+  <!-- 最短経路 赤 3.5 -->
+  <g stroke="#A6192E" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <line x1="106" y1="116" x2="164" y2="72"/>
+    <line x1="216" y1="62" x2="427" y2="62"/>
+    <line x1="479" y1="78" x2="505" y2="100"/>
+  </g>
+  <text x="285" y="240" font-size="16" fill="#A6192E" text-anchor="middle" font-weight="700">赤＝今回の最短経路（PC→R1→R4→サーバ）</text>
+</svg>

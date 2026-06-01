@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="100%" style="max-height:270px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 元データ -->
+  <rect x="20" y="95" width="150" height="64" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2" class="card"/>
+  <text x="95" y="122" font-size="17" text-anchor="middle" font-weight="700">送りたい</text>
+  <text x="95" y="144" font-size="17" text-anchor="middle" font-weight="700">データ</text>
+  <text x="95" y="180" font-size="15" text-anchor="middle" fill="#777">全体 384バイト</text>
+  <text x="200" y="135" font-size="30" fill="#A6192E" font-weight="800">→</text>
+  <!-- 主役：1個のパケット（段ボール）拡大 -->
+  <text x="510" y="40" font-size="18" font-weight="700" text-anchor="middle">パケット1個＝引っ越しの段ボール</text>
+  <rect x="250" y="60" width="520" height="118" rx="10" fill="#fff" stroke="#6B6F76" stroke-width="2.5" class="card"/>
+  <!-- ヘッダ部（送り状＝黄） -->
+  <rect x="262" y="74" width="270" height="90" rx="8" fill="#FBEFC8" stroke="#D98A2B" stroke-width="2"/>
+  <text x="397" y="98" font-size="18" text-anchor="middle" font-weight="700" fill="#8a5a12">ヘッダ（送り状）</text>
+  <text x="278" y="124" font-size="16" fill="#1a1a1a">宛先IP ／ 送信元IP</text>
+  <text x="278" y="148" font-size="16" fill="#1a1a1a">分割番号（何番目／全何個）</text>
+  <!-- データ部（荷物＝青） -->
+  <rect x="546" y="74" width="210" height="90" rx="8" fill="#D9E7F2" stroke="#3E78B2" stroke-width="2"/>
+  <text x="651" y="116" font-size="18" text-anchor="middle" font-weight="700" fill="#1f4d77">データ（荷物の中身）</text>
+  <text x="651" y="140" font-size="15" text-anchor="middle" fill="#555">本体の一部分</text>
+  <!-- 小分け列 -->
+  <g text-anchor="middle">
+    <rect x="300" y="200" width="80" height="36" rx="6" fill="#3E78B2"/><text x="340" y="224" font-size="17" fill="#fff" font-weight="700">1/3</text>
+    <rect x="410" y="200" width="80" height="36" rx="6" fill="#3C8A57"/><text x="450" y="224" font-size="17" fill="#fff" font-weight="700">2/3</text>
+    <rect x="520" y="200" width="80" height="36" rx="6" fill="#D98A2B"/><text x="560" y="224" font-size="17" fill="#fff" font-weight="700">3/3</text>
+    <text x="700" y="224" font-size="16" fill="#555">→ 受信側で番号順に組立て</text>
+  </g>
+</svg>

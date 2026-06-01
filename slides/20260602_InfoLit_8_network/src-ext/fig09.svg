@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <!-- 有線 -->
+  <text x="95" y="24" font-size="16" font-weight="700" text-anchor="middle" fill="#3E78B2">有線：ハブで集線</text>
+  <rect class="card" x="58" y="120" width="74" height="30" rx="6" fill="#3E78B2"/><text x="95" y="141" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">ハブ</text>
+  <g stroke="#3E78B2" stroke-width="2"><line x1="72" y1="120" x2="42" y2="76"/><line x1="95" y1="120" x2="95" y2="70"/><line x1="118" y1="120" x2="148" y2="76"/></g>
+  <g class="card" fill="#fff" stroke="#3E78B2" stroke-width="2"><rect x="20" y="50" width="40" height="28" rx="5"/><rect x="74" y="44" width="40" height="28" rx="5"/><rect x="128" y="50" width="40" height="28" rx="5"/></g>
+  <text x="95" y="178" font-size="15" fill="#555" text-anchor="middle">より対線＋ハブ</text>
+  <!-- 無線 -->
+  <text x="270" y="24" font-size="16" font-weight="700" text-anchor="middle" fill="#3C8A57">無線：APに電波で</text>
+  <rect class="card" x="248" y="120" width="46" height="32" rx="6" fill="#3C8A57"/><text x="271" y="141" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">AP</text>
+  <g fill="none" stroke="#3C8A57" stroke-width="2"><path d="M298 128 q20 -7 20 16"/><path d="M298 137 q30 -10 30 26"/><path d="M244 128 q-20 -7 -20 16"/><path d="M244 137 q-30 -10 -30 26"/></g>
+  <g class="card" fill="#fff" stroke="#3C8A57" stroke-width="2"><rect x="320" y="150" width="34" height="26" rx="5"/><rect x="188" y="150" width="34" height="26" rx="5"/></g>
+  <text x="270" y="200" font-size="15" fill="#555" text-anchor="middle">アクセスポイント(親機)</text>
+  <!-- ルータへ -->
+  <line x1="20" y1="240" x2="340" y2="240" stroke="#ccc" stroke-width="2"/>
+  <rect class="card" x="148" y="252" width="64" height="34" rx="8" fill="#A6192E"/><text x="180" y="274" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">ルータ</text>
+  <text x="180" y="234" font-size="14" fill="#888" text-anchor="middle">どちらも最後はルータでWANへ</text>
+</svg>

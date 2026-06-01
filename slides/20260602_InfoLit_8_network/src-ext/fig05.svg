@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" width="100%" style="max-height:320px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g text-anchor="middle">
+    <text x="460" y="34" font-size="20" font-weight="700">学習法の効果は「やり方」で大きく変わる（Dunlosky ら 2013）</text>
+    <rect class="card" x="40" y="60" width="410" height="200" rx="10" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="245" y="90" font-size="18" font-weight="700" fill="#3C8A57">効果が高い（実践向き）</text>
+    <text x="245" y="124" font-size="16">・<tspan font-weight="700">想起練習</tspan>（思い出してテストする）</text>
+    <text x="245" y="154" font-size="16">・<tspan font-weight="700">分散学習</tspan>（間隔をあけて繰り返す）</text>
+    <text x="245" y="190" font-size="15" fill="#555">＝ ① 実験する・dig で試す・自分で説明し直す</text>
+    <text x="245" y="214" font-size="15" fill="#555">　 ＝「手を動かして思い出す」学び方</text>
+    <rect class="card" x="470" y="60" width="410" height="200" rx="10" fill="#ECECEC" stroke="#6B6F76" stroke-width="2"/>
+    <text x="675" y="90" font-size="18" font-weight="700" fill="#6B6F76">効果が低め（やった気だけ）</text>
+    <text x="675" y="124" font-size="16">・<tspan font-weight="700">読み返し</tspan>だけ</text>
+    <text x="675" y="154" font-size="16">・<tspan font-weight="700">マーカーを引く</tspan>だけ</text>
+    <text x="675" y="190" font-size="15" fill="#555">＝ AI の答えを「眺めて満足」も、これに近い</text>
+    <text x="675" y="214" font-size="15" fill="#555">　 受け身では定着しにくい</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 60" width="100%" style="max-height:42px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-size="15" text-anchor="middle">
+    <line x1="60" y1="30" x2="920" y2="30" stroke="#ddd" stroke-width="3"/>
+    <g fill="#bbb"><circle cx="60" cy="30" r="7"/><circle cx="232" cy="30" r="7"/><circle cx="404" cy="30" r="7"/><circle cx="576" cy="30" r="7"/></g>
+    <circle cx="748" cy="30" r="9" fill="#A6192E"/><circle cx="920" cy="30" r="9" fill="#A6192E"/>
+    <g fill="#888"><text x="60" y="54">端末</text><text x="232" y="54">Wi-Fi</text><text x="404" y="54">DNS</text><text x="576" y="54">Internet</text></g>
+    <g fill="#A6192E" font-weight="700"><text x="748" y="54">サーバ</text><text x="920" y="54">表示</text></g>
+  </g>
+</svg>

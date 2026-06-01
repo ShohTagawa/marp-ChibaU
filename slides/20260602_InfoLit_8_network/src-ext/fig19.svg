@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" width="100%" style="max-height:300px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <text x="180" y="20" font-size="15" text-anchor="middle" font-weight="700">送信側：上から下へ包む ↓</text>
+  <rect x="8" y="34" width="344" height="206" rx="8" fill="#6B6F76" class="card"/>
+  <text x="22" y="54" font-size="15" fill="#fff" font-weight="700">④ Ethernetヘッダ</text>
+  <rect x="44" y="64" width="272" height="146" rx="8" fill="#D98A2B"/>
+  <text x="58" y="84" font-size="15" fill="#fff" font-weight="700">③ IPヘッダ（宛先IP）</text>
+  <rect x="80" y="94" width="200" height="106" rx="8" fill="#3C8A57"/>
+  <text x="94" y="114" font-size="15" fill="#fff" font-weight="700">② TCPヘッダ（ポート）</text>
+  <rect x="112" y="124" width="136" height="64" rx="8" fill="#3E78B2"/>
+  <text x="180" y="150" font-size="15" fill="#fff" font-weight="700" text-anchor="middle">① HTTP</text>
+  <text x="180" y="172" font-size="14" fill="#fff" text-anchor="middle">データ本体</text>
+  <text x="180" y="262" font-size="15" fill="#7d1322" text-anchor="middle" font-weight="700">受信側は逆順に</text>
+  <text x="180" y="284" font-size="15" fill="#7d1322" text-anchor="middle" font-weight="700">外側からヘッダを外す ↑</text>
+</svg>

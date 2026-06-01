@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 340" width="100%" style="max-height:350px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u08-arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- 元テーブル -->
+  <g text-anchor="middle">
+    <text x="160" y="28" font-size="17" font-weight="700">蔵書テーブル</text>
+    <rect class="card" x="24" y="40" width="300" height="150" fill="#fff" stroke="#888"/>
+    <line x1="24" y1="70" x2="324" y2="70" stroke="#888"/>
+    <line x1="124" y1="40" x2="124" y2="190" stroke="#888"/><line x1="224" y1="40" x2="224" y2="190" stroke="#888"/>
+    <text x="74" y="62" font-size="15" font-weight="700" fill="#3E78B2">タイトル</text><text x="174" y="62" font-size="15" font-weight="700" fill="#A6192E">著者</text><text x="274" y="62" font-size="15" font-weight="700">出版社</text>
+    <text x="74" y="98" font-size="15">情報の科学</text><text x="174" y="98" font-size="15">海浜</text><text x="274" y="98" font-size="15">A社</text>
+    <text x="74" y="134" font-size="15">ネット入門</text><text x="174" y="134" font-size="15">千葉</text><text x="274" y="134" font-size="15">B社</text>
+    <text x="74" y="170" font-size="15">データ論</text><text x="174" y="170" font-size="15">海浜</text><text x="274" y="170" font-size="15">C社</text>
+  </g>
+  <!-- 3操作 -->
+  <g text-anchor="middle">
+    <rect class="card" x="356" y="44" width="200" height="42" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+    <text x="416" y="63" font-size="16" font-weight="700" fill="#3E78B2">選択</text><text x="416" y="80" font-size="14" fill="#555">条件に合う<tspan font-weight="700" fill="#3E78B2">行</tspan>を取り出す</text>
+    <rect class="card" x="356" y="96" width="200" height="42" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
+    <text x="416" y="115" font-size="16" font-weight="700" fill="#D98A2B">射影</text><text x="416" y="132" font-size="14" fill="#555">特定の<tspan font-weight="700" fill="#D98A2B">列</tspan>を取り出す</text>
+    <rect class="card" x="356" y="148" width="200" height="42" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="416" y="167" font-size="16" font-weight="700" fill="#3C8A57">結合</text><text x="416" y="184" font-size="14" fill="#555">複数の表をつなぐ(JOIN)</text>
+  </g>
+  <line x1="566" y1="116" x2="606" y2="116" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u08-arr3)"/>
+  <!-- SQL文と結果 -->
+  <g>
+    <rect class="card" x="614" y="40" width="306" height="74" rx="6" fill="#F8E5EA" stroke="#A6192E"/>
+    <text x="630" y="68" font-size="16" font-weight="700" fill="#7d1322" font-family="Menlo,Consolas,monospace">SELECT タイトル FROM 蔵書</text>
+    <text x="630" y="98" font-size="16" font-weight="700" fill="#7d1322" font-family="Menlo,Consolas,monospace">WHERE 著者='海浜';</text>
+    <text x="767" y="138" font-size="15" fill="#555" text-anchor="middle">射影＝SELECT で列を選ぶ／選択＝WHERE で行を絞る</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="767" y="168" font-size="15" font-weight="700">→ 結果（射影された1列＋選択された2行）</text>
+    <rect class="card" x="657" y="178" width="220" height="92" fill="#fff" stroke="#888"/>
+    <line x1="657" y1="206" x2="877" y2="206" stroke="#888"/>
+    <text x="767" y="198" font-size="15" font-weight="700" fill="#3E78B2">タイトル</text>
+    <text x="767" y="232" font-size="15">情報の科学</text>
+    <text x="767" y="258" font-size="15">データ論</text>
+  </g>
+  <!-- 手計算的キャプション帯 -->
+  <text x="470" y="300" font-size="15" fill="#555" text-anchor="middle">結合してできた新しい表に、さらに選択・射影をかけられる。だから種類ごとに小さい表＋結合が効率的。</text>
+  <rect x="150" y="312" width="640" height="22" rx="6" fill="#FBEFC8" stroke="#ecd98f"/>
+  <text x="470" y="328" font-size="14" font-weight="700" text-anchor="middle">取り違え注意：選択＝行（レコード）／ 射影＝列（フィールド）</text>
+</svg>

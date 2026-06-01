@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 320" width="100%" style="max-height:340px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u08-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- 旅プログレスバー（端末→Wi-Fi→DNS→Internet→サーバ→表示／現在地=届いた先のデータ＝赤） -->
+  <g font-size="14" text-anchor="middle">
+    <rect x="20" y="8" width="100" height="26" rx="6" fill="#fff" stroke="#cccccc"/><text x="70" y="26" fill="#555">端末</text>
+    <rect x="148" y="8" width="100" height="26" rx="6" fill="#fff" stroke="#cccccc"/><text x="198" y="26" fill="#555">Wi-Fi</text>
+    <rect x="276" y="8" width="100" height="26" rx="6" fill="#fff" stroke="#cccccc"/><text x="326" y="26" fill="#555">DNS</text>
+    <rect x="404" y="8" width="120" height="26" rx="6" fill="#fff" stroke="#cccccc"/><text x="464" y="26" fill="#555">Internet</text>
+    <rect x="552" y="8" width="120" height="26" rx="6" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="612" y="26" font-weight="700" fill="#7d1322">サーバのDB</text>
+    <text x="700" y="26" fill="#999">→ 表示</text>
+  </g>
+  <g text-anchor="middle">
+    <rect class="card" x="30" y="76" width="230" height="170" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+    <text x="145" y="104" font-size="18" font-weight="700" fill="#3E78B2">① 構造化データ</text>
+    <text x="145" y="132" font-size="15" fill="#555">一定の形式で表現</text>
+    <rect x="55" y="146" width="180" height="84" rx="6" fill="#fff" stroke="#888"/>
+    <line x1="55" y1="170" x2="235" y2="170" stroke="#888"/>
+    <line x1="145" y1="146" x2="145" y2="230" stroke="#888"/>
+    <text x="100" y="163" font-size="14" font-weight="700" fill="#3E78B2">書名</text><text x="190" y="163" font-size="14" font-weight="700" fill="#A6192E">著者</text>
+    <text x="100" y="190" font-size="14">情報の科学</text><text x="190" y="190" font-size="14">海浜</text>
+    <text x="100" y="216" font-size="14">ネット入門</text><text x="190" y="216" font-size="14">千葉</text>
+    <line x1="262" y1="161" x2="312" y2="161" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u08-arr)"/>
+    <rect class="card" x="318" y="76" width="230" height="170" rx="10" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="433" y="104" font-size="18" font-weight="700" fill="#3C8A57">② データベース</text>
+    <text x="433" y="132" font-size="15" fill="#555">集めて蓄積する</text>
+    <ellipse cx="433" cy="166" rx="62" ry="14" fill="#DDEBC8" stroke="#3C8A57" stroke-width="2"/>
+    <path d="M371 166 v52 a62 14 0 0 0 124 0 v-52" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="433" y="206" font-size="16" font-weight="700" fill="#3C8A57">蓄積</text>
+    <line x1="550" y1="161" x2="600" y2="161" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u08-arr)"/>
+    <rect class="card" x="606" y="76" width="304" height="170" rx="10" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
+    <text x="758" y="104" font-size="18" font-weight="700" fill="#7d1322">③ 検索（取り出す）</text>
+    <text x="758" y="134" font-size="15" fill="#555">目的に応じて整理し、必要な分だけ引き出す</text>
+    <rect x="636" y="150" width="244" height="78" rx="6" fill="#fff" stroke="#A6192E"/>
+    <text x="758" y="178" font-size="15" font-weight="700">「著者＝海浜」の本は？</text>
+    <text x="758" y="208" font-size="16" font-weight="800" fill="#7d1322">→ 情報の科学</text>
+    <text x="470" y="282" font-size="15" fill="#555">整理の決まり＝<tspan font-weight="700">データモデル</tspan>。身近な非コンピュータDB＝辞書・紙の名簿。非構造データはサーチエンジンの<tspan font-weight="700">全文検索</tspan>で探す。</text>
+  </g>
+</svg>

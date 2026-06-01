@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 492 242" width="100%" style="max-height:240px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <defs>
+    <marker id="u2w-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+  </defs>
+  <!-- 旅バー -->
+  <g font-size="14" text-anchor="middle">
+    <line x1="40" y1="26" x2="440" y2="26" stroke="#ddd" stroke-width="2"/>
+    <circle cx="55"  cy="26" r="6" fill="#A6192E"/><text x="55"  y="14" fill="#A6192E" font-weight="700">端末</text>
+    <circle cx="170" cy="26" r="6" fill="#A6192E"/><text x="170" y="14" fill="#A6192E" font-weight="700">モバイル網</text>
+    <circle cx="300" cy="26" r="5" fill="#ccc"/><text x="300" y="14" fill="#999">Internet</text>
+    <circle cx="425" cy="26" r="5" fill="#ccc"/><text x="425" y="14" fill="#999">サーバ</text>
+  </g>
+  <rect class="card" x="14" y="110" width="56" height="40" rx="6" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="42" y="135" font-size="14" text-anchor="middle">スマホ</text>
+  <g fill="none" stroke="#D98A2B" stroke-width="2"><path d="M74 118 q16 -7 16 14"/><path d="M74 128 q26 -10 26 24"/></g>
+  <path d="M150 148 L132 88 L168 88 Z" fill="#D98A2B"/><line x1="150" y1="88" x2="150" y2="62" stroke="#D98A2B" stroke-width="3"/><text x="150" y="170" font-size="14" text-anchor="middle">基地局</text>
+  <line x1="170" y1="128" x2="232" y2="128" stroke="#3C8A57" stroke-width="3"/><text x="201" y="118" font-size="14" text-anchor="middle" fill="#3C8A57">光ファイバ</text>
+  <rect class="card" x="232" y="108" width="96" height="40" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="280" y="133" font-size="15" text-anchor="middle">基幹網</text>
+  <line x1="328" y1="128" x2="378" y2="128" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2w-red)"/>
+  <ellipse class="card" cx="430" cy="128" rx="48" ry="34" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="430" y="133" font-size="15" font-weight="700" text-anchor="middle" fill="#A6192E">Internet</text>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="100%" style="max-height:130px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-family="Menlo,monospace" font-size="20" text-anchor="middle">
+    <rect x="14" y="30" width="270" height="44" rx="6" fill="#eef4fa"/><text x="149" y="59">0110 1001</text>
+    <rect x="296" y="30" width="110" height="44" rx="6" fill="#F8E5EA"/><text x="351" y="59" font-weight="700" fill="#A6192E">P=0</text>
+  </g>
+  <text x="149" y="98" font-size="15" fill="#555" text-anchor="middle">1の個数を数える（偶数）</text>
+  <text x="351" y="98" font-size="15" fill="#A6192E" text-anchor="middle" font-weight="700">→ 1ビット付加</text>
+</svg>

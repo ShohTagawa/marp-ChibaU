@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="100%" style="max-height:250px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <circle cx="78" cy="92" r="36" fill="#fff" stroke="#3E78B2" stroke-width="2.5" class="card"/>
+  <text x="78" y="88" font-size="15" font-weight="700" text-anchor="middle">ピッチャー</text>
+  <text x="78" y="106" font-size="14" fill="#555" text-anchor="middle">送り手</text>
+  <circle cx="282" cy="92" r="36" fill="#fff" stroke="#A6192E" stroke-width="2.5" class="card"/>
+  <text x="282" y="88" font-size="15" font-weight="700" text-anchor="middle">キャッチャー</text>
+  <text x="282" y="106" font-size="14" fill="#555" text-anchor="middle">受け手</text>
+  <line x1="244" y1="76" x2="116" y2="76" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u4pa)"/>
+  <text x="180" y="68" font-size="15" text-anchor="middle" fill="#3C8A57" font-weight="700">サインを出す</text>
+  <line x1="116" y1="108" x2="244" y2="108" stroke="#D98A2B" stroke-width="2.5" marker-end="url(#u4pb)"/>
+  <text x="180" y="126" font-size="15" text-anchor="middle" fill="#D98A2B" font-weight="700">頷く／首を振る</text>
+  <defs>
+    <marker id="u4pa" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
+    <marker id="u4pb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#D98A2B"/></marker>
+  </defs>
+  <rect x="40" y="158" width="280" height="58" rx="8" fill="#F8E5EA" class="card"/>
+  <text x="180" y="182" font-size="16" fill="#7d1322" text-anchor="middle" font-weight="700">「事前に取り決めた合図」があるから</text>
+  <text x="180" y="204" font-size="16" fill="#7d1322" text-anchor="middle" font-weight="700">意思疎通できる ＝ プロトコル</text>
+</svg>

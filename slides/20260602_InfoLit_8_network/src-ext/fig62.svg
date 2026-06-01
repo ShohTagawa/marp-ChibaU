@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="100%" style="max-height:280px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <g font-size="15" text-anchor="middle">
+    <rect class="card" x="20"  y="200" width="240" height="40" rx="6" fill="#cfe0f0"/><text x="140" y="225" font-weight="700">無料枠・無料ツールで始める</text>
+    <rect class="card" x="55"  y="150" width="240" height="40" rx="6" fill="#a9c6e6"/><text x="175" y="175" font-weight="700">ハンズオンで操作してみる</text>
+    <rect class="card" x="90"  y="100" width="240" height="40" rx="6" fill="#7faedb"/><text x="210" y="125" font-weight="700" fill="#fff">作って・壊して・直す</text>
+    <rect class="card" x="125" y="50"  width="225" height="40" rx="6" fill="#3E78B2"/><text x="237" y="75"  font-weight="700" fill="#fff">中身を理解した使い手へ</text>
+  </g>
+  <text x="180" y="34" font-size="15" font-weight="700" fill="#A6192E" text-anchor="middle">↑ 積み上げて学び続ける</text>
+</svg>

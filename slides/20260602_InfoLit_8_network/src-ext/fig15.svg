@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" width="100%" style="max-height:330px"><style>text{font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Noto Sans JP","Meiryo",sans-serif;}.card{filter:drop-shadow(0 2px 3px rgba(0,0,0,.12));}</style>
+  <rect class="card" x="70" y="34" width="220" height="270" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2.5"/>
+  <rect x="70" y="34" width="220" height="44" rx="8" fill="#6B6F76"/>
+  <text x="180" y="63" font-size="16" fill="#fff" font-weight="700" text-anchor="middle" font-family="Menlo,monospace">203.0.113.5</text>
+  <text x="180" y="98" font-size="15" fill="#6B6F76" text-anchor="middle">この1台の中の「部屋」を番号で指定</text>
+  <g text-anchor="middle" font-family="Menlo,monospace">
+    <rect class="card" x="92" y="112" width="176" height="44" rx="8" fill="#F8E5EA"/><text x="180" y="140" font-size="17" font-weight="700" fill="#7d1322">:80　HTTP</text>
+    <rect class="card" x="92" y="166" width="176" height="44" rx="8" fill="#F8E5EA"/><text x="180" y="194" font-size="17" font-weight="700" fill="#7d1322">:443　HTTPS</text>
+    <rect class="card" x="92" y="220" width="176" height="44" rx="8" fill="#fdf3e8"/><text x="180" y="248" font-size="17" font-weight="700" fill="#a06a1d">:8000　自作</text>
+  </g>
+  <text x="180" y="288" font-size="15" fill="#6B6F76" text-anchor="middle" font-family="var(--font-jp)">同じ住所でも部屋ごとに別サービス</text>
+</svg>

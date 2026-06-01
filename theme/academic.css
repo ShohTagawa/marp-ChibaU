@@ -167,9 +167,13 @@ section > header .hdr-logo {
 section .page-title {
   position: absolute;
   top: 0;
-  /* スライド横幅の30%〜58%を占める濃赤ブロック */
-  left: 30%;
-  width: 28%;       /* 58% - 30% */
+  /* 既定はスライド横幅の30%〜58%を占める濃赤ブロック。
+     --pt-left / --pt-width を上書きすれば位置・幅を調整できる。
+     左帯に噛み合わせたい場合は --pt-left を次の式にする：
+       calc(var(--hdr-left-w) - var(--hdr-slant) + var(--hdr-gap))
+     （--hdr-gap が +なら白い隙間、0で密着、-で重ねて白消し） */
+  left: var(--pt-left, 30%);
+  width: var(--pt-width, 28%);
   height: var(--header-h);
   min-height: var(--header-h);
   max-height: var(--header-h);

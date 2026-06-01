@@ -141,6 +141,33 @@ style: |
 - **Noto Sans JP**：`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap'); :root { --font-jp: "Noto Sans JP", sans-serif; }`
 - **Google Sans**：Webfont として公開されていない。ローカルにインストール済みの環境でのみ `:root { --font-jp: "Google Sans", "Noto Sans JP", sans-serif; }` を使う
 
+### ヘッダー帯の幅・噛み合わせの調整つまみ
+
+左の赤帯（デックタイトル）と中央の濃赤帯（ページタイトル）の幅・位置は、frontmatter の `style:` で **CSS変数を上書きするだけ** で調整できる。CSS本体は触らない。
+
+```yaml
+style: |
+  :root {
+    --hdr-left-w: 23%;   /* 左の赤帯の幅。タイトルの長さに合わせて伸縮 */
+    --pt-width:   32%;   /* 中央ページタイトル帯の幅(文字が折り返すなら広く) */
+    /* 左帯と中央帯の「白い隙間」つまみ：
+         4px  → 既定デザイン：2帯の間に白い隙間が出る(これはこれでカッコいい)
+         0    → 隙間ゼロでピタッと接する
+         -4px → 重ねて白を完全に消す                                      */
+    --hdr-gap:   -4px;
+    /* ↓この式は触らなくてよい(左帯の右スラントに中央帯を噛み合わせる) */
+    --pt-left: calc(var(--hdr-left-w) - var(--hdr-slant) + var(--hdr-gap));
+  }
+```
+
+- 普段いじるのは **`--hdr-gap`**（白い隙間の有無）と **`--hdr-left-w`**（左帯の長さ）の2つだけ。
+- `--pt-left` の calc 式と `--hdr-slant`(=22px, 斜めカット幅) は既定のまま使う。
+- `--pt-left` / `--pt-width` を **設定しなければ既定レイアウト**（テーマCSSのフォールバック値）になるので、調整不要なデックでは丸ごと省略してよい。
+- **表紙だけ左帯を短くしたい**等の「特定パターンのみ変えたい」場合は、`:root` ではなくそのクラスに対して上書きする：
+  ```yaml
+  section.cover-hero { --hdr-left-w: 19%; }  /* 表紙は中央帯が無いので文字幅に詰める */
+  ```
+
 ## Arguments / 引数の慣習
 
 最初に必要な情報を整理する。曖昧なら **1回だけ** AskUserQuestion で集約する。

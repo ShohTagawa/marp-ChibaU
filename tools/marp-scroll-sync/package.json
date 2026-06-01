@@ -1,0 +1,42 @@
+{
+  "name": "marp-scroll-sync",
+  "displayName": "Marp Scroll Sync (ChibaU)",
+  "description": "編集中のカーソル行が Marp の何枚目かを表示し、サイドのプレビューをそのスライドへ自動スクロールする双方向同期プレビュー",
+  "version": "0.1.0",
+  "publisher": "chiba-u-local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "marpScrollSync.openPreview",
+        "title": "Marp: Open Synced Preview (side)",
+        "category": "Marp Sync"
+      },
+      {
+        "command": "marpScrollSync.gotoSlide",
+        "title": "Marp: Go to Slide by number…",
+        "category": "Marp Sync"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "marpScrollSync.openPreview",
+        "key": "ctrl+k m",
+        "mac": "cmd+k m",
+        "when": "editorLangId == markdown"
+      }
+    ]
+  },
+  "dependencies": {
+    "@marp-team/marp-core": "^4.1.0"
+  }
+}

@@ -439,14 +439,14 @@ style: |
   <text x="190" y="18" font-size="13" font-weight="700" text-anchor="middle">サブネットマスク 255.255.255.0 ＝ /24</text>
   <rect x="10" y="30" width="270" height="36" rx="5" fill="#3E78B2"/><text x="145" y="53" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">ネットワーク部（24）</text>
   <rect x="282" y="30" width="88" height="36" rx="5" fill="#D98A2B"/><text x="326" y="53" font-size="12" fill="#fff" font-weight="700" text-anchor="middle">ホスト(8)</text>
-  <g font-family="Menlo,monospace" font-size="15" text-anchor="middle">
-    <text x="118" y="105" font-weight="700">192.168.100.</text><text x="248" y="105" fill="#D98A2B" font-weight="700">10</text>
-    <text x="118" y="132" font-weight="700">192.168.100.</text><text x="248" y="132" fill="#D98A2B" font-weight="700">20</text>
+  <g font-family="Menlo,monospace" font-size="15" text-anchor="start">
+    <text x="60" y="105" font-weight="700">192.168.100.</text><text x="168" y="105" fill="#D98A2B" font-weight="700">10</text>
+    <text x="60" y="132" font-weight="700">192.168.100.</text><text x="168" y="132" fill="#D98A2B" font-weight="700">20</text>
   </g>
   <rect x="35" y="86" width="205" height="56" rx="8" fill="none" stroke="#3E78B2" stroke-width="2"/>
   <text x="137" y="162" font-size="13" fill="#3E78B2" font-weight="700" text-anchor="middle">ネットワーク部が同じ → 同じLAN</text>
-  <g font-family="Menlo,monospace" font-size="15" text-anchor="middle">
-    <text x="170" y="210" font-weight="700">10.0.0.</text><text x="228" y="210" fill="#D98A2B" font-weight="700">5</text>
+  <g font-family="Menlo,monospace" font-size="15" text-anchor="start">
+    <text x="120" y="210" font-weight="700">10.0.0.</text><text x="183" y="210" fill="#D98A2B" font-weight="700">5</text>
   </g>
   <text x="190" y="240" font-size="12" fill="#A6192E" text-anchor="middle">↑ ネットワーク部が違う → 別ネットワーク</text>
 </svg>

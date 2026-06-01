@@ -36,6 +36,14 @@ style: |
   .episode .h { font-weight:700; color:var(--accent); font-size:16px; letter-spacing:.04em; }
   .demo { background:#FFF6E5; border:2px solid #D98A2B; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:19px; font-weight:700; }
   .demo::before { content:"🎬 録画デモ "; color:#D98A2B; }
+  /* まとめ(wrap)は1枚のみ。箇条書きが多いので少し詰める（最小18px厳守） */
+  section.wrap ul { font-size:20px; }
+  section.wrap ul li { margin:6px 0; line-height:1.4; padding-left:28px; }
+  section.wrap .grid2 { gap:24px; }
+  section.wrap .episode { font-size:18px; margin:6px 0; }
+  /* ヘッダー右側（page-title〜右端の白い空白）を淡赤の帯で埋める。赤ベースラインは帯の上に残す。 */
+  section > header { background: linear-gradient(90deg, transparent 0 48%, var(--accent-soft) 48% 100%); }
+  section > header::after { z-index: 2; }
 ---
 
 
@@ -101,7 +109,7 @@ style: |
 ## 「URL を入れてからページが出るまで」を1本の旅として追う
 
 <div class="fig-area">
-<svg viewBox="0 0 980 360" width="100%" style="max-height:360px">
+<svg viewBox="0 0 980 360" width="100%" style="max-height:300px">
   <defs>
     <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -146,9 +154,9 @@ style: |
 
 <div class="band">各動画のページ上部に同じ <strong>旅バー</strong> を小さく置き、<span class="hl">いま旅のどこの話か</span>を赤で点灯します。</div>
 
-<div class="episode" style="margin-top:8px"><span class="h">なぜ学ぶか</span> 2025年11月18日、ネットインフラ Cloudflare で <strong>設定用の内部ファイルが想定の倍以上に肥大化</strong>して処理が停止し、X・ChatGPT 等が数時間にわたり世界規模でエラーに。サイバー攻撃ではなく地味なバグ。仕組みを知ると「なぜ落ちたか」を自分で読み解ける。</div>
+<div class="episode" style="margin-top:8px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare で <strong>設定ファイルが想定の倍以上に肥大化</strong>して処理停止、X・ChatGPT 等が世界規模でエラーに。サイバー攻撃ではなく地味なバグ。仕組みを知ると「なぜ落ちたか」を自分で読み解ける。</div>
 
-<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」 https://blog.cloudflare.com/18-november-2025-outage/</div>
+<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」</div>
 
 <div class="takeaway">ゴールは1つ ── 「URL を入れてからページが出るまで」を自分で説明できること</div>
 
@@ -218,7 +226,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 340" width="100%" style="max-height:340px">
+<svg viewBox="-6 -6 372 352" width="100%" style="max-height:340px">
   <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
   <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
   <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">5つのモード</text>
@@ -294,10 +302,8 @@ style: |
 
 <div class="episode"><div class="h">なぜ「中身」を学ぶのか</div>
 
-2025年11月18日、ネットの土台を支える Cloudflare で <span class="hl-dark">設定用の内部ファイルが想定の倍以上に肥大化</span>して処理が停止し、X・ChatGPT など多数のサービスが数時間にわたり世界規模でエラーに。原因はサイバー攻撃ではなく地味なバグ。
-
-AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕組みを知らなければ答えの正否を判断できない</span>。だから中身を学ぶ。
-<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」 https://blog.cloudflare.com/18-november-2025-outage/</div>
+2025年11月18日、ネットの土台 Cloudflare で <span class="hl-dark">設定ファイルが想定の倍以上に肥大化</span>して処理停止、X・ChatGPT など多数のサービスが世界規模でエラーに。サイバー攻撃ではなく地味なバグ。AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕組みを知らなければ答えの正否を判断できない</span>。だから中身を学ぶ。
+<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」</div>
 </div>
 
 <div class="ask">あなたが「分からないこと」に出会ったとき、最初に動かすのはどのモード？</div>
@@ -604,7 +610,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </div></div>
 
 <div class="episode"><div class="h">なぜ学ぶか｜偽Wi-Fi（Evil Twin）</div>
-2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のSNS・メールのログイン情報を盗んだ人物が連邦警察に逮捕。「便利な入口」は「最も狙われる入口」でもある。
+2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が連邦警察に逮捕。便利な入口は、最も狙われる入口でもある。
 <div class="src">出典: kaspersky.co.jp / Evil Twin attacks</div>
 </div>
 
@@ -650,7 +656,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 <div class="fig-area">
 <div class="grid2" style="width:98%;align-items:center">
 <div>
-<svg viewBox="0 0 480 230" width="100%" style="max-height:240px">
+<svg viewBox="-6 -6 492 242" width="100%" style="max-height:240px">
   <defs>
     <marker id="u2w-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -857,7 +863,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 ## LAN内はプライベート、世界に出る時だけグローバル <span class="important">重要</span>
 
 <div class="fig-area">
-<svg viewBox="0 0 940 280" width="100%" style="max-height:320px">
+<svg viewBox="0 0 940 280" width="100%" style="max-height:285px">
   <!-- 旅バー -->
   <g font-size="16" text-anchor="middle">
     <text x="60" y="22" fill="#888">端末</text><text x="118" y="22" fill="#bbb">›</text>
@@ -889,7 +895,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </svg>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は本体ではなく外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia <a href="https://www.itmedia.co.jp/news/articles/2303/28/news179.html">www.itmedia.co.jp/news/articles/2303/28/news179.html</a></span></div>
+<div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia（2023-03-28）</span></div>
 
 <div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（約3.4×10³⁸、1兆×1兆×1兆級）</span>でほぼ枯渇しない。</div>
 
@@ -992,6 +998,14 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 
 <!-- _class: split -->
 
+<style scoped>
+  section.split { padding-bottom: 44px; }
+  section.split .split-body { min-height: 300px; }
+  section.split .cbox { margin: 6px 0; }
+  section.split .episode { font-size: 18px; margin: 6px 0; }
+  section.split .ask { margin: 6px 0; }
+</style>
+
 <div class="page-title">プロトコルとは</div>
 
 ## 通信プロトコル＝あらかじめ定めた「規約・手順」 <span class="important">重要</span>
@@ -1037,7 +1051,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </div></div>
 
 <div class="episode"><div class="h">なぜ学ぶか ｜ 約束が破れると都市が止まる</div>
-暗号化されていない<span class="red">スマート信号機</span>を「青のまま固定」へ改ざんできた事例が報告された。設計が甘いと交通インフラごと操作される。
+暗号化されていない<span class="red">スマート信号機</span>を「青のまま固定」に改ざんできた事例が報告。設計が甘いと交通インフラごと操作される。
 <div class="src">出典: Trend Micro / 総務省ガイドライン第3.0版(2024)</div></div>
 
 </div>
@@ -1368,7 +1382,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 <div class="fig-area">
 <div class="grid2" style="width:97%;grid-template-columns:1.5fr 1fr;align-items:center">
 <div>
-<svg viewBox="0 0 560 250" width="100%" style="max-height:265px">
+<svg viewBox="-6 -6 572 262" width="100%" style="max-height:265px">
   <g font-size="16" text-anchor="middle">
     <rect x="10" y="100" width="96" height="48" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5" class="card"/><text x="58" y="129" font-weight="700">あなたのPC</text>
     <circle cx="190" cy="62" r="28" fill="#eef4fa" stroke="#3E78B2" stroke-width="2" class="card"/><text x="190" y="68">R1</text>
@@ -1465,7 +1479,7 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </div>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか</span>　2021年10月、Facebook(現Meta)が経路案内（BGP）の設定をしくじり、自社への<span class="hl">経路情報をインターネットから誤って取り消した</span>。Facebook・Instagram・WhatsApp が世界規模で約6時間ダウン。<span class="hl">地図(経路制御表)を1か所間違える</span>と、荷物(パケット)が宛先を見失い一斉に行方不明になる。<span class="src">出典: Cloudflare Blog “Understanding How Facebook Disappeared from the Internet” blog.cloudflare.com/october-2021-facebook-outage/</span></div>
+<div class="episode"><span class="h">なぜ学ぶか</span>　2021年10月、Facebook(現Meta)が経路案内（BGP）設定をしくじり、自社への<span class="hl">経路情報をインターネットから誤って取り消した</span>。Facebook・Instagram・WhatsApp が世界規模で約6時間ダウン。<span class="hl">地図(経路制御表)を1か所間違える</span>と、荷物(パケット)が宛先を見失い行方不明になる。<span class="src">出典: Cloudflare Blog（Oct 2021 Facebook outage）</span></div>
 
 ---
 
@@ -3094,10 +3108,10 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </div></div>
 
 <div class="episode"><div class="h">EPISODE ── 雲はときどき落ちる</div>
-2021年12月、AWS の主要拠点 us-east-1 が大規模障害を起こし、Netflix・Disney+・Robinhood など多数のサービスが同時に停止した。便利さの裏返しで、<span class="red">少数の巨大クラウドに皆が相乗りしている</span>ため、そこが落ちると一斉に落ちる。だから「どこに預けているか」を知ることが大事。
+2021年12月、AWS の主要拠点 us-east-1 が大規模障害を起こし、Netflix・Disney+ など多数のサービスが同時停止。<span class="red">少数の巨大クラウドに皆が相乗りしている</span>ため、そこが落ちると一斉に落ちる。「どこに預けているか」を知ることが大事。
 </div>
 
-<div class="src">出典：AWS us-east-1 大規模障害（2021-12-07）の各種報道・AWS事後報告</div>
+<div class="src">出典：AWS us-east-1 大規模障害（2021-12-07）</div>
 
 </div>
 </div>
@@ -3240,9 +3254,9 @@ AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕�
 </div>
 </div>
 
-<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>2025年11月、Cloudflareで設定用の内部ファイルが想定の倍以上に肥大化したというたった1つの不具合で、X・ChatGPTなど多数のサービスが数時間にわたり世界規模でエラーに。AIに「なぜ繋がらないの？」と聞いても、<span class="hl">中身を知らなければ答えの正否を判断できない</span>。だから用語でなく「しくみ」を学ぶ。</div>
+<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>2025年11月、Cloudflareで設定ファイルが想定の倍以上に肥大化したたった1つの不具合で、X・ChatGPTなど多数のサービスが世界規模でエラーに。AIに「なぜ繋がらないの？」と聞いても、<span class="hl">中身を知らなければ答えの正否を判断できない</span>。だから用語でなく「しくみ」を学ぶ。</div>
 
-<div class="src">出典：Cloudflare 公式「Cloudflare outage on November 18, 2025」 blog.cloudflare.com/18-november-2025-outage/</div>
+<div class="src">出典：Cloudflare 公式「Cloudflare outage on November 18, 2025」</div>
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: ponchie
 paginate: false
 size: 16:9
@@ -74,11 +74,7 @@ html: true
   <text x="56" y="515" font-size="10" fill="#666">・手続き・説明・問合せ等の定型業務の反復</text>
   <text x="56" y="534" font-size="10" fill="#666">・システムとデータが分散</text>
   <text x="56" y="553" font-size="10" fill="#666">・異動・引継ぎでノウハウがリセット</text>
-  <path d="M298 168 C322 168 292 320 300 340" stroke="#d2772f" stroke-width="2.6" fill="none" opacity="0.8"/>
-  <path d="M298 283 C322 283 296 332 300 341" stroke="#d2772f" stroke-width="2.6" fill="none" opacity="0.8"/>
-  <path d="M298 398 C322 398 296 352 300 343" stroke="#d2772f" stroke-width="2.6" fill="none" opacity="0.8"/>
-  <path d="M298 513 C322 513 292 366 300 344" stroke="#d2772f" stroke-width="2.6" fill="none" opacity="0.8"/>
-  <path d="M300 314 L352 342 L300 370 Z" fill="url(#gWarn)" filter="url(#sh)"/>
+  <path d="M300 318 L344 342 L300 366 Z" fill="url(#gWarn)" filter="url(#sh)"/>
   <rect x="348" y="116" width="298" height="452" rx="18" fill="url(#gNexus)" filter="url(#sh)"/>
   <g opacity="0.12" stroke="#ffffff" stroke-width="1.2" fill="none"><ellipse cx="497" cy="342" rx="140" ry="140"/><ellipse cx="497" cy="342" rx="55" ry="140"/><ellipse cx="497" cy="342" rx="140" ry="55"/></g>
   <circle cx="378" cy="148" r="13" fill="#ffffff"/>
@@ -144,22 +140,33 @@ html: true
   <text x="680" y="515" font-size="10" fill="#444">・システムでなく「データ」を接続しAIで分析</text>
   <text x="680" y="534" font-size="10" fill="#444">・反復・窓口業務をRAGで省力化／IR等を統合分析</text>
   <text x="680" y="553" font-size="10" fill="#1A7A5E">［課題D：実践知の死蔵を解消］</text>
-  <path d="M630 342 C648 342 650 334 662 338" stroke="#1A7A5E" stroke-width="2.6" fill="none" opacity="0.85" marker-end="url(#mA)"/>
-  <path d="M1010 168 C1030 168 1034 320 1050 328" stroke="#1c6e44" stroke-width="2.4" fill="none" marker-end="url(#mG)"/>
-  <path d="M1010 283 C1030 283 1034 328 1050 334" stroke="#1c6e44" stroke-width="2.4" fill="none" marker-end="url(#mG)"/>
-  <path d="M1010 398 C1030 398 1034 344 1050 340" stroke="#1c6e44" stroke-width="2.4" fill="none" marker-end="url(#mG)"/>
-  <path d="M1010 513 C1030 513 1034 352 1050 346" stroke="#1c6e44" stroke-width="2.4" fill="none" marker-end="url(#mG)"/>
+  <path d="M633 318 L677 342 L633 366 Z" fill="url(#gGoal)" filter="url(#sh)"/>
+  <path d="M1009 318 L1053 342 L1009 366 Z" fill="url(#gGoal)" filter="url(#sh)"/>
   <rect x="1052" y="116" width="188" height="452" rx="18" fill="url(#gGoal)" filter="url(#sh)"/>
   <g opacity="0.16" fill="none" stroke="#ffffff" stroke-width="2"><path d="M1146 150 L1150 138 L1154 150 L1166 154 L1154 158 L1150 170 L1146 158 L1134 154 Z"/></g>
   <circle cx="1078" cy="150" r="14" fill="#ffffff"/>
   <g transform="translate(1078,150)" stroke="#1c6e44" stroke-width="2" fill="none"><circle cx="0" cy="0" r="8"/><circle cx="0" cy="0" r="3.5"/></g>
   <text x="1102" y="164" font-size="34" font-weight="700" fill="#ffffff">GOAL</text>
-  <text x="1068" y="198" font-size="13.5" fill="#dff1e7">研究×学びがつながり</text>
-  <text x="1068" y="219" font-size="13.5" font-weight="700" fill="#ffffff">学生と教職員が躍動する大学へ</text>
-  <rect x="1068" y="448" width="156" height="100" rx="10" fill="#ffffff" opacity="0.15"/>
-  <text x="1146" y="476" font-size="12.5" fill="#eafaf1" text-anchor="middle">学内すべての成果が</text>
-  <text x="1146" y="495" font-size="12.5" fill="#eafaf1" text-anchor="middle">連鎖的に伸びる</text>
-  <text x="1146" y="520" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">好循環へ</text>
+  <text x="1068" y="196" font-size="13.5" fill="#dff1e7">研究×学びがつながり</text>
+  <text x="1068" y="217" font-size="13.5" font-weight="700" fill="#ffffff">学生と教職員が躍動する</text>
+  <text x="1068" y="238" font-size="13.5" font-weight="700" fill="#ffffff">大学へ</text>
+  <line x1="1068" y1="256" x2="1224" y2="256" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <circle cx="1076" cy="278" r="4" fill="#bff0d6"/>
+  <text x="1088" y="282" font-size="12.5" font-weight="700" fill="#ffffff">教職員の生産性が上がる</text>
+  <circle cx="1076" cy="302" r="4" fill="#bff0d6"/>
+  <text x="1088" y="306" font-size="12.5" font-weight="700" fill="#ffffff">次の予算に繋がる</text>
+  <rect x="1068" y="326" width="156" height="118" rx="10" fill="#ffffff" opacity="0.15"/>
+  <text x="1146" y="349" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">横手ビジョンの実現</text>
+  <circle cx="1082" cy="374" r="3.5" fill="#bff0d6"/>
+  <text x="1092" y="378" font-size="9.5" fill="#eafaf1">全員が一丸となり共創</text>
+  <circle cx="1082" cy="398" r="3.5" fill="#bff0d6"/>
+  <text x="1092" y="402" font-size="9.5" fill="#eafaf1">個々の可能性を最大化</text>
+  <circle cx="1082" cy="422" r="3.5" fill="#bff0d6"/>
+  <text x="1092" y="426" font-size="9.5" fill="#eafaf1">知の共鳴で未来を拓く</text>
+  <rect x="1068" y="460" width="156" height="96" rx="10" fill="#ffffff" opacity="0.15"/>
+  <text x="1146" y="486" font-size="12.5" fill="#eafaf1" text-anchor="middle">学内すべての成果が</text>
+  <text x="1146" y="505" font-size="12.5" fill="#eafaf1" text-anchor="middle">連鎖的に伸びる</text>
+  <text x="1146" y="530" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">好循環へ</text>
   <text x="42" y="586" font-size="11" font-weight="700" fill="#9a9a9a">想定する効果</text>
   <rect x="40" y="592" width="285" height="54" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="40" y="592" width="5" height="54" rx="2.5" fill="url(#gAccH)"/>
@@ -183,14 +190,13 @@ html: true
   <text x="1080" y="628" font-size="10.5" fill="#555">大学UXの変革</text>
   <rect x="40" y="652" width="1200" height="52" rx="12" fill="#eaf1fb"/>
   <rect x="40" y="652" width="6" height="52" rx="3" fill="url(#gBlue)"/>
-  <text x="62" y="669" font-size="11" font-weight="700" fill="#2a5d96">収益化＋経営効率化につながる（副次的）</text>
   <circle cx="70" cy="691" r="8" fill="#dceaf8"/>
   <text x="70" y="694" font-size="10" font-weight="700" fill="#2a5d96" text-anchor="middle">1</text>
   <text x="84" y="687" font-size="9.5" font-weight="700" fill="#1f2937">許諾済データの共有・利活用</text>
   <text x="84" y="700" font-size="8.5" fill="#555">個人情報を削除し、学内・行政・企業の共同研究で</text>
   <circle cx="476" cy="691" r="8" fill="#dceaf8"/>
   <text x="476" y="694" font-size="10" font-weight="700" fill="#2a5d96" text-anchor="middle">2</text>
-  <text x="490" y="687" font-size="9.5" font-weight="700" fill="#1f2937">Google と組んでノウハウ・アプリを販売</text>
+  <text x="490" y="687" font-size="9.5" font-weight="700" fill="#1f2937">AI企業と組んでノウハウ・アプリを販売</text>
   <text x="490" y="700" font-size="8.5" fill="#555">蓄積した実践知・基盤を外部へ展開</text>
   <circle cx="836" cy="691" r="8" fill="#dceaf8"/>
   <text x="836" y="694" font-size="10" font-weight="700" fill="#2a5d96" text-anchor="middle">3</text>

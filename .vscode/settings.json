@@ -8,8 +8,10 @@
   "markdown.marp.pdf.outlines": "both",
   "markdown.marp.html": {
     "br": [],
+    "style": [],
+    "foreignObject": ["class", "x", "y", "width", "height"],
     "img": ["class", "alt", "src", "style"],
-    "div": ["class", "style"],
+    "div": ["class", "style", "xmlns"],
     "span": ["class", "style"],
     "p": ["class", "style"],
     "strong": ["class", "style"],

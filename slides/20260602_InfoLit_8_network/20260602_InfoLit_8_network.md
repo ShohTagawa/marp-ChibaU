@@ -11,15 +11,17 @@ style: |
      ╚══════════════════════════════════════════════════════════╝ */
   :root {
     --hdr-left-w: 23%;   /* 左の赤帯(デックタイトル)の幅。タイトルの長さに合わせる */
-    --pt-width:   32%;   /* 中央ページタイトル帯の幅(文字が折り返すなら広く) */
+    --pt-width:   50%;   /* 中央ページタイトル帯の幅(文字が折り返すなら広く) */
     /* 左帯と中央帯の白い隙間つまみ：
          4px  → 元のデザイン：間に白い隙間が出る(これはこれでカッコいい)
          0    → 隙間ゼロでピタッと接する
          -4px → 4px重ねて完全に白を消す(現在)                          */
     --hdr-gap:   -4px;
-    /* ↓この式は触らなくてOK(左帯の右スラントに中央帯を噛み合わせる) */
-    --pt-left: calc(var(--hdr-left-w) - var(--hdr-slant) + var(--hdr-gap));
+    /* ↓この式は触らなくてOK(左帯の右スラントに中央帯を噛み合わせる)。--hdr-slantは22px */
+    --pt-left: calc(var(--hdr-left-w) - var(--hdr-slant, 22px) + var(--hdr-gap));
   }
+  /* ↓ deck内で page-title の位置・幅を直接指定(テーマ版違いに依存せず確実に噛み合う) */
+  section .page-title { left: var(--pt-left); width: var(--pt-width); }
   section > header .hdr-logo { height: 48px; margin-right: 12px; }
   section::after { left: 23px; right: auto; }
   section svg { max-width: 100%; height: auto; }
@@ -58,7 +60,7 @@ style: |
   /* ========== 表紙レイアウト（cover-hero） ========== */
   section.cover-hero {
     padding-top: calc(var(--header-h) + 60px);
-    --hdr-left-w: 19%; /* 表紙は中央タイトル帯が無いので、文字幅に合わせて赤帯を短くする */
+    --hdr-left-w: 23%; /* 表紙のタイトルした赤枠 */
   }
   /* 表紙はpage-titleトラペゾイドが無いので、赤線を左端から右端まで伸ばす */
   section.cover-hero > header::after { left: 0; right: 0; }

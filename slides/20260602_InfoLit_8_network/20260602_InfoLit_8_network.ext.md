@@ -3,6 +3,7 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
+header: '<div class="hdr-left">情報リテラシ第8回</div><img class="hdr-logo" src="../assets/logo-info-literacy.png">'
 footer: ''
 style: |
   /* ╔══════════════════════════════════════════════════════════╗

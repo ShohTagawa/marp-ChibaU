@@ -126,8 +126,8 @@ style: |
 
 <table class="dtbl" style="width:100%">
 <tr><th>項目</th><th>期限</th></tr>
-<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/9（月）</span></td></tr>
-<tr><td class="l"><strong>課題</strong>の提出</td><td><span class="hl-dark mono">6/16（月）</span></td></tr>
+<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/9（火）</span></td></tr>
+<tr><td class="l"><strong>課題</strong>の提出</td><td><span class="hl-dark mono">6/16（火）</span></td></tr>
 <tr><td class="l">提出先</td><td class="mono">Moodle</td></tr>
 </table>
 
@@ -149,7 +149,7 @@ style: |
 ## 「URL を入れてからページが出るまで」を1本の旅として追う
 
 <div class="fig-area">
-<svg viewBox="0 0 980 360" width="100%" style="max-height:300px">
+<svg viewBox="20 40 920 268" width="100%" style="max-height:330px">
   <defs>
     <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -194,9 +194,7 @@ style: |
 
 <div class="band">各動画のページ上部に同じ <strong>旅バー</strong> を小さく置き、<span class="hl">いま旅のどこの話か</span>を赤で点灯します。</div>
 
-<div class="episode" style="margin-top:8px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare で <strong>設定ファイルが想定の倍以上に肥大化</strong>して処理停止、X・ChatGPT 等が世界規模でエラーに。サイバー攻撃ではなく地味なバグ。仕組みを知ると「なぜ落ちたか」を自分で読み解ける。</div>
-
-<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」</div>
+<div class="episode" style="margin-top:6px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare で<strong>設定ファイルが想定の倍以上に肥大化</strong>し処理停止、X・ChatGPT 等が世界規模でダウン。攻撃ではなく地味なバグ。仕組みを知れば「なぜ落ちたか」を自分で読み解ける。<span class="src">（出典: Cloudflare 公式ブログ 2025-11-18）</span></div>
 
 <div class="takeaway">ゴールは1つ ── 「URL を入れてからページが出るまで」を自分で説明できること</div>
 
@@ -650,8 +648,7 @@ style: |
 </div></div>
 
 <div class="episode"><div class="h">なぜ学ぶか｜偽Wi-Fi（Evil Twin）</div>
-2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が連邦警察に逮捕。便利な入口は、最も狙われる入口でもある。
-<div class="src">出典: kaspersky.co.jp / Evil Twin attacks</div>
+2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が連邦警察に逮捕。便利な入口は、最も狙われる入口でもある。<span class="src">（出典: Kaspersky / Evil Twin）</span>
 </div>
 
 </div>
@@ -937,7 +934,7 @@ style: |
 
 <div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia（2023-03-28）</span></div>
 
-<div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（約3.4×10³⁸、1兆×1兆×1兆級）</span>でほぼ枯渇しない。</div>
+<div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（1兆×1兆×1兆級）</span>で枯渇しない。</div>
 
 <div class="takeaway">多数の機器を、ルータの1つのグローバルIPで使い回す仕組み＝NAT。</div>
 
@@ -2205,7 +2202,7 @@ style: |
 </svg>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか</span>　2024年、旅客機内に<span class="red">偽Wi-Fi（Evil Twin）</span>を立て、乗客のメール・SNSのログイン情報を盗んだ人物が豪連邦警察に逮捕。「無料Wi-Fi」は最も狙われる入口でもある。<span class="src">出典: Kaspersky「Evil Twin攻撃」 https://www.kaspersky.co.jp/resource-center/preemptive-safety/evil-twin-attacks</span></div>
+<div class="episode"><span class="h">なぜ学ぶか</span>　2024年、旅客機内に<span class="red">偽Wi-Fi（Evil Twin）</span>を立て、乗客のメール・SNSのログイン情報を盗んだ人物が豪連邦警察に逮捕。「無料Wi-Fi」は最も狙われる入口でもある。<span class="src">出典: Kaspersky「Evil Twin攻撃」（2024）</span></div>
 
 ---
 
@@ -3148,7 +3145,7 @@ style: |
 </div></div>
 
 <div class="episode"><div class="h">EPISODE ── 雲はときどき落ちる</div>
-2021年12月、AWS の主要拠点 us-east-1 が大規模障害を起こし、Netflix・Disney+ など多数のサービスが同時停止。<span class="red">少数の巨大クラウドに皆が相乗りしている</span>ため、そこが落ちると一斉に落ちる。「どこに預けているか」を知ることが大事。
+2021年12月、AWS us-east-1 の大規模障害で、<span class="red">相乗りする Netflix・Disney+ など多数が一斉に同時停止</span>した。
 </div>
 
 <div class="src">出典：AWS us-east-1 大規模障害（2021-12-07）</div>

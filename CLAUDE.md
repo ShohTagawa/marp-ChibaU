@@ -69,20 +69,27 @@ footer: ''
 
 ## プレビュー・出力コマンド
 
+> **⚠️ `--html` は全コマンドで必須。** これを付け忘れると、インラインSVGや `<div>` などの生HTMLが
+> すべてエスケープされ、図が「生のSVGソースコードの文字列」として描画される（＝はみ出し・余白崩れに見える）。
+> PDF/PNG/プレビューすべてに付けること。
+
 ```bash
 # 変数（このDIRが正本ルート）
 DECK=slides/<deck-name>
 
 # プレビュー
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --preview
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --preview
 
 # PDF を out/ に書き出す
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --pdf --allow-local-files -o "$DECK/out/<deck-name>.pdf"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --pdf --allow-local-files -o "$DECK/out/<deck-name>.pdf"
 
 # HTML / PNG も同様に -o で out/ を指定
 npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --allow-local-files -o "$DECK/out/<deck-name>.html"
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
+
+> 注: 環境によっては marp の `--pdf`（Chrome printToPDF）が "Printing failed" で落ちる。その場合は
+> `--html --images png` でPNGを出してから `python3 -m img2pdf out/slide.*.png --pagesize 1280x720 -o out/<deck-name>.pdf` で代替する。
 
 VS Code では `.vscode/settings.json` で `markdown.marp.themes` が `./theme/academic.css` を指しているので、Marp 拡張のプレビューがそのまま使える。
 

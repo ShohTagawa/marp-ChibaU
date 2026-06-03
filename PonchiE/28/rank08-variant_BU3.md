@@ -36,7 +36,7 @@ html: true
   <path d="M0 534 L1280 534 L1280 720 L0 720 Z" fill="url(#gBackbone)" opacity="0.16"/>
   <path d="M300 300 C340 300 340 300 348 300" stroke="url(#gBackbone)" stroke-width="18" fill="none" opacity="0.22"/>
   <rect x="0" y="0" width="1280" height="56" fill="url(#gAccH)"/>
-  <text x="40" y="38" font-size="26" font-weight="700" fill="#ffffff">大学院生の「研究×学び」を支援する全学基盤 ‐ Nexus Uni+ を目指して</text>
+  <text x="40" y="38" font-size="26" font-weight="700" fill="#ffffff">大学院生の「研究×学び」を支援する全学基盤 ― Nexus Uni+ を目指して</text>
   <rect x="1106" y="12" width="138" height="32" rx="8" fill="#ffffff"/>
   <image href="./src/chiba-logo.png" x="1120" y="18" width="112" height="20"/>
   <rect x="0" y="56" width="1280" height="32" fill="#E4F2EC"/>
@@ -137,7 +137,7 @@ html: true
   <rect x="638" y="446" width="346" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="638" y="446" width="6" height="90" rx="3" fill="url(#gAccH)"/>
   <circle cx="664" cy="462" r="11" fill="#E4F2EC"/>
-  <text x="664" y="462" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">D</text>
+  <text x="664" cy="462" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">D</text>
   <text x="684" y="464" font-size="12" font-weight="700" fill="#16624b">労力を削減し業務を高度化（実践知の敷衍）</text>
   <text x="654" y="484" font-size="11.2" fill="#444">・システムでなく「データ」を接続しAIで分析</text>
   <text x="654" y="501.5" font-size="11.2" fill="#444">・反復・窓口業務をRAGで省力化／IR等を統合分析</text>

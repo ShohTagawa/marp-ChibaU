@@ -183,6 +183,28 @@ style: |
   section.cover-hero .title-meta { font-size: 26px; line-height: 1.7; text-align: center; }
   section.cover-hero .title-event { color: #0033A0; font-weight: 700; margin-bottom: 16px; }
   section.cover-hero .title-affil { margin-top: 8px; }
+
+  /* QRカード（slido等）：小さめQR＋下にクリック可能リンク */
+  .qr-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  .qr-card img { width: 208px; height: 208px; border: 1px solid #e3e8f0; border-radius: 10px; padding: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .qr-card .qr-link { font-size: 19px; font-weight: 700; color: #0033A0; text-decoration: underline; word-break: break-all; text-align: center; }
+  .qr-card .qr-cap { font-size: 16px; color: #666; text-align: center; margin-top: -4px; }
+
+  /* 連絡系統ハブ（Drive / Classroom / フォーム）：行ごとに 説明＋小さめQR */
+  section.toolhub { padding-top: calc(var(--header-h) + 14px); }
+  section.toolhub h2 { color: #0033A0; margin: 0 0 6px; }
+  section.toolhub .hub-list { display: grid; row-gap: 12px; margin-top: 8px; }
+  section.toolhub .hub-row { display: grid; grid-template-columns: 58px 1fr 94px; gap: 16px; align-items: center; border: 1.5px solid #cfd6e4; border-left: 6px solid #0033A0; border-radius: 10px; background: #F7F9FC; padding: 11px 18px; }
+  section.toolhub .hub-ic { font-size: 32px; text-align: center; line-height: 1; }
+  section.toolhub .hub-main .ht { font-size: 23px; font-weight: 700; color: #0033A0; margin-bottom: 3px; }
+  section.toolhub .hub-main .hd { font-size: 18px; line-height: 1.45; color: #222; }
+  section.toolhub .hub-main .hd b { color: #C0182B; }
+  section.toolhub .hub-main a { color: #0033A0; font-weight: 700; text-decoration: underline; }
+  section.toolhub .hub-qr { width: 90px; height: 90px; border: 1px solid #e3e8f0; border-radius: 6px; background: #fff; padding: 4px; justify-self: center; }
+  section.toolhub .hub-qr img { width: 100%; height: 100%; display: block; }
+  section.toolhub .hub-row.form { border-left-color: #F0A500; }
+  section.toolhub .hub-row.form .hub-main .ht { color: #B8780A; }
+  section.toolhub .hub-row.form .hub-qr-none { width: 90px; text-align: center; font-size: 14px; color: #B8780A; font-weight: 700; line-height: 1.3; justify-self: center; }
 ---
 
 <!-- _class: cover-hero -->
@@ -276,7 +298,7 @@ style: |
 
 <div class="sec-box">
 
-### 目的 （なぜこの活動やるのか）
+### 目的 （なぜこの活動をやるのか）
 
 - 航空・宇宙分野の知識を、**実社会の課題**を通じて深める
 - **英語**でのプレゼン・議論を実践し、世界で通用する力を養う
@@ -793,7 +815,7 @@ style: |
 
 </div>
 <div class="takeaway">
-各グループの希望を元に、出来る限り調整予定 ：6/9に希望等あればお知らせ下さい
+各グループの希望を基に、出来る限り調整予定 ：6/9に希望等あればお知らせ下さい
 </div>
 </div>
 
@@ -829,7 +851,7 @@ style: |
 
 <div class="sec-box">
 
-### 振返り・フェアウェル (9月中旬) 
+### 振り返り・フェアウェル (9月中旬) 
 
 </div>
 
@@ -884,7 +906,7 @@ style: |
 
 <div class="page-title">グラウンドルール</div>
 
-## 安心して挑める「場」をみんなで作る
+## 協力して挑める「場」をみんなで作る
 
 <div class="sections">
 
@@ -894,7 +916,7 @@ style: |
 
 - 協力的な場づくりと<b>言い合える文化</b>を大切に
 - コミュニケーションは、<b>敬意</b>を持って、<b>忌憚なく</b>、<b>建設的に</b>
-- チェックポイントはありますが、自主的に進めて下さい（各チームでプロジェクト管理）
+- 自ら動こう（各チームでプロジェクトを管理・推進）
 - <b>困ったら相談しよう</b>：「手を差し伸べる」より <b>「助けを相談する」</b>
 
 </div>
@@ -934,7 +956,7 @@ style: |
 
 # 運用ツールの使い方
 
-## 困ったとき・気づいたときの動線
+## 進捗管理などの説明
 
 <!-- 連絡フォームとslidoの2点を実際に開いて見せる。 -->
 
@@ -942,35 +964,51 @@ style: |
 
 <!-- _class: howto -->
 
-<div class="page-title">困ったときのフォーム</div>
+<div class="page-title">進捗管理・一覧化</div>
 
-## 連絡・相談はこの3ステップ
+## 進捗・締切は、1シートで一覧化
+1. 締切までに各グループで行って下さい
+2. それとは別に、締切までに記入する内容があります
+![alt text](image.png)
 
-<div class="steps">
+---
 
-<div class="step">
-<div class="num">STEP 1</div>
-<div class="st">QRを読む</div>
-<div class="sd">本日配布のQRコード／Slack固定メッセージのリンクからフォームを開く。</div>
+<!-- _class: toolhub -->
+
+<div class="page-title">連絡系統</div>
+
+## ファイル・連絡・相談は、この3つに集約します
+
+<div class="hub-list">
+
+<div class="hub-row">
+<div class="hub-ic">📁</div>
+<div class="hub-main">
+<div class="ht">Google Drive ― ファイルはグループ別に管理</div>
+<div class="hd">各グループのフォルダに資料・成果物を保存　→　<a href="https://drive.google.com/drive/folders/1eYAriwBMlX6ZsySBhsSRjQSCVi470Edz?usp=drive_link">フォルダを開く</a></div>
+</div>
+<div class="hub-qr"><img src="./src/fig-drive-qr.png" alt="Google Drive QR"></div>
 </div>
 
-<div class="step">
-<div class="num">STEP 2</div>
-<div class="st">種別を選ぶ</div>
-<div class="sd">「相談」「日程変更」「グループ変更」「その他」から1つ選択。</div>
+<div class="hub-row">
+<div class="hub-ic">📋</div>
+<div class="hub-main">
+<div class="ht">Google Classroom ― 配布資料を時系列で記録</div>
+<div class="hd">通知もここから／<b>みんなで共有したいこと</b>はフォーラムへ　→　<a href="https://classroom.google.com/c/ODU0ODczMzk3MjA0">Classroomを開く</a></div>
+</div>
+<div class="hub-qr"><img src="./src/fig-classroom-qr.png" alt="Google Classroom QR"></div>
 </div>
 
-<div class="step">
-<div class="num">STEP 3</div>
-<div class="st">送信→24h内に返答</div>
-<div class="sd">事務局が受付→担当教員にエスカレーション。原則24時間以内に返信。</div>
+<div class="hub-row form">
+<div class="hub-ic">✉️</div>
+<div class="hub-main">
+<div class="ht">相談フォーム ― 聞きにくい相談は事務局へ直接</div>
+<div class="hd">回答は<b>事務局だけに届きます</b>（匿名でもOK）　→　送信方法は次ページ</div>
+</div>
+<div class="hub-qr-none"></div>
 </div>
 
 </div>
-
-<div class="takeaway">「迷ったらまずフォーム」。後から判断OK。</div>
-
-<!-- 実際にスマホでQRを読んで開いてもらう。送信テストは任意。 -->
 
 ---
 
@@ -989,12 +1027,14 @@ style: |
 - コード／QRは画面に表示
 - スマホで参加（匿名でOK）
 - 複数選択可・自由記述あり
-- 結果はその場でグループ分けに活用
+- 次回も確認します
 
 </div>
 
-<div class="placeholder">
-[slido 投票画面<br>QRコードを掲示]
+<div class="qr-card">
+<img src="./src/fig-slido-qr.png" alt="slido QRコード">
+<a class="qr-link" href="https://app.sli.do/event/6eZYvt2mxGa537tkN1ke5X">app.sli.do/event/6eZYvt2mxGa537tkN1ke5X</a>
+<div class="qr-cap">スマホでQRを読む or 上のリンクをクリック</div>
 </div>
 
 </div>
@@ -1010,10 +1050,9 @@ style: |
 ## まとめ
 
 - 6月〜9月の全体像と各フェーズの目的を共有した
-- 教員4名・事務局・外部協力者の役割を把握した
-- 困ったときの連絡フォームとslidoの使い方を確認した
-- 関心領域を選び、仮グループの顔合わせまで完了した
-- 次回 **6/9 デザインWS** で課題テーマ案を出すのがゴール
+- 教員4名・事務局の人となりを知った
+- 進捗管理の方法を確認した
+- 次回 **6/9 デザインWS @総合校舎G1-101**で課題テーマ案を出し、チームを決めるのがゴール
 
 <!-- 終わりに事務局から連絡事項。お疲れさまでした。 -->
 
@@ -1025,4 +1064,4 @@ style: |
 
 # Q&A
 
-## 質問はこの場で／後からフォーム送信もOK
+## 質問はこの場で

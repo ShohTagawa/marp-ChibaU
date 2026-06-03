@@ -194,7 +194,7 @@ style: |
 
 <div class="band">各動画のページ上部に同じ <strong>旅バー</strong> を小さく置き、<span class="hl">いま旅のどこの話か</span>を赤で点灯します。</div>
 
-<div class="episode" style="margin-top:6px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare で<strong>設定ファイルが想定の倍以上に肥大化</strong>し処理停止、X・ChatGPT 等が世界規模でダウン。攻撃ではなく地味なバグ。仕組みを知れば「なぜ落ちたか」を自分で読み解ける。<span class="src">（出典: Cloudflare 公式ブログ 2025-11-18）</span></div>
+<div class="episode" style="margin-top:6px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare の<strong>設定ミス</strong>で X・ChatGPT 等が世界規模でダウン。攻撃ではなく地味なバグだった。</div>
 
 <div class="takeaway">ゴールは1つ ── 「URL を入れてからページが出るまで」を自分で説明できること</div>
 
@@ -934,7 +934,7 @@ style: |
 
 <div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia（2023-03-28）</span></div>
 
-<div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（1兆×1兆×1兆級）</span>で枯渇しない。</div>
+<div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（≈3.4×10³⁸）</span>で枯渇しない。</div>
 
 <div class="takeaway">多数の機器を、ルータの1つのグローバルIPで使い回す仕組み＝NAT。</div>
 
@@ -1779,7 +1779,7 @@ style: |
 </svg>
 
 <div class="episode"><span class="h">なぜ学ぶか｜偽サイトを見破る</span><br>日本のフィッシング報告は2024年に過去最多 <span class="red">171万件超</span>、約75%が実在サービスの“なりすまし”。鍵マーク（HTTPS）とURLの構造を読めることが、最初の防具になる。
-<div class="src">出典: フィッシング対策協議会／日経（2025）<br>https://scan.netsecurity.ne.jp/article/2025/06/12/53031.html</div></div>
+<div class="src">出典: フィッシング対策協議会／日経（2025）</div></div>
 
 </div>
 </div>
@@ -1808,7 +1808,7 @@ style: |
 </svg>
 </div>
 
-<div class="band">教科書の編末問題も <span class="mono">http://www.example.jp/index.html</span> を ①〜④ に分解させる定番。<span class="hl">パスを省くと最上位ページ</span>へ。</div>
+<div class="band">教科書の編末問題も <span class="mono">https://www.example.jp/index.html</span> を ①〜④ に分解させる定番。<span class="hl">パスを省くと最上位ページ</span>へ。</div>
 
 ---
 
@@ -2576,7 +2576,7 @@ style: |
 <div class="cbox green"><div class="h">🔧 表計算ではなく「コード」で（Moodle → Colab）</div><div class="b">
 
 - ① <span class="mono">import pandas as pd</span> で表を2つ作る（<span class="hl">書籍</span>・<span class="hl">著者</span>）
-- ② <span class="mono">pandasql</span> / <span class="mono">sqlite3</span> で SQL を実行：<br><span class="mono">SELECT 書名,著者名 FROM 書籍 JOIN 著者 USING(著者ID)</span>
+- ② <span class="mono">pandasql</span> / <span class="mono">sqlite3</span> で SQL を実行：<br><span class="mono">SELECT タイトル,著者名 FROM 書籍 JOIN 著者 USING(著者ID)</span>
 - ③ <span class="red">WHERE（選択）・列指定（射影）・JOIN（結合）</span>で結果がどう変わるか観察
 - ④ 同じ操作を <span class="mono">df.merge()</span> でも書き、SQL と pandas を見比べる
 
@@ -3291,7 +3291,7 @@ style: |
 </div>
 </div>
 
-<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>2025年11月、Cloudflareで設定ファイルが想定の倍以上に肥大化したたった1つの不具合で、X・ChatGPTなど多数のサービスが世界規模でエラーに。AIに「なぜ繋がらないの？」と聞いても、<span class="hl">中身を知らなければ答えの正否を判断できない</span>。だから用語でなく「しくみ」を学ぶ。</div>
+<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>2025年11月、Cloudflareで設定ファイルが想定の倍以上に肥大化した、たった1つの不具合で、X・ChatGPTなど多数のサービスが世界規模でエラーに。AIに「なぜ繋がらないの？」と聞いても、<span class="hl">中身を知らなければ答えの正否を判断できない</span>。だから用語でなく「しくみ」を学ぶ。</div>
 
 <div class="src">出典：Cloudflare 公式「Cloudflare outage on November 18, 2025」</div>
 

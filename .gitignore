@@ -9,6 +9,15 @@ slides/*.003.png
 slides/*.004.png
 slides/intro-demo.[0-9][0-9][0-9].png
 
+# 大容量メディア（GitHub 100MB制限対策／動画ソースはGit管理外）
+# ※すでに追跡済みの動画には影響しません（新規ファイルのみ対象）
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.m4v
+*.avi
+
 # OS / editor
 .DS_Store
 *.swp

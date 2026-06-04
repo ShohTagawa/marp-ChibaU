@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: academic
 paginate: true
 size: 16:9
@@ -144,12 +144,15 @@ style: |
   section.ws .wstep .min { display: inline-block; background: #0033A0; color: #fff; font-size: 14px; padding: 1px 8px; border-radius: 10px; margin-bottom: 4px; }
 
   /* 動画ヒーロー：高さ基準で収める（見切れ防止） */
-  .video-hero { flex: 1; min-height: 0; width: 100%; margin-top: 6px; display: flex; align-items: center; justify-content: center; }
+  .video-hero { flex: 1; min-height: 0; width: 100%; margin-top: 4px; margin-bottom: 34px; display: flex; align-items: center; justify-content: center; }
   .video-hero video {
     height: 100%; max-height: 100%; width: auto; max-width: 100%;
     aspect-ratio: 16 / 9; object-fit: contain; background: #000;
     border-radius: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.25);
+    transform: translateY(25px) scale(1.18); transform-origin: center;  /* 全体拡大＋25px下へ */
   }
+  /* キャプションをページ最下部へ固定（動画と被らないよう流し込みから外す） */
+  .video-hero + center { position: absolute; left: 0; right: 0; bottom: 14px; margin: 0; padding: 0 70px; }
 
   /* 写真ヒーロー：高さ基準で収める（横幅は auto、上限まで縦に合わせる） */
   .photo-hero { flex: 1; min-height: 0; width: 100%; margin-top: 6px; display: flex; align-items: center; justify-content: center; }
@@ -158,6 +161,11 @@ style: |
     object-fit: contain;
     border-radius: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.25);
   }
+
+  /* 自己紹介スライド：NCAネームプレートを隅にちょこっと */
+  section.summary .badge-inset { position: absolute; right: 30px; bottom: 52px; width: 176px; z-index: 6; text-align: center; }
+  section.summary .badge-inset img { width: 100%; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.4); transform: rotate(-4deg); border: 3px solid #fff; }
+  section.summary .badge-inset .bl { font-size: 12px; color: #666; margin-top: 5px; line-height: 1.3; }
 
   /* divider 用に Boeing カラー */
   section.divider { background: #0033A0; }
@@ -200,11 +208,61 @@ style: |
   section.toolhub .hub-main .hd { font-size: 18px; line-height: 1.45; color: #222; }
   section.toolhub .hub-main .hd b { color: #C0182B; }
   section.toolhub .hub-main a { color: #0033A0; font-weight: 700; text-decoration: underline; }
+  section.toolhub .hub-main .hu { font-size: 15px; line-height: 1.3; color: #5b6577; margin-top: 4px; word-break: break-all; font-family: "SFMono-Regular", Consolas, "Courier New", monospace; }
   section.toolhub .hub-qr { width: 90px; height: 90px; border: 1px solid #e3e8f0; border-radius: 6px; background: #fff; padding: 4px; justify-self: center; }
   section.toolhub .hub-qr img { width: 100%; height: 100%; display: block; }
   section.toolhub .hub-row.form { border-left-color: #F0A500; }
   section.toolhub .hub-row.form .hub-main .ht { color: #B8780A; }
   section.toolhub .hub-row.form .hub-qr-none { width: 90px; text-align: center; font-size: 14px; color: #B8780A; font-weight: 700; line-height: 1.3; justify-self: center; }
+
+  /* 千葉の産業としての成田空港（旅客・貨物） */
+  section.narita { padding-top: calc(var(--header-h) + 12px); }
+  section.narita h2 { color: #0033A0; margin: 0 0 6px; }
+  section.narita .nr-grid { display: grid; grid-template-columns: 1fr 1.18fr; gap: 20px; align-items: start; margin-top: 4px; }
+  section.narita .nr-grid > div { min-width: 0; }
+  section.narita .nr-photo { border: 2px dashed #0033A0; border-radius: 10px; background: #F2F6FC; min-height: 196px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #0033A0; font-weight: 700; font-size: 17px; line-height: 1.4; padding: 14px; overflow: hidden; }
+  section.narita .nr-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+  section.narita .nr-photo.has-media { border: none; padding: 0; background: #000; height: 215px; min-height: 0; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  section.narita .nr-photo.has-media video { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; display: block; }
+  section.narita .nr-cap { font-size: 14px; color: #888; font-weight: 400; margin-top: 6px; text-align: center; }
+  section.narita .nr-effect { margin-top: 14px; background: #EAF1FF; border: 1.5px solid #b9c8e6; border-left: 6px solid #0033A0; border-radius: 0 10px 10px 0; padding: 11px 16px; }
+  section.narita .nr-effect .et { font-size: 19px; font-weight: 800; color: #0033A0; margin-bottom: 5px; }
+  section.narita .nr-effect ul { margin: 0; padding-left: 1.15em; font-size: 19px; line-height: 1.5; color: #222; }
+  section.narita .nr-effect b { color: #C0182B; }
+  section.narita .nr-chart { width: 100%; }
+  section.narita .nr-chart svg { width: 100%; height: auto; max-height: 300px; display: block; }
+  section.narita .nr-chart .ct { font-size: 20px; font-weight: 800; color: #0033A0; margin-bottom: 2px; }
+  /* 貨物スライド：円グラフ＋ファクト */
+  section.narita .nr-cargo { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 22px; align-items: center; margin-top: 2px; }
+  section.narita .nr-cargo > div { min-width: 0; }
+  section.narita .nr-pie .ct { font-size: 18px; }
+  section.narita .nr-pie svg { width: 100%; height: auto; max-height: 320px; display: block; }
+  section.narita .nr-facts { display: grid; row-gap: 9px; }
+  section.narita .nr-fact { background: #F7F9FC; border: 1.5px solid #cfd6e4; border-left: 6px solid #0033A0; border-radius: 0 10px 10px 0; padding: 8px 16px; }
+  section.narita .nr-fact .fn { font-size: 30px; font-weight: 800; color: #0033A0; line-height: 1.1; }
+  section.narita .nr-fact .fn small { font-size: 17px; font-weight: 700; }
+  section.narita .nr-fact .fl { font-size: 16px; color: #333; line-height: 1.4; margin-top: 2px; }
+  section.narita .nr-src { font-size: 13px; color: #888; margin-top: 8px; line-height: 1.45; }
+  section.narita .nr-src a { color: #888; }
+  /* 貨物スライド：夕景エプロン写真をウォッシュアウト背景に */
+  section.narita.cargo-bg {
+    background-image:
+      linear-gradient(to bottom, rgba(245,249,253,.74) 0%, rgba(245,249,253,.6) 50%, rgba(245,249,253,.28) 80%, rgba(245,249,253,.08) 100%),
+      url('./src/fig-narita-cargo.jpg');
+    background-size: cover;
+    background-position: center 60%;
+  }
+  section.narita.cargo-bg .nr-frame {
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(255,255,255,.96);
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,20,60,.22);
+    padding: 12px 22px 16px;
+    margin-top: 2px;
+  }
+  section.narita.cargo-bg .nr-frame h2 { color: #0033A0; margin: 0 0 6px; }
+  section.narita.cargo-bg .nr-fact { background: rgba(247,249,252,.92); }
+  section.narita.cargo-bg .nr-src { color: #555; }
 ---
 
 <!-- _class: cover-hero -->
@@ -244,6 +302,10 @@ style: |
 <div class="photo-hero">
 <img src="./src/fig03-nca-sunpillar.jpg" alt="日本貨物航空 747 とサンピラー">
 </div>
+<div class="badge-inset">
+<img src="./src/fig03b-nca-namebadge.jpg" alt="NCA 田川 ネームプレート">
+<div class="bl">実は、私もNCAに居ました</div>
+</div>
 <center>アンカレッジに集まった、NCAの747-8F (友人撮影)</center>
 
 ---
@@ -282,9 +344,9 @@ style: |
 <div class="page-title">皆さん、飛行機、好きですか？</div>
 
 <div class="video-hero">
-<video controls playsinline src="./src/fig07-travel2.mov" title="旅行"></video>
+<video controls playsinline src="./src/fig07-takeoff-hnd.mp4" title="HND C滑走路より離陸"></video>
 </div>
-<center>それでは、2026 Boeing Externship Takeoffです。（©田川 HND D滑走路 RWY05より離陸）</center>
+<center>それでは、2026 Boeing Externship Takeoffです。（田川 HND C滑走路より離陸）</center>
 
 
 ---
@@ -559,8 +621,9 @@ style: |
 <div class="prof-bio">
 <div class="bl">略歴</div>
 <ul>
-<li>千葉大学SULA</li>
-<li>国際系の部署などでもご活躍 (英語むっちゃ出来る)</li>
+<li>SULA支援事務室長（SULA研修企画）</li>
+<li>留学生課副課長（学生派遣担当）</li>
+<li>国際企画課国際企画係長（海外連携・協定等担当）</li>
 </ul>
 </div>
 <div class="prof-desc">関わり方：事務局・連絡担当</div>
@@ -872,8 +935,8 @@ style: |
 
 <div class="step">
 <div class="num">POINT 1</div>
-<div class="st">全員、現地参加OK</div>
-<div class="sd">発表者でなくても現地参加できる。<br>ただし<b>旅費の支援は不可</b>。不参加でもOK。</div>
+<div class="st">原則、全員で現地参加</div>
+<div class="sd">発表者でなくても現地参加できる（<b>旅費支援は不可</b>）。<br><b>ぜひ全員に参加してほしい</b>が、やむを得ない事情があれば不参加でも差し支えない。</div>
 </div>
 
 <div class="step">
@@ -944,7 +1007,7 @@ style: |
 <!-- _class: message -->
 
 # 原則は、皆様ご自身の自主的な活動ですが、
-# 機会を全力で提供します
+# 機会を提供します
 
 <!-- 全体像は以上。各フェーズの詳細手順（インタビューの申込方法、フィールドワーク当日の流れ等）は、その都度詳しく説明する。 -->
 
@@ -953,6 +1016,144 @@ style: |
 <!-- _class: divider -->
 
 <div class="chapter-num">SECTION 2</div>
+
+# 千葉の産業としての成田空港
+
+## 日本の「空の玄関口」、そして日本最大の貿易港
+
+<!-- 千葉＝成田空港というローカル資産を、航空ビジネス（Boeing Externship）の文脈に接続する。旅客・貨物の2枚で「規模感」を体感させる。 -->
+
+---
+
+<!-- _class: narita -->
+
+<div class="page-title">空の玄関口・成田</div>
+
+## 日本最大の「国際線の入口」が、千葉にある
+
+<div class="nr-grid">
+<div class="nr-left">
+
+<div class="nr-photo has-media">
+<video src="./src/fig-narita-aerial.mov" autoplay loop muted playsinline></video>
+</div>
+<div class="nr-cap">世界の玄関：成田空港第二ターミナル</div>
+
+<div class="nr-effect">
+<div class="et">千葉県への経済波及効果（現在）</div>
+<ul>
+<li>旅客・貨物輸送に伴う波及効果は<b>年間 約2.2兆円</b>（2024年度・直近実績）</li>
+<li>内訳：航空旅客 1.6／航空貨物 0.2／空港内消費 0.1／その他 0.4（兆円）</li>
+<li>空港で働く人は<b>約3.6万人</b>（成田空港内・2022年度）</li>
+</ul>
+</div>
+
+</div>
+<div class="nr-right">
+<div class="nr-chart">
+<div class="ct">空港別 国際線旅客数（2024年度・万人）</div>
+<svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="空港別の国際線旅客数の棒グラフ">
+  <line x1="96" y1="12" x2="96" y2="278" stroke="#cfd6e4" stroke-width="2"/>
+  <text x="8" y="38" font-size="19" font-weight="700" fill="#0033A0">成田</text>
+  <rect x="96" y="20" width="464" height="26" rx="3" fill="#0033A0"/>
+  <rect x="566" y="20" width="40" height="26" rx="4" fill="#C0182B"/>
+  <text x="586" y="38" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">1位</text>
+  <text x="556" y="38" text-anchor="end" font-size="17" font-weight="800" fill="#fff">3,220</text>
+  <text x="8" y="82" font-size="19" font-weight="700" fill="#333">関西</text>
+  <rect x="96" y="64" width="360" height="26" rx="3" fill="#5B7FC7"/>
+  <text x="464" y="82" font-size="17" font-weight="800" fill="#0033A0">2,499</text>
+  <text x="8" y="126" font-size="19" font-weight="700" fill="#333">羽田</text>
+  <rect x="96" y="108" width="330" height="26" rx="3" fill="#5B7FC7"/>
+  <text x="434" y="126" font-size="17" font-weight="800" fill="#0033A0">2,292</text>
+  <text x="8" y="170" font-size="19" font-weight="700" fill="#333">福岡</text>
+  <rect x="96" y="152" width="123" height="26" rx="3" fill="#9DB4DD"/>
+  <text x="227" y="170" font-size="17" font-weight="800" fill="#0033A0">851</text>
+  <text x="8" y="214" font-size="19" font-weight="700" fill="#333">中部</text>
+  <rect x="96" y="196" width="71" height="26" rx="3" fill="#9DB4DD"/>
+  <text x="175" y="214" font-size="17" font-weight="800" fill="#0033A0">491</text>
+  <text x="8" y="258" font-size="17" font-weight="700" fill="#333">新千歳</text>
+  <rect x="96" y="240" width="56" height="26" rx="3" fill="#9DB4DD"/>
+  <text x="160" y="258" font-size="17" font-weight="800" fill="#0033A0">389</text>
+</svg>
+</div>
+<div class="nr-src">出典：国際線旅客数＝東京・大阪航空局／空港管理状況（2024年度）。経済波及効果＝株式会社千葉銀行「成田空港第2の開港プロジェクトの経済波及効果」（2026年3月）。空港内従業員数＝成田国際空港株式会社「2022年度 成田空港内従業員実態調査」。</div>
+</div>
+</div>
+
+<div class="takeaway">訪日客の最大の入口は成田。千葉は「世界とつながる玄関」を持つ県。</div>
+
+---
+
+<!-- _class: narita cargo-bg -->
+
+<div class="page-title">貨物空港・成田</div>
+
+<div class="nr-frame">
+
+<h2>金額で見ると、成田は日本一の「貿易港」</h2>
+
+<div class="nr-cargo">
+<div class="nr-pie">
+<div class="ct">貿易総額の港・空港別シェア（金額ベース）</div>
+<svg viewBox="0 0 240 312" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="貿易総額の港・空港別シェアの円グラフ">
+  <!-- 成田 16.8%（強調） -->
+  <path d="M120,120 L120,20 A100,100 0 0 1 207.04,70.75 Z" fill="#0033A0"/>
+  <!-- 名古屋港 10.3% -->
+  <path d="M120,120 L207.04,70.75 A100,100 0 0 1 219.13,133.16 Z" fill="#5B7FC7"/>
+  <!-- 東京港 9.7% -->
+  <path d="M120,120 L219.13,133.16 A100,100 0 0 1 193.77,187.51 Z" fill="#8AA4D6"/>
+  <!-- 横浜港 7.7% -->
+  <path d="M120,120 L193.77,187.51 A100,100 0 0 1 153.87,214.09 Z" fill="#AEC0E3"/>
+  <!-- 神戸港 7.0% -->
+  <path d="M120,120 L153.87,214.09 A100,100 0 0 1 110.59,219.56 Z" fill="#CBD7EC"/>
+  <!-- その他 48.5% -->
+  <path d="M120,120 L110.59,219.56 A100,100 0 0 1 120,20 Z" fill="#E3E8F0"/>
+  <!-- 成田ラベル -->
+  <text x="150" y="64" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">成田</text>
+  <text x="150" y="81" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">16.8%</text>
+
+  <!-- 凡例 -->
+  <g font-size="13" fill="#333">
+    <rect x="6" y="250" width="13" height="13" rx="2" fill="#0033A0"/><text x="24" y="261" font-weight="700" fill="#0033A0">成田空港 16.8%</text>
+    <rect x="128" y="250" width="13" height="13" rx="2" fill="#5B7FC7"/><text x="146" y="261">名古屋港 10.3%</text>
+    <rect x="6" y="270" width="13" height="13" rx="2" fill="#8AA4D6"/><text x="24" y="281">東京港 9.7%</text>
+    <rect x="128" y="270" width="13" height="13" rx="2" fill="#AEC0E3"/><text x="146" y="281">横浜港 7.7%</text>
+    <rect x="6" y="290" width="13" height="13" rx="2" fill="#CBD7EC"/><text x="24" y="301">神戸港 7.0%</text>
+    <rect x="128" y="290" width="13" height="13" rx="2" fill="#E3E8F0"/><text x="146" y="301">その他 48.5%</text>
+  </g>
+</svg>
+</div>
+<div class="nr-facts">
+
+<div class="nr-fact">
+<div class="fn">約37<small>兆円</small></div>
+<div class="fl">成田空港の<b>年間貿易総額</b>（2024年）。<br>全国の港・空港で<b>第1位</b>（輸入額は41年連続首位）</div>
+</div>
+
+<div class="nr-fact">
+<div class="fn">約195<small>万トン</small></div>
+<div class="fl">国際航空貨物の<b>年間取扱量</b>（2024年・前年比+4.0%）</div>
+</div>
+
+<div class="nr-fact">
+<div class="fn">約3.0<small>万回</small></div>
+<div class="fl">国際線<b>貨物便</b>の年間発着回数（2024年度）</div>
+</div>
+
+</div>
+</div>
+
+<div class="nr-src">出典：貿易額・貨物取扱量・貨物便発着回数＝東京税関「成田空港貨物取扱量／貿易概況」（2024年）、財務省貿易統計。海港の貿易額（名古屋・東京・横浜・神戸）＝国土交通省「港湾別貿易額」（2023年）。シェアは全国貿易総額 約219兆円（2024年）に対する各港の比率。</div>
+
+</div>
+
+<div class="takeaway">人もモノも、世界と日本をつなぐ最前線。成田は航空物流の日本一の拠点。</div>
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">SECTION 3</div>
 
 # 運用ツールの使い方
 
@@ -986,6 +1187,7 @@ style: |
 <div class="hub-main">
 <div class="ht">Google Drive ― ファイルはグループ別に管理</div>
 <div class="hd">各グループのフォルダに資料・成果物を保存　→　<a href="https://drive.google.com/drive/folders/1eYAriwBMlX6ZsySBhsSRjQSCVi470Edz?usp=drive_link">フォルダを開く</a></div>
+<div class="hu">https://drive.google.com/drive/folders/1eYAriwBMlX6ZsySBhsSRjQSCVi470Edz?usp=drive_link</div>
 </div>
 <div class="hub-qr"><img src="./src/fig-drive-qr.png" alt="Google Drive QR"></div>
 </div>
@@ -995,6 +1197,7 @@ style: |
 <div class="hub-main">
 <div class="ht">Google Classroom ― 配布資料を時系列で記録</div>
 <div class="hd">通知もここから／<b>みんなで共有したいこと</b>はフォーラムへ　→　<a href="https://classroom.google.com/c/ODU0ODczMzk3MjA0">Classroomを開く</a></div>
+<div class="hu">https://classroom.google.com/c/ODU0ODczMzk3MjA0</div>
 </div>
 <div class="hub-qr"><img src="./src/fig-classroom-qr.png" alt="Google Classroom QR"></div>
 </div>
@@ -1003,7 +1206,8 @@ style: |
 <div class="hub-ic">✉️</div>
 <div class="hub-main">
 <div class="ht">相談フォーム ― 聞きにくい相談は事務局へ直接</div>
-<div class="hd">回答は<b>事務局だけに届きます</b>（匿名でもOK）　→　送信方法は次ページ</div>
+<div class="hd">回答は<b>事務局だけに届きます</b>（匿名でもOK）　→　<a href="https://forms.gle/XfBcwbZcLKLX5b5o6">フォームを開く</a></div>
+<div class="hu">https://forms.gle/XfBcwbZcLKLX5b5o6</div>
 </div>
 <div class="hub-qr-none"></div>
 </div>

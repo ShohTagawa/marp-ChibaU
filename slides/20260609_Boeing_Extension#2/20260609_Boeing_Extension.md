@@ -144,12 +144,15 @@ style: |
   section.ws .wstep .min { display: inline-block; background: #0033A0; color: #fff; font-size: 14px; padding: 1px 8px; border-radius: 10px; margin-bottom: 4px; }
 
   /* 動画ヒーロー：高さ基準で収める（見切れ防止） */
-  .video-hero { flex: 1; min-height: 0; width: 100%; margin-top: 6px; display: flex; align-items: center; justify-content: center; }
+  .video-hero { flex: 1; min-height: 0; width: 100%; margin-top: 4px; margin-bottom: 34px; display: flex; align-items: center; justify-content: center; }
   .video-hero video {
     height: 100%; max-height: 100%; width: auto; max-width: 100%;
     aspect-ratio: 16 / 9; object-fit: contain; background: #000;
     border-radius: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.25);
+    transform: translateY(25px) scale(1.18); transform-origin: center;  /* 全体拡大＋25px下へ */
   }
+  /* キャプションをページ最下部へ固定（動画と被らないよう流し込みから外す） */
+  .video-hero + center { position: absolute; left: 0; right: 0; bottom: 14px; margin: 0; padding: 0 70px; }
 
   /* 写真ヒーロー：高さ基準で収める（横幅は auto、上限まで縦に合わせる） */
   .photo-hero { flex: 1; min-height: 0; width: 100%; margin-top: 6px; display: flex; align-items: center; justify-content: center; }
@@ -260,9 +263,9 @@ style: |
 <div class="page-title">皆さん、飛行機、好きですか？</div>
 
 <div class="video-hero">
-<video controls playsinline src="./src/fig07-travel2.mov" title="旅行"></video>
+<video controls playsinline src="./src/fig07-takeoff-hnd.mp4" title="HND C滑走路より離陸"></video>
 </div>
-<center>それでは、2026 Boeing Externship Takeoffです。（©田川 HND D滑走路 RWY05より離陸）</center>
+<center>それでは、2026 Boeing Externship Takeoffです。（田川 HND C滑走路より離陸）</center>
 
 
 ---

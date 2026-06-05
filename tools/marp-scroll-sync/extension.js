@@ -349,7 +349,8 @@ async function present() {
   const npx = fs.existsSync('/opt/homebrew/bin/npx') ? '/opt/homebrew/bin/npx'
             : fs.existsSync('/usr/local/bin/npx') ? '/usr/local/bin/npx' : 'npx';
   const env = { ...process.env, PATH: `/opt/homebrew/bin:/usr/local/bin:${process.env.PATH || ''}` };
-  const cmd = `${npx} @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} ${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)}`;
+  // --yes: 初回の「Ok to proceed?」プロンプトで固まらないよう自動承認
+  const cmd = `${npx} --yes @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} ${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)}`;
 
   await vscode.window.withProgress(
     { location: vscode.ProgressLocation.Notification, title: 'Marp: プレゼン用HTMLを生成中…', cancellable: false },

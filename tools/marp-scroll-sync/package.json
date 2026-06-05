@@ -22,11 +22,31 @@
         "category": "Marp Sync"
       },
       {
+        "command": "marpScrollSync.present",
+        "title": "Marp: Present (current slide, --html)",
+        "category": "Marp Sync",
+        "icon": "$(play)"
+      },
+      {
         "command": "marpScrollSync.gotoSlide",
         "title": "Marp: Go to Slide by number…",
         "category": "Marp Sync"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "marpScrollSync.present",
+          "when": "activeWebviewPanelId == marpScrollSync",
+          "group": "navigation@1"
+        },
+        {
+          "command": "marpScrollSync.present",
+          "when": "editorLangId == markdown && marpScrollSync.isMarp",
+          "group": "navigation@1"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "marpScrollSync.openPreview",

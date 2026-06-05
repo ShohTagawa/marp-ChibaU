@@ -1,0 +1,13 @@
+{
+  "title": { "text": "受講者数と平均点の推移", "left": "center" },
+  "legend": { "top": 28, "data": ["受講者数", "平均点"] },
+  "xAxis": { "type": "category", "data": ["2021", "2022", "2023", "2024", "2025"] },
+  "yAxis": [
+    { "type": "value", "name": "人数" },
+    { "type": "value", "name": "点", "max": 100, "splitLine": { "show": false } }
+  ],
+  "series": [
+    { "name": "受講者数", "type": "bar", "data": [120, 145, 160, 180, 210] },
+    { "name": "平均点", "type": "line", "yAxisIndex": 1, "data": [72, 75, 78, 80, 83] }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "echarts-render",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Render Apache ECharts to static SVG (SSR) for embedding into Marp slides",
+  "dependencies": { "echarts": "^5.5.0" }
+}

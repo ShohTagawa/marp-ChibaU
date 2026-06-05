@@ -50,6 +50,12 @@ style: |
   .src { font-size:13px; color:#9a9a9a; } .src a { color:#9a9a9a; }
   .episode { background:#FCEEF0; border-left:6px solid var(--accent); border-radius:8px; padding:8px 16px; margin:8px 0; font-size:19px; }
   .episode .h { font-weight:700; color:var(--accent); font-size:16px; letter-spacing:.04em; }
+  /* 研究の裏づけボックス(右カラム圧縮版) */
+  .concept-section { background:#F6F7F9; border-left:5px solid var(--accent); border-radius:8px; padding:7px 14px; margin:8px 0; }
+  .concept-title { font-weight:700; color:var(--accent); font-size:18px; margin-bottom:3px; }
+  .concept-desc { font-size:18px; line-height:1.4; margin:0; }
+  .paper-details { margin-top:5px; padding:5px 11px; background:#fff; border:1px solid #e7e7ea; border-radius:6px; font-size:14px; color:#555; line-height:1.55; }
+  .paper-details strong { color:var(--accent); font-weight:700; }
   .demo { background:#FFF6E5; border:2px solid #D98A2B; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:19px; font-weight:700; }
   .demo::before { content:"🎬 録画デモ "; color:#D98A2B; }
   /* まとめ(wrap)は1枚のみ。箇条書きが多いので少し詰める（最小18px厳守） */
@@ -108,10 +114,10 @@ style: |
 
 <div class="callout-blue">📺 受講のしかた</div>
 
-- 全 **10本** の動画を<span class="hl">順番に</span>視聴（途中で止めてOK）
+- 全 **12本** の動画を<span class="hl">順番に</span>視聴 <br>（途中で止めて巻き戻してOK）
 - 各動画にスライド資料（この PDF）が対応
-- 実演パート（<span class="red mono">dig</span> で名前解決／HTML の中身）は<span class="hl">手元でも追える</span>
-- 質問は Moodle の質問フォーラムへ（slido なし）
+- 実演パート（<span class="red mono">dig</span> ／HTML の中身）あり
+- 今回は <span class="hl">slido なし</span> ／ <br>質問は Moodle の質問フォーラムへ
 
 <div class="callout-green" style="margin-top:14px">🗂 大きく3つの山だけ覚える</div>
 
@@ -124,21 +130,22 @@ style: |
 
 <div class="callout-orange">🗓 期限（Moodle で要確認）</div>
 
-<table class="dtbl" style="width:100%">
+<div style="text-align:center">
+<table class="dtbl" style="display:inline-table; margin:6px 0">
 <tr><th>項目</th><th>期限</th></tr>
-<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/9（火）</span></td></tr>
-<tr><td class="l"><strong>課題</strong>の提出</td><td><span class="hl-dark mono">6/16（火）</span></td></tr>
-<tr><td class="l">提出先</td><td class="mono">Moodle</td></tr>
+<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
+<tr><td class="l"><strong>小テスト</strong>の提出</td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
+<tr><td class="l">リフレクションシート</td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
+<tr><td class="l">提出先</td><td class="mono">すべて Moodle</td></tr>
 </table>
+</div>
 
-<div class="band" style="font-size:18px">視聴 → 課題の順。視聴を 6/9 までに終えれば、課題（6/16）に1週間使える。</div>
+<div class="band" style="font-size:18px">公開が遅れたため、視聴期限・小テストとも <span class="hl">6/17（火）まで延長</span>。自分のペースで巻き戻して受講を。</div>
 
-<div class="ask">「なぜ繋がらない？」を AI に聞いても、<strong>仕組みを知らなければ答えの正否を判断できない</strong>。だから中身を学ぶ。</div>
+<div class="ask">「ネットワークになぜ繋がらない？」を AI に聞いても、<strong>仕組みを知らなければ答えの正否を判断できない</strong>。<br>中身を学べば、安全も分かる。</div>
 
 </div>
 </div>
-
-<div class="src">案内日程は Moodle の掲示が正本。差異があれば Moodle を優先してください。</div>
 
 ---
 
@@ -148,13 +155,11 @@ style: |
 
 ## 「URL を入れてからページが出るまで」を1本の旅として追う
 
-<div class="fig-area">
-<svg viewBox="20 40 920 268" width="100%" style="max-height:330px">
+<div class="fig-area" style="margin-top:-20px; margin-bottom:2px">
+<svg viewBox="20 40 920 268" width="100%" style="max-height:300px">
   <defs>
     <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
-  <!-- 旅プログレスバー（このデック共通の背骨）：端末→Wi-Fi→DNS→Internet→サーバ→表示 -->
-  <line x1="70" y1="78" x2="910" y2="78" stroke="#cccccc" stroke-width="2"/>
   <g font-size="16" text-anchor="middle">
     <g><rect class="card" x="30" y="48" width="115" height="62" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="87" y="74" font-weight="700" fill="#7d1322">あなたの端末</text><text x="87" y="96" fill="#555" font-size="15">スマホ / PC</text></g>
     <text x="158" y="84" fill="#A6192E" font-size="24" font-weight="800">→</text>
@@ -179,7 +184,7 @@ style: |
     <text x="615" y="208" font-weight="800" font-size="18" fill="#1a1a1a">Part 2 ── データ</text>
     <text x="615" y="232" fill="#555">動画 8〜9</text>
     <text x="615" y="262" font-weight="700" fill="#3C8A57">DB・SQL</text>
-    <text x="615" y="286" fill="#555" font-size="15">届いた先で何を蓄え・取り出す？</text>
+    <text x="615" y="286" fill="#555" font-size="13">届いた先で何を蓄え・取り出す？</text>
     <rect class="card" x="740" y="180" width="200" height="120" rx="10" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
     <text x="840" y="208" font-weight="800" font-size="18" fill="#1a1a1a">Part 3 ── クラウド</text>
     <text x="840" y="232" fill="#555">動画 10</text>
@@ -191,10 +196,9 @@ style: |
   <text x="335" y="150" font-size="15" fill="#7d1322" font-weight="700">この旅の全体が Part 1</text>
 </svg>
 </div>
+<div class="band" style="margin:4px">各動画のページ上部に同じ <strong>旅バー</strong> を小さく置き、<span class="hl">いま旅のどこの話か</span>を赤で点灯します。</div>
 
-<div class="band">各動画のページ上部に同じ <strong>旅バー</strong> を小さく置き、<span class="hl">いま旅のどこの話か</span>を赤で点灯します。</div>
-
-<div class="episode" style="margin-top:6px"><span class="h">なぜ学ぶか</span> 2025年11月18日、Cloudflare の<strong>設定ミス</strong>で X・ChatGPT 等が世界規模でダウン。攻撃ではなく地味なバグだった。</div>
+<div class="episode" style="margin:4px; background:#FBEFC8; border-left-color:#D98A2B"><span class="h">なぜ学ぶか</span> 「ページが開かない」「Moodleに繋がらない」── 原因を<span class="hl">切り分けられれば慌てず直せる</span>。<strong>安全に使えるとき</strong>がわかる。</div>
 
 <div class="takeaway">ゴールは1つ ── 「URL を入れてからページが出るまで」を自分で説明できること</div>
 
@@ -205,9 +209,215 @@ style: |
 
 <div class="chapter-num">動画 1 ／ CHAPTER 1</div>
 
-# 学び方と、この講義の地図
+# 学び方補足
 
-## 第1タームお疲れさま — 学びの「モード」を増やす（約8分）
+## 学びの「モード」を増やす（約8分）
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">学び方</div>
+
+## 情報の集め方は、1つじゃない — 「6つのモード」
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="-6 -6 372 352" width="100%" style="max-height:430px">
+  <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
+  <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
+  <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">6つのモード</text>
+  <g text-anchor="middle">
+    <line x1="180" y1="112" x2="180" y2="74" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="120" y="29" width="120" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="55" font-size="15" font-weight="700">① 実験する</text>
+    <line x1="230" y1="141" x2="263" y2="122" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="234" y="89" width="100" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="284" y="115" font-size="15" font-weight="700">② ネット</text>
+    <line x1="230" y1="199" x2="263" y2="218" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="242" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="284" y="235" font-size="15" font-weight="700">③ AI</text>
+    <line x1="180" y1="228" x2="180" y2="266" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="120" y="269" width="120" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="295" font-size="15" font-weight="700">④ 人に聞く</text>
+    <line x1="130" y1="199" x2="97" y2="218" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="34" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="76" y="235" font-size="15" font-weight="700">⑤ 本</text>
+    <line x1="130" y1="141" x2="97" y2="122" stroke="#bbb" stroke-width="2"/>
+    <rect class="card" x="34" y="89" width="84" height="42" rx="8" fill="#fff" stroke="#4F5BA6" stroke-width="2"/><text x="76" y="115" font-size="15" font-weight="700">⑥ 論文</text>
+  </g>
+</svg>
+
+</div>
+<div class="right">
+
+<table class="dtbl" style="width:100%; font-size:15px; line-height:1.25">
+<tr><th>モード</th><th>手段</th><th>強み</th></tr>
+<tr><td class="l"><span class="hl-green">① 実験する</span></td><td class="l">手を動かす・dig で試す</td><td class="l">体験で覚える</td></tr>
+<tr><td class="l"><span class="hl-yellow">② ネットで調べる</span></td><td class="l">検索・公式ドキュメント</td><td class="l">速い・最新</td></tr>
+<tr><td class="l"><span class="hl-pink">③ AI に聞く</span></td><td class="l">Gemini 等</td><td class="l">対話で整理</td></tr>
+<tr><td class="l"><span class="red">④ 人に聞く</span></td><td class="l">友人・先生・図書館の院生 LS</td><td class="l">経験知・即修正</td></tr>
+<tr><td class="l">⑤ 本</td><td class="l">体系立った信頼できる貯蔵庫</td><td class="l">深さ・全体像</td></tr>
+<tr><td class="l">⑥ 論文</td><td class="l">査読された一次情報／最先端</td><td class="l">最新・多様な見方</td></tr>
+</table>
+
+<div class="band" style="font-size:15px; margin:6px 0">「ググれ」という風土もある。でも、聞くことを恥ずかしがらなくてもよい。<br>
+でも、せっかく聞けるなら、人にも聞こう。</div>
+
+<div class="cbox gray" style="margin-top:4px; font-size:18px"><div class="h">この講義での使い分け</div><div class="b">
+
+- ① は <span class="red">dig 実演</span>・Colab、④ は<span class="red">附属図書館の LS（院生）</span>
+- どれにも偏らず、<span class="hl">行き来して確かめる</span>のがコツ
+
+</div></div>
+
+</div>
+</div>
+
+<div class="takeaway">全部を一人で・1つの方法で分かる必要はない。様々な方法を行き来する。</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">大学で学ぶ意味</div>
+
+## 「全部 AI で完結」は、もったいない
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox green"><div class="h">④ 人に聞く — 大学という「場」</div><div class="b">
+
+- <span class="red">安全に失敗</span>でき、人の経験・実践知を直接聞ける
+- 友人・先生に加え、<span class="hl">附属図書館</span>では大学院生（**LS：ラーニング・サポーター**）が質問に対応
+- 同じ問いでも、答える人で見える景色が変わる
+
+</div></div>
+
+<div class="cbox gray"><div class="h">⑤ 本・⑥ 論文 — 機械より「奥」がある</div><div class="b">
+
+- **本**＝信頼できる情報が体系立てて貯蔵された場所
+- **論文**＝最先端・多様な見方に触れられる一次情報
+- AI の答えの「正しさ」を確かめる土台になる
+
+</div></div>
+
+<div class="band"><span class="hl">様々な学び方の引き出し</span>を持ち、状況に応じて使い分けられること自体が強み</div>
+
+</div>
+<div class="right">
+
+<div class="concept-section">
+<div class="concept-title">学び方は成績を予測する（第3の柱）</div>
+<p class="concept-desc">学習習慣・スキル・態度は、<span class="hl-dark">標準テストや高校成績に匹敵</span>するほど成績と相関。生来の頭の良さや過去の成績とは<span class="red">独立に効く「第3の柱」</span>。</p>
+<div class="paper-details"><strong>エビデンス:</strong> Credé &amp; Kuncel (2008)<br><strong>規模:</strong> ・N>70,000 のメタ分析</div>
+</div>
+
+<div class="concept-section">
+<div class="concept-title">② 引き出しの多さが効く（自己調整学習）</div>
+<p class="concept-desc">複数の学習方略を身につけ、<span class="red">課題に応じて柔軟に選び・調整できる</span>学生ほど高い学習成果を出す。</p>
+<div class="paper-details"><strong>エビデンス:</strong> Donker et al. (2014)<br><strong>効果量:</strong> 作文 g=1.25／理科 .73／数学 .66（58研究・95介入）</div>
+</div>
+
+<div class="ask">あなたが「分からないこと」に出会ったとき、最初に動かすのはどのモード？</div>
+
+</div>
+</div>
+
+<div class="takeaway">学び方を身につけることは、卒業後も生涯「学び続ける」力そのもの。</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">AIとの付き合い方</div>
+
+## AIの特徴浅く聞けば浅い／文脈を与えれば深い
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 360 320" width="100%" style="max-height:480px">
+  <g text-anchor="middle">
+    <!-- 上段：入力（左右そろえ：x=20/190, y=30, 150x54） -->
+    <rect class="card" x="20" y="30" width="150" height="54" rx="8" fill="#ECECEC" stroke="#6B6F76" stroke-width="2"/><text x="95" y="54" font-size="15" font-weight="700">浅い質問</text><text x="95" y="74" font-size="14" fill="#555">ひとこと</text>
+    <rect class="card" x="190" y="30" width="150" height="54" rx="8" fill="#DDEBC8" stroke="#3C8A57" stroke-width="2"/><text x="265" y="52" font-size="15" font-weight="700">自分の理解＋</text><text x="265" y="72" font-size="14" fill="#3C8A57" font-weight="700">論文・資料で文脈</text>
+    <!-- 矢印（左右そろえ：y=108） -->
+    <text x="95" y="108" font-size="22" fill="#6B6F76" font-weight="800">↓</text>
+    <text x="265" y="108" font-size="22" fill="#3C8A57" font-weight="800">↓</text>
+    <!-- 下段：出力（左右そろえ：x=20/190, y=118, 150x68） -->
+    <rect class="card" x="20" y="118" width="150" height="68" rx="8" fill="#f3d6d6" stroke="#A6192E" stroke-width="2"/><text x="95" y="150" font-size="16" font-weight="700">浅い答え</text><text x="95" y="172" font-size="14" fill="#7d1322">表面的</text>
+    <rect class="card" x="190" y="118" width="150" height="68" rx="8" fill="#cfe6b8" stroke="#3C8A57" stroke-width="2"/><text x="265" y="148" font-size="16" font-weight="700">深く充実した答え</text><text x="265" y="172" font-size="13" fill="#3C8A57">同じ性能の AI でも別物</text>
+    <!-- まとめ -->
+    <text x="180" y="232" font-size="17" font-weight="700" fill="#A6192E">入力の質が、出力の質を決める</text>
+    <text x="180" y="262" font-size="15" fill="#555">＝ 自分が深く理解しているほど、AI は深く返す</text>
+    <text x="180" y="280" font-size="15" fill="#555"> AIを使わない/AIで深く学ぶなど使い分ける</text>
+  </g>
+</svg>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">良い使い方（前回の自由記述より）</div><div class="b">
+
+- 思考力低下を防ぐため、<span class="red">丸投げせず主体的・補助的</span>に
+- 要領よく<span class="red">「深く・広く」</span>学ぶために
+- 誤情報・<span class="red">ハルシネーション</span>は必ず確認
+
+</div></div>
+
+<div class="cbox gray"><div class="h">学び方の核（同じく自由記述より）</div><div class="b">
+
+- 実践による習得／中身の理解／<span class="red">外部リソース</span>での裏取り
+
+</div></div>
+
+<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、6つのうちの <span class="hl">1モード</span> <span class="important">重要</span></div>
+
+</div>
+</div>
+
+<div class="takeaway">同じ AI でも、与える文脈の深さで答えは段違い。鍛えるべきは「自分」。</div>
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">学び方の根拠</div>
+
+## 「効く学び方」は研究でも示されている
+
+<div class="fig-area">
+<svg viewBox="0 0 920 300" width="100%" style="max-height:400px">
+  <g text-anchor="middle">
+    <text x="460" y="34" font-size="20" font-weight="700">学習法の効果は「やり方」で大きく変わる（Dunlosky ら 2013）</text>
+    <rect class="card" x="40" y="60" width="410" height="200" rx="10" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+    <text x="245" y="90" font-size="18" font-weight="700" fill="#3C8A57">効果が高い（実践向き）</text>
+    <text x="245" y="124" font-size="18">・<tspan font-weight="700">想起練習</tspan>（思い出してテストする）</text>
+    <text x="245" y="154" font-size="18">・<tspan font-weight="700">分散学習</tspan>（間隔をあけて繰り返す）</text>
+    <text x="245" y="190" font-size="15" fill="#555">＝ ① 実験する・dig で試す・自分で説明し直す</text>
+    <text x="245" y="214" font-size="15" fill="#555">　 ＝「手を動かして思い出す」学び方</text>
+    <rect class="card" x="470" y="60" width="410" height="200" rx="10" fill="#ECECEC" stroke="#6B6F76" stroke-width="2"/>
+    <text x="675" y="90" font-size="18" font-weight="700" fill="#6B6F76">効果が低め（やった気だけ）</text>
+    <text x="675" y="124" font-size="18">・<tspan font-weight="700">読み返し</tspan>だけ</text>
+    <text x="675" y="154" font-size="18">・<tspan font-weight="700">マーカーを引く</tspan>だけ</text>
+    <text x="675" y="190" font-size="15" fill="#555">＝ AI の答えを「眺めて満足」も、これに近い</text>
+    <text x="675" y="214" font-size="15" fill="#555">　 受け身では定着しにくい</text>
+  </g>
+</svg>
+</div>
+
+<div class="caption">出典: Dunlosky et al. (2013) <span class="src">Improving Students' Learning With Effective Learning Techniques. <em>Psychological Science in the Public Interest</em>, 14(1).</span></div>
+
+<div class="takeaway">「思い出す・試す・説明する」を回す — 6モードはこの研究とも噛み合う。</div>
+
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">動画 2 ／ CHAPTER 2</div>
+
+# ネットワークの基礎
+
+## まず「あなたの端末」と「最初の関門 Wi-Fi／LAN」を知る（約14分）
 
 ---
 
@@ -255,195 +465,6 @@ style: |
 
 ---
 
-<!-- _class: split -->
-
-<div class="page-title">学び方</div>
-
-## 情報の集め方は、1つじゃない — 「5つのモード」
-
-<div class="split-body">
-<div class="left">
-
-<svg viewBox="-6 -6 372 352" width="100%" style="max-height:340px">
-  <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
-  <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
-  <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">5つのモード</text>
-  <g text-anchor="middle">
-    <line x1="180" y1="114" x2="180" y2="62" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="112" y="20" width="136" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="46" font-size="15" font-weight="700">① 実験する</text>
-    <line x1="232" y1="138" x2="300" y2="98" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="246" y="74" width="112" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="302" y="100" font-size="15" font-weight="700">② ネット</text>
-    <line x1="236" y1="202" x2="305" y2="240" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="252" y="218" width="106" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="305" y="244" font-size="15" font-weight="700">③ AI</text>
-    <line x1="180" y1="226" x2="180" y2="278" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="110" y="278" width="140" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="304" font-size="15" font-weight="700">④ 人に聞く</text>
-    <line x1="124" y1="202" x2="55" y2="240" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="2" y="218" width="116" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="60" y="244" font-size="15" font-weight="700">⑤ 本・論文</text>
-  </g>
-</svg>
-
-</div>
-<div class="right">
-
-<table class="dtbl" style="width:100%; font-size:17px">
-<tr><th>モード</th><th>手段</th><th>強み</th></tr>
-<tr><td class="l"><span class="hl-green">① 実験する</span></td><td class="l">手を動かす・dig で試す</td><td class="l">体で覚わる</td></tr>
-<tr><td class="l"><span class="hl-yellow">② ネットで調べる</span></td><td class="l">検索・公式ドキュメント</td><td class="l">速い・最新</td></tr>
-<tr><td class="l"><span class="hl-pink">③ AI に聞く</span></td><td class="l">Gemini 等</td><td class="l">対話で整理</td></tr>
-<tr><td class="l"><span class="red">④ 人に聞く</span></td><td class="l">友人・先生・図書館の院生 LS</td><td class="l">経験知・即修正</td></tr>
-<tr><td class="l">⑤ 本・論文</td><td class="l">信頼できる貯蔵庫／最先端</td><td class="l">深さ・多様な見方</td></tr>
-</table>
-
-<div class="band" style="font-size:18px">「ググレカス」と言われた時代もある。でも今は <span class="hl">調べ方そのものが多様化</span>した。1つに偏らないこと。</div>
-
-<div class="cbox gray" style="margin-top:10px"><div class="h">この講義での使い分け</div><div class="b">
-
-- ① は <span class="red">dig 実演</span>・Colab、④ は<span class="red">附属図書館の LS（院生）</span>
-- どれにも偏らず、<span class="hl">行き来して確かめる</span>のがコツ
-
-</div></div>
-
-</div>
-</div>
-
-<div class="takeaway">全部を一人で・1つの方法で分かる必要はない。5つを行き来する。</div>
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">大学で学ぶ意味</div>
-
-## 「全部 AI で完結」は、もったいない
-
-<div class="split-body">
-<div class="left">
-
-<div class="cbox green"><div class="h">④ 人に聞く — 大学という「場」</div><div class="b">
-
-- <span class="red">安全に失敗</span>でき、人の経験・実践知を直接聞ける
-- 友人・先生に加え、<span class="hl">附属図書館</span>では大学院生（**LS：ラーニング・サポーター**）が質問に対応
-- 同じ問いでも、答える人で見える景色が変わる
-
-</div></div>
-
-<div class="cbox gray"><div class="h">⑤ 本・論文 — 機械より「奥」がある</div><div class="b">
-
-- **本**＝信頼できる情報が体系立てて貯蔵された場所
-- **論文**＝最先端・多様な見方に触れられる一次情報
-- AI の答えの「正しさ」を確かめる土台になる
-
-</div></div>
-
-</div>
-<div class="right">
-
-<div class="episode"><div class="h">なぜ「中身」を学ぶのか</div>
-
-2025年11月18日、ネットの土台 Cloudflare で <span class="hl-dark">設定ファイルが想定の倍以上に肥大化</span>して処理停止、X・ChatGPT など多数のサービスが世界規模でエラーに。サイバー攻撃ではなく地味なバグ。AI に「なぜ繋がらないの？」と聞いても、<span class="red">仕組みを知らなければ答えの正否を判断できない</span>。だから中身を学ぶ。
-<div class="src">出典: Cloudflare 公式ブログ「Cloudflare outage on November 18, 2025」</div>
-</div>
-
-<div class="ask">あなたが「分からないこと」に出会ったとき、最初に動かすのはどのモード？</div>
-
-</div>
-</div>
-
-<div class="takeaway">学び方を身につけることは、卒業後も生涯「学び続ける」力そのもの。</div>
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">AIとの付き合い方</div>
-
-## 浅く聞けば浅い／文脈を与えれば深い
-
-<div class="split-body">
-<div class="left">
-
-<svg viewBox="0 0 360 320" width="100%" style="max-height:320px">
-  <g text-anchor="middle">
-    <rect class="card" x="40" y="34" width="110" height="40" rx="8" fill="#ECECEC" stroke="#6B6F76" stroke-width="1.5"/><text x="95" y="52" font-size="15" font-weight="700">浅い質問</text><text x="95" y="68" font-size="14" fill="#555">ひとこと</text>
-    <text x="95" y="104" font-size="22" fill="#6B6F76" font-weight="800">↓</text>
-    <rect class="card" x="40" y="116" width="110" height="62" rx="8" fill="#f3d6d6" stroke="#A6192E" stroke-width="1.5"/><text x="95" y="142" font-size="15" font-weight="700">浅い答え</text><text x="95" y="162" font-size="14" fill="#7d1322">表面的</text>
-    <rect class="card" x="200" y="34" width="130" height="56" rx="8" fill="#DDEBC8" stroke="#3C8A57" stroke-width="2"/><text x="265" y="56" font-size="14" font-weight="700">自分の理解＋</text><text x="265" y="76" font-size="14" font-weight="700">論文・資料で文脈</text>
-    <text x="265" y="116" font-size="22" fill="#3C8A57" font-weight="800">↓</text>
-    <rect class="card" x="196" y="128" width="138" height="84" rx="8" fill="#cfe6b8" stroke="#3C8A57" stroke-width="2"/><text x="265" y="158" font-size="16" font-weight="700">深く充実した答え</text><text x="265" y="184" font-size="14" fill="#3C8A57">同じ性能の AI でも別物</text>
-    <text x="180" y="262" font-size="17" font-weight="700" fill="#A6192E">入力の質が、出力の質を決める</text>
-    <text x="180" y="290" font-size="15" fill="#555">＝ 自分が深く理解しているほど、AI は深く返す</text>
-  </g>
-</svg>
-
-</div>
-<div class="right">
-
-<div class="cbox green"><div class="h">良い使い方（前回の自由記述より）</div><div class="b">
-
-- 思考力低下を防ぐため、<span class="red">丸投げせず主体的・補助的</span>に
-- 要領よく<span class="red">「深く・広く」</span>学ぶために
-- 誤情報・<span class="red">ハルシネーション</span>は必ず確認
-
-</div></div>
-
-<div class="cbox gray"><div class="h">学び方の核（同じく自由記述より）</div><div class="b">
-
-- 実践による習得／中身の理解／<span class="red">外部リソース</span>での裏取り
-
-</div></div>
-
-<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、5つのうちの <span class="hl">1モード</span> <span class="important">重要</span></div>
-
-</div>
-</div>
-
-<div class="takeaway">同じ AI でも、与える文脈の深さで答えは段違い。鍛えるべきは「自分」。</div>
-
----
-
-<!-- _class: fig -->
-
-<div class="page-title">学び方の根拠</div>
-
-## 「効く学び方」は研究でも示されている
-
-<div class="fig-area">
-<svg viewBox="0 0 920 300" width="100%" style="max-height:320px">
-  <g text-anchor="middle">
-    <text x="460" y="34" font-size="20" font-weight="700">学習法の効果は「やり方」で大きく変わる（Dunlosky ら 2013）</text>
-    <rect class="card" x="40" y="60" width="410" height="200" rx="10" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
-    <text x="245" y="90" font-size="18" font-weight="700" fill="#3C8A57">効果が高い（実践向き）</text>
-    <text x="245" y="124" font-size="16">・<tspan font-weight="700">想起練習</tspan>（思い出してテストする）</text>
-    <text x="245" y="154" font-size="16">・<tspan font-weight="700">分散学習</tspan>（間隔をあけて繰り返す）</text>
-    <text x="245" y="190" font-size="15" fill="#555">＝ ① 実験する・dig で試す・自分で説明し直す</text>
-    <text x="245" y="214" font-size="15" fill="#555">　 ＝「手を動かして思い出す」学び方</text>
-    <rect class="card" x="470" y="60" width="410" height="200" rx="10" fill="#ECECEC" stroke="#6B6F76" stroke-width="2"/>
-    <text x="675" y="90" font-size="18" font-weight="700" fill="#6B6F76">効果が低め（やった気だけ）</text>
-    <text x="675" y="124" font-size="16">・<tspan font-weight="700">読み返し</tspan>だけ</text>
-    <text x="675" y="154" font-size="16">・<tspan font-weight="700">マーカーを引く</tspan>だけ</text>
-    <text x="675" y="190" font-size="15" fill="#555">＝ AI の答えを「眺めて満足」も、これに近い</text>
-    <text x="675" y="214" font-size="15" fill="#555">　 受け身では定着しにくい</text>
-  </g>
-</svg>
-</div>
-
-<div class="caption">出典: Dunlosky et al. (2013) <span class="src">Improving Students' Learning With Effective Learning Techniques. <em>Psychological Science in the Public Interest</em>, 14(1).</span></div>
-
-<div class="takeaway">「思い出す・試す・説明する」を回す — 5モードはこの研究とも噛み合う。</div>
-
-
----
-
-<!-- _class: divider -->
-
-<div class="chapter-num">動画 2 ／ CHAPTER 2</div>
-
-# ネットワークの基礎
-
-## まず「あなたの端末」と「最初の関門 Wi-Fi／LAN」を知る（約14分）
-
----
-
 <!-- _class: fig -->
 
 <div class="page-title">ネットワークとは</div>
@@ -467,12 +488,12 @@ style: |
   </g>
   <!-- 家のLAN -->
   <ellipse class="card" cx="165" cy="180" rx="140" ry="92" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-  <text x="165" y="108" font-size="18" font-weight="700" text-anchor="middle" fill="#3E78B2">家庭の LAN</text>
+  <text x="165" y="133" font-size="18" font-weight="700" text-anchor="middle" fill="#3E78B2">家庭の LAN</text>
   <g fill="#3E78B2"><circle cx="110" cy="170" r="13"/><circle cx="165" cy="205" r="13"/><circle cx="220" cy="170" r="13"/></g>
   <text x="165" y="252" font-size="16" text-anchor="middle" fill="#3E78B2">PC・スマホ・TV</text>
   <!-- 大学のLAN -->
   <ellipse class="card" cx="815" cy="180" rx="140" ry="92" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
-  <text x="815" y="108" font-size="18" font-weight="700" text-anchor="middle" fill="#3C8A57">大学の LAN（別のネットワーク）</text>
+  <text x="815" y="133" font-size="18" font-weight="700" text-anchor="middle" fill="#3C8A57">LAN（別のネットワーク）</text>
   <g fill="#3C8A57"><circle cx="760" cy="170" r="13"/><circle cx="815" cy="205" r="13"/><circle cx="870" cy="170" r="13"/></g>
   <text x="815" y="252" font-size="16" text-anchor="middle" fill="#3C8A57">研究室・図書館の機器</text>
   <!-- WAN（中央） -->
@@ -487,7 +508,7 @@ style: |
 </svg>
 </div>
 
-<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。LAN＝限られた範囲／WAN＝広域、繋ぐ装置が<span class="red">ルーター(R)</span>。</div>
+<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。<br>LAN＝限られた範囲／WAN＝広域、繋ぐ装置が<span class="red">ルーター(R)</span>。</div>
 
 <div class="takeaway">小さな網（LAN）を、広い網（WAN）でいくつも繋いだものが「網の網」。</div>
 
@@ -502,7 +523,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 300" width="100%" style="max-height:300px">
+<svg viewBox="0 0 360 300" width="100%" style="max-height:400px">
   <!-- LAN -->
   <rect class="card" x="20" y="20" width="320" height="118" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
   <text x="40" y="48" font-size="17" font-weight="700" fill="#3E78B2">LAN（Local Area Network）</text>
@@ -3189,7 +3210,7 @@ style: |
 
 <div class="cbox green"><div class="h">学び方は1つではない（動画1）</div><div class="b">
 
-- ①実験する ②ネットで調べる ③Geminiで調べる ④人に聞く ⑤本・論文
+- ①実験する ②ネットで調べる ③Geminiで調べる ④人に聞く ⑤本 ⑥論文
 - <span class="red">AIは軸でなく1モード</span>。中身を理解した人ほど深い答えを引き出せる
 
 </div></div>

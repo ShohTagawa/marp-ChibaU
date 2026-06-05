@@ -5,6 +5,7 @@
 const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
+const cp = require('child_process');
 const { Marp } = require('@marp-team/marp-core');
 
 let statusItem;
@@ -12,6 +13,8 @@ let panel = null;          // 現在のプレビュー WebviewPanel
 let panelDocUri = null;    // プレビュー対象ドキュメントの uri.toString()
 let slideStarts = [];      // プレビュー対象の各スライド開始行(0-based)
 let renderTimer = null;
+let revealDeco = null;     // クリック逆引き時の一時ハイライト用デコレーション
+let revealDecoTimer = null;
 
 /** frontmatter に marp: true を持つ markdown か */
 function isMarpDoc(doc) {
@@ -57,9 +60,71 @@ function slideIndexForLine(starts, line) {
   return idx;
 }
 
+/** スライド index → 原稿の行範囲 [start, end)(end は exclusive) */
+function lineRangeForSlide(starts, idx, lineCount) {
+  const start = starts[idx] !== undefined ? starts[idx] : 0;
+  const end = starts[idx + 1] !== undefined ? starts[idx + 1] : lineCount;
+  return [start, end];
+}
+
+/** レンダリング後テキストと比較できるよう、原稿行から HTML タグ・Markdown 記号・実体参照を落として正規化 */
+function normalizeForMatch(s) {
+  return String(s)
+    .replace(/<[^>]+>/g, ' ')                 // HTML タグ
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/`+/g, '')                        // インラインコード
+    .replace(/\*\*|\*|__|~~/g, '')             // 強調
+    .replace(/^[\s>#*\-+|]+/, '')              // 行頭の箇条書き/見出し/引用/表記号
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** 2 文字列の最長共通部分文字列の長さ（短い行同士なので素朴な DP で十分） */
+function lcsLen(a, b) {
+  if (!a || !b) return 0;
+  const m = a.length, n = b.length;
+  let prev = new Array(n + 1).fill(0);
+  let best = 0;
+  for (let i = 1; i <= m; i++) {
+    const cur = new Array(n + 1).fill(0);
+    for (let j = 1; j <= n; j++) {
+      if (a[i - 1] === b[j - 1]) {
+        cur[j] = prev[j - 1] + 1;
+        if (cur[j] > best) best = cur[j];
+      }
+    }
+    prev = cur;
+  }
+  return best;
+}
+
+/**
+ * クリックされたテキスト(query)に最も一致する原稿行を、スライドの行範囲内だけで探す。
+ * 戻り値: 行番号(0-based) / 見つからなければ -1。
+ */
+function findLineForText(lines, startLn, endLn, query) {
+  const q = normalizeForMatch(query);
+  if (q.length < 1) return -1;
+  let best = -1, bestScore = 0;
+  for (let ln = startLn; ln < endLn && ln < lines.length; ln++) {
+    const nl = normalizeForMatch(lines[ln]);
+    if (!nl) continue;
+    let score;
+    if (nl.includes(q)) score = q.length + 1000;        // 行が clicked run を丸ごと含む(最強)
+    else if (q.includes(nl)) score = nl.length + 500;   // 行テキストが clicked run の一部
+    else score = lcsLen(nl, q);                          // 部分一致
+    if (score > bestScore) { bestScore = score; best = ln; }
+  }
+  return bestScore >= 2 ? best : -1;
+}
+
 function updateStatus(editor) {
   if (!statusItem) return;
-  if (!editor || !isMarpDoc(editor.document)) { statusItem.hide(); return; }
+  const isMarp = !!(editor && isMarpDoc(editor.document));
+  vscode.commands.executeCommand('setContext', 'marpScrollSync.isMarp', isMarp);
+  if (!isMarp) { statusItem.hide(); return; }
   const starts = slideStartLines(editor.document.getText());
   const line = editor.selection.active.line;
   const idx = slideIndexForLine(starts, line);
@@ -135,7 +200,25 @@ function buildHtml(webview, doc, initialIndex) {
     const s = slides()[i];
     if (s){ s.scrollIntoView({behavior:'smooth', block:'start'}); highlight(i); }
   }
-  slides().forEach((s,i)=>{ s.addEventListener('click', ()=>vscode.postMessage({type:'revealSlide', index:i})); });
+  // クリック逆引き: ポインタ直下のテキストノードを精密に取り、その文字列で原稿を照合させる。
+  // 文字が拾えない余白クリックはスライド先頭へのジャンプにフォールバック。
+  function textUnderPointer(ev){
+    let r = null;
+    if (document.caretRangeFromPoint) r = document.caretRangeFromPoint(ev.clientX, ev.clientY);
+    else if (document.caretPositionFromPoint){ const p = document.caretPositionFromPoint(ev.clientX, ev.clientY); if(p) r = {startContainer:p.offsetNode}; }
+    let node = r && r.startContainer;
+    if (node && node.nodeType === 3) return node.textContent || '';     // テキストノード = 一行ぶんの連続テキスト
+    const el = (ev.target && ev.target.closest) ? ev.target : null;
+    return el && el.textContent ? el.textContent : '';
+  }
+  document.addEventListener('click', (ev)=>{
+    const svg = ev.target && ev.target.closest ? ev.target.closest('svg[data-marpit-svg]') : null;
+    if (!svg) return;
+    const i = slides().indexOf(svg);
+    if (i < 0) return;
+    const text = (textUnderPointer(ev) || '').replace(/\s+/g,' ').trim();
+    vscode.postMessage(text ? {type:'revealText', index:i, text} : {type:'revealSlide', index:i});
+  });
   window.addEventListener('message', e=>{
     const m = e.data || {};
     if (m.type === 'scrollToSlide') scrollTo(m.index);
@@ -172,21 +255,48 @@ function openPreview(context) {
     );
     panel.onDidDispose(() => { panel = null; panelDocUri = null; }, null, context.subscriptions);
     panel.webview.onDidReceiveMessage((m) => {
-      if (m && m.type === 'revealSlide') {
-        const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri)
-          || vscode.window.activeTextEditor;
-        if (ed && slideStarts[m.index] !== undefined) {
-          const ln = slideStarts[m.index];
-          const pos = new vscode.Position(ln, 0);
-          ed.selection = new vscode.Selection(pos, pos);
-          ed.revealRange(new vscode.Range(pos, pos), vscode.TextEditorRevealType.AtTop);
-          vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false });
-        }
+      if (!m) return;
+      const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri)
+        || vscode.window.activeTextEditor;
+      if (!ed) return;
+
+      if (m.type === 'revealText' && typeof m.text === 'string' && slideStarts[m.index] !== undefined) {
+        // クリックした文字列を、そのスライドの行範囲内だけで照合 → 該当行を選択＆一時ハイライト
+        const lines = ed.document.getText().split(/\r?\n/);
+        const [s, e] = lineRangeForSlide(slideStarts, m.index, lines.length);
+        let ln = findLineForText(lines, s, e, m.text);
+        if (ln < 0) ln = s;                              // 一致行なし → スライド先頭行を必ずハイライト
+        const text = lines[ln] || '';
+        const startCol = text.length - text.replace(/^\s+/, '').length; // 行頭インデントを除いた先頭
+        const range = new vscode.Range(ln, startCol, ln, Math.max(startCol, text.length));
+        ed.selection = new vscode.Selection(range.start, range.end);
+        ed.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
+        flashReveal(ed, range);
+        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false });
+        return;
+      }
+
+      if (m.type === 'revealSlide' && slideStarts[m.index] !== undefined) {
+        const ln = slideStarts[m.index];
+        const pos = new vscode.Position(ln, 0);
+        ed.selection = new vscode.Selection(pos, pos);
+        ed.revealRange(new vscode.Range(pos, pos), vscode.TextEditorRevealType.AtTop);
+        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false });
       }
     }, null, context.subscriptions);
   }
   panelDocUri = doc.uri.toString();
   renderInto(panel, doc, idx);
+}
+
+/** 逆引きで当てた行を一時的に色付けして見つけやすくする（選択ハイライトに加えての強調） */
+function flashReveal(editor, range) {
+  if (!revealDeco) return;
+  clearTimeout(revealDecoTimer);
+  editor.setDecorations(revealDeco, [range]);
+  revealDecoTimer = setTimeout(() => {
+    try { editor.setDecorations(revealDeco, []); } catch (_) { /* エディタが閉じた等 */ }
+  }, 2500);
 }
 
 function scheduleReRender() {
@@ -200,6 +310,64 @@ function scheduleReRender() {
     const idx = ed ? slideIndexForLine(slideStarts, ed.selection.active.line) : 0;
     renderInto(panel, doc, idx);
   }, 700);
+}
+
+/** marp-cli(--html)でプレゼン用HTMLを生成し、現在のスライドからブラウザで開く */
+async function present() {
+  // 対象 md と現在ページ(1-based)を解決：アクティブが Marp md ならそれ、なければプレビュー対象
+  let doc = null, page = 1;
+  const active = vscode.window.activeTextEditor;
+  if (active && isMarpDoc(active.document)) {
+    doc = active.document;
+    page = slideIndexForLine(slideStartLines(doc.getText()), active.selection.active.line) + 1;
+  } else if (panelDocUri) {
+    doc = vscode.workspace.textDocuments.find(d => d.uri.toString() === panelDocUri);
+    if (doc) {
+      const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri);
+      page = (ed ? slideIndexForLine(slideStartLines(doc.getText()), ed.selection.active.line) : 0) + 1;
+    }
+  }
+  if (!doc) {
+    vscode.window.showInformationMessage('marp: true の markdown を開いてから実行してください。');
+    return;
+  }
+  await doc.save(); // marp-cli はディスクから読むので未保存分を反映
+
+  const mdPath = doc.uri.fsPath;
+  const deckDir = path.dirname(mdPath);
+  const repoRoot = vscode.workspace.getWorkspaceFolder(doc.uri)?.uri.fsPath || deckDir;
+  // 画像の相対参照(./src, ../assets)がそのまま解決できるよう、出力は md と同じディレクトリに置く
+  const outHtml = path.join(deckDir, '.marp-present.html');
+
+  const themeArgs = ['theme/academic.css', 'theme/ponchie.css']
+    .map(r => path.join(repoRoot, r))
+    .filter(p => fs.existsSync(p))
+    .map(p => `--theme-set ${JSON.stringify(p)}`)
+    .join(' ');
+
+  // GUI 起動の VS Code は PATH に Homebrew が無いことがあるので補う
+  const npx = fs.existsSync('/opt/homebrew/bin/npx') ? '/opt/homebrew/bin/npx'
+            : fs.existsSync('/usr/local/bin/npx') ? '/usr/local/bin/npx' : 'npx';
+  const env = { ...process.env, PATH: `/opt/homebrew/bin:/usr/local/bin:${process.env.PATH || ''}` };
+  const cmd = `${npx} @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} ${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)}`;
+
+  await vscode.window.withProgress(
+    { location: vscode.ProgressLocation.Notification, title: 'Marp: プレゼン用HTMLを生成中…', cancellable: false },
+    () => new Promise((resolve) => {
+      cp.exec(cmd, { cwd: repoRoot, env, maxBuffer: 1 << 24 }, (err, _stdout, stderr) => {
+        if (err) {
+          const msg = String(stderr || err.message).split('\n').find(Boolean) || 'unknown error';
+          vscode.window.showErrorMessage('Marp 生成に失敗: ' + msg);
+          resolve();
+          return;
+        }
+        // bespoke テンプレートは URL の #<ページ番号> で開始位置を指定できる
+        const uri = vscode.Uri.file(outHtml).with({ fragment: String(page) });
+        vscode.env.openExternal(uri);
+        resolve();
+      });
+    })
+  );
 }
 
 function gotoSlide() {
@@ -222,8 +390,19 @@ function activate(context) {
   statusItem.command = 'marpScrollSync.openPreview';
   context.subscriptions.push(statusItem);
 
+  revealDeco = vscode.window.createTextEditorDecorationType({
+    backgroundColor: 'rgba(255,214,0,0.38)',         // 黄色ハイライト
+    border: '1px solid rgba(245,180,0,0.9)',
+    borderRadius: '2px',
+    isWholeLine: true,                                // 行全体を着色して見つけやすく
+    overviewRulerColor: 'rgba(245,180,0,0.95)',
+    overviewRulerLane: vscode.OverviewRulerLane.Full,
+  });
+  context.subscriptions.push(revealDeco);
+
   context.subscriptions.push(
     vscode.commands.registerCommand('marpScrollSync.openPreview', () => openPreview(context)),
+    vscode.commands.registerCommand('marpScrollSync.present', () => present()),
     vscode.commands.registerCommand('marpScrollSync.gotoSlide', gotoSlide),
     vscode.window.onDidChangeTextEditorSelection(e => updateStatus(e.textEditor)),
     vscode.window.onDidChangeActiveTextEditor(ed => updateStatus(ed)),

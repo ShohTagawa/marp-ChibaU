@@ -1,0 +1,7 @@
+node_modules/
+_probe.*
+
+# 使い捨てテスト出力（_sample / _box / _pie のサンプルは追跡する）
+_t2*
+_t3*
+_test*

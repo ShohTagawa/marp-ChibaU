@@ -320,10 +320,6 @@ section blockquote {
 /* Takeaway band — fixed at bottom of slide, no left bar.       */
 /* ============================================================ */
 .takeaway {
-  position: absolute;
-  bottom: var(--takeaway-bottom);
-  left: var(--side-pad);
-  right: var(--side-pad);
   background: var(--accent-soft);
   border-radius: 10px;
   padding: 14px 24px;
@@ -331,8 +327,41 @@ section blockquote {
   color: var(--accent-dark);
   text-align: center;
   font-size: 28px;     /* takeaway は固定 28px */
-  margin: 0;
+  margin: 14px 0 0;    /* 本文との最小ギャップ */
+  flex: 0 0 auto;
   z-index: 5;
+}
+
+/* ============================================================ */
+/* 縦軸フレーミング — takeaway の有無で処理を分ける               */
+/*                                                              */
+/*  ■ takeaway なし: 各パターン本来の縦レイアウトのまま           */
+/*    （fig は grid で図を中央寄せ、など）。                      */
+/*                                                              */
+/*  ■ takeaway あり: フレームを「本文ゾーン＋下端の帯」に上下分割。 */
+/*    ・下パディングを帯の足元(28px)まで詰める                    */
+/*    ・帯は in-flow・flex:0 0 auto で“実際の高さ”ぶん場所を取る   */
+/*      → 1行でも2行でも本文が帯に潜り込まない（見切れない）       */
+/*    ・本文は上に詰め、帯は margin-top:auto で最下部へ固定        */
+/* ============================================================ */
+section:has(.takeaway) {
+  padding-bottom: var(--takeaway-bottom) !important;
+}
+section:has(.takeaway) .takeaway {
+  margin-top: auto;   /* flex列で帯を最下部へ */
+}
+/* fig は通常 grid（図を中央寄せ）。takeaway があるときは flex列に切替え、
+   本文（図＋付随ブロック）を上から詰めて図と次ブロックの隙間を無くし、
+   余った縦スペースは帯の手前にまとめる。 */
+section.fig:has(.takeaway) {
+  display: flex !important;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: var(--takeaway-bottom) !important;
+}
+section.fig:has(.takeaway) .fig-area {
+  min-height: 0;      /* 320px固定をやめ、図は自身の max-height ぶんだけ占有 */
+  flex: 0 0 auto;
 }
 
 /* ============================================================ */

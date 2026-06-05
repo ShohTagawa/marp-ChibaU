@@ -3,7 +3,7 @@ marp: true
 theme: academic
 paginate: true
 size: 16:9
-header: '<div class="hdr-left">Boeing Externship</div><img class="hdr-logo" src="./src/chiba-logo.png" alt="CHIBA UNIVERSITY">'
+header: '<div class="hdr-left">Boeing Externship #1</div><img class="hdr-logo" src="./src/chiba-logo.png" alt="CHIBA UNIVERSITY">'
 footer: ''
 html: true
 style: |
@@ -173,7 +173,7 @@ style: |
   /* ========== 表紙レイアウト（cover-hero） ========== */
   section.cover-hero {
     padding-top: calc(var(--header-h) + 60px);
-    --hdr-left-w: 25%;
+    --hdr-left-w: 28%;
   }
   section.cover-hero > header::after { left: 0; right: 0; }
   section.cover-hero .title-hero { text-align: center; margin-bottom: 60px; }
@@ -269,7 +269,7 @@ style: |
 
 <div class="title-hero">
 <div class="title-small">Boeing Externship ／ 第1回キックオフ</div>
-<div class="title-big">初回顔合わせ・<br>グループ決め</div>
+<div class="title-big">ガイダンス・<br>初回顔合わせ</div>
 </div>
 
 <div class="title-foot">

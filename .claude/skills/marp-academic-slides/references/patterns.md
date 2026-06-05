@@ -131,6 +131,8 @@ cover / divider / message / qa はヘッダー帯を表示しないので page-t
 
 **表バージョン**（画像の代わりに表）：`.fig-area` の中に Markdown 表を置く。
 
+**手描き SVG 図を直書きする時**：density-guide.md「インラインSVG図解の作法（見切れ防止）」の5原則（文字幅見積もり・viewBox内に収める・並列枠の文字数を揃える・主役は矢印接続・原寸で目視確認）に従う。
+
 **画像が無い時**：
 
 ```markdown

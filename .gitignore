@@ -2,6 +2,7 @@
 *.pdf
 *.html
 *.pptx
+slides/*/out/
 slides/*.png
 slides/*.001.png
 slides/*.002.png

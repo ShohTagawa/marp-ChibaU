@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: academic
 paginate: true
 size: 16:9
@@ -163,9 +163,9 @@ style: |
   }
 
   /* 自己紹介スライド：NCAネームプレートを隅にちょこっと */
-  section.summary .badge-inset { position: absolute; right: 30px; bottom: 52px; width: 176px; z-index: 6; text-align: center; }
+  section.summary .badge-inset { position: absolute; right: 30px; bottom: 52px; width: 297px; z-index: 6; text-align: center; }
   section.summary .badge-inset img { width: 100%; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.4); transform: rotate(-4deg); border: 3px solid #fff; }
-  section.summary .badge-inset .bl { font-size: 12px; color: #666; margin-top: 5px; line-height: 1.3; }
+  section.summary .badge-inset .bl { font-size: 18px; color: #666; margin-top: 5px; line-height: 1.3; }
 
   /* divider 用に Boeing カラー */
   section.divider { background: #0033A0; }
@@ -572,7 +572,7 @@ style: |
 <div class="prof-grid">
 <div class="prof-photo"><img src="./src/fig-prof-matsumoto.jpg" alt="松本 暢平 助教"></div>
 <div class="prof-body">
-<div class="prof-name">松本 暢平</div>
+<div class="prof-name">松本 暢平 先生</div>
 <div class="prof-role">千葉大学 国際未来教育基幹 助教</div>
 <div class="prof-field"><b>専門</b>：教育社会学／医学教育（IR・FD・国際バカロレアまで幅広く）</div>
 <div class="prof-bio">

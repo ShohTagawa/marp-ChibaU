@@ -5,7 +5,6 @@
 const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
-const cp = require('child_process');
 const { Marp } = require('@marp-team/marp-core');
 
 let statusItem;
@@ -15,6 +14,7 @@ let slideStarts = [];      // プレビュー対象の各スライド開始行(0
 let renderTimer = null;
 let revealDeco = null;     // クリック逆引き時の一時ハイライト用デコレーション
 let revealDecoTimer = null;
+let presentTerminal = null; // プレゼン用HTML生成を流す統合ターミナル
 
 /** frontmatter に marp: true を持つ markdown か */
 function isMarpDoc(doc) {
@@ -345,30 +345,18 @@ async function present() {
     .map(p => `--theme-set ${JSON.stringify(p)}`)
     .join(' ');
 
-  // GUI 起動の VS Code は PATH に Homebrew が無いことがあるので補う
-  const npx = fs.existsSync('/opt/homebrew/bin/npx') ? '/opt/homebrew/bin/npx'
-            : fs.existsSync('/usr/local/bin/npx') ? '/usr/local/bin/npx' : 'npx';
-  const env = { ...process.env, PATH: `/opt/homebrew/bin:/usr/local/bin:${process.env.PATH || ''}` };
-  // --yes: 初回の「Ok to proceed?」プロンプトで固まらないよう自動承認
-  const cmd = `${npx} --yes @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} ${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)}`;
+  // 統合ターミナルで実行する。child_process と違い実シェル環境(PATH完備)を継ぎ、
+  // 出力も見えるので無音ハングしない。生成成功後に bespoke の #<ページ> で既定ブラウザを開く。
+  const openUrl = `file://${outHtml}#${page}`;
+  const cmd = `npx --yes @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} `
+            + `${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)} `
+            + `&& open ${JSON.stringify(openUrl)}`;
 
-  await vscode.window.withProgress(
-    { location: vscode.ProgressLocation.Notification, title: 'Marp: プレゼン用HTMLを生成中…', cancellable: false },
-    () => new Promise((resolve) => {
-      cp.exec(cmd, { cwd: repoRoot, env, maxBuffer: 1 << 24 }, (err, _stdout, stderr) => {
-        if (err) {
-          const msg = String(stderr || err.message).split('\n').find(Boolean) || 'unknown error';
-          vscode.window.showErrorMessage('Marp 生成に失敗: ' + msg);
-          resolve();
-          return;
-        }
-        // bespoke テンプレートは URL の #<ページ番号> で開始位置を指定できる
-        const uri = vscode.Uri.file(outHtml).with({ fragment: String(page) });
-        vscode.env.openExternal(uri);
-        resolve();
-      });
-    })
-  );
+  if (!presentTerminal || presentTerminal.exitStatus !== undefined) {
+    presentTerminal = vscode.window.createTerminal({ name: 'Marp Present', cwd: repoRoot });
+  }
+  presentTerminal.show(true);
+  presentTerminal.sendText(cmd);
 }
 
 function gotoSlide() {

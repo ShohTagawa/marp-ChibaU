@@ -232,19 +232,19 @@ style: |
   <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
   <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
   <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">6つのモード</text>
-  <g text-anchor="middle" transform="rotate(45 180 170)">
+  <g text-anchor="middle">
     <line x1="180" y1="112" x2="180" y2="74" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 180 50)"><rect class="card" x="120" y="29" width="120" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="55" font-size="15" font-weight="700">① 実験する</text></g>
+    <rect class="card" x="120" y="29" width="120" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="55" font-size="15" font-weight="700">① 実験する</text>
     <line x1="230" y1="141" x2="263" y2="122" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 284 110)"><rect class="card" x="234" y="89" width="100" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="284" y="115" font-size="15" font-weight="700">② ネット</text></g>
+    <rect class="card" x="234" y="89" width="100" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="284" y="115" font-size="15" font-weight="700">② ネット</text>
     <line x1="230" y1="199" x2="263" y2="218" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 284 230)"><rect class="card" x="242" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="284" y="235" font-size="15" font-weight="700">③ AI</text></g>
+    <rect class="card" x="242" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="284" y="235" font-size="15" font-weight="700">③ AI</text>
     <line x1="180" y1="228" x2="180" y2="266" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 180 290)"><rect class="card" x="120" y="269" width="120" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="295" font-size="15" font-weight="700">④ 人に聞く</text></g>
+    <rect class="card" x="120" y="269" width="120" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="295" font-size="15" font-weight="700">④ 人に聞く</text>
     <line x1="130" y1="199" x2="97" y2="218" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 76 230)"><rect class="card" x="34" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="76" y="235" font-size="15" font-weight="700">⑤ 本</text></g>
+    <rect class="card" x="34" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="76" y="235" font-size="15" font-weight="700">⑤ 本</text>
     <line x1="130" y1="141" x2="97" y2="122" stroke="#bbb" stroke-width="2"/>
-    <g transform="rotate(-45 76 110)"><rect class="card" x="34" y="89" width="84" height="42" rx="8" fill="#fff" stroke="#4F5BA6" stroke-width="2"/><text x="76" y="115" font-size="15" font-weight="700">⑥ 論文</text></g>
+    <rect class="card" x="34" y="89" width="84" height="42" rx="8" fill="#fff" stroke="#4F5BA6" stroke-width="2"/><text x="76" y="115" font-size="15" font-weight="700">⑥ 論文</text>
   </g>
 </svg>
 
@@ -702,7 +702,7 @@ style: |
 
 <table class="dtbl" style="font-size:18px">
 <tr><th>規格</th><th>暗号方式</th><th>安全性</th></tr>
-<tr><td>WEP</td><td>RC4</td><td><span class="red">×</span> 解読容易・使用禁止</td></tr>
+<tr><td>WEP</td><td>RC4</td><td><span class="red">×</span> 解読容易</td></tr>
 <tr><td>WPA</td><td>TKIP</td><td>△ 旧式・非推奨</td></tr>
 <tr><td><span class="red">WPA2</span></td><td>AES(CCMP)</td><td>○ 現在の標準</td></tr>
 <tr><td><span class="red">WPA3</span></td><td>AES(SAE)</td><td>◎ 最新・最も安全</td></tr>
@@ -766,7 +766,7 @@ style: |
 <tr><td>1G</td><td>1979</td><td>アナログ音声</td></tr>
 <tr><td>2G</td><td>1993</td><td class="l">数十kbps（EDGEで最大384kbps）</td></tr>
 <tr><td>3G</td><td>2001</td><td>14Mbps</td></tr>
-<tr><td><span class="red">4G(LTE)</span></td><td>2010〜</td><td class="l">100Mbps〜1Gbps</td></tr>
+<tr><td><span class="red">4G(LTE)</span></td><td>2010〜</td><td>100Mbps〜1Gbps</td></tr>
 <tr><td><span class="red">5G</span></td><td>2020</td><td><span class="red">20Gbps</span>（ITU目標ピーク）</td></tr>
 </table>
 
@@ -793,6 +793,65 @@ style: |
 # IPアドレスとサブネット・ポート
 
 ## 荷物に書く「宛先住所」を決める（約18分）
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">パケット</div>
+
+## 情報は小さな「パケット」に分かれ、先頭に〈宛名〉を付けて旅する
+
+<div class="fig-area">
+<svg viewBox="0 0 940 300" width="100%" style="max-height:330px">
+  <defs>
+    <marker id="pk-arr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+    <marker id="pk-arr2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6 Z" fill="#D98A2B"/></marker>
+  </defs>
+  <!-- 元データ（前回の0と1の列） -->
+  <rect class="card" x="40" y="34" width="600" height="46" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+  <text x="56" y="64" font-size="19" font-weight="800" fill="#2f7048" font-family="Menlo,monospace">0 1 0 0 1 1 0 1 0 0 1 1 1 0 0 1 0 1 …</text>
+  <text x="660" y="54" font-size="16" fill="#555" font-weight="700">送りたいデータ</text>
+  <text x="660" y="76" font-size="14" fill="#777">（前回つくった0と1の列）</text>
+  <!-- 分割の矢印 -->
+  <line x1="120" y1="84" x2="120" y2="114" stroke="#A6192E" stroke-width="2.5" marker-end="url(#pk-arr)"/>
+  <text x="142" y="106" font-size="16" fill="#7d1322" font-weight="700">小さく分割し、それぞれに〈宛名〉を貼る</text>
+  <!-- パケット3個（付箋ストリップ） -->
+  <g text-anchor="middle">
+    <!-- packet 1：宛名が“前に”重なる伏線 -->
+    <rect x="150" y="140" width="38" height="42" rx="6" fill="#fff" stroke="#c9c9c9" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="192" y="140" width="38" height="42" rx="6" fill="#fdf3e8" stroke="#D98A2B" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <line x1="234" y1="130" x2="150" y2="130" stroke="#D98A2B" stroke-width="2" marker-end="url(#pk-arr2)"/>
+    <rect x="234" y="140" width="96" height="42" rx="7" fill="#FBEFC8" stroke="#D98A2B" stroke-width="2"/>
+    <text x="282" y="160" font-size="15" font-weight="700" fill="#8a5a12">宛名</text>
+    <text x="282" y="177" font-size="12" fill="#8a5a12">ヘッダ</text>
+    <rect x="330" y="140" width="326" height="42" rx="7" fill="#D9E7F2" stroke="#3E78B2" stroke-width="2"/>
+    <text x="493" y="167" font-size="16" font-weight="700" fill="#1f4d77">データの一片　1 ／ 3</text>
+    <!-- packet 2 -->
+    <rect x="234" y="196" width="96" height="42" rx="7" fill="#FBEFC8" stroke="#D98A2B" stroke-width="2"/>
+    <text x="282" y="223" font-size="15" font-weight="700" fill="#8a5a12">宛名</text>
+    <rect x="330" y="196" width="326" height="42" rx="7" fill="#D9E7F2" stroke="#3E78B2" stroke-width="2"/>
+    <text x="493" y="223" font-size="16" font-weight="700" fill="#1f4d77">データの一片　2 ／ 3</text>
+    <!-- packet 3 -->
+    <rect x="234" y="252" width="96" height="42" rx="7" fill="#FBEFC8" stroke="#D98A2B" stroke-width="2"/>
+    <text x="282" y="279" font-size="15" font-weight="700" fill="#8a5a12">宛名</text>
+    <rect x="330" y="252" width="326" height="42" rx="7" fill="#D9E7F2" stroke="#3E78B2" stroke-width="2"/>
+    <text x="493" y="279" font-size="16" font-weight="700" fill="#1f4d77">データの一片　3 ／ 3</text>
+  </g>
+  <!-- 右側：宛名に書く中身（次スライドへの予告） -->
+  <g text-anchor="middle">
+    <rect class="card" x="700" y="150" width="212" height="126" rx="10" fill="#fff" stroke="#A6192E" stroke-width="2"/>
+    <text x="806" y="178" font-size="17" font-weight="800" fill="#7d1322">宛名に書くのは？</text>
+    <text x="806" y="208" font-size="16" fill="#1a1a1a">どこへ届ける＝<tspan font-weight="700" fill="#A6192E">宛先IP</tspan></text>
+    <text x="806" y="234" font-size="16" fill="#1a1a1a">誰から＝送信元IP</text>
+    <text x="806" y="262" font-size="14" fill="#777">→ 次のスライドで詳しく</text>
+  </g>
+</svg>
+</div>
+
+<div class="band"><span class="red">宛名（ヘッダ・黄）</span>＋<span class="red">データの一片（青）</span>＝ パケット1個。これから各層がこの宛名を<span class="red">“前に”重ねて貼っていく</span>（→ 動画4 カプセル化）。バラバラに届いても、宛名の番号で元に戻せる。</div>
+
+<div class="takeaway">情報はパケットに小分けされ、先頭の〈宛名〉で運ばれる ── その宛名の正体が、次の「IPアドレス（住所）」。</div>
 
 ---
 

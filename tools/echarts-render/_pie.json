@@ -1,4 +1,0 @@
-{ "legend": { "top": 0 },
-  "series": [{ "type": "pie", "radius": ["40%","70%"], "center": ["50%","56%"],
-    "label": { "formatter": "{b}\n{d}%" },
-    "data": [ {"value":48,"name":"理解できた"}, {"value":32,"name":"ふつう"}, {"value":20,"name":"難しかった"} ] }] }

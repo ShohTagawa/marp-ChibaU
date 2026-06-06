@@ -50,6 +50,10 @@ style: |
   .src { font-size:13px; color:#9a9a9a; } .src a { color:#9a9a9a; }
   .episode { background:#FCEEF0; border-left:6px solid var(--accent); border-radius:8px; padding:8px 16px; margin:8px 0; font-size:19px; }
   .episode .h { font-weight:700; color:var(--accent); font-size:16px; letter-spacing:.04em; }
+  /* fig + 付随ブロックが多い回向け：図を中央に浮かせず上から詰める（下端の予約余白も縮める） */
+  section.fig.packtop { display:flex !important; flex-direction:column; justify-content:flex-start; gap:6px; padding-bottom:32px !important; }
+  section.fig.packtop .fig-area { min-height:0; flex:0 0 auto; padding:2px 0; }
+  section.fig.packtop .callout-blue .h { display:inline; font-weight:700; color:#2a5680; }
   /* 研究の裏づけボックス(右カラム圧縮版) */
   .concept-section { background:#F6F7F9; border-left:5px solid var(--accent); border-radius:8px; padding:7px 14px; margin:8px 0; }
   .concept-title { font-weight:700; color:var(--accent); font-size:18px; margin-bottom:3px; }
@@ -107,7 +111,7 @@ style: |
 
 <div class="page-title">この回の進め方</div>
 
-## 第8回はオンデマンド ─ 視聴期限と課題を最初に確認
+## 第8回はオンデマンド授業 ─ 視聴期限と課題を最初に確認
 
 <div class="grid2">
 <div>
@@ -133,14 +137,14 @@ style: |
 <div style="text-align:center">
 <table class="dtbl" style="display:inline-table; margin:6px 0">
 <tr><th>項目</th><th>期限</th></tr>
-<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
-<tr><td class="l"><strong>小テスト</strong>の提出</td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
-<tr><td class="l">リフレクションシート</td><td><span class="hl-dark mono">6/17（火）</span></td></tr>
+<tr><td class="l">動画の<strong>視聴期限</strong></td><td><span class="hl-dark mono">6/16（火）</span></td></tr>
+<tr><td class="l"><strong>課題</strong>の提出</td><td><span class="hl-dark mono">6/16（火）</span></td></tr>
+<tr><td class="l">リフレクションシート</td><td><span class="hl-dark mono">6/16（火）</span></td></tr>
 <tr><td class="l">提出先</td><td class="mono">すべて Moodle</td></tr>
 </table>
 </div>
 
-<div class="band" style="font-size:18px">公開が遅れたため、視聴期限・小テストとも <span class="hl">6/17（火）まで延長</span>。自分のペースで巻き戻して受講を。</div>
+<div class="band" style="font-size:18px">公開が遅れたため、視聴期限・課題とも <span class="hl">6/16（火）まで延長</span>。</div>
 
 <div class="ask">「ネットワークになぜ繋がらない？」を AI に聞いても、<strong>仕組みを知らなければ答えの正否を判断できない</strong>。<br>中身を学べば、安全も分かる。</div>
 
@@ -228,19 +232,19 @@ style: |
   <circle class="card" cx="180" cy="170" r="56" fill="#A6192E"/>
   <text x="180" y="164" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">学び</text>
   <text x="180" y="188" fill="#fff" font-size="14" text-anchor="middle">6つのモード</text>
-  <g text-anchor="middle">
+  <g text-anchor="middle" transform="rotate(45 180 170)">
     <line x1="180" y1="112" x2="180" y2="74" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="120" y="29" width="120" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="55" font-size="15" font-weight="700">① 実験する</text>
+    <g transform="rotate(-45 180 50)"><rect class="card" x="120" y="29" width="120" height="42" rx="8" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="55" font-size="15" font-weight="700">① 実験する</text></g>
     <line x1="230" y1="141" x2="263" y2="122" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="234" y="89" width="100" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="284" y="115" font-size="15" font-weight="700">② ネット</text>
+    <g transform="rotate(-45 284 110)"><rect class="card" x="234" y="89" width="100" height="42" rx="8" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="284" y="115" font-size="15" font-weight="700">② ネット</text></g>
     <line x1="230" y1="199" x2="263" y2="218" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="242" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="284" y="235" font-size="15" font-weight="700">③ AI</text>
+    <g transform="rotate(-45 284 230)"><rect class="card" x="242" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#D98A2B" stroke-width="2"/><text x="284" y="235" font-size="15" font-weight="700">③ AI</text></g>
     <line x1="180" y1="228" x2="180" y2="266" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="120" y="269" width="120" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="295" font-size="15" font-weight="700">④ 人に聞く</text>
+    <g transform="rotate(-45 180 290)"><rect class="card" x="120" y="269" width="120" height="42" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2.5"/><text x="180" y="295" font-size="15" font-weight="700">④ 人に聞く</text></g>
     <line x1="130" y1="199" x2="97" y2="218" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="34" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="76" y="235" font-size="15" font-weight="700">⑤ 本</text>
+    <g transform="rotate(-45 76 230)"><rect class="card" x="34" y="209" width="84" height="42" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="76" y="235" font-size="15" font-weight="700">⑤ 本</text></g>
     <line x1="130" y1="141" x2="97" y2="122" stroke="#bbb" stroke-width="2"/>
-    <rect class="card" x="34" y="89" width="84" height="42" rx="8" fill="#fff" stroke="#4F5BA6" stroke-width="2"/><text x="76" y="115" font-size="15" font-weight="700">⑥ 論文</text>
+    <g transform="rotate(-45 76 110)"><rect class="card" x="34" y="89" width="84" height="42" rx="8" fill="#fff" stroke="#4F5BA6" stroke-width="2"/><text x="76" y="115" font-size="15" font-weight="700">⑥ 論文</text></g>
   </g>
 </svg>
 
@@ -260,17 +264,12 @@ style: |
 <div class="band" style="font-size:15px; margin:6px 0">「ググれ」という風土もある。でも、聞くことを恥ずかしがらなくてもよい。<br>
 でも、せっかく聞けるなら、人にも聞こう。</div>
 
-<div class="cbox gray" style="margin-top:4px; font-size:18px"><div class="h">この講義での使い分け</div><div class="b">
 
-- ① は <span class="red">dig 実演</span>・Colab、④ は<span class="red">附属図書館の LS（院生）</span>
-- どれにも偏らず、<span class="hl">行き来して確かめる</span>のがコツ
-
-</div></div>
 
 </div>
 </div>
 
-<div class="takeaway">全部を一人で・1つの方法で分かる必要はない。様々な方法を行き来する。</div>
+<div class="takeaway">全部を1人で・1つの方法で分かる必要はない。様々な方法を行き来する。</div>
 
 ---
 
@@ -278,7 +277,7 @@ style: |
 
 <div class="page-title">大学で学ぶ意味</div>
 
-## 「全部 AI で完結」は、もったいない
+## 「全部 AI だけで勉強」は、もったいない
 
 <div class="split-body">
 <div class="left">
@@ -329,7 +328,7 @@ style: |
 
 <div class="page-title">AIとの付き合い方</div>
 
-## AIの特徴浅く聞けば浅い／文脈を与えれば深い
+## AIの特徴 ── 浅く聞けば浅い／文脈を与えれば深い
 
 <div class="split-body">
 <div class="left">
@@ -363,18 +362,12 @@ style: |
 
 </div></div>
 
-<div class="cbox gray"><div class="h">学び方の核（同じく自由記述より）</div><div class="b">
-
-- 実践による習得／中身の理解／<span class="red">外部リソース</span>での裏取り
-
-</div></div>
-
-<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、6つのうちの <span class="hl">1モード</span> <span class="important">重要</span></div>
+<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、学びの <span class="hl">1モード</span>に過ぎない <span class="important">重要</span></div>
 
 </div>
 </div>
 
-<div class="takeaway">同じ AI でも、与える文脈の深さで答えは段違い。鍛えるべきは「自分」。</div>
+<div class="takeaway">同じ AI利用でも、与える文脈の深さで答えは段違い。鍛えるべきは「自分」。</div>
 
 ---
 
@@ -392,7 +385,7 @@ style: |
     <text x="245" y="90" font-size="18" font-weight="700" fill="#3C8A57">効果が高い（実践向き）</text>
     <text x="245" y="124" font-size="18">・<tspan font-weight="700">想起練習</tspan>（思い出してテストする）</text>
     <text x="245" y="154" font-size="18">・<tspan font-weight="700">分散学習</tspan>（間隔をあけて繰り返す）</text>
-    <text x="245" y="190" font-size="15" fill="#555">＝ ① 実験する・dig で試す・自分で説明し直す</text>
+    <text x="245" y="190" font-size="15" fill="#555">＝ ① 実験する・自分で説明し直す</text>
     <text x="245" y="214" font-size="15" fill="#555">　 ＝「手を動かして思い出す」学び方</text>
     <rect class="card" x="470" y="60" width="410" height="200" rx="10" fill="#ECECEC" stroke="#6B6F76" stroke-width="2"/>
     <text x="675" y="90" font-size="18" font-weight="700" fill="#6B6F76">効果が低め（やった気だけ）</text>
@@ -406,7 +399,8 @@ style: |
 
 <div class="caption">出典: Dunlosky et al. (2013) <span class="src">Improving Students' Learning With Effective Learning Techniques. <em>Psychological Science in the Public Interest</em>, 14(1).</span></div>
 
-<div class="takeaway">「思い出す・試す・説明する」を回す — 6モードはこの研究とも噛み合う。</div>
+<div class="takeaway">「思い出す・説明する・反復する」のサイクルで学んでみる
+<br> — 学び方の複数モードはこの研究とも噛み合う</div>
 
 
 ---
@@ -425,10 +419,10 @@ style: |
 
 <div class="page-title">前回の振り返り</div>
 
-## 「音や画像をどう0と1にしたか」を、まず思い出す
+## 「音や画像をどう0と1にしたか」を、まず思い出そう
 
 <div class="fig-area">
-<svg viewBox="0 0 940 250" width="100%" style="max-height:380px">
+<svg viewBox="0 0 940 200" width="100%" style="max-height:380px">
   <defs>
     <marker id="u01-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -453,23 +447,68 @@ style: |
     <text x="809" y="78" font-size="19" font-weight="700">④ 2進法で表現</text>
     <text x="809" y="108" font-size="22" font-weight="800" fill="#7d1322" font-family="Menlo,Consolas,monospace">0 1 0 0 1 1 …</text>
     <text x="470" y="166" font-size="16" fill="#555">標本化の細かさ＝サンプリング周波数／量子化の段階数＝ビット数。細かいほど忠実だが容量は増える。</text>
-    <rect x="200" y="186" width="540" height="44" rx="8" fill="#FBEFC8" stroke="#ecd98f"/>
-    <text x="470" y="214" font-size="16" font-weight="700">前回はこの流れに加え、NotebookLM を実際に試すテストも実施しました</text>
   </g>
 </svg>
 </div>
 
 <div class="caption">第7回：標本化 → 量子化 → 符号化 → 2進法。連続した現実を、機械が扱える離散の数列に変換する。</div>
 
-<div class="takeaway">第8回は逆向き — その「0と1の数列」が、世界中をどう旅して届くかを追う。</div>
+<div class="takeaway">第8回は逆向き — その「0と1の数列」が、世界中をどう旅して皆の手元に届くかを追う。</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ネットワークの種類</div>
+
+<div style="border:2px solid var(--accent); border-radius:10px; padding:6px 18px 10px; margin:6px 0 14px;">
+
+## ネットワークとは
+- 網目状の繋がりのこと：社会的ネットワークetc...
+- ICTでは、「複数のコンピュータを接続する技術や接続されたシステムのこと」を指す
+
+</div>
+
+## LAN と WAN ── 「範囲」と「持ち主」で区別する
+
+<div class="split-body" style="align-items:stretch; min-height:235px">
+<div class="left">
+
+<div class="cbox blue" style="height:100%; margin:0"><div class="h">LAN ── Local Area Network</div><div class="b">
+
+- 範囲＝家・学校・企業など<span class="red">限られた範囲</span>
+- 持ち主＝<span class="red">自分／組織</span>が占有・管理
+- 有線（ケーブル）／無線（電波）の2方式
+- LAN→WAN へ繋ぐ装置が<span class="red">ルーター</span>
+- 例：自宅Wi-Fi・研究室の有線
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox orange" style="height:100%; margin:0"><div class="h">WAN ── Wide Area Network</div><div class="b">
+
+- 範囲＝<span class="red">都市・国をまたぐ</span>広域
+- 持ち主＝<span class="red">通信事業者</span>が提供・運用
+- 基幹は<span class="red">光ファイバー</span>
+- LAN同士を広域で繋いだ「網の網」の幹
+- 例：光回線・モバイル網
+
+</div></div>
+
+</div>
+</div>
+
+<div class="takeaway">違いは「広さ」だけでなく「誰が持ち管理しているか」。</div>
 
 ---
 
 <!-- _class: fig -->
 
-<div class="page-title">ネットワークとは</div>
+<div class="page-title">インターネットとネットワークの種類</div>
 
-## インターネット＝ネットワーク同士を繋いだ「網の網」 <span class="important">重要</span>
+## インターネット＝ネットワーク同士を繋いだ「ネットワークのネットワーク」 <span class="important">重要</span>
 
 <div class="fig-area">
 <svg viewBox="0 0 980 300" width="100%" style="max-height:340px">
@@ -508,61 +547,9 @@ style: |
 </svg>
 </div>
 
-<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。<br>LAN＝限られた範囲／WAN＝広域、繋ぐ装置が<span class="red">ルーター(R)</span>。</div>
+<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。<br>LAN＝限られた範囲／WAN＝広域、繋ぐ装置が<span class="red">ルーター(図中のR)</span>。</div>
 
 <div class="takeaway">小さな網（LAN）を、広い網（WAN）でいくつも繋いだものが「網の網」。</div>
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">ネットワークの種類</div>
-
-## LAN と WAN ── 「範囲」と「持ち主」で区別する
-
-<div class="split-body">
-<div class="left">
-
-<svg viewBox="0 0 360 300" width="100%" style="max-height:400px">
-  <!-- LAN -->
-  <rect class="card" x="20" y="20" width="320" height="118" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-  <text x="40" y="48" font-size="17" font-weight="700" fill="#3E78B2">LAN（Local Area Network）</text>
-  <text x="40" y="74" font-size="15" fill="#333">範囲＝家・学校・企業など限定</text>
-  <text x="40" y="98" font-size="15" fill="#333">持ち主＝自分／組織が占有・管理</text>
-  <text x="40" y="122" font-size="15" fill="#333">例：自宅Wi-Fi・研究室の有線</text>
-  <!-- WAN -->
-  <rect class="card" x="20" y="160" width="320" height="118" rx="10" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
-  <text x="40" y="188" font-size="17" font-weight="700" fill="#D98A2B">WAN（Wide Area Network）</text>
-  <text x="40" y="214" font-size="15" fill="#333">範囲＝都市・国をまたぐ広域</text>
-  <text x="40" y="238" font-size="15" fill="#333">持ち主＝通信事業者が提供</text>
-  <text x="40" y="262" font-size="15" fill="#333">例：光回線・モバイル網</text>
-</svg>
-
-</div>
-<div class="right">
-
-<div class="cbox blue"><div class="h">LAN ＝ ローカルエリア</div><div class="b">
-
-- <span class="red">限られた範囲</span>を自分／組織で<span class="red">占有</span>
-- 有線（ケーブル）・無線（電波）の2方式
-- LAN→WAN へ繋ぐ装置が<span class="red">ルーター</span>
-
-</div></div>
-
-<div class="cbox orange"><div class="h">WAN ＝ ワイドエリア</div><div class="b">
-
-- LAN同士を<span class="red">広域</span>で繋いだ網
-- 基幹は<span class="red">光ファイバー</span>、事業者が運用
-- ネットワークは<span class="red">人や交通網</span>にもある概念
-
-</div></div>
-
-<div class="ask">いま自分が繋いでいるのは LAN？ WAN？ その「持ち主」は誰だろう。</div>
-
-</div>
-</div>
-
-<div class="takeaway">違いは「広さ」だけでなく「誰が持ち管理しているか」。</div>
 
 ---
 
@@ -575,7 +562,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 300" width="100%" style="max-height:300px">
+<svg viewBox="0 0 360 300" width="100%" style="max-height:480px; margin-top:-40px">
   <defs>
     <marker id="u2sc-grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3C8A57"/></marker>
     <marker id="u2sc-org" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#D98A2B"/></marker>
@@ -625,12 +612,12 @@ style: |
 
 <div class="page-title">有線LANと無線LAN</div>
 
-## つなぎ方は2通り ── ケーブル（有線）か、電波（無線）か
+## LANへのつなぎ方は2通り ── ケーブル（有線）か、電波（無線）か
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 300" width="100%" style="max-height:300px">
+<svg viewBox="0 0 360 300" width="100%" style="max-height:480px">
   <!-- 有線 -->
   <text x="95" y="24" font-size="16" font-weight="700" text-anchor="middle" fill="#3E78B2">有線：ハブで集線</text>
   <rect class="card" x="58" y="120" width="74" height="30" rx="6" fill="#3E78B2"/><text x="95" y="141" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">ハブ</text>
@@ -639,10 +626,17 @@ style: |
   <text x="95" y="178" font-size="15" fill="#555" text-anchor="middle">より対線＋ハブ</text>
   <!-- 無線 -->
   <text x="270" y="24" font-size="16" font-weight="700" text-anchor="middle" fill="#3C8A57">無線：APに電波で</text>
-  <rect class="card" x="248" y="120" width="46" height="32" rx="6" fill="#3C8A57"/><text x="271" y="141" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">AP</text>
-  <g fill="none" stroke="#3C8A57" stroke-width="2"><path d="M298 128 q20 -7 20 16"/><path d="M298 137 q30 -10 30 26"/><path d="M244 128 q-20 -7 -20 16"/><path d="M244 137 q-30 -10 -30 26"/></g>
-  <g class="card" fill="#fff" stroke="#3C8A57" stroke-width="2"><rect x="320" y="150" width="34" height="26" rx="5"/><rect x="188" y="150" width="34" height="26" rx="5"/></g>
-  <text x="270" y="200" font-size="15" fill="#555" text-anchor="middle">アクセスポイント(親機)</text>
+  <rect class="card" x="248" y="98" width="46" height="32" rx="6" fill="#3C8A57"/><text x="271" y="119" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">AP</text>
+  <g fill="none" stroke="#3C8A57" stroke-width="2" stroke-linecap="round">
+    <path d="M299.8 107.1 A 9 9 0 0 1 299.8 120.9"/>
+    <path d="M303.6 102.5 A 15 15 0 0 1 303.6 125.5"/>
+    <path d="M307.5 97.9 A 21 21 0 0 1 307.5 130.1"/>
+    <path d="M242.2 107.1 A 9 9 0 0 0 242.2 120.9"/>
+    <path d="M238.4 102.5 A 15 15 0 0 0 238.4 125.5"/>
+    <path d="M234.5 97.9 A 21 21 0 0 0 234.5 130.1"/>
+  </g>
+  <g class="card" fill="#fff" stroke="#3C8A57" stroke-width="2"><rect x="320" y="128" width="34" height="26" rx="5"/><rect x="188" y="128" width="34" height="26" rx="5"/></g>
+  <text x="270" y="178" font-size="15" fill="#555" text-anchor="middle">アクセスポイント(親機)</text>
   <!-- ルータへ -->
   <line x1="20" y1="240" x2="340" y2="240" stroke="#ccc" stroke-width="2"/>
   <rect class="card" x="148" y="252" width="64" height="34" rx="8" fill="#A6192E"/><text x="180" y="274" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">ルータ</text>
@@ -664,12 +658,12 @@ style: |
 
 - 規格＝<span class="red">IEEE 802.11</span>。互換保証の機器名が <span class="red">Wi-Fi</span>
 - 親機＝<span class="red">アクセスポイント(AP)</span> に電波で接続
-- ケーブル不要だが、電波は届く＝<span class="red">他人にも見える</span>
+- ケーブル不要だが、電波は届く<br><span class="red"> 注意点：正しい接続先か、暗号化されているか、侵入されないか。</span>
 
 </div></div>
 
 <div class="episode"><div class="h">なぜ学ぶか｜偽Wi-Fi（Evil Twin）</div>
-2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が連邦警察に逮捕。便利な入口は、最も狙われる入口でもある。<span class="src">（出典: Kaspersky / Evil Twin）</span>
+2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が警察に逮捕。<span class="src">（出典: Kaspersky / Evil Twin）</span>
 </div>
 
 </div>
@@ -683,25 +677,51 @@ style: |
 
 <div class="page-title">Wi-Fiの規格</div>
 
-## 世代が進むほど高速に（規格は IEEE 802.11 ファミリー）
+## 速度は世代で上がり、安全性は WEP→WPA3 で強化
 
 <div class="fig-area">
+<div class="grid2" style="width:99%;align-items:start">
+<div>
+
+**通信規格（速さ）＝ IEEE 802.11**
 
 <table class="dtbl" style="font-size:18px">
-<tr><th>規格名</th><th>世代の呼称</th><th>周波数帯</th><th>通信速度（理論上の最大）</th></tr>
-<tr><td>IEEE 802.11b</td><td>（公式の世代番号なし）</td><td>2.4GHz</td><td>11Mbps</td></tr>
-<tr><td>IEEE 802.11g</td><td>（公式の世代番号なし）</td><td>2.4GHz</td><td>54Mbps</td></tr>
-<tr><td>IEEE 802.11a</td><td>（公式の世代番号なし）</td><td>5GHz</td><td>54Mbps</td></tr>
-<tr><td>IEEE 802.11n</td><td><span class="red">Wi-Fi 4</span></td><td>2.4 / 5GHz</td><td>600Mbps</td></tr>
-<tr><td>IEEE 802.11ac</td><td><span class="red">Wi-Fi 5</span></td><td>5GHz</td><td>約6.9Gbps</td></tr>
-<tr><td>IEEE 802.11ax</td><td><span class="red">Wi-Fi 6</span></td><td>2.4 / 5GHz</td><td><span class="red">9.6Gbps</span></td></tr>
+<tr><th>規格名（世代呼称）</th><th>周波数帯</th><th>最大速度</th></tr>
+<tr><td>802.11b</td><td>2.4GHz</td><td>11Mbps</td></tr>
+<tr><td>802.11g</td><td>2.4GHz</td><td>54Mbps</td></tr>
+<tr><td>802.11a</td><td>5GHz</td><td>54Mbps</td></tr>
+<tr><td>802.11n（<span class="red">Wi-Fi 4</span>）</td><td>2.4 / 5GHz</td><td>600Mbps</td></tr>
+<tr><td>802.11ac（<span class="red">Wi-Fi 5</span>）</td><td>5GHz</td><td>約6.9Gbps</td></tr>
+<tr><td>802.11ax（<span class="red">Wi-Fi 6</span>）</td><td>2.4 / 5GHz</td><td><span class="red">9.6Gbps</span></td></tr>
 </table>
 
 </div>
+<div>
 
-<div class="band" style="font-size:18px"><span class="red">世代呼称の注記</span>：「Wi-Fi 4／5／6」は 11n 以降に <span class="red">あとから付けた</span>分かりやすい呼び名。a/b/g には公式番号がない（抜けではない）。表の速度はいずれも<span class="red">理論上の最大値</span>で、実効値はこれより大幅に低い。</div>
+**暗号化規格（安全）＝ WPA系**
 
-<div class="ask">自宅のルーターは Wi-Fi 何？　2.4GHz と 5GHz、電子レンジに弱いのはどっち？</div>
+<table class="dtbl" style="font-size:18px">
+<tr><th>規格</th><th>暗号方式</th><th>安全性</th></tr>
+<tr><td>WEP</td><td>RC4</td><td><span class="red">×</span> 解読容易・使用禁止</td></tr>
+<tr><td>WPA</td><td>TKIP</td><td>△ 旧式・非推奨</td></tr>
+<tr><td><span class="red">WPA2</span></td><td>AES(CCMP)</td><td>○ 現在の標準</td></tr>
+<tr><td><span class="red">WPA3</span></td><td>AES(SAE)</td><td>◎ 最新・最も安全</td></tr>
+</table>
+
+<div class="cbox green" style="margin-top:6px;font-size:18px"><div class="h">設定するなら</div><div class="b">
+
+- 暗号方式は <span class="red">WPA2／WPA3</span>。古い <span class="red">WEP</span> は短時間で破られる
+- パスワード（鍵）は <span class="red">長く複雑に</span>
+
+</div></div>
+
+</div>
+</div>
+</div>
+
+<div class="band" style="font-size:18px"><span class="red">注記</span>：「Wi-Fi 4／5／6」は 11n 以降の<span class="red">あとから付けた</span>呼び名。速度は<span class="red">理論上の最大値</span>で実効値は大幅に低い。暗号化は<span class="red">新しいほど安全</span>。</div>
+
+<div class="ask">自宅のルーターは Wi-Fi 何？　暗号方式は WPA2／WPA3 になってる？</div>
 
 ---
 
@@ -714,7 +734,7 @@ style: |
 <div class="fig-area">
 <div class="grid2" style="width:98%;align-items:center">
 <div>
-<svg viewBox="-6 -6 492 242" width="100%" style="max-height:240px">
+<svg viewBox="-6 -6 492 242" width="100%" preserveAspectRatio="xMinYMid meet" style="max-height:280px">
   <defs>
     <marker id="u2w-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -727,11 +747,15 @@ style: |
     <circle cx="425" cy="26" r="5" fill="#ccc"/><text x="425" y="14" fill="#999">サーバ</text>
   </g>
   <rect class="card" x="14" y="110" width="56" height="40" rx="6" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="42" y="135" font-size="14" text-anchor="middle">スマホ</text>
-  <g fill="none" stroke="#D98A2B" stroke-width="2"><path d="M74 118 q16 -7 16 14"/><path d="M74 128 q26 -10 26 24"/></g>
+  <g fill="none" stroke="#D98A2B" stroke-width="2" stroke-linecap="round">
+    <path d="M75.7 118.3 A 8 8 0 0 1 75.7 129.7"/>
+    <path d="M79.2 114.8 A 13 13 0 0 1 79.2 133.2"/>
+    <path d="M82.7 111.3 A 18 18 0 0 1 82.7 136.7"/>
+  </g>
   <path d="M150 148 L132 88 L168 88 Z" fill="#D98A2B"/><line x1="150" y1="88" x2="150" y2="62" stroke="#D98A2B" stroke-width="3"/><text x="150" y="170" font-size="14" text-anchor="middle">基地局</text>
-  <line x1="170" y1="128" x2="232" y2="128" stroke="#3C8A57" stroke-width="3"/><text x="201" y="118" font-size="14" text-anchor="middle" fill="#3C8A57">光ファイバ</text>
-  <rect class="card" x="232" y="108" width="96" height="40" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="280" y="133" font-size="15" text-anchor="middle">基幹網</text>
-  <line x1="328" y1="128" x2="378" y2="128" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2w-red)"/>
+  <line x1="170" y1="128" x2="244" y2="128" stroke="#3C8A57" stroke-width="3"/><text x="207" y="118" font-size="14" text-anchor="middle" fill="#3C8A57">光ファイバー</text>
+  <rect class="card" x="246" y="108" width="96" height="40" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="294" y="133" font-size="15" text-anchor="middle">基幹網</text>
+  <line x1="342" y1="128" x2="378" y2="128" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2w-red)"/>
   <ellipse class="card" cx="430" cy="128" rx="48" ry="34" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="430" y="133" font-size="15" font-weight="700" text-anchor="middle" fill="#A6192E">Internet</text>
 </svg>
 </div>
@@ -819,12 +843,65 @@ style: |
 
 <!-- _class: fig -->
 
-<div class="page-title">2進⇔10進の手計算</div>
+<div class="page-title">桁の「重み」とは（位取り）</div>
 
-## なぜ <span class="mono">11000000</span> ＝ 192 なのか（桁の重み）
+## まず10進数で復習 → 2進数も「考え方は同じ」
 
 <div class="fig-area">
-<svg viewBox="0 0 900 300" width="100%" style="max-height:320px">
+<svg viewBox="0 0 900 340" width="100%" style="max-height:400px">
+  <!-- ① 10進数 -->
+  <text x="30" y="32" font-size="19" font-weight="800" fill="#3E78B2" font-family="var(--font-jp)">① いつもの10進数：「192」の意味</text>
+  <g text-anchor="middle">
+    <g font-size="15" fill="#6B6F76" font-family="var(--font-jp)">
+      <text x="110" y="62">100の位</text><text x="210" y="62">10の位</text><text x="310" y="62">1の位</text>
+    </g>
+    <g font-family="Menlo,monospace" font-weight="800" font-size="28" fill="#2a5680">
+      <rect class="card" x="74"  y="74" width="72" height="52" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="110" y="111">1</text>
+      <rect class="card" x="174" y="74" width="72" height="52" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="210" y="111">9</text>
+      <rect class="card" x="274" y="74" width="72" height="52" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="310" y="111">2</text>
+    </g>
+    <text x="378" y="110" font-size="19" font-weight="800" text-anchor="start" font-family="var(--font-jp)">＝ 1×<tspan fill="#3E78B2">100</tspan> ＋ 9×<tspan fill="#3E78B2">10</tspan> ＋ 2×<tspan fill="#3E78B2">1</tspan> ＝ 192</text>
+    <text x="210" y="150" font-size="15" fill="#A6192E" font-weight="700" font-family="var(--font-jp)">右の桁から「10倍ずつ」大きくなる ＝ これが“位取り”</text>
+  </g>
+  <line x1="30" y1="170" x2="870" y2="170" stroke="#ddd" stroke-width="1.5"/>
+  <!-- ② 2進数の重みのはしご -->
+  <text x="30" y="196" font-size="19" font-weight="800" fill="#A6192E" font-family="var(--font-jp)">② 2進数：同じ仕組みで、倍率を「2倍ずつ」にするだけ</text>
+  <g text-anchor="middle">
+    <g font-family="Menlo,monospace" font-weight="800" font-size="22" fill="#7d1322">
+      <rect class="card" x="52"  y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="88"  y="270">128</text>
+      <rect class="card" x="154" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="190" y="270">64</text>
+      <rect class="card" x="256" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="292" y="270">32</text>
+      <rect class="card" x="358" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="394" y="270">16</text>
+      <rect class="card" x="460" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="496" y="270">8</text>
+      <rect class="card" x="562" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="598" y="270">4</text>
+      <rect class="card" x="664" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="700" y="270">2</text>
+      <rect class="card" x="766" y="236" width="72" height="52" rx="8" fill="#fdeef1" stroke="#A6192E" stroke-width="2"/><text x="802" y="270">1</text>
+    </g>
+    <g font-family="Menlo,monospace" font-size="13" fill="#999">
+      <text x="88" y="308">2⁷</text><text x="190" y="308">2⁶</text><text x="292" y="308">2⁵</text><text x="394" y="308">2⁴</text><text x="496" y="308">2³</text><text x="598" y="308">2²</text><text x="700" y="308">2¹</text><text x="802" y="308">2⁰</text>
+    </g>
+    <g font-size="12" fill="#D98A2B" font-weight="700" font-family="var(--font-jp)">
+      <text x="139" y="266">×2</text><text x="241" y="266">×2</text><text x="343" y="266">×2</text><text x="445" y="266">×2</text><text x="547" y="266">×2</text><text x="649" y="266">×2</text><text x="751" y="266">×2</text>
+    </g>
+    <text x="450" y="330" font-size="15" fill="#3C8A57" font-weight="700" font-family="var(--font-jp)">右端が 1、左へ1つ進むごとに ×2（1→2→4→8→…→128）</text>
+  </g>
+</svg>
+</div>
+
+<div class="caption">「位取り（くらいどり）」＝桁の<span class="red">位置で“重み”が決まる</span>仕組み。10進は右から 1,10,100… と<span class="red">10倍ずつ</span>、2進は 1,2,4,8… と<span class="red">2倍ずつ</span>。この重みの並びさえ覚えれば、2進→10進の変換はただの足し算になる。</div>
+
+<div class="takeaway">10進＝10倍ずつ、2進＝2倍ずつ。重みは右から 1・2・4・8・16・32・64・128。</div>
+
+---
+
+<!-- _class: fig packtop -->
+
+<div class="page-title">2進⇔10進の手計算</div>
+
+## では実際に計算：<span class="mono">11000000</span> ＝ 192
+
+<div class="fig-area">
+<svg viewBox="0 0 900 300" width="100%" style="max-height:282px">
   <!-- 桁重みヘッダ -->
   <g text-anchor="middle" font-family="Menlo,monospace">
     <text x="450" y="30" font-size="18" font-weight="700" font-family="var(--font-jp)">8ビットの各桁には「重み」がある（左が大きい）</text>
@@ -846,14 +923,17 @@ style: |
     <!-- 計算結果 -->
     <text x="80" y="186" font-size="16" fill="#A6192E" font-weight="700">128</text>
     <text x="180" y="186" font-size="16" fill="#A6192E" font-weight="700">64</text>
-    <text x="450" y="232" font-size="22" font-weight="800" font-family="var(--font-jp)">1×128 ＋ 1×64 ＝ <tspan fill="#A6192E">192</tspan></text>
+    <g font-size="16" fill="#bbb" font-weight="700"><text x="280" y="186">0</text><text x="380" y="186">0</text><text x="480" y="186">0</text><text x="580" y="186">0</text><text x="680" y="186">0</text><text x="780" y="186">0</text></g>
+    <text x="450" y="232" font-size="22" font-weight="800" font-family="var(--font-jp)">1×128 ＋ 1×64 ＋ 0＋0＋…＋0 ＝ <tspan fill="#A6192E">192</tspan></text>
   </g>
   <rect x="120" y="252" width="660" height="36" rx="6" fill="#eef7ef"/>
   <text x="450" y="276" font-size="16" text-anchor="middle" fill="#3C8A57" font-weight="700" font-family="var(--font-jp)">同じ手順で 11111111 ＝ 128+64+…+1 ＝ 255（オクテットの最大値）</text>
 </svg>
 </div>
 
-<div class="caption">「1が立っている桁の重みを足す」だけ。これが2進→10進の正体で、サブネットの計算にもそのまま効く。</div>
+<div class="caption">前ページの「重みのはしご」を使うだけ：<span class="red">1が立った桁の重みを足す</span>（0の桁は0×重み＝足さない）。これが2進→10進の正体。</div>
+
+<div class="callout-blue"><span class="h">この位取りが「LANに置けるPCの数」になる</span> 8桁ぜんぶで <span class="hl">2⁸＝256通り</span>。だから 192.168.0.<span class="mono">□</span> のような家庭内LAN（/24）に置ける機器は最大256個 ＝ 予約2つを除き <span class="hl">254台</span>まで。<span class="src">（くわしくは次ページ）</span></div>
 
 <div class="ask">指でやってみよう：<span class="mono">10101000</span> はいくつ？（ヒント：128＋32＋8）</div>
 
@@ -868,14 +948,18 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 400 320" width="100%" style="max-height:330px">
+<svg viewBox="0 0 400 320" width="100%" style="max-height:380px">
   <text x="200" y="20" font-size="15" font-weight="700" text-anchor="middle">サブネットマスク 255.255.255.0 ＝ <tspan fill="#A6192E">/24</tspan></text>
-  <!-- 帯：ネット部=blue / ホスト部=orange -->
-  <rect class="card" x="14" y="34" width="282" height="40" rx="6" fill="#3E78B2"/><text x="155" y="60" font-size="15" fill="#fff" font-weight="700" text-anchor="middle">ネットワーク部（24ビット）</text>
-  <rect class="card" x="300" y="34" width="86" height="40" rx="6" fill="#D98A2B"/><text x="343" y="60" font-size="14" fill="#fff" font-weight="700" text-anchor="middle">ホスト(8)</text>
+  <!-- 帯：32ビット＝4区切り。/24は前3区切り(255)=ネット部, 最後の1区切り(0)=ホスト部 -->
+  <g text-anchor="middle" fill="#fff" font-weight="700" font-family="var(--font-jp)">
+    <rect class="card" x="14"  y="34" width="89" height="42" rx="6" fill="#3E78B2"/><text x="58"  y="54" font-size="13">ネット</text><text x="58"  y="70" font-size="11" fill="#dbe7f3">255</text>
+    <rect class="card" x="108" y="34" width="89" height="42" rx="6" fill="#3E78B2"/><text x="152" y="54" font-size="13">ネット</text><text x="152" y="70" font-size="11" fill="#dbe7f3">255</text>
+    <rect class="card" x="202" y="34" width="89" height="42" rx="6" fill="#3E78B2"/><text x="246" y="54" font-size="13">ネット</text><text x="246" y="70" font-size="11" fill="#dbe7f3">255</text>
+    <rect class="card" x="296" y="34" width="89" height="42" rx="6" fill="#D98A2B"/><text x="340" y="54" font-size="13">ホスト</text><text x="340" y="70" font-size="11" fill="#fbe7cf">0</text>
+  </g>
   <g font-family="Menlo,monospace" font-size="16" text-anchor="start" font-weight="700">
-    <text x="60" y="116">192.168.100.<tspan fill="#D98A2B">10</tspan></text>
-    <text x="60" y="146">192.168.100.<tspan fill="#D98A2B">20</tspan></text>
+    <text x="60" y="116"><tspan fill="#3E78B2">192.168.100</tspan>.<tspan fill="#D98A2B">10</tspan></text>
+    <text x="60" y="146"><tspan fill="#3E78B2">192.168.100</tspan>.<tspan fill="#D98A2B">20</tspan></text>
   </g>
   <rect x="40" y="96" width="260" height="62" rx="8" fill="none" stroke="#3E78B2" stroke-width="2" stroke-dasharray="5 4"/>
   <text x="156" y="180" font-size="14" fill="#3E78B2" font-weight="700" text-anchor="middle">ネットワーク部が同じ → 同じLAN</text>
@@ -884,8 +968,9 @@ style: |
     <text x="180" y="232">10.0.0.</text><text x="242" y="232" fill="#D98A2B">5</text>
   </g>
   <text x="200" y="262" font-size="14" fill="#A6192E" text-anchor="middle" font-weight="700">↑ ネットワーク部が違う → 別ネットワーク</text>
-  <rect x="30" y="278" width="340" height="34" rx="6" fill="#fdf3e8"/>
-  <text x="200" y="300" font-size="14" fill="#a06a1d" text-anchor="middle" font-weight="700">ホスト部のビット数 → 入れられる機器の数</text>
+  <rect x="14" y="272" width="372" height="46" rx="6" fill="#fdf3e8"/>
+  <text x="200" y="290" font-size="13" fill="#a06a1d" text-anchor="middle" font-weight="700" font-family="var(--font-jp)">オレンジ（ホスト部）が広いほど入る機器は多い</text>
+  <text x="200" y="309" font-size="13" fill="#a06a1d" text-anchor="middle" font-weight="700" font-family="var(--font-jp)">/24→1区切り(254台)　/16→2区切り(約6.5万台)</text>
 </svg>
 
 </div>
@@ -896,13 +981,14 @@ style: |
 - どこまでが<span class="red">ネットワーク部</span>かを示すビット列
 - <span class="red">/24</span>＝上位24ビットがネット部（＝255.255.255.0）
 - 残り8ビットが<span class="red">ホスト部</span>（機器ごとの番号）
+- <span class="red">CIDR</span>＝<span class="mono">Classless Inter-Domain Routing</span>。「<span class="mono">/数字</span>」でネット部の長さを自由に指定する書き方
 
 </div></div>
 
 <div class="cbox orange"><div class="h">／24で使える台数は？（手計算）</div><div class="b">
 
 - ホスト部8ビット → 2⁸ ＝ <span class="mono">256</span> アドレス
-- うち2つは予約：<span class="mono">.0</span>＝ネットワークアドレス／<span class="mono">.255</span>＝ブロードキャスト
+- うち2つは予約：<span class="mono">.0</span>＝ネットワークアドレス（そのネットワーク自体を指す名札）／<span class="mono">.255</span>＝ブロードキャスト（同じネット全員へ一斉送信する宛先）
 - 実際に機器へ割当可能＝ 2⁸−2 ＝ <span class="red">254台</span>
 
 </div></div>
@@ -914,14 +1000,77 @@ style: |
 
 ---
 
+<!-- _class: split -->
+
+<div class="page-title">サブネットマスクは何のため？</div>
+
+## 端末は毎回「宛先は同じLAN？ 外？」を <span class="mono">AND</span> 計算で判定する <span class="important">重要</span>
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 440 330" width="100%" style="max-height:430px">
+  <text x="14" y="24" font-size="14" fill="#3E78B2" font-weight="800" font-family="var(--font-jp)">① マスクで「ネット部」だけ取り出す（AND）</text>
+  <g font-family="var(--font-jp)" font-size="13" fill="#555" text-anchor="start" font-weight="700">
+    <text x="14" y="56">IP</text><text x="14" y="92">マスク</text><text x="14" y="150">AND</text>
+  </g>
+  <g font-family="Menlo,monospace" font-weight="800" font-size="21" text-anchor="middle">
+    <text x="150" y="56" fill="#2a5680">192</text><text x="230" y="56" fill="#2a5680">168</text><text x="310" y="56" fill="#2a5680">100</text><text x="390" y="56" fill="#a06a1d">10</text>
+    <text x="150" y="92" fill="#3E78B2">255</text><text x="230" y="92" fill="#3E78B2">255</text><text x="310" y="92" fill="#3E78B2">255</text><text x="390" y="92" fill="#D98A2B">0</text>
+    <text x="150" y="150" fill="#2a5680">192</text><text x="230" y="150" fill="#2a5680">168</text><text x="310" y="150" fill="#2a5680">100</text><text x="390" y="150" fill="#D98A2B">0</text>
+    <g font-size="17" fill="#bbb"><text x="190" y="56">.</text><text x="270" y="56">.</text><text x="350" y="56">.</text><text x="190" y="92">.</text><text x="270" y="92">.</text><text x="350" y="92">.</text><text x="190" y="150">.</text><text x="270" y="150">.</text><text x="350" y="150">.</text></g>
+  </g>
+  <g font-size="11" font-family="var(--font-jp)" font-weight="700" text-anchor="middle"><text x="245" y="110" fill="#3E78B2">255＝そのまま通す（ネット部）</text><text x="392" y="110" fill="#D98A2B">0＝消す</text></g>
+  <line x1="120" y1="120" x2="420" y2="120" stroke="#A6192E" stroke-width="1.5"/>
+  <text x="270" y="174" font-size="12" fill="#7d1322" text-anchor="middle" font-family="var(--font-jp)">＝ <tspan font-weight="800">192.168.100.0</tspan>（このLANの“代表番号”）</text>
+  <text x="14" y="208" font-size="14" fill="#A6192E" font-weight="800" font-family="var(--font-jp)">② なぜ「通す／消す」？ 2進で見る AND</text>
+  <g font-family="Menlo,monospace" font-size="14" font-weight="700">
+    <text x="12" y="238"><tspan fill="#3E78B2">11000000</tspan> <tspan fill="#888">AND</tspan> <tspan fill="#3E78B2">11111111</tspan> = <tspan fill="#3E78B2">11000000</tspan></text>
+    <text x="12" y="270"><tspan fill="#a06a1d">00001010</tspan> <tspan fill="#888">AND</tspan> <tspan fill="#D98A2B">00000000</tspan> = <tspan fill="#a06a1d">00000000</tspan></text>
+  </g>
+  <g font-family="var(--font-jp)" font-size="12" font-weight="700" text-anchor="start">
+    <text x="300" y="238" fill="#3E78B2">→ 通す</text>
+    <text x="300" y="270" fill="#D98A2B">→ 消える</text>
+  </g>
+  <text x="14" y="304" font-size="12.5" fill="#555" font-family="var(--font-jp)">マスクの 1＝残す／0＝捨てる。これで“ネットの代表番号”が出る</text>
+</svg>
+
+</div>
+<div class="right">
+
+<div class="cbox blue"><div class="h">なぜマスクが必要？</div><div class="b">
+
+- 送る前に<span class="red">「相手は同じLANか」</span>を判断したい
+- 同じLAN → <span class="red">直接</span>届ける／違う → <span class="red">ルータ（出口）</span>へ渡す
+- どこからがホストかはIPだけでは不明 → <span class="red">マスクが境界線</span>
+
+</div></div>
+
+<div class="cbox orange"><div class="h">判定のしかた（AND して比べる）</div><div class="b">
+
+- <span class="mono">自分IP AND マスク</span> と <span class="mono">相手IP AND マスク</span> を比較
+- 一致＝<span class="red">同じネットワークアドレス</span>＝同じLAN
+- 不一致＝別LAN → ルータに任せる
+
+</div></div>
+
+</div>
+</div>
+
+<div class="band" style="font-size:18px"><span class="mono">.100.10</span> も <span class="mono">.100.20</span> も AND→<span class="mono">192.168.100.0</span> で一致＝<span class="red">同じLAN（直接）</span>。<span class="mono">10.0.0.5</span> は AND→<span class="mono">10.0.0.0</span> で不一致＝<span class="red">ルータへ</span>。</div>
+
+<div class="takeaway"><span class="mono">IP AND マスク＝ネットワークアドレス</span></div>
+
+---
+
 <!-- _class: fig -->
 
 <div class="page-title">NATとIPの節約</div>
 
 ## LAN内はプライベート、世界に出る時だけグローバル <span class="important">重要</span>
 
-<div class="fig-area">
-<svg viewBox="0 0 940 280" width="100%" style="max-height:285px">
+<div class="fig-area" style="padding:2px 0">
+<svg viewBox="0 0 940 280" width="100%" style="max-height:288px">
   <!-- 旅バー -->
   <g font-size="16" text-anchor="middle">
     <text x="60" y="22" fill="#888">端末</text><text x="118" y="22" fill="#bbb">›</text>
@@ -939,7 +1088,7 @@ style: |
     <rect class="card" x="42" y="146" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="107" y="169" fill="#2a5680">192.168.0.3</text>
     <rect class="card" x="186" y="122" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="251" y="145" fill="#2a5680">192.168.0.4</text>
   </g>
-  <text x="170" y="214" font-size="15" text-anchor="middle" fill="#3E78B2">外には出られない／家庭内で何度でも再利用OK</text>
+  <text x="170" y="206" font-size="15" text-anchor="middle" fill="#3E78B2"><tspan x="170">外には出られない</tspan><tspan x="170" dy="20">家庭内で何度でも再利用OK</tspan></text>
   <!-- ルータ NAT -->
   <rect class="card" x="356" y="120" width="130" height="74" rx="8" fill="#A6192E"/><text x="421" y="152" font-size="18" fill="#fff" font-weight="700" text-anchor="middle">ルータ</text><text x="421" y="176" font-size="16" fill="#fff" text-anchor="middle">NAT変換</text>
   <line x1="320" y1="157" x2="356" y2="157" stroke="#888" stroke-width="3"/>
@@ -955,7 +1104,7 @@ style: |
 
 <div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia（2023-03-28）</span></div>
 
-<div class="caption">グローバルIPは<span class="red">ICANN</span>が管理。IPv4＝32ビット＝約43億個 → 枯渇 → <span class="red">IPv6＝128ビット＝2¹²⁸（≈3.4×10³⁸）</span>で枯渇しない。</div>
+<div class="caption"><span class="red">会社の代表電話</span>と同じ：内線（プライベートIP）は社内専用、外へは1本の代表番号（グローバルIP）で発信し、ルータが送り主を付け替える。戻りが<span class="red">どの内線（機械）宛か</span>は<span class="mono">ポート番号</span>で判別。※グローバルIPは有限（IPv4≈43億）で枯渇 → 対策が <span class="red">IPv6</span>（2¹²⁸）。</div>
 
 <div class="takeaway">多数の機器を、ルータの1つのグローバルIPで使い回す仕組み＝NAT。</div>
 
@@ -970,17 +1119,17 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 320" width="100%" style="max-height:330px">
-  <rect class="card" x="70" y="34" width="220" height="270" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2.5"/>
+<svg viewBox="0 0 360 320" width="100%" style="max-height:430px">
+  <rect class="card" x="70" y="34" width="220" height="250" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2.5"/>
   <rect x="70" y="34" width="220" height="44" rx="8" fill="#6B6F76"/>
   <text x="180" y="63" font-size="16" fill="#fff" font-weight="700" text-anchor="middle" font-family="Menlo,monospace">203.0.113.5</text>
-  <text x="180" y="98" font-size="15" fill="#6B6F76" text-anchor="middle">この1台の中の「部屋」を番号で指定</text>
+  <text x="180" y="98" font-size="15" fill="#6B6F76" text-anchor="middle">1台の中の「部屋」を番号で指定</text>
   <g text-anchor="middle" font-family="Menlo,monospace">
     <rect class="card" x="92" y="112" width="176" height="44" rx="8" fill="#F8E5EA"/><text x="180" y="140" font-size="17" font-weight="700" fill="#7d1322">:80　HTTP</text>
     <rect class="card" x="92" y="166" width="176" height="44" rx="8" fill="#F8E5EA"/><text x="180" y="194" font-size="17" font-weight="700" fill="#7d1322">:443　HTTPS</text>
     <rect class="card" x="92" y="220" width="176" height="44" rx="8" fill="#fdf3e8"/><text x="180" y="248" font-size="17" font-weight="700" fill="#a06a1d">:8000　自作</text>
   </g>
-  <text x="180" y="288" font-size="15" fill="#6B6F76" text-anchor="middle" font-family="var(--font-jp)">同じ住所でも部屋ごとに別サービス</text>
+  <text x="180" y="308" font-size="16" fill="#6B6F76" text-anchor="middle" font-family="var(--font-jp)">同じ住所でも部屋ごとに別サービス</text>
 </svg>
 
 </div>
@@ -1002,6 +1151,41 @@ style: |
 </div>
 
 <div class="takeaway">住所（IP）＋部屋番号（ポート）で、初めて「どのサービスへ」が決まる。</div>
+
+---
+
+<div class="page-title">アドレスの読み方（総合）</div>
+
+## 例で読む：<span class="mono"><span style="color:#3E78B2">ネット</span>.<span style="color:#D98A2B">機械</span> : <span style="color:#A6192E">ポート</span></span> ＝「どの機械の・どのソフト宛か」 <span class="important">重要</span>
+
+<table class="dtbl" style="font-size:18px; width:97%">
+<tr><th>宛先 <span class="mono">IP:ポート</span></th><th>どのネットワーク（規模）</th><th>どの機械</th><th>ポート→ソフト</th><th>読み下し（何の通信か）</th></tr>
+<tr>
+<td class="mono"><span style="color:#3E78B2">192.168.0</span>.<span style="color:#D98A2B">2</span>:<span style="color:#A6192E">443</span></td>
+<td>家のLAN <span class="mono">/24</span><br>（最大254台）</td>
+<td><span class="mono">.2</span>＝2番のPC</td>
+<td><span class="mono">443</span> HTTPS</td>
+<td class="l">家の<span class="red">2番のPC</span>のWebサーバへ、暗号化して<span class="red">htmlを取りに行く</span></td>
+</tr>
+<tr>
+<td class="mono"><span style="color:#3E78B2">10.23.12</span>.<span style="color:#D98A2B">5</span>:<span style="color:#A6192E">22</span></td>
+<td>組織の大規模網 <span class="mono">/8</span><br>（約1670万台）</td>
+<td><span class="mono">.5</span>＝その1台</td>
+<td><span class="mono">22</span> SSH</td>
+<td class="l">学内ネットの<span class="red">その機械</span>へ、<span class="red">遠隔ログインして操作</span>する</td>
+</tr>
+<tr>
+<td class="mono"><span style="color:#3E78B2">203.0.113.7</span>:<span style="color:#A6192E">25</span></td>
+<td>インターネット上の<br>グローバル<br>（世界に1つ）</td>
+<td>そのメール<br>サーバ</td>
+<td><span class="mono">25</span> SMTP</td>
+<td class="l">世界の<span class="red">メールサーバ</span>へ、<span class="red">メールを送る</span>通信</td>
+</tr>
+</table>
+
+<div class="band" style="font-size:18px"><span class="mono">10.x</span> と <span class="mono">192.168.x</span> で“入る機械の数”が違う（広いネットほど多い）。家の <span class="mono">192.168.x</span> は外へ出る瞬間、ルータが<span class="red">1個のグローバルIPに付け替える</span>（NAT）── 戻り先はどの機械かを<span class="red">ポート番号</span>で見分ける。</div>
+
+<div class="takeaway">IP＝「どのネットの・何番の機械」、ポート＝「どのソフト」。広さで入る機械数も決まる。</div>
 
 ---
 
@@ -1039,7 +1223,7 @@ style: |
 </div>
 </div>
 
-<div class="statement">「住所のしくみ」を自分の環境に当てはめると、いちばん腹落ちする。</div>
+<div class="statement">ネットワークも「住所のしくみ」のアナロジーで考えてみよう。</div>
 
 
 ---

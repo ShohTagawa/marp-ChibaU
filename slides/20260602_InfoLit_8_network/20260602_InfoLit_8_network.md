@@ -1433,7 +1433,7 @@ style: |
     <text x="58" y="114" fill="#fff" font-size="15">HTTP / DNS / FTP（サービスの中身）</text>
     <rect x="40" y="130" width="300" height="56" rx="8" fill="#3C8A57" class="card"/>
     <text x="58" y="154" fill="#fff" font-weight="700">② トランスポート層</text>
-    <text x="58" y="176" fill="#fff" font-size="15">TCP（ポート番号・到達確認・再送）</text>
+    <text x="58" y="176" fill="#fff" font-size="15">TCP＝確実に届ける ／ UDP＝速さ優先</text>
     <rect x="40" y="192" width="300" height="56" rx="8" fill="#D98A2B" class="card"/>
     <text x="58" y="216" fill="#fff" font-weight="700">③ インターネット層</text>
     <text x="58" y="238" fill="#fff" font-size="15">IP（IPアドレスで目的地まで届ける）</text>
@@ -1460,6 +1460,8 @@ style: |
   </defs>
 </svg>
 </div>
+
+<div class="band" style="font-size:18px"><span class="red">TCP は IP と対等（並列）ではない</span> ── ③<span class="red">IP</span>が「どの機械まで運ぶか」を担い、その<span class="red">上に乗って</span>②<span class="red">TCP</span>（＝Transmission Control Protocol）が「どのアプリへ・抜けを再送・順番どおり」を足す（コネクション型）。トランスポート層には、 <span class="red">TCPに加え、UDP</span>もある（UDP＝再送しない代わりに速い。動画・通話・ゲーム向き）。</div>
 
 <div class="caption">色は講義を通じて固定 ── 青＝アプリ／緑＝トランスポート／橙＝IP／灰＝物理。前回学んだIPは③に座る。</div>
 
@@ -2609,7 +2611,7 @@ style: |
 
 <!-- _class: fig -->
 
-<div class="page-title">DBとは</div>
+<div class="page-title">データベース(DB)とは</div>
 
 ## 構造化したデータを集めて「検索しやすく」貯める
 
@@ -2666,7 +2668,7 @@ style: |
 
 <div class="page-title">DBとDBMS</div>
 
-## 多人数で安全に使うための「管理システム」＝DBMS
+## 多人数で安全に使うための「管理システム」<br>＝DBMS（DataBase Management System）
 
 <div class="split-body">
 <div class="left">

@@ -1,0 +1,40 @@
+{
+  "name": "marp-chibau-pdf",
+  "displayName": "Marp ChibaU PDF（分割ベクター書き出し）",
+  "description": "開いている Marp .md を、落ちない分割方式でベクターPDF化するツールバーボタン。tools/marp-pdf/build-pdf.sh を呼ぶだけのローカル拡張（マーケット非経由・依存ゼロ）。",
+  "version": "1.0.0",
+  "publisher": "chibau-local",
+  "private": true,
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:marpChibau.exportPdf"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "marpChibau.exportPdf",
+        "title": "Marp: ベクターPDF出力（このスライド）",
+        "icon": "$(file-pdf)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "marpChibau.exportPdf",
+          "when": "editorLangId == markdown && resourcePath =~ /marp-ChibaU/",
+          "group": "navigation@99"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Marp ChibaU PDF",
+      "properties": {
+        "marpChibau.chunkSize": {
+          "type": "number",
+          "default": 0,
+          "description": "1チャンクのページ数。0でスクリプト既定(20)。PDFが落ちるなら 12 など小さくする。"
+        }
+      }
+    }
+  }
+}

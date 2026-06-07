@@ -8,5 +8,7 @@
   "markdown.marp.html": "all",
   "files.associations": {
     "*.md": "markdown"
-  }
+  },
+  "npm.autoDetect": "on",
+  "npm.scriptExplorerAction": "run"
 }

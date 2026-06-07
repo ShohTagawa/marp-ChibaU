@@ -31,3 +31,6 @@ package-lock.json
 
 # 著作権物（再配布禁止・マスタリングTCP/IP 入門編 第6版 図面ファイル）
 tcpip-kyozai/
+
+# marp PDF ビルドの中間HTML(通常は自動削除される保険)
+.marp-pdfbuild-*.html

@@ -92,8 +92,29 @@ npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic
 npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
 
-> 注: 環境によっては marp の `--pdf`（Chrome printToPDF）が "Printing failed" で落ちる。その場合は
-> `--html --images png` でPNGを出してから `python3 -m img2pdf out/slide.*.png --pagesize 1280x720 -o out/<deck-name>.pdf` で代替する。
+### PDFが "Printing failed" で落ちるとき（枚数の多い/SVGが重いデック）
+
+```
+[ ERROR ] Failed converting Markdown. (Protocol error (Page.printToPDF): Printing failed)
+```
+
+**原因**：壊れたスライドではない。Chrome の `printToPDF` は1回の印刷で serialize するページの累積量が
+多いほど落ちる（Skiaの上限）。個々のスライドは正常に描画できるのに、全80枚などを一括で渡すと超える。
+
+**解決（ベクター品質を保ったまま）**：専用ビルドスクリプトを使う。全スライドを1つのHTMLに描画し、
+ページ範囲（既定20枚）ごとに分割印刷 → `pdfunite` で結合する。ベクターのまま・ページ番号も連番のまま。
+
+```bash
+tools/marp-pdf/build-pdf.sh slides/<deck-name>/<deck-name>.md
+# 出力先を変えるなら第2引数 / 1チャンクの枚数を減らすなら CHUNK=15 を前置
+```
+
+VS Code からは（追加拡張なし・標準機能のみ）：
+- **ボタン**：エクスプローラーの「**NPM スクリプト**」ビューで `pdf` の **▶** を押す → 最後に編集したデックを自動でPDF化（`package.json`）。落ちるデックは `pdf:safe`（CHUNK=12）。
+- **開いているファイルを確実に対象に**：その `.md` を開いて **⌘⇧B**（`.vscode/tasks.json`）。チャンク指定したいときは「Tasks: Run Task」→「Marp: PDF出力（チャンク指定）」。
+
+> ⚠️ **PNG経由（`--images png` → img2pdf）は使わない**。ラスタ化で文字がにじみ、学生から見づらいと苦情が出る。
+> 必ず上記スクリプト（ベクター）で出すこと。`pdfunite` は poppler（`brew install poppler`）に含まれる。
 
 VS Code では `.vscode/settings.json` で `markdown.marp.themes` が `./theme/academic.css` を指しているので、Marp 拡張のプレビューがそのまま使える。
 

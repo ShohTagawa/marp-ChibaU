@@ -1,0 +1,10 @@
+{
+  "name": "marp-chibau",
+  "version": "1.0.0",
+  "private": true,
+  "description": "千葉大スタイルMarpスライド。PDF出力はベクター分割方式（tools/marp-pdf）。",
+  "scripts": {
+    "pdf": "bash tools/marp-pdf/build-pdf.sh",
+    "pdf:safe": "CHUNK=12 bash tools/marp-pdf/build-pdf.sh"
+  }
+}

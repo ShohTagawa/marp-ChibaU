@@ -1,0 +1,8 @@
+{
+  // VS Code がワークスペースを開くと「推奨拡張機能をインストールしますか？」と提案する。
+  // ※ PDF出力ボタンは VS Code 標準の「NPM スクリプト」▶ を使うので追加拡張は不要。
+  "recommendations": [
+    // Marp プレビュー（テーマ適用済み）
+    "marp-team.marp-vscode"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:www.psychologicalscience.org)",
+      "Bash(mkdir -p /Users/shoh/marp-ChibaU/slides/20260602_InfoLit_8_network/script/_rebuild)",
+      "Bash(grep -n \"^# 【\\\\|^---$\" narration-110min.md)"
+    ]
+  }
+}

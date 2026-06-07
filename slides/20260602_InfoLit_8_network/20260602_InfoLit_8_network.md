@@ -118,7 +118,7 @@ style: |
 
 <div class="callout-blue">📺 受講のしかた</div>
 
-- 全 **12本** の動画を<span class="hl">順番に</span>視聴 <br>（途中で止めて巻き戻してOK）
+- 全 **12本**（導入＋本編10＋まとめ）を<span class="hl">順番に</span>視聴 <br>（途中で止めて巻き戻してOK）
 - 各動画にスライド資料（この PDF）が対応
 - 実演パート（<span class="red mono">dig</span> ／HTML の中身）あり
 - 今回は <span class="hl">slido なし</span> ／ <br>質問は Moodle の質問フォーラムへ
@@ -215,7 +215,7 @@ style: |
 
 # 学び方補足
 
-## 学びの「モード」を増やす（約8分）
+## 学びの「モード」を増やす
 
 ---
 
@@ -306,7 +306,7 @@ style: |
 <div class="concept-section">
 <div class="concept-title">学び方は成績を予測する（第3の柱）</div>
 <p class="concept-desc">学習習慣・スキル・態度は、<span class="hl-dark">標準テストや高校成績に匹敵</span>するほど成績と相関。生来の頭の良さや過去の成績とは<span class="red">独立に効く「第3の柱」</span>。</p>
-<div class="paper-details"><strong>エビデンス:</strong> Credé &amp; Kuncel (2008)<br><strong>規模:</strong> ・N>70,000 のメタ分析</div>
+<div class="paper-details"><strong>エビデンス:</strong> Credé &amp; Kuncel (2008) <em>Perspect. Psychol. Sci.</em> 3(6)<br><strong>規模:</strong> 344研究・N=72,431 のメタ分析</div>
 </div>
 
 <div class="concept-section">
@@ -362,7 +362,7 @@ style: |
 
 </div></div>
 
-<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、学びの <span class="hl">1モード</span>に過ぎない <span class="important">重要</span></div>
+<div class="band" style="font-size:18px">AI は学びの「軸」ではなく、学びの <span class="hl">1モード</span>に過ぎない</div>
 
 </div>
 </div>
@@ -397,7 +397,7 @@ style: |
 </svg>
 </div>
 
-<div class="caption">出典: Dunlosky et al. (2013) <span class="src">Improving Students' Learning With Effective Learning Techniques. <em>Psychological Science in the Public Interest</em>, 14(1).</span></div>
+<div class="caption">出典: <a href="https://doi.org/10.1177/1529100612453266" style="color:#3E78B2">Dunlosky et al. (2013)</a> <span class="src">Improving Students' Learning With Effective Learning Techniques. <em>Psychological Science in the Public Interest</em>, 14(1).</span></div>
 
 <div class="takeaway">「思い出す・説明する・反復する」のサイクルで学んでみる
 <br> — 学び方の複数モードはこの研究とも噛み合う</div>
@@ -411,7 +411,7 @@ style: |
 
 # ネットワークの基礎
 
-## まず「あなたの端末」と「最初の関門 Wi-Fi／LAN」を知る（約14分）
+## まず「あなたの端末」と「最初の関門 Wi-Fi／LAN」を知る
 
 ---
 
@@ -511,7 +511,7 @@ style: |
 ## インターネット＝ネットワーク同士を繋いだ「ネットワークのネットワーク」 <span class="important">重要</span>
 
 <div class="fig-area">
-<svg viewBox="0 0 980 300" width="100%" style="max-height:340px">
+<svg viewBox="0 0 980 320" width="100%" style="max-height:340px">
   <defs>
     <marker id="u2arr-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
   </defs>
@@ -525,31 +525,52 @@ style: |
     <circle cx="800" cy="32" r="6" fill="#ccc"/><text x="800" y="18" fill="#999">サーバ</text>
     <circle cx="920" cy="32" r="6" fill="#ccc"/><text x="920" y="18" fill="#999">表示</text>
   </g>
-  <!-- 家のLAN -->
-  <ellipse class="card" cx="165" cy="180" rx="140" ry="92" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-  <text x="165" y="133" font-size="18" font-weight="700" text-anchor="middle" fill="#3E78B2">家庭の LAN</text>
-  <g fill="#3E78B2"><circle cx="110" cy="170" r="13"/><circle cx="165" cy="205" r="13"/><circle cx="220" cy="170" r="13"/></g>
-  <text x="165" y="252" font-size="16" text-anchor="middle" fill="#3E78B2">PC・スマホ・TV</text>
-  <!-- 大学のLAN -->
-  <ellipse class="card" cx="815" cy="180" rx="140" ry="92" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
-  <text x="815" y="133" font-size="18" font-weight="700" text-anchor="middle" fill="#3C8A57">LAN（別のネットワーク）</text>
-  <g fill="#3C8A57"><circle cx="760" cy="170" r="13"/><circle cx="815" cy="205" r="13"/><circle cx="870" cy="170" r="13"/></g>
-  <text x="815" y="252" font-size="16" text-anchor="middle" fill="#3C8A57">研究室・図書館の機器</text>
-  <!-- WAN（中央） -->
-  <ellipse class="card" cx="490" cy="180" rx="158" ry="74" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2.5" stroke-dasharray="7 5"/>
-  <text x="490" y="172" font-size="20" font-weight="800" text-anchor="middle" fill="#D98A2B">WAN（広域網）</text>
-  <text x="490" y="200" font-size="16" text-anchor="middle" fill="#a06a1d">通信事業者の回線でLAN同士を繋ぐ</text>
-  <!-- ルータ -->
-  <line x1="305" y1="180" x2="332" y2="180" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
-  <rect class="card" x="295" y="162" width="40" height="36" rx="8" fill="#A6192E"/><text x="315" y="185" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
-  <line x1="648" y1="180" x2="675" y2="180" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
-  <rect class="card" x="665" y="162" width="40" height="36" rx="8" fill="#A6192E"/><text x="685" y="185" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
+  <!-- インターネット＝多数の通信事業者網の相互接続（網の網） -->
+  <rect x="296" y="70" width="388" height="232" rx="22" fill="#fdf6ec" stroke="#D98A2B" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="490" y="92" font-size="19" font-weight="800" text-anchor="middle" fill="#D98A2B">インターネット</text>
+  <text x="490" y="111" font-size="14" text-anchor="middle" fill="#a06a1d">＝多数の通信事業者網（WAN）の相互接続＝「網の網」</text>
+  <!-- 事業者どうしの相互接続（IX・ピアリング）：先に線を引いてノードを上に重ねる -->
+  <g stroke="#c79256" stroke-width="2.5">
+    <line x1="392" y1="165" x2="592" y2="150"/>
+    <line x1="392" y1="165" x2="492" y2="250"/>
+    <line x1="592" y1="150" x2="492" y2="250"/>
+  </g>
+  <text x="492" y="200" font-size="13" text-anchor="middle" fill="#a06a1d" font-style="italic">相互接続（IX・ピアリング）</text>
+  <!-- 通信事業者A -->
+  <ellipse class="card" cx="392" cy="165" rx="62" ry="33" fill="#fbe9d2" stroke="#D98A2B" stroke-width="2"/>
+  <text x="392" y="158" font-size="15" font-weight="700" text-anchor="middle" fill="#a06a1d">通信事業者A</text>
+  <g fill="#D98A2B"><circle cx="366" cy="178" r="6"/><circle cx="392" cy="183" r="6"/><circle cx="418" cy="178" r="6"/></g>
+  <!-- 通信事業者B -->
+  <ellipse class="card" cx="592" cy="150" rx="62" ry="33" fill="#fbe9d2" stroke="#D98A2B" stroke-width="2"/>
+  <text x="592" y="143" font-size="15" font-weight="700" text-anchor="middle" fill="#a06a1d">通信事業者B</text>
+  <g fill="#D98A2B"><circle cx="566" cy="163" r="6"/><circle cx="592" cy="168" r="6"/><circle cx="618" cy="163" r="6"/></g>
+  <!-- 通信事業者C -->
+  <ellipse class="card" cx="492" cy="252" rx="64" ry="32" fill="#fbe9d2" stroke="#D98A2B" stroke-width="2"/>
+  <text x="492" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#a06a1d">通信事業者C</text>
+  <g fill="#D98A2B"><circle cx="466" cy="263" r="6"/><circle cx="492" cy="268" r="6"/><circle cx="518" cy="263" r="6"/></g>
+  <!-- 家庭のLAN -->
+  <ellipse class="card" cx="118" cy="185" rx="92" ry="72" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <text x="118" y="142" font-size="17" font-weight="700" text-anchor="middle" fill="#3E78B2">家庭の LAN</text>
+  <g fill="#3E78B2"><circle cx="78" cy="182" r="12"/><circle cx="118" cy="210" r="12"/><circle cx="158" cy="182" r="12"/></g>
+  <text x="118" y="248" font-size="15" text-anchor="middle" fill="#3E78B2">PC・スマホ・TV</text>
+  <!-- 別のLAN（大学など） -->
+  <ellipse class="card" cx="862" cy="185" rx="92" ry="72" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
+  <text x="862" y="142" font-size="17" font-weight="700" text-anchor="middle" fill="#3C8A57">別のLAN（大学など）</text>
+  <g fill="#3C8A57"><circle cx="822" cy="182" r="12"/><circle cx="862" cy="210" r="12"/><circle cx="902" cy="182" r="12"/></g>
+  <text x="862" y="248" font-size="15" text-anchor="middle" fill="#3C8A57">研究室・図書館の機器</text>
+  <!-- ルータ（LAN↔事業者網の境界） -->
+  <line x1="210" y1="176" x2="240" y2="174" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
+  <rect class="card" x="246" y="158" width="40" height="36" rx="8" fill="#A6192E"/><text x="266" y="181" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
+  <line x1="288" y1="174" x2="326" y2="170" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
+  <line x1="656" y1="158" x2="690" y2="172" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
+  <rect class="card" x="694" y="158" width="40" height="36" rx="8" fill="#A6192E"/><text x="714" y="181" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">R</text>
+  <line x1="736" y1="176" x2="770" y2="180" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u2arr-red)"/>
 </svg>
 </div>
 
-<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。<br>LAN＝限られた範囲／WAN＝広域、繋ぐ装置が<span class="red">ルーター(図中のR)</span>。</div>
+<div class="band">「相互に接続されたネットワーク（inter-network）」＝<span class="red">インターネット</span>。<br>多数の<span class="red">通信事業者の網（WAN）</span>が相互接続し、その先に無数の<span class="red">LAN</span>がぶら下がる。境界で繋ぐ装置が<span class="red">ルーター(図中のR)</span>。</div>
 
-<div class="takeaway">小さな網（LAN）を、広い網（WAN）でいくつも繋いだものが「網の網」。</div>
+<div class="takeaway">小さな網（LAN）を、通信事業者の網（WAN）どうしで相互につないだものが「網の網」＝インターネット。</div>
 
 ---
 
@@ -585,7 +606,7 @@ style: |
 </div>
 <div class="right">
 
-<div class="cbox blue"><div class="h">クライアントサーバシステム <span class="important" style="margin-left:6px">重要</span></div><div class="b">
+<div class="cbox blue"><div class="h">クライアントサーバシステム</div><div class="b">
 
 - <span class="red">サーバ</span>＝サービスを提供／<span class="red">クライアント</span>＝利用
 - 要求（リクエスト）→ 応答（レスポンス）でやりとり
@@ -663,7 +684,7 @@ style: |
 </div></div>
 
 <div class="episode"><div class="h">なぜ学ぶか｜偽Wi-Fi（Evil Twin）</div>
-2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が警察に逮捕。<span class="src">（出典: Kaspersky / Evil Twin）</span>
+2024年7月、豪州で<span class="red">旅客機内に偽Wi-Fiを立て</span>乗客のログイン情報を盗んだ人物が豪連邦警察に起訴（9件）。<span class="src">（出典: <a href="https://www.afp.gov.au/news-centre/media-release/man-charged-over-creation-evil-twin-free-wifi-networks-access-personal" style="color:#3E78B2">豪AFP</a>／<a href="https://www.kaspersky.com/resource-center/preemptive-safety/evil-twin-attacks" style="color:#3E78B2">Kaspersky・Evil Twin</a>）</span>
 </div>
 
 </div>
@@ -781,18 +802,18 @@ style: |
 </div>
 </div>
 
-<div class="band" style="font-size:18px">スマホはかつて電話回線、今は<span class="red">モバイル通信</span>で WAN へ。世代が進むほど高速・大容量に。値はいずれも理論値で、実効速度はこれより低い。</div>
+<div class="band" style="font-size:23px">スマホはかつて電話回線、今は<span class="red">モバイル通信</span>で WAN へ。<br>世代が進むほど高速・大容量に。値はいずれも理論値で、実効速度はこれより低い。</div>
 
 
 ---
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 3 ／ CHAPTER 3 ★核</div>
+<div class="chapter-num">動画 3 ／ CHAPTER 3 ★重要なポイント</div>
 
 # IPアドレスとサブネット・ポート
 
-## 荷物に書く「宛先住所」を決める（約18分）
+## 荷物に書く「宛先住所」を決める
 
 ---
 
@@ -851,7 +872,7 @@ style: |
 
 <div class="band"><span class="red">宛名（ヘッダ・黄）</span>＋<span class="red">データの一片（青）</span>＝ パケット1個。これから各層がこの宛名を<span class="red">“前に”重ねて貼っていく</span>（→ 動画4 カプセル化）。バラバラに届いても、宛名の番号で元に戻せる。</div>
 
-<div class="takeaway">情報はパケットに小分けされ、先頭の〈宛名〉で運ばれる ── その宛名の正体が、次の「IPアドレス（住所）」。</div>
+<div class="takeaway">情報はパケットに小分けされ、先頭の〈宛名〉で運ばれる ─ 宛名 = 「IPアドレス（住所）」</div>
 
 ---
 
@@ -1002,7 +1023,7 @@ style: |
 
 <div class="page-title">サブネットとCIDR</div>
 
-## IPは「ネットワーク部」＋「ホスト部」 <span class="important">重要</span>
+## IPは「ネットワーク部」＋「ホスト部」
 
 <div class="split-body">
 <div class="left">
@@ -1126,7 +1147,7 @@ style: |
 
 <div class="page-title">NATとIPの節約</div>
 
-## LAN内はプライベート、世界に出る時だけグローバル <span class="important">重要</span>
+## LAN内はプライベート、世界に出る時だけグローバル
 
 <div class="fig-area" style="padding:2px 0">
 <svg viewBox="0 0 940 280" width="100%" style="max-height:288px">
@@ -1140,7 +1161,7 @@ style: |
   </g>
   <line x1="30" y1="34" x2="910" y2="34" stroke="#eee" stroke-width="2"/>
   <!-- 家のLAN -->
-  <rect class="card" x="20" y="56" width="300" height="178" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <rect class="card" x="20" y="56" width="320" height="178" rx="10" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
   <text x="170" y="80" font-size="17" font-weight="700" text-anchor="middle" fill="#3E78B2">家のLAN（プライベートIP）</text>
   <g font-family="Menlo,monospace" font-size="16" text-anchor="middle" font-weight="700">
     <rect class="card" x="42" y="98" width="130" height="34" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="107" y="121" fill="#2a5680">192.168.0.2</text>
@@ -1161,7 +1182,7 @@ style: |
 </svg>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか｜「閉域網だから安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: ITmedia（2023-03-28）</span></div>
+<div class="episode"><span class="h">注意：「LANの中なら安全」の崩壊</span> 2022年、大阪の総合医療センターがランサムウェアで電子カルテ停止、外来全面再開まで約2か月。侵入口は外部委託先のVPN機器。<span class="hl">「LAN内＝プライベートIPだから安全」は通用しない。</span><span class="src">出典: <a href="https://www.itmedia.co.jp/news/articles/2303/28/news179.html" style="color:#3E78B2">ITmedia</a></span></div>
 
 <div class="caption"><span class="red">会社の代表電話</span>と同じ：内線（プライベートIP）は社内専用、外へは1本の代表番号（グローバルIP）で発信し、ルータが送り主を付け替える。戻りが<span class="red">どの内線（機械）宛か</span>は<span class="mono">ポート番号</span>で判別。※グローバルIPは有限（IPv4≈43億）で枯渇 → 対策が <span class="red">IPv6</span>（2¹²⁸）。</div>
 
@@ -1215,7 +1236,7 @@ style: |
 
 <div class="page-title">アドレスの読み方（総合）</div>
 
-## 例で読む：<span class="mono"><span style="color:#3E78B2">ネット</span>.<span style="color:#D98A2B">機械</span> : <span style="color:#A6192E">ポート</span></span> ＝「どの機械の・どのソフト宛か」 <span class="important">重要</span>
+## 例で読む：<span class="mono"><span style="color:#3E78B2">ネット</span>.<span style="color:#D98A2B">機械</span> : <span style="color:#A6192E">ポート</span></span> ＝「どの機械の・どのソフト宛か」
 
 <table class="dtbl" style="font-size:18px; width:97%">
 <tr><th>宛先 <span class="mono">IP:ポート</span></th><th>どのネットワーク（規模）</th><th>どの機械</th><th>ポート→ソフト</th><th>読み下し（何の通信か）</th></tr>
@@ -1277,7 +1298,33 @@ style: |
 </div>
 <div>
 
-<div class="ph" style="height:330px">［自分のIP確認画面のスクショを貼る］<br>例：スマホのWi-Fi詳細 / 端末のIP表示<br>（画像はこちらで差し込みます）</div>
+<style scoped>
+  .term { border-radius:8px; overflow:hidden; box-shadow:0 3px 10px rgba(0,0,0,.18); font-family:"SF Mono",Consolas,Menlo,monospace; margin-bottom:14px; }
+  .term .bar { display:flex; align-items:center; gap:6px; padding:5px 11px; font-size:12.5px; font-weight:700; }
+  .term .bar .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .term .body { background:#1e1e1e; color:#e8e8e8; font-size:14px; line-height:1.6; padding:10px 13px; white-space:pre; }
+  .term .cmd { color:#5fd0ff; }
+  .term .lo  { color:#7fe07f; font-weight:700; }
+  .term .gl  { color:#ff9d5c; font-weight:700; }
+  .term .cm  { color:#9aa0a6; }
+  .term.win .bar { background:#0b5cd6; color:#fff; }
+  .term.mac .bar { background:#e6e6e6; color:#333; }
+</style>
+<div class="term win">
+<div class="bar"><span class="dot" style="background:#fff;opacity:.55"></span>コマンド プロンプト（Windows）</div>
+<div class="body"><span class="cmd">C:\Users\you&gt; ipconfig</span>
+  IPv4 アドレス . . : <span class="lo">192.168.1.24</span><span class="cm">  ← ローカル</span>
+  デフォルト GW . . : 192.168.1.1
+<span class="cmd">C:\Users\you&gt; curl ifconfig.me</span>
+<span class="gl">203.0.113.45</span><span class="cm">         ← グローバル</span></div>
+</div>
+<div class="term mac">
+<div class="bar"><span class="dot" style="background:#ff5f56"></span><span class="dot" style="background:#ffbd2e"></span><span class="dot" style="background:#27c93f"></span>ターミナル（Mac）— zsh</div>
+<div class="body"><span class="cmd">~ % ipconfig getifaddr en0</span>
+<span class="lo">192.168.1.31</span><span class="cm">         ← ローカル</span>
+<span class="cmd">~ % curl ifconfig.me</span>
+<span class="gl">203.0.113.45</span><span class="cm">         ← グローバル</span></div>
+</div>
 
 </div>
 </div>
@@ -1293,7 +1340,7 @@ style: |
 
 # プロトコルと階層モデル
 
-## 住所を書いた荷物に、各層が「宛名シール」を重ねて貼る（約12分）
+## 住所を書いた荷物に、各層が「宛名シール」を重ねて貼る
 
 ---
 
@@ -1309,16 +1356,16 @@ style: |
 
 <div class="page-title">プロトコルとは</div>
 
-## 通信プロトコル＝あらかじめ定めた「規約・手順」 <span class="important">重要</span>
+## 通信プロトコル＝あらかじめ定めた「規約・手順」
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 240" width="100%" style="max-height:250px">
-  <circle cx="78" cy="92" r="36" fill="#fff" stroke="#3E78B2" stroke-width="2.5" class="card"/>
+<svg viewBox="0 0 360 240" width="100%" style="max-height:450px">
+  <circle cx="78" cy="92" r="43" fill="#fff" stroke="#3E78B2" stroke-width="2.5" class="card"/>
   <text x="78" y="88" font-size="15" font-weight="700" text-anchor="middle">ピッチャー</text>
   <text x="78" y="106" font-size="14" fill="#555" text-anchor="middle">送り手</text>
-  <circle cx="282" cy="92" r="36" fill="#fff" stroke="#A6192E" stroke-width="2.5" class="card"/>
+  <circle cx="282" cy="92" r="43" fill="#fff" stroke="#A6192E" stroke-width="2.5" class="card"/>
   <text x="282" y="88" font-size="15" font-weight="700" text-anchor="middle">キャッチャー</text>
   <text x="282" y="106" font-size="14" fill="#555" text-anchor="middle">受け手</text>
   <line x1="244" y1="76" x2="116" y2="76" stroke="#3C8A57" stroke-width="2.5" marker-end="url(#u4pa)"/>
@@ -1353,7 +1400,7 @@ style: |
 
 <div class="episode"><div class="h">なぜ学ぶか ｜ 約束が破れると都市が止まる</div>
 暗号化されていない<span class="red">スマート信号機</span>を「青のまま固定」に改ざんできた事例が報告。設計が甘いと交通インフラごと操作される。
-<div class="src">出典: Trend Micro / 総務省ガイドライン第3.0版(2024)</div></div>
+<div class="src">出典: <a href="https://www.usenix.org/conference/woot14/workshop-program/presentation/ghena" style="color:#3E78B2">信号機ハッキングの実証研究（University of Michigan, 2014 / USENIX WOOT）</a></div></div>
 
 </div>
 </div>
@@ -1369,7 +1416,7 @@ style: |
 ## TCP/IPは「4階層」── 各層が役割を分担する <span class="important">重要</span>
 
 <div class="fig-area">
-<svg viewBox="0 0 900 330" width="100%" style="max-height:340px">
+<svg viewBox="0 0 900 330" width="100%" style="max-height:380px">
   <!-- 旅プログレスバー -->
   <g font-size="15" text-anchor="middle">
     <line x1="70" y1="22" x2="830" y2="22" stroke="#ddd" stroke-width="3"/>
@@ -1422,7 +1469,7 @@ style: |
 
 <div class="page-title">4層 ↔ 7層</div>
 
-## TCP/IP「4階層」 ↔ OSI参照モデル「7階層」 <span class="important">重要</span>
+## TCP/IP「4階層」 ↔ OSI参照モデル「7階層」
 
 <div class="fig-area">
 <svg viewBox="0 0 900 320" width="100%" style="max-height:330px">
@@ -1452,7 +1499,6 @@ style: |
     <line x1="360" y1="189" x2="540" y2="189"/>
     <line x1="360" y1="251" x2="540" y2="251"/>
   </g>
-  <text x="450" y="300" font-size="15" fill="#7d1322" text-anchor="middle" font-weight="700">OSIの7層をまとめると、ちょうどTCP/IPの4層になる</text>
 </svg>
 </div>
 
@@ -1464,7 +1510,7 @@ style: |
 
 <div class="page-title">カプセル化</div>
 
-## 各層が「宛名（ヘッダ）」を足して、入れ子に包んでいく <span class="important">重要</span>
+## 各層が「宛名（ヘッダ）」を足して、入れ子に包んでいく
 
 <div class="split-body">
 <div class="left">
@@ -1528,7 +1574,7 @@ style: |
 </table>
 </div>
 
-<div class="callout-blue">ポイント：下の層は「上の層が何を運んでいるか」を気にしない。中身を読まずに、自分の宛名シールだけ見て運ぶ。</div>
+<div class="callout-blue">ポイント：下の層は「上の層が何を運んでいるか」を気にしない。中身を読まずに、自分の宛名シールだけ見る。</div>
 
 <div class="caption">この「各層が独立して仕事する」設計のおかげで、Wi-Fiでも光ファイバーでも同じIPパケットがそのまま流せる。</div>
 
@@ -1541,7 +1587,7 @@ style: |
 
 # パケット交換・配送・信頼性
 
-## データはどう小分けされ、ルータのバケツリレーで届くのか（約15分）
+## データはどう小分けされ、ルータのバケツリレーで届くのか
 
 ---
 
@@ -1549,9 +1595,9 @@ style: |
 
 <div class="page-title">2つの通信方式</div>
 
-## 回線交換 vs パケット交換 <span class="important">重要</span>
+## 回線交換 vs パケット交換
 
-<svg viewBox="0 0 900 46" width="92%" style="height:42px;max-height:46px;flex-shrink:0;margin:0 auto 2px;display:block">
+<svg viewBox="0 0 900 46" width="92%" style="height:43px;max-height:46px;flex-shrink:0;margin:0 auto 2px;display:block">
   <g font-size="15" text-anchor="middle">
     <line x1="60" y1="34" x2="840" y2="34" stroke="#ccc" stroke-width="2"/>
     <g fill="#999"><circle cx="60" cy="34" r="6"/><circle cx="216" cy="34" r="6"/><circle cx="372" cy="34" r="6"/><circle cx="684" cy="34" r="6"/><circle cx="840" cy="34" r="6"/></g>
@@ -1563,8 +1609,8 @@ style: |
 <div class="fig-area">
 <div class="grid2" style="width:96%">
 <div>
-<svg viewBox="0 0 420 200" width="100%" style="max-height:215px">
-  <text x="210" y="22" font-size="17" font-weight="700" text-anchor="middle">回線交換（電話）</text>
+<svg viewBox="0 0 420 200" width="100%" style="max-height:380px">
+  <text x="210" y="22" font-size="20" font-weight="700" text-anchor="middle">回線交換（電話）</text>
   <circle cx="48" cy="100" r="26" fill="#fff" stroke="#6B6F76" stroke-width="2" class="card"/><text x="48" y="106" font-size="16" text-anchor="middle">A</text>
   <circle cx="372" cy="100" r="26" fill="#fff" stroke="#6B6F76" stroke-width="2" class="card"/><text x="372" y="106" font-size="16" text-anchor="middle">B</text>
   <line x1="76" y1="100" x2="344" y2="100" stroke="#A6192E" stroke-width="9"/>
@@ -1574,8 +1620,8 @@ style: |
 </svg>
 </div>
 <div>
-<svg viewBox="0 0 420 200" width="100%" style="max-height:215px">
-  <text x="210" y="22" font-size="17" font-weight="700" text-anchor="middle">パケット交換（インターネット）</text>
+<svg viewBox="0 0 420 200" width="100%" style="max-height:380px">
+  <text x="210" y="22" font-size="20" font-weight="700" text-anchor="middle">パケット交換（インターネット）</text>
   <circle cx="48" cy="100" r="26" fill="#fff" stroke="#3C8A57" stroke-width="2.5" class="card"/><text x="48" y="106" font-size="16" text-anchor="middle">A</text>
   <circle cx="372" cy="100" r="26" fill="#fff" stroke="#3C8A57" stroke-width="2.5" class="card"/><text x="372" y="106" font-size="16" text-anchor="middle">B</text>
   <g font-size="15" fill="#fff" text-anchor="middle" font-weight="700">
@@ -1598,7 +1644,7 @@ style: |
 
 <div class="page-title">2つの通信方式</div>
 
-## 同じ「つなぐ」でも、ここが違う <span class="important">重要</span>
+## 同じ「つなぐ」でも、ここが違う
 
 <table class="dtbl" style="font-size:21px; width:92%">
 <tr><th></th><th>回線交換（電話）</th><th>パケット交換（インターネット・主流）</th></tr>
@@ -1780,7 +1826,7 @@ style: |
 </div>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか</span>　2021年10月、Facebook(現Meta)が経路案内（BGP）設定をしくじり、自社への<span class="hl">経路情報をインターネットから誤って取り消した</span>。Facebook・Instagram・WhatsApp が世界規模で約6時間ダウン。<span class="hl">地図(経路制御表)を1か所間違える</span>と、荷物(パケット)が宛先を見失い行方不明になる。<span class="src">出典: Cloudflare Blog（Oct 2021 Facebook outage）</span></div>
+<div class="episode"><span class="h">なぜ学ぶか</span>　2021年10月、Facebook(現Meta)が経路案内（BGP）設定をしくじり、自社への<span class="hl">経路情報をインターネットから誤って取り消した</span>。Facebook・Instagram・WhatsApp が世界規模で約6時間ダウン。<span class="hl">地図(経路制御表)を1か所間違える</span>と、荷物(パケット)が宛先を見失い行方不明になる。<span class="src">出典: <a href="https://blog.cloudflare.com/october-2021-facebook-outage/" style="color:#3E78B2">Cloudflare Blog（Oct 2021 Facebook outage）</a></span></div>
 
 ---
 
@@ -1788,7 +1834,7 @@ style: |
 
 <div class="page-title">パリティ検査の手計算</div>
 
-## 「1の個数が偶数」になるよう、パリティビットを1つ足す <span class="important">重要</span>
+## 「1の個数が偶数」になるよう、パリティビットを1つ足す
 
 <div class="fig-area">
 <div style="width:97%">
@@ -1844,7 +1890,7 @@ style: |
 
 # 名前から、ページへ
 
-## DNS・ドメイン・URL・HTML（約13分）
+## DNS・ドメイン・URL・HTML
 
 旅の現在地 ── <span style="opacity:.85">「人間が覚える<b>名前</b>」を、機械の住所<b>IP</b>に翻訳して出発する</span>
 
@@ -1930,7 +1976,7 @@ style: |
 
 <div class="cbox gray"><div class="h">③ 委任の階層イメージ</div><div class="b"></div></div>
 
-<svg viewBox="0 0 360 250" width="100%" style="max-height:230px">
+<svg viewBox="0 0 360 250" width="100%" style="max-height:380px">
   <g font-size="15" text-anchor="middle">
     <rect class="card" x="115" y="14" width="130" height="40" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="180" y="33" font-weight="700">ルート（ . ）</text><text x="180" y="48" font-size="13" fill="#777">世界に13系統</text>
     <line x1="180" y1="54" x2="180" y2="86" stroke="#ccc" stroke-width="2" marker-end="url(#u6t)"/>
@@ -1955,7 +2001,7 @@ style: |
 
 <div class="page-title">ドメインの構造</div>
 
-## ドメインは「後ろから」読む ── www.kantei.go.jp <span class="important">重要</span>
+## ドメインは「後ろから」読む ── www.kantei.go.jp
 
 <div class="fig-area">
 <svg viewBox="0 0 900 130" width="100%" style="max-height:130px">
@@ -2028,7 +2074,7 @@ style: |
 </div>
 <div class="right">
 
-<svg viewBox="0 0 360 200" width="100%" style="max-height:180px">
+<svg viewBox="0 0 360 200" width="100%" style="max-height:230px">
   <g font-size="15" text-anchor="middle">
     <rect class="card" x="14" y="70" width="100" height="56" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2"/><text x="64" y="94" font-weight="700">ブラウザ</text><text x="64" y="113" font-size="13" fill="#777">あなた</text>
     <rect class="card" x="246" y="70" width="100" height="56" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="296" y="94" font-weight="700">Webサーバ</text>
@@ -2042,8 +2088,8 @@ style: |
   </defs>
 </svg>
 
-<div class="episode"><span class="h">なぜ学ぶか｜偽サイトを見破る</span><br>日本のフィッシング報告は2024年に過去最多 <span class="red">171万件超</span>、約75%が実在サービスの“なりすまし”。鍵マーク（HTTPS）とURLの構造を読めることが、最初の防具になる。
-<div class="src">出典: フィッシング対策協議会／日経（2025）</div></div>
+<div class="episode"><span class="h">なぜ学ぶか｜偽サイトを見破る</span><br>日本のフィッシング報告は2024年に過去最多 <span class="red">171万件超</span>、その多くは実在サービスの<span class="red">メール差出人を装う“なりすまし”</span>（協議会調べで約75%）。鍵マーク（HTTPS）とURLの構造を読めることが、最初の防具になる。
+<div class="src">出典: <a href="https://www.antiphishing.jp/report/monthly/" style="color:#3E78B2">フィッシング対策協議会（月次報告書）</a></div></div>
 
 </div>
 </div>
@@ -2054,7 +2100,7 @@ style: |
 
 <div class="page-title">URLの分解</div>
 
-## URL ＝ Webページの「住所」 <span class="important">重要</span>
+## URL ＝ Webページの「住所」
 
 <div class="fig-area">
 <svg viewBox="0 0 900 210" width="100%" style="max-height:230px">
@@ -2072,7 +2118,7 @@ style: |
 </svg>
 </div>
 
-<div class="band">教科書の編末問題も <span class="mono">https://www.example.jp/index.html</span> を ①〜④ に分解させる定番。<span class="hl">パスを省くと最上位ページ</span>へ。</div>
+<div class="band">練習として <span class="mono">https://www.example.jp/index.html</span> を ①〜④ に分解してみよう。<span class="hl">パスを省くと最上位ページ</span>へ。</div>
 
 ---
 
@@ -2094,7 +2140,7 @@ style: |
   </g>
   <!-- 表示までの5ステップ -->
   <g font-size="16" text-anchor="middle">
-    <rect class="card" x="20" y="70" width="150" height="86" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2"/><text x="95" y="100" font-weight="700">① URL入力</text><text x="95" y="124" font-size="15" fill="#777">https://example.jp</text>
+    <rect class="card" x="10" y="70" width="168" height="86" rx="8" fill="#fff" stroke="#A6192E" stroke-width="2"/><text x="95" y="100" font-weight="700">① URL入力</text><text x="95" y="124" font-size="15" fill="#777">https://example.jp</text>
     <rect class="card" x="200" y="70" width="150" height="86" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="275" y="100" font-weight="700">② DNS</text><text x="275" y="124" font-size="15" fill="#777">名前→IP</text>
     <rect class="card" x="380" y="70" width="150" height="86" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/><text x="455" y="100" font-weight="700">③ サーバ接続</text><text x="455" y="124" font-size="15" fill="#777">そのIPへHTTP</text>
     <rect class="card" x="560" y="70" width="150" height="86" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="635" y="100" font-weight="700">④ ファイル送信</text><text x="635" y="124" font-size="15" fill="#777">HTML/CSSを受信</text>
@@ -2172,45 +2218,13 @@ style: |
 
 ---
 
-<div class="page-title">ワーク⑥</div>
-
-## ワーク：最小のHTMLを書いて、名前を引く
-
-<div class="grid2">
-<div>
-
-<div class="cbox green"><div class="h">🔧 Moodle → Colab（個人 or 2人）</div><div class="b">
-
-- ① 最小HTMLを書いて保存：<span class="mono">&lt;h1&gt;はじめてのWeb&lt;/h1&gt;</span>
-- ② ブラウザで開き<span class="red">ソースを表示</span>して見比べる
-- ③ <span class="mono">!dig example.jp +short</span> で名前→IP
-- ④ <span class="mono">!dig www.chiba-u.jp +trace</span> で委任を辿る
-- ⑤ 返ったIPをブラウザに直接入れると開く？
-
-</div></div>
-
-<div class="ask hand">④の <span class="mono">+trace</span> の出力に <span class="mono">.jp</span> や権威サーバの名前は出てきた？</div>
-
-</div>
-<div>
-
-<div class="ph" style="height:235px">［ここに dig +short / +trace とソース表示の実行スクショを貼る］<br>（画像はこちらで差し込みます）</div>
-
-</div>
-</div>
-
-<div class="statement">「名前 → IP → ページ」を、自分の手で1往復してみる。</div>
-
-
----
-
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 7 ／ CHAPTER 7 ★核</div>
+<div class="chapter-num">動画 7 ／ CHAPTER 7 ★重要なポイント</div>
 
 # 安全に通信する
 
-## 暗号・認証・Wi-Fiセキュリティ ── 旅の途中で「盗み見・なりすまし」を防ぐ（約16分）
+## 暗号・認証・Wi-Fiセキュリティ ── 旅の途中で「盗み見・なりすまし」を防ぐ
 
 ---
 
@@ -2307,12 +2321,12 @@ style: |
 
 <div class="page-title">共通鍵 と 公開鍵</div>
 
-## 「同じ鍵」の弱点を、公開鍵が解決する <span class="important">重要</span>
+## 「同じ鍵」の弱点を、公開鍵が解決する
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 380 320" width="100%" style="max-height:320px">
+<svg viewBox="0 0 380 320" width="100%" style="max-height:380px">
   <!-- 共通鍵 -->
   <text x="190" y="22" font-size="16" font-weight="700" text-anchor="middle" fill="#D98A2B">共通鍵暗号（同じ鍵）</text>
   <rect class="card" x="20" y="36" width="90" height="46" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="65" y="64" font-size="15" text-anchor="middle" fill="#3C8A57">Aさん</text>
@@ -2393,7 +2407,7 @@ style: |
 
 <div class="page-title">署名・認証局</div>
 
-## 「本人が送った」を証明する ── 署名は鍵が“逆向き” <span class="important">重要</span>
+## 「本人が送った」を証明する ── 署名は鍵が“逆向き”
 
 <div class="split-body">
 <div class="left">
@@ -2466,7 +2480,7 @@ style: |
 </svg>
 </div>
 
-<div class="episode"><span class="h">なぜ学ぶか</span>　2024年、旅客機内に<span class="red">偽Wi-Fi（Evil Twin）</span>を立て、乗客のメール・SNSのログイン情報を盗んだ人物が豪連邦警察に逮捕。「無料Wi-Fi」は最も狙われる入口でもある。<span class="src">出典: Kaspersky「Evil Twin攻撃」（2024）</span></div>
+<div class="episode"><span class="h">なぜ学ぶか</span>　2024年、旅客機内に<span class="red">偽Wi-Fi（Evil Twin）</span>を立て、乗客のメール・SNSのログイン情報を盗んだ人物が豪連邦警察に起訴。「無料Wi-Fi」は最も狙われる入口でもある。<span class="src">出典: <a href="https://www.kaspersky.com/resource-center/preemptive-safety/evil-twin-attacks" style="color:#3E78B2">Kaspersky「Evil Twin攻撃」</a></span></div>
 
 ---
 
@@ -2517,12 +2531,12 @@ style: |
 
 <div class="page-title">家庭Wi-Fiの守り方</div>
 
-## 「お家のネット」は、自分で守れる <span class="important">重要</span>
+## 「お家のネット」は、自分で守れる
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 380 300" width="100%" style="max-height:300px">
+<svg viewBox="0 0 380 300" width="100%" style="max-height:380px">
   <text x="190" y="22" font-size="16" font-weight="700" text-anchor="middle" fill="#3C8A57">家庭の無線LANルータ</text>
   <rect class="card" x="20" y="120" width="80" height="50" rx="8" fill="#fff" stroke="#6B6F76" stroke-width="2"/><text x="60" y="150" font-size="14" text-anchor="middle">スマホ/PC</text>
   <!-- ルータ -->
@@ -2576,7 +2590,7 @@ style: |
 
 </div></div>
 
-<div class="episode"><span class="h">自分ごとに</span>　パスワードの使い回しは破滅的：2023年、遺伝子検査の 23andMe は使い回しPWを突かれ約690万人分の遺伝・健康データが流出した。<span class="src">出典: HIPAA Journal https://www.hipaajournal.com/6-9-million-23andme-users-affected-by-data-breach/</span></div>
+<div class="episode"><span class="h">自分ごとに</span>　パスワードの使い回しは破滅的：2023年、遺伝子検査の 23andMe は使い回しPWを突かれ約690万人分の遺伝・健康データが流出した。<span class="src">出典: <a href="https://www.hipaajournal.com/6-9-million-23andme-users-affected-by-data-breach/" style="color:#3E78B2">HIPAA Journal</a></span></div>
 
 <div class="statement">習った暗号・認証・Wi-Fiの知識は、まず「自分の家」を守るために使う。</div>
 
@@ -2589,7 +2603,7 @@ style: |
 
 # データベースとSQL
 
-## 旅の目的地 — 「届いた先のデータ」を、どう貯めて取り出すか（約12分）
+## 旅の目的地 — 「届いた先のデータ」を、どう貯めて取り出すか
 
 ---
 
@@ -2694,7 +2708,7 @@ style: |
 
 <div class="episode"><div class="h">なぜ「管理」が要るのか</div>
 2024年6月、KADOKAWA／ニコニコがランサムウェア被害。約<span class="hl-dark">25万人分</span>の個人情報が漏洩し特別損失36億円。DBは「漏れたら全件まとめて流出する箱」。だから③④⑤が必須。
-<div class="src">出典: KADOKAWA グループ公表資料 / 日経クロステック（2024）</div>
+<div class="src">出典: <a href="https://www.kadokawa.co.jp/topics/12088/" style="color:#3E78B2">KADOKAWA グループ公表資料</a> / <a href="https://xtech.nikkei.com/atcl/nxt/news/24/01092/" style="color:#3E78B2">日経クロステック（2024）</a></div>
 </div>
 
 </div>
@@ -2856,9 +2870,32 @@ style: |
 </div>
 <div>
 
-<div class="ph" style="height:215px">［ここに Colab で pandas＋SQL を実行した画面のスクショを貼る］<br>（画像はこちらで差し込みます）</div>
+<svg viewBox="0 0 400 232" width="100%" style="max-height:232px">
+  <rect x="4" y="4" width="392" height="112" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+  <circle cx="24" cy="28" r="11" fill="#3C8A57"/><path d="M20.5 23 L31 28 L20.5 33 Z" fill="#fff"/>
+  <text x="11" y="60" font-family="Menlo,monospace" font-size="11" fill="#999">[1]</text>
+  <g font-family="Menlo,Consolas,monospace" font-size="12.5">
+    <text x="46" y="26"><tspan fill="#cf222e">import</tspan> pandas <tspan fill="#cf222e">as</tspan> pd</text>
+    <text x="46" y="48"><tspan fill="#cf222e">from</tspan> pandasql <tspan fill="#cf222e">import</tspan> sqldf</text>
+    <text x="46" y="74"><tspan fill="#0550ae">sqldf</tspan>(<tspan fill="#0a7d32">"SELECT タイトル,著者名</tspan></text>
+    <text x="62" y="92"><tspan fill="#0a7d32">FROM 書籍 JOIN 著者 USING(著者ID)"</tspan>)</text>
+  </g>
+  <text x="11" y="150" font-family="Menlo,monospace" font-size="12" fill="#999">→</text>
+  <rect x="40" y="128" width="356" height="100" rx="6" fill="#fff" stroke="#d0d7de"/>
+  <rect x="40" y="128" width="356" height="26" rx="6" fill="#eef4fa"/>
+  <line x1="262" y1="128" x2="262" y2="228" stroke="#e3e3e3"/>
+  <g stroke="#e3e3e3"><line x1="40" y1="154" x2="396" y2="154"/><line x1="40" y1="178" x2="396" y2="178"/><line x1="40" y1="202" x2="396" y2="202"/></g>
+  <g font-size="12.5" text-anchor="middle" font-weight="700"><text x="151" y="146">タイトル</text><text x="329" y="146">著者名</text></g>
+  <g font-size="12.5" fill="#1a1a1a">
+    <text x="52" y="171">砂浜の物理学</text><text x="274" y="171">海浜 太郎</text>
+    <text x="52" y="195">データ分析入門</text><text x="274" y="195">千葉 花子</text>
+    <text x="52" y="219">ネットワーク概論</text><text x="274" y="219">海浜 太郎</text>
+  </g>
+</svg>
 
-<div class="band" style="font-size:18px">ラボの実験データ・アンケート・配列情報も、<span class="hl">表に整えれば SQL/pandas で一発検索</span>できる。<span class="important">重要</span></div>
+<div class="caption">（イメージ）Colab で pandas × SQL を実行した画面 ── JOIN の結果が表で返る</div>
+
+<div class="band" style="font-size:18px">ラボの実験データ・アンケート・配列情報も、<span class="hl">表に整えれば SQL/pandas で一発検索</span>できる。</div>
 
 </div>
 </div>
@@ -2874,7 +2911,7 @@ style: |
 
 # 情報システムの応用とデータ分析入門
 
-## 旅の終点 ― 届いたデータを「集めて・読む」仕組み（約14分）
+## 旅の終点 ― 届いたデータを「集めて・読む」仕組み
 
 ---
 
@@ -2918,7 +2955,7 @@ style: |
   <!-- other systems -->
   <text x="800" y="28" font-size="18" font-weight="700" text-anchor="middle" fill="#1a1a1a">② 位置・予約のシステム</text>
   <rect class="card" x="650" y="46" width="300" height="40" rx="6" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
-  <text x="800" y="71" font-size="16" font-weight="700" text-anchor="middle">🛰 GPS／道路交通システム（カーナビ・渋滞）</text>
+  <text x="800" y="71" font-size="16" font-weight="700" text-anchor="middle">🛰 GPS／道路交通システム（渋滞）</text>
   <rect class="card" x="650" y="96" width="300" height="40" rx="6" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
   <text x="800" y="121" font-size="16" font-weight="700" text-anchor="middle">予約システム（座席・蔵書をリアルタイム）</text>
   <text x="800" y="160" font-size="15" fill="#555" text-anchor="middle">限られた資源を、自宅から検索・予約できる</text>
@@ -2937,7 +2974,7 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">マーケティングとPOS</div>
+<div class="page-title">補足：マーケティングとPOS</div>
 
 ## なぜ1本のバーコードが「経営」を動かすのか
 
@@ -2987,6 +3024,8 @@ style: |
 </div>
 </div>
 
+<div class="episode"><span class="h">身近な例：Suica（交通系IC）も「販売時点」と同じ</span> 改札の<span class="red">入場・出場</span>がそのままデータ化され、<span class="red">人の動線・時間帯ごとの乗降</span>が見える。これを基に<span class="red">店舗の出店判断</span>・広告・運行ダイヤの最適化にも使われる。</div>
+
 <div class="takeaway">バーコード1本が、精算・在庫・発注・配送まで一気に動かす ＝ POS</div>
 
 ---
@@ -2995,7 +3034,7 @@ style: |
 
 <div class="page-title">データの種類と尺度</div>
 
-## データの「種類（尺度水準）」を見分ける <span class="important">重要</span>
+## データの「種類（尺度水準）」を見分ける
 
 <div class="fig-area">
 <div class="grid2" style="width:98%;align-items:center">
@@ -3083,7 +3122,7 @@ style: |
 
 <div class="page-title">代表値の落とし穴</div>
 
-## 平均値か、中央値か ── 外れ値に注意 <span class="important">重要</span>
+## 平均値か、中央値か ── 外れ値に注意
 
 <div class="fig-area">
 <div class="grid2" style="width:97%">
@@ -3133,31 +3172,40 @@ style: |
 
 <div class="page-title">箱ひげ図・ばらつき</div>
 
-## 散らばりを「数値」と「図」で表す <span class="important">重要</span>
+## 散らばりを「数値」と「図」で表す
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 380 300" width="100%" style="max-height:300px">
-  <text x="190" y="22" font-size="17" font-weight="700" text-anchor="middle">箱ひげ図（5数要約）</text>
-  <line x1="40" y1="90" x2="360" y2="90" stroke="#888" stroke-width="2"/>
-  <line x1="70" y1="90" x2="130" y2="90" stroke="#3E78B2" stroke-width="2"/>
-  <line x1="270" y1="90" x2="330" y2="90" stroke="#3E78B2" stroke-width="2"/>
-  <rect class="card" x="130" y="62" width="140" height="56" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-  <line x1="195" y1="62" x2="195" y2="118" stroke="#A6192E" stroke-width="3"/>
-  <g stroke="#3E78B2" stroke-width="2"><line x1="70" y1="74" x2="70" y2="106"/><line x1="330" y1="74" x2="330" y2="106"/></g>
-  <g font-size="14" text-anchor="middle" fill="#555">
-    <text x="70" y="140">最小値</text><text x="130" y="140">第1四分位</text>
-    <text x="195" y="52" font-size="15" fill="#A6192E" font-weight="700">中央値</text>
-    <text x="270" y="140">第3四分位</text><text x="330" y="140">最大値</text>
+<svg viewBox="0 0 380 300" width="100%" style="max-height:380px">
+  <text x="190" y="20" font-size="17" font-weight="700" text-anchor="middle">箱ひげ図（5数要約）</text>
+  <!-- ひげ（軸）と両端キャップ -->
+  <line x1="50" y1="85" x2="310" y2="85" stroke="#888" stroke-width="2"/>
+  <g stroke="#3E78B2" stroke-width="2"><line x1="50" y1="70" x2="50" y2="100"/><line x1="310" y1="70" x2="310" y2="100"/></g>
+  <!-- 箱・中央値 -->
+  <rect class="card" x="140" y="60" width="120" height="50" rx="3" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
+  <line x1="215" y1="60" x2="215" y2="110" stroke="#A6192E" stroke-width="3"/>
+  <!-- 外れ値の点（右ひげの外） -->
+  <circle cx="350" cy="85" r="5" fill="#A6192E"/>
+  <!-- ラベル上：中央値・四分位 -->
+  <text x="215" y="36" font-size="15" text-anchor="middle" fill="#A6192E" font-weight="700">中央値</text>
+  <line x1="215" y1="40" x2="215" y2="58" stroke="#A6192E" stroke-width="1" stroke-dasharray="2 2"/>
+  <g font-size="14" text-anchor="middle" fill="#3E78B2" font-weight="700">
+    <text x="140" y="52">第1四分位</text><text x="260" y="52">第3四分位</text>
   </g>
-  <line x1="130" y1="160" x2="270" y2="160" stroke="#D98A2B" stroke-width="2"/>
-  <g stroke="#D98A2B" stroke-width="2"><line x1="130" y1="153" x2="130" y2="167"/><line x1="270" y1="153" x2="270" y2="167"/></g>
-  <text x="200" y="184" font-size="14" fill="#D98A2B" text-anchor="middle" font-weight="700">四分位範囲（箱の幅）＝散らばり</text>
-  <rect class="card" x="40" y="205" width="320" height="78" rx="8" fill="#fbfbfb" stroke="#ccc"/>
-  <text x="200" y="228" font-size="15" font-weight="700" text-anchor="middle">外れ値の目安</text>
-  <text x="200" y="250" font-size="14" fill="#555" text-anchor="middle">第1四分位 − 1.5×四分位範囲 より小</text>
-  <text x="200" y="270" font-size="14" fill="#555" text-anchor="middle">第3四分位 ＋ 1.5×四分位範囲 より大</text>
+  <!-- ラベル下：最小・最大・外れ値 -->
+  <g font-size="14" text-anchor="middle" fill="#555">
+    <text x="50" y="128">最小値</text><text x="310" y="128">最大値</text>
+  </g>
+  <text x="350" y="128" font-size="13" text-anchor="middle" fill="#A6192E" font-weight="700">外れ値</text>
+  <!-- IQR ブレース（箱の幅） -->
+  <path d="M140 119 V127 H260 V119" fill="none" stroke="#D98A2B" stroke-width="2"/>
+  <text x="200" y="150" font-size="14" text-anchor="middle" fill="#D98A2B" font-weight="700">四分位範囲（IQR）＝箱の幅＝散らばり</text>
+  <!-- 外れ値の目安 -->
+  <rect class="card" x="30" y="170" width="320" height="84" rx="8" fill="#fbfbfb" stroke="#ccc"/>
+  <text x="190" y="194" font-size="15" font-weight="700" text-anchor="middle">外れ値の目安（右の赤い点が該当）</text>
+  <text x="190" y="220" font-size="14" fill="#555" text-anchor="middle">第1四分位 − 1.5×IQR より小さい</text>
+  <text x="190" y="242" font-size="14" fill="#555" text-anchor="middle">第3四分位 ＋ 1.5×IQR より大きい</text>
 </svg>
 
 </div>
@@ -3227,7 +3275,7 @@ style: |
 </div>
 </div>
 
-<div class="episode"><div class="h">なぜ学ぶか — 相関を因果と取り違えると判断を誤る</div>「アイスが売れる日ほど水難事故が多い」。だが真因は<span class="hl">暑さ＝交絡因子</span>で、アイスを禁じても事故は減らない。相関係数（<span class="mono">=CORREL()</span>, −1〜+1）は関係の強さを示すだけ。<span class="hl">仮説検定</span>（帰無仮説を有意水準5%で棄却）と合わせ、データから「正しい結論」を引き出すのがデータサイエンティストの仕事。<span class="src">出典：高校『情報』第4編第3章「データの分析」（相関・回帰・仮説検定）</span></div>
+<div class="episode"><div class="h">なぜ学ぶか — 相関を因果と取り違えると判断を誤る</div>「アイスが売れる日ほど水難事故が多い」。だが真因は<span class="hl">暑さ＝交絡因子</span>で、アイスを禁じても事故は減らない。相関係数（<span class="mono">=CORREL()</span>, −1〜+1）は関係の強さを示すだけ。<span class="hl">仮説検定</span>（帰無仮説を有意水準5%で棄却）と合わせ、データから「正しい結論」を引き出すのがデータサイエンティストの仕事。</div>
 
 
 ---
@@ -3238,7 +3286,7 @@ style: |
 
 # クラウドコンピューティング
 
-## 旅の終点 ── 届いたデータを「置く・動かす」場所、そして自分で実験する（約12分）
+## 旅の終点 ── 届いたデータを「置く・動かす」場所、そして自分で実験する
 
 ---
 
@@ -3277,7 +3325,7 @@ style: |
   <text x="420" y="186" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">利用へ</text>
   <!-- 右：クラウド＝インターネットの雲から借りる -->
   <text x="700" y="78" font-size="18" font-weight="700" text-anchor="middle" fill="#A6192E">クラウド：ネット越しに利用</text>
-  <ellipse class="card" cx="700" cy="180" rx="180" ry="86" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
+  <ellipse class="card" cx="700" cy="180" rx="180" ry="80" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
   <text x="700" y="150" font-size="20" font-weight="800" text-anchor="middle" fill="#A6192E">事業者の巨大データセンター</text>
   <text x="700" y="178" font-size="16" text-anchor="middle" fill="#7d1322">サーバ・電源・保守は事業者がまとめて運用</text>
   <text x="700" y="204" font-size="16" text-anchor="middle" fill="#7d1322">使った分だけ課金／一瞬で増減できる</text>
@@ -3286,11 +3334,11 @@ style: |
   <rect class="card" x="730" y="288" width="60" height="40" rx="6" fill="#3E78B2"/><text x="760" y="313" font-size="15" fill="#fff" text-anchor="middle" font-weight="700">スマホ</text>
   <line x1="640" y1="288" x2="675" y2="256" stroke="#6B6F76" stroke-width="2" marker-end="url(#u10arr-gray)"/>
   <line x1="760" y1="288" x2="725" y2="256" stroke="#6B6F76" stroke-width="2" marker-end="url(#u10arr-gray)"/>
-  <text x="700" y="338" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">＝ 機能を「使う」</text>
+
 </svg>
 </div>
 
-<div class="band">教科書のいう<span class="red">クラウドコンピューティング</span>＝高性能なサーバを自前で持たず、<span class="red">インターネット経由で必要なときにサービスとして利用</span>する形態（教科書 図9）。</div>
+<div class="band"><span class="red">クラウドコンピューティング</span>＝高性能なサーバを自前で持たず、<span class="red">インターネット経由で必要なときにサービスとして利用</span>する形態。</div>
 
 <div class="ask">「自分のPCが壊れても、写真もメール（ Google フォト等）も消えない」のはなぜ？ ── データが手元でなく雲の中にあるから。</div>
 
@@ -3315,10 +3363,10 @@ style: |
     <text x="470" y="56">PaaS</text>
     <text x="770" y="56">SaaS</text>
   </g>
-  <g font-size="15" text-anchor="middle" fill="#555">
-    <text x="170" y="76">基盤を借りる</text>
-    <text x="470" y="76">土台＋実行環境を借りる</text>
-    <text x="770" y="76">完成品を使うだけ</text>
+  <g font-size="13" text-anchor="middle" fill="#777">
+    <text x="170" y="74"><tspan font-weight="700" fill="#A6192E">I</tspan>nfrastructure as a Service</text>
+    <text x="470" y="74"><tspan font-weight="700" fill="#A6192E">P</tspan>latform as a Service</text>
+    <text x="770" y="74"><tspan font-weight="700" fill="#A6192E">S</tspan>oftware as a Service</text>
   </g>
   <!-- 4層の行ラベル -->
   <g font-size="15" text-anchor="end" fill="#555">
@@ -3352,11 +3400,11 @@ style: |
     <text x="770" y="276" font-size="15" fill="#555">例：Gmail・Google ドキュメント</text>
   </g>
   <!-- 右向き「おまかせが増える」矢印 -->
-  <text x="470" y="306" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">→ 右へ行くほど赤（自分の管理）が減り、緑（おまかせ）が増える</text>
+  <text x="470" y="306" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">→ 右へ行くほど赤（自分の管理）が減り、緑（おまかせ）が増える：責任共有モデル</text>
 </svg>
 </div>
 
-<div class="band">同じ<span class="red">層スタック</span>＝動画4の TCP/IP 4階層と同じ「上に積む」考え方。<span class="red">下の層ほど事業者に任せられる</span>のがクラウド。</div>
+<div class="band">3つ共通の <span class="red">aaS＝as a Service</span>（＝サービスとして借りる）。頭文字 <span class="red">I／P／S</span> が「どこまで事業者に任せるか」を表す。同じ<span class="red">層スタック</span>は動画4の TCP/IP 4階層と同じ考え方で、<span class="red">下の層ほどおまかせ</span>。</div>
 
 ---
 
@@ -3364,60 +3412,56 @@ style: |
 
 <div class="page-title">なぜ学ぶか</div>
 
-## 集約は「便利」と「弱点」の両方 ── 雲が落ちると世界が止まる
+## クラウド＝現代の「標準の道具」 ── すぐ使えて・試せる ：だから学ぶ
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 280" width="100%" style="max-height:300px">
+<svg viewBox="0 0 360 280" width="100%" style="max-height:330px">
   <defs>
-    <marker id="u10arr-d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A6192E"/></marker>
+    <marker id="u10arr-d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3E78B2"/></marker>
   </defs>
-  <!-- 巨大クラウド -->
-  <ellipse class="card" cx="180" cy="70" rx="150" ry="52" fill="#F8E5EA" stroke="#A6192E" stroke-width="2.5"/>
-  <text x="180" y="60" font-size="17" font-weight="800" text-anchor="middle" fill="#A6192E">巨大クラウド基盤</text>
-  <text x="180" y="84" font-size="14" text-anchor="middle" fill="#7d1322">DNS・経路・設定を1か所で集中管理</text>
-  <!-- 依存する多数サービス -->
-  <g font-size="14" text-anchor="middle">
-    <rect class="card" x="20"  y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="66"  y="194">SNS・配信</text>
-    <rect class="card" x="134" y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="180" y="194">決済・予約</text>
-    <rect class="card" x="248" y="170" width="92" height="40" rx="6" fill="#fff" stroke="#3E78B2" stroke-width="2"/><text x="294" y="194">業務・行政</text>
+  <!-- クラウド＝借りる計算資源 -->
+  <ellipse class="card" cx="180" cy="64" rx="150" ry="50" fill="#eef4fa" stroke="#3E78B2" stroke-width="2.5"/>
+  <text x="180" y="56" font-size="17" font-weight="800" text-anchor="middle" fill="#2a5680">クラウド＝計算資源を「借りる」</text>
+  <text x="180" y="80" font-size="14" text-anchor="middle" fill="#3E78B2">持たずに、必要なときだけ使う</text>
+  <!-- 便利さ3つ -->
+  <g font-size="13.5" text-anchor="middle">
+    <rect class="card" x="14"  y="158" width="104" height="58" rx="7" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="66"  y="183" font-weight="700" fill="#2f7048">初期費用ゼロ</text><text x="66"  y="204" fill="#555">今すぐ使える</text>
+    <rect class="card" x="128" y="158" width="104" height="58" rx="7" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="180" y="183" font-weight="700" fill="#2f7048">必要な分だけ</text><text x="180" y="204" fill="#555">瞬時に増減</text>
+    <rect class="card" x="242" y="158" width="104" height="58" rx="7" fill="#fff" stroke="#3C8A57" stroke-width="2"/><text x="294" y="183" font-weight="700" fill="#2f7048">個人でも</text><text x="294" y="204" fill="#555">VM・AIを作れる</text>
   </g>
-  <line x1="120" y1="118" x2="70"  y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
-  <line x1="180" y1="122" x2="180" y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
-  <line x1="240" y1="118" x2="290" y2="166" stroke="#A6192E" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
-  <text x="180" y="248" font-size="15" font-weight="700" text-anchor="middle" fill="#A6192E">1か所の設定ミス → 一斉に停止</text>
-  <text x="180" y="270" font-size="14" text-anchor="middle" fill="#555">便利な集約は、同時に「単一障害点」</text>
+  <line x1="120" y1="112" x2="70"  y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <line x1="180" y1="114" x2="180" y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <line x1="240" y1="112" x2="290" y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
+  <text x="180" y="246" font-size="15" font-weight="700" text-anchor="middle" fill="#3E78B2">だから「学びの実験場」に最適</text>
+  <text x="180" y="268" font-size="13" text-anchor="middle" fill="#888">※集約ゆえ落ちると影響は広い</text>
 </svg>
 
 </div>
 <div class="right">
 
-<div class="cbox red"><div class="h">便利さ（なぜ使うのか）</div><div class="b">
+<div class="cbox blue"><div class="h">なぜ学ぶ＝自分が使う道具だから</div><div class="b">
 
-- 初期費用ゼロで<span class="red">いますぐ使える</span>
-- 利用量に応じて<span class="red">瞬時に増減</span>（実験向き）
-- 保守・更新・冗長化は<span class="red">事業者まかせ</span>
-
-</div></div>
-
-<div class="cbox gray"><div class="h">弱点（なぜ仕組みを知るのか）</div><div class="b">
-
-- 集約点が落ちると<span class="red">広範囲が同時停止</span>
-- データを<span class="red">他社に預ける</span>＝設定・権限が命
+- 初期費用ゼロで<span class="red">いますぐ実験できる</span>（Colab・GCP 無料枠）
+- 利用量に応じて<span class="red">瞬時に増減</span>＝失敗してもやり直せる
+- 研究・開発・就職後の現場まで<span class="red">標準のインフラ</span>
 
 </div></div>
 
-<div class="episode"><div class="h">EPISODE ── 雲はときどき落ちる</div>
-2021年12月、AWS us-east-1 の大規模障害で、<span class="red">相乗りする Netflix・Disney+ など多数が一斉に同時停止</span>した。
+<div class="cbox green"><div class="h">中身を知る人ほど使いこなせる</div><div class="b">
+
+- 保守・冗長化は事業者まかせ → <span class="red">自分は「作る」に集中</span>
+- IaaS / PaaS / SaaS の<span class="red">責任共有モデルが重要</span>
+
+</div></div>
+
+<div class="callout-gray">弱点：集約ゆえ<span class="red">落ちると影響は広い</span>。データは他社預け＝<span class="red">設定・権限が命</span>。仕組みの理解が大切。</div>
+
+</div>
 </div>
 
-<div class="src">出典：AWS us-east-1 大規模障害（2021-12-07）</div>
-
-</div>
-</div>
-
-<div class="band">クラウドの恩恵は、<span class="red">集約点を守れて初めて成り立つ</span>。だから IP・DNS・経路・暗号という「中身」を学んだ。</div>
+<div class="takeaway">今後、ラボの研究でも民間企業の業務でも、クラウドを使う場面は増えていく<br> ── 早めに触れておくと強い。</div>
 
 ---
 
@@ -3430,7 +3474,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 260" width="100%" style="max-height:280px">
+<svg viewBox="0 0 360 260" width="100%" style="max-height:380px">
   <g font-size="15" text-anchor="middle">
     <rect class="card" x="20"  y="200" width="240" height="40" rx="6" fill="#cfe0f0"/><text x="140" y="225" font-weight="700">無料枠・無料ツールで始める</text>
     <rect class="card" x="55"  y="150" width="240" height="40" rx="6" fill="#a9c6e6"/><text x="175" y="175" font-weight="700">ハンズオンで操作してみる</text>
@@ -3451,20 +3495,19 @@ style: |
 
 </div></div>
 
-<div class="cbox green"><div class="h">学び方は1つではない（動画1）</div><div class="b">
+<div class="cbox orange"><div class="h">⚠ 動かす前に必須の2知識 ── まさに今回学んだこと</div><div class="b">
 
-- ①実験する ②ネットで調べる ③Geminiで調べる ④人に聞く ⑤本 ⑥論文
-- <span class="red">AIは軸でなく1モード</span>。中身を理解した人ほど深い答えを引き出せる
+- <span class="red">セキュリティと安全</span>：公開範囲・認証・暗号化（HTTPS）を理解せず動かすと事故る
+- <span class="red">コスト感覚</span>：クラウドは<span class="red">従量課金</span>。無料枠を超えると課金。
+- <span class="red">ネットワーク／セキュリティ／クラウドの知識</span>が土台に
 
 </div></div>
 
-<div class="ph" style="height:64px">［ Colab／GCP コンソールのスクショ ］</div>
 
 </div>
 </div>
 
-<div class="band">クラウドは「<span class="red">安全に失敗して学べる</span>」最高の実験場 ── 旅の終点から、動画1の「<span class="red">①実験する</span>」へ戻ろう。</div>
-
+<div class="takeaway">無料の <span class="hl">Google Skills</span>（Googleのクラウド学習ツール）も紹介できます <br> ── 関心があれば声をかけて下さい。<span class="hl">認定資格が半額</span>で取れます。</div>
 
 ---
 
@@ -3510,7 +3553,7 @@ style: |
     <text x="830" y="200" fill="#555">IaaS/PaaS/SaaS</text>
     <text x="830" y="222" fill="#555">GCPで実験（動画10）</text>
   </g>
-  <text x="490" y="268" text-anchor="middle" font-size="16" fill="#A6192E" font-weight="700">バラバラに見えた10本の動画が、1本の「旅」でつながった</text>
+  <text x="490" y="268" text-anchor="middle" font-size="16" fill="#A6192E" font-weight="700">バラバラに見えた本編10本が、1本の「旅」でつながった</text>
 </svg>
 </div>
 
@@ -3520,25 +3563,17 @@ style: |
 
 ---
 
-<!-- _class: message -->
-
-# 手を動かして、学び続けよう
-
-## 教科書とAIの「外」に、実験と・人と・本がある
-
----
-
 <!-- _class: wrap -->
 
 <div class="page-title">まとめ</div>
 
-## この回の要点 ── 6つの「駅」で振り返る
+## この回の要点 ── 6つの重要項目を振り返る
 
 <div class="grid2">
 <div>
 
 <ul>
-<li><span class="hl">インターネット＝ネットワークの相互接続</span>。全ホストは<span class="hl">IPアドレス</span>（32bit / IPv6は128bit＝2<sup>128</sup>≈1兆×1兆×1兆）という住所で識別</li>
+<li><span class="hl">インターネット＝ネットワークの相互接続</span>。全ホストは<span class="hl">IPアドレス</span>（32bit / IPv6は128bit＝2<sup>128</sup>＝1兆×1兆×1兆を超える ≈3.4×10<sup>38</sup>）という住所で識別</li>
 <li><span class="hl">TCP/IP（4層）</span>に沿い各層がヘッダを重ね、データは<span class="hl">パケット</span>に小分け＝引っ越しの段ボール。ルータが<span class="hl">経路制御表でバケツリレー</span></li>
 <li>名前は<span class="hl">DNS</span>でIPに翻訳（dig で実演）。<span class="hl">HTTP/HTTPS</span>でWebページが届き、ブラウザがHTML/CSSを表示</li>
 </ul>
@@ -3555,9 +3590,7 @@ style: |
 </div>
 </div>
 
-<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>2025年11月、Cloudflareで設定ファイルが想定の倍以上に肥大化した、たった1つの不具合で、X・ChatGPTなど多数のサービスが世界規模でエラーに。AIに「なぜ繋がらないの？」と聞いても、<span class="hl">中身を知らなければ答えの正否を判断できない</span>。だから用語でなく「しくみ」を学ぶ。</div>
-
-<div class="src">出典：Cloudflare 公式「Cloudflare outage on November 18, 2025」</div>
+<div class="episode"><div class="h">なぜ「しくみ」を学ぶのか</div>「ネットワークになぜ繋がらない？」を AI に聞いても、<span class="hl">仕組みを知らなければ答えの正否を判断できない</span>。中身を学べば、安全も分かる。だから用語でなく「しくみ」を学ぶ。</div>
 
 ---
 
@@ -3571,10 +3604,12 @@ style: |
 
 <table class="dtbl">
 <tr><th>項目</th><th>内容</th><th>場所・期限</th></tr>
-<tr><td class="l">動画視聴</td><td class="l">全10本（Part1〜3）を視聴期限内に</td><td>Moodle ／ 期限内</td></tr>
-<tr><td class="l">質問</td><td class="l">Q&amp;Aフォーラムへ投稿（slido・ライブ無し）</td><td>Moodle フォーラム</td></tr>
-<tr><td class="l">課題</td><td class="l">確認小テスト＋dig実演の追体験レポート</td><td>Moodle ／ 期限内提出</td></tr>
-<tr><td class="l">発展</td><td class="l">GCP Skills Boost で VM を1つ立てる（任意）</td><td>動画1「実験する」に回収</td></tr>
+<tr><td class="l">動画視聴</td><td class="l">全12本（導入＋Part1〜3＋まとめ）を視聴期限内に</td><td>Moodle ／ 期限内</td></tr>
+<tr><td class="l">質問</td><td class="l">Q&amp;Aフォーラムへ投稿（slido無し）</td><td>Moodle フォーラム</td></tr>
+<tr><td class="l">課題</td><td class="l">確認の課題＋リフレクションシート</td><td>Moodle ／ 期限内提出</td></tr>
+<tr><td class="l">発展</td><td class="l">GCP Skills Boostを試してみる（任意）</td><td>なし(希望者のみ)</td></tr>
 </table>
 
-<div class="band">締切・提出物の最新情報は必ず Moodle の本回ページで確認してください。</div>
+<div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">🎬 視聴おつかれさまでした。</div>
+
+<div class="takeaway">第10回の授業内に、期末も兼ねて、今回の内容の簡単な小テストを行います。</div>

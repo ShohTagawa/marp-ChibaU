@@ -25,12 +25,14 @@ marp-ponchie/
 │   └── ponchie.css               フルブリード1ページ用テーマ。theme-set で参照
 └── references/
     ├── design-language.md        配色・ゾーン・グラデ・影・余白・タイポの設計原則【先に読む】
-    └── svg-library.md            コピペ用SVG部品（defs/アイコン/矢印/バッジ/カード/帯）
+    ├── svg-library.md            コピペ用SVG部品（defs/アイコン/矢印/バッジ/カード/帯）
+    └── python-dsl.md             Python DSL（tools/ponchie-svg）で .py から .md を生成する方法
 ```
 
 参照順：
 1. 設計前に **references/design-language.md**（短い・必読）
 2. 部品を置くたびに **references/svg-library.md** からコピペして調整
+3. 繰り返し部品が多い図・編集が続く図は **references/python-dsl.md** のDSLで生成（推奨）。9点アンカー（イラレの基準点）対応
 
 ## Workflow
 
@@ -39,7 +41,7 @@ marp-ponchie/
 3. **骨格を決める**：まず**伝えたい動詞を一語**にし（流れる／統合する／積み上がる／変わる）、design-language.md の「骨格の選び方（判断基準）」表に従って「構図テンプレ」から1つ選ぶ（横3幕フロー / 階層ピラミッド / ハブ&スポーク / ロードマップ旅 / Before→After / バックボーン＋ヒーロー結節点）。**流れが主題なら左→右の方向性レイアウト**、流れ＋集約の両取りなら #6。
 4. **defs を先に置く**：svg-library.md のグラデ・影・矢印マーカー定義をSVG先頭の `<defs>` に貼る。
 5. **ゾーン背景 → 部品 → テキスト** の順で重ねる（奥から手前へ）。
-6. **Write**：1枚の `.md` に1つの `<svg>` を書く。
+6. **Write**：1枚の `.md` に1つの `<svg>` を書く。レイヤー帯・カード等の繰り返しが多い図は、生SVGでなく **python-dsl.md のDSLで `.py` をソースにして `.md` を生成**する（編集・手直しが圧倒的に楽）。
 7. **必ずレンダルして目視**：PNGに出して、はみ出し・重なり・余白を確認 → 直す。
 8. 使い方を1-2行で提示。
 

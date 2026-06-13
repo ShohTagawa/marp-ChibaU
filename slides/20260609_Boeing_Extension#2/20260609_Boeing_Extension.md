@@ -80,9 +80,9 @@ style: |
   section.summary.goal h2 { margin: 0 0 6px; }
   section.summary.goal .sections { gap: 8px; }
   section.summary.goal .sec-box { padding: 7px 16px; }
-  section.summary.goal .sec-box h3 { font-size: 21px; margin: 0 0 2px; }
+  section.summary.goal .sec-box h3 { font-size: 23px; margin: 0 0 4px; }
   section.summary.goal .sec-box ul { margin: 0 0 0 1.1em; }
-  section.summary.goal .sec-box li { font-size: 19px; line-height: 1.3; margin: 1px 0; }
+  section.summary.goal .sec-box li { font-size: 23px; line-height: 1.35; margin: 2px 0; }
   section.summary.goal .goal-art { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding-top: 2px; }
   section.summary.goal .goal-art figure { margin: 0; text-align: center; }
   section.summary.goal .goal-art svg { width: 112px; height: auto; }
@@ -116,11 +116,12 @@ style: |
   section.timetable td:first-child { width: 130px; color: #0033A0; font-weight: 700; }
 
   /* フォーム手順 */
-  section.howto .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 10px; }
-  section.howto .step { border: 1.5px solid #cfd6e4; border-radius: 8px; padding: 12px 14px; background: #F7F9FC; position: relative; }
-  section.howto .step .num { position: absolute; top: -12px; left: 12px; background: #0033A0; color: #fff; font-weight: 700; font-size: 16px; padding: 2px 10px; border-radius: 10px; }
-  section.howto .step .st { font-size: 23px; font-weight: 700; color: #0033A0; margin: 4px 0 4px; }
-  section.howto .step .sd { font-size: 20px; line-height: 1.5; color: #222; }
+  section.howto .steps, section.work .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 10px; }
+  section.work .steps { margin-top: 20px; }
+  section.howto .step, section.work .step { border: 1.5px solid #cfd6e4; border-radius: 8px; padding: 12px 14px; background: #F7F9FC; position: relative; }
+  section.howto .step .num, section.work .step .num { position: absolute; top: -12px; left: 12px; background: #0033A0; color: #fff; font-weight: 700; font-size: 16px; padding: 2px 10px; border-radius: 10px; }
+  section.howto .step .st, section.work .step .st { font-size: 23px; font-weight: 700; color: #0033A0; margin: 4px 0 4px; }
+  section.howto .step .sd, section.work .step .sd { font-size: 20px; line-height: 1.5; color: #222; }
   /* 4パネル（2×2）+ Tipsパネル */
   section.howto .steps.s4 { grid-template-columns: repeat(2, 1fr); gap: 16px 22px; margin-top: 18px; }
   section.howto .steps.s4 .step { padding: 14px 18px; }
@@ -295,6 +296,14 @@ style: |
   section.work .wk-cell .wc-v b { color: #C0182B; }
   section.work .wk-cell.time { border-top-color: #F0A500; }
   section.work .wk-cell.time .wc-l { color: #B8780A; }
+  /* WORK① 視点メニュー（サービス／工学の2軸） */
+  section.work .wk-lens { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 2px; }
+  section.work .wk-lens .wl-col { border: 1.5px solid #cfd6e4; border-left: 6px solid #0033A0; border-radius: 0 10px 10px 0; background: #F7F9FC; padding: 9px 16px; }
+  section.work .wk-lens .wl-col.eng { border-left-color: #19B36B; }
+  section.work .wk-lens .wl-h { font-size: 19px; font-weight: 800; color: #0033A0; margin-bottom: 4px; }
+  section.work .wk-lens .wl-col.eng .wl-h { color: #149A5B; }
+  section.work .wk-lens .wl-d { font-size: 17px; line-height: 1.55; color: #222; }
+  section.work .wk-lens .wl-d b { color: #C0182B; }
 
   /* AI Gem 2枚カード */
   section.gem { padding-top: calc(var(--header-h) + 12px); }
@@ -348,7 +357,7 @@ style: |
 <!-- _class: summary goal -->
 <div class="page-title">本日のゴール</div>
 
-## 本日のゴールは、たった2つ
+## 本日のゴールは、2つ
 
 <div class="goal-grid">
 <div class="sections">
@@ -357,8 +366,8 @@ style: |
 ### ① 体験する
 
 - デザイン思考を<b>手を動かして</b>体感する
-- 座学ではなく、紙・付箋・ペンで進める
-- 「正解探し」より<b>試して気づく</b>を大切に
+- 座学ではなく、議論で進める
+- ソリューションより、<b>試して気づく</b>を大切に
 
 </div>
 <div class="sec-box">
@@ -372,11 +381,9 @@ style: |
 </div>
 <div class="sec-box">
 
-### 🎈 今日のスタンス
+### 🎈 注意点
 
-- 自由・楽しく（サークルのノリで）
-- 人の意見を否定しない・全員が手を動かす
-- 迷ったら、考え込む前に動く
+- グラウンドルールを確認して、楽しく進めましょう
 
 </div>
 </div>
@@ -421,9 +428,46 @@ style: |
 </div>
 </div>
 
-<div class="takeaway">今日の出口＝「暫定テーマ1つ」と「チーム」</div>
+<div class="takeaway">今日のゴール＝「暫定テーマ1つ」と「チーム」</div>
 
 <!-- ゴールは欲張らず2つだけ。①デザイン思考を体験すること、②テーマで集まってチームを作ることです。難しく考えず、手を動かしながら仲間を見つけてください。90分後にはチームと暫定テーマを1つ持って帰る、それがゴールです。 -->
+
+---
+
+<!-- _class: summary -->
+
+<div class="page-title">グラウンドルール (再掲)</div>
+
+## 協力して挑める「場」をみんなで作る
+
+<div class="sections">
+
+<div class="sec-box">
+
+### 😊 場づくりの基本
+
+- 協力的な場づくりと<b>言い合える文化</b>を大切に
+- コミュニケーションは、<b>敬意</b>を持って、<b>忌憚なく</b>、<b>建設的に</b>
+- 自ら動こう（各チームでプロジェクトを管理・推進）
+- <b>困ったら相談しよう</b>：「手を差し伸べる」より <b>「助けを相談する」</b>
+
+</div>
+
+<div class="sec-box">
+
+### ✈ 航空の文化に学ぶ
+
+- 学年や立場に関係なく <b>気づきを声に出す</b>
+- 質問をすることも大切 (分からないことは徹底してなくす)
+- 多様な視点が大切(→分野の多様性を活かそう)、価値を考える
+
+</div>
+
+</div>
+
+<div class="takeaway">チーム一丸で、面白い価値を創造しよう</div>
+
+<!-- 航空会社の安全文化（CRM・Just Culture・定時性）をチーム運営に応用。立場を超えて声を出し、失敗を学びに変え、無理せず時間を守る。 -->
 
 ---
 
@@ -449,19 +493,19 @@ style: |
 <div class="ag-row">
 <div class="ag-time">0:12–0:30</div>
 <div class="ag-tag ag-exp">体験</div>
-<div class="ag-what"><b>WORK①</b> 財布リデザイン（共感）／学科ミックス編成（18分）</div>
+<div class="ag-what"><b>WORK①</b> 飛行機の体験リデザイン（共感）／運営が決めた班（18分）</div>
 </div>
 
 <div class="ag-row">
 <div class="ag-time">0:30–0:50</div>
 <div class="ag-tag ag-exp">体験</div>
-<div class="ag-what"><b>WORK②</b> HMW問い作り（定義）／関心予想で再編成（20分）</div>
+<div class="ag-what"><b>WORK②</b> HMW問い作り（定義）／運営が決めた班（20分）</div>
 </div>
 
 <div class="ag-row">
 <div class="ag-time">0:50–1:15</div>
 <div class="ag-tag ag-exp">体験</div>
-<div class="ag-what"><b>WORK③</b> クレイジー2＋椅子取り（発散→<b>正式チーム確定</b>）（25分）</div>
+<div class="ag-what"><b>WORK③</b> テーマ集約→多様な4班づくり＋クレイジー2（発散→<b>正式チーム確定</b>）（25分）</div>
 </div>
 
 <div class="ag-row">
@@ -480,7 +524,7 @@ style: |
 
 <div class="takeaway">体験7：チーム3、手を動かしながら仲間を見つける</div>
 
-<!-- 90分の全体像です。前半はWORK①②③で手を動かす体験パート、後半でチームを固めます。WORKごとにメンバーを意図的に組み替え、3回目のシャッフルでそのまま正式チームが確定します。配分は体験7：チーム3。動きながら仲間を見つけていきましょう。 -->
+<!-- 90分の全体像です。前半はWORK①②③で手を動かす体験パート、後半でチームを固めます。WORK①②は運営があらかじめ決めた班で進め、WORK③で全員でテーマを出し合い、自分が選んだテーマの島がそのまま正式チームになります。配分は体験7：チーム3。動きながら仲間を見つけていきましょう。 -->
 
 ---
 
@@ -488,7 +532,7 @@ style: |
 <div class="page-title">デザイン思考</div>
 
 <div class="dt-def">
-<b>デザイン思考</b>とは、つくる側の都合ではなく<b>使う人の視点</b>から出発し、観察・試作・検証を繰り返して課題と解を磨いていく進め方です。
+<b>デザイン思考</b>とは、つくる側の都合ではなく<b>使う人の視点</b>から出発し、<br>観察・試作・検証を繰り返して課題と解を磨いていく進め方です。
 </div>
 
 <div class="dt-svg">
@@ -532,9 +576,9 @@ style: |
 <div class="dt-do">
 <div class="dh">📋 今日体験するのはこの3つ</div>
 <ul>
-<li><b>共感</b>：当事者になりきり観察する（WORK①・財布）</li>
-<li><b>定義</b>：観察から<b>「良い問い」</b>を立てる（WORK②・HMW）</li>
-<li><b>発散</b>：問いに対しアイデアの量を出す（WORK③・冒頭で少し）</li>
+<li><b>共感</b>：体験を持ち寄り“困った”を知る（WORK①・飛行機の体験）</li>
+<li><b>定義</b>：観察から<b>「良い問い」</b>を立てる（WORK②）</li>
+<li><b>発散</b>：テーマ案＋クレイジー2で量を出す（WORK③）</li>
 </ul>
 <div class="dt-note">今日は特に<b>「共感」と「定義」</b>＝“良い問い”作りに時間をかけます。</div>
 </div>
@@ -555,9 +599,9 @@ style: |
 
 ### ✨ 共感が生んだ成功例
 
-- <b>GE：子ども向けMRI</b>を“冒険”に → 怖がる子が激減、鎮静が減った
-- <b>OXO</b>：握れない人の不便から、誰もが使える調理器具へ
-- <b>Airbnb</b>：創業者が利用者宅を訪問 → 写真を撮り直し予約が伸びた
+- <b>GE：子ども向けMRI</b>を“冒険”に → 怖がる子が激減、鎮静が減った <a href="https://toyokeizai.net/articles/-/424228">（東洋経済の記事）</a>
+- <b>OriHime</b>：外出が難しい人の「その場にいたい」から生まれた分身ロボット <a href="https://orihime.orylab.com/">（オリィ研究所 公式）</a>
+- <b>Airbnb</b>：創業者が利用者宅を訪問 → 写真を撮り直し予約が伸びた <a href="https://toyokeizai.net/articles/-/190626">（東洋経済の記事）</a>
 
 </div>
 <div class="sec-box">
@@ -566,36 +610,26 @@ style: |
 
 - 正解のない問いに、<b>利用者起点</b>で挑める
 - 作る前に“外し”を減らせる（<b>手戻りが少ない</b>）
-- 小さく試し、<b>失敗を早く・安く</b>学べる
+- 小さく試し、<b>失敗を早く・安く</b>学べる（<b>FAIL</b>＝First Attempt In Learning）
 - 立場・分野を越えて<b>チームで協働</b>できる
 
 </div>
 </div>
 
-<div class="caption">出典：Doug Dietz「GE Adventure Series」(TEDx)／OXO Good Grips／Airbnb 各社公開情報より（共感起点の代表例）</div>
+<div class="caption">出典：Doug Dietz「GE Adventure Series」(TEDx)／オリィ研究所 OriHime／Airbnb 各社公開情報より（共感起点の代表例）</div>
 
-<div class="takeaway">秘訣は“賢さ”より、まず“相手をよく見る”こと</div>
+<div class="takeaway">秘訣は“答えを見つける”より、まず“相手をよく見る”こと</div>
 
-<!-- page4の補足。デザイン思考が「大切にされる理由」を、共感起点で成功した有名3例で腹落ちさせます。GEの子ども向けMRIは怖くて鎮静が必要だった検査を海賊船などの冒険世界に変えて子どもの不安を激減させた話、OXOは関節炎の家族のための調理器具が万人に使いやすくなった話、Airbnbは創業者が利用者の家を訪ね写真を撮り直して予約を伸ばした話。いずれも「賢い解」より「相手をよく見た」ことが転機。だから今日のWSも共感から始める、と接続します。 -->
+<!-- page4の補足。デザイン思考が「大切にされる理由」を、共感起点で成功した有名3例で腹落ちさせます。GEの子ども向けMRIは怖くて鎮静が必要だった検査を海賊船などの冒険世界に変えて子どもの不安を激減させた話、OriHimeは外出が困難な人の「その場にいたい・参加したい」という思いから生まれた分身ロボットで、入院・介護・障害などで動けない人が遠隔操作で職場や学校に参加できる話、Airbnbは創業者が利用者の家を訪ね写真を撮り直して予約を伸ばした話。いずれも「賢い解」より「相手をよく見た」ことが転機。だから今日のWSも共感から始める、と接続します。 -->
 
 ---
 
 <!-- _class: summary -->
 <div class="page-title">道具と心構え</div>
 
-## 今日の道具と、WSの心構え
+## WSの心構え
 
 <div class="sections">
-<div class="sec-box">
-
-### 🧰 今日の道具
-
-- 紙・付箋・ペンで<b>手を動かす</b>（アナログ中心）
-- <b>ドット投票シール</b>で「いいね」を可視化
-- <b>タイマー</b>を画面共有、各WORKを時間管理
-- テーマ別の「島（机と椅子）」を移動して使う
-
-</div>
 <div class="sec-box">
 
 ### 🧠 WSの心構え
@@ -624,9 +658,9 @@ style: |
 ---
 
 <!-- _class: gem -->
-<div class="page-title">2つのAI相棒</div>
+<div class="page-title">2つのAI相棒（任意）</div>
 
-## 2つの Gemini Gem を相棒にする
+## 必要であれば、2つの Gemini Gem を相棒に
 
 <div class="gem-grid">
 
@@ -658,7 +692,7 @@ style: |
 
 </div>
 
-<div class="gem-foot">設定プロンプトはClassroom掲示／このスライドのノート参照</div>
+<div class="gem-foot">使いたい人だけでOK／設定プロンプトはClassroom掲示・このスライドのノート参照</div>
 
 <!--
 2つのGemは「答えをくれる先生」ではなく「壁打ち相手」だと強調してください。壁打ちGemはWORK②③で問いやアイデアを広げる時、ペルソナGemはWORK①で利用者の気持ちを掘る時に使います。設定プロンプトは下記をClassroomにも掲示済み。学生はGeminiの「Gem」に貼って使います。
@@ -701,56 +735,67 @@ style: |
 
 <div class="wk-head">
 <div class="wk-badge"><div class="wb-l">WORK</div><div class="wb-n">1</div></div>
-<div class="wk-title">財布を、リデザインしよう<span class="wk-sub">― 「共感」から始めるデザイン思考</span></div>
+<div class="wk-title">飛行機の体験を、リデザインしよう<span class="wk-sub">― 「共感」から始めるデザイン思考</span></div>
 </div>
 
 <div class="wk-meta">
-<div class="wk-cell"><div class="wc-l">🎯 お題</div><div class="wc-v">身近な人の“お金の持ち歩き”の不便を見つけ、<b>その人だけの理想の財布</b>を提案する</div></div>
-<div class="wk-cell"><div class="wc-l">👥 編成</div><div class="wc-v"><b>学科ミックス</b>の3〜4人組<br>＝1回目のシャッフル</div></div>
+<div class="wk-cell"><div class="wc-l">🎯 お題</div><div class="wc-v"><b>空港・機内・その他サービス</b>から場面を1つ選び、“困った・不便”から<b>理想の体験／しくみ</b>を考える</div></div>
+<div class="wk-cell"><div class="wc-l">👥 編成</div><div class="wc-v"><b>運営が決めた班</b>（4人組）<br>学科・学年が混ざる編成</div></div>
 <div class="wk-cell time"><div class="wc-l">⏱ 時間</div><div class="wc-v">18分</div></div>
 </div>
 
-<div class="takeaway">いきなり解決策を描かない。まず“相手”をよく知る</div>
+<div class="wk-lens">
+<div class="wl-col">
+<div class="wl-h">🛎 サービス・体験の視点</div>
+<div class="wl-d">待ち時間・行列／案内・動線／不安・ストレス／手続きの手間</div>
+</div>
+<div class="wl-col eng">
+<div class="wl-h">🔧 工学・技術の視点</div>
+<div class="wl-d">座席・機内設備／<b>騒音・揺れ・空調</b>／整備・点検・センサー／環境（CO₂・SAF）／構造・素材・軽量化</div>
+</div>
+</div>
 
-<!-- 最初のWORKは身近な「財布」がテーマ。ここでまず違う学科・学年の人とチームを組みます。これが1回目のシャッフルです。大事なのは、いきなり便利グッズを考えないこと。まずは目の前の相手がどんなふうにお金を持ち歩いているかをよく知るところから始めます。 -->
+<div class="takeaway">サービスでも工学でも。解決策の前に、まず“体験”をよく知る</div>
+
+<!-- 最初のWORKは「飛行機の体験」がテーマ。班は運営があらかじめ決めています（学科・学年が混ざる4人組）。最初に自己紹介でほぐし、空港・機内・その他サービスから場面を1つ選びます。大事なのは、いきなり便利な解決策に飛びつかないこと。4人それぞれの「困った・不便だった体験」をよく知るところから始め、最後に各班が会場全体へ簡単に共有します。視点メニューの2軸は強調してください：左の「サービス・体験」だけでなく、右の「工学・技術」（座席・機内設備、騒音・揺れ・空調、整備・点検・センサー、環境＝CO₂やSAF、構造・素材・軽量化）も立派なお題だと明言します。工学部の学生なので、ビジネス寄りの体験改善に偏らず、自分の専門に引きつけて構わない、と一言添えると発想が一気に広がります。 -->
 
 ---
 
 <!-- _class: howto -->
 <div class="page-title">WORK①の進め方</div>
 
-## 18分で“共感→定義→アイデア”
+## 18分で“共感→定義→アイデア→共有”
 
 <div class="steps">
 
 <div class="step">
 <div class="num">STEP 1</div>
-<div class="st">インタビュー（共感・8分）</div>
-<div class="sd">ペアで相手の財布や支払いの<b>“困った”を聞き出す</b>。「最近お金で不便だった場面は？」を深掘り。相手がいない／詰まったら<b>ペルソナGem</b>に利用者役を頼んで質問を続ける。</div>
+<div class="st">自己紹介＆体験を共有（共感・8分）</div>
+<div class="sd">まず<b>自己紹介（1人30秒）</b>でチームをほぐす（挨拶を決めてもOK）。<b>空港／機内／その他サービス</b>から場面を1つ選び、<b>4人それぞれ</b>が「飛行機の体験で困った・不便だった場面」を話す。広げたい時は<b>壁打ちGem</b>に視点を足してもらう。</div>
 </div>
 
 <div class="step">
 <div class="num">STEP 2</div>
-<div class="st">ニーズを一言で（定義・4分）</div>
-<div class="sd">聞いた話から<b>「この人は本当は〜したい」</b>を1文で言い切る。表面の要望でなく奥の本音を。言葉が固まらない時は<b>ペルソナGem</b>に「なぜ？」を返してもらい本音を確かめる。</div>
+<div class="st">本音→理想を描く（定義・アイデア・6分）</div>
+<div class="sd">出た話から<b>「本当は〜したい」</b>を1文で言い切り、それに効く<b>理想の体験・しくみを1枚スケッチ</b>（<b>サービスの工夫でも、技術・工学のアイデアでもOK</b>）。きれいさより案の数と勢い。利用者像を深めたい時は<b>ペルソナGem</b>に「なぜ？」を返してもらう。</div>
 </div>
 
 <div class="step">
 <div class="num">STEP 3</div>
-<div class="st">理想の財布を描く（アイデア・6分）</div>
-<div class="sd">定義した本音に効く<b>理想の財布を1枚スケッチ</b>。きれいさより案の数と勢い。完成したら相手に見せ、<b>ペルソナGem</b>にも使い心地の反応をもらって手早く確かめる。</div>
+<div class="st">会場全体へ共有（一言で・4分）</div>
+<div class="sd">各班が「<b>選んだ場面</b>・<b>困りごと</b>・<b>理想</b>」を<b>ひと言で</b>会場全体に共有。<b>結果は<a href="https://docs.google.com/spreadsheets/d/1FQ-Iz2YK0XHXXeYYEEkIx0owqIWF6EfFDIDE82bAi3I/edit?usp=sharing">共有シート</a>に記入しよう。</b></div>
 </div>
 
 </div>
 
-<div class="takeaway">正解より“その人の本音”を掘り当てる</div>
+<div class="takeaway">“解決策”より“みんなの本音（＝イシュー）”を掘り当て、全体で共有する</div>
 
-<!-- 18分の中身を3つに分けます。8分で相手にインタビューして困りごとを聞く、4分でその人の本音を一言に言い切る、6分で理想の財布をスケッチ、の順です。ペアの相手がいない時や、行き詰まった時はペルソナGemに利用者になりきってもらって深掘りしてください。狙いはうまい解決策より、相手の本音を掘り当てることです。タイマーは画面に出すので残り時間を見ながら進めましょう。 -->
+<!-- 18分の流れ。最初の自己紹介でチームをほぐし（挨拶を決めると一気に距離が縮まります）、空港・機内・その他サービスから1場面を選んで4人それぞれが困った体験を共有（8分）。次に本音を1文にしてから理想の体験・しくみを1枚スケッチ（6分）。ここで「サービスの工夫でも、技術・工学のアイデアでもOK」と明言してください＝機内の騒音を抑える、座席や収納を作り変える、整備をセンサーで楽にする、軽量化でCO₂を減らす…といった工学寄りの解も歓迎、と例示すると工学部の学生が乗ってきます。最後に各班が選んだ場面・困りごと・理想を会場全体へ1〜2分で発表します（4分）。狙いはうまい解決策より、みんなの本音を掘り当てること。タイマーを画面に出すので残り時間を見ながら進めましょう。 -->
 
 ---
 
 <!-- _class: summary -->
-<div class="page-title">HMWとは</div>
+<div class="page-title">WORK②｜HMWとは</div>
 
 ## HMW ― 解く価値のある「問い」を選ぶ
 
@@ -762,15 +807,7 @@ style: |
 - <b>How Might We</b>＝「私たちはどうすれば〜できるか？」
 - 型：<b>[利用者]が[望む状態]を実現するには？</b>
 - 決めつけず・狭すぎず・広すぎず、ちょうど良く
-
-</div>
-<div class="sec-box">
-
-### ✈ 航空での例
-
-- 悪「アプリを作る」→ 解決策を決めつけている
-- 良「<b>初海外で不安な人</b>が、乗り継ぎで迷わないには？」
-- 良「車椅子の人が、搭乗をもっと安心できるには？」
+- 語尾はいつも<b>「〜には？」</b>で開いておく
 
 </div>
 <div class="sec-box">
@@ -779,6 +816,7 @@ style: |
 
 - <b>利用者が主語</b>になっている
 - <b>解決策を含めない</b>（手段は後で考える）
+- 狭すぎ・広すぎず、<b>ちょうど良い</b>大きさ
 - ワクワクする・<b>複数の案</b>が浮かぶ
 
 </div>
@@ -786,25 +824,71 @@ style: |
 
 <div class="takeaway">“解”の前に、解く価値のある“問い”を選ぶ</div>
 
-<!-- HMWは「私たちはどうすれば〜できるか？」という問いの型です。ポイントは利用者を主語にし、解決策を答えに含めないこと。「アプリを作る」は手段の決めつけでNG、「不安な初海外の人が乗り継ぎで迷わないには？」のように書くと案が広がります。良い問いは答えやすさより“解く価値”で選びましょう。 -->
+<!-- HMWは「私たちはどうすれば〜できるか？」という問いの型です。ポイントは利用者を主語にし、解決策を答えに含めないこと。語尾を「〜には？」で開くと案が広がります。良い問いは答えやすさより“解く価値”で選びましょう。次のスライドで航空の具体例を見ます。 -->
 
 ---
 
-<!-- _class: howto -->
-<div class="page-title">WORK②の進め方</div>
+<!-- _class: summary -->
+<div class="page-title">WORK②｜HMWを作る</div>
 
-## WORK② “良い問い”を量産して、1つ選ぶ
+## 穴埋めで「良い問い（HMW）」を作ろう
 
-<div class="dt-def">
-<b>🎯 お題</b>：前回slidoの関心領域から、航空の課題を<b>HMWの問い</b>に書き換える。／<b>👥 編成</b>：関心が近い人どうしに再編成（2回目のシャッフル）。「どの関心に投票が集まったか」を予想して動く。／<b>⏱ 20分</b>
+<div style="margin:8px 0 14px; background:#EAF1FF; border:2px solid #b9c8e6; border-radius:12px; padding:16px 24px; text-align:center;">
+<div style="font-size:17px; color:#0033A0; font-weight:700; letter-spacing:.04em;">How Might We ― 私たちは、どうすれば…</div>
+<div style="font-size:26px; font-weight:800; color:#222; line-height:2.0; margin-top:8px;">
+「<span style="display:inline-block; min-width:210px; border-bottom:3px dashed #C0182B; color:#C0182B; font-size:19px;">①  だれが（利用者）</span> が、<span style="display:inline-block; min-width:250px; border-bottom:3px dashed #C0182B; color:#C0182B; font-size:19px;">②  どんな状態になりたい</span> には？」
+</div>
+</div>
+
+<div class="sections">
+<div class="sec-box">
+
+### ① だれが（利用者）の例
+
+- 初海外の人 ／ 子連れの親 ／ 従業員が
+- 高齢の旅行者 ／ 乗り継ぎ客 ／ 外国人観光客
+
+</div>
+<div class="sec-box">
+
+### ② どんな状態（望み）の例
+
+- 迷わない ／ 安心できる ／ 待たずに済む
+- スムーズに移動 ／ 困らず手続きできる
+
+</div>
+</div>
+
+<div style="margin-top:10px; background:#F7F9FC; border-left:6px solid #19B36B; border-radius:0 8px 8px 0; padding:8px 18px; font-size:19px; line-height:1.5;">
+<b style="color:#149A5B;">✅ 完成例</b>　「<b>初海外の人</b>」が、「<b>保安検査で迷わない</b>」には？　　<b style="color:#C0182B;">✕ NG</b>「アプリを作る」＝<b>解決策</b>を決めつけている
+</div>
+
+<div class="takeaway">空欄を埋めるだけ。主語＝利用者、解決策は入れない。</div>
+
+<!-- 前ページのHMWを、ここでは穴埋めで実際に作ってみます。型は「①だれが、が、②どんな状態になりたい、には？」。①には利用者（初海外の人・子連れの親・車椅子の人など）、②には望む状態（迷わない・安心・スムーズなど）を入れます。WORK②ではこの穴埋めで各自どんどん問いを量産します。解決策（アプリを作る等）を入れないこと、主語を利用者にすることだけ守れば良い問いになります。 -->
+
+---
+
+<!-- _class: work -->
+<div class="page-title">WORK②</div>
+
+<div class="wk-head">
+<div class="wk-badge"><div class="wb-l">WORK</div><div class="wb-n">2</div></div>
+<div class="wk-title">“良い問い”を量産して、1つ選ぶ<span class="wk-sub">― HMWで「解く価値のある問い」へ</span></div>
+</div>
+
+<div class="wk-meta">
+<div class="wk-cell"><div class="wc-l">🎯 お題</div><div class="wc-v">前回slidoの関心領域から、航空の課題を<b>HMWの問い</b>に書き換える</div></div>
+<div class="wk-cell"><div class="wc-l">👥 編成</div><div class="wc-v"><b>運営が決めた班</b>で進める<br>（WORK①から組み替え）</div></div>
+<div class="wk-cell time"><div class="wc-l">⏱ 時間</div><div class="wc-v">20分</div></div>
 </div>
 
 <div class="steps">
 
 <div class="step">
 <div class="num">STEP 1</div>
-<div class="st">問いを量産（8分）</div>
-<div class="sd">付箋でHMWの問いを<b>各自○枚</b>書き出す。<b>壁打ちGem</b>で視点を足し、問いを広げる。</div>
+<div class="st">自己紹介→問いを量産（8分）</div>
+<div class="sd">まず<b>自己紹介（1人30秒）</b>。次に付箋でHMWの問いを<b>各自○枚</b>書き出す。<b>壁打ちGem</b>で視点を足し、問いを広げる。</div>
 </div>
 
 <div class="step">
@@ -821,9 +905,11 @@ style: |
 
 </div>
 
+<div style="margin-top:10px; text-align:center; font-size:19px; color:#0033A0; font-weight:700;">📝 結果は <a href="https://docs.google.com/spreadsheets/d/1FQ-Iz2YK0XHXXeYYEEkIx0owqIWF6EfFDIDE82bAi3I/edit?usp=sharing">共有シート</a> に記入しよう</div>
+
 <div class="takeaway">問いが変われば、答えが変わる</div>
 
-<!-- ここからWORK②、20分です。前回slidoで気になった航空テーマを、HMWの問いに書き換えていきます。編成は2回目のシャッフル＝関心が近い人どうし。どの島に票が集まるか予想して動いてください。STEP1で各自たくさん問いを量産（壁打ちGemで広げる）、STEP2で分類、STEP3はドット投票シールで一番解きたい問いを1つに絞ります。良い問いを選べば、出てくる答えも変わります。 -->
+<!-- ここからWORK②、20分です。前回slidoで気になった航空テーマを、HMWの問いに書き換えていきます。班は運営があらかじめ決めています（WORK①から組み替え）。STEP1で各自たくさん問いを量産（壁打ちGemで広げる）、STEP2で分類、STEP3はドット投票シールで一番解きたい問いを1つに絞ります。良い問いを選べば、出てくる答えも変わります。 -->
 
 ---
 
@@ -832,51 +918,51 @@ style: |
 
 <div class="wk-head">
 <div class="wk-badge"><div class="wb-l">WORK</div><div class="wb-n">3</div></div>
-<div class="wk-title">クレイジー2 ― 2案を一気に描く<span class="wk-sub">発散から、チームへ</span></div>
+<div class="wk-title">グループ決め ＆ クレイジー2<span class="wk-sub">テーマで集まり、多様な最終チームへ</span></div>
 </div>
 
 <div class="wk-meta">
-<div class="wk-cell"><div class="wc-l">🎯 お題</div><div class="wc-v">自分が解きたい“問い”への解決アイデアを、<b>2案だけ</b>速描き</div></div>
-<div class="wk-cell"><div class="wc-l">👥 編成</div><div class="wc-v">このあと<b>テーマの島へ移動＝最終チーム</b>。3回目＝最終シャッフル</div></div>
-<div class="wk-cell time"><div class="wc-l">⏱ 時間</div><div class="wc-v">クレイジー2は<b>約8分</b>、その後 椅子取り</div></div>
+<div class="wk-cell"><div class="wc-l">🎯 お題</div><div class="wc-v">会場でテーマ案を集めて集約し、<b>多様性を意識して4つの班</b>に分かれる。</div></div>
+<div class="wk-cell"><div class="wc-l">👥 編成</div><div class="wc-v">移動して<b>4班</b>を作る＝正式チーム（3回目）<br><b>6/21(日)23:59まで変更OK</b></div></div>
+<div class="wk-cell time"><div class="wc-l">⏱ 時間</div><div class="wc-v">25分</div></div>
 </div>
 
 <div class="steps">
 
 <div class="step">
-<div class="num">やり方 1</div>
-<div class="st">紙を2分割</div>
-<div class="sd">1枚を半分に折る。<b>左右で1案ずつ</b>のスペースを作る。</div>
+<div class="num">STEP 1</div>
+<div class="st">テーマ案を集める（会場・5分）</div>
+<div class="sd">全員が1人で「取り組みたい航空テーマ」を出し、<b>会場全体で共有</b>する。広げたい時は<b>壁打ちGem</b>。</div>
 </div>
 
 <div class="step">
-<div class="num">やり方 2</div>
-<div class="st">1案◯分 × 2</div>
-<div class="sd">片側を数分で描き切り、もう片側へ。<b>絵＋一言</b>でOK。</div>
+<div class="num">STEP 2</div>
+<div class="st">集約する（全体・3分）</div>
+<div class="sd">全員で、似た案をまとめ、班の核になる<b>4つのテーマ</b>に整理する。</div>
 </div>
 
 <div class="step">
-<div class="num">やり方 3</div>
-<div class="st">質より量</div>
-<div class="sd">上手さは<b>不要</b>。手を止めず、とにかく2案出し切る。</div>
+<div class="num">STEP 3</div>
+<div class="st">何回か繰り返しつつ、4班に分かれ自己紹介（移動5分＋3分）</div>
+<div class="sd"><b>多様性を意識して4班</b>に分かれる→班で<b>自己紹介（1人30秒）</b>。時間があれば<b>クレイジー2</b>へ。</div>
 </div>
 
 </div>
 
-<div class="takeaway">下手でいい。数とスピードが発想を連れてくる</div>
+<div class="takeaway">多様な4人で1チーム。違う視点が強さになる</div>
 
-<!-- WORK③のキックです。ここで一気に空気を発散モードへ。「2案だけ」「8分だけ」と数字で軽くして手を動かさせます。壁打ちGemにアイデアの切り口を投げてもいいと一言添えてください。描けたら次の椅子取りで島へ動く、と予告しておきます。 -->
+<!-- WORK③は本日のクライマックス、グループ決めとクレイジー2です。まず会場全体でテーマ案を5分出し合い、3分で似た案を集約して4つのテーマに整理します。次に、そのテーマをきっかけに移動して4つの班を作ります（多様性を最優先＝学科・学年・視点が偏らないよう、教員も調整）。班ができたら自己紹介、そして時間があればクレイジー2（解決アイデアを2案、一気に速描き）まで進みます。配分はテーマ5分＋集約3分＋移動・班づくり5分＋自己紹介3分＋クレイジー2は残り時間で。 -->
 
 ---
 
 <!-- _class: islands -->
-<div class="page-title">椅子取りで確定</div>
+<div class="page-title">WORK③ STEP 4</div>
 
-## テーマの「島」へ移動 ＝ そのままチーム確定
+## STEP 4：テーマの「島」へ移動 ＝ 多様な4班を作る
 
 <div class="is-grid">
 <div class="is-svg">
-<svg viewBox="0 0 540 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="テーマ別の島へ人が移動する図">
+<svg viewBox="0 0 540 360" style="max-height:250px; width:auto; display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="テーマ別の島へ人が移動する図">
   <g font-family="sans-serif">
   <!-- 島A -->
   <circle cx="140" cy="110" r="46" fill="#EAF3FF" stroke="#0033A0" stroke-width="3"/>
@@ -906,28 +992,34 @@ style: |
   <text x="270" y="214" text-anchor="middle" font-size="12" fill="#C0182B" font-weight="700">あなた</text>
   </g>
 </svg>
-<div class="caption">※島のテーマは「例」。各チームで自由に決めてOK</div>
+<div class="caption">※島＝会場で集約した4テーマ（下は例）</div>
 </div>
 <div class="is-rules">
 
-<div class="is-rule"><div class="ir-n">1</div><div class="ir-t">自分の問い・アイデアに<b>一番近い「島（テーマ）」の椅子</b>へ移動して座る</div></div>
-<div class="is-rule"><div class="ir-n">2</div><div class="ir-t">座った島が<b>そのまま正式チーム</b>。これが3回目＝最終確定</div></div>
-<div class="is-rule"><div class="ir-n">3</div><div class="ir-t">1島の<b>定員は3〜5名</b>。溢れたら近い島へ、少なすぎる島は統合</div></div>
-<div class="is-rule"><div class="ir-n">4</div><div class="ir-t">どうしても迷ったら<b>教員が交通整理</b>。まず動いてみる</div></div>
+<div class="is-rule"><div class="ir-n">1</div><div class="ir-t">集約した<b>4テーマ</b>の島へ移動して座る</div></div>
+<div class="is-rule"><div class="ir-n">2</div><div class="ir-t"><b>多様性を最優先</b>：学科・学年・視点が偏らないよう分かれる</div></div>
+<div class="is-rule"><div class="ir-n">3</div><div class="ir-t">1班は<b>3〜5名</b>。偏りや過少は<b>教員が調整</b></div></div>
+<div class="is-rule"><div class="ir-n">4</div><div class="ir-t">座った島が<b>そのまま正式チーム</b>。ただし<b>班は6/21(日)23:59まで変更OK</b></div></div>
+<div class="is-rule"><div class="ir-n">5</div><div class="ir-t">班で<b>自己紹介（1人30秒）</b>→時間があれば<b>クレイジー2</b>（解決アイデアを2案、速描き）</div></div>
 
 </div>
 </div>
 
-<div class="takeaway">“どの椅子に座るか”が、これからの夏を決める</div>
+<div style="margin-top:8px; border:1.5px solid #cfd6e4; border-radius:8px; background:#FFF7E6; padding:8px 18px 9px; position:relative;">
+<div style="position:absolute; top:-12px; left:14px; background:#F0A500; color:#fff; font-weight:700; font-size:15px; padding:2px 12px; border-radius:10px;">クレイジー2 とは（時間があれば）</div>
+<div style="font-size:18px; line-height:1.55; color:#222; margin-top:6px;">紙を半分に折り、<b>左右に1案ずつ＝2案</b>を数分で一気に<b>速描き</b>。上手さは不要、<b>質より量・スピード</b>。描けたらチームで見せ合い、面白い案に印をつける。</div>
+</div>
 
-<!-- ここが本日のクライマックス。実際に立ち上がって島へ歩かせます。定員3〜5名を口頭でも強調し、溢れ／過少は教員が即調整。迷っている学生は背中を押し、空席が目立つ島へ誘導してバランスを取ってください。座った瞬間に「これが正式チームです」と宣言します。 -->
+<div class="takeaway">多様な4人で集まれたら、夏に向けて走り出す</div>
+
+<!-- ここが本日のクライマックス。会場で集約した4テーマの島へ、実際に立ち上がって歩かせ、4つの班を作ります。多様性を最優先＝学科・学年・視点が偏らないよう、教員も積極的に交通整理してください（同じ顔ぶれ・同じ学科で固まらせない）。1班3〜5名。班ができたら自己紹介、時間があればクレイジー2＝解決アイデアを紙半分ずつに2案、数分で一気に速描き（質より量・下手でOK）。座った瞬間に「これが正式チームです」と宣言します。ただし、ここで固まりきらなくてOK＝班は6/21(日)23:59まで変更できると必ず添えてください。今日は気軽に動いて、合わなければあとで組み替えられる、という安心感を持たせると移動がスムーズになります。 -->
 
 ---
 
 <!-- _class: summary -->
-<div class="page-title">チーム確定後に</div>
+<div class="page-title">WORK④ STEP 5</div>
 
-## チームが決まったら、まず動き出す
+## STEP 5：チームが決まったら、まず動き出す
 
 <div class="sections">
 <div class="sec-box">
@@ -936,16 +1028,14 @@ style: |
 
 - <b>チーム名</b>を決める（仮でOK・あとで変更可）
 - <b>リーダーを1人</b>立てる（進行の旗振り役）
-- 連絡手段（LINE/Slack等）を<b>即交換</b>
+- 連絡手段（Google Workspace）を<b>決定</b>
 
 </div>
 <div class="sec-box">
 
 ### 🗂 今日中に
-
-- Driveの<b>チームフォルダ</b>にWORK①〜③の写真をアップ
 - <b>暫定テーマ</b>（HMWの問い1つ）をメモして残す
-- 次回までに各自で問いを温めておく
+- 次回までに各班で問いを温めておく
 
 </div>
 <div class="sec-box">
@@ -953,13 +1043,12 @@ style: |
 ### 🤝 役割の目安
 
 - 進行・記録・調べ・発表など<b>緩く分担</b>
-- 1人が複数を兼ねてOK・<b>固定しすぎない</b>
-- 動きながら得意・好きで調整していく
+- 1人が複数を兼ねてOK・動きながら得意・好きで調整していく
 
 </div>
 </div>
 
-<div class="takeaway">完璧な分担より、まず動き出せる体制を</div>
+<div class="takeaway">動き出そう体制を</div>
 
 <!-- 残り10分の運用パートです。3つのボックスを上から順に。チーム名とリーダーは2分で即決させ、連絡手段の交換をその場で完了させます。Driveフォルダへの写真アップと暫定テーマのメモは今日中の宿題として明示。役割は固定せず緩く、を強調して終えてください。 -->
 
@@ -978,14 +1067,14 @@ style: |
 - ① <b>リーダー</b>を決める
 - ② <b>仮テーマ</b>（関心トピック）
 - ③ <b>全員の顔合わせ</b>（実施したら記入）
-- ④ <b>チャットの確立</b>（LINE / Slack 等）
+- ④ <b>チャットの確立</b>（Workspace）
 - ⑤ <b>フォルダの確立</b>（Google Drive）
 - ⑥ <b>終了時こうなりたい</b>（チームの目標）
 
 </div>
 
 <div class="qr-card">
-<div class="placeholder">[ シートのQR<br>Classroom / 当日に表示 ]</div>
+<img src="./src/fig-sheet-qr.png" alt="チーム管理シート QR">
 <a class="qr-link" href="https://docs.google.com/spreadsheets/d/1CBvZoz-d295JrPNpK6UsOloEL-r8JYZeAnhmpc86A0A/edit?usp=sharing">共有スプレッドシートを開く</a>
 <div class="qr-cap">この1枚に、各チームが追記していく</div>
 </div>
@@ -1008,9 +1097,10 @@ style: |
 
 ### ✅ 今日の出口（成果物）
 
-- チーム確定（島＝チーム・チーム名・リーダー）
+- チーム結成（島＝チーム・チーム名・リーダー）
 - 暫定テーマ＝HMWの問いを1つ
 - 連絡手段（LINE等）を決めた
+- <b>班は6/21(日)23:59まで変更OK</b>
 
 </div>
 <div class="sec-box">
@@ -1019,15 +1109,14 @@ style: |
 
 - <b>6/12(金)</b>：チーム管理シートを記入（前ページの6項目）
 - 暫定テーマを各チームで深掘り（壁打ちGem活用）
-- 6/19目安で“最初の発表テーマ案”を持参
-- 成田見学 8/5 or 8/7 の希望日を回答
+- 6/19目安で“最初の発表テーマ案”を提出
 
 </div>
 </div>
 
-<div class="takeaway">テーマは“仮”でOK。動きながら良くしていく。</div>
+<div class="takeaway">テーマも班も“仮”でOK。班は6/21(日)23:59まで変えられる。</div>
 
-<!-- 5分のまとめパート。今日の成果物（チーム・暫定テーマ・連絡手段）を確認し、宿題を4点伝えます。テーマはあくまで仮で、6/19の発表テーマ案も以後変更可・最終fixは8/10と強調してください。 -->
+<!-- 5分のまとめパート。今日の成果物（チーム・暫定テーマ・連絡手段）を確認し、宿題を伝えます。テーマはあくまで仮で、6/19の発表テーマ案も以後変更可・最終fixは8/10と強調してください。班についても同様で、今日組んだチームは6/21(日)23:59まで変更できると明言してください＝合わなければ組み替えられるので、今日は気軽に動いてOK。 -->
 
 ---
 
@@ -1116,12 +1205,12 @@ style: |
 <!-- _class: dt -->
 <div class="page-title">この先の道のり</div>
 
-<div class="dt-def">
+<div class="dt-def" style="font-size:19px; padding:7px 16px; margin:2px 0 4px;">
 今日のWSは、デザイン思考の<b>前半（共感・定義・発散）</b>。<b>後半（試作・検証）</b>は、ここからプロジェクト全体で、<b>9/7の発表</b>に向けて何度も回していきます。
 </div>
 
-<div class="dt-svg">
-<svg viewBox="0 0 1180 252" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="デザイン思考の5ステップと今日／これからの対応">
+<div class="dt-svg" style="text-align:center;">
+<svg viewBox="0 0 1180 252" style="height:215px; width:auto; margin:0 auto;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="デザイン思考の5ステップと今日／これからの対応">
   <g fill="none" stroke="#C2C9D6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M231 54 l13 12 -13 12"/><path d="M481 54 l13 12 -13 12"/><path d="M731 54 l13 12 -13 12"/><path d="M981 54 l13 12 -13 12"/>
   </g>
@@ -1153,15 +1242,15 @@ style: |
 </svg>
 </div>
 
-<div class="dt-do">
-<div class="dh">📌 後半（これから）＝発表までの道のり</div>
-<ul>
+<div class="dt-do" style="padding:6px 18px; margin-top:4px;">
+<div class="dh" style="font-size:20px; margin-bottom:3px;">📌 後半（これから）＝発表までの道のり</div>
+<ul style="font-size:19px; line-height:1.45;">
 <li><b>試作</b>：解決策を形にする（調査・インタビュー・研究／7〜8月）</li>
 <li><b>検証</b>：中間発表・学内選考でフィードバックを受け磨く</li>
 <li>必要なら<b>共感・定義へ戻る</b>（何度でも回してよい）</li>
 <li>そして<b>本選（9/7・大阪）</b>で英語発表</li>
 </ul>
-<div class="dt-note">今日の“仮テーマ”は出発点。<b>走りながら、何度も磨いていく</b></div>
+<div class="dt-note" style="margin-top:6px; padding-top:6px; font-size:19px;">今日の“仮テーマ”は出発点。<b>走りながら、何度も磨いていく</b></div>
 </div>
 
 <div class="takeaway">今日は“入口”。試作・検証は発表まで続いていく</div>
@@ -1192,3 +1281,15 @@ style: |
 ## 質問はこの場で／Classroomフォーラムでも
 
 <!-- 質疑応答です。その場で出なくてもOK、後からClassroomのフォーラムでも受け付けると伝えてください。今日はおつかれさまでした、と温かく締めましょう。 -->
+
+---
+
+<!-- _class: message -->
+
+# 引き続き、<br>楽しんでいきましょう！
+
+## チームで、夏の発表（9/7）まで走り抜けよう
+
+<div class="takeaway">今日はおつかれさまでした 🎉 またチームで会いましょう</div>
+
+<!-- 最後の締めです。肩の力を抜いて、これからもサークルのノリで楽しく進めましょう、と温かく送り出してください。夏の発表まで、チームで一緒に走り抜けましょう。 -->

@@ -3609,9 +3609,9 @@ style: |
 <tr><td class="l">動画視聴</td><td class="l">全12本（導入＋Part1〜3＋まとめ）を視聴期限内に</td><td>Moodle ／ 期限内</td></tr>
 <tr><td class="l">質問</td><td class="l">Q&amp;Aフォーラムへ投稿（slido無し）</td><td>Moodle フォーラム</td></tr>
 <tr><td class="l">課題</td><td class="l">確認の課題＋リフレクションシート</td><td>Moodle ／ 期限内提出</td></tr>
-<tr><td class="l">発展</td><td class="l">GCP Skills Boostを試してみる（任意）</td><td>なし(希望者のみ)</td></tr>
+<tr><td class="l">発展</td><td class="l">Googlw Skillsを試してみる（任意）</td><td>なし(希望者のみ)</td></tr>
 </table>
 
 <div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">🎬 視聴おつかれさまでした。</div>
 
-<div class="takeaway">第10回の授業内に、期末も兼ねて、今回の内容の簡単な小テストを行います。</div>
+<div class="takeaway">第10回の授業内に、期末の練習も兼ねて、今回の内容の簡単な小テストを行います。</div>

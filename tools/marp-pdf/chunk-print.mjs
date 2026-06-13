@@ -31,15 +31,29 @@ if (!chromePath) {
 const browser = await puppeteer.launch({
   executablePath: chromePath,
   headless: 'shell',
-  args: ['--no-sandbox', '--allow-file-access-from-files', '--disable-dev-shm-usage'],
+  // VS Code 拡張ホストから起動すると、Chrome の初回起動処理やデフォルトブラウザ確認で
+  // 止まる/許可待ちになることがある。それらを抑止して非対話でも確実に上がるようにする。
+  args: [
+    '--no-sandbox',
+    '--allow-file-access-from-files',
+    '--disable-dev-shm-usage',
+    '--no-first-run',
+    '--no-default-browser-check',
+    '--disable-gpu',
+    '--disable-extensions',
+  ],
+  timeout: 60000, // 起動が60秒で上がらなければ例外（無限待ちにしない）
 });
 try {
   const page = await browser.newPage();
   // marp の bespoke HTML は ?view=print で全スライドを印刷レイアウトに展開する。
+  // 'networkidle0' は接続が残ると最大180秒待って固まることがある（拡張ホスト起動のChromeで顕著）。
+  // 自己完結した印刷用HTMLなので 'load' で十分。さらにフォント描画完了だけ待つ。
   await page.goto('file://' + htmlPath + '?view=print', {
-    waitUntil: 'networkidle0',
-    timeout: 180000,
+    waitUntil: 'load',
+    timeout: 60000,
   });
+  await page.evaluate(() => (document.fonts && document.fonts.ready) ? document.fonts.ready : null).catch(() => {});
   for (const { range, out } of jobs) {
     await page.pdf({
       path: out,

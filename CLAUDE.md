@@ -27,6 +27,7 @@
    - 素材名は **半角英数・ハイフン** のみ。全角・空白・括弧は禁止（リンク切れの原因）
    - 命名規則：`fig{番号}-{内容}.{ext}`（例：`fig02-capability-overhang.png`、`fig05-learnlm-demo.mov`）。番号はスライド出現順、a/bで枝番
 6. **複数デックで共有する素材のみ** `slides/assets/`（千葉大ロゴ・共通アイコン等）に置く
+   - **ポンチ絵（PonchiE/）も同じ命名規則**：`PonchiE/YYYYMMDD_<イベント略号>_<内容>/` に同名md＋`src/`＋`out/`（例：`PonchiE/20260623_ND_db-coevolution/`）。直下の `onepager-*.md` は旧実験ファイルなので真似しない
 7. **データ付きのグラフ**（棒・横棒・折れ線・棒+線複合・円/ドーナツ・散布図・ヒストグラム・箱ひげ・積み上げ棒など）を入れるときは、必ず **`marp-echarts`** スキルを使う（`.claude/skills/marp-echarts/`）。ECharts の option を書き、`tools/echarts-render/render.mjs` で静的SVGに焼き、`.fig-area` に **インライン直書き** する。
    - `<img src="*.svg">` や `![](*.svg)` は PDF/PNG 書き出しで**空白になる**ので使わない（インラインSVGのみ）。
    - インラインSVGは**空行を含めない**（Markdownがブロックを打ち切りスライドが消える。render.mjs が1行化して回避）。
@@ -109,14 +110,30 @@ tools/marp-pdf/build-pdf.sh slides/<deck-name>/<deck-name>.md
 # 出力先を変えるなら第2引数 / 1チャンクの枚数を減らすなら CHUNK=15 を前置
 ```
 
-VS Code からは（追加拡張なし・標準機能のみ）：
-- **ボタン**：エクスプローラーの「**NPM スクリプト**」ビューで `pdf` の **▶** を押す → 最後に編集したデックを自動でPDF化（`package.json`）。落ちるデックは `pdf:safe`（CHUNK=12）。
-- **開いているファイルを確実に対象に**：その `.md` を開いて **⌘⇧B**（`.vscode/tasks.json`）。チャンク指定したいときは「Tasks: Run Task」→「Marp: PDF出力（チャンク指定）」。
+VS Code からは：
+- **エディタ右上のツールバーの 📄 ボタン**（おすすめ）：開いているデックをそのままベクターPDF化。自作ローカル拡張
+  `tools/marp-pdf/vscode-extension/`（`~/.vscode/extensions/marp-chibau-pdf` へシンボリックリンク済み）。
+  チャンク数は設定 `marpChibau.chunkSize`（0=既定20、落ちるなら12）。**再インストール手順**は同フォルダの該当節参照。
+- **NPM スクリプト ▶**（標準機能）：エクスプローラーの「NPM スクリプト」で `pdf`／`pdf:safe`（`package.json`）。
+- **⌘⇧B**（標準機能）：開いている `.md` を対象（`.vscode/tasks.json`）。
 
 > ⚠️ **PNG経由（`--images png` → img2pdf）は使わない**。ラスタ化で文字がにじみ、学生から見づらいと苦情が出る。
 > 必ず上記スクリプト（ベクター）で出すこと。`pdfunite` は poppler（`brew install poppler`）に含まれる。
 
 VS Code では `.vscode/settings.json` で `markdown.marp.themes` が `./theme/academic.css` を指しているので、Marp 拡張のプレビューがそのまま使える。
+
+## PowerPoint からの取り込み（pptx2marp）
+
+既存の `.pptx` を **座標再現＋academic デザイン**で Marp デック化するツール。
+ヘッダー以外は元スライドと位置・内容を一致させ、配色・字体・ヘッダー帯・ページ番号だけ
+academic テーマに従う。詳細は `tools/pptx2marp/README.md`。
+
+```bash
+python3 tools/pptx2marp/pptx2marp.py <input.pptx> --name <deck-name> --title "<タイトル>"
+```
+
+表は HTML テーブルで再現。WMF/EMF 画像・動画・ネイティブグラフは再現不可のため位置に注記が入る
+（グラフは `marp-echarts` で作り直し推奨）。
 
 ## 既存スライド
 

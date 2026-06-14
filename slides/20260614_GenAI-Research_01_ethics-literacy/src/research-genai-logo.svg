@@ -1,0 +1,18 @@
+<svg width="100%" viewBox="0 0 614 118" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>研究における生成AIの活用法 ロゴ 余白詰め版</title>
+<desc>白背景に、余白を約3pxまで詰めて配置した横長ロゴ。赤いバッジの探究レンズマーク、講座タイトル、赤い横線、その真下に英語サブタイトル</desc>
+<rect x="0" y="0" width="614" height="118" fill="#ffffff"/>
+<rect x="3" y="3" width="112" height="112" rx="26" fill="#C2410C"/>
+<rect x="3" y="3" width="112" height="56" rx="26" fill="#ffffff" opacity="0.07"/>
+<circle cx="53" cy="51" r="30" fill="none" stroke="#ffffff" stroke-width="5"/>
+<line x1="76" y1="74" x2="97" y2="95" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+<line x1="43" y1="43" x2="65" y2="41" stroke="#ffffff" stroke-width="2" opacity="0.85"/>
+<line x1="65" y1="41" x2="51" y2="61" stroke="#ffffff" stroke-width="2" opacity="0.85"/>
+<line x1="43" y1="43" x2="51" y2="61" stroke="#ffffff" stroke-width="2" opacity="0.85"/>
+<circle cx="43" cy="43" r="4" fill="#ffffff"/>
+<circle cx="65" cy="41" r="4" fill="#ffffff"/>
+<circle cx="51" cy="61" r="4" fill="#ffffff"/>
+<text x="147" y="51" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',sans-serif" font-size="34" font-weight="700" letter-spacing="1"><tspan fill="#1F2937">研究における</tspan><tspan fill="#C2410C">生成AI</tspan><tspan fill="#1F2937">の活用法</tspan></text>
+<rect x="147" y="63" width="464" height="4" rx="2" fill="#C2410C"/>
+<text x="147" y="92" font-family="'Helvetica Neue',Arial,'Noto Sans JP',sans-serif" font-size="19" font-weight="400" fill="#6B7280" letter-spacing="2.2">Generative AI Literacy for Researchers</text>
+</svg>

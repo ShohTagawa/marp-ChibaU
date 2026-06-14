@@ -135,6 +135,17 @@ python3 tools/pptx2marp/pptx2marp.py <input.pptx> --name <deck-name> --title "<�
 表は HTML テーブルで再現。WMF/EMF 画像・動画・ネイティブグラフは再現不可のため位置に注記が入る
 （グラフは `marp-echarts` で作り直し推奨）。
 
+## 自分の既存スライドの「図だけ」を再利用する（marp-reuse-figures）
+
+過去に自分が作った `.pptx` や既存デックの中の図（写真・グラフ・構造図など）を、新デックに
+**PNGのまま**取り込んで埋め込みたいとき（＝SVGで描き直さない）は **`marp-reuse-figures`** スキルを使う
+（`.claude/skills/marp-reuse-figures/`）。pptx2marp（デック丸ごと変換）と違い、**必要な図だけ**を選んで挿入する。
+
+- 流れ：pptxをunzip → `scripts/pptx-figmap.py` で「どの図が何か」を把握 → 使う図を `src/figNN-内容.png` に
+  規約名でコピー → `fig`/`split` 型に `<img src="./src/figNN-...">` で埋め込む（`*.svg` は使わない）→ 描画確認。
+- 「元のスライドの絵をそのまま使って」と言われたら、作り直さずこのスキルで取り込む。
+- 自作図は著作権自由。外部の図を混ぜる場合のみ `<div class="attr">出典…</div>` を付ける。
+
 ## 既存スライド
 
 - [slides/intro-demo.md](slides/intro-demo.md) — 自己紹介、今日のまとめ(3色 callout)、千葉大の指針、シナリオ+takeaway の4枚デモ

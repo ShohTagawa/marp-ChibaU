@@ -2,7 +2,7 @@
   "name": "marp-scroll-sync",
   "displayName": "Marp Scroll Sync (ChibaU)",
   "description": "編集中のカーソル行が Marp の何枚目かを表示し、サイドのプレビューをそのスライドへ自動スクロールする双方向同期プレビュー",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "publisher": "chiba-u-local",
   "engines": {
     "vscode": "^1.80.0"
@@ -31,6 +31,26 @@
         "command": "marpScrollSync.gotoSlide",
         "title": "Marp: Go to Slide by number…",
         "category": "Marp Sync"
+      },
+      {
+        "command": "marpScrollSync.incFont",
+        "title": "Marp: 選択文字を +1px",
+        "category": "Marp Sync"
+      },
+      {
+        "command": "marpScrollSync.decFont",
+        "title": "Marp: 選択文字を −1px",
+        "category": "Marp Sync"
+      },
+      {
+        "command": "marpScrollSync.setColor",
+        "title": "Marp: 選択文字の色を変える…",
+        "category": "Marp Sync"
+      },
+      {
+        "command": "marpScrollSync.clearTune",
+        "title": "Marp: 選択文字のサイズ/色をリセット",
+        "category": "Marp Sync"
       }
     ],
     "menus": {
@@ -53,6 +73,18 @@
         "key": "ctrl+k m",
         "mac": "cmd+k m",
         "when": "editorLangId == markdown"
+      },
+      {
+        "command": "marpScrollSync.incFont",
+        "key": "ctrl+alt+=",
+        "mac": "cmd+alt+=",
+        "when": "editorTextFocus && editorLangId == markdown && marpScrollSync.isMarp"
+      },
+      {
+        "command": "marpScrollSync.decFont",
+        "key": "ctrl+alt+-",
+        "mac": "cmd+alt+-",
+        "when": "editorTextFocus && editorLangId == markdown && marpScrollSync.isMarp"
       }
     ]
   },

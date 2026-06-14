@@ -2,6 +2,8 @@
 // - ステータスバーに「編集中のカーソル行が Marp の何枚目か」を表示
 // - サイドの Webview プレビューをカーソル位置のスライドへ自動スクロール
 // - スライドをクリックすると本文の該当行へジャンプ（双方向同期）
+// - エディタで選択した文字を、プレビュー下部のツールバー／キーで font-size 1px 刻み・色変更
+//   （テーマ CSS は別ファイルなので、その箇所だけインライン <span style="… !important"> で上書きする）
 const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
@@ -15,6 +17,14 @@ let renderTimer = null;
 let revealDeco = null;     // クリック逆引き時の一時ハイライト用デコレーション
 let revealDecoTimer = null;
 let presentTerminal = null; // プレゼン用HTML生成を流す統合ターミナル
+
+// --- サイズ/色 微調整（tune）用の状態 ---
+const TUNE_CLASS = 'ss-tune';
+const DEFAULT_PX = 23;       // 種サイズ（テーマ既定 section=23px）。実寸はプレビュークリックで上書きされる
+let lastClickedPx = null;    // 直近にプレビューでクリックした要素の実寸(px)。サイズ増減の起点に使う
+let renderImmediate = false; // tune 由来の編集は 700ms 待たず即時に再描画する
+let lastScrollIndex = -1;    // 同一スライド内の微調整でプレビューを揺らさないための直近スクロール先
+let tuneChain = Promise.resolve(); // 連打しても編集が競合しないよう直列化する
 
 /** frontmatter に marp: true を持つ markdown か */
 function isMarpDoc(doc) {
@@ -131,9 +141,13 @@ function updateStatus(editor) {
   statusItem.text = `$(layout) Slide ${idx + 1}/${starts.length}`;
   statusItem.tooltip = 'Marp: クリックで同期プレビューを開く / 何枚目を編集中か';
   statusItem.show();
-  // プレビュー追従
+  // プレビュー追従（スライドが変わったときだけ。微調整中に揺らさない）
   if (panel && panelDocUri === editor.document.uri.toString()) {
-    panel.webview.postMessage({ type: 'scrollToSlide', index: idx });
+    if (idx !== lastScrollIndex) {
+      lastScrollIndex = idx;
+      panel.webview.postMessage({ type: 'scrollToSlide', index: idx });
+    }
+    postTuneState(editor); // 選択に応じてツールバーの表示(px/色/活性)を更新
   }
 }
 
@@ -150,18 +164,22 @@ function rewriteAssets(html, webview, docDir) {
   });
 }
 
-function buildHtml(webview, doc, initialIndex) {
+/** marp-core でデッキを描画し {html, css} を返す（テーマも読み込む） */
+function renderDeck(webview, doc) {
   const docDir = path.dirname(doc.uri.fsPath);
   const repoRoot = vscode.workspace.getWorkspaceFolder(doc.uri)?.uri.fsPath || docDir;
   const marp = new Marp({ html: true });
-  // プロジェクトのテーマを読み込む（academic / ponchie）
   for (const rel of ['theme/academic.css', 'theme/ponchie.css']) {
     try { marp.themeSet.add(fs.readFileSync(path.join(repoRoot, rel), 'utf8')); } catch (_) { /* 任意 */ }
   }
+  const { html, css } = marp.render(doc.getText());
+  return { html: rewriteAssets(html, webview, docDir), css };
+}
+
+function buildHtml(webview, doc, initialIndex) {
   let html, css;
-  try { ({ html, css } = marp.render(doc.getText())); }
+  try { ({ html, css } = renderDeck(webview, doc)); }
   catch (e) { return `<body style="font-family:sans-serif;padding:20px;color:#b00">レンダリングエラー: ${String(e.message || e)}</body>`; }
-  html = rewriteAssets(html, webview, docDir);
 
   const cspSource = webview.cspSource;
   return /* html */ `<!DOCTYPE html>
@@ -180,12 +198,42 @@ function buildHtml(webview, doc, initialIndex) {
   .badge { position:fixed; top:8px; right:14px; z-index:9;
     background:#222a; color:#fff; font:600 12px/1.4 sans-serif;
     padding:3px 9px; border-radius:9px; pointer-events:none; }
+  /* サイズ/色 微調整ツールバー（下部中央・常駐） */
+  #tuner { position:fixed; left:50%; bottom:14px; transform:translateX(-50%); z-index:20;
+    display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:24px;
+    background:#1f1f24f0; box-shadow:0 2px 12px rgba(0,0,0,.55); color:#eee;
+    font:600 12px/1 -apple-system,BlinkMacSystemFont,sans-serif; user-select:none; }
+  #tuner button { font:inherit; color:#eee; background:#3a3a42; border:1px solid #555;
+    border-radius:6px; padding:5px 9px; cursor:pointer; }
+  #tuner button:hover { background:#4a4a55; }
+  #tuner button:active { background:#5a5a66; }
+  #tuner .sz { min-width:48px; text-align:center; font-variant-numeric:tabular-nums; }
+  #tuner .sep { width:1px; height:18px; background:#555; margin:0 2px; }
+  #tuner input[type=color] { width:26px; height:24px; padding:0; border:1px solid #555;
+    border-radius:6px; background:none; cursor:pointer; }
+  #tuner .sw { width:18px; height:18px; padding:0; border-radius:50%; border:1px solid #0006; }
+  #tuner[data-active="0"] { opacity:.45; }
+  #tuner[data-active="0"] button, #tuner[data-active="0"] input { pointer-events:none; }
 </style>
-<style>${css}</style>
+<style id="deck-css">${css}</style>
 </head>
 <body>
 <div class="badge" id="badge"></div>
 <div id="wrap">${html}</div>
+<div id="tuner" data-active="0" title="エディタで文字を選択してから操作（↑↓でも±1px）">
+  <button id="tDec" title="−1px (↓)">A−</button>
+  <span class="sz" id="tSize">–</span>
+  <button id="tInc" title="+1px (↑)">A+</button>
+  <span class="sep"></span>
+  <input type="color" id="tColor" value="#A6192E" title="色を選ぶ">
+  <button class="sw" data-c="#A6192E" style="background:#A6192E" title="赤(テーマ)"></button>
+  <button class="sw" data-c="#7d1322" style="background:#7d1322" title="濃赤"></button>
+  <button class="sw" data-c="#1f6fb2" style="background:#1f6fb2" title="青"></button>
+  <button class="sw" data-c="#2e7d32" style="background:#2e7d32" title="緑"></button>
+  <button class="sw" data-c="#1a1a1a" style="background:#1a1a1a" title="黒(標準)"></button>
+  <span class="sep"></span>
+  <button id="tClear" title="サイズ/色をリセット">✕</button>
+</div>
 <script>
   const vscode = acquireVsCodeApi();
   const initial = ${Number.isInteger(initialIndex) ? initialIndex : 0};
@@ -201,27 +249,63 @@ function buildHtml(webview, doc, initialIndex) {
     if (s){ s.scrollIntoView({behavior:'smooth', block:'start'}); highlight(i); }
   }
   // クリック逆引き: ポインタ直下のテキストノードを精密に取り、その文字列で原稿を照合させる。
-  // 文字が拾えない余白クリックはスライド先頭へのジャンプにフォールバック。
-  function textUnderPointer(ev){
+  // 併せて要素の実寸 font-size(px) を読み、サイズ増減の起点として送る。
+  function probeUnderPointer(ev){
     let r = null;
     if (document.caretRangeFromPoint) r = document.caretRangeFromPoint(ev.clientX, ev.clientY);
     else if (document.caretPositionFromPoint){ const p = document.caretPositionFromPoint(ev.clientX, ev.clientY); if(p) r = {startContainer:p.offsetNode}; }
-    let node = r && r.startContainer;
-    if (node && node.nodeType === 3) return node.textContent || '';     // テキストノード = 一行ぶんの連続テキスト
-    const el = (ev.target && ev.target.closest) ? ev.target : null;
-    return el && el.textContent ? el.textContent : '';
+    const node = r && r.startContainer;
+    const el = (node && (node.nodeType===3 ? node.parentElement : node)) || ((ev.target && ev.target.closest) ? ev.target : null);
+    let px = null;
+    if (el){ try { px = parseFloat(getComputedStyle(el).fontSize) || null; } catch(_){} }
+    let text = '';
+    if (node && node.nodeType === 3) text = node.textContent || '';
+    else if (el && el.textContent) text = el.textContent;
+    return { text, px };
   }
   document.addEventListener('click', (ev)=>{
+    if (ev.target && ev.target.closest && ev.target.closest('#tuner')) return; // ツールバーは逆引き対象外
     const svg = ev.target && ev.target.closest ? ev.target.closest('svg[data-marpit-svg]') : null;
     if (!svg) return;
     const i = slides().indexOf(svg);
     if (i < 0) return;
-    const text = (textUnderPointer(ev) || '').replace(/\s+/g,' ').trim();
-    vscode.postMessage(text ? {type:'revealText', index:i, text} : {type:'revealSlide', index:i});
+    const u = probeUnderPointer(ev);
+    const text = (u.text || '').replace(/\s+/g,' ').trim();
+    vscode.postMessage(text ? {type:'revealText', index:i, text, px:u.px} : {type:'revealSlide', index:i});
+  });
+  // --- ツールバー ---
+  const tuner = document.getElementById('tuner');
+  const tSize = document.getElementById('tSize');
+  const tColor = document.getElementById('tColor');
+  let tActive = false;
+  function setTuneState(s){
+    tActive = !!s.active;
+    tuner.setAttribute('data-active', tActive ? '1' : '0');
+    tSize.textContent = (s.size != null) ? (s.size + 'px') : '–';
+    if (s.color) tColor.value = s.color;
+  }
+  document.getElementById('tInc').addEventListener('click', ()=>vscode.postMessage({type:'tune', op:'inc'}));
+  document.getElementById('tDec').addEventListener('click', ()=>vscode.postMessage({type:'tune', op:'dec'}));
+  document.getElementById('tClear').addEventListener('click', ()=>vscode.postMessage({type:'tune', op:'clear'}));
+  tColor.addEventListener('input', ()=>vscode.postMessage({type:'tune', op:'color', value:tColor.value}));
+  Array.from(document.querySelectorAll('#tuner .sw')).forEach(b=>
+    b.addEventListener('click', ()=>vscode.postMessage({type:'tune', op:'color', value:b.getAttribute('data-c')})));
+  // 選択中は ↑↓ でも ±1px（色ピッカー操作中は除く）
+  window.addEventListener('keydown', (ev)=>{
+    if (!tActive) return;
+    if (ev.target && ev.target.id === 'tColor') return;
+    if (ev.key === 'ArrowUp'){ ev.preventDefault(); vscode.postMessage({type:'tune', op:'inc'}); }
+    else if (ev.key === 'ArrowDown'){ ev.preventDefault(); vscode.postMessage({type:'tune', op:'dec'}); }
   });
   window.addEventListener('message', e=>{
     const m = e.data || {};
     if (m.type === 'scrollToSlide') scrollTo(m.index);
+    else if (m.type === 'render'){
+      document.getElementById('deck-css').textContent = m.css || '';
+      document.getElementById('wrap').innerHTML = m.html || '';
+      highlight(Number.isInteger(m.index) ? m.index : 0); // 差し替え時はスクロールせず強調のみ（揺らさない）
+    }
+    else if (m.type === 'tuneState') setTuneState(m);
   });
   // 初期表示
   highlight(initial);
@@ -234,6 +318,18 @@ function renderInto(panelRef, doc, initialIndex) {
   panelRef.webview.html = buildHtml(panelRef.webview, doc, initialIndex);
 }
 
+/** 既存 webview の中身(#wrap と deck-css)だけ差し替える。ツールバー・スクロール位置を保つ。 */
+function renderUpdate(doc, idx) {
+  if (!panel) return;
+  try {
+    const { html, css } = renderDeck(panel.webview, doc);
+    panel.webview.postMessage({ type: 'render', html, css, index: idx });
+  } catch (e) {
+    panel.webview.postMessage({ type: 'render', index: 0, css: '',
+      html: '<pre style="color:#f88;padding:16px;white-space:pre-wrap">レンダリングエラー: ' + String(e.message || e) + '</pre>' });
+  }
+}
+
 function openPreview(context) {
   const editor = vscode.window.activeTextEditor;
   if (!editor || !isMarpDoc(editor.document)) {
@@ -243,6 +339,7 @@ function openPreview(context) {
   const doc = editor.document;
   slideStarts = slideStartLines(doc.getText());
   const idx = slideIndexForLine(slideStarts, editor.selection.active.line);
+  lastScrollIndex = idx;
 
   if (panel) { panel.reveal(vscode.ViewColumn.Beside, true); }
   else {
@@ -256,11 +353,23 @@ function openPreview(context) {
     panel.onDidDispose(() => { panel = null; panelDocUri = null; }, null, context.subscriptions);
     panel.webview.onDidReceiveMessage((m) => {
       if (!m) return;
+
+      if (m.type === 'tune') {
+        const ed = panelEditor();
+        if (!ed) { vscode.window.showInformationMessage('プレビュー対象の Markdown エディタを表示してから操作してください。'); return; }
+        if (m.op === 'inc') applyTune(ed, { dPx: +1 });
+        else if (m.op === 'dec') applyTune(ed, { dPx: -1 });
+        else if (m.op === 'color') applyTune(ed, { color: m.value });
+        else if (m.op === 'clear') applyTune(ed, { clear: true });
+        return;
+      }
+
       const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri)
         || vscode.window.activeTextEditor;
       if (!ed) return;
 
       if (m.type === 'revealText' && typeof m.text === 'string' && slideStarts[m.index] !== undefined) {
+        if (typeof m.px === 'number' && m.px > 0) lastClickedPx = Math.round(m.px); // サイズ増減の起点
         // クリックした文字列を、そのスライドの行範囲内だけで照合 → 該当行を選択＆一時ハイライト
         const lines = ed.document.getText().split(/\r?\n/);
         const [s, e] = lineRangeForSlide(slideStarts, m.index, lines.length);
@@ -272,7 +381,8 @@ function openPreview(context) {
         ed.selection = new vscode.Selection(range.start, range.end);
         ed.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
         flashReveal(ed, range);
-        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false });
+        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false })
+          .then(() => postTuneState(ed));
         return;
       }
 
@@ -287,6 +397,7 @@ function openPreview(context) {
   }
   panelDocUri = doc.uri.toString();
   renderInto(panel, doc, idx);
+  postTuneState(editor);
 }
 
 /** 逆引きで当てた行を一時的に色付けして見つけやすくする（選択ハイライトに加えての強調） */
@@ -299,18 +410,202 @@ function flashReveal(editor, range) {
   }, 2500);
 }
 
+function doRender(doc) {
+  slideStarts = slideStartLines(doc.getText());
+  const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri);
+  const idx = ed ? slideIndexForLine(slideStarts, ed.selection.active.line) : 0;
+  renderUpdate(doc, idx);
+}
+
 function scheduleReRender() {
   if (!panel || !panelDocUri) return;
   const doc = vscode.workspace.textDocuments.find(d => d.uri.toString() === panelDocUri);
   if (!doc) return;
   clearTimeout(renderTimer);
-  renderTimer = setTimeout(() => {
-    slideStarts = slideStartLines(doc.getText());
-    const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri);
-    const idx = ed ? slideIndexForLine(slideStarts, ed.selection.active.line) : 0;
-    renderInto(panel, doc, idx);
-  }, 700);
+  renderTimer = setTimeout(() => doRender(doc), 700);
 }
+
+// ===== サイズ/色 微調整（tune） =====
+
+function panelEditor() {
+  return vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri)
+    || (isMarpDoc(vscode.window.activeTextEditor && vscode.window.activeTextEditor.document) ? vscode.window.activeTextEditor : null);
+}
+
+function activeMarpEditor() {
+  const a = vscode.window.activeTextEditor;
+  if (a && isMarpDoc(a.document)) return a;
+  return panelEditor();
+}
+
+function clampPx(n) { return Math.max(6, Math.min(200, Math.round(n))); }
+
+function buildTuneStyle({ fontPx, color }) {
+  const parts = [];
+  if (fontPx != null) parts.push('font-size:' + fontPx + 'px !important');
+  if (color) parts.push('color:' + color + ' !important');
+  return parts.join('; ');
+}
+
+/** 行テキスト内で [s,e) を内側に含む ss-tune span を返す（なければ null） */
+function findEnclosingTuneSpan(lineText, s, e) {
+  const re = new RegExp('<span class="' + TUNE_CLASS + '"([^>]*)>([\\s\\S]*?)<\\/span>', 'g');
+  let m;
+  while ((m = re.exec(lineText))) {
+    const open = m[0].slice(0, m[0].indexOf('>') + 1);
+    const innerStart = m.index + open.length;
+    const inner = m[2];
+    const innerEnd = innerStart + inner.length;
+    const tagEnd = m.index + m[0].length;
+    if (s >= innerStart && e <= innerEnd) {
+      const attrs = m[1] || '';
+      const sm = attrs.match(/style\s*=\s*"([^"]*)"/i);
+      const style = sm ? sm[1] : '';
+      const fm = style.match(/font-size\s*:\s*([\d.]+)px/i);
+      const cm = style.match(/color\s*:\s*([^;"]+)/i);
+      return {
+        tagStart: m.index, tagEnd, inner, innerStart, innerEnd,
+        fontPx: fm ? Math.round(parseFloat(fm[1])) : null,
+        color: cm ? cm[1].replace(/!important/i, '').trim() : null,
+      };
+    }
+  }
+  return null;
+}
+
+/** 行頭のブロック記号(- * + / # / 1. / >)と前後の空白を除き、装飾対象の本文範囲に詰める */
+function trimToContent(lineText, s, e) {
+  while (s < e && /\s/.test(lineText[s])) s++;
+  if (lineText.slice(0, s).trim() === '') { // 選択が行頭から始まっている → マーカーを除く
+    const mk = lineText.slice(s).match(/^(#{1,6}\s+|[-*+]\s+|\d+\.\s+|>\s+)/);
+    if (mk) s += mk[0].length;
+  }
+  while (e > s && /\s/.test(lineText[e - 1])) e--;
+  return [s, e];
+}
+
+/** 選択範囲に font-size/color を適用（連打が競合しないよう直列化） */
+function applyTune(editor, opts) {
+  tuneChain = tuneChain.then(() => applyTuneInner(editor, opts)).catch(() => {});
+  return tuneChain;
+}
+
+async function applyTuneInner(editor, opts) {
+  if (!editor) return;
+  const sel = editor.selection;
+  if (sel.start.line !== sel.end.line) {
+    vscode.window.showInformationMessage('サイズ/色は 1 行内で選択した文字に適用できます。');
+    return;
+  }
+  const lineNo = sel.start.line;
+  const lineText = editor.document.lineAt(lineNo).text;
+  let sCol = sel.start.character, eCol = sel.end.character;
+  if (sCol === eCol) { // 空選択 → カーソル位置の単語に広げる
+    const wr = editor.document.getWordRangeAtPosition(sel.start);
+    if (wr) { sCol = wr.start.character; eCol = wr.end.character; }
+    else { vscode.window.showInformationMessage('変更したい文字を選択してください。'); return; }
+  }
+
+  const span = findEnclosingTuneSpan(lineText, sCol, eCol);
+  let editStart, editEnd, newText, reInner;
+
+  if (span) { // 既存 span を更新（数値/色だけ書き換え、入れ子にしない）
+    let fontPx = span.fontPx, color = span.color;
+    if (opts.clear) { fontPx = null; color = null; }
+    if (opts.dPx != null) {
+      const base = (span.fontPx != null ? span.fontPx : (lastClickedPx != null ? lastClickedPx : DEFAULT_PX));
+      fontPx = clampPx(base + opts.dPx);
+    }
+    if (opts.color !== undefined) color = opts.color || null;
+    const style = buildTuneStyle({ fontPx, color });
+    editStart = span.tagStart; editEnd = span.tagEnd;
+    if (!style) { // 完全リセット → span を外して中身だけに
+      newText = span.inner;
+      reInner = [editStart, editStart + span.inner.length];
+    } else {
+      const open = '<span class="' + TUNE_CLASS + '" style="' + style + '">';
+      newText = open + span.inner + '</span>';
+      reInner = [editStart + open.length, editStart + open.length + span.inner.length];
+    }
+  } else { // 新規に span で包む
+    if (opts.clear) { vscode.window.showInformationMessage('この箇所にはサイズ/色は設定されていません。'); return; }
+    [sCol, eCol] = trimToContent(lineText, sCol, eCol);
+    if (sCol >= eCol) { vscode.window.showInformationMessage('装飾できる文字がありません。'); return; }
+    const inner = lineText.slice(sCol, eCol);
+    let fontPx = null, color = null;
+    if (opts.dPx != null) fontPx = clampPx((lastClickedPx != null ? lastClickedPx : DEFAULT_PX) + opts.dPx);
+    if (opts.color !== undefined && opts.color) color = opts.color;
+    const style = buildTuneStyle({ fontPx, color });
+    if (!style) return;
+    const open = '<span class="' + TUNE_CLASS + '" style="' + style + '">';
+    newText = open + inner + '</span>';
+    editStart = sCol; editEnd = eCol;
+    reInner = [sCol + open.length, sCol + open.length + inner.length];
+  }
+
+  const we = new vscode.WorkspaceEdit();
+  we.replace(editor.document.uri, new vscode.Range(lineNo, editStart, lineNo, editEnd), newText);
+  renderImmediate = true; // この編集は即時反映
+  const ok = await vscode.workspace.applyEdit(we);
+  if (!ok) { renderImmediate = false; return; }
+  // 包んだ中身を選び直して、連続で ±1px や色変更ができるようにする
+  editor.selection = new vscode.Selection(lineNo, reInner[0], lineNo, reInner[1]);
+  postTuneState(editor);
+}
+
+/** 現在の選択に応じてツールバーの表示(px/色/活性)を更新する */
+function postTuneState(editor) {
+  if (!panel) return;
+  let size = null, color = null, active = false;
+  if (editor && isMarpDoc(editor.document) && editor.document.uri.toString() === panelDocUri) {
+    const sel = editor.selection;
+    if (sel.start.line === sel.end.line) {
+      const lineText = editor.document.lineAt(sel.start.line).text;
+      let sCol = sel.start.character, eCol = sel.end.character;
+      if (sCol === eCol) {
+        const wr = editor.document.getWordRangeAtPosition(sel.start);
+        if (wr) { sCol = wr.start.character; eCol = wr.end.character; }
+      }
+      active = eCol > sCol;
+      const span = findEnclosingTuneSpan(lineText, sCol, eCol);
+      if (span) { size = span.fontPx != null ? span.fontPx : (lastClickedPx != null ? lastClickedPx : DEFAULT_PX); color = span.color; }
+      else size = lastClickedPx != null ? lastClickedPx : DEFAULT_PX;
+    }
+  }
+  panel.webview.postMessage({ type: 'tuneState', size, color, active });
+}
+
+async function pickColor() {
+  const presets = [
+    { label: '$(circle-filled) 赤（テーマ）', value: '#A6192E' },
+    { label: '$(circle-filled) 濃赤', value: '#7d1322' },
+    { label: '$(circle-filled) 青', value: '#1f6fb2' },
+    { label: '$(circle-filled) 緑', value: '#2e7d32' },
+    { label: '$(circle-filled) 橙', value: '#e07b00' },
+    { label: '$(circle-filled) 黒（標準）', value: '#1a1a1a' },
+    { label: '$(paintcan) カスタム (hex)…', value: '__custom__' },
+    { label: '$(clear-all) 色を消す', value: '__none__' },
+  ];
+  const pick = await vscode.window.showQuickPick(presets, { placeHolder: '文字色を選ぶ' });
+  if (!pick) return undefined;
+  if (pick.value === '__none__') return null;
+  if (pick.value === '__custom__') {
+    const v = await vscode.window.showInputBox({ prompt: '色 (例 #c8102e / rgb(200,16,46))', value: '#' });
+    if (v == null) return undefined;
+    return v.trim() || undefined;
+  }
+  return pick.value;
+}
+
+function cmdInc() { applyTune(activeMarpEditor(), { dPx: +1 }); }
+function cmdDec() { applyTune(activeMarpEditor(), { dPx: -1 }); }
+async function cmdColor() {
+  const ed = activeMarpEditor();
+  if (!ed) { vscode.window.showInformationMessage('Marp の Markdown で文字を選択してください。'); return; }
+  const c = await pickColor();
+  if (c !== undefined) applyTune(ed, { color: c });
+}
+function cmdClear() { applyTune(activeMarpEditor(), { clear: true }); }
 
 /** marp-cli(--html)でプレゼン用HTMLを生成し、現在のスライドからブラウザで開く */
 async function present() {
@@ -393,10 +688,17 @@ function activate(context) {
     vscode.commands.registerCommand('marpScrollSync.openPreview', () => openPreview(context)),
     vscode.commands.registerCommand('marpScrollSync.present', () => present()),
     vscode.commands.registerCommand('marpScrollSync.gotoSlide', gotoSlide),
+    vscode.commands.registerCommand('marpScrollSync.incFont', cmdInc),
+    vscode.commands.registerCommand('marpScrollSync.decFont', cmdDec),
+    vscode.commands.registerCommand('marpScrollSync.setColor', cmdColor),
+    vscode.commands.registerCommand('marpScrollSync.clearTune', cmdClear),
     vscode.window.onDidChangeTextEditorSelection(e => updateStatus(e.textEditor)),
     vscode.window.onDidChangeActiveTextEditor(ed => updateStatus(ed)),
     vscode.workspace.onDidChangeTextDocument(e => {
-      if (panelDocUri && e.document.uri.toString() === panelDocUri) scheduleReRender();
+      if (panelDocUri && e.document.uri.toString() === panelDocUri) {
+        if (renderImmediate) { renderImmediate = false; clearTimeout(renderTimer); doRender(e.document); }
+        else scheduleReRender();
+      }
     })
   );
   updateStatus(vscode.window.activeTextEditor);

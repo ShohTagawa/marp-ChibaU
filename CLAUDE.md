@@ -77,20 +77,24 @@ footer: ''
 > **⚠️ `--html` は全コマンドで必須。** これを付け忘れると、インラインSVGや `<div>` などの生HTMLが
 > すべてエスケープされ、図が「生のSVGソースコードの文字列」として描画される（＝はみ出し・余白崩れに見える）。
 > PDF/PNG/プレビューすべてに付けること。
+>
+> **⚠️ `--no-stdin` も全コマンドで必須。** これが無いと、VS Codeのタスク/ターミナル/バックグラウンド等の
+> 非対話実行で marp がファイル引数を渡しても標準入力を待って数分固まる
+> （`[INFO] Currently waiting data from stdin stream…` で停止）。ボタン/スクリプトのハングの主因。
 
 ```bash
 # 変数（このDIRが正本ルート）
 DECK=slides/<deck-name>
 
 # プレビュー
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --preview
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set theme/academic.css --html --preview
 
 # PDF を out/ に書き出す
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --pdf --allow-local-files -o "$DECK/out/<deck-name>.pdf"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set theme/academic.css --html --pdf --allow-local-files -o "$DECK/out/<deck-name>.pdf"
 
 # HTML / PNG も同様に -o で out/ を指定
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --allow-local-files -o "$DECK/out/<deck-name>.html"
-npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --theme-set theme/academic.css --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set theme/academic.css --html --allow-local-files -o "$DECK/out/<deck-name>.html"
+npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
 
 ### PDFが "Printing failed" で落ちるとき（枚数の多い/SVGが重いデック）
@@ -110,12 +114,13 @@ tools/marp-pdf/build-pdf.sh slides/<deck-name>/<deck-name>.md
 # 出力先を変えるなら第2引数 / 1チャンクの枚数を減らすなら CHUNK=15 を前置
 ```
 
-VS Code からは：
-- **エディタ右上のツールバーの 📄 ボタン**（おすすめ）：開いているデックをそのままベクターPDF化。自作ローカル拡張
-  `tools/marp-pdf/vscode-extension/`（`~/.vscode/extensions/marp-chibau-pdf` へシンボリックリンク済み）。
-  チャンク数は設定 `marpChibau.chunkSize`（0=既定20、落ちるなら12）。**再インストール手順**は同フォルダの該当節参照。
-- **NPM スクリプト ▶**（標準機能）：エクスプローラーの「NPM スクリプト」で `pdf`／`pdf:safe`（`package.json`）。
-- **⌘⇧B**（標準機能）：開いている `.md` を対象（`.vscode/tasks.json`）。
+VS Code からは（自作ローカル拡張 `tools/marp-pdf/vscode-extension/` が右上ツールバーに2ボタンを出す。
+`~/.vscode/extensions/marp-chibau-pdf` への symlink で読み込む。**symlink先は `$HOME` 基準で貼ること**＝
+ユーザー名を直書き（旧 `/Users/shoh/…`）すると名前変更でリンクが切れ、ボタンが消える。再インストールは同フォルダのREADME）：
+- **▶ ボタン（プレゼン）**：開いているデックを bespoke HTML にして Chrome で全画面プレゼン（**F**=全画面 / **P**=発表者ビュー / **←→**=ページ送り / **O**=一覧）。実体は `tools/marp-present/present.sh`。
+- **📄 ボタン（PDF）**（おすすめ）：開いているデックをそのままベクターPDF化。チャンク数は設定 `marpChibau.chunkSize`（0=既定20、落ちるなら12）。
+- **NPM スクリプト ▶**（標準機能）：エクスプローラーの「NPM スクリプト」で `pdf`／`pdf:safe`／`present`（`package.json`）。
+- **⌘⇧B**（標準機能）：開いている `.md` をPDF化（`.vscode/tasks.json`）。
 
 > ⚠️ **PNG経由（`--images png` → img2pdf）は使わない**。ラスタ化で文字がにじみ、学生から見づらいと苦情が出る。
 > 必ず上記スクリプト（ベクター）で出すこと。`pdfunite` は poppler（`brew install poppler`）に含まれる。
@@ -145,6 +150,15 @@ python3 tools/pptx2marp/pptx2marp.py <input.pptx> --name <deck-name> --title "<�
   規約名でコピー → `fig`/`split` 型に `<img src="./src/figNN-...">` で埋め込む（`*.svg` は使わない）→ 描画確認。
 - 「元のスライドの絵をそのまま使って」と言われたら、作り直さずこのスキルで取り込む。
 - 自作図は著作権自由。外部の図を混ぜる場合のみ `<div class="attr">出典…</div>` を付ける。
+
+## 読み上げ原稿の作成・収録動画の反映（lecture-script）
+
+各回の **読み上げ原稿**（`slides/<deck>/原稿_第N回.md`）を作る・直すとき、また **収録した動画を原稿に反映する**
+（＝実際に話した内容に原稿を合わせる）ときは **`lecture-script`** スキルを使う（`.claude/skills/lecture-script/`）。
+
+- 動画の文字起こしは **ローカルの whisper.cpp**：`ffmpeg` で16kHz mono WAV化 → `build/bin/whisper-cli -l ja`。`gcloud` 無し・音声を外部に出さない。詳細とコマンド・誤変換表は `references/transcription.md`。
+- 反映は **1動画ずつ**・本文段落だけ差し替え（`# 動画N`／`### スライド`見出しと `---` は保持）、**編集前に必ず別名 `.bak`** でバックアップ。
+- 語尾・文体と「ドラフト→実収録」の差分パターンは `references/style-guide.md`（新規ドラフトを書くときの指針にもなる）。
 
 ## 既存スライド
 

@@ -19,7 +19,7 @@ function buildPath(existing) {
 const TIMEOUT_MS = 5 * 60 * 1000;
 
 function activate(context) {
-  const out = vscode.window.createOutputChannel('Marp PDF');
+  const out = vscode.window.createOutputChannel('Marp ChibaU');
 
   const cmd = vscode.commands.registerCommand('marpChibau.exportPdf', async () => {
     const editor = vscode.window.activeTextEditor;
@@ -118,7 +118,7 @@ function activate(context) {
             } else {
               out.show(true);
               vscode.window.showErrorMessage(
-                'Marp PDF: 失敗（exit=' + code + '）。出力パネル「Marp PDF」の最後の行を確認してください。'
+                'Marp PDF: 失敗（exit=' + code + '）。出力パネル「Marp ChibaU」の最後の行を確認してください。'
               );
             }
             resolve();
@@ -128,7 +128,95 @@ function activate(context) {
     );
   });
 
-  context.subscriptions.push(cmd, out);
+  // ── ▶ プレゼン：開いている .md を bespoke HTML に描画して Chrome で全画面表示する ──
+  // 実体は tools/marp-present/present.sh（HTML描画 → Chrome を新規ウィンドウで起動）。
+  // PDFのような分割は不要なので軽量。発表中のキー: F=全画面 / P=発表者ビュー / ←→=ページ送り。
+  const presentCmd = vscode.commands.registerCommand('marpChibau.present', async () => {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor || editor.document.languageId !== 'markdown') {
+      vscode.window.showErrorMessage('Marp プレゼン: Markdown(.md) を開いた状態で実行してください。');
+      return;
+    }
+    const doc = editor.document;
+    if (doc.isDirty) { await doc.save(); }      // 最新内容で発表する
+    const mdPath = doc.uri.fsPath;
+
+    const folder = vscode.workspace.getWorkspaceFolder(doc.uri);
+    if (!folder) {
+      vscode.window.showErrorMessage('Marp プレゼン: このファイルはワークスペース内にありません。フォルダを開いて実行してください。');
+      return;
+    }
+    const root = folder.uri.fsPath;
+    const script = path.join(root, 'tools', 'marp-present', 'present.sh');
+    if (!fs.existsSync(script)) {
+      vscode.window.showErrorMessage('Marp プレゼン: tools/marp-present/present.sh が見つかりません（' + root + '）。');
+      return;
+    }
+
+    const env = Object.assign({}, process.env);
+    env.PATH = buildPath(env.PATH);
+    if (!env.CHROME_PATH) {
+      env.CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+    }
+
+    out.clear();
+    out.appendLine('=== Marp Present ===');
+    out.appendLine('script : ' + script);
+    out.appendLine('md     : ' + mdPath);
+    out.appendLine('---');
+
+    await vscode.window.withProgress(
+      { location: vscode.ProgressLocation.Notification, title: 'Marp: 発表用HTMLを描画して Chrome を起動中…', cancellable: false },
+      () => new Promise((resolve) => {
+        const child = cp.spawn('bash', [script, mdPath], { cwd: root, env, stdio: ['ignore', 'pipe', 'pipe'] });
+        const onData = (buf) => out.append(buf.toString());
+        child.stdout.on('data', onData);
+        child.stderr.on('data', onData);
+        child.on('error', (e) => {
+          out.appendLine('\n[SPAWN ERROR] ' + (e && e.message ? e.message : e));
+          out.show(true);
+          vscode.window.showErrorMessage('Marp プレゼン: 起動に失敗（' + (e && e.message) + '）。出力パネルを確認してください。');
+          resolve();
+        });
+        child.on('close', (code) => {
+          out.appendLine('\n=== DONE (exit=' + code + ') ===');
+          if (code === 0) {
+            vscode.window.showInformationMessage('▶ プレゼンを開きました。F=全画面 / P=発表者ビュー / ←→=ページ送り');
+          } else {
+            out.show(true);
+            vscode.window.showErrorMessage('Marp プレゼン: 失敗（exit=' + code + '）。出力パネル「Marp ChibaU」を確認してください。');
+          }
+          resolve();
+        });
+      })
+    );
+  });
+
+  // ── ステータスバー常設ボタン ─────────────────────────────────────────────
+  // エディタ右上のツールバーは他拡張（Claude Code 等）のアイコンで幅があふれ、
+  // 当拡張の 📄/▶ が「…」に押し出されて見えなくなる。最下部のステータスバーなら
+  // あふれの影響を受けず常に見える。marp-ChibaU 配下の Markdown を開いている時だけ表示。
+  const sbPresent = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 101);
+  sbPresent.command = 'marpChibau.present';
+  sbPresent.text = '$(play) プレゼン';
+  sbPresent.tooltip = 'Marp: このスライドを Chrome で全画面プレゼン';
+
+  const sbPdf = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+  sbPdf.command = 'marpChibau.exportPdf';
+  sbPdf.text = '$(file-pdf) PDF';
+  sbPdf.tooltip = 'Marp: このスライドをベクターPDFに書き出し';
+
+  const updateStatusBar = () => {
+    const ed = vscode.window.activeTextEditor;
+    const show = !!ed && ed.document.languageId === 'markdown' && /marp-ChibaU/.test(ed.document.uri.fsPath);
+    if (show) { sbPresent.show(); sbPdf.show(); } else { sbPresent.hide(); sbPdf.hide(); }
+  };
+  updateStatusBar();
+
+  context.subscriptions.push(
+    cmd, presentCmd, out, sbPresent, sbPdf,
+    vscode.window.onDidChangeActiveTextEditor(updateStatusBar)
+  );
 }
 
 function deactivate() {}

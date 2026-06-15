@@ -10,7 +10,7 @@ html: true
 
 <!-- _class: onepager -->
 
-<svg viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic', sans-serif">
   <defs>
     <linearGradient id="gAccH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f8f6e"/><stop offset="1" stop-color="#125642"/></linearGradient>
     <linearGradient id="gNexus" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#27a07c"/><stop offset="1" stop-color="#0f4a39"/></linearGradient>
@@ -33,51 +33,50 @@ html: true
   <g opacity="0.10" stroke="#3f7fc4" stroke-width="1" fill="none"><path d="M113 150 L173 200"/><path d="M173 200 L270 135"/><path d="M270 135 L390 170"/><path d="M390 170 L495 130"/><path d="M495 130 L585 180"/><path d="M585 180 L690 150"/><path d="M690 150 L795 200"/><path d="M795 200 L885 160"/><path d="M90 320 L180 470"/><path d="M735 320 L855 300"/><path d="M420 320 L525 540"/><path d="M323 540 L525 540"/></g>
   <circle cx="379" cy="365" r="130" fill="url(#nexusGlow)"/>
   <circle cx="876" cy="320" r="110" fill="url(#goalGlow)"/>
-  <path d="M0 534 L960 534 L960 720 L0 720 Z" fill="url(#gBackbone)" opacity="0.16"/>
+  <path d="M0 550 L960 550 L960 720 L0 720 Z" fill="url(#gBackbone)" opacity="0.16"/>
   <path d="M235 300 C250 300 250 300 259 300" stroke="url(#gBackbone)" stroke-width="18" fill="none" opacity="0.22"/>
   <rect x="0" y="0" width="960" height="56" fill="url(#gAccH)"/>
-  <text x="40" y="38" font-size="22" font-weight="700" fill="#ffffff">大学院生の「研究×学び」を支援する全学基盤 ― Nexus Uni+ を目指して</text>
-  <rect x="807" y="12" width="138" height="32" rx="8" fill="#ffffff"/>
-  <image href="./src/chiba-logo.png" x="820" y="18" width="112" height="20"/>
+  <text x="418" y="38" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">大学院生の「研究×学び」を支援する全学基盤 ― Nexus Uni+ を目指して</text>
+  <image href="./src/logo.png" x="835.3" y="18" width="110.7" height="22.1"/>
   <rect x="0" y="56" width="960" height="32" fill="#E4F2EC"/>
-  <text x="40" y="79" font-size="15" font-weight="700" fill="#16624b">分散する情報・データ・支援・機会をアプリ＆AIで集約 ！ 大学×個人のリンクを促し、限られた学内リソースを最大限に活かす！</text>
-  <text x="17" y="110" font-size="15" font-weight="700" fill="#c4632a">大学が抱える課題（A–D）</text>
+  <text x="23" y="80" font-size="16.3" font-weight="700" fill="#16624b">分散する情報・データ・支援・機会をアプリ＆AIで集約！ 大学×個人のリンクを促し、限られた学内リソースを最大限に活かす！</text>
+  <text x="17" y="110" font-size="13" font-weight="700" fill="#c4632a">大学が抱える課題（A–D）</text>
   <rect x="15" y="116" width="220" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="15" y="116" width="5" height="90" rx="3" fill="url(#gWarn)"/>
   <circle cx="37" cy="132" r="11" fill="#FBEDE2"/>
   <text x="37" y="132" font-size="13" font-weight="700" fill="#c4632a" text-anchor="middle" dominant-baseline="central">A</text>
   <text x="55" y="134" font-size="10.5" font-weight="700" fill="#1f2937">教員の業務負荷が急増</text>
-  <text x="29" y="154" font-size="9.2" fill="#666">・院生の多様化で教育負担が増加</text>
-  <text x="29" y="171.5" font-size="9.2" fill="#666">　（社会人・留学生・他分野から流入）</text>
-  <text x="29" y="189" font-size="9.2" fill="#666">・研究費申請・評価資料など付随業務も増加</text>
+  <text x="29" y="157" font-size="9.5" fill="#666">・院生の多様化で教育負担が増加</text>
+  <text x="29" y="174.5" font-size="9.5" fill="#666">　（社会人・留学生・他分野から流入）</text>
+  <text x="29" y="192" font-size="9.5" fill="#666">・研究費申請・評価資料など付随業務も増加</text>
   <rect x="15" y="226" width="220" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="15" y="226" width="5" height="90" rx="3" fill="url(#gWarn)"/>
   <circle cx="37" cy="242" r="11" fill="#FBEDE2"/>
   <text x="37" y="242" font-size="13" font-weight="700" fill="#c4632a" text-anchor="middle" dominant-baseline="central">B</text>
   <text x="55" y="244" font-size="10.5" font-weight="700" fill="#1f2937">学際化・国際化への人材育成が急務</text>
-  <text x="29" y="264" font-size="9.2" fill="#666">・育成モデルが多様化、国際競争に対応</text>
-  <text x="29" y="281.5" font-size="9.2" fill="#666">・個々人に異なる能力育成と資源の最適投下</text>
-  <text x="29" y="299" font-size="9.2" fill="#666">・能力育成 of 個別最適化が必須に</text>
+  <text x="29" y="267" font-size="9.5" fill="#666">・育成モデルが多様化、国際競争に対応</text>
+  <text x="29" y="284.5" font-size="9.5" fill="#666">・個々人に異なる能力育成と資源の最適投下</text>
+  <text x="29" y="302" font-size="9.5" fill="#666">・能力育成と個別最適化が必須に</text>
   <rect x="15" y="336" width="220" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="15" y="336" width="5" height="90" rx="3" fill="url(#gWarn)"/>
   <circle cx="37" cy="352" r="11" fill="#FBEDE2"/>
   <text x="37" y="352" font-size="13" font-weight="700" fill="#c4632a" text-anchor="middle" dominant-baseline="central">C</text>
   <text x="55" y="354" font-size="10.5" font-weight="700" fill="#1f2937">大学→ラボ→個人のミッシングリンク</text>
-  <text x="29" y="374" font-size="9.2" fill="#666">・学内の各種サポートが分散している</text>
-  <text x="29" y="391.5" font-size="9.2" fill="#666">・支援部署から真に必要とする個人へ</text>
-  <text x="29" y="409" font-size="9.2" fill="#666">　ダイレクトに情報が届かない</text>
+  <text x="29" y="377" font-size="9.5" fill="#666">・学内の各種サポートが分散している</text>
+  <text x="29" y="394.5" font-size="9.5" fill="#666">・支援部署から真に必要とする個人へ</text>
+  <text x="29" y="412" font-size="9.5" fill="#666">　ダイレクトに情報が届かない</text>
   <rect x="15" y="446" width="220" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="15" y="446" width="5" height="90" rx="3" fill="url(#gWarn)"/>
   <circle cx="37" cy="462" r="11" fill="#FBEDE2"/>
   <text x="37" y="462" font-size="13" font-weight="700" fill="#c4632a" text-anchor="middle" dominant-baseline="central">D</text>
   <text x="55" y="464" font-size="10.5" font-weight="700" fill="#1f2937">実践知が共有・蓄積・活用されない</text>
-  <text x="29" y="484" font-size="9.2" fill="#666">・手続き・説明・問合せ等の定型業務の反復</text>
-  <text x="29" y="501.5" font-size="9.2" fill="#666">・システムとデータが分散</text>
-  <text x="29" y="519" font-size="9.2" fill="#666">・異動・引継ぎでノウハウがリセット</text>
+  <text x="29" y="487" font-size="9.5" fill="#666">・手続き・説明・問合せ等の定型業務の反復</text>
+  <text x="29" y="504.5" font-size="9.5" fill="#666">・システムとデータが分散</text>
+  <text x="29" y="522" font-size="9.5" fill="#666">・異動・引継ぎでノウハウがリセット</text>
   <path d="M239 318 L255 342 L239 366 Z" fill="url(#gWarn)" filter="url(#sh)"/>
   <rect x="259" y="116" width="240" height="424" rx="18" fill="url(#gNexus)" filter="url(#sh)"/>
   <g opacity="0.12" stroke="#ffffff" stroke-width="1.2" fill="none"><ellipse cx="379" cy="355" rx="140" ry="140"/><ellipse cx="379" cy="355" rx="55" ry="140"/><ellipse cx="379" cy="355" rx="140" ry="55"/></g>
-  <text x="256" y="110" font-size="15" font-weight="700" fill="#16624b">Nexus基盤 ＝ アプリ ＋ DB ＋ AI</text>
+  <text x="256" y="110" font-size="13" font-weight="700" fill="#16624b">Nexus基盤 ＝ アプリ ＋ DB ＋ AI</text>
   <text x="269" y="138" font-size="13.5" font-weight="700" fill="#ffffff">〈情報・データ・サポート・機会〉を統合</text>
   <text x="280" y="160" font-size="15" font-weight="700" fill="#bfe9da">＝ Research Journey</text>
   <text x="283" y="183" font-size="15" font-weight="700" fill="#bfe9da">　 ＋ AI伴走 ＋ RAG</text>
@@ -109,38 +108,38 @@ html: true
   <text x="369" y="478" font-size="15" font-weight="700" fill="#bfe9da" text-anchor="middle">ナラティブなデータを</text>
   <text x="369" y="496" font-size="15" font-weight="700" fill="#bfe9da" text-anchor="middle">記録・接続・分析する基盤</text>
   </g>
-  <text x="525" y="110" font-size="15" font-weight="700" fill="#16624b">本提案で変わること ― 業務効率化＋教育効果の向上</text>
+  <text x="525" y="110" font-size="13" font-weight="700" fill="#16624b">本提案で変わること ― 業務効率化＋教育効果の向上</text>
   <rect x="522" y="116" width="260" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="522" y="116" width="5" height="90" rx="3" fill="url(#gAccH)"/>
   <circle cx="544" cy="132" r="11" fill="#E4F2EC"/>
   <text x="544" y="132" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">A</text>
   <text x="562" y="134" font-size="10.2" font-weight="700" fill="#16624b">教員の業務負荷を軽減し研究時間を確保</text>
-  <text x="536" y="154" font-size="9.2" fill="#444">・AI多言語支援・ラボ共通支援・支援者への橋渡し</text>
-  <text x="536" y="171.5" font-size="9.2" fill="#444">・教員は研究そのものに時間を回せる</text>
+  <text x="536" y="157" font-size="9.5" fill="#444">・AI多言語支援・ラボ共通支援・支援者への橋渡し</text>
+  <text x="536" y="174.5" font-size="9.5" fill="#444">・教員は研究そのものに時間を回せる</text>
   <text x="536" y="189" font-size="8.8" fill="#1A7A5E">［課題A：業務負荷の急増に対応］</text>
   <rect x="522" y="226" width="260" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="522" y="226" width="5" height="90" rx="3" fill="url(#gAccH)"/>
   <circle cx="544" cy="242" r="11" fill="#E4F2EC"/>
   <text x="544" y="242" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">B</text>
   <text x="562" y="244" font-size="10.2" font-weight="700" fill="#16624b">多彩な研究課題に対応し研究力を向上</text>
-  <text x="536" y="264" font-size="9.2" fill="#444">・Research Journeyログ＋段階別AI伴走で個別支援</text>
-  <text x="536" y="281.5" font-size="9.2" fill="#444">・留学先・ラボ・企業（国際共同研究）のマッチング</text>
+  <text x="536" y="267" font-size="9.5" fill="#444">・Research Journeyログ＋段階別AI伴走で個別支援</text>
+  <text x="536" y="284.5" font-size="9.5" fill="#444">・留学先・ラボ・企業（国際共同研究）のマッチング</text>
   <text x="536" y="299" font-size="8.8" fill="#1A7A5E">［課題B：多様化・高度化に対応］</text>
   <rect x="522" y="336" width="260" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="522" y="336" width="5" height="90" rx="3" fill="url(#gAccH)"/>
   <circle cx="544" cy="352" r="11" fill="#E4F2EC"/>
   <text x="544" y="352" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">C</text>
   <text x="562" y="354" font-size="10.2" font-weight="700" fill="#16624b">個人ニーズ収集＋個別最適な情報提供</text>
-  <text x="536" y="374" font-size="9.2" fill="#444">・①学生が入力したニーズ＋②全学の支援情報を突合</text>
-  <text x="536" y="391.5" font-size="9.2" fill="#444">・真に必要な個人へ情報・支援・機会を直に投下</text>
+  <text x="536" y="377" font-size="9.5" fill="#444">・①学生が入力したニーズ＋②全学の支援情報を突合</text>
+  <text x="536" y="394.5" font-size="9.5" fill="#444">・真に必要な個人へ情報・支援・機会を直に投下</text>
   <text x="536" y="409" font-size="8.8" fill="#1A7A5E">［課題C：ミッシングリンクを解消］</text>
   <rect x="522" y="446" width="260" height="90" rx="11" fill="#ffffff" filter="url(#shSoft)"/>
   <rect x="522" y="446" width="5" height="90" rx="3" fill="url(#gAccH)"/>
   <circle cx="544" cy="462" r="11" fill="#E4F2EC"/>
   <text x="544" y="462" font-size="13" font-weight="700" fill="#16624b" text-anchor="middle" dominant-baseline="central">D</text>
   <text x="562" y="464" font-size="10.2" font-weight="700" fill="#16624b">労力を削減し業務を高度化（実践知の敷衍）</text>
-  <text x="536" y="484" font-size="9.2" fill="#444">・システムでなく「データ」を接続しAIで分析</text>
-  <text x="536" y="501.5" font-size="9.2" fill="#444">・反復・窓口業務をRAGで省力化／IR等を統合分析</text>
+  <text x="536" y="487" font-size="9.5" fill="#444">・システムでなく「データ」を接続しAIで分析</text>
+  <text x="536" y="504.5" font-size="9.5" fill="#444">・反復・窓口業務をRAGで省力化／IR等を統合分析</text>
   <text x="536" y="519" font-size="8.8" fill="#1A7A5E">［課題D：実践知の死蔵を解消］</text>
   <path d="M503 318 L519 342 L503 366 Z" fill="url(#gGoal)" filter="url(#sh)"/>
   <rect x="807" y="116" width="138" height="424" rx="18" fill="url(#gGoal)" filter="url(#sh)"/>
@@ -153,8 +152,7 @@ html: true
   <text x="815" y="195" font-size="9.5" font-weight="700" fill="#ffffff">学生と教職員が躍動する</text>
   <text x="815" y="213" font-size="9.5" font-weight="700" fill="#ffffff">大学へ！</text>
   <line x1="813" y1="231" x2="933" y2="231" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-  <path d="M813 245 L821 245 M818 241 L822 245 L818 249" stroke="#bff0d6" stroke-width="2" fill="none"/>
-  <text x="831" y="251" font-size="11" font-weight="700" fill="#ffffff">教職員の生産性UP！</text>
+  <text x="813" y="251" font-size="11" font-weight="700" fill="#ffffff">→ 教職員の生産性UP！</text>
   <rect x="814" y="272" width="124" height="152" rx="10" fill="#ffffff" opacity="0.15"/>
   <text x="876" y="291" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">YOKOTE VISIONの実現</text>
   <circle cx="825" cy="312" r="9.5" fill="#bff0d6"/>
@@ -173,45 +171,45 @@ html: true
   <text x="876" y="460" font-size="9.5" fill="#eafaf1" text-anchor="middle">学内すべての成果が</text>
   <text x="876" y="478" font-size="9.5" fill="#eafaf1" text-anchor="middle">連鎖的に伸びる</text>
   <text x="876" y="501" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">好循環へ</text>
-  <text x="17" y="557" font-size="13.5" font-weight="700" fill="#6b6b6b">想定する効果</text>
-  <rect x="15" y="562" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
-  <rect x="15" y="562" width="5" height="52" rx="2.5" fill="url(#gAccH)"/>
-  <text x="21" y="588" font-size="19" fill="#16624b" dominant-baseline="central">＋3<tspan font-size="9" font-weight="400">h/週</tspan></text>
-  <text x="96" y="586" font-size="10.2" font-weight="700" fill="#1f2937">教員1人あたりの</text>
-  <text x="96" y="602" font-size="10.2" font-weight="700" fill="#1f2937">研究時間を確保</text>
-  <rect x="250" y="562" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
-  <rect x="250" y="562" width="5" height="52" rx="2.5" fill="url(#gWarn)"/>
-  <text x="256" y="588" font-size="19" fill="#c4632a" dominant-baseline="central">+30<tspan font-size="9" font-weight="400">%</tspan></text>
-  <text x="328" y="586" font-size="10.2" font-weight="700" fill="#1f2937">高度化に使える時間の増加</text>
-  <text x="328" y="602" font-size="10.2" font-weight="700" fill="#1f2937">定型問合せ・窓口業務の削減</text>
-  <rect x="485" y="562" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
-  <rect x="485" y="562" width="5" height="52" rx="2.5" fill="url(#gAccH)"/>
-  <text x="491" y="588" font-size="19" fill="#16624b" dominant-baseline="central">＋10<tspan font-size="9" font-weight="400">pt</tspan></text>
-  <text x="562" y="586" font-size="10.2" font-weight="700" fill="#1f2937">院生の研究力</text>
-  <text x="562" y="602" font-size="10.2" font-weight="700" fill="#1f2937">(自己効力感・成長実感へ)</text>
-  <rect x="720" y="562" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
-  <rect x="720" y="562" width="5" height="52" rx="2.5" fill="url(#gGoal)"/>
-  <text x="726" y="588" font-size="19" fill="#1c6e44" dominant-baseline="central">＋5<tspan font-size="9" font-weight="400">%</tspan></text>
-  <text x="794" y="586" font-size="10.2" font-weight="700" fill="#1f2937">レピュテーション向上</text>
-  <text x="794" y="602" font-size="10.2" font-weight="700" fill="#1f2937">大学UXの変革</text>
-  <rect x="15" y="619" width="223" height="22" rx="5" fill="#1b6ca8"/>
-  <text x="126" y="630" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">大学全体の研究高度化</text>
-  <rect x="250" y="619" width="223" height="22" rx="5" fill="#b84d5b"/>
-  <text x="361" y="630" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">Cut by DXの支援</text>
-  <rect x="485" y="619" width="223" height="22" rx="5" fill="#2e9684"/>
-  <text x="596" y="630" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">AI時代の創造的人材の育成</text>
-  <rect x="15" y="646" width="930" height="46" rx="10" fill="#eaf1fb"/>
-  <rect x="15" y="646" width="5" height="46" rx="3" fill="url(#gBlue)"/>
-  <circle cx="39" cy="669" r="9.5" fill="#dceaf8"/>
-  <text x="39" y="669" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">1</text>
-  <text x="61" y="663" font-size="11.5" font-weight="700" fill="#1f2937">許諾済データの共有・利活用</text>
-  <text x="61" y="679" font-size="9.2" fill="#555">個人情報を削除し、学内・行政・企業の共同研究にも活用</text>
-  <circle cx="349" cy="669" r="9.5" fill="#dceaf8"/>
-  <text x="349" y="669" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">2</text>
-  <text x="371" y="663" font-size="11.5" font-weight="700" fill="#1f2937">AI企業と組んでノウハウ・アプリを販売</text>
-  <text x="371" y="679" font-size="9.2" fill="#555">蓄積した実践知・基盤を外部へ展開</text>
-  <circle cx="659" cy="669" r="9.5" fill="#dceaf8"/>
-  <text x="659" y="669" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">3</text>
-  <text x="681" y="663" font-size="11.5" font-weight="700" fill="#1f2937">経営判断に資する情報提供が迅速化</text>
-  <text x="681" y="679" font-size="9.2" fill="#555">データの統合・分析が容易に</text>
+  <text x="17" y="570" font-size="13" font-weight="700" fill="#6b6b6b">想定する効果</text>
+  <rect x="15" y="575" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
+  <rect x="15" y="575" width="5" height="52" rx="2.5" fill="url(#gAccH)"/>
+  <text x="27" y="601" font-size="16" fill="#16624b" dominant-baseline="central">＋3<tspan font-size="8" font-weight="400">h/週</tspan></text>
+  <text x="96" y="599" font-size="10.2" font-weight="700" fill="#1f2937">教員1人あたりの</text>
+  <text x="96" y="615" font-size="10.2" font-weight="700" fill="#1f2937">研究時間を確保</text>
+  <rect x="250" y="575" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
+  <rect x="250" y="575" width="5" height="52" rx="2.5" fill="url(#gWarn)"/>
+  <text x="262" y="601" font-size="16" fill="#c4632a" dominant-baseline="central">+30<tspan font-size="8" font-weight="400">%</tspan></text>
+  <text x="328" y="599" font-size="10.2" font-weight="700" fill="#1f2937">高度化に使える時間の増加</text>
+  <text x="328" y="615" font-size="10.2" font-weight="700" fill="#1f2937">定型問合せ・窓口業務の削減</text>
+  <rect x="485" y="575" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
+  <rect x="485" y="575" width="5" height="52" rx="2.5" fill="url(#gAccH)"/>
+  <text x="497" y="601" font-size="16" fill="#16624b" dominant-baseline="central">＋5<tspan font-size="8" font-weight="400">point</tspan></text>
+  <text x="562" y="599" font-size="10.2" font-weight="700" fill="#1f2937">院生の研究力</text>
+  <text x="562" y="615" font-size="10.2" font-weight="700" fill="#1f2937">(自己効力感・成長実感へ)</text>
+  <rect x="720" y="575" width="223" height="52" rx="10" fill="#ffffff" filter="url(#shSoft)"/>
+  <rect x="720" y="575" width="5" height="52" rx="2.5" fill="url(#gGoal)"/>
+  <text x="732" y="601" font-size="16" fill="#1c6e44" dominant-baseline="central">＋3<tspan font-size="8" font-weight="400">point</tspan></text>
+  <text x="794" y="599" font-size="10.2" font-weight="700" fill="#1f2937">レピュテーション向上</text>
+  <text x="794" y="615" font-size="10.2" font-weight="700" fill="#1f2937">大学UXの変革</text>
+  <rect x="15" y="632" width="223" height="22" rx="5" fill="#1b6ca8"/>
+  <text x="126" y="643" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">大学全体の研究高度化</text>
+  <rect x="250" y="632" width="223" height="22" rx="5" fill="#b84d5b"/>
+  <text x="361" y="643" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">Cut by DXの支援</text>
+  <rect x="485" y="632" width="223" height="22" rx="5" fill="#2e9684"/>
+  <text x="596" y="643" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central">AI時代の創造的人材の育成</text>
+  <rect x="15" y="659" width="930" height="46" rx="10" fill="#eaf1fb"/>
+  <rect x="15" y="659" width="5" height="46" rx="3" fill="url(#gBlue)"/>
+  <circle cx="39" cy="682" r="9.5" fill="#dceaf8"/>
+  <text x="39" y="682" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="61" y="676" font-size="11.5" font-weight="700" fill="#1f2937">許諾済データの共有・利活用</text>
+  <text x="61" y="692" font-size="9.2" fill="#555">個人情報を削除し、学内・行政・企業の共同研究にも活用</text>
+  <circle cx="349" cy="682" r="9.5" fill="#dceaf8"/>
+  <text x="349" y="682" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="371" y="676" font-size="11.5" font-weight="700" fill="#1f2937">AI企業と組んでノウハウ・アプリを販売</text>
+  <text x="371" y="692" font-size="9.2" fill="#555">蓄積した実践知・基盤を外部へ展開</text>
+  <circle cx="659" cy="682" r="9.5" fill="#dceaf8"/>
+  <text x="659" y="682" font-size="12.5" font-weight="700" fill="#2a5d96" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="681" y="676" font-size="11.5" font-weight="700" fill="#1f2937">経営判断に資する情報提供が迅速化</text>
+  <text x="681" y="692" font-size="9.2" fill="#555">データの統合・分析が容易に</text>
 </svg>

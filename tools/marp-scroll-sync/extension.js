@@ -169,6 +169,12 @@ function renderDeck(webview, doc) {
   const docDir = path.dirname(doc.uri.fsPath);
   const repoRoot = vscode.workspace.getWorkspaceFolder(doc.uri)?.uri.fsPath || docDir;
   const marp = new Marp({ html: true });
+  // 各ブロックトークンに元の行番号(0-based)を data-line として付与 → クリック逆引きを確実にする
+  marp.markdown.core.ruler.push('ss_line_numbers', (state) => {
+    for (const t of state.tokens) {
+      if (t.map && t.nesting === 1) t.attrSet('data-line', String(t.map[0]));
+    }
+  });
   for (const rel of ['theme/academic.css', 'theme/ponchie.css']) {
     try { marp.themeSet.add(fs.readFileSync(path.join(repoRoot, rel), 'utf8')); } catch (_) { /* 任意 */ }
   }
@@ -192,7 +198,7 @@ function buildHtml(webview, doc, initialIndex) {
   div.marpit > svg[data-marpit-svg] {
     display:block; width:100%; height:auto; max-width:1120px;
     margin:0 auto 14px; box-shadow:0 1px 8px rgba(0,0,0,.45);
-    cursor:pointer; scroll-margin-top:12px; border:3px solid transparent;
+    cursor:default; scroll-margin-top:12px; border:3px solid transparent;
   }
   div.marpit > svg.current-slide { border-color:#4aa3ff; }
   .badge { position:fixed; top:8px; right:14px; z-index:9;
@@ -256,12 +262,16 @@ function buildHtml(webview, doc, initialIndex) {
     else if (document.caretPositionFromPoint){ const p = document.caretPositionFromPoint(ev.clientX, ev.clientY); if(p) r = {startContainer:p.offsetNode}; }
     const node = r && r.startContainer;
     const el = (node && (node.nodeType===3 ? node.parentElement : node)) || ((ev.target && ev.target.closest) ? ev.target : null);
-    let px = null;
-    if (el){ try { px = parseFloat(getComputedStyle(el).fontSize) || null; } catch(_){} }
+    let px = null, line = null;
+    if (el){
+      try { px = parseFloat(getComputedStyle(el).fontSize) || null; } catch(_){}
+      const le = el.closest ? el.closest('[data-line]') : null;     // 元の行番号(確実)
+      if (le && le.tagName !== 'SECTION'){ const n = parseInt(le.getAttribute('data-line'), 10); if (Number.isFinite(n)) line = n; }
+    }
     let text = '';
     if (node && node.nodeType === 3) text = node.textContent || '';
     else if (el && el.textContent) text = el.textContent;
-    return { text, px };
+    return { text, px, line };
   }
   document.addEventListener('click', (ev)=>{
     if (ev.target && ev.target.closest && ev.target.closest('#tuner')) return; // ツールバーは逆引き対象外
@@ -271,7 +281,9 @@ function buildHtml(webview, doc, initialIndex) {
     if (i < 0) return;
     const u = probeUnderPointer(ev);
     const text = (u.text || '').replace(/\s+/g,' ').trim();
-    vscode.postMessage(text ? {type:'revealText', index:i, text, px:u.px} : {type:'revealSlide', index:i});
+    if (u.line != null) vscode.postMessage({type:'revealLine', index:i, line:u.line, px:u.px});       // data-line で確実に逆引き
+    else if (text) vscode.postMessage({type:'revealText', index:i, text, px:u.px});                    // 保険: テキスト照合
+    else vscode.postMessage({type:'revealSlide', index:i});                                            // 余白: スライド先頭
   });
   // --- ツールバー ---
   const tuner = document.getElementById('tuner');
@@ -367,6 +379,20 @@ function openPreview(context) {
       const ed = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === panelDocUri)
         || vscode.window.activeTextEditor;
       if (!ed) return;
+
+      if (m.type === 'revealLine' && typeof m.line === 'number') {
+        if (typeof m.px === 'number' && m.px > 0) lastClickedPx = Math.round(m.px); // サイズ増減の起点
+        const ln = Math.max(0, Math.min(m.line, ed.document.lineCount - 1));
+        const text = ed.document.lineAt(ln).text;
+        const startCol = text.length - text.replace(/^\s+/, '').length;
+        const range = new vscode.Range(ln, startCol, ln, Math.max(startCol, text.length));
+        ed.selection = new vscode.Selection(range.start, range.end);
+        ed.revealRange(range, vscode.TextEditorRevealType.InCenterIfOutsideViewport);
+        flashReveal(ed, range);
+        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false })
+          .then(() => postTuneState(ed));
+        return;
+      }
 
       if (m.type === 'revealText' && typeof m.text === 'string' && slideStarts[m.index] !== undefined) {
         if (typeof m.px === 'number' && m.px > 0) lastClickedPx = Math.round(m.px); // サイズ増減の起点

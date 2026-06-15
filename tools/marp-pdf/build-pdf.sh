@@ -53,8 +53,10 @@ HTML="$DECK_DIR/.marp-pdfbuild-$$.html"
 trap 'rm -rf "$TMP"; rm -f "$HTML"' EXIT
 
 echo "[1/4] marp: 全スライドを1つのHTMLに描画 (printToPDFを使わないので落ちない)"
-npx --yes @marp-team/marp-cli@latest "$MD_ABS" \
-  --theme-set "$THEME" --html --allow-local-files -o "$HTML" >/dev/null
+# --no-stdin が必須：これが無いと VS Codeのタスク/ターミナル等の非対話実行で marp が
+# 標準入力を待って固まる（"Currently waiting data from stdin stream…"）。PDFが「動かない」主因。
+npx --yes @marp-team/marp-cli@latest "$MD_ABS" --no-stdin \
+  --theme-set "$THEME" --html --allow-local-files -o "$HTML" </dev/null >/dev/null
 
 # スライド枚数を frontmatter 込みで数える(marpのページ数 == md内の --- 区切りブロック数)
 N="$(python3 - "$MD_ABS" <<'PY'

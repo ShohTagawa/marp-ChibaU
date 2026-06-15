@@ -6,20 +6,23 @@ size: 16:9
 header: '<div class="hdr-left">生成AI×研究</div><img class="hdr-logo" src="./src/research-genai-logo.svg" alt="研究における生成AIの活用法">'
 footer: ''
 style: |
-  :root { --accent:#C2410C; --accent-dark:#9A3412; --accent-soft:#FBE7D6; --section-bg:#FBF4EF; --hdr-left-w:24%; }
+  :root { --accent:#A33818; --accent-dark:#832D18; --accent-soft:#FBE7D6; --section-bg:#FBF4EF; --hdr-left-w:24%; }
   section .page-title { left:22%; width:36%; }
   h2 { color: var(--accent-dark); }
   section svg { max-width:100%; height:auto; }
-  .important { display:inline-block; background:#FBE7D6; color:#9A3412; font-weight:700; font-size:20px; padding:1px 12px; border-radius:7px; margin-left:8px; letter-spacing:0.12em; vertical-align:middle; border:1px solid #E6C4A8; }
+  .important { display:inline-block; background:#FBE7D6; color:#832D18; font-weight:700; font-size:20px; padding:1px 12px; border-radius:7px; margin-left:8px; letter-spacing:0.12em; vertical-align:middle; border:1px solid #E6C4A8; }
   .cbox { border-radius:10px; overflow:hidden; background:#F5F6F7; margin:8px 0; border:1px solid #e6e7e9; }
   .cbox > .h { color:#fff; font-weight:700; font-size:23px; padding:8px 20px; }
-  .cbox > .b { padding:12px 20px 14px; font-size:23px; line-height:1.6; }
-  .cbox.deep > .h { background:#9A3412; } .cbox.mid > .h { background:#C2410C; } .cbox.soft > .h { background:#E08A4F; color:#3a1d0a; } .cbox.gray > .h { background:#5B6068; } .cbox.blue > .h { background:#1A6BB0; }
-  .cbox.red > .h { background:var(--accent); } .cbox.orange > .h { background:#C2410C; } .cbox.green > .h { background:#1A6BB0; }
+  .cbox > .b { padding:12px 20px 14px; font-size:23px; line-height:1.6; color:var(--text); }
+  /* cbox本文は常に黒（箱に red 等が付いても全文が赤くならない）。インライン強調だけ色を残す */
+  .cbox > .b .red, .cbox > .b .hl { color:var(--accent); }
+  .cbox > .b .hl-dark { color:var(--accent-dark); }
+  .cbox.deep > .h { background:#832D18; } .cbox.mid > .h { background:#A33818; } .cbox.soft > .h { background:#E08A4F; color:#3a1d0a; } .cbox.gray > .h { background:#5B6068; } .cbox.blue > .h { background:#1A6BB0; }
+  .cbox.red > .h { background:var(--accent); } .cbox.orange > .h { background:#A33818; } .cbox.green > .h { background:#1A6BB0; }
   .cbox .b ul { margin:3px 0 3px 1.1em; } .cbox .b li { margin:6px 0; }
   .band { background:var(--accent-soft); border-left:8px solid var(--accent); border-radius:6px; padding:10px 20px; margin:10px 0; font-size:25px; font-weight:700; }
   .statement { text-align:center; font-weight:700; font-size:30px; margin-top:8px; color:var(--accent-dark); }
-  .qbox { background:#FBF4EF; border:2px solid #C2410C; border-radius:10px; padding:10px 18px; margin:8px 0; font-weight:700; font-size:24px; }
+  .qbox { background:#FBF4EF; border:2px solid #A33818; border-radius:10px; padding:10px 18px; margin:8px 0; font-weight:700; font-size:24px; }
   .qbox .ans { display:block; margin-top:8px; font-weight:400; font-size:22px; color:#444; border-top:1px dashed #d8b48f; padding-top:8px; }
   .hl-1 { background:#FBE7D6; padding:0 4px; border-radius:3px; } .hl-2 { background:#F3DCC8; padding:0 4px; border-radius:3px; }
   .red { color:var(--accent); font-weight:700; } .blu { color:#1A6BB0; font-weight:700; } .gry { color:#5B6068; font-weight:700; }
@@ -63,7 +66,7 @@ style: |
 <img src="./src/profile.jpg" alt="田川 翔">
 </div>
 <div class="title-meta">
-<div class="title-event">生成AIの仕組みを、Colabで小さなGPT（min-GPT→ichimo-GPT）を作って体感する<br><span style="font-size:18px; color:#888;">ナレッジ③</span></div>
+<div class="title-event">生成AIの仕組みを、Colabで<br>小さなGPTを作って体感する<br><span style="font-size:18px; color:#888;">ナレッジ③</span></div>
 <div class="title-affil">千葉大学 国際未来教育基幹<br>田川 翔（専門：高等教育論・地球惑星科学）</div>
 </div>
 </div>
@@ -128,7 +131,7 @@ style: |
 </table>
 </div>
 
-<div class="takeaway">第1回で扱った「AIは<span class="red">次にくる語を確率で予測している</span>」を、今回は自分の手で動かして確かめる回です。</div>
+<div class="takeaway">第1回で扱った「AIは<span class="red">次にくる語を確率で予測している</span>」を自分で確かめる回です。</div>
 
 ---
 
@@ -136,7 +139,7 @@ style: |
 
 <div class="page-title">この回のねらい</div>
 
-## 生成AIの“超ミニチュア”を作り、仕組みに「勘」を持つ
+## 生成AIの“超ミニチュア”を作り、仕組みに「勘どころを持つ
 
 <div class="sections" style="justify-content:flex-start; margin-top:18px; gap:22px;">
 
@@ -174,23 +177,23 @@ style: |
 <div class="fig-area">
 <svg viewBox="0 0 1000 300" width="100%" style="max-height:360px">
   <g text-anchor="start" font-size="16">
-    <rect x="12" y="8" width="20" height="14" rx="3" fill="#fff" stroke="#C2410C" stroke-width="1.8"/><text x="40" y="20" font-weight="700" fill="#5B6068">必須</text>
+    <rect x="12" y="8" width="20" height="14" rx="3" fill="#fff" stroke="#A33818" stroke-width="1.8"/><text x="40" y="20" font-weight="700" fill="#5B6068">必須</text>
     <rect x="120" y="8" width="20" height="14" rx="3" fill="#EDEEF0" stroke="#5B6068" stroke-width="1.5" stroke-dasharray="3 2"/><text x="148" y="20" font-weight="700" fill="#5B6068">参考（任意）</text>
-    <rect x="300" y="8" width="20" height="14" rx="3" fill="#FBE7D6" stroke="#9A3412" stroke-width="2"/><text x="328" y="20" font-weight="700" fill="#9A3412">★提出（ボーナス）</text>
+    <rect x="300" y="8" width="20" height="14" rx="3" fill="#FBE7D6" stroke="#832D18" stroke-width="2"/><text x="328" y="20" font-weight="700" fill="#832D18">★可能なら提出（ボーナス）</text>
   </g>
   <g text-anchor="middle">
-    <g><rect x="12" y="66" width="124" height="104" rx="10" fill="#F3DCC8" stroke="#9A3412" stroke-width="2"/><text x="74" y="88" font-size="16" font-weight="700" fill="#9A3412">この動画</text><text x="74" y="120" font-size="24" font-weight="800" fill="#9A3412">①</text><text x="74" y="150" font-size="18" font-weight="700" fill="#9A3412">学び方</text></g>
-    <g><rect x="156" y="66" width="124" height="104" rx="10" fill="#EDEEF0" stroke="#5B6068" stroke-width="1.8" stroke-dasharray="5 3"/><text x="218" y="92" font-size="24" font-weight="800" fill="#5B6068">②</text><text x="218" y="124" font-size="18" font-weight="700">Colab操作</text><text x="218" y="152" font-size="16" fill="#5B6068">（参考）</text></g>
-    <g><rect x="300" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#C2410C" stroke-width="2"/><text x="362" y="92" font-size="24" font-weight="800" fill="#C2410C">③</text><text x="362" y="128" font-size="18" font-weight="700">中身を可視化</text></g>
-    <g><rect x="444" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#C2410C" stroke-width="2"/><text x="506" y="92" font-size="24" font-weight="800" fill="#C2410C">④</text><text x="506" y="124" font-size="18" font-weight="700">min-GPT</text><text x="506" y="150" font-size="18" font-weight="700">を作る</text></g>
-    <g><rect x="588" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#C2410C" stroke-width="2"/><text x="650" y="92" font-size="24" font-weight="800" fill="#C2410C">⑤</text><text x="650" y="128" font-size="18" font-weight="700">トーカナイザ</text></g>
-    <g><rect x="732" y="66" width="124" height="104" rx="10" fill="#FBE7D6" stroke="#9A3412" stroke-width="2.5"/><text x="794" y="88" font-size="16" font-weight="800" fill="#C2410C">★提出</text><text x="794" y="118" font-size="24" font-weight="800" fill="#9A3412">⑥</text><text x="794" y="150" font-size="17" font-weight="700" fill="#9A3412">ichimo-GPT</text></g>
-    <g><rect x="876" y="66" width="112" height="104" rx="10" fill="#fff" stroke="#C2410C" stroke-width="2"/><text x="932" y="92" font-size="24" font-weight="800" fill="#C2410C">⑦</text><text x="932" y="128" font-size="18" font-weight="700">推論と</text><text x="932" y="150" font-size="18" font-weight="700">まとめ</text></g>
-    <g fill="#C2410C" font-size="24" font-weight="800">
+    <g><rect x="12" y="66" width="124" height="104" rx="10" fill="#F3DCC8" stroke="#832D18" stroke-width="2"/><text x="74" y="88" font-size="16" font-weight="700" fill="#832D18">この資料</text><text x="74" y="120" font-size="24" font-weight="800" fill="#832D18"></text><text x="74" y="150" font-size="18" font-weight="700" fill="#832D18">学び方</text></g>
+    <g><rect x="156" y="66" width="124" height="104" rx="10" fill="#EDEEF0" stroke="#5B6068" stroke-width="1.8" stroke-dasharray="5 3"/><text x="218" y="92" font-size="24" font-weight="800" fill="#5B6068">①</text><text x="218" y="124" font-size="18" font-weight="700">Colab操作</text><text x="218" y="152" font-size="16" fill="#5B6068">（参考）</text></g>
+    <g><rect x="300" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#A33818" stroke-width="2"/><text x="362" y="92" font-size="24" font-weight="800" fill="#A33818">②</text><text x="362" y="128" font-size="18" font-weight="700">中身を可視化</text></g>
+    <g><rect x="444" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#A33818" stroke-width="2"/><text x="506" y="92" font-size="24" font-weight="800" fill="#A33818">③</text><text x="506" y="124" font-size="18" font-weight="700">min-GPT</text><text x="506" y="150" font-size="18" font-weight="700">を作る</text></g>
+    <g><rect x="588" y="66" width="124" height="104" rx="10" fill="#fff" stroke="#A33818" stroke-width="2"/><text x="650" y="92" font-size="24" font-weight="800" fill="#A33818">④</text><text x="650" y="128" font-size="18" font-weight="700">トーカナイザー</text></g>
+    <g><rect x="732" y="66" width="124" height="104" rx="10" fill="#FBE7D6" stroke="#832D18" stroke-width="2.5"/><text x="794" y="88" font-size="16" font-weight="800" fill="#A33818">★可能なら提出</text><text x="794" y="118" font-size="24" font-weight="800" fill="#832D18">⑤</text><text x="794" y="150" font-size="17" font-weight="700" fill="#832D18">ichimo-GPT</text></g>
+    <g><rect x="876" y="66" width="112" height="104" rx="10" fill="#fff" stroke="#A33818" stroke-width="2"/><text x="932" y="92" font-size="24" font-weight="800" fill="#A33818"></text><text x="932" y="128" font-size="18" font-weight="700">推論と</text><text x="932" y="150" font-size="18" font-weight="700">まとめ</text></g>
+    <g fill="#A33818" font-size="24" font-weight="800">
       <text x="146" y="124">→</text><text x="290" y="124">→</text><text x="434" y="124">→</text><text x="578" y="124">→</text><text x="722" y="124">→</text><text x="866" y="124">→</text>
     </g>
   </g>
-  <rect x="120" y="222" width="760" height="50" rx="10" fill="#C2410C"/>
+  <rect x="120" y="222" width="760" height="50" rx="10" fill="#A33818"/>
   <text x="500" y="246" text-anchor="middle" font-size="18" font-weight="800" fill="#fff">ノートを順に実行して中身を体感</text>
   <text x="500" y="266" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">⑥ichimo-GPT（＝最後の演習）は任意でボーナス提出（視聴後6/21まで）</text>
 </svg>
@@ -204,17 +207,17 @@ style: |
 
 <div class="page-title">この回の学び方</div>
 
-## コードは書かない ── 実行して、見て、分からなければAIに聞く
+## コードは書く必要はない ── 実行し、見て、分からなければAIに聞く
 
 <div class="split-body">
 <div class="left">
 
 <svg viewBox="0 0 360 300" width="100%" style="max-height:320px">
   <g text-anchor="middle">
-    <rect x="55" y="24" width="250" height="58" rx="12" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="180" y="50" font-size="18" font-weight="800" fill="#C2410C">① ノートをコピー</text>
+    <rect x="55" y="24" width="250" height="58" rx="12" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="180" y="50" font-size="18" font-weight="800" fill="#A33818">① ノートをコピー</text>
     <text x="180" y="72" font-size="16" fill="#5B6068">自分のドライブに保存</text>
-    <text x="180" y="100" font-size="24" fill="#C2410C" font-weight="800">↓</text>
+    <text x="180" y="100" font-size="24" fill="#A33818" font-weight="800">↓</text>
     <rect x="55" y="110" width="250" height="58" rx="12" fill="#E2EDF6" stroke="#1A6BB0" stroke-width="2"/>
     <text x="180" y="136" font-size="18" font-weight="800" fill="#1A6BB0">② セルを順に実行 ▶</text>
     <text x="180" y="158" font-size="16" fill="#5B6068">出力を見て中身を確かめる</text>
@@ -232,11 +235,11 @@ style: |
 
 - <span class="red">プログラムは書きません</span>。実行して理解すればOK
 - 最初に計算を速くする<span class="red">GPUに切り替え</span>（やり方は動画②／p.010で説明）。<span class="red">90分でタイムアウト</span>＝1ノートは一気に
-- <span class="red">提出は任意（ボーナス）</span>：ichimo-GPT（1文字予測GPT・動画6）の結果・コード改善を出すと加点（視聴後6/21まで）
+- <span class="red">提出は任意（ボーナス）</span>：ichimo-GPT（1文字予測GPT・動画6）の結果・コード改善を出すと加点
 
 </div></div>
 
-<div class="band">訳の分からない所こそ、生成AIに聞く好機。使いながら学ぶ。</div>
+<div class="band">コンテキストがあるが分からない所こそ、生成AIに聞く好機。使いながら学ぶ。</div>
 
 </div>
 </div>
@@ -245,7 +248,7 @@ style: |
 
 <!-- _class: divider -->
 
-<div class="chapter-num">②</div>
+<div class="chapter-num">動画 1</div>
 
 # Colab の使い方
 
@@ -263,16 +266,16 @@ style: |
 <div class="left">
 
 <svg viewBox="0 0 360 300" width="100%" style="max-height:300px">
-  <rect x="30" y="22" width="300" height="256" rx="12" fill="#fff" stroke="#C2410C" stroke-width="2"/>
+  <rect x="30" y="22" width="300" height="256" rx="12" fill="#fff" stroke="#A33818" stroke-width="2"/>
   <rect x="30" y="22" width="300" height="34" rx="12" fill="#FBE7D6"/>
   <rect x="30" y="44" width="300" height="12" fill="#FBE7D6"/>
   <circle cx="50" cy="39" r="6" fill="#E08A4F"/>
   <circle cx="68" cy="39" r="6" fill="#E08A4F"/>
-  <text x="200" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#9A3412">Google Colab（ブラウザ）</text>
+  <text x="200" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#832D18">Google Colab（ブラウザ）</text>
   <rect x="48" y="74" width="264" height="56" rx="8" fill="#2b2b2b"/>
   <text x="62" y="98" font-size="16" font-family="monospace" fill="#9CDCFE">print("hello")</text>
   <text x="62" y="120" font-size="16" font-family="monospace" fill="#888">▶ 実行する</text>
-  <circle cx="62" cy="158" r="11" fill="#C2410C"/>
+  <circle cx="62" cy="158" r="11" fill="#A33818"/>
   <path d="M58 153 L58 163 L67 158 Z" fill="#fff"/>
   <text x="200" y="163" text-anchor="middle" font-size="16" fill="#5B6068">セルを ▶ で実行</text>
   <rect x="48" y="186" width="264" height="60" rx="8" fill="#F5F6F7" stroke="#cdd0d4"/>
@@ -343,13 +346,13 @@ import torch
 <div class="left">
 
 <svg viewBox="0 0 360 290" width="100%" style="max-height:290px">
-  <rect x="20" y="26" width="320" height="48" rx="9" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-  <text x="180" y="48" text-anchor="middle" font-size="17" font-weight="800" fill="#9A3412">メニュー：ランタイム</text>
+  <rect x="20" y="26" width="320" height="48" rx="9" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+  <text x="180" y="48" text-anchor="middle" font-size="17" font-weight="800" fill="#832D18">メニュー：ランタイム</text>
   <text x="180" y="67" text-anchor="middle" font-size="16" fill="#5B6068">→ ランタイムのタイプを変更</text>
-  <text x="180" y="100" text-anchor="middle" font-size="24" fill="#C2410C" font-weight="800">↓</text>
-  <rect x="20" y="114" width="320" height="62" rx="9" fill="#fff" stroke="#C2410C" stroke-width="3"/>
-  <text x="180" y="140" text-anchor="middle" font-size="19" font-weight="800" fill="#C2410C">T4 GPU を選ぶ</text>
-  <text x="180" y="163" text-anchor="middle" font-size="16" fill="#9A3412" font-weight="700">無料枠で使える定番（今回はこれだけ）</text>
+  <text x="180" y="100" text-anchor="middle" font-size="24" fill="#A33818" font-weight="800">↓</text>
+  <rect x="20" y="114" width="320" height="62" rx="9" fill="#fff" stroke="#A33818" stroke-width="3"/>
+  <text x="180" y="140" text-anchor="middle" font-size="19" font-weight="800" fill="#A33818">T4 GPU を選ぶ</text>
+  <text x="180" y="163" text-anchor="middle" font-size="16" fill="#832D18" font-weight="700">無料枠で使える定番（今回はこれだけ）</text>
   <text x="180" y="226" text-anchor="middle" font-size="16" fill="#a8acb2">（上位GPUは有料・今回は使いません）</text>
 </svg>
 
@@ -358,7 +361,7 @@ import torch
 
 <div class="cbox blue"><div class="h">速さの正体はGPU</div><div class="b">
 
-- <span class="red">今回はすべて無料枠のT4で完結。課金は不要です</span>
+- <span class="red">今回はすべて無料枠のT4で完結。課金は不要</span>
 - <span class="blu">GPU＝並列計算が得意なチップ</span>。機械学習の大量の掛け算を一気にこなせるので速い
 - 既定はCPU。最初に<span class="blu">ランタイム → T4 GPU</span>へ切り替えておく
 
@@ -381,12 +384,12 @@ import torch
 <div class="left">
 
 <svg viewBox="0 0 360 290" width="100%" style="max-height:290px">
-  <circle cx="120" cy="120" r="70" fill="#fff" stroke="#C2410C" stroke-width="3"/>
-  <line x1="120" y1="120" x2="120" y2="68" stroke="#9A3412" stroke-width="5" stroke-linecap="round"/>
-  <line x1="120" y1="120" x2="158" y2="120" stroke="#9A3412" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="120" cy="120" r="6" fill="#9A3412"/>
-  <text x="120" y="210" text-anchor="middle" font-size="18" font-weight="800" fill="#9A3412">90分 無操作で放置</text>
-  <text x="240" y="110" text-anchor="middle" font-size="40" fill="#C2410C" font-weight="800">→</text>
+  <circle cx="120" cy="120" r="70" fill="#fff" stroke="#A33818" stroke-width="3"/>
+  <line x1="120" y1="120" x2="120" y2="68" stroke="#832D18" stroke-width="5" stroke-linecap="round"/>
+  <line x1="120" y1="120" x2="158" y2="120" stroke="#832D18" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="120" cy="120" r="6" fill="#832D18"/>
+  <text x="120" y="210" text-anchor="middle" font-size="18" font-weight="800" fill="#832D18">90分 無操作で放置</text>
+  <text x="240" y="110" text-anchor="middle" font-size="40" fill="#A33818" font-weight="800">→</text>
   <rect x="248" y="78" width="96" height="84" rx="10" fill="#EDEEF0" stroke="#5B6068" stroke-width="2"/>
   <text x="296" y="118" text-anchor="middle" font-size="34" fill="#5B6068" font-weight="800">×</text>
   <text x="296" y="150" text-anchor="middle" font-size="16" fill="#5B6068" font-weight="700">接続が切れ消える</text>
@@ -420,16 +423,16 @@ import torch
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 290" width="100%" style="max-height:290px">
+<svg viewBox="0 0 360 290" width="100%" style="max-height:380px">
   <rect x="36" y="22" width="288" height="66" rx="12" fill="#EDEEF0" stroke="#5B6068" stroke-width="2"/>
   <text x="180" y="50" text-anchor="middle" font-size="17" font-weight="800" fill="#5B6068">配布ノート（原本）</text>
-  <text x="180" y="72" text-anchor="middle" font-size="16" fill="#C2410C" font-weight="700">Moodleのリンクから開く</text>
+  <text x="180" y="72" text-anchor="middle" font-size="16" fill="#A33818" font-weight="700">Moodleのリンクから開く</text>
   <text x="180" y="106" text-anchor="middle" font-size="16" fill="#5B6068">閲覧専用 = 書き込めない</text>
-  <text x="180" y="132" text-anchor="middle" font-size="24" fill="#C2410C" font-weight="800">↓</text>
-  <text x="180" y="152" text-anchor="middle" font-size="16" fill="#C2410C" font-weight="700">「ドライブにコピー」</text>
-  <rect x="36" y="166" width="288" height="64" rx="12" fill="#FBE7D6" stroke="#C2410C" stroke-width="2.5"/>
-  <text x="180" y="194" text-anchor="middle" font-size="17" font-weight="800" fill="#9A3412">自分のコピー</text>
-  <text x="180" y="216" text-anchor="middle" font-size="16" fill="#9A3412">ここに自由に実行・保存</text>
+  <text x="180" y="132" text-anchor="middle" font-size="24" fill="#A33818" font-weight="800">↓</text>
+  <text x="180" y="152" text-anchor="middle" font-size="16" fill="#A33818" font-weight="700">「ドライブにコピー」</text>
+  <rect x="36" y="166" width="288" height="64" rx="12" fill="#FBE7D6" stroke="#A33818" stroke-width="2.5"/>
+  <text x="180" y="194" text-anchor="middle" font-size="17" font-weight="800" fill="#832D18">自分のコピー</text>
+  <text x="180" y="216" text-anchor="middle" font-size="16" fill="#832D18">ここに自由に実行・保存</text>
 </svg>
 
 </div>
@@ -452,7 +455,7 @@ import torch
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 3</div>
+<div class="chapter-num">動画 2</div>
 
 # 大規模言語モデルの中を可視化する
 
@@ -471,10 +474,10 @@ import torch
 
 <svg viewBox="0 0 380 280" width="100%" style="max-height:300px">
   <g text-anchor="middle">
-    <rect x="40" y="36" width="300" height="64" rx="12" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
+    <rect x="40" y="36" width="300" height="64" rx="12" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
     <text x="190" y="64" font-size="18" font-weight="700" fill="#5B6068">入力（バラバラの並び）</text>
-    <text x="190" y="90" font-size="26" font-weight="800" fill="#9A3412" class="mono">B  A  C  A  B</text>
-    <text x="190" y="128" font-size="30" fill="#C2410C" font-weight="800">↓</text>
+    <text x="190" y="90" font-size="26" font-weight="800" fill="#832D18" class="mono">B  A  C  A  B</text>
+    <text x="190" y="128" font-size="30" fill="#A33818" font-weight="800">↓</text>
     <rect x="40" y="146" width="300" height="64" rx="12" fill="#E2EDF6" stroke="#1A6BB0" stroke-width="2"/>
     <text x="190" y="174" font-size="18" font-weight="700" fill="#5B6068">出力（昇順に並べる）</text>
     <text x="190" y="200" font-size="26" font-weight="800" fill="#1A6BB0" class="mono">A  A  B  B  C</text>
@@ -490,7 +493,7 @@ import torch
 
 - 答えが一意で<span class="red">正解・不正解がはっきり</span>する
 - 文法も意味もいらない、<span class="red">極小のモデル</span>で解ける
-- それでも中身は<span class="red">本物のTransformer</span>と同じ部品
+- 中身は<span class="red">本物のTransformer</span>と同じ部品
 
 <div style="font-size:18px;color:#6e7378;margin-top:4px;">Transformer＝今のChatGPT等の基本設計。部品はこの後1枚ずつ見ます</div>
 
@@ -532,17 +535,17 @@ import torch
 
 ## 1文字が「次の確率」になるまでの一本道
 
-<div style="text-align:center;font-size:20px;color:#5B6068;margin:-2px 0 6px;">今は中身の名前を覚えなくてOK。<span class="red">入口 → たくさんの処理 → 出口（確率）の一本道</span>だと掴むだけ</div>
+<div style="text-align:center;font-size:20px;color:#5B6068;margin:-2px 0 6px;">今は中身の名前を覚えなくてOK。<span class="red">入口 → たくさんの処理 → 出口（確率）の一本道</span>だと理解。</div>
 
 <div class="fig-area">
 <svg viewBox="0 0 980 320" width="100%" style="max-height:420px">
   <g text-anchor="middle">
-    <rect x="20" y="118" width="150" height="84" rx="14" fill="#FBE7D6" stroke="#C2410C" stroke-width="2.5"/>
-    <text x="95" y="152" font-size="20" font-weight="800" fill="#9A3412">入口</text>
+    <rect x="20" y="118" width="150" height="84" rx="14" fill="#FBE7D6" stroke="#A33818" stroke-width="2.5"/>
+    <text x="95" y="152" font-size="20" font-weight="800" fill="#832D18">入口</text>
     <text x="95" y="180" font-size="18" fill="#5B6068">1文字</text>
-    <text x="200" y="166" font-size="34" fill="#C2410C" font-weight="800">→</text>
-    <rect x="240" y="60" width="500" height="200" rx="16" fill="#FBF4EF" stroke="#C2410C" stroke-width="2.5"/>
-    <text x="490" y="92" font-size="21" font-weight="800" fill="#9A3412">たくさんの処理（3層を順に通す）</text>
+    <text x="200" y="166" font-size="34" fill="#A33818" font-weight="800">→</text>
+    <rect x="240" y="60" width="500" height="200" rx="16" fill="#FBF4EF" stroke="#A33818" stroke-width="2.5"/>
+    <text x="490" y="92" font-size="21" font-weight="800" fill="#832D18">たくさんの処理（3層を順に通す）</text>
     <rect x="280" y="118" width="130" height="84" rx="12" fill="#fff" stroke="#E08A4F" stroke-width="2"/>
     <text x="345" y="152" font-size="18" font-weight="700" fill="#5B6068">どこを</text>
     <text x="345" y="178" font-size="18" font-weight="700" fill="#5B6068">見るか</text>
@@ -554,7 +557,7 @@ import torch
     <rect x="640" y="118" width="80" height="84" rx="12" fill="#fff" stroke="#E08A4F" stroke-width="2"/>
     <text x="680" y="158" font-size="18" font-weight="700" fill="#5B6068">×3</text>
     <text x="680" y="184" font-size="16" fill="#5B6068">層</text>
-    <text x="770" y="166" font-size="34" fill="#C2410C" font-weight="800">→</text>
+    <text x="770" y="166" font-size="34" fill="#A33818" font-weight="800">→</text>
     <rect x="810" y="118" width="150" height="84" rx="14" fill="#E2EDF6" stroke="#1A6BB0" stroke-width="2.5"/>
     <text x="885" y="150" font-size="20" font-weight="800" fill="#1A6BB0">出口</text>
     <text x="885" y="178" font-size="17" fill="#5B6068">次の文字の確率</text>
@@ -583,12 +586,12 @@ import torch
     <line x1="64" y1="24" x2="64" y2="250" stroke="#5B6068" stroke-width="2.5"/>
     <line x1="64" y1="250" x2="360" y2="250" stroke="#5B6068" stroke-width="2.5"/>
     <text x="36" y="50" font-size="18" fill="#5B6068" font-weight="700" text-anchor="middle">ロス</text>
-    <text x="38" y="70" font-size="16" fill="#9A3412" font-weight="700" text-anchor="middle">大=下手</text>
+    <text x="38" y="70" font-size="16" fill="#832D18" font-weight="700" text-anchor="middle">大=下手</text>
     <text x="38" y="244" font-size="16" fill="#1A6BB0" font-weight="700" text-anchor="middle">小=上手</text>
     <text x="290" y="282" font-size="18" fill="#5B6068" font-weight="700" text-anchor="middle">学習回数（予測を繰り返した数）→</text>
-    <path d="M70,44 C130,70 160,170 220,210 C280,236 330,240 358,242" fill="none" stroke="#C2410C" stroke-width="4.5"/>
-    <circle cx="70" cy="44" r="6" fill="#9A3412"/>
-    <text x="104" y="40" font-size="17" fill="#9A3412" font-weight="700">学習前＝出力バラバラ</text>
+    <path d="M70,44 C130,70 160,170 220,210 C280,236 330,240 358,242" fill="none" stroke="#A33818" stroke-width="4.5"/>
+    <circle cx="70" cy="44" r="6" fill="#832D18"/>
+    <text x="104" y="40" font-size="17" fill="#832D18" font-weight="700">学習前＝出力バラバラ</text>
     <circle cx="358" cy="242" r="6" fill="#1A6BB0"/>
     <text x="300" y="232" font-size="17" fill="#1A6BB0" font-weight="700">下げ止まり</text>
   </g>
@@ -627,18 +630,18 @@ import torch
   <g text-anchor="middle" font-size="16">
     <text x="180" y="24" font-size="17" font-weight="700" fill="#5B6068">注意の許可表（行＝今の文字）</text>
     <g font-weight="800">
-      <text x="120" y="58" fill="#9A3412">B</text><text x="170" y="58" fill="#9A3412">A</text><text x="220" y="58" fill="#9A3412">C</text>
+      <text x="120" y="58" fill="#832D18">B</text><text x="170" y="58" fill="#832D18">A</text><text x="220" y="58" fill="#832D18">C</text>
     </g>
     <!-- row1 -->
     <rect x="100" y="68" width="40" height="40" fill="#E08A4F" stroke="#fff"/><rect x="150" y="68" width="40" height="40" fill="#EDEEF0" stroke="#fff"/><rect x="200" y="68" width="40" height="40" fill="#EDEEF0" stroke="#fff"/>
-    <text x="80" y="94" fill="#9A3412" font-weight="800">B</text>
+    <text x="80" y="94" fill="#832D18" font-weight="800">B</text>
     <!-- row2 -->
     <rect x="100" y="110" width="40" height="40" fill="#E08A4F" stroke="#fff"/><rect x="150" y="110" width="40" height="40" fill="#E08A4F" stroke="#fff"/><rect x="200" y="110" width="40" height="40" fill="#EDEEF0" stroke="#fff"/>
-    <text x="80" y="136" fill="#9A3412" font-weight="800">A</text>
+    <text x="80" y="136" fill="#832D18" font-weight="800">A</text>
     <!-- row3 -->
     <rect x="100" y="152" width="40" height="40" fill="#E08A4F" stroke="#fff"/><rect x="150" y="152" width="40" height="40" fill="#E08A4F" stroke="#fff"/><rect x="200" y="152" width="40" height="40" fill="#E08A4F" stroke="#fff"/>
-    <text x="80" y="178" fill="#9A3412" font-weight="800">C</text>
-    <text x="180" y="226" font-size="16" fill="#C2410C" font-weight="700">塗り＝見てよい／白＝未来なので0</text>
+    <text x="80" y="178" fill="#832D18" font-weight="800">C</text>
+    <text x="180" y="226" font-size="16" fill="#A33818" font-weight="700">塗り＝見てよい／白＝未来なので0</text>
     <text x="180" y="252" font-size="16" fill="#5B6068">右上が必ず空く（三角形）</text>
   </g>
 </svg>
@@ -649,7 +652,7 @@ import torch
 <div class="cbox blue"><div class="h">なぜ隠すと予測が学べるか</div><div class="b">
 
 - 先（答え）が見えると<span class="blu">カンニング</span>になり予測の練習にならない
-- だから各文字は<span class="blu">自分より前だけ</span>を見て次を当てる
+- 各文字は<span class="blu">自分より前だけ</span>を見て次を当てる
 - 予測 → 入力に戻す → また予測。これが<span class="blu">「1語ずつ生成」</span>の正体
 
 </div></div>
@@ -670,8 +673,8 @@ import torch
 <div class="fig-area">
 <svg viewBox="0 0 900 440" width="100%" style="max-height:430px">
   <g text-anchor="middle">
-    <text x="200" y="28" font-size="20" font-weight="800" fill="#9A3412">層1・ヘッド1</text>
-    <text x="480" y="28" font-size="20" font-weight="800" fill="#C2410C">層2・ヘッド2</text>
+    <text x="200" y="28" font-size="20" font-weight="800" fill="#832D18">層1・ヘッド1</text>
+    <text x="480" y="28" font-size="20" font-weight="800" fill="#A33818">層2・ヘッド2</text>
     <text x="760" y="28" font-size="20" font-weight="800" fill="#E08A4F">層3・ヘッド3</text>
     <text x="200" y="52" font-size="17" fill="#5B6068">近くを見る</text>
     <text x="480" y="52" font-size="17" fill="#5B6068">離れた同じ文字を見る</text>
@@ -683,25 +686,25 @@ import torch
   <!-- heatmap 1 -->
   <g>
     <text x="170" y="74" font-size="18" font-weight="800" fill="#5B6068">A</text><text x="230" y="74" font-size="18" font-weight="800" fill="#5B6068">B</text><text x="290" y="74" font-size="18" font-weight="800" fill="#5B6068">C</text>
-    <text x="118" y="126" font-size="18" font-weight="800" fill="#9A3412">A</text><text x="118" y="186" font-size="18" font-weight="800" fill="#9A3412">B</text><text x="118" y="246" font-size="18" font-weight="800" fill="#9A3412">C</text>
+    <text x="118" y="126" font-size="18" font-weight="800" fill="#832D18">A</text><text x="118" y="186" font-size="18" font-weight="800" fill="#832D18">B</text><text x="118" y="246" font-size="18" font-weight="800" fill="#832D18">C</text>
     <rect x="140" y="82" width="180" height="180" fill="#FBE7D6"/>
-    <rect x="140" y="82" width="60" height="60" fill="#9A3412"/><rect x="200" y="142" width="60" height="60" fill="#C2410C"/><rect x="260" y="202" width="60" height="60" fill="#9A3412"/>
+    <rect x="140" y="82" width="60" height="60" fill="#832D18"/><rect x="200" y="142" width="60" height="60" fill="#A33818"/><rect x="260" y="202" width="60" height="60" fill="#832D18"/>
     <rect x="140" y="82" width="180" height="180" fill="none" stroke="#5B6068" stroke-width="2"/>
   </g>
   <!-- heatmap 2 -->
   <g>
     <text x="450" y="74" font-size="18" font-weight="800" fill="#5B6068">A</text><text x="510" y="74" font-size="18" font-weight="800" fill="#5B6068">B</text><text x="570" y="74" font-size="18" font-weight="800" fill="#5B6068">C</text>
-    <text x="398" y="126" font-size="18" font-weight="800" fill="#9A3412">A</text><text x="398" y="186" font-size="18" font-weight="800" fill="#9A3412">B</text><text x="398" y="246" font-size="18" font-weight="800" fill="#9A3412">C</text>
+    <text x="398" y="126" font-size="18" font-weight="800" fill="#832D18">A</text><text x="398" y="186" font-size="18" font-weight="800" fill="#832D18">B</text><text x="398" y="246" font-size="18" font-weight="800" fill="#832D18">C</text>
     <rect x="420" y="82" width="180" height="180" fill="#FBE7D6"/>
-    <rect x="480" y="82" width="60" height="60" fill="#C2410C"/><rect x="420" y="142" width="60" height="60" fill="#9A3412"/><rect x="540" y="202" width="60" height="60" fill="#E8B488"/>
+    <rect x="480" y="82" width="60" height="60" fill="#A33818"/><rect x="420" y="142" width="60" height="60" fill="#832D18"/><rect x="540" y="202" width="60" height="60" fill="#E8B488"/>
     <rect x="420" y="82" width="180" height="180" fill="none" stroke="#5B6068" stroke-width="2"/>
   </g>
   <!-- heatmap 3 -->
   <g>
     <text x="730" y="74" font-size="18" font-weight="800" fill="#5B6068">A</text><text x="790" y="74" font-size="18" font-weight="800" fill="#5B6068">B</text><text x="850" y="74" font-size="18" font-weight="800" fill="#5B6068">C</text>
-    <text x="678" y="126" font-size="18" font-weight="800" fill="#9A3412">A</text><text x="678" y="186" font-size="18" font-weight="800" fill="#9A3412">B</text><text x="678" y="246" font-size="18" font-weight="800" fill="#9A3412">C</text>
+    <text x="678" y="126" font-size="18" font-weight="800" fill="#832D18">A</text><text x="678" y="186" font-size="18" font-weight="800" fill="#832D18">B</text><text x="678" y="246" font-size="18" font-weight="800" fill="#832D18">C</text>
     <rect x="700" y="82" width="180" height="180" fill="#FBE7D6"/>
-    <rect x="760" y="142" width="60" height="60" fill="#C2410C"/><rect x="700" y="202" width="60" height="60" fill="#9A3412"/><rect x="820" y="82" width="60" height="60" fill="#E8B488"/>
+    <rect x="760" y="142" width="60" height="60" fill="#A33818"/><rect x="700" y="202" width="60" height="60" fill="#832D18"/><rect x="820" y="82" width="60" height="60" fill="#E8B488"/>
     <rect x="700" y="82" width="180" height="180" fill="none" stroke="#5B6068" stroke-width="2"/>
   </g>
   <!-- 横軸ラベル -->
@@ -712,14 +715,14 @@ import torch
   </g>
   <!-- 凡例バー（参照の強さ） -->
   <g>
-    <rect x="350" y="318" width="40" height="20" fill="#9A3412"/><rect x="390" y="318" width="40" height="20" fill="#C2410C"/><rect x="430" y="318" width="40" height="20" fill="#E8B488"/><rect x="470" y="318" width="40" height="20" fill="#FBE7D6"/>
+    <rect x="350" y="318" width="40" height="20" fill="#832D18"/><rect x="390" y="318" width="40" height="20" fill="#A33818"/><rect x="430" y="318" width="40" height="20" fill="#E8B488"/><rect x="470" y="318" width="40" height="20" fill="#FBE7D6"/>
     <rect x="350" y="318" width="160" height="20" fill="none" stroke="#5B6068" stroke-width="1.5"/>
-    <text x="344" y="334" font-size="16" fill="#9A3412" text-anchor="end" font-weight="700">強く見る</text>
+    <text x="344" y="334" font-size="16" fill="#832D18" text-anchor="end" font-weight="700">強く見る</text>
     <text x="516" y="334" font-size="16" fill="#5B6068" font-weight="700">見ない</text>
   </g>
   <g text-anchor="middle" font-size="18" fill="#5B6068">
     <text x="450" y="378">濃いマスほど、その文字を強く参照している</text>
-    <text x="450" y="408" font-size="19" font-weight="700" fill="#C2410C">層・ヘッドごとに役割が分かれ、再学習すると注目の仕方も変わる</text>
+    <text x="450" y="408" font-size="19" font-weight="700" fill="#A33818">層・ヘッドごとに役割が分かれ、再学習すると注目の仕方も変わる</text>
   </g>
 </svg>
 </div>
@@ -765,12 +768,12 @@ import torch
     <rect x="154" y="38" width="72" height="40" rx="6" fill="#EDEEF0" stroke="#5B6068"/><text x="190" y="64" font-size="16">層2</text>
     <rect x="248" y="38" width="72" height="40" rx="6" fill="#EDEEF0" stroke="#5B6068"/><text x="284" y="64" font-size="16">層3</text>
     <text x="190" y="100" font-size="20" fill="#5B6068" font-weight="800">↓ 潰れる</text>
-    <rect x="100" y="110" width="180" height="40" rx="8" fill="#EDEEF0" stroke="#5B6068" stroke-width="2"/><text x="190" y="136" font-size="16" font-weight="700" fill="#5B6068">結局まっすぐ1本（1回の変換）</text>
+    <rect x="50" y="110" width="280" height="40" rx="8" fill="#EDEEF0" stroke="#5B6068" stroke-width="2"/><text x="190" y="136" font-size="16" font-weight="700" fill="#5B6068">結局まっすぐ1本（1回の変換）</text>
     <line x1="120" y1="186" x2="260" y2="186" stroke="#5B6068" stroke-width="3.5"/>
     <text x="190" y="210" font-size="16" fill="#5B6068" font-weight="700">何層重ねても直線のまま</text>
-    <text x="190" y="246" font-size="17" font-weight="800" fill="#9A3412">GELUで「曲げる」と</text>
-    <path d="M120,300 C150,300 165,262 190,262 C215,262 230,300 260,300" fill="none" stroke="#C2410C" stroke-width="3.5"/>
-    <text x="190" y="318" font-size="16" fill="#C2410C" font-weight="700">層ごとに違う仕事ができる</text>
+    <text x="190" y="246" font-size="17" font-weight="800" fill="#832D18">GELUで「曲げる」と</text>
+    <path d="M120,300 C150,300 165,262 190,262 C215,262 230,300 260,300" fill="none" stroke="#A33818" stroke-width="3.5"/>
+    <text x="190" y="318" font-size="16" fill="#A33818" font-weight="700">層ごとに違う仕事ができる</text>
   </g>
 </svg>
 
@@ -793,7 +796,7 @@ import torch
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 4</div>
+<div class="chapter-num">動画 3</div>
 
 # min-GPT 実装ウォークスルー
 
@@ -813,20 +816,20 @@ import torch
 <div class="figwrap">
 <img src="./src/fig01-transformer-architecture.png" alt="トランスフォーマーの全体構造（min-GPT）" style="max-height:440px;">
 </div>
-<div class="caption">図：コードで組み上がる全体構造（細部はColabで拡大して確認）</div>
+<div class="caption">図：コードで組み上がる全体構造 </div>
 
 </div>
 <div class="right">
 
 <div class="cbox deep"><div class="h">ねらい</div><div class="b">
 
-- 左が<span class="red">完成形の全体図</span>。コードはこの図を1段ずつ作っていく
+- 左が<span class="red">完成形の全体図</span>。
 - 動画3で<span class="red">絵として見た部品</span>を、コードで一段ずつ生成して確認
 - 埋め込み → 自己注意 → MLP(GELU) → … が関数の中で<span class="red">自動的に組み上がる</span>
 
 </div></div>
 
-<div class="band">学生はコードを書きません。<strong>実行して確かめる</strong>だけ。</div>
+<div class="band">分からないセルはGeminiにコピペし、聞こう。</div>
 
 </div>
 </div>
@@ -881,7 +884,7 @@ import torch
 </div>
 <div class="right">
 
-<div class="cbox deep"><div class="h">ここが“腹落ち”ポイント</div><div class="b">
+<div class="cbox deep"><div class="h">ここが“納得”ポイント</div><div class="b">
 
 - 抽象的な「モデル」が、<span class="red">数えられる重みの集まり</span>だと分かる
 - 28,272×3層 ＋ 768 ＝ <span class="red">85,584</span> と、足し算で追える
@@ -906,15 +909,15 @@ import torch
 
 <svg viewBox="0 0 760 86" width="74%" style="max-width:760px; margin:22px auto 0; display:block;">
   <g text-anchor="middle" font-weight="800">
-    <rect x="6" y="22" width="150" height="46" rx="10" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="81" y="51" font-size="20" fill="#9A3412">埋め込み</text>
-    <text x="178" y="52" font-size="24" fill="#C2410C">→</text>
-    <rect x="200" y="22" width="150" height="46" rx="10" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="275" y="51" font-size="20" fill="#9A3412">自己注意</text>
-    <text x="372" y="52" font-size="24" fill="#C2410C">→</text>
-    <rect x="394" y="22" width="172" height="46" rx="10" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="480" y="51" font-size="20" fill="#9A3412">MLP（GELU）</text>
-    <text x="588" y="52" font-size="24" fill="#C2410C">→</text>
+    <rect x="6" y="22" width="150" height="46" rx="10" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="81" y="51" font-size="20" fill="#832D18">埋め込み</text>
+    <text x="178" y="52" font-size="24" fill="#A33818">→</text>
+    <rect x="200" y="22" width="150" height="46" rx="10" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="275" y="51" font-size="20" fill="#832D18">自己注意</text>
+    <text x="372" y="52" font-size="24" fill="#A33818">→</text>
+    <rect x="394" y="22" width="172" height="46" rx="10" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="480" y="51" font-size="20" fill="#832D18">MLP（GELU）</text>
+    <text x="588" y="52" font-size="24" fill="#A33818">→</text>
     <rect x="610" y="22" width="144" height="46" rx="10" fill="#E2EDF6" stroke="#1A6BB0" stroke-width="2"/>
     <text x="682" y="51" font-size="20" fill="#1A6BB0">softmax</text>
   </g>
@@ -928,7 +931,7 @@ import torch
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 5</div>
+<div class="chapter-num">動画 4</div>
 
 # 自然言語処理とトーカナイザー
 
@@ -947,15 +950,15 @@ import torch
 
 <svg viewBox="0 0 380 320" width="100%" style="max-height:320px">
   <g text-anchor="middle">
-    <rect x="40" y="16" width="300" height="48" rx="10" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="190" y="46" font-size="18" font-weight="700" fill="#9A3412">「猫が好き」</text>
-    <text x="190" y="92" font-size="20" fill="#C2410C" font-weight="800">↓ 単語に分ける（分かち書き）</text>
-    <rect x="40" y="110" width="300" height="48" rx="10" fill="#fff" stroke="#C2410C" stroke-width="1.8"/>
+    <rect x="40" y="16" width="300" height="48" rx="10" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="190" y="46" font-size="18" font-weight="700" fill="#832D18">「猫が好き」</text>
+    <text x="190" y="92" font-size="20" fill="#A33818" font-weight="800">↓ 単語に分ける（分かち書き）</text>
+    <rect x="40" y="110" width="300" height="48" rx="10" fill="#fff" stroke="#A33818" stroke-width="1.8"/>
     <text x="190" y="140" font-size="18" font-weight="700">「猫」「が」「好き」</text>
-    <text x="190" y="186" font-size="20" fill="#C2410C" font-weight="800">↓ 数のベクトルに変える</text>
-    <rect x="40" y="204" width="300" height="78" rx="10" fill="#FBF4EF" stroke="#9A3412" stroke-width="2"/>
-    <text x="190" y="236" font-size="16" font-weight="700" fill="#9A3412">猫 → [0.21, -0.83, 0.05, …]</text>
-    <text x="190" y="264" font-size="16" font-weight="700" fill="#9A3412">好き → [0.44, 0.12, -0.30, …]</text>
+    <text x="190" y="186" font-size="20" fill="#A33818" font-weight="800">↓ 数のベクトルに変える</text>
+    <rect x="40" y="204" width="300" height="78" rx="10" fill="#FBF4EF" stroke="#832D18" stroke-width="2"/>
+    <text x="190" y="236" font-size="16" font-weight="700" fill="#832D18">猫 → [0.21, -0.83, 0.05, …]</text>
+    <text x="190" y="264" font-size="16" font-weight="700" fill="#832D18">好き → [0.44, 0.12, -0.30, …]</text>
   </g>
 </svg>
 
@@ -966,7 +969,7 @@ import torch
 
 - <span class="red">分かち書き</span>（形態素解析）：文を意味のまとまり（単語）に分ける
 - <span class="red">埋め込み</span>（＝ことばを数のベクトルにすること）で、各単語を数の並びに変換する
-- ベクトルにすれば、距離や足し算など<span class="red">計算ができる</span>
+- ベクトルにすれば、単語が<span class="red">計算できる</span>
 
 </div></div>
 
@@ -990,10 +993,10 @@ import torch
   <rect x="30" y="30" width="940" height="360" rx="14" fill="#FBF4EF" stroke="#E6C4A8" stroke-width="1.5"/>
   <text x="500" y="60" text-anchor="middle" font-size="18" fill="#5B6068">意味空間（イメージ：本当は数百次元を2次元に投影）</text>
   <g font-size="19" font-weight="700">
-    <circle cx="200" cy="150" r="7" fill="#9A3412"/><text x="158" y="143" fill="#9A3412">王様</text>
-    <circle cx="520" cy="150" r="7" fill="#C2410C"/><text x="540" y="143" fill="#C2410C">女王</text>
-    <circle cx="200" cy="300" r="7" fill="#9A3412"/><text x="158" y="293" fill="#9A3412">男性</text>
-    <circle cx="520" cy="300" r="7" fill="#C2410C"/><text x="540" y="293" fill="#C2410C">女性</text>
+    <circle cx="200" cy="150" r="7" fill="#832D18"/><text x="158" y="143" fill="#832D18">王様</text>
+    <circle cx="520" cy="150" r="7" fill="#A33818"/><text x="540" y="143" fill="#A33818">女王</text>
+    <circle cx="200" cy="300" r="7" fill="#832D18"/><text x="158" y="293" fill="#832D18">男性</text>
+    <circle cx="520" cy="300" r="7" fill="#A33818"/><text x="540" y="293" fill="#A33818">女性</text>
   </g>
   <g stroke="#5B6068" stroke-width="3" marker-end="url(#ar5)">
     <line x1="210" y1="150" x2="510" y2="150"/>
@@ -1003,11 +1006,11 @@ import torch
   <text x="360" y="136" text-anchor="middle" font-size="17" font-weight="700" fill="#5B6068">王様→女王＝＋（女性−男性）</text>
   <text x="360" y="328" text-anchor="middle" font-size="17" font-weight="700" fill="#5B6068">男性→女性＝＋（女性−男性）</text>
   <line x1="700" y1="60" x2="700" y2="360" stroke="#E6C4A8" stroke-width="1.5"/>
-  <text x="835" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#9A3412">同じ「差」を足す</text>
-  <text x="835" y="165" text-anchor="middle" font-size="20" font-weight="700" fill="#C2410C">王様 に</text>
-  <text x="835" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#C2410C">（女性 − 男性）を足すと</text>
-  <line x1="760" y1="216" x2="910" y2="216" stroke="#9A3412" stroke-width="2"/>
-  <text x="835" y="254" text-anchor="middle" font-size="24" font-weight="800" fill="#9A3412">≈ 女王</text>
+  <text x="835" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#832D18">同じ「差」を足す</text>
+  <text x="835" y="165" text-anchor="middle" font-size="20" font-weight="700" fill="#A33818">王様 に</text>
+  <text x="835" y="198" text-anchor="middle" font-size="20" font-weight="700" fill="#A33818">（女性 − 男性）を足すと</text>
+  <line x1="760" y1="216" x2="910" y2="216" stroke="#832D18" stroke-width="2"/>
+  <text x="835" y="254" text-anchor="middle" font-size="24" font-weight="800" fill="#832D18">≈ 女王</text>
 </svg>
 </div>
 
@@ -1025,10 +1028,10 @@ import torch
 <svg viewBox="0 0 1000 400" width="100%" style="max-height:380px">
   <rect x="30" y="24" width="940" height="350" rx="14" fill="#FBF4EF" stroke="#E6C4A8" stroke-width="1.5"/>
   <g font-size="19" font-weight="700">
-    <circle cx="200" cy="120" r="7" fill="#9A3412"/><text x="160" y="112" fill="#9A3412">フランス</text>
-    <circle cx="520" cy="120" r="7" fill="#C2410C"/><text x="540" y="112" fill="#C2410C">パリ</text>
-    <circle cx="200" cy="280" r="7" fill="#9A3412"/><text x="170" y="272" fill="#9A3412">日本</text>
-    <circle cx="520" cy="280" r="7" fill="#C2410C"/><text x="540" y="272" fill="#C2410C">東京</text>
+    <circle cx="200" cy="120" r="7" fill="#832D18"/><text x="160" y="112" fill="#832D18">フランス</text>
+    <circle cx="520" cy="120" r="7" fill="#A33818"/><text x="540" y="112" fill="#A33818">パリ</text>
+    <circle cx="200" cy="280" r="7" fill="#832D18"/><text x="170" y="272" fill="#832D18">日本</text>
+    <circle cx="520" cy="280" r="7" fill="#A33818"/><text x="540" y="272" fill="#A33818">東京</text>
   </g>
   <g stroke="#1A6BB0" stroke-width="3" marker-end="url(#ar5b)">
     <line x1="210" y1="120" x2="510" y2="120"/>
@@ -1043,7 +1046,7 @@ import torch
 </svg>
 </div>
 
-<div class="band">前ページは「差を足すと別の語になる」、ここは「その差がどの組でも同じ向きに揃う」という別の発見です。</div>
+<div class="band">「その差がどの組でも同じ向きに揃う」という別の発見です。</div>
 
 ---
 
@@ -1059,12 +1062,12 @@ import torch
 <svg viewBox="0 0 380 300" width="100%" style="max-height:300px">
   <rect x="20" y="20" width="340" height="260" rx="14" fill="#FBF4EF" stroke="#E6C4A8" stroke-width="1.5"/>
   <g font-size="17" font-weight="700">
-    <circle cx="130" cy="110" r="8" fill="#9A3412"/><text x="146" y="116" fill="#9A3412">猫が好き</text>
-    <circle cx="180" cy="150" r="8" fill="#C2410C"/><text x="196" y="156" fill="#C2410C">犬が好き</text>
+    <circle cx="130" cy="110" r="8" fill="#832D18"/><text x="146" y="116" fill="#832D18">猫が好き</text>
+    <circle cx="180" cy="150" r="8" fill="#A33818"/><text x="196" y="156" fill="#A33818">犬が好き</text>
     <circle cx="300" cy="240" r="8" fill="#5B6068"/><text x="210" y="246" fill="#5B6068">今日の天気</text>
   </g>
-  <line x1="130" y1="110" x2="180" y2="150" stroke="#C2410C" stroke-width="2.5"/>
-  <text x="120" y="146" font-size="16" fill="#C2410C" font-weight="700">近い</text>
+  <line x1="130" y1="110" x2="180" y2="150" stroke="#A33818" stroke-width="2.5"/>
+  <text x="120" y="146" font-size="16" fill="#A33818" font-weight="700">近い</text>
   <line x1="180" y1="150" x2="300" y2="240" stroke="#5B6068" stroke-width="2" stroke-dasharray="5 5"/>
   <text x="262" y="196" font-size="16" fill="#5B6068" font-weight="700">遠い</text>
 </svg>
@@ -1080,7 +1083,7 @@ import torch
 
 </div></div>
 
-<div class="band">単語だけでなく、文の意味も「位置」として比べられます。</div>
+<div class="band">文の意味も「距離」として比べられます。</div>
 
 </div>
 </div>
@@ -1104,7 +1107,7 @@ import torch
 
 </div></div>
 
-<div class="band">このあとの ichimo-GPT は割り切って「1文字＝1トークン」で刻みます。</div>
+<div class="band">ichimo-GPT は割り切って「1文字＝1トークン」で刻みます。</div>
 
 </div>
 <div class="right">
@@ -1130,11 +1133,11 @@ import torch
 
 <div class="fig-area">
 <svg viewBox="0 0 1000 320" width="100%" style="max-height:330px">
-  <rect x="30" y="24" width="445" height="270" rx="14" fill="#FBF4EF" stroke="#9A3412" stroke-width="2"/>
-  <text x="252" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#9A3412">word2vec</text>
-  <text x="252" y="120" text-anchor="middle" font-size="19" font-weight="700" fill="#C2410C">① まず「意味の地図」を作る</text>
+  <rect x="30" y="24" width="445" height="270" rx="14" fill="#FBF4EF" stroke="#832D18" stroke-width="2"/>
+  <text x="252" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#832D18">word2vec</text>
+  <text x="252" y="120" text-anchor="middle" font-size="19" font-weight="700" fill="#A33818">① まず「意味の地図」を作る</text>
   <text x="252" y="160" text-anchor="middle" font-size="18" fill="#5B6068">大量の文から単語の共起を学習</text>
-  <text x="252" y="208" text-anchor="middle" font-size="19" font-weight="700" fill="#C2410C">② 出来た地図を使う</text>
+  <text x="252" y="208" text-anchor="middle" font-size="19" font-weight="700" fill="#A33818">② 出来た地図を使う</text>
   <text x="252" y="248" text-anchor="middle" font-size="18" fill="#5B6068">埋め込みは固定して再利用</text>
   <rect x="525" y="24" width="445" height="270" rx="14" fill="#E2EDF6" stroke="#1A6BB0" stroke-width="2"/>
   <text x="747" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#1A6BB0">大規模言語モデル（LLM）</text>
@@ -1173,7 +1176,7 @@ import torch
 
 - 文学：語の意味の<span class="red">変化や近さ</span>を定量化する
 - 教育：自由記述レビューの<span class="red">良し悪し分類</span>に使う
-- 「距離・方向で意味を扱える」感覚が<span class="red">分析の足場</span>に
+- 「計量的に言葉を扱える」感覚が<span class="red">分析の足場</span>に
 
 </div>
 
@@ -1185,9 +1188,10 @@ import torch
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 6</div>
+<div class="chapter-num">動画 5-前半</div>
 
-# ichimo-GPT ── 1文字ずつ予測する小さなGPT
+# ichimo-GPT 
+# ── 1文字予測の小さなGPT
 
 ## 単語も文法も教えずに、文章はどこまで立ち上がるか
 
@@ -1204,16 +1208,16 @@ import torch
 
 <svg viewBox="0 0 360 280" width="100%" style="max-height:300px">
   <g text-anchor="middle">
-    <rect x="30" y="30" width="300" height="60" rx="12" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="180" y="56" font-size="18" font-weight="800" fill="#9A3412">入力：これまでの文字列</text>
-    <text x="180" y="80" font-size="20" font-weight="800" fill="#C2410C">「吾輩は猫であ」</text>
-    <text x="180" y="118" font-size="26" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="80" y="130" width="200" height="46" rx="10" fill="#9A3412"/>
+    <rect x="30" y="30" width="300" height="60" rx="12" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="180" y="56" font-size="18" font-weight="800" fill="#832D18">入力：これまでの文字列</text>
+    <text x="180" y="80" font-size="20" font-weight="800" fill="#A33818">「吾輩は猫であ」</text>
+    <text x="180" y="118" font-size="26" fill="#A33818" font-weight="800">↓</text>
+    <rect x="80" y="130" width="200" height="46" rx="10" fill="#832D18"/>
     <text x="180" y="159" font-size="18" font-weight="800" fill="#fff">ichimo-GPT</text>
-    <text x="180" y="200" font-size="26" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="30" y="212" width="300" height="56" rx="12" fill="#fff" stroke="#9A3412" stroke-width="2"/>
+    <text x="180" y="200" font-size="26" fill="#A33818" font-weight="800">↓</text>
+    <rect x="30" y="212" width="300" height="56" rx="12" fill="#fff" stroke="#832D18" stroke-width="2"/>
     <text x="180" y="236" font-size="17" font-weight="700" fill="#5B6068">出力：次の1文字の確率</text>
-    <text x="180" y="259" font-size="18" font-weight="800" fill="#9A3412">「る」が一番ありそう</text>
+    <text x="180" y="259" font-size="18" font-weight="800" fill="#832D18">「る」が一番ありそう</text>
   </g>
 </svg>
 
@@ -1248,21 +1252,21 @@ import torch
 
 <svg viewBox="0 0 320 360" width="100%" style="max-height:420px">
   <g text-anchor="middle">
-    <rect x="60" y="14" width="200" height="34" rx="8" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="160" y="36" font-size="17" font-weight="800" fill="#9A3412">1文字を 256次元 に</text>
-    <text x="160" y="62" font-size="18" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="40" y="70" width="240" height="48" rx="9" fill="#fff" stroke="#9A3412" stroke-width="2"/>
-    <text x="160" y="92" font-size="16" font-weight="800" fill="#9A3412">自己注意 → 正規化 → MLP</text>
+    <rect x="60" y="14" width="200" height="34" rx="8" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="160" y="36" font-size="17" font-weight="800" fill="#832D18">1文字を 256次元 に</text>
+    <text x="160" y="62" font-size="18" fill="#A33818" font-weight="800">↓</text>
+    <rect x="40" y="70" width="240" height="48" rx="9" fill="#fff" stroke="#832D18" stroke-width="2"/>
+    <text x="160" y="92" font-size="16" font-weight="800" fill="#832D18">自己注意 → 正規化 → MLP</text>
     <text x="160" y="111" font-size="16" font-weight="700" fill="#5B6068">＝ これで「1段（1層）」</text>
-    <rect x="40" y="126" width="240" height="32" rx="8" fill="#F7EAE2" stroke="#9A3412" stroke-width="1.5"/>
-    <text x="160" y="147" font-size="16" font-weight="700" fill="#9A3412">同じ段 …（くりかえし）</text>
-    <rect x="40" y="166" width="240" height="32" rx="8" fill="#F3DCC8" stroke="#9A3412" stroke-width="1.5"/>
-    <text x="160" y="187" font-size="16" font-weight="700" fill="#9A3412">同じ段</text>
-    <rect x="40" y="202" width="240" height="40" rx="9" fill="#9A3412"/>
+    <rect x="40" y="126" width="240" height="32" rx="8" fill="#F7EAE2" stroke="#832D18" stroke-width="1.5"/>
+    <text x="160" y="147" font-size="16" font-weight="700" fill="#832D18">同じ段 …（くりかえし）</text>
+    <rect x="40" y="166" width="240" height="32" rx="8" fill="#F3DCC8" stroke="#832D18" stroke-width="1.5"/>
+    <text x="160" y="187" font-size="16" font-weight="700" fill="#832D18">同じ段</text>
+    <rect x="40" y="202" width="240" height="40" rx="9" fill="#832D18"/>
     <text x="160" y="226" font-size="17" font-weight="800" fill="#fff">縦に 8 段 ＝ 8 層</text>
-    <text x="160" y="258" font-size="18" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="40" y="268" width="240" height="34" rx="8" fill="#fff" stroke="#9A3412" stroke-width="2"/>
-    <text x="160" y="290" font-size="16" font-weight="800" fill="#9A3412">次の1文字の確率</text>
+    <text x="160" y="258" font-size="18" fill="#A33818" font-weight="800">↓</text>
+    <rect x="40" y="268" width="240" height="34" rx="8" fill="#fff" stroke="#832D18" stroke-width="2"/>
+    <text x="160" y="290" font-size="16" font-weight="800" fill="#832D18">次の1文字の確率</text>
   </g>
 </svg>
 
@@ -1334,15 +1338,15 @@ encode("吾輩は")   # → [12, 87, 5]</div>
   <line x1="70" y1="280" x2="540" y2="280" stroke="#5B6068" stroke-width="2"/>
   <text x="20" y="48" font-size="17" font-weight="700" fill="#5B6068">ロス</text>
   <text x="430" y="306" font-size="17" font-weight="700" fill="#5B6068">学習の回数 →</text>
-  <path d="M70,72 C180,150 280,210 320,250 C420,255 480,258 540,262" fill="none" stroke="#9A3412" stroke-width="4"/>
-  <path d="M70,92 C180,158 270,215 320,220 C410,224 470,180 540,118" fill="none" stroke="#1A6BB0" stroke-width="4"/>
-  <line x1="320" y1="44" x2="320" y2="280" stroke="#C2410C" stroke-width="2.5" stroke-dasharray="6 5"/>
-  <circle cx="320" cy="220" r="8" fill="#C2410C"/>
-  <text x="320" y="40" font-size="16" font-weight="800" fill="#C2410C" text-anchor="middle">検証ロスの底＝止めどき</text>
-  <rect x="338" y="92" width="196" height="26" rx="6" fill="#EAF2F9"/>
-  <text x="346" y="111" font-size="16" font-weight="800" fill="#1A6BB0">検証＝初見の問題</text>
-  <rect x="338" y="244" width="196" height="26" rx="6" fill="#F7EAE2"/>
-  <text x="346" y="263" font-size="16" font-weight="800" fill="#9A3412">訓練＝覚えた問題</text>
+  <path d="M70,86 C170,156 250,214 320,238 C400,248 470,252 540,254" fill="none" stroke="#832D18" stroke-width="4"/>
+  <path d="M70,74 C170,142 260,200 320,206 C390,211 450,170 540,116" fill="none" stroke="#1A6BB0" stroke-width="4"/>
+  <line x1="320" y1="44" x2="320" y2="280" stroke="#A33818" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <circle cx="320" cy="206" r="8" fill="#A33818"/>
+  <text x="320" y="40" font-size="16" font-weight="800" fill="#A33818" text-anchor="middle">検証ロスの底＝止めどき</text>
+  <rect x="356" y="104" width="184" height="26" rx="6" fill="#EAF2F9"/>
+  <text x="364" y="123" font-size="16" font-weight="800" fill="#1A6BB0">検証＝初見の問題</text>
+  <rect x="356" y="256" width="184" height="26" rx="6" fill="#F7EAE2"/>
+  <text x="364" y="275" font-size="16" font-weight="800" fill="#832D18">訓練＝覚えた問題</text>
 </svg>
 
 </div>
@@ -1376,7 +1380,7 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 </div>
 </div>
 
-<div class="band">「吾輩は」の次の<span class="red">1文字</span>（＝この演習では1トークン）は <span class="red">「、」「猫」</span> が高い。これが“もっともらしさ”の中身です。</div>
+<div class="band">「吾輩は」の次の<span class="red">1文字</span>（＝この演習では1トークン）は <span class="red">「、」「猫」</span> が高い。これが“もっともらしさ”の中身</div>
 
 <div class="attr">図：漱石データで学習した ichimo-GPT が予測する「次の1文字」の確率。softmax（動画4で既出）で出した全候補のうち上位5だけなので合計は100%にならない。実行結果の一例</div>
 
@@ -1393,14 +1397,14 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 
 <svg viewBox="0 0 360 250" width="100%" style="max-height:280px">
   <g text-anchor="middle" font-size="17" font-weight="700">
-    <rect x="40" y="20" width="280" height="44" rx="9" fill="#fff" stroke="#9A3412" stroke-width="2"/>
-    <text x="180" y="48" fill="#9A3412">「吾輩は」→ 次は「猫」</text>
-    <text x="180" y="84" font-size="22" fill="#C2410C" font-weight="800">↓ 戻す</text>
-    <rect x="40" y="96" width="280" height="44" rx="9" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="180" y="124" fill="#9A3412">「吾輩は猫」→ 次は「で」</text>
-    <text x="180" y="160" font-size="22" fill="#C2410C" font-weight="800">↓ 戻す</text>
-    <rect x="40" y="172" width="280" height="44" rx="9" fill="#F3DCC8" stroke="#9A3412" stroke-width="2"/>
-    <text x="180" y="200" fill="#9A3412">「吾輩は猫で」→ …</text>
+    <rect x="40" y="20" width="280" height="44" rx="9" fill="#fff" stroke="#832D18" stroke-width="2"/>
+    <text x="180" y="48" fill="#832D18">「吾輩は」→ 次は「猫」</text>
+    <text x="180" y="84" font-size="22" fill="#A33818" font-weight="800">↓ 戻す</text>
+    <rect x="40" y="96" width="280" height="44" rx="9" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="180" y="124" fill="#832D18">「吾輩は猫」→ 次は「で」</text>
+    <text x="180" y="160" font-size="22" fill="#A33818" font-weight="800">↓ 戻す</text>
+    <rect x="40" y="172" width="280" height="44" rx="9" fill="#F3DCC8" stroke="#832D18" stroke-width="2"/>
+    <text x="180" y="200" fill="#832D18">「吾輩は猫で」→ …</text>
   </g>
 </svg>
 
@@ -1439,7 +1443,7 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 <div class="caption" style="text-align:center; margin-top:8px;">回数＝学習のステップ数の目安。漱石データでの実行結果の一例（環境で変わる）</div>
 </div>
 
-<div class="takeaway">1文字ずつでも、回数を重ねると文章が立ち上がる ── これが体感のクライマックスです。</div>
+<div class="takeaway">1文字ずつでも、回数を重ねると文章が立ち上がる ── これが体験してほしいこと</div>
 
 ---
 
@@ -1452,18 +1456,18 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 270" width="100%" style="max-height:290px">
+<svg viewBox="0 0 360 270" width="100%" style="max-height:380px">
   <g text-anchor="middle">
-    <rect x="40" y="14" width="280" height="50" rx="11" fill="#FBE7D6" stroke="#C2410C" stroke-width="2"/>
-    <text x="180" y="36" font-size="17" font-weight="800" fill="#9A3412">① ノートを最後まで実行</text>
+    <rect x="40" y="14" width="280" height="50" rx="11" fill="#FBE7D6" stroke="#A33818" stroke-width="2"/>
+    <text x="180" y="36" font-size="17" font-weight="800" fill="#832D18">① ノートを最後まで実行</text>
     <text x="180" y="56" font-size="16" fill="#5B6068">学習・生成が全部走る</text>
-    <text x="180" y="84" font-size="22" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="40" y="94" width="280" height="74" rx="11" fill="#fff" stroke="#9A3412" stroke-width="2"/>
-    <text x="180" y="118" font-size="16" font-weight="800" fill="#9A3412">② 末尾のセルを実行すると</text>
-    <text x="180" y="140" font-size="16" font-weight="800" fill="#C2410C">(学籍番号)_名前_ichimo-GPT.md</text>
-    <text x="180" y="160" font-size="16" font-weight="800" fill="#9A3412">が自動で生成・ダウンロード</text>
-    <text x="180" y="188" font-size="22" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="40" y="198" width="280" height="50" rx="11" fill="#9A3412"/>
+    <text x="180" y="84" font-size="22" fill="#A33818" font-weight="800">↓</text>
+    <rect x="40" y="94" width="280" height="74" rx="11" fill="#fff" stroke="#832D18" stroke-width="2"/>
+    <text x="180" y="118" font-size="16" font-weight="800" fill="#832D18">② 末尾のセルを実行すると</text>
+    <text x="180" y="140" font-size="16" font-weight="800" fill="#A33818">(学籍番号)_名前_ichimo-GPT.md</text>
+    <text x="180" y="160" font-size="16" font-weight="800" fill="#832D18">が自動で生成・ダウンロード</text>
+    <text x="180" y="188" font-size="22" fill="#A33818" font-weight="800">↓</text>
+    <rect x="40" y="198" width="280" height="50" rx="11" fill="#832D18"/>
     <text x="180" y="228" font-size="17" font-weight="800" fill="#fff">③ その .md を提出</text>
   </g>
 </svg>
@@ -1489,7 +1493,7 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 
 <!-- _class: divider -->
 
-<div class="chapter-num">動画 7</div>
+<div class="chapter-num">動画 5-後半</div>
 
 # 推論を見る、そしてまとめ
 
@@ -1501,7 +1505,7 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 
 <div class="page-title">推論（inference）とは</div>
 
-## 学習は終わっている ── 重みは固定のまま、答えを生む
+## 学習(Training)が終わったら ── 重みは固定のまま、答えを生む
 
 <div class="split-body">
 <div class="left">
@@ -1512,13 +1516,13 @@ encode("吾輩は")   # → [12, 87, 5]</div>
     <text x="190" y="46" font-size="18" font-weight="800" fill="#5B6068">学習（training）</text>
     <text x="190" y="76" font-size="16" fill="#5B6068">正解との差（ロス）を見て</text>
     <text x="190" y="100" font-size="16" fill="#5B6068">重みを少しずつ更新する</text>
-    <text x="190" y="126" font-size="16" fill="#9A3412">＝もう終わった工程</text>
-    <text x="190" y="168" font-size="26" fill="#C2410C" font-weight="800">↓</text>
-    <rect x="40" y="186" width="300" height="120" rx="12" fill="#FBE7D6" stroke="#C2410C" stroke-width="2.5"/>
-    <text x="190" y="214" font-size="18" font-weight="800" fill="#9A3412">推論（inference）</text>
-    <text x="190" y="244" font-size="16" fill="#9A3412">重みは固定したまま</text>
-    <text x="190" y="268" font-size="16" fill="#9A3412">入力（プロンプト）を入れて</text>
-    <text x="190" y="292" font-size="16" fill="#C2410C" font-weight="800">1語ずつ生成する</text>
+    <text x="190" y="126" font-size="16" fill="#832D18">＝もう終わった工程</text>
+    <text x="190" y="168" font-size="26" fill="#A33818" font-weight="800">↓</text>
+    <rect x="40" y="186" width="300" height="120" rx="12" fill="#FBE7D6" stroke="#A33818" stroke-width="2.5"/>
+    <text x="190" y="214" font-size="18" font-weight="800" fill="#832D18">推論（inference）</text>
+    <text x="190" y="244" font-size="16" fill="#832D18">重みは固定したまま</text>
+    <text x="190" y="268" font-size="16" fill="#832D18">入力（プロンプト）を入れて</text>
+    <text x="190" y="292" font-size="16" fill="#A33818" font-weight="800">1語ずつ生成する</text>
   </g>
 </svg>
 
@@ -1565,14 +1569,14 @@ encode("吾輩は")   # → [12, 87, 5]</div>
     <text x="320" y="252" font-size="17" font-weight="700" fill="#5B6068">D</text>
     <text x="380" y="252" font-size="17" font-weight="700" fill="#5B6068">E</text>
     <text x="260" y="280" font-size="16" fill="#5B6068">候補の語 A〜E（両方とも同じ並び）</text>
-    <text x="750" y="28" font-size="20" font-weight="800" fill="#C2410C">温度たかめ（&gt;1）── 山がなだらか</text>
+    <text x="750" y="28" font-size="20" font-weight="800" fill="#A33818">温度たかめ（&gt;1）── 山がなだらか</text>
     <text x="750" y="52" font-size="17" fill="#5B6068">候補が横並びに・意外性も増える</text>
     <rect x="620" y="180" width="40" height="50" fill="#E08A4F"/>
     <rect x="680" y="150" width="40" height="80" fill="#E08A4F"/>
-    <rect x="740" y="120" width="40" height="110" fill="#C2410C"/>
+    <rect x="740" y="120" width="40" height="110" fill="#A33818"/>
     <rect x="800" y="160" width="40" height="70" fill="#E08A4F"/>
     <rect x="860" y="185" width="40" height="45" fill="#E08A4F"/>
-    <polyline points="640,180 700,150 760,120 820,160 880,185" fill="none" stroke="#C2410C" stroke-width="2.5" opacity="0.55"/>
+    <polyline points="640,180 700,150 760,120 820,160 880,185" fill="none" stroke="#A33818" stroke-width="2.5" opacity="0.55"/>
     <line x1="605" y1="230" x2="915" y2="230" stroke="#5B6068" stroke-width="1.5"/>
     <text x="640" y="252" font-size="17" font-weight="700" fill="#5B6068">A</text>
     <text x="700" y="252" font-size="17" font-weight="700" fill="#5B6068">B</text>
@@ -1580,8 +1584,8 @@ encode("吾輩は")   # → [12, 87, 5]</div>
     <text x="820" y="252" font-size="17" font-weight="700" fill="#5B6068">D</text>
     <text x="880" y="252" font-size="17" font-weight="700" fill="#5B6068">E</text>
     <text x="760" y="280" font-size="16" fill="#5B6068">候補の語 A〜E（両方とも同じ並び）</text>
-    <text x="500" y="150" font-size="17" font-weight="700" fill="#9A3412">縦軸（確率）の</text>
-    <text x="500" y="174" font-size="17" font-weight="700" fill="#9A3412">目盛りは左右で同じ</text>
+    <text x="500" y="150" font-size="17" font-weight="700" fill="#832D18">縦軸（確率）の</text>
+    <text x="500" y="174" font-size="17" font-weight="700" fill="#832D18">目盛りは左右で同じ</text>
     <text x="500" y="208" font-size="16" fill="#5B6068">→ 右は山が低く</text>
     <text x="500" y="228" font-size="16" fill="#5B6068">ならされている</text>
   </g>
@@ -1590,8 +1594,8 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 
 <div class="cbox gray"><div class="h">温度とサンプリング ── 2つのことば</div><div class="b">
 
-- <span class="red">温度＝確率の山のとがり具合を変えるつまみ</span>。低いほど一番ありそうな語に集中、高いほど候補が横並びに（山をならす）
-- <span class="blu">サンプリング＝この確率分布からサイコロを振って1語を選ぶこと</span>。だから同じプロンプトでも答えは毎回ゆれる
+- <span class="red">温度＝確率の山のとがり具合を変えるつまみ</span>。低いほど一番ありそうな語に集中、高いほど候補が横並びに
+- <span class="blu">サンプリング＝この確率分布からサイコロを振って1語を選ぶこと</span>
 
 </div></div>
 
@@ -1690,4 +1694,5 @@ encode("吾輩は")   # → [12, 87, 5]</div>
 
 # Q&A
 
-## 質問・振り返りは Moodle へ ／ ⑥のノートを最後まで実行し、「(学籍番号)_名前_ichimo-GPT.md」のレポート提出を忘れずに
+## 質問・振り返りは Moodle へ ／ 
+## 関心があれば、⑥のノートを最後まで実行し、「(学籍番号)_名前_ichimo-GPT.md」のレポート提出を

@@ -228,6 +228,11 @@ section table th {
 }
 section table tr:last-child td { border-bottom: 1px solid #999; }
 
+/* fig-area 内のテーブルは中央寄せ。fig-area は flex なので margin:auto / justify-content
+   では内容幅テーブルを中央化できない。block 化＋ text-align:center、表は inline-table に。 */
+section.fig .fig-area:has(> table) { display: block; text-align: center; }
+section.fig .fig-area > table { display: inline-table; }
+
 /* ========== Images / figures ========== */
 section img { max-width: 100%; height: auto; }
 section figure { margin: 8px 0; text-align: center; }

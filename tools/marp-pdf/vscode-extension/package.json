@@ -1,16 +1,25 @@
 {
   "name": "marp-chibau-pdf",
-  "displayName": "Marp ChibaU PDF（分割ベクター書き出し）",
-  "description": "開いている Marp .md を、落ちない分割方式でベクターPDF化するツールバーボタン。tools/marp-pdf/build-pdf.sh を呼ぶだけのローカル拡張（マーケット非経由・依存ゼロ）。",
-  "version": "1.0.0",
+  "displayName": "Marp ChibaU（PDF＋プレゼン）",
+  "description": "開いている Marp .md を、エディタ右上の 📄 ボタンで落ちない分割ベクターPDF化／▶ ボタンで Chrome 全画面プレゼン。tools/ 配下のスクリプトを呼ぶだけのローカル拡張（マーケット非経由・依存ゼロ）。",
+  "version": "1.2.0",
   "publisher": "chibau-local",
   "private": true,
   "engines": { "vscode": "^1.70.0" },
   "categories": ["Other"],
-  "activationEvents": ["onCommand:marpChibau.exportPdf"],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:marpChibau.exportPdf",
+    "onCommand:marpChibau.present"
+  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
+      {
+        "command": "marpChibau.present",
+        "title": "Marp: プレゼン（このスライドを Chrome で全画面）",
+        "icon": "$(play)"
+      },
       {
         "command": "marpChibau.exportPdf",
         "title": "Marp: ベクターPDF出力（このスライド）",
@@ -19,6 +28,11 @@
     ],
     "menus": {
       "editor/title": [
+        {
+          "command": "marpChibau.present",
+          "when": "editorLangId == markdown && resourcePath =~ /marp-ChibaU/",
+          "group": "navigation@98"
+        },
         {
           "command": "marpChibau.exportPdf",
           "when": "editorLangId == markdown && resourcePath =~ /marp-ChibaU/",

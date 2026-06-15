@@ -34,3 +34,5 @@ tcpip-kyozai/
 
 # marp PDF ビルドの中間HTML(通常は自動削除される保険)
 .marp-pdfbuild-*.html
+# marp プレゼン用HTML(present.sh が mdと同階層に描画。*.html で既に無視されるが明示)
+.marp-present.html

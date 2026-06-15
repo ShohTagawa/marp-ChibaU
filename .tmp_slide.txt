@@ -1,0 +1,32 @@
+<!-- _class: summary -->
+
+<div class="page-title">用語の整理</div>
+
+## エージェントと「人の関わり方」を押さえる
+
+<div class="grid2">
+<div>
+
+<div style="font-weight:800; color:#9A3412; font-size:19px; margin:2px 0 2px;">AIの自律性</div>
+
+<div class="cbox mid"><div class="h">エージェント</div><div class="b">目的をもって<span class="red">自分で行動する</span>存在</div></div>
+
+<div class="cbox mid"><div class="h">AIエージェント</div><div class="b">設定された目標に対し、<span class="red">自動でタスクを決め</span>、ツールを使って動くAIシステム</div></div>
+
+<div class="cbox mid"><div class="h">オーケストレーション</div><div class="b">複数のタスク・AIを<span class="red">組み合わせ統括</span>する仕組み</div></div>
+
+</div>
+<div>
+
+<div style="font-weight:800; color:#9A3412; font-size:19px; margin:2px 0 2px;">人の関わり方</div>
+
+<div class="cbox gray"><div class="h">ヒューマン・イン・ザ・ループ（HITL）</div><div class="b">AIの処理に<span class="red">人が都度介入</span>して精度を上げる</div></div>
+
+<div class="cbox gray"><div class="h">ヒューマン・オン・ザ・ループ</div><div class="b">人は<span class="red">監視</span>し、<span class="red">必要なときだけ介入</span>（指揮者のように全体を統括）</div></div>
+
+</div>
+</div>
+
+<div class="band">AIの自律性が上がるほど、人は「都度介入（HITL）」から「監視して要所で介入（on the loop）」へ。</div>
+
+---

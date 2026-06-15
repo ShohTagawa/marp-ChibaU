@@ -4,7 +4,35 @@
       "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
       "WebFetch(domain:www.psychologicalscience.org)",
       "Bash(mkdir -p /Users/shoh/marp-ChibaU/slides/20260602_InfoLit_8_network/script/_rebuild)",
-      "Bash(grep -n \"^# 【\\\\|^---$\" narration-110min.md)"
+      "Bash(grep -n \"^# 【\\\\|^---$\" narration-110min.md)",
+      "WebFetch(domain:www.soumu.go.jp)",
+      "Bash(grep -nE \"^[A-Za-z][A-Za-z ,/&-]{2,40}\\( |$\\)\" buoy72epa.txt)",
+      "Bash(grep -ivE \"http|^[0-9]+:by |Draft|Principles$|Guideline$|discussions\")",
+      "WebFetch(domain:www8.cao.go.jp)",
+      "Bash(pdftotext -layout webfetch-1781497211957-fdx7da.pdf -)",
+      "Bash(grep -v \"^\\\\s*$\")",
+      "Bash(awk 'NR>=1{print}')",
+      "Bash(curl -sL \"https://archive.saj.or.jp/documents/NEWS/activity/govemment/2024/240827_siryou1.pdf\" -o saj.pdf)",
+      "Bash(pdftotext -layout saj.pdf -)",
+      "Bash(grep -vE \"^\\\\s*$|行動規範例\")",
+      "Bash(timeout 300 npx @marp-team/marp-cli@latest slides/20260614_GenAI-Research_01_ethics-literacy/20260614_GenAI-Research_01_ethics-literacy.md --theme-set theme/academic.css --html --images png --allow-local-files -o slides/20260614_GenAI-Research_01_ethics-literacy/out/check.png)",
+      "Bash(rm -f slides/20260614_GenAI-Research_01_ethics-literacy/out/check.*.png && echo \"cleaned\")",
+      "Bash(curl -sL \"https://www.soumu.go.jp/hiroshimaaiprocess/pdf/document04.pdf\" -o doc04.pdf)",
+      "Bash(awk '{print $5}')",
+      "Bash(pdftotext -layout doc04.pdf -)",
+      "Bash(grep -vE \"^\\\\s*$\")",
+      "Bash(grep -vE \"^\\\\s*$|^[0-9]+$|^ *Ø\")",
+      "Bash(awk '/^---$/{c++} END{print \"total separators:\", c}' slides/20260614_GenAI-Research_01_ethics-literacy/20260614_GenAI-Research_01_ethics-literacy.md)",
+      "Bash(rm -f slides/20260614_GenAI-Research_01_ethics-literacy/out/check.*.png && echo cleaned)",
+      "Bash(awk -F: '$1>=1015 && $1<=1075')",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260614_GenAI-Research_01_ethics-literacy/20260614_GenAI-Research_01_ethics-literacy.md --theme-set theme/academic.css --html --images png --allow-local-files -o slides/20260614_GenAI-Research_01_ethics-literacy/out/check.png)",
+      "Bash(awk '/^---$/{c++} c>=2 && /^---$/{print \"page \"\\(c-1\\)\" starts at line \"NR}' slides/20260614_GenAI-Research_01_ethics-literacy/20260614_GenAI-Research_01_ethics-literacy.md)",
+      "Bash(curl -sL \"https://www.soumu.go.jp/main_content/000646187.pdf\" -o cmp.pdf)",
+      "Bash(pdftotext -layout cmp.pdf -)",
+      "Bash(cd /Users/sh/marp-ChibaU *)"
+    ],
+    "additionalDirectories": [
+      "/Users/sh/marp-ChibaU/slides/20260614_GenAI-Research_01_ethics-literacy/out"
     ]
   }
 }

@@ -5,6 +5,7 @@
   "description": "千葉大スタイルMarpスライド。PDF出力はベクター分割方式（tools/marp-pdf）。",
   "scripts": {
     "pdf": "bash tools/marp-pdf/build-pdf.sh",
-    "pdf:safe": "CHUNK=12 bash tools/marp-pdf/build-pdf.sh"
+    "pdf:safe": "CHUNK=12 bash tools/marp-pdf/build-pdf.sh",
+    "present": "bash tools/marp-present/present.sh"
   }
 }

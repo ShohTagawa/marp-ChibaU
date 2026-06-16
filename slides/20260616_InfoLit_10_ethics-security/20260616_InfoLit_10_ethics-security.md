@@ -16,15 +16,16 @@ style: |
   section > header .hdr-logo { height: 48px; margin-right: 12px; }
   section::after { left: 23px; right: auto; }
   section svg { max-width: 100%; height: auto; }
-  .important { display:inline-block; background:#FBE0E0; color:#B11C1C; font-weight:700; font-size:19px; padding:1px 12px; border-radius:7px; margin-left:8px; letter-spacing:0.14em; vertical-align:middle; border:1px solid #f0c4c4; }
-  .cbox { border-radius:10px; overflow:hidden; background:#F6F7F9; margin:8px 0; border:1px solid #e7e7ea; }
-  .cbox > .h { color:#3a3a3a; font-weight:700; padding:5px 16px; font-size:19px; background:#f1ecee; border-left:4px solid #b9b9b9; }
-  .cbox > .b { padding:8px 16px 9px; font-size:18px; }
+  section { font-size: 24px; }
+  .important { display:inline-block; background:#FBE0E0; color:#B11C1C; font-weight:700; font-size:20px; padding:1px 12px; border-radius:7px; margin-left:8px; letter-spacing:0.14em; vertical-align:middle; border:1px solid #f0c4c4; }
+  .cbox { border-radius:8px; overflow:hidden; background:#FCFCFD; margin:7px 0; border:1px solid #ededf0; }
+  .cbox > .h { color:#2e2e2e; font-weight:700; padding:4px 14px 2px; font-size:20px; background:transparent; border-left:5px solid #b9b9b9; }
+  .cbox > .b { padding:5px 14px 8px; font-size:20px; }
   .cbox.blue > .h { border-left-color:#3E78B2; } .cbox.green > .h { border-left-color:#3C8A57; } .cbox.orange > .h { border-left-color:#D98A2B; } .cbox.gray > .h { border-left-color:#6B6F76; } .cbox.red > .h { border-left-color:var(--accent); }
   .cbox .b ul { margin:3px 0 3px 1.1em; } .cbox .b li { margin:2px 0; }
-  .band { background:var(--accent-soft); border-left:8px solid var(--accent); border-radius:6px; padding:10px 20px; margin:10px 0; font-size:21px; font-weight:700; }
+  .band { background:var(--accent-soft); border-left:8px solid var(--accent); border-radius:6px; padding:10px 20px; margin:10px 0; font-size:23px; font-weight:700; }
   .statement { text-align:center; font-weight:700; font-size:24px; margin-top:8px; }
-  .ask { background:#FAF3F4; border:1px solid #e6d2d6; border-radius:10px; padding:8px 16px 8px 50px; margin:8px 0; font-weight:700; font-size:19px; position:relative; }
+  .ask { background:#FAF3F4; border:1px solid #e6d2d6; border-radius:10px; padding:8px 16px 8px 50px; margin:8px 0; font-weight:700; font-size:21px; position:relative; }
   .ask::before { content:"？"; position:absolute; left:12px; top:50%; transform:translateY(-50%); width:26px; height:26px; line-height:26px; text-align:center; border-radius:50%; background:var(--accent); color:#fff; font-size:17px; }
   .ask.hand::before { content:"\270B"; background:#D98A2B; }
   .hl-pink { background:#FAE1E2; padding:0 4px; border-radius:3px; } .hl-yellow { background:#FBEFC8; padding:0 4px; border-radius:3px; } .hl-green { background:#DDEBC8; padding:0 4px; border-radius:3px; }
@@ -32,27 +33,29 @@ style: |
   .mono { font-family:"Menlo","Consolas",monospace; }
   .attr { font-size:14px; color:#999; }
   .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; } .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
-  .dtbl { border-collapse:collapse; font-size:17px; margin:6px auto; }
+  .dtbl { border-collapse:collapse; font-size:19px; margin:6px auto; }
   .dtbl th, .dtbl td { border:1px solid #c8c8c8; padding:4px 12px; text-align:center; }
   .dtbl th { background:var(--accent-soft); }
   .dtbl td.l { text-align:left; }
   svg .card { filter: drop-shadow(0 2px 3px rgba(0,0,0,.12)); }
   .src { font-size:13px; color:#9a9a9a; } .src a { color:#9a9a9a; }
-  .episode { background:#FCEEF0; border-left:6px solid var(--accent); border-radius:8px; padding:8px 16px; margin:8px 0; font-size:19px; }
+  .episode { background:#FCEEF0; border-left:6px solid var(--accent); border-radius:8px; padding:8px 16px; margin:8px 0; font-size:20px; }
   .episode .h { font-weight:700; color:var(--accent); font-size:16px; letter-spacing:.04em; }
   /* ライブ授業用：Slido投票・体験デモ・安全注意 */
-  .slido { background:#EAF3FB; border:2px solid #3E78B2; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:18px; }
+  .slido { background:#EAF3FB; border:2px solid #3E78B2; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:20px; }
   .slido::before { content:"📊 Slido "; color:#3E78B2; font-weight:800; }
   .slido .q { font-weight:700; color:#23527a; }
-  .live { background:#FFF6E5; border:2px solid #D98A2B; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:18px; }
+  .live { background:#FFF6E5; border:2px solid #D98A2B; border-radius:10px; padding:6px 16px; margin:8px 0; font-size:20px; }
   .live::before { content:"🔬 体験 "; color:#D98A2B; font-weight:800; }
   .live .u { font-family:"Menlo","Consolas",monospace; font-size:15px; color:#23527a; }
-  .safe { background:#FDECEC; border-left:6px solid #B11C1C; border-radius:6px; padding:5px 14px; margin:6px 0; font-size:15px; color:#7a1a1a; }
+  .safe { background:#FDECEC; border-left:6px solid #B11C1C; border-radius:6px; padding:5px 14px; margin:6px 0; font-size:17px; color:#7a1a1a; }
   .safe::before { content:"⚠ 安全 "; font-weight:800; }
-  section.wrap ul { font-size:20px; }
-  section.wrap ul li { margin:6px 0; line-height:1.4; padding-left:28px; }
-  section.wrap .grid2 { gap:24px; }
-  section.wrap .episode { font-size:18px; margin:6px 0; }
+  section.wrap { justify-content: space-between !important; }
+  section.wrap h2 { margin-bottom: 4px; }
+  section.wrap ul { font-size:24px; }
+  section.wrap ul li { margin:14px 0; line-height:1.5; padding-left:28px; }
+  section.wrap .grid2 { gap:32px; align-content: center; }
+  section.wrap .episode { font-size:21px; margin:0; }
   /* 表紙レイアウト（cover-hero） */
   section.cover-hero { padding-top: calc(var(--header-h) + 50px); --hdr-left-w: 23%; }
   section.cover-hero > header::after { left: 0; right: 0; }
@@ -65,13 +68,67 @@ style: |
   section.cover-hero .title-meta { font-size: 25px; line-height: 1.7; text-align: center; }
   section.cover-hero .title-event { color: #e65100; font-weight: 700; margin-bottom: 14px; }
   section.cover-hero .title-affil { margin-top: 8px; }
+  /* 座席指定スライド（seat） */
+  section.seat h2 { font-size: 34px; font-weight: 800; margin: 4px 0 14px; line-height: 1.25; }
+  section.seat .seat-labels { display: grid; grid-template-columns: 1fr 2.2fr 1.3fr; gap: 22px; margin-bottom: 8px; }
+  section.seat .seat-labels .lab { text-align: center; font-size: 30px; font-weight: 700; }
+  section.seat .seat-labels .lab.board { background: #E4E4E4; border: 1px solid #c9c9c9; border-radius: 4px; padding: 3px 0; font-size: 28px; }
+  section.seat .seat-row { display: grid; grid-template-columns: 1fr 2.2fr 1.3fr; gap: 22px; height: 400px; }
+  section.seat .seat-box { border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 14px; }
+  section.seat .seat-box.mac { background: #FBE0E0; border: 2px solid #E3A6A6; }
+  section.seat .seat-box.win { background: #D6E3F0; border: 2px solid #9DBBD8; }
+  section.seat .seat-box.other { background: #DAEAD2; border: 2px solid #A8CB9B; }
+  section.seat .os { font-size: 50px; font-weight: 700; margin-bottom: 22px; }
+  section.seat .os2 { font-size: 34px; font-weight: 700; }
+  section.seat .where { font-size: 32px; font-weight: 700; line-height: 1.35; }
+  section.seat .where2 { font-size: 30px; font-weight: 700; margin-top: 16px; }
+  section.seat .note { font-size: 18px; margin-top: 12px; line-height: 1.4; color: #333; }
+  section.seat .note2 { font-size: 22px; margin-top: 4px; line-height: 1.3; }
+  section.seat .sub { font-size: 19px; margin-top: 4px; line-height: 1.35; }
+  section.seat .seat-foot { text-align: center; font-size: 30px; font-weight: 800; margin-top: 18px; }
 ---
 
+
+<!-- _class: seat -->
+
+<div class="page-title">今日は座席指定あり</div>
+
+## <strong>小テストの関係</strong>で、<strong>今日持っている</strong>端末で座席指定します
+
+<div class="seat-labels">
+<div class="lab">入口</div>
+<div class="lab board">黒板</div>
+<div class="lab">入口</div>
+</div>
+
+<div class="seat-row">
+<div class="seat-box mac">
+<div class="os">mac</div>
+<div class="where">左奥から<br>座る</div>
+</div>
+<div class="seat-box win">
+<div class="os">Windows</div>
+<div class="where">教室中央寄りから座る</div>
+<div class="note">※mac／それ以外の人で座れない場合、<br>Windowsの集団の左や右の近い側へ</div>
+</div>
+<div class="seat-box other">
+<div class="os2">それ以外</div>
+<div class="sub">mac/Windowsでない<br>or <span class="red">インストール不可だった</span></div>
+<div class="where2">右奥から座る</div>
+<div class="note2">ChromeOS<br>Linux<br>iPad/iPhone</div>
+</div>
+</div>
+
+<div class="seat-foot">適切な場所に座って下さい ／ <span class="red">Moodleのパスワード</span>を覚えておくこと</div>
+
+<!-- 入室時の最初の指示スライド。小テスト（記名）の関係で、持参端末（mac/Windows/それ以外）で座席を分ける。図の通りに座らせ、Moodleのパスワードを思い出させておく。 -->
+
+---
 
 <!-- _class: cover-hero -->
 
 <div class="title-hero">
-<div class="title-small">情報リテラシ 第10回 ／ 対面（小テストの回）</div>
+<div class="title-small">情報リテラシ 第10回 ／ 対面</div>
 <div class="title-big">情報倫理と<br>セキュリティ</div>
 </div>
 
@@ -81,7 +138,7 @@ style: |
 </div>
 <div class="title-meta">
 <div class="title-event">23 & 24クラス<br>（医工学 ／ 都市環境システム ／ 応用化学）</div>
-<div class="title-affil">担当：千葉大学 国際未来教育基幹<br>田川 翔（専門：高等教育論・地球惑星科学）<br><span style="font-size:18px;color:#888">2026-06-16（火4）</span></div>
+<div class="title-affil">担当：千葉大学 国際未来教育基幹<br>田川 翔（専門：高等教育論・地球惑星科学）<br><span style="font-size:20px;color:#888">2026-06-16（火4）</span></div>
 </div>
 </div>
 
@@ -93,16 +150,17 @@ style: |
 
 <div class="page-title">今日の進め方</div>
 
-## 90分の設計 ── テスト → 倫理 → 守る、を一本で
+## 今日の90分の設計 ── 倫理 → テスト → 守る
 
 <div class="split-body">
 <div class="left">
 
-<table class="dtbl" style="width:100%; font-size:16px; line-height:1.3">
+<table class="dtbl" style="width:130%; font-size:21px; line-height:1.45">
 <tr><th>時間</th><th>内容</th></tr>
-<tr><td class="mono">0–15</td><td class="l"><span class="red">小テスト</span>（第8回・記名）</td></tr>
-<tr><td class="mono">15–45</td><td class="l"><strong>第1部 情報倫理</strong><br>中傷／プライバシー／広告／著作権／炎上</td></tr>
-<tr><td class="mono">45–73</td><td class="l"><strong>第2部 認証＝本人確認</strong><br>パスワード／フィッシング／2要素認証</td></tr>
+<tr><td class="mono">0–8</td><td class="l">導入・Slido接続（安全の約束・あるある投票）</td></tr>
+<tr><td class="mono">8–38</td><td class="l"><strong>第1部 情報倫理</strong><br>中傷／プライバシー／広告／著作権／炎上</td></tr>
+<tr><td class="mono">38–53</td><td class="l"><span class="red">小テスト</span>（第8回・記名）</td></tr>
+<tr><td class="mono">53–73</td><td class="l"><strong>第2部 認証＝本人確認</strong><br>パスワード／フィッシング／2要素認証</td></tr>
 <tr><td class="mono">73–75</td><td class="l">まとめ・今夜やること</td></tr>
 <tr><td class="mono">予備</td><td class="l">認証の図解・体験クイズ</td></tr>
 </table>
@@ -112,92 +170,26 @@ style: |
 
 <div class="callout-blue">📱 今日はみんなに参加してもらいます</div>
 
-- <span class="hl">Slido</span> で匿名投票・経験シェア（右上のQR・コードはずっと表示）
-- 「<span class="hl">挙手</span>」「<span class="hl">隣と1分</span>」も時々します
+- <span class="hl">Slido</span> で匿名投票・経験シェア（このQR・リンクはずっと表示）
 - スマホが無い／繋がらない人は<span class="hl">隣と1台でOK</span>
 
-<div class="ask hand">まず練習。Slidoに繋いで、最初の投票に答えてみましょう。</div>
+<div style="display:flex; align-items:center; gap:16px; margin:10px 0; background:#EAF3FB; border:2px solid #3E78B2; border-radius:10px; padding:10px 14px;">
+<img src="./src/qr-slido.png" alt="Slido QR" style="width:132px; height:132px; flex:none; background:#fff; border-radius:6px;">
+<div style="font-size:19px; line-height:1.55;">
+<div style="font-weight:700; color:#23527a;">📊 Slido に接続</div>
+<div class="mono" style="font-size:16px; word-break:break-all;"><a href="https://app.sli.do/event/2XGYyUkwv7QvrNfVSVS7qa" style="color:#23527a; text-decoration:underline;">app.sli.do/event/2XGYyUkwv7QvrNfVSVS7qa</a></div>
+<div style="font-size:16px; color:#555;">QRを読む or 上のURLへ</div>
+</div>
+</div>
+
+<div class="ask hand">まず練習。Slidoに繋いで、最初の投票に答えよう。</div>
 
 </div>
 </div>
 
-<div class="takeaway">前半は「他人を傷つけない」、後半は「自分を守る」。テストは最初に。</div>
+<div class="takeaway">前半は「他人を傷つけない」、後半は「自分を守る」。テストは真ん中で実施予定。</div>
 
-<!-- 全体地図。小テストは冒頭固定（採点の裏でSlido起動＝死に時間ゼロ）。QRは入室時から最後まで右隅に常時表示。回答は7割で締めて結果を一気に開くと盛り上がる。 -->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">最初に小テスト</div>
-
-## まず15分、第8回（ネットワーク）の小テスト
-
-<div class="split-body">
-<div class="left">
-
-<div class="cbox blue"><div class="h">範囲・形式</div><div class="b">
-
-- 範囲は<span class="hl">第8回だけ</span>（TCP/IP・IPアドレス・DNS・暗号・Wi-Fi 等）
-- オンデマンド回の<span class="hl">理解確認</span>＋期末の練習
-- <span class="hl">記名</span>・個人で・15分
-- 提出は Moodle（または配布のマークシート）
-
-</div></div>
-
-<div class="band" style="font-size:18px">終わった人から見直し。回収後すぐ第1部に入ります。</div>
-
-</div>
-<div class="right">
-
-<div class="cbox gray"><div class="h">心がまえ</div><div class="b">
-
-- 用語の<span class="red">丸暗記</span>でなく「<span class="hl">URL→表示の旅</span>」で思い出す
-- 分からない問題は飛ばして先へ
-- スマホ・資料は<span class="red">closed</span>（本物の力試し）
-
-</div></div>
-
-<div class="statement" style="font-size:20px">この小テストが成績。<br>後半のSlidoクイズは「遊び」で成績無関係。</div>
-
-</div>
-</div>
-
-<!-- 小テスト本体はMoodle/マークシートで配布（問題と解答は本デック末尾の教員用付録に8問用意）。第8回はオンデマンドだったので、対面のこの回で定着を確認する位置づけ。採点の裏でSlido(あるある投票)を起動しておく。 -->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">安心して話せる場に</div>
-
-## 今日の「安全の約束」── 失敗談、歓迎します
-
-<div class="split-body">
-<div class="left">
-
-<div class="episode"><div class="h">先に私の失敗から</div>正直に言うと、私も学生の頃「アカウント停止のお知らせ」メールを信じて、ID・パスワードを<span class="hl">入れかけた</span>ことがあります。あと一歩で乗っ取られるところでした。</div>
-
-<div class="statement" style="font-size:21px">「うっかり」は誰にでもある。<br>だから安心して出し合いましょう。</div>
-
-</div>
-<div class="right">
-
-<div class="cbox red"><div class="h">安全の約束（4つ）</div><div class="b">
-
-1. 自分の話でも<span class="hl">友だち・家族から聞いた話でもOK</span>
-2. 個人が特定できる情報・実名・<span class="red">本物のパスワードは書かない／言わない</span>
-3. 話したくないことは<span class="hl">話さなくていい</span>（聞き役歓迎）
-4. ここの話は<span class="hl">この教室限り・成績に無関係</span>
-
-</div></div>
-
-<div class="safe">深刻な被害の相談は授業後でも。窓口＝情報部門／学生相談／警察 #9110。</div>
-
-</div>
-</div>
-
-<!-- 経験シェアの心理的安全性をつくる土台スライド。教員の自己開示→ハードルを下げてから、すぐ次のあるある投票へ。失敗談は「被害が小さく・落ちがあり・誰も傷つけない」もので。 -->
+<!-- 全体地図。小テストは中盤（第1部・倫理が終わった区切りで実施）。QRは入室時から最後まで右隅に常時表示。回答は7割で締めて結果を一気に開くと盛り上がる。 -->
 
 ---
 
@@ -205,14 +197,14 @@ style: |
 
 <div class="page-title">あなたはどう？</div>
 
-## いままで「ヒヤッ」とした経験は？（匿名投票）
+## いままで「ヒヤッ」とした経験は？
 
 <div class="split-body">
 <div class="left">
 
 <div class="slido"><span class="q">あてはまるもの、ぜんぶ選んで（匿名・複数OK）</span></div>
 
-<div class="cbox gray"><div class="b" style="font-size:17px">
+<div class="cbox gray"><div class="b" style="font-size:22px">
 
 - 迷惑メール・SMSが届いた
 - そのリンクを<span class="hl">開いた</span>
@@ -221,6 +213,7 @@ style: |
 - 乗っ取り・不正ログイン通知が来た
 - ワンクリック／架空請求の画面が出た
 - SNSの炎上・トラブルを間近で見た
+- ウイルスに感染した。
 - ── どれも経験なし
 
 </div></div>
@@ -228,15 +221,7 @@ style: |
 </div>
 <div class="right">
 
-<div class="band">結果のバーを見せて一言：<br>「<span class="hl">“被害ゼロ”はむしろ少数派</span>」。</div>
-
-<div class="cbox blue"><div class="h">受け方</div><div class="b">
-
-- 「誰が押したかは出ません」と<span class="hl">先に保証</span>
-- いちばん多い項目を<span class="hl">本編の入口</span>に（多くはフィッシング系→第2部へ橋渡し）
-- 責めるためでなく、リスクが<span class="hl">“普通”</span>だと知るための調査
-
-</div></div>
+<div class="band">状況<br>「<span class="hl">“被害ゼロ”はむしろ少数派？</span>」。</div>
 
 <div class="ask hand">いちばん多かった経験、心当たりある人？</div>
 
@@ -249,12 +234,13 @@ style: |
 
 <div class="page-title">いまの社会</div>
 
-## 私たちの生活は「ネットの上」に乗っている
+## 私たちの生活は「ネットの社会」にいる
 
 <div class="grid3">
 <div class="cbox blue"><div class="h">大学・家庭</div><div class="b">
 
 - Moodle・学生ポータル・図書館
+- e-ラーニング・反転授業・VR／メタバース教育
 - スマホ／IP電話／ビデオ会議
 - ネット通販・ネットバンキング・電子マネー
 - SNS・ライブ配信
@@ -265,7 +251,7 @@ style: |
 - POS・オフィス／工場の自動化
 - 在宅勤務（SOHO）
 - 電子政府・マイナンバー
-- <span class="hl">マイナ保険証</span>（紙の保険証は2025/12失効）
+- <span class="hl">マイナ保険証</span>
 
 </div></div>
 <div class="cbox orange"><div class="h">クラウド任せ</div><div class="b">
@@ -279,7 +265,7 @@ style: |
 
 <div class="band">便利さの裏に、今日学ぶ「<span class="red">倫理</span>（他人を傷つけない）」と「<span class="red">セキュリティ</span>（自分を守る）」が全部ぶら下がっている。</div>
 
-<div class="takeaway">この1つが今日止まったら？ ── 依存しているからこそ、守り方を知る。</div>
+<div class="takeaway">情報倫理が重要になる。</div>
 
 <!-- 範囲A(社会で使われる情報技術)を独立章にせず1枚で圧縮。あるある投票の「クラウド依存」を受けて、便利さ→裏側へ橋渡し。マイナ保険証は身近な「デジタル化×個人情報」の例として軽く。 -->
 
@@ -306,9 +292,9 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<div class="cbox blue"><div class="h">情報リテラシ＝活用する力</div><div class="b">情報機器やネットワークを<span class="hl">使いこなす</span>基本的な能力。第8・9回で学んだ「しくみ」もこれ。</div></div>
+<div class="cbox blue"><div class="h">情報リテラシ＝活用する力</div><div class="b">情報機器やネットワークを<span class="hl">使いこなす</span>基本的な能力。</div></div>
 
-<div class="cbox red"><div class="h">情報倫理＝守るべきモラル</div><div class="b">情報社会で必要な<span class="hl">道徳・モラル</span>。<br>① 誹謗中傷をしない ② プライバシーを侵さない ③ 著作権を侵さない</div></div>
+<div class="cbox red"><div class="h">情報倫理＝守るべきモラル</div><div class="b">情報社会で必要な<span class="hl">道徳・モラル</span>。<br>① 誹謗中傷をしない<br> ② プライバシーを侵さない<br> ③ 著作権を侵さない</div></div>
 
 </div>
 <div class="right">
@@ -317,12 +303,10 @@ style: |
 
 <div class="ask">「使える」だけでは足りない。<strong>使い方の作法</strong>を、一人ひとりが自覚して行動する。</div>
 
-<div class="statement" style="font-size:20px">技術は中立。<br>善くも悪くも「使う人」しだい。</div>
-
 </div>
 </div>
 
-<div class="takeaway">リテラシ（使う力）＋ 倫理（傷つけない作法）＝ 両輪。</div>
+<div class="takeaway">リテラシ（使う力）＋ 倫理（傷つけない作法）＝ 両方必要。</div>
 
 <!-- 定義の対比。原版スライド9の核。匿名性ゆえに倫理が抜けやすい→各自の自覚、という流れで第1部全体の前提を置く。 -->
 
@@ -339,7 +323,7 @@ style: |
 
 <div class="slido"><span class="q">法的に“アウト”になりうるのはどれ？（複数OK）まず1人→隣と1分</span></div>
 
-<table class="dtbl" style="width:100%; font-size:16px; line-height:1.3">
+<table class="dtbl" style="width:100%; font-size:18px; line-height:1.3">
 <tr><th>　</th><th>投稿</th></tr>
 <tr><td class="red">A</td><td class="l">この店、二度と行かない。最悪</td></tr>
 <tr><td class="red">B</td><td class="l">店長◯◯は客をだます詐欺師だ</td></tr>
@@ -347,7 +331,7 @@ style: |
 <tr><td class="red">D</td><td class="l">△△の意見には賛成できない</td></tr>
 </table>
 
-<div class="band" style="font-size:17px">A・D＝<span class="hl">感想・意見</span>は原則セーフ。<br>B・C＝特定個人への<span class="red">摘示・侮辱</span>がアウト。</div>
+<div class="band" style="font-size:19px">A・D＝<span class="hl">感想・意見</span>は原則セーフ。<br>B・C＝特定個人への<span class="red">摘示・侮辱</span>がアウト。</div>
 
 </div>
 <div class="right">
@@ -356,7 +340,7 @@ style: |
 
 <div class="cbox blue"><div class="h">名誉毀損罪（刑法230条）</div><div class="b"><span class="hl">事実を示して</span>評価を下げる。3年以下の拘禁刑／50万円以下の罰金。</div></div>
 
-<div class="band" style="font-size:17px">2025.6.1〜「懲役・禁錮」は<span class="red">拘禁刑</span>に一本化（刑法制定以来初）。</div>
+<div style="font-size:18px; color:#555; margin-top:6px;">※2025.6.1〜「懲役・禁錮」は<span class="red">拘禁刑</span>に一本化（刑法制定以来初）。</div>
 
 </div>
 </div>
@@ -396,12 +380,12 @@ style: |
 
 <div class="cbox orange"><div class="h">発信者情報開示命令</div><div class="b">被害者は手続きで<span class="red">投稿者を特定</span>できる。「匿名だからバレない」は<span class="red">通用しない</span>。</div></div>
 
-<div class="ask">「軽い気持ち」の1投稿が、開示請求で<strong>実名にたどり着く</strong>。</div>
+<div class="cbox gray"><div class="h">悪質な書きこみは犯罪</div><div class="b">爆破予告などの犯行予告＝<span class="red">業務妨害罪などで逮捕</span>。匿名で書いても<span class="hl">通信記録から端末を特定</span>。「軽い気持ち」の1投稿が前科に。</div></div>
 
 </div>
 </div>
 
-<div class="takeaway">いまや中傷は「消す・特定する」が法律で後押しされている。</div>
+<div class="takeaway">匿名でも特定される。中傷も犯行予告も「消す・特定する」が動く。</div>
 
 <!-- 2026年の最重要アップデート。原版は「プロバイダ責任制限法」だが、2025.4.1に情プラ法へ改称・強化。発信者情報開示命令(2022新設)とセットで「匿名でも特定される」を伝える。 -->
 
@@ -418,9 +402,7 @@ style: |
 
 <div class="live">写真をドロップ → 地図に撮影地点ピン<br><span class="u">onlineexifviewer.com</span>（教員PCで・先生の無害なサンプル写真）</div>
 
-<div class="cbox gray"><div class="h">なぜ場所が割れる？</div><div class="b">写真には<span class="hl">EXIF</span>（GPS座標・日時・機種）が埋め込まれる。文字情報ゼロの1枚から、<span class="red">自宅・学校が特定</span>される。</div></div>
-
-<div class="safe">学生に“自分の”位置情報付き自撮りはアップさせない。先生のサンプルでデモ。</div>
+<div class="cbox gray"><div class="h">なぜ場所が割れる？</div><div class="b">写真には<span class="hl">EXIF（ジオタグ）</span>＝GPS座標・日時・機種が埋め込まれる。文字情報ゼロの1枚から、<span class="red">自宅・学校が特定</span>される。</div></div>
 
 </div>
 <div class="right">
@@ -437,12 +419,14 @@ style: |
 
 <div class="ask hand">自分が写った集合写真、友だちが勝手に投稿…OK？</div>
 
+<div style="font-size:18px; margin-top:6px;">SNSで知り合った人と<span class="red">安易に会わない</span>・個人情報を渡さない（<span class="hl">プロフィール詐称</span>もある）。</div>
+
 </div>
 </div>
 
-<div class="takeaway">投稿前の合言葉＝「これ、写ってる全員OK？」責任は他人の分まで及ぶ。</div>
+<div class="takeaway">投稿前に「写ってる全員OK？」会う前に「相手は本物？」</div>
 
-<!-- 原版スライド11(参加と責任)＋目玉デモEXIF(wow10)。「個人情報の結合で特定される」の山場を実演が担う。Slidoランキングで顔写真の票割れ(SNS慣れ層と慎重層)を可視化。 -->
+<!-- 原版スライド11(参加と責任)＋目玉デモEXIF(wow10)。「個人情報の結合で特定される」の山場を実演が担う。Slidoランキングで顔写真の票割れ(SNS慣れ層と慎重層)を可視化。【安全】学生に自分の位置情報付き自撮りはアップさせない＝先生のサンプルでデモ。 -->
 
 ---
 
@@ -474,12 +458,12 @@ style: |
 
 <div class="cbox orange"><div class="h">外部送信規律（電気通信事業法・2023.6.16）</div><div class="b">Cookieや閲覧履歴を外部に送る時、<span class="hl">内容・送信先・目的を通知または公表</span>する義務。<br><span class="red">※EUと違い「事前同意（オプトイン）必須」ではない</span>。</div></div>
 
-<div class="band" style="font-size:17px">「すべて同意」が目立ち「拒否」が探しにくい＝<span class="red">ダークパターン</span>。押す前に一拍。</div>
+<div class="band" style="font-size:19px">「すべて同意」が目立ち「拒否」が探しにくい＝<span class="red">ダークパターン</span>。押す前に一拍。</div>
 
 </div>
 </div>
 
-<div class="takeaway">これは倫理（勝手に渡る）と技術（追跡）の接点。次は「だから守る」。</div>
+<div class="takeaway">広告などで、追われている以上の危険(クラックもあり得る)。</div>
 
 <!-- 原版★重点。同意疲れ(consent fatigue)を言語化し、外部送信規律を正しく「通知・公表義務」と伝える(同意必須ではない)。挙手で「直前に見た商品が別サイト広告で追ってきた経験」→正体がこれ→後半=身を守る話へ折り返す。 -->
 
@@ -487,38 +471,36 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">著作とAI</div>
+<div class="page-title">著作権</div>
 
-## レポートで ── 引用？ 剽窃？ AI丸写し？
+## 著作物は「勝手にコピー・配布」しない
 
 <div class="split-body">
 <div class="left">
 
-<div class="slido"><span class="q">“絶対アウト”を1つ選んで（理由も一言）</span></div>
+<div class="slido"><span class="q">著作権の侵害（アウト）はどれ？（複数OK）</span><br>A:CDをコピーして友だちに配る／B:海賊版サイトで映画を見る・落とす／C:出典を示して本の一文を引用／D:不正に入手したソフトを使う</div>
 
-<table class="dtbl" style="width:100%; font-size:15px; line-height:1.3">
-<tr><th>　</th><th>やったこと</th><th>判定</th></tr>
-<tr><td>A</td><td class="l">本の一文を「」と出典付きで引用</td><td class="hl-green">OK</td></tr>
-<tr><td>B</td><td class="l">Webをコピペし語尾だけ変える</td><td class="red">剽窃</td></tr>
-<tr><td>C</td><td class="l">AIの文をそのまま自分の文として提出</td><td class="red">不正</td></tr>
-<tr><td>D</td><td class="l">AIに構成を相談し自分で書く</td><td class="hl-green">多くは可</td></tr>
-</table>
+<div class="cbox red"><div class="h">著作権侵害＝不正コピー</div><div class="b">
 
-<div class="band" style="font-size:17px">D＝壁打ちは多くの授業でOK。<br><span class="red">ただし各授業のAI利用ルールは担当教員の指示が最優先</span>。</div>
+- <span class="hl">海賊版サイト</span>での視聴・ダウンロード（違法）
+- 音楽・動画・マンガの<span class="hl">無断アップロード／コピー配布</span>
+- ソフトの<span class="hl">不正コピー・不正利用</span> → <span class="red">多額の損害賠償</span>
+
+</div></div>
 
 </div>
 <div class="right">
 
-<div class="cbox blue"><div class="h">引用の要件（著作権法32・48条）</div><div class="b">① 引用は<span class="hl">「従」</span>（自分の文が主） ② <span class="hl">正当な範囲</span>・本文と明瞭に区別 ③ <span class="hl">出所明示</span></div></div>
+<div class="cbox blue"><div class="h">正しく「引用」するなら（著作権法32・48条）</div><div class="b">① 引用は<span class="hl">「従」</span>（自分の文が主） ② <span class="hl">正当な範囲</span>・本文と明瞭に区別 ③ <span class="hl">出所明示</span></div></div>
 
-<div class="cbox orange"><div class="h">生成AIは「相棒」で「代筆屋」でない</div><div class="b"><span class="red">ハルシネーション</span>あり。出典は必ず自分で確認。<br><span class="attr">文化庁『AIと著作権に関する考え方』(2024)</span></div></div>
+<div style="font-size:20px; margin-top:10px;"><strong>DRM＝コピー制限のしくみ</strong>：放送＝ダビング10・CPRM、配信＝Widevine等。<span class="red">コピーガードを外すのも違法</span>。</div>
 
-<div class="cbox gray"><div class="h">DRM・ソフトの利用</div><div class="b">ダビング10・CPRM、配信はWidevine等。<span class="red">不正なソフト／ツールは使わない</span>（多額の損害賠償）。</div></div>
+<div class="cbox orange"><div class="h">生成AIと著作権</div><div class="b">AIの学習・生成物の扱いは<span class="hl">文化庁が整理</span>（2024）。使う素材の権利は自分で確認。</div></div>
 
 </div>
 </div>
 
-<div class="takeaway">「使う」と「奪う」は別。引用は従・出所明示、AIは相棒。</div>
+<div class="takeaway">見る・使うはOK、勝手に「コピー・配布」はNG。引用は出所明示。</div>
 
 <!-- 原版スライド13-14(著作と利用・DRM)＋生成AI時代の論点。Slidoの“絶対アウト”でCに票が割れる(「バレなきゃいい」)→丸写しは不正と確認。DRMは軽く触れて詳細は発展へ。 -->
 
@@ -554,22 +536,23 @@ style: |
 </div>
 <div class="right">
 
-<div class="slido"><span class="q">フォロワー50人・鍵なしで軽い冗談を1回。最大で何人に届く？</span><br>A:〜50／B:〜500／C:〜5,000／D:数万以上</div>
+
+<div class="cbox orange"><div class="h">炎上とは／忘れられる権利</div><div class="b">炎上＝批判・誹謗中傷が<span class="hl">殺到</span>し収拾がつかない状態。<span class="hl">デジタルタトゥー</span>として残り、<span class="hl">忘れられる権利</span>（検索結果の削除）が議論されている。</div></div>
 
 <div class="cbox red"><div class="h">SNSの心得</div><div class="b">
 
 - 誤解を招かない<span class="hl">十分な情報</span>を添える
-- 私的なやりとりの<span class="red">暴露はNG</span>
+- 私的なやりとりの<span class="red">暴露はNG</span>／映え目的の<span class="red">立入禁止での撮影</span>もNG
 - スクショは“証拠”に見えて<span class="hl">切り取りのバイアス</span>
 
 </div></div>
 
-<div class="ask">予想で投票→拡散の図を見せて→<strong>もう一度同じ投票</strong>（Dが増える＝理解の可視化）。</div>
+<div class="ask">予想→拡散の図→<strong>もう一度投票</strong>（Dが増える＝理解の可視化）。</div>
 
 </div>
 </div>
 
-<div class="takeaway">投稿前に「知らない数万人に・スクショされても大丈夫？」</div>
+<div class="takeaway">投稿前に「炎上しない？」「プライバシーは大丈夫？」</div>
 
 <!-- 原版スライド15(SNSの心得)。予想→検証で「自分のフォロワーまででしょ」を裏切る。デジタルタトゥー＋情プラ法で「消す・特定する」が法制化された現在地を示す。 -->
 
@@ -584,7 +567,7 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<div class="live">2枚の顔「どっちが本物？」を当てる<br><span class="u">whichfaceisreal.com</span>（教員PC投影＋挙手 or Slido投票）</div>
+<div class="live">2枚の顔「どっちが本物？」を当てる<br><a class="u" href="https://whichfaceisreal.com/" style="text-decoration:underline;">whichfaceisreal.com</a>（教員PC投影＋挙手 or Slido投票）<br><span class="attr">University of Washington のプロジェクト（Calling Bullshit／J. West・C. Bergstrom）</span></div>
 
 <div class="cbox gray"><div class="h">やり方</div><div class="b">
 
@@ -618,15 +601,375 @@ style: |
 
 ---
 
+<!-- _class: split -->
+
+<div class="page-title">うその情報</div>
+
+## デマ・フェイクニュースに飲まれない
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox red"><div class="h">なぜ広がる？</div><div class="b">
+
+- <span class="hl">デマ</span>＝意図的に流される偽情報・うわさ
+- <span class="hl">フェイクニュース</span>＝本物そっくりの偽ニュース
+- SNSは<span class="red">発信も拡散も簡単</span>＝うのみにしがち
+- <span class="hl">災害時</span>に特に増える（大震災・コロナ・地震）
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">飲まれないために</div><div class="b">
+
+- <span class="hl">情報源を確認</span>（誰が・いつ・一次情報か）
+- <span class="hl">クロスチェック（ファクトチェック）</span>＝複数の情報源で確かめる
+- 「みんなに転送して」＝<span class="red">チェーンメールは止める</span>（迷惑広告＝スパムメールも開かず削除）
+
+</div></div>
+
+<div class="cbox gray"><div class="h">災害時は特に増える</div><div class="b">東日本大震災(2011)・熊本地震(2016)・コロナ(2020)・能登半島地震(2024)…<span class="red">不安につけ込むデマ</span>が流れた。冷静に。</div></div>
+
+<div class="ask">「友だちから来た」「拡散されている」＝本当、ではない。</div>
+
+</div>
+</div>
+
+<div class="takeaway">出どころを確かめてから、信じる・広める。ここでも一拍。</div>
+
+<!-- 教科書 B 迷惑な情報（デマ・チェーンメール）。前の「なりすまし（顔フェイク）」から「情報全般のフェイク」へ。災害とデマのコラムも口頭で。第1部の締め＝メディアリテラシー。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ここで小テスト</div>
+
+## 第1部はここまで。15分、第8回（ネットワーク）の小テスト
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">範囲・形式</div><div class="b">
+
+- 範囲は<span class="hl">第8回だけ</span>（TCP/IP・IPアドレス・DNS・暗号・Wi-Fi 等）
+- オンデマンド回の<span class="hl">理解確認</span>＋期末の練習
+- <span class="hl">記名</span>・個人で・15分
+- 提出は Moodle（または配布のマークシート）
+
+</div></div>
+
+<div class="band" style="font-size:20px">終わった人から見直し。回収後、後半「自分を守る」へ入ります。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox gray"><div class="h">心がまえ</div><div class="b">
+
+- 用語の<span class="red">丸暗記</span>でなく「<span class="hl">URL→表示の旅</span>」で思い出す
+- 分からない問題は飛ばして先へ
+- スマホ・資料は<span class="red">closed</span>（本物の力試し）
+
+</div></div>
+
+<div class="statement" style="font-size:22px">この小テストが成績。<br>Slidoクイズは「遊び」で成績無関係。</div>
+
+</div>
+</div>
+
+<!-- 第1部(倫理)が終わった区切りで実施＝授業の中盤。小テスト本体はMoodle/マークシートで配布（問題と解答は本デック末尾の教員用付録に8問用意）。第8回はオンデマンドだったので、対面のこの回で定着を確認する。回収後すぐ第2部(認証)へ。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">小テストの実施</div>
+
+## ワーク①：周囲と<span class="hl">Safe Exam Browser</span>の起動を確認する（3分）
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">Safe Exam Browser を入手・起動</div><div class="b">
+
+- 配布元：<span class="mono">safeexambrowser.org</span> →「Download」
+- 対応：<span class="hl">Windows / macOS</span>（最新版）
+- Moodle・ILIAS 連携の<span class="hl">試験専用ブラウザ</span>
+- すでに入っている人は<span class="hl">起動できるか</span>だけ確認
+
+</div></div>
+
+<div class="band" style="font-size:20px">未インストールの人は今すぐDL＝この3分で起動まで。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox red"><div class="h">Moodle のログインが必要</div><div class="b">
+
+- ID／PWは<span class="hl">アルファベット4文字・数字4文字</span>
+- <span class="red">5分</span>でインストール＋ログインまで
+- 困ったら<span class="hl">横の人に聞く</span>
+
+</div></div>
+
+<div style="margin-top:8px;">
+<div style="display:grid; grid-template-columns:1fr 2fr 1.3fr; gap:7px; text-align:center; font-size:15px; font-weight:700; margin-bottom:4px;">
+<div>入口</div><div style="background:#E4E4E4; border-radius:3px;">黒板</div><div>入口</div>
+</div>
+<div style="display:grid; grid-template-columns:1fr 2fr 1.3fr; gap:7px; text-align:center;">
+<div style="background:#FBE0E0; border:1px solid #E3A6A6; border-radius:4px; padding:8px 2px; font-size:14px;"><b style="font-size:18px;">mac</b><br>左奥</div>
+<div style="background:#D6E3F0; border:1px solid #9DBBD8; border-radius:4px; padding:8px 2px; font-size:14px;"><b style="font-size:18px;">Windows</b><br>中央寄り</div>
+<div style="background:#DAEAD2; border:2px solid var(--accent); border-radius:4px; padding:8px 2px; font-size:13px;"><b style="font-size:16px;">それ以外</b><br>右奥<br>ChromeOS／Linux<br>iPad／iPhone</div>
+</div>
+<div style="text-align:center; font-size:14px; color:#666; margin-top:3px;">起動できない人 → 教室右（<span style="color:#3C8A57; font-weight:700;">緑</span>）へ移動</div>
+</div>
+
+</div>
+</div>
+
+<div class="takeaway">横の人と起動テストを完了する／無理な場合は教室右（<span style="color:#3C8A57;">緑</span>）へ移動</div>
+
+<!-- ワーク①＝全員のSEB起動確認に5分。未インストール者はその場でDL。起動不可（ChromeOS/Linux/iPad等）の人は緑ゾーン＝紙受験へ誘導。Moodleのログイン情報（英4桁・数4桁）を先に思い出させておく。 -->
+
+---
+
+<div class="page-title">小テストの実施</div>
+
+<div style="border:2px solid #9a9a9a; border-radius:8px; padding:16px 32px; margin:6px auto 0; max-width:90%; text-align:center; line-height:1.55;">
+<div style="font-size:30px; font-weight:800;">時間は<span class="hl">10分で10問</span>（＋2分 予備）<br>12分たったら、<span class="red">受験が完了</span>します。</div>
+<div style="font-size:25px; margin-top:14px;">まず、<strong>PCの人</strong>に自分が問題を解放します。</div>
+<div style="font-size:25px; margin-top:10px;">次に、<strong>紙受験の人</strong>に配ります<br>（なので、少しだけ、<strong>紙受験の方が短く</strong>なります。）</div>
+<div style="font-size:21px; margin-top:8px;">※回収は、配り始めた側から行います。</div>
+</div>
+
+<div class="cbox gray" style="margin-top:16px;"><div class="b" style="font-size:21px; text-align:center;"><strong>注意：</strong>カンニング・持ち込み・横を覗く・スマホを見る等は<span class="red">禁止</span>。<br>不正行為を認定の場合は、それなりの対応がなされます…。</div></div>
+
+<div class="takeaway">それでは開始（〜xx:xx）／完了後：回収されていない人を確認</div>
+
+<!-- 実施手順の確定スライド。PC受験＝Moodleで問題を「解放」した瞬間に開始、紙受験はその後に配布するので数十秒短い。回収は配布開始側から。タイマーは黒板に板書（xx:xx）。終了後、未回収・未提出が無いか挙手で確認してから第2部へ。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">期末試験について</div>
+
+## 期末も Safe Exam Browser で実施 ── 当日の集合場所
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox green"><div class="h">✅ Safe Exam Browser が使える人</div><div class="b">
+
+- <span class="hl">この教室</span>に集合
+- 今日と同じ <span class="hl">Safe Exam Browser</span> で受験
+
+</div></div>
+
+<div class="cbox orange"><div class="h">⚠️ 使えない人（インストール不可など）</div><div class="b">
+
+- <span class="hl">G1-情報処理演習室1</span> に集合
+- 備え付けPCで受験
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox blue"><div class="h">当日の流れ</div><div class="b">
+
+1. まず<span class="hl">全員で期末試験</span>を受ける
+2. 終わったら<span class="hl">この教室に集合</span>
+3. みんなで<span class="hl">解説</span>を見る
+
+</div></div>
+
+<div class="band" style="font-size:20px">SEBが使えるか、今日のうちに確認しておく。</div>
+
+</div>
+</div>
+
+<div class="takeaway">SEB可＝この教室／不可＝G1-情報処理演習室1。試験のあと本教室で解説。</div>
+
+<!-- 期末の事務連絡。今日の小テストと同じSafe Exam Browserを期末でも使うため、当日はSEB可＝本教室／不可＝G1-情報処理演習室1に分かれて受験。受験後は全員この教室に集合して解説。SEBが入るかを今日のうちに各自確認させる。 -->
+
+---
+
 <!-- _class: divider -->
 
 <div class="chapter-num">PART 2 ／ セキュリティ</div>
 
-# 第2部　認証 ＝ 本人確認
+# 第2部　情報セキュリティ
 
 ## ここからは「自分を守る」── パスワード・フィッシング・2要素認証
 
 <!-- 後半は「自分の身を守る」。第1部の「出どころを確かめる」から「あなたを“あなた”と確かめる＝認証」へ自然に接続。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">情報セキュリティとは</div>
+
+## 「安全に・正当に使える状態」を守ること
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">定義</div><div class="b">悪意ある行為（不正アクセス・ネット詐欺・データ破壊）や事故から、<span class="hl">個人情報・データ・コンピュータシステムを守り</span>、安全かつ正当に使える状態を維持すること。</div></div>
+
+<div class="statement" style="font-size:22px">便利さの裏には、必ず「守る」がある。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox red"><div class="h">いくつもの「性質」がある</div><div class="b">どれが失われても「安全」とはいえない。とくに重要な3要素（CIA）＝<br><span class="hl">機密性・完全性・可用性</span></div></div>
+
+<div class="ask">この3要素＋さらに4つ、計7つの性質を次の表で確認。</div>
+
+</div>
+</div>
+
+<div class="takeaway">まず「何を・どんな性質で守るか」を押さえる。</div>
+
+<!-- 教科書 D-a 情報セキュリティとは。第8回(ネットワーク・暗号)の続きとして、守る対象と性質を定義する。次スライドの表7で7性質を一覧。 -->
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">情報セキュリティの性質</div>
+
+## 表7　情報セキュリティの7つの性質
+
+<div class="fig-area">
+
+<table class="dtbl" style="width:94%; font-size:20px; line-height:1.4">
+<tr><th style="width:24%">性質</th><th>意味</th></tr>
+<tr><td class="l"><span class="red">機密性</span></td><td class="l">許可された人だけが情報にアクセスできる</td></tr>
+<tr><td class="l"><span class="red">完全性</span></td><td class="l">情報が破壊・改ざんされていない</td></tr>
+<tr><td class="l"><span class="red">可用性</span></td><td class="l">使いたいときにいつでも使える</td></tr>
+<tr><td class="l"><span class="hl">真正性</span></td><td class="l">情報やユーザが本物だと確認できる ＝ <strong>今日の後半「認証」</strong></td></tr>
+<tr><td class="l">責任追跡性</td><td class="l">何が起きたかを後から追跡できる</td></tr>
+<tr><td class="l">信頼性</td><td class="l">想定したとおりの結果が得られる</td></tr>
+<tr><td class="l">否認防止</td><td class="l">後になって否認されないよう証明できる</td></tr>
+</table>
+
+</div>
+
+<div class="takeaway"><span class="red">機密性・完全性・可用性</span>＝3要素（CIA）。真正性＝本人確認が今日の核。</div>
+
+<!-- 教科書 表7。CIA三要素を赤で強調。真正性＝第2部「認証」につながる。責任追跡性=ログ、否認防止=署名。3要素はどれが欠けても安全でない、を口頭で。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">脅かすもの</div>
+
+## 悪意あるプログラム＝マルウェア
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox red"><div class="h">マルウェアの種類</div><div class="b">
+
+- <span class="hl">ウイルス</span>：他のプログラムに寄生して増える
+- <span class="hl">トロイの木馬</span>：便利を装って侵入
+- <span class="hl">ワーム</span>：単体で自己増殖し広がる
+- <span class="hl">スパイウェア</span>：気づかぬうちに情報を盗む
+- <span class="hl">ランサムウェア</span>：データを人質に身代金要求
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox blue"><div class="h">経済産業省の「ウイルス」定義（次の1つ以上をもつ）</div><div class="b">
+
+- <span class="hl">①自己伝染</span>：自分を他のプログラムへコピーして広がる
+- <span class="hl">②潜伏</span>：しばらく症状を出さず潜む
+- <span class="hl">③発病</span>：破壊・意図しない動作をする
+
+</div></div>
+
+<div style="font-size:20px; margin-top:10px;"><strong>どこから感染？</strong>　不審メールの<span class="hl">添付・リンク</span>／偽サイト・偽ソフト／USB（スマホも感染）</div>
+
+<div class="band" style="font-size:20px">サーバを止める<span class="red">DoS／DDoS攻撃</span>、IDを盗む<span class="red">不正アクセス</span>も。</div>
+
+</div>
+</div>
+
+<div class="takeaway">開く前に一拍。OS・アプリの更新とウイルス対策ソフトで防ぐ。</div>
+
+<!-- 教科書 b 情報セキュリティを脅かすさまざまな問題。経産省のウイルス定義＝自己伝染・潜伏・発病の3機能。ランサムウェアは身代金を払っても復元保証なし。対策は次の認証・守る技術へ。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">実例：ランサムウェア</div>
+
+## 工場が止まった ── アサヒビールへの攻撃（2025年）
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox red"><div class="h">何が起きた？</div><div class="b">
+
+- <span class="hl">2025年9月29日</span>、アサヒグループHD（ビール大手）が<span class="red">ランサムウェア攻撃</span>
+- <span class="hl">受注・出荷システムが全面停止</span>、約30工場が一時停止
+- 手作業対応が続き、<span class="hl">完全復旧は2026年2月</span>
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox gray"><div class="h">攻撃と教訓</div><div class="b">
+
+- ロシア系グループ「<span class="hl">Qilin</span>」が犯行声明・内部文書を公開し身代金要求 → <span class="red">アサヒは支払い拒否</span>
+- 個人情報 <span class="hl">約11万件</span>が流出
+- <span class="red">身代金を払っても、復元も流出停止も保証なし</span>
+
+</div></div>
+
+<div class="band" style="font-size:20px">大企業でも「モノが届かない」社会的被害に。<span class="hl">バックアップ・更新・備え</span>が効く。</div>
+
+</div>
+</div>
+
+<div class="takeaway">ランサムウェアは他人事でない。止まると、商品も生活も止まる。</div>
+
+<!-- 出典：2025年アサヒグループHDサイバー攻撃（Wikipedia／各報道）。2025/9/29システム障害→10/3ランサムウェアと判明、Qilinが犯行声明・身代金要求、アサヒは支払い拒否。受注システム停止で手作業、約30工場停止、個人情報約11万件流出、完全復旧2026/2。身近で最近・大規模＝当事者意識を高める実例。 -->
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">守る技術</div>
+
+## パスワード以外の「守る道具」
+
+<div class="fig-area" style="min-height:0">
+
+<table class="dtbl" style="width:96%; font-size:20px; line-height:1.5">
+<tr><th style="width:32%">守る道具</th><th>はたらき</th></tr>
+<tr><td class="l"><span class="red">更新（パッチ）</span></td><td class="l">ソフトの<span class="hl">ぜい弱性</span>を最新版でふさぐ。最強の基本</td></tr>
+<tr><td class="l">ウイルス対策ソフト</td><td class="l"><span class="hl">パターンファイル</span>を最新に保ち検知・駆除</td></tr>
+<tr><td class="l">ファイアウォール</td><td class="l">ネットの<span class="hl">出入口で不正アクセスを遮断</span></td></tr>
+<tr><td class="l">アクセス制御</td><td class="l">権限のある人だけ。SNSの<span class="hl">公開範囲</span>もこれ</td></tr>
+<tr><td class="l">フィルタリング</td><td class="l">有害サイトを制限（ブラック／ホワイトリスト）</td></tr>
+<tr><td class="l">情報セキュリティポリシー</td><td class="l">組織のルール＝<span class="hl">基本方針→対策基準→実施手順</span></td></tr>
+</table>
+
+</div>
+
+<div class="takeaway">いちばん効くのは「更新」。穴をふさぎ続けることが基本。</div>
+
+<!-- 教科書 E-d〜g、C 情報セキュリティポリシー。「今夜やること（更新・2要素認証ON）」とつながる。偽のウイルス対策ソフト＝スケアウェアにも注意。 -->
 
 ---
 
@@ -661,7 +1004,7 @@ style: |
 
 </div></div>
 
-<div class="band" style="font-size:17px"><span class="red">③と④は別もの</span>。盗聴（スニッフィング）と偽サイト誘導（フィッシング）を混同しない。</div>
+<div class="band" style="font-size:19px"><span class="red">③と④は別もの</span>。盗聴（スニッフィング）と偽サイト誘導（フィッシング）を混同しない。</div>
 
 </div>
 </div>
@@ -692,12 +1035,10 @@ style: |
 
 </div></div>
 
-<div class="safe">入力欄に本物の名前・メール・パスワードは絶対に入れない。本番のメールはリンクを踏まない。</div>
-
 </div>
 <div class="right">
 
-<div class="cbox orange"><div class="h">サポート詐欺も体験（IPA公式）</div><div class="b">偽の警告画面（全画面・ビープ音）→ <span class="hl">ESC長押しで閉じる</span>。<br><span class="u" style="font-family:monospace;font-size:14px">ipa.go.jp/security/anshin/…/fakealert.html</span></div></div>
+<div class="cbox orange"><div class="h">サポート詐欺も体験（IPA公式）</div><div class="b">偽の警告画面（全画面・ビープ音）→ <span class="hl">ESC長押しで閉じる</span>。<br><span class="u" style="font-family:monospace;font-size:16px">ipa.go.jp/security/anshin/…/fakealert.html</span></div></div>
 
 <div class="band">「電話して」と<span class="red">焦らせる</span>のが手口。本物のOS/メーカーは警告画面に電話番号を出さない。</div>
 
@@ -708,7 +1049,48 @@ style: |
 
 <div class="takeaway">見分け力は過信しがち。だから「2要素認証」で多重に守る（次へ）。</div>
 
-<!-- ★看板1：フィッシング体験。Jigsawクイズ(実在・ログイン不要)＋IPA偽警告(日本語公式・約2分自動終了・PC専用)。当日朝に言語切替の実機確認。「正規だと思ったのに偽物」で驚き→認証の多重化へ。 -->
+<!-- ★看板1：フィッシング体験。Jigsawクイズ(実在・ログイン不要)＋IPA偽警告(日本語公式・約2分自動終了・PC専用)。当日朝に言語切替の実機確認。「正規だと思ったのに偽物」で驚き→認証の多重化へ。【安全】入力欄に本物の名前・メール・パスワードは入れない／本番メールのリンクは踏まない。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">だます手口</div>
+
+## 技術でなく「人」をだます ── ソーシャルエンジニアリング
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox orange"><div class="h">人のスキを突く</div><div class="b">
+
+- <span class="hl">ショルダーハッキング</span>：肩越しにのぞき見
+- <span class="hl">トラッシング</span>：ゴミから情報をあさる
+- <span class="hl">ピギーバック</span>：関係者を装い共連れで侵入
+- <span class="hl">なりすまし電話</span>：本人を装い聞き出す
+- <span class="hl">スケアウェア</span>：偽警告で焦らせる
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox red"><div class="h">お金をねらう詐欺</div><div class="b">
+
+- <span class="hl">架空請求・ワンクリック詐欺</span>：身に覚えない請求
+- <span class="hl">フィッシング</span>：偽サイトで入力させる
+- <span class="hl">スキミング</span>：カードの磁気情報を盗み読む
+
+</div></div>
+
+<div class="band" style="font-size:19px">対策＝<span class="hl">のぞかせない・捨てる前に処理・あわてて電話しない</span>。安全な取引は<span class="hl">エスクロー</span>。</div>
+
+</div>
+</div>
+
+<div class="takeaway">技術の壁より「人のスキ」が狙われる。あわてず確認。</div>
+
+<!-- 教科書 F-c ソーシャルエンジニアリング 表10、F-a 架空請求/ワンクリック詐欺、F-d スキミング。授業冒頭のフィッシング体験・IPA偽警告(＝スケアウェア)とつながる。 -->
 
 ---
 
@@ -721,16 +1103,14 @@ style: |
 <div class="split-body">
 <div class="left">
 
-<div class="live">解読にかかる時間を実演<br><span class="u">security.org/how-secure-is-my-password</span>（教員PC・ダミー値のみ）</div>
-
-<table class="dtbl" style="width:100%; font-size:16px">
-<tr><th>例</th><th>解読時間</th></tr>
+<table class="dtbl" style="width:100%; font-size:18px">
+<tr><th>例</th><th>解読時間の目安</th></tr>
 <tr><td class="mono l">password</td><td class="red">数秒</td></tr>
 <tr><td class="mono l">P@ssw0rd</td><td>数時間</td></tr>
 <tr><td class="mono l">correct-horse-…</td><td class="hl-green">数兆年</td></tr>
 </table>
 
-<div class="safe">学生に本物のパスワードは打たせない。教員PCでダミー値のみ、終わったらタブを閉じる。</div>
+<div class="safe">この“破られやすさ”を、次の体験ワークで実際に手で確かめます。</div>
 
 </div>
 <div class="right">
@@ -743,14 +1123,57 @@ style: |
 
 </div></div>
 
-<div class="band" style="font-size:18px">1か所漏れると他も次々試される＝<span class="red">パスワードリスト攻撃</span>。<span class="hl">使い回さない</span>。</div>
+<div class="band" style="font-size:20px">漏れたID・パスワードは<span class="red">ダークウェブの裏市場で名簿として売買</span>され、他サイトに<span class="hl">自動で試される</span>（＝<span class="red">パスワードリスト攻撃</span>／クレデンシャルスタッフィング）。だから<span class="hl">使い回さない</span>。</div>
 
 </div>
 </div>
 
-<div class="takeaway">覚えるのは1個でいい ── パスワードマネージャーに任せる。</div>
+<div class="takeaway">覚えるのは1個でいい ── パスワードマネージャーを活用。</div>
 
 <!-- 原版スライド19＋目玉デモ(解読時間,wow9)。前方投影だけで完結する保険デモ。「複雑な記号より長さ」を桁違いの数字で体感。コアパスワード＋サービス識別子はIPA読本。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">体験ワーク（10分）</div>
+
+## ペアで体感 ── パスワードはこんなに簡単に破れる
+
+<div class="split-body">
+<div class="left">
+
+<div class="live">総当たり（ブルートフォース）を体験<br><span class="u">Colab／Moodle のノートブックを開く</span></div>
+
+<div class="cbox blue"><div class="h">ペアで役割を交代</div><div class="b">
+
+- <span class="hl">入力者</span>：指定フォーマットでダミーを入力（画面に出ない）
+- <span class="hl">実行者</span>：総当たりを実行し、破られる様子を見る
+
+</div></div>
+
+<div class="safe">本物のパスワードは絶対に入力しない（練習用ダミーのみ）。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">4段階で「強さの差」を体感</div><div class="b">
+
+- ① 数字4桁 → <span class="red">一瞬で破られる</span>
+- ② 英小文字6 → まだ危険
+- ③ 英数字6 → やや安全
+- ④ 英数字記号6 → <span class="hl-green">同じ長さでも桁違いに堅い</span>
+
+</div></div>
+
+<div class="band" style="font-size:18px">⑤「最後まで試すと何年？」を計算。<span class="hl">長く・文字種を混ぜる</span>が効く。</div>
+
+</div>
+</div>
+
+<div class="takeaway">短い・単純は数秒で破れる。でも漏れる時は漏れる → だから2要素認証。</div>
+
+<!-- 10分のペアワーク。ノートブック password_bruteforce_workshop_3.ipynb をColab/Moodleで配布。入力者(getpassでダミー入力)→実行者(brute_force実行)→答え合わせ。①数字4桁②英小6③英数6④英数記号6⑤estimate_timeで所要年数。本物PW入力禁止。次の「認証の3要素＝2要素認証」へ：パスワードは破れる/漏れる→もう1つの壁(2FA)が要る、と接続。 -->
 
 ---
 
@@ -772,9 +1195,48 @@ style: |
 
 <div class="band">この<span class="red">異なる2つ</span>を組み合わせる＝<span class="red">2要素認証（2FA）</span>。パスワードが漏れても、もう1つの壁で止まる。</div>
 
-<div class="takeaway">知識＋所持＋生体。2つ重ねれば、1つ破られても入られない。</div>
+<div class="takeaway">知識＋所持＋生体。2つ重ねれば、安心が増える。</div>
 
 <!-- 原版スライド20-22(認証ファクタ・バイオメトリック)をgrid3で1枚に集約。生体の弱点(本人拒否・リプレイ攻撃)も明記。トークン/OTP/チャレンジレスポンスの図解は発展(予備)へ退避。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">さまざまな認証</div>
+
+## パスワードだけじゃない「本人確認」
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">毎回変わる・固有のもの</div><div class="b">
+
+- <span class="hl">ワンタイムパスワード</span>：1回きりで使い捨て
+- <span class="hl">マトリックス認証</span>：表の指定位置の文字を入力
+- <span class="hl">デバイス認証</span>：ICカード・端末そのもの
+- <span class="hl">メール認証</span>：登録メールに届くコード
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">体・画像で</div><div class="b">
+
+- <span class="hl">バイオメトリクス認証</span>：指紋・顔・虹彩
+- <span class="hl">画像認証</span>：画像を読み取って入力
+
+</div></div>
+
+<div class="band" style="font-size:20px"><span class="hl">多要素認証</span>＝異なる種類を組合せ／<span class="hl">二段階認証</span>＝2つの段階で確認。</div>
+
+</div>
+</div>
+
+<div class="takeaway">「知識＋所持＋生体」を組み合わせるほど、破られにくい。</div>
+
+<!-- 教科書 E-c さまざまな認証。多要素＝異なる種類、二段階＝種類を問わず2段階。本編の認証3要素・2要素認証、発展の認証図解(OTP/チャレンジレスポンス)の補完。 -->
 
 ---
 
@@ -789,7 +1251,7 @@ style: |
 
 <div class="slido"><span class="q">正直に。あなたのパスワード、当てはまるのは？（匿名・複数OK）</span><br>A:使い回している／B:誕生日・名前入り／C:<span class="mono">password</span>等を使ったことがある／D:サービスごとに違う＆長い</div>
 
-<div class="band" style="font-size:18px">匿名だから言うと、たぶん<span class="red">Aがいちばん多い</span>。気持ちは分かる、覚えられないから。</div>
+<div class="band" style="font-size:20px">匿名だから言うと、たぶん<span class="red">Aがいちばん多い</span>。気持ちは分かる、覚えられないから。</div>
 
 </div>
 <div class="right">
@@ -803,7 +1265,7 @@ style: |
 
 <div class="ask hand">パスワードマネージャーを使っている人？（使えば覚えるのは1個）</div>
 
-<div class="statement" style="font-size:20px">パスワード＝部屋の鍵。<br>初期値・使い回しは「鍵の在りか」を教えるのと同じ。</div>
+<div class="statement" style="font-size:22px">パスワード＝部屋の鍵。<br>初期値・使い回しは「鍵の在りか」を教えるのと同じ。</div>
 
 </div>
 </div>
@@ -854,28 +1316,59 @@ style: |
 
 ## 今日の「裏側」が見えると、毎日のネットが少し安全になる
 
-<table class="dtbl">
+<div style="width:100%; display:flex; justify-content:center;">
+<table class="dtbl" style="margin:14px 0; font-size:22px; line-height:1.5;">
 <tr><th>項目</th><th>内容</th><th>期限</th></tr>
-<tr><td class="l">リフレクション</td><td class="l">分かったこと3つ／曖昧なこと1つ</td><td>Moodle ／ 6/23</td></tr>
-<tr><td class="l">行動報告</td><td class="l">ポータル／SNSの<strong>2要素認証ON</strong>を報告</td><td>Moodle ／ 6/23</td></tr>
-<tr><td class="l">任意の発展</td><td class="l">フィッシングクイズ全8問／IPAの教材</td><td>なし（希望者）</td></tr>
+<tr><td class="l">リフレクション</td><td class="l">分かったこと</td><td>Moodle ／ 6/30</td></tr>
+<tr><td class="l">課題</td><td class="l">問題を回答</td><td>Moodle ／ 6/30</td></tr>
 </table>
+</div>
 
-<div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">今夜、2要素認証をONに。それが今日いちばんの宿題です。</div>
+<div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">2要素認証をONに。セキュリティを確認。それが今日いちばんの宿題です。</div>
 
 <!-- 締め。宿題＝Moodleリフレクション＋2FA ON報告。次回が(2)＝認証の図解編なら口頭で予告。 -->
 
 ---
 
-<!-- _class: divider -->
+<!-- _class: split -->
 
-<div class="chapter-num">APPENDIX ／ 予備・発展</div>
+<div class="page-title">お知らせ</div>
 
-# 予備・発展
+## 千葉大学 セキュリティバグハンティングコンテスト 2026
 
-## 早く進んだとき／興味のある人へ
+<div class="split-body">
+<div class="left">
 
-<!-- ここからは予備(本編75分が早く終わったとき用)。各2-3分・独立開閉可能。押した時の補填には使わない。 -->
+<div class="cbox blue"><div class="h">どんなコンテスト？</div><div class="b">
+
+- ウェブサイトの<span class="hl">セキュリティホールを探す</span>
+- <span class="hl">プログラミングに詳しくなくてもOK</span>（初心者向け講習あり）
+- <span class="hl">4名までのチーム</span>（1名でも参加可）
+
+</div></div>
+
+<div class="band" style="font-size:18px">今日学んだ「守る側」から、<span class="red">「探す側」</span>を体験してみよう。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">スケジュール</div><div class="b">
+
+- 参加申込：<span class="hl">〜7/28(火)</span>
+- ハンターライセンス講習会：<span class="hl">7/30(木) 10:30–17:40</span>（オンデマンド可・交付期限9/18）
+- レポート提出：<span class="hl">〜9/30(水)</span>
+- 審査：10/1〜11月上旬／表彰式：11月下旬
+
+</div></div>
+
+<div class="cbox gray"><div class="h">リンク</div><div class="b" style="font-size:16px">参考（2025年度）：<span class="mono">jdp.chiba-u.jp/c-csirt/contest/</span><br>関連授業：情報セキュリティ分析（入門）T2木5</div></div>
+
+</div>
+</div>
+
+<div class="takeaway">興味があれば、ぜひ参加を。初心者・1人チームも歓迎。</div>
+
+<!-- 千葉大セキュリティバグハンティングコンテスト2026のお知らせ。おつかれの直後＝末尾に配置。今日の「守る側」の理解から「探す側（脆弱性を見つける）」体験へ誘導。詳細は c-csirt のコンテストサイト。申込〜7/28、講習会7/30(オンデマンド可)、レポート〜9/30。 -->
 
 ---
 
@@ -957,100 +1450,3 @@ style: |
 <div class="takeaway">手口は新しくなる。だから「型」で守る ── 疑う・確かめる・多重化。</div>
 
 <!-- 予備：トークン(原版23-25)＋2024-2026の身近な事例(スミッシング/投資詐欺/闇バイト)。最新数値は当日に警察庁・IPAで確認。各ブロック冒頭の「つかみ弾薬」としても使える。 -->
-
----
-
-<!-- _class: refs -->
-
-<div class="page-title">参考文献・教材</div>
-
-## 参考文献・体験ツール
-
-- Richard E. Smith（稲村雄 監訳）(2003). *認証技術 ── パスワードから公開鍵まで*. オーム社.
-- 浦昭二 ほか (2008). *情報システム学へのいざない［改訂版］*. 培風館.
-- 法務省「侮辱罪の法定刑の引上げ Q&amp;A」 https://www.moj.go.jp/keiji1/keiji12_00194.html
-- 総務省「情報流通プラットフォーム対処法（情プラ法）」／「外部送信規律」
-- 文化庁 (2024).「AIと著作権に関する考え方について」
-- IPA「情報セキュリティ読本」／「偽セキュリティ警告 体験サイト」 https://www.ipa.go.jp/security/anshin/measures/fakealert.html
-- Google／Jigsaw「フィッシング クイズ」 https://phishingquiz.withgoogle.com/
-- EXIF位置情報ビューア https://onlineexifviewer.com/ ／ Which Face Is Real? https://www.whichfaceisreal.com/ ／ How Secure Is My Password? https://www.security.org/how-secure-is-my-password/
-
-<!-- 一次情報中心。法令は2026年6月時点で確認済み。 -->
-
----
-
-<!-- _class: divider -->
-
-<div class="chapter-num">FOR INSTRUCTOR ／ 教員用</div>
-
-# 小テスト（第8回）
-
-## 教員用・別紙 ── 投影せず、Moodle／マークシートで配布
-
-<!-- ここから教員用。本番では投影しない（Moodleの自動採点クイズ、または紙のマークシートで配布）。範囲は第8回(ネットワーク)のみ。 -->
-
----
-
-<!-- _class: summary -->
-
-<div class="page-title">小テスト 問題</div>
-
-## 第8回 確認テスト（8問・記名・15分）
-
-<div class="sections">
-<div class="sec-box">
-
-### ネットワークの基礎
-
-- (1) インターネットの本質は？〔ア 1本の巨大ケーブル／イ ネットワークのネットワーク／ウ 1社が管理する回線〕
-- (2) IPアドレスが「住所」なら、DNSは何にあたる？〔電話帳／郵便番号／暗証番号〕
-- (3) TCP/IPの4層を上（アプリ側）から順に並べよ
-- (4) データを小分けして送る単位を何という？
-
-</div>
-<div class="sec-box">
-
-### 安全・データ
-
-- (5) 公衆Wi-Fiで「HTTPの通信」が危ない理由を1行で
-- (6) 🔒鍵マーク(HTTPS)が「意味すること」と「意味しないこと」を1つずつ
-- (7) 公開鍵暗号：誰でも〇〇でき、受け手だけが△△できる。〇〇／△△は？
-- (8) 表からデータを取り出す問い合わせ言語は？
-
-</div>
-</div>
-
-<!-- 第8回のみ。やさしめ・選択＋短答。配点は均等。次スライドに解答。 -->
-
----
-
-<!-- _class: summary -->
-
-<div class="page-title">小テスト 解答</div>
-
-## 第8回 確認テスト ── 解答
-
-<div class="sections">
-<div class="sec-box">
-
-### 解答（1〜4）
-
-- (1) **イ：ネットワークのネットワーク**
-- (2) **電話帳**（名前→IPアドレスに翻訳）
-- (3) **アプリ層 → 輸送層 → ネット層 → リンク層**
-- (4) **パケット**
-
-</div>
-<div class="sec-box">
-
-### 解答（5〜8）
-
-- (5) **暗号化されず、同じ電波の他人に丸見え**になるから
-- (6) 意味する＝**通信が暗号化**／意味しない＝**サイトが本物・絶対安全**
-- (7) 誰でも**公開鍵で施錠**／受け手だけ**秘密鍵で開錠**
-- (8) **SQL**
-
-</div>
-</div>
-
-<!-- 教員用解答。Moodle自動採点に流用可。 -->

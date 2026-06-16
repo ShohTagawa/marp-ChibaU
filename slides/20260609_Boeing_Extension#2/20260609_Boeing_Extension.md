@@ -1259,6 +1259,40 @@ style: |
 
 ---
 
+<!-- _class: summary -->
+<div class="page-title">予備｜時間が余ったら</div>
+
+## "よりよい利用者"になる ― デザイン思考は、使う側にも効く
+
+<div style="display:grid; grid-template-columns: 0.92fr 1.08fr; gap:22px; align-items:start; margin-top:6px;">
+
+<div>
+<div class="callout-blue" style="font-size:21px; line-height:1.55;">今日練習した<b>共感</b>（困りごとに気づく）と<b>定義</b>（良い問いにする）は、<b>作る人</b>だけの技術ではありません。<br>自分の「不便」を言葉にできる人は、サービスやAIを<b>使いこなす＝よりよい利用者</b>になれます。</div>
+
+<ul style="font-size:20px; line-height:1.55; margin-top:14px;">
+<li>困りごとを<b>具体的に言える</b>＝良い相談・良い検索ができる</li>
+<li><b>「本当はどうしたい？」</b>を持つ＝道具に振り回されない</li>
+</ul>
+</div>
+
+<div style="background:#EAF1FF; border:1.5px solid #b9c8e6; border-radius:10px; padding:12px 18px;">
+<div style="font-size:21px; font-weight:700; color:#0033A0; margin-bottom:6px;">💬 ディスカッション ― 身近な「大学の情報まわり」で</div>
+<div style="font-size:18px; color:#555; margin-bottom:8px;">履修登録・シラバス・教室移動・証明書発行・学内ポータル・Wi-Fi・締切通知 …</div>
+<ol style="font-size:20px; line-height:1.6; padding-left:1.2em; margin:0;">
+<li><b>共感</b>：最近「不便だった」場面を1つ挙げる</li>
+<li><b>定義</b>：HMWの形に言い換える<br><span style="color:#0033A0; font-weight:700;">「〔だれが〕が〔どんな状態〕になるには？」</span></li>
+<li><b>妄想</b>：もし<b>"こんなアプリ・しくみ"</b>があったら、どう使いたい？</li>
+</ol>
+</div>
+
+</div>
+
+<div class="takeaway">自分の困りごとを"良い問い"にできる人が、よりよい利用者になる</div>
+
+<!-- 時間が余ったとき用の予備スライド。今日の共感・定義を「自分ごと」に折り返します。デザイン思考は作る人だけのものではなく、使う人＝あなた自身を“よりよい利用者”にする、という視点を足します。お題は学生に身近な「大学の情報まわりの困りごと」（履修・シラバス・教室・証明書・ポータル・Wi-Fi・締切通知など）。①最近不便だった場面を1つ→②HMWの形（だれが・どんな状態に・には？）に言い換え→③こんなアプリ・しくみがあったらどう使いたいか、を数人に発表してもらうと盛り上がります。解決策より“困りごとを良い問いにする”練習であることを強調。時間が無ければ飛ばしてOK。 -->
+
+---
+
 <!-- _class: wrap -->
 <div class="page-title">まとめ</div>
 

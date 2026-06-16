@@ -1316,8 +1316,8 @@ style: |
 
 ## 今日の「裏側」が見えると、毎日のネットが少し安全になる
 
-<div style="width:100%; display:flex; justify-content:center;">
-<table class="dtbl" style="margin:14px 0; font-size:22px; line-height:1.5;">
+<div style="align-self:stretch; text-align:center;">
+<table class="dtbl" style="display:inline-table; margin:14px auto; font-size:22px; line-height:1.5;">
 <tr><th>項目</th><th>内容</th><th>期限</th></tr>
 <tr><td class="l">リフレクション</td><td class="l">分かったこと</td><td>Moodle ／ 6/30</td></tr>
 <tr><td class="l">課題</td><td class="l">問題を回答</td><td>Moodle ／ 6/30</td></tr>
@@ -1413,40 +1413,143 @@ style: |
 
 ---
 
-<!-- _class: split -->
 
-<div class="page-title">発展：トークンと最新事例</div>
+<!-- _class: divider -->
 
-## 「持ち物」での認証 と、いま起きている被害
+<div class="chapter-num">PART 3 ／ よりよいユーザー</div>
 
-<div class="split-body">
-<div class="left">
+# 第3部　よりよい"ユーザー"になる
 
-<div class="cbox green"><div class="h">トークン＝持っているもの</div><div class="b">
+## 守るだけで終わらない ── 困りごとに気づき、解決を考える
 
-- <span class="hl">パッシブ</span>：鍵・磁気カード・RFID（複製されやすい）
-- <span class="hl">アクティブ</span>：毎分番号が変わる（RSA SecurID 等）
-- 紛失リスクはあるが、<span class="hl">こまめに管理すれば盗難に気づける</span>
+<!-- 第1部(倫理＝傷つけない)・第2部(セキュリティ＝守る)を受けて、最後は前向きに。受け身の利用者から、困りごとに気づき・良い問いを立て・解決を考えられる「よりよいユーザー」へ。ここはデザイン思考の入口を体験するディスカッション。時間が無ければS3の問いだけでもOK。 -->
 
-</div></div>
+---
 
+<div class="page-title">デザイン思考</div>
+
+## 「使う人」から出発して、解決を磨く5ステップ
+
+<div class="band">デザイン思考とは、つくる側の都合ではなく<span class="red">使う人の視点</span>から出発し、観察・試作・検証をくり返して課題と解を磨く進め方。<span class="red">よいユーザー</span>＝困りごとに気づける人ほど、よい問いを立てられる。</div>
+
+<div style="text-align:center; margin:4px 0;">
+<svg viewBox="0 0 1180 220" style="width:100%; max-width:1060px; height:auto;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="デザイン思考の5ステップ">
+  <g fill="none" stroke="#C2C9D6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M231 54 l13 12 -13 12"/><path d="M481 54 l13 12 -13 12"/><path d="M731 54 l13 12 -13 12"/><path d="M981 54 l13 12 -13 12"/>
+  </g>
+  <circle cx="110" cy="66" r="44" fill="#E8467C"/>
+  <path d="M110 88 C86 70 92 48 110 60 C128 48 134 70 110 88 Z" fill="#fff"/>
+  <circle cx="140" cy="40" r="12" fill="#fff"/><text x="140" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#E8467C">1</text>
+  <text x="110" y="142" text-anchor="middle" font-size="27" font-weight="800" fill="#E8467C">共感</text>
+  <text x="110" y="164" text-anchor="middle" font-size="14" fill="#888">Empathize</text>
+  <text x="110" y="190" text-anchor="middle" font-size="16" fill="#333">当事者を観察・理解</text>
+  <circle cx="360" cy="66" r="44" fill="#0033A0"/>
+  <circle cx="360" cy="66" r="20" fill="none" stroke="#fff" stroke-width="3"/><circle cx="360" cy="66" r="10" fill="none" stroke="#fff" stroke-width="3"/><circle cx="360" cy="66" r="3.5" fill="#fff"/>
+  <circle cx="390" cy="40" r="12" fill="#fff"/><text x="390" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#0033A0">2</text>
+  <text x="360" y="142" text-anchor="middle" font-size="27" font-weight="800" fill="#0033A0">定義</text>
+  <text x="360" y="164" text-anchor="middle" font-size="14" fill="#888">Define</text>
+  <text x="360" y="190" text-anchor="middle" font-size="16" fill="#333">本当の課題を定める</text>
+  <circle cx="610" cy="66" r="44" fill="#F0A500"/>
+  <circle cx="610" cy="60" r="15" fill="none" stroke="#fff" stroke-width="3"/><path d="M610 50 v12 M603 56 h14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><rect x="603" y="78" width="14" height="7" rx="2" fill="#fff"/>
+  <circle cx="640" cy="40" r="12" fill="#fff"/><text x="640" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#F0A500">3</text>
+  <text x="610" y="142" text-anchor="middle" font-size="27" font-weight="800" fill="#E08F00">アイデア</text>
+  <text x="610" y="164" text-anchor="middle" font-size="14" fill="#888">Ideate</text>
+  <text x="610" y="190" text-anchor="middle" font-size="16" fill="#333">量を出す（質より量）</text>
+  <circle cx="860" cy="66" r="44" fill="#19B36B"/>
+  <rect x="842" y="50" width="22" height="22" rx="3" fill="none" stroke="#fff" stroke-width="3"/><rect x="858" y="64" width="22" height="22" rx="3" fill="#fff"/>
+  <circle cx="890" cy="40" r="12" fill="#fff"/><text x="890" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#19B36B">4</text>
+  <text x="860" y="142" text-anchor="middle" font-size="27" font-weight="800" fill="#149A5B">試作</text>
+  <text x="860" y="164" text-anchor="middle" font-size="14" fill="#888">Prototype</text>
+  <text x="860" y="190" text-anchor="middle" font-size="16" fill="#333">素早く形にする</text>
+  <circle cx="1110" cy="66" r="44" fill="#7A5BD0"/>
+  <circle cx="1104" cy="60" r="14" fill="none" stroke="#fff" stroke-width="3"/><line x1="1114" y1="70" x2="1124" y2="80" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/><path d="M1098 60 l4 4 7 -8" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1140" cy="40" r="12" fill="#fff"/><text x="1140" y="45" text-anchor="middle" font-size="15" font-weight="700" fill="#7A5BD0">5</text>
+  <text x="1110" y="142" text-anchor="middle" font-size="27" font-weight="800" fill="#6A4BC0">検証</text>
+  <text x="1110" y="164" text-anchor="middle" font-size="14" fill="#888">Test</text>
+  <text x="1110" y="190" text-anchor="middle" font-size="16" fill="#333">試して学び直す</text>
+</svg>
 </div>
-<div class="right">
 
-<div class="cbox red"><div class="h">いま身近で起きている（つかみ）</div><div class="b">
+<div class="cbox gray"><div class="h">この場で味わうのは前半「共感 → 定義」</div><div class="b"><b>共感</b>（困りごとに気づく）→ <b>定義</b>（良い問いにする）。後半のアイデア・試作・検証は、実際にサービスやアプリを考えるときに何度も回していく。</div></div>
 
-- <span class="hl">SMS型フィッシング（スミッシング）</span>の急増
-- 著名人<span class="hl">なりすまし投資広告</span>・ロマンス詐欺
-- SNSの<span class="hl">「闇バイト」</span>募集 → 特殊詐欺の入口
-- パスワードリスト攻撃による不正ログイン
+<div class="takeaway">"使う人"から出発する。良い解より先に、良い問いを。</div>
 
-</div></div>
+<!-- デザイン思考はBoeing連携WSでも使う考え方。使う人＝利用者から出発する5ステップ(共感・定義・アイデア・試作・検証)。今日はこの場で前半の共感(困りごと)→定義(良い問い)を体験する。良い解より先に良い問いを立てるのが肝、と伝える。 -->
 
-<div class="attr">出典：警察庁／フィッシング対策協議会／IPA（数値は当日最新を確認）</div>
+---
 
+<div class="page-title">良い問い（HMW）</div>
+
+## "解"の前に、解く価値のある"問い"を選ぶ
+
+<div style="margin:4px 0 12px; background:#FAF3F4; border:2px solid #e6d2d6; border-radius:12px; padding:10px 24px; text-align:center;">
+<div style="font-size:17px; color:var(--accent); font-weight:700; letter-spacing:.04em;">How Might We ── 私たちは、どうすれば…</div>
+<div style="font-size:25px; font-weight:800; line-height:1.9; margin-top:4px;">「<span style="display:inline-block; min-width:230px; border-bottom:3px dashed var(--accent); color:var(--accent); font-size:20px;">①だれが（利用者）</span> が、<span style="display:inline-block; min-width:250px; border-bottom:3px dashed var(--accent); color:var(--accent); font-size:20px;">②どんな状態になりたい</span> には？」</div>
 </div>
+
+<div class="grid2">
+<div class="cbox red"><div class="h">📐 HMWの型</div><div class="b"><b>How Might We</b>＝「どうすれば〜できる？」<br>型：<b>[利用者]が[望む状態]になるには？</b><br>語尾は<b>「〜には？」</b>で開いておく</div></div>
+<div class="cbox blue"><div class="h">🎯 良い問いの条件</div><div class="b"><b>利用者が主語</b>になっている<br><b>解決策を含めない</b>（手段は後で）<br>広すぎず狭すぎず、<b>複数の案</b>が浮かぶ</div></div>
 </div>
 
-<div class="takeaway">手口は新しくなる。だから「型」で守る ── 疑う・確かめる・多重化。</div>
+<div class="cbox green"><div class="h">✅ 完成例 ／ ✕ NG</div><div class="b"><b>○</b>「<b>はじめて履修登録する学生</b>」が「<b>迷わず科目を選べる</b>」には？　／　<b>✕</b>「アプリを作る」＝<span class="red">解決策を決めつけている</span></div></div>
 
-<!-- 予備：トークン(原版23-25)＋2024-2026の身近な事例(スミッシング/投資詐欺/闇バイト)。最新数値は当日に警察庁・IPAで確認。各ブロック冒頭の「つかみ弾薬」としても使える。 -->
+<div class="takeaway">空欄を埋めるだけ。主語＝利用者、解決策は入れない。</div>
+
+<!-- HMW(How Might We)＝良い問いの型。利用者を主語に、解決策を含めず、ちょうど良い大きさで。次のS3-1〜3はこの型を使って、自分たちの大学生活の困りごとを良い問いにし、解決策→アプリの機能まで広げる流れ。 -->
+
+---
+
+<div class="page-title">ディスカッション①</div>
+
+## S3-1　いまの大学の「情報まわり」の困りごとは？
+
+<div class="slido"><span class="q">あなたが「不便・面倒・不安」と感じる場面を、まず1つ挙げてみよう</span></div>
+
+<div class="cbox gray"><div class="h">こんな場面、ない？（例）</div><div class="b">履修登録・抽選 ／ シラバス検索 ／ 教室移動・空き教室さがし ／ 各種証明書の発行 ／ 学内ポータル・Moodle ／ 学内Wi-Fi ／ 締切・お知らせの通知 ／ 印刷・PC環境 ／ 落とし物・問い合わせ窓口 …</div></div>
+
+<div class="band"><span class="red">共感</span>のコツ：解決策はまだ考えない。「<span class="hl">誰が・いつ・何に</span>困ったか」を具体的に思い出す。</div>
+
+<div class="ask hand">まず1分、自分の「ヒヤッ／イラッ／面倒」を書き出す → 周りの人と共有。</div>
+
+<div class="takeaway">良い解は、良い"困りごと"の観察（共感）から始まる。</div>
+
+<!-- S3-1＝デザイン思考の「共感」。匿名Slidoでも挙手でもOK。学生に身近な情報まわりの困りごとを具体的に出させる。ここで解決策に飛ばないこと(「誰が・いつ・何に」を掘る)を強調。出た困りごとを2-3個拾ってS3-2へ。 -->
+
+---
+
+<div class="page-title">ディスカッション②</div>
+
+## S3-2　その困りごとに、どんな解決策がある？
+
+<div class="slido"><span class="q">①で出た困りごとを1つ選び、解決のアイデアを"量"で出そう</span></div>
+
+<div class="grid2">
+<div class="cbox blue"><div class="h">アイデアの出し口は3つ</div><div class="b">🛠 <b>仕組み・ルール</b>で（手続きを減らす・自動化）<br>📱 <b>道具・アプリ</b>で（通知・地図・検索）<br>🙂 <b>人・サポート</b>で（窓口・ピアサポート）</div></div>
+<div class="cbox orange"><div class="h">広げ方の例</div><div class="b">「履修で迷う」→ おすすめ提示／時間割の自動チェック／先輩のクチコミ／相談チャット… と<b>幅</b>を出す。</div></div>
+</div>
+
+<div class="band"><span class="red">アイデア</span>のコツ：質より<span class="hl">量</span>。人の案を否定しない。突飛でもまず出す。</div>
+
+<div class="takeaway">「これしかない」を疑う。解決策は1つではない。</div>
+
+<!-- S3-2＝デザイン思考の「アイデア」。S3-1で選んだ困りごとに対し、仕組み・道具・人の3方向で量を出させる。アプリだけが答えではない点も示しつつ、次のS3-3で「もしアプリなら」に絞る。否定しない・質より量のルールを徹底。 -->
+
+---
+
+<div class="page-title">ディスカッション③</div>
+
+## S3-3　もしアプリがあるなら、どんな機能がほしい？
+
+<div class="slido"><span class="q">"あったらいいな"を、使う人の目線で「機能」と「使い心地」に分けて具体化</span></div>
+
+<div class="grid2">
+<div class="cbox green"><div class="h">🧩 機能（What＝何ができる）</div><div class="b">プッシュ通知 ／ 横断検索 ／ 学内マップ・ナビ ／ QRでログイン ／ 情報の一元化（ポータル統合）／ AIに質問 …</div></div>
+<div class="cbox red"><div class="h">✨ UI／UX（どう使えるか）</div><div class="b">迷わない動線 ／ <b>3タップ以内</b> ／ 片手で操作 ／ 文字が読みやすい ／ 困ったらすぐ戻れる ／ 誰でも使える（アクセシビリティ）</div></div>
+</div>
+
+<div class="cbox gray"><div class="h">UI と UX のちがい</div><div class="b"><b>UI</b>＝画面・ボタンなどの<b>見た目や操作</b>。<b>UX</b>＝それを使ったときの<b>体験全体</b>（速い・迷わない・気持ちいい）。<span class="red">よいユーザー</span>は「動けばいい」で終わらず、<span class="hl">使い心地</span>まで考える。</div></div>
+
+<div class="takeaway">"良いユーザー"は、機能だけでなく"使い心地（UI/UX）"まで考える。</div>
+
+<!-- S3-3＝デザイン思考の「試作」の入口。機能(What)と使い心地(UI/UX)を分けて考えさせるのがポイント。UI=見た目/操作、UX=体験全体、と定義。良いユーザー＝作り手の視点も持てる人、として第3部を締め、まとめへ。時間が無ければここだけでも成立。 -->

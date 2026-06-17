@@ -1276,144 +1276,6 @@ style: |
 
 ---
 
-<!-- _class: wrap -->
-
-<div class="page-title">まとめ</div>
-
-## 今日の5つの判断ポイント
-
-<div class="grid2">
-<div>
-
-<ul>
-<li><span class="hl">匿名でも当事者</span> ── 侮辱罪は厳罰化（拘禁刑・時効3年）、情プラ法＋開示命令で特定される</li>
-<li><span class="hl">情報は組み合わさる</span> ── 投稿前に「写ってる全員OK？」EXIFで場所も割れる</li>
-<li><span class="hl">追跡される</span> ── Cookieは外部送信（通知・公表）。押す前に一拍</li>
-</ul>
-
-</div>
-<div>
-
-<ul>
-<li><span class="hl">AIは相棒で代筆屋でない</span> ── 引用は従・出所明示、出どころを確かめる</li>
-<li><span class="hl">消えない／守れる</span> ── デジタルタトゥー、そして<span class="red">認証は2要素</span>に</li>
-</ul>
-
-</div>
-</div>
-
-<div class="episode"><div class="h">なぜ学ぶか</div>鍵マークとURLを見る・Fromを疑う・パスワードを使い回さない ── <span class="hl">この3つだけで、多くの被害は防げる</span>。今日から「押す前に一拍・出す前に一拍・送る前に一拍」。</div>
-
-<!-- 第1部(倫理)＋第2部(認証)を5点に圧縮。行動コミット(2FA ON)で終える。 -->
-
----
-
-<!-- _class: qa -->
-
-<div class="page-title">課題・次回</div>
-
-# おつかれさまでした
-
-## 今日の「裏側」が見えると、毎日のネットが少し安全になる
-
-<div style="align-self:stretch; text-align:center;">
-<table class="dtbl" style="display:inline-table; margin:14px auto; font-size:22px; line-height:1.5;">
-<tr><th>項目</th><th>内容</th><th>期限</th></tr>
-<tr><td class="l">リフレクション</td><td class="l">分かったこと</td><td>Moodle ／ 6/30</td></tr>
-<tr><td class="l">課題</td><td class="l">問題を回答</td><td>Moodle ／ 6/30</td></tr>
-</table>
-</div>
-
-<div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">2要素認証をONに。セキュリティを確認。それが今日いちばんの宿題です。</div>
-
-<!-- 締め。宿題＝Moodleリフレクション＋2FA ON報告。次回が(2)＝認証の図解編なら口頭で予告。 -->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">お知らせ</div>
-
-## 千葉大学 セキュリティバグハンティングコンテスト 2026
-
-<div class="split-body">
-<div class="left">
-
-<div class="cbox blue"><div class="h">どんなコンテスト？</div><div class="b">
-
-- ウェブサイトの<span class="hl">セキュリティホールを探す</span>
-- <span class="hl">プログラミングに詳しくなくてもOK</span>（初心者向け講習あり）
-- <span class="hl">4名までのチーム</span>（1名でも参加可）
-
-</div></div>
-
-<div class="band" style="font-size:18px">今日学んだ「守る側」から、<span class="red">「探す側」</span>を体験してみよう。</div>
-
-</div>
-<div class="right">
-
-<div class="cbox green"><div class="h">スケジュール</div><div class="b">
-
-- 参加申込：<span class="hl">〜7/28(火)</span>
-- ハンターライセンス講習会：<span class="hl">7/30(木) 10:30–17:40</span>（オンデマンド可・交付期限9/18）
-- レポート提出：<span class="hl">〜9/30(水)</span>
-- 審査：10/1〜11月上旬／表彰式：11月下旬
-
-</div></div>
-
-<div class="cbox gray"><div class="h">リンク</div><div class="b" style="font-size:16px">参考（2025年度）：<span class="mono">jdp.chiba-u.jp/c-csirt/contest/</span><br>関連授業：情報セキュリティ分析（入門）T2木5</div></div>
-
-</div>
-</div>
-
-<div class="takeaway">興味があれば、ぜひ参加を。初心者・1人チームも歓迎。</div>
-
-<!-- 千葉大セキュリティバグハンティングコンテスト2026のお知らせ。おつかれの直後＝末尾に配置。今日の「守る側」の理解から「探す側（脆弱性を見つける）」体験へ誘導。詳細は c-csirt のコンテストサイト。申込〜7/28、講習会7/30(オンデマンド可)、レポート〜9/30。 -->
-
----
-
-<!-- _class: fig -->
-
-<div class="page-title">発展：認証の図解</div>
-
-## パスワードを「送らない」しくみ
-
-<div class="fig-area">
-
-<svg viewBox="0 0 940 300" width="100%" style="max-height:330px">
-  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#A6192E"/></marker></defs>
-  <g font-size="14" text-anchor="middle">
-    <rect class="card" x="20" y="20" width="290" height="260" rx="12" fill="#FDECEC" stroke="#A6192E" stroke-width="2"/><text x="165" y="44" font-weight="800" font-size="16" fill="#7d1322">① スニッフィング</text>
-    <rect class="card" x="40" y="60" width="90" height="44" rx="7" fill="#fff" stroke="#3E78B2" stroke-width="1.8"/><text x="85" y="80" font-size="13">本人</text><text x="85" y="96" font-size="11" fill="#555">PW送信</text>
-    <path d="M130,82 L200,82" stroke="#999" stroke-width="2" marker-end="url(#arA)"/>
-    <rect class="card" x="200" y="60" width="90" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="245" y="84" font-size="13">サーバ</text>
-    <rect class="card" x="120" y="140" width="100" height="44" rx="7" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="170" y="160" font-size="13" fill="#7d1322">攻撃者</text><text x="170" y="176" font-size="11" fill="#555">盗聴</text>
-    <path d="M165,120 L168,138" stroke="#A6192E" stroke-width="1.8" marker-end="url(#arA)"/>
-    <text x="165" y="220" font-size="13" fill="#A6192E" font-weight="700">同じPWで後から成り済まし</text><text x="165" y="244" font-size="12" fill="#555">＝固定パスワードの弱点</text>
-    <rect class="card" x="325" y="20" width="290" height="260" rx="12" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="470" y="44" font-weight="800" font-size="16" fill="#2d6a44">② ワンタイムPW</text>
-    <rect class="card" x="345" y="70" width="100" height="44" rx="7" fill="#fff" stroke="#3C8A57" stroke-width="1.8"/><text x="395" y="90" font-size="13">トークン</text><text x="395" y="106" font-size="11" fill="#555">毎回違う番号</text>
-    <path d="M445,92 L525,92" stroke="#3C8A57" stroke-width="2" marker-end="url(#arA)"/>
-    <rect class="card" x="525" y="70" width="80" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="565" y="94" font-size="13">サーバ</text>
-    <text x="470" y="160" font-size="13" fill="#2d6a44" font-weight="700">盗まれても、次は別の番号</text><text x="470" y="184" font-size="12" fill="#555">＝1回きりなので無効</text>
-    <rect class="card" x="400" y="205" width="140" height="40" rx="7" fill="#F8E5EA" stroke="#A6192E" stroke-width="1.5"/><text x="470" y="230" font-size="12" fill="#7d1322">攻撃者が再利用→失敗</text>
-    <rect class="card" x="630" y="20" width="290" height="260" rx="12" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="775" y="44" font-weight="800" font-size="16" fill="#23527a">③ チャレンジレスポンス</text>
-    <rect class="card" x="650" y="70" width="90" height="44" rx="7" fill="#fff" stroke="#3E78B2" stroke-width="1.8"/><text x="695" y="94" font-size="13">本人</text>
-    <rect class="card" x="830" y="70" width="80" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="870" y="94" font-size="13">サーバ</text>
-    <path d="M830,84 L742,84" stroke="#3E78B2" stroke-width="1.8" marker-end="url(#arA)"/><text x="786" y="78" font-size="11" fill="#23527a">お題</text>
-    <path d="M742,104 L830,104" stroke="#3E78B2" stroke-width="1.8" marker-end="url(#arA)"/><text x="786" y="120" font-size="11" fill="#23527a">計算した答え</text>
-    <text x="775" y="170" font-size="13" fill="#23527a" font-weight="700">PWそのものは送らない</text><text x="775" y="194" font-size="12" fill="#555">お題から計算した答えだけ送る</text>
-  </g>
-</svg>
-
-</div>
-
-<div class="takeaway">固定PWは盗まれると弱い → 毎回変える・そもそも送らない、へ。</div>
-
-<!-- 原版スライド26-28(スニッフィング/ワンタイムPW/チャレンジレスポンス)の図解を1枚に。第2部「2要素認証」の自然な続き。次回(2)の本丸でもある。 -->
-
----
-
-
 <!-- _class: divider -->
 
 <div class="chapter-num">PART 3 ／ よりよいユーザー</div>
@@ -1553,3 +1415,140 @@ style: |
 <div class="takeaway">"良いユーザー"は、機能だけでなく"使い心地（UI/UX）"まで考える。</div>
 
 <!-- S3-3＝デザイン思考の「試作」の入口。機能(What)と使い心地(UI/UX)を分けて考えさせるのがポイント。UI=見た目/操作、UX=体験全体、と定義。良いユーザー＝作り手の視点も持てる人、として第3部を締め、まとめへ。時間が無ければここだけでも成立。 -->
+
+---
+
+<!-- _class: wrap -->
+
+<div class="page-title">まとめ</div>
+
+## 今日の5つの判断ポイント
+
+<div class="grid2">
+<div>
+
+<ul>
+<li><span class="hl">匿名でも当事者</span> ── 侮辱罪は厳罰化（拘禁刑・時効3年）、情プラ法＋開示命令で特定される</li>
+<li><span class="hl">情報は組み合わさる</span> ── 投稿前に「写ってる全員OK？」EXIFで場所も割れる</li>
+<li><span class="hl">追跡される</span> ── Cookieは外部送信（通知・公表）。押す前に一拍</li>
+</ul>
+
+</div>
+<div>
+
+<ul>
+<li><span class="hl">AIは相棒で代筆屋でない</span> ── 引用は従・出所明示、出どころを確かめる</li>
+<li><span class="hl">消えない／守れる</span> ── デジタルタトゥー、そして<span class="red">認証は2要素</span>に</li>
+</ul>
+
+</div>
+</div>
+
+<div class="episode"><div class="h">なぜ学ぶか</div>鍵マークとURLを見る・Fromを疑う・パスワードを使い回さない ── <span class="hl">この3つだけで、多くの被害は防げる</span>。今日から「押す前に一拍・出す前に一拍・送る前に一拍」。</div>
+
+<!-- 第1部(倫理)＋第2部(認証)を5点に圧縮。行動コミット(2FA ON)で終える。 -->
+
+---
+
+<!-- _class: qa -->
+
+<div class="page-title">課題・次回</div>
+
+# おつかれさまでした
+
+## 今日の「裏側」が見えると、毎日のネットが少し安全になる
+
+<div style="align-self:stretch; text-align:center;">
+<table class="dtbl" style="display:inline-table; margin:14px auto; font-size:22px; line-height:1.5;">
+<tr><th>項目</th><th>内容</th><th>期限</th></tr>
+<tr><td class="l">リフレクション</td><td class="l">分かったこと</td><td>Moodle ／ 6/30</td></tr>
+<tr><td class="l">課題</td><td class="l">問題を回答</td><td>Moodle ／ 6/30</td></tr>
+</table>
+</div>
+
+<div class="band" style="text-align:center;background:#FBEFC8;border-color:#D98A2B">2要素認証をONに。セキュリティを確認。それが今日いちばんの宿題です。</div>
+
+<!-- 締め。宿題＝Moodleリフレクション＋2FA ON報告。次回が(2)＝認証の図解編なら口頭で予告。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">お知らせ</div>
+
+## 千葉大学 セキュリティバグハンティングコンテスト 2026
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">どんなコンテスト？</div><div class="b">
+
+- ウェブサイトの<span class="hl">セキュリティホールを探す</span>
+- <span class="hl">プログラミングに詳しくなくてもOK</span>（初心者向け講習あり）
+- <span class="hl">4名までのチーム</span>（1名でも参加可）
+
+</div></div>
+
+<div class="band" style="font-size:18px">今日学んだ「守る側」から、<span class="red">「探す側」</span>を体験してみよう。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">スケジュール</div><div class="b">
+
+- 参加申込：<span class="hl">〜7/28(火)</span>
+- ハンターライセンス講習会：<span class="hl">7/30(木) 10:30–17:40</span>（オンデマンド可・交付期限9/18）
+- レポート提出：<span class="hl">〜9/30(水)</span>
+- 審査：10/1〜11月上旬／表彰式：11月下旬
+
+</div></div>
+
+<div class="cbox gray"><div class="h">リンク</div><div class="b" style="font-size:16px">参考（2025年度）：<span class="mono">jdp.chiba-u.jp/c-csirt/contest/</span><br>関連授業：情報セキュリティ分析（入門）T2木5</div></div>
+
+</div>
+</div>
+
+<div class="takeaway">興味があれば、ぜひ参加を。初心者・1人チームも歓迎。</div>
+
+<!-- 千葉大セキュリティバグハンティングコンテスト2026のお知らせ。おつかれの直後＝末尾に配置。今日の「守る側」の理解から「探す側（脆弱性を見つける）」体験へ誘導。詳細は c-csirt のコンテストサイト。申込〜7/28、講習会7/30(オンデマンド可)、レポート〜9/30。 -->
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">発展：認証の図解</div>
+
+## パスワードを「送らない」しくみ
+
+<div class="fig-area">
+
+<svg viewBox="0 0 940 300" width="100%" style="max-height:330px">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#A6192E"/></marker></defs>
+  <g font-size="14" text-anchor="middle">
+    <rect class="card" x="20" y="20" width="290" height="260" rx="12" fill="#FDECEC" stroke="#A6192E" stroke-width="2"/><text x="165" y="44" font-weight="800" font-size="16" fill="#7d1322">① スニッフィング</text>
+    <rect class="card" x="40" y="60" width="90" height="44" rx="7" fill="#fff" stroke="#3E78B2" stroke-width="1.8"/><text x="85" y="80" font-size="13">本人</text><text x="85" y="96" font-size="11" fill="#555">PW送信</text>
+    <path d="M130,82 L200,82" stroke="#999" stroke-width="2" marker-end="url(#arA)"/>
+    <rect class="card" x="200" y="60" width="90" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="245" y="84" font-size="13">サーバ</text>
+    <rect class="card" x="120" y="140" width="100" height="44" rx="7" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/><text x="170" y="160" font-size="13" fill="#7d1322">攻撃者</text><text x="170" y="176" font-size="11" fill="#555">盗聴</text>
+    <path d="M165,120 L168,138" stroke="#A6192E" stroke-width="1.8" marker-end="url(#arA)"/>
+    <text x="165" y="220" font-size="13" fill="#A6192E" font-weight="700">同じPWで後から成り済まし</text><text x="165" y="244" font-size="12" fill="#555">＝固定パスワードの弱点</text>
+    <rect class="card" x="325" y="20" width="290" height="260" rx="12" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="470" y="44" font-weight="800" font-size="16" fill="#2d6a44">② ワンタイムPW</text>
+    <rect class="card" x="345" y="70" width="100" height="44" rx="7" fill="#fff" stroke="#3C8A57" stroke-width="1.8"/><text x="395" y="90" font-size="13">トークン</text><text x="395" y="106" font-size="11" fill="#555">毎回違う番号</text>
+    <path d="M445,92 L525,92" stroke="#3C8A57" stroke-width="2" marker-end="url(#arA)"/>
+    <rect class="card" x="525" y="70" width="80" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="565" y="94" font-size="13">サーバ</text>
+    <text x="470" y="160" font-size="13" fill="#2d6a44" font-weight="700">盗まれても、次は別の番号</text><text x="470" y="184" font-size="12" fill="#555">＝1回きりなので無効</text>
+    <rect class="card" x="400" y="205" width="140" height="40" rx="7" fill="#F8E5EA" stroke="#A6192E" stroke-width="1.5"/><text x="470" y="230" font-size="12" fill="#7d1322">攻撃者が再利用→失敗</text>
+    <rect class="card" x="630" y="20" width="290" height="260" rx="12" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="775" y="44" font-weight="800" font-size="16" fill="#23527a">③ チャレンジレスポンス</text>
+    <rect class="card" x="650" y="70" width="90" height="44" rx="7" fill="#fff" stroke="#3E78B2" stroke-width="1.8"/><text x="695" y="94" font-size="13">本人</text>
+    <rect class="card" x="830" y="70" width="80" height="44" rx="7" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/><text x="870" y="94" font-size="13">サーバ</text>
+    <path d="M830,84 L742,84" stroke="#3E78B2" stroke-width="1.8" marker-end="url(#arA)"/><text x="786" y="78" font-size="11" fill="#23527a">お題</text>
+    <path d="M742,104 L830,104" stroke="#3E78B2" stroke-width="1.8" marker-end="url(#arA)"/><text x="786" y="120" font-size="11" fill="#23527a">計算した答え</text>
+    <text x="775" y="170" font-size="13" fill="#23527a" font-weight="700">PWそのものは送らない</text><text x="775" y="194" font-size="12" fill="#555">お題から計算した答えだけ送る</text>
+  </g>
+</svg>
+
+</div>
+
+<div class="takeaway">固定PWは盗まれると弱い → 毎回変える・そもそも送らない、へ。</div>
+
+<!-- 原版スライド26-28(スニッフィング/ワンタイムPW/チャレンジレスポンス)の図解を1枚に。第2部「2要素認証」の自然な続き。次回(2)の本丸でもある。 -->

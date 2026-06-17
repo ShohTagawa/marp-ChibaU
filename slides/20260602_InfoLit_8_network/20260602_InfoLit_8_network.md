@@ -2456,7 +2456,7 @@ style: |
 
 <div class="page-title">なぜ平文は危険か</div>
 
-## 公衆Wi-Fiで「HTTPでない通信」は、同じ電波の他人に丸見え <span class="important">重要</span>
+## 公衆Wi-Fiで「HTTP<span style="background-color:#FFCACA;">S</span>でない通信」は、同じ電波の他人に丸見え <span class="important">重要</span>
 
 <div class="fig-area">
 <svg viewBox="0 0 920 320" width="100%" style="max-height:350px">
@@ -2811,11 +2811,11 @@ style: |
   <!-- 3操作 -->
   <g text-anchor="middle">
     <rect class="card" x="356" y="44" width="200" height="42" rx="8" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-    <text x="416" y="63" font-size="16" font-weight="700" fill="#3E78B2">選択</text><text x="416" y="80" font-size="14" fill="#555">条件に合う<tspan font-weight="700" fill="#3E78B2">行</tspan>を取り出す</text>
+    <text x="456" y="63" font-size="16" font-weight="700" fill="#3E78B2">選択</text><text x="456" y="80" font-size="14" fill="#555">条件に合う<tspan font-weight="700" fill="#3E78B2">行</tspan>を取り出す</text>
     <rect class="card" x="356" y="96" width="200" height="42" rx="8" fill="#fdf3e8" stroke="#D98A2B" stroke-width="2"/>
-    <text x="416" y="115" font-size="16" font-weight="700" fill="#D98A2B">射影</text><text x="416" y="132" font-size="14" fill="#555">特定の<tspan font-weight="700" fill="#D98A2B">列</tspan>を取り出す</text>
+    <text x="456" y="115" font-size="16" font-weight="700" fill="#D98A2B">射影</text><text x="456" y="132" font-size="14" fill="#555">特定の<tspan font-weight="700" fill="#D98A2B">列</tspan>を取り出す</text>
     <rect class="card" x="356" y="148" width="200" height="42" rx="8" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/>
-    <text x="416" y="167" font-size="16" font-weight="700" fill="#3C8A57">結合</text><text x="416" y="184" font-size="14" fill="#555">複数の表をつなぐ(JOIN)</text>
+    <text x="456" y="167" font-size="16" font-weight="700" fill="#3C8A57">結合</text><text x="456" y="184" font-size="14" fill="#555">複数の表をつなぐ(JOIN)</text>
   </g>
   <line x1="566" y1="116" x2="606" y2="116" stroke="#A6192E" stroke-width="3.5" marker-end="url(#u08-arr3)"/>
   <!-- SQL文と結果 -->
@@ -2842,7 +2842,7 @@ style: |
 
 <div class="caption">SQL＝<span class="red">Structured Query Language</span>。検索・登録の問い合わせ＝<span class="red">クエリ</span>。<span class="hl">選択＝行</span>・<span class="hl">射影＝列</span>・結合＝表をつなぐ。</div>
 
-<div class="takeaway">「英語っぽい1文」で、欲しい行（選択）と列（射影）を切り出せる。これが SQL の核。</div>
+<div class="takeaway">SQL → 「英語っぽい1文」で、欲しい行（選択）と列（射影）を切り出し欲しい表になる。</div>
 
 ---
 
@@ -2970,7 +2970,7 @@ style: |
 </div>
 </div>
 
-<div class="band">情報システムの正体は<span class="hl">「ネットワークで集めたデータを、データベースに蓄えて活かす」</span>こと。残りはその“読み方”を学ぶ。</div>
+<div class="band">情報システムの正体は<span class="hl">「ネットワークで集めたデータを、データベースに蓄えて活かす」</span>こと。</div>
 
 ---
 
@@ -3402,7 +3402,7 @@ style: |
     <text x="770" y="276" font-size="15" fill="#555">例：Gmail・Google ドキュメント</text>
   </g>
   <!-- 右向き「おまかせが増える」矢印 -->
-  <text x="470" y="306" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">→ 右へ行くほど赤（自分の管理）が減り、緑（おまかせ）が増える：責任共有モデル</text>
+  <text x="470" y="306" font-size="16" font-weight="700" text-anchor="middle" fill="#A6192E">→ 右へ行くほど赤（自分の管理）が減り、緑（おまかせ）が増える (データは常に自分)：責任共有モデル</text>
 </svg>
 </div>
 
@@ -3436,7 +3436,7 @@ style: |
   <line x1="120" y1="112" x2="70"  y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
   <line x1="180" y1="114" x2="180" y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
   <line x1="240" y1="112" x2="290" y2="154" stroke="#3E78B2" stroke-width="2.5" marker-end="url(#u10arr-d)"/>
-  <text x="180" y="246" font-size="15" font-weight="700" text-anchor="middle" fill="#3E78B2">だから「学びの実験場」に最適</text>
+  <text x="180" y="246" font-size="15" font-weight="700" text-anchor="middle" fill="#3E78B2">だから「学ぶために試す」に最適</text>
   <text x="180" y="268" font-size="13" text-anchor="middle" fill="#888">※集約ゆえ落ちると影響は広い</text>
 </svg>
 
@@ -3517,8 +3517,7 @@ style: |
 
 <div class="page-title">旅の全行程</div>
 
-## 「URLを入れてからページが出るまで」── 全部つながった
-
+## 「URLを入れてからページが出るまで」
 <div class="fig-area">
 <svg viewBox="0 0 980 300" width="100%" style="max-height:340px">
   <defs>
@@ -3559,7 +3558,7 @@ style: |
 </svg>
 </div>
 
-<div class="band">この回でたどった道：端末 → Wi-Fi → DNS → Internet → サーバ → ページ表示。各駅の「しくみ」が、次の駅へ荷物を渡していた。</div>
+<div class="band">端末 → Wi-Fi → DNS → Internet → サーバ → ページ表示。各「しくみ」が、次へ情報を渡していた。</div>
 
 <div class="takeaway">点で覚えた用語を、URL→表示という1本の線でつなぎ直す。</div>
 

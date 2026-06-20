@@ -1,0 +1,19 @@
+{
+  "grid": { "left": 16, "right": 90, "top": 16, "bottom": 16, "containLabel": true },
+  "xAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 16 } },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["ガイドラインを策定済＋策定中", "現場で実質的に機能させるのが困難"],
+    "axisLabel": { "fontSize": 19, "fontWeight": "bold", "width": 360, "overflow": "break", "lineHeight": 24 }
+  },
+  "series": [{
+    "type": "bar",
+    "barWidth": "46%",
+    "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 26, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 68.1, "itemStyle": { "color": "#9aa0a6" } },
+      { "value": 85.8, "itemStyle": { "color": "#C8611C" } }
+    ]
+  }]
+}

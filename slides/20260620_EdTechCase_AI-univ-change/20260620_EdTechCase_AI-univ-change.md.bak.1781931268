@@ -53,28 +53,14 @@ style: |
   section.summary .cbox { margin:8px 0; }
   section.summary .cbox > .h { padding:7px 20px; }
   section.summary .cbox > .b { padding:9px 20px 11px; line-height:1.5; }
-  /* 4ボックスのsummaryは自動で2×2グリッドにして縦あふれを防ぐ */
-  section.summary .sections:has(> .cbox:nth-child(4)) { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-content:center; }
-  section.summary .sections:has(> .cbox:nth-child(4)) .cbox { margin:0; }
-  .fig-area img { border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.10); }
-  .split-body .left img { border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.10); max-height:392px; object-fit:contain; }
-  section.split:has(.takeaway) .split-body .left img { max-height:360px; }
-  section.split:has(.takeaway) .split-body .left svg { max-height:344px; }
+  .fig-area img { border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.10); } .split-body .left img { border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.10); }
   section.fig .fig-area { min-height:380px; }
   .axislab { font-size:20px; font-weight:800; }
   /* 下端takeaway帯の見切れ防止：fig内のSVG/表に縦上限を与え本文ゾーンに収める */
-  section.fig:has(.takeaway) .fig-area { max-height:344px; }
-  section.fig:has(.takeaway) .fig-area svg { max-height:344px; width:auto; max-width:100%; display:block; margin:0 auto; }
+  section.fig:has(.takeaway) .fig-area { max-height:400px; }
+  section.fig:has(.takeaway) .fig-area svg { max-height:400px; width:auto; max-width:100%; display:block; margin:0 auto; }
   section.fig:has(.takeaway) .fig-area .dtbl { font-size:19px; }
   section.fig:has(.takeaway) .fig-area .dtbl th, section.fig:has(.takeaway) .fig-area .dtbl td { padding:5px 12px; }
-  /* ---- タイトルとtakeawayの間に本文を中央寄せで配分（タイトル/takeawayの位置は不変）----
-     takeawayを下端に絶対配置で固定し、その上の本文ゾーンに余白を均等配分する。 */
-  section.fig:has(.takeaway), section.split:has(.takeaway) { position: relative; padding-bottom: calc(var(--takeaway-bottom) + 86px) !important; }
-  section.fig:has(.takeaway) .takeaway, section.split:has(.takeaway) .takeaway {
-    position: absolute; left: var(--side-pad); right: var(--side-pad);
-    bottom: var(--takeaway-bottom); margin: 0; }
-  section.fig:has(.takeaway) .fig-area { margin-top: auto; margin-bottom: auto; }
-  section.split:has(.takeaway) .split-body { margin-top: auto; margin-bottom: auto; }
   /* ---- 表紙(cover-hero)を整える ---- */
   section.cover-hero .title-hero { margin-bottom:42px; }
   section.cover-hero .title-small { font-size:26px; font-weight:700; color:#6b6f76; letter-spacing:.12em; margin-bottom:16px; }
@@ -88,8 +74,6 @@ style: |
   section.cover-hero .title-affil { color:#444; margin-bottom:7px; }
   section.cover-hero .title-date { font-size:20px; color:#6b6f76; }
 ---
-
-
 
 
 <!-- _class: cover-hero -->
@@ -139,40 +123,6 @@ style: |
 
 ---
 
-<!-- _class: split -->
-
-<div class="page-title">プレFD</div>
-
-## 「大学で教える人」を育てる ── プレFD という仕事
-
-<div class="split-body"><div class="left">
-
-<div class="cbox mid"><div class="h">プレFD とは</div><div class="b">
-
-- <span class="hl">次世代の大学教員（主に大学院生）</span>に「教え方」を育てる取り組み
-- 私のFDは東大・<span class="hl">栗田佳代子</span>先生門下。千葉大で<span class="hl">大学院・プレFD</span>を担当
-- 「上から教える」のでなく、これから教える人と<span class="red">一緒に学ぶ</span>
-
-</div></div>
-
-</div><div class="right">
-
-<div class="cbox blue"><div class="h">関連する教育・FDの仕事</div><div class="b">
-
-- <b>高等教育センター</b>：FD・授業改善（シラバス確認 Gem 等）
-- <b>アカデミック・リンク・センター</b>：体験型セミナー（延べ約700名）
-- <b>担当授業</b>：情報リテラシー／生成AI活用講座／大学院・研究／プレFD
-
-</div></div>
-
-</div></div>
-
-<div class="takeaway">「学ぶとは何か」は、教える人を育てる現場から問い直せる。</div>
-
-<!-- 【プレFD】私はプレFD、つまり「大学で教える人を育てる」授業も担当しています。FDは東大の栗田佳代子先生の門下です。教える側を育てる現場にいると、「そもそも学ぶとは何か」を問い直さざるを得ません。今日の話も、その延長にあります。 -->
-
----
-
 <!-- _class: divider -->
 
 <div class="chapter-num">CHAPTER 1</div>
@@ -191,18 +141,17 @@ style: |
 
 # その問いを、裏返す
 
-<div class="split-body"><div class="left"><svg viewBox="0 0 460 360" width="100%" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="20" width="400" height="120" rx="14" fill="#f4f4f6" stroke="#5B6068" stroke-width="2"/><text x="52" y="60" font-size="32" font-weight="bold" fill="#5B6068">✕</text><text x="92" y="59" font-size="23" font-weight="bold" fill="#222">どう変わるか</text><text x="52" y="94" font-size="18" fill="#5B6068">未来を予測する</text><text x="52" y="122" font-size="18" fill="#5B6068">＝ 傍観者のまま</text><path d="M230 150 L230 196" stroke="#C8611C" stroke-width="4" fill="none"/><path d="M230 206 L217 184 L243 184 Z" fill="#C8611C"/><text x="250" y="186" font-size="17" font-weight="700" fill="#C8611C">裏返す</text><rect x="30" y="216" width="400" height="124" rx="14" fill="#FBEAD9" stroke="#C8611C" stroke-width="3"/><text x="52" y="258" font-size="32" font-weight="bold" fill="#C8611C">◯</text><text x="92" y="257" font-size="23" font-weight="bold" fill="#8f3f12">どう変わるべきか</text><text x="52" y="292" font-size="18" fill="#8f3f12">あるべき姿を構想する</text><text x="52" y="320" font-size="18" fill="#8f3f12">＝ 当事者になる</text></svg></div><div class="right">
+<div class="split-body"><div class="left"><svg viewBox="0 0 460 360" width="100%" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="20" width="400" height="120" rx="14" fill="#f4f4f6" stroke="#5B6068" stroke-width="2"/><text x="55" y="58" font-size="30" font-weight="bold" fill="#5B6068">✕</text><text x="95" y="58" font-size="20" font-weight="bold" fill="#222">どう変わるか</text><text x="55" y="92" font-size="16" fill="#5B6068">未来を予測する</text><text x="55" y="120" font-size="15" fill="#5B6068">＝傍観者のまま</text><path d="M230 150 L230 195" stroke="#C8611C" stroke-width="4" fill="none"/><path d="M230 205 L218 185 L242 185 Z" fill="#C8611C"/><text x="250" y="185" font-size="14" fill="#C8611C">予測→構想</text><rect x="30" y="215" width="400" height="125" rx="14" fill="#FBEAD9" stroke="#C8611C" stroke-width="3"/><text x="55" y="256" font-size="30" font-weight="bold" fill="#C8611C">◯</text><text x="95" y="256" font-size="20" font-weight="bold" fill="#8f3f12">どう変わるべきか</text><text x="55" y="292" font-size="16" fill="#8f3f12">あるべき姿を構想する</text><text x="55" y="320" font-size="15" fill="#8f3f12">＝当事者になる</text></svg></div><div class="right">
 
-### 変わるのは、主語
+### 問いの向きを、変える
 
-- 予測する人は、変化を外から眺める<span class="gry">傍観者</span>
-- 構想する人は、変化をつくる<span class="hl-dark">当事者</span>
-- 問いを裏返した瞬間、<span class="hl-dark">主語が「大学」から「私たち」へ</span>動く
-- だから今日はSF的に、<b>2035年の大学</b>を一緒に設計してみる
+- ✕「どう変わるか」＝未来を<span class="red">予測</span>する（傍観者のまま）
+- ◯「どう変わる<span class="hl-dark">べき</span>か」＝あるべき姿を<span class="hl-dark">構想</span>する（当事者になる）
+- 少しSF的に、2035年の大学を一緒に設計してみる
 
 </div></div>
 
-<div class="takeaway">変化は自ら、構想するもの。</div>
+<div class="takeaway">変化は予言するものでなく、構想するもの。</div>
 
 <!-- 【S2】まず最初に、向きを変えたいんです。「大学はどう変わるか」って聞くと、つい未来を予測する話になりますよね。でもそれだと、私たちはずっと傍観者なんです。［間］そうじゃなくて「どう変わるべきか」と裏返すと、急に自分が当事者になる。この感覚は、最後にもう一度戻ってきます。今日は少しSF的に、2035年の大学を一緒に設計するつもりで考えてみましょう。 -->
 
@@ -214,11 +163,11 @@ style: |
 
 # 問いを、下まで掘る
 
-<div class="fig-area"><svg viewBox="0 0 880 360" width="100%" xmlns="http://www.w3.org/2000/svg"><defs><marker id="dn6" markerWidth="12" markerHeight="12" refX="6" refY="9" orient="auto"><path d="M2,2 L6,10 L10,2" fill="none" stroke="#D98A4E" stroke-width="2"/></marker></defs><line x1="50" y1="26" x2="50" y2="308" stroke="#D98A4E" stroke-width="3" marker-end="url(#dn6)"/><text transform="rotate(-90 30 166)" x="30" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#8f3f12">問いを掘り下げる</text><rect x="240" y="22" width="400" height="64" rx="12" fill="#FBEAD9" stroke="#C8611C" stroke-width="2"/><text x="440" y="58" font-size="23" font-weight="bold" fill="#8f3f12" text-anchor="middle">大学はどう変わるべきか</text><line x1="440" y1="88" x2="440" y2="100" stroke="#5B6068" stroke-width="3"/><path d="M428 99 L452 99 L440 111 Z" fill="#5B6068"/><rect x="190" y="112" width="500" height="70" rx="12" fill="#F2C9A6" stroke="#C8611C" stroke-width="2"/><text x="440" y="151" font-size="23" font-weight="bold" fill="#8f3f12" text-anchor="middle">そもそも大学とは何をする場か</text><line x1="440" y1="184" x2="440" y2="196" stroke="#5B6068" stroke-width="3"/><path d="M428 195 L452 195 L440 207 Z" fill="#5B6068"/><rect x="140" y="208" width="600" height="100" rx="14" fill="#C8611C" stroke="#8f3f12" stroke-width="3"/><text x="440" y="262" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">そもそも大学で「学ぶ」とは何か</text></svg></div>
+<div class="fig-area"><svg viewBox="0 0 860 360" width="100%" xmlns="http://www.w3.org/2000/svg"><rect x="180" y="20" width="500" height="70" rx="10" fill="#FBEAD9" stroke="#C8611C" stroke-width="2"/><text x="430" y="62" font-size="20" font-weight="bold" fill="#8f3f12" text-anchor="middle">大学はどう変わるべきか</text><path d="M430 92 L430 112" stroke="#5B6068" stroke-width="3"/><path d="M430 120 L420 104 L440 104 Z" fill="#5B6068"/><rect x="220" y="125" width="420" height="75" rx="10" fill="#F2C9A6" stroke="#C8611C" stroke-width="2"/><text x="430" y="170" font-size="22" font-weight="bold" fill="#8f3f12" text-anchor="middle">そもそも大学とは何をする場か</text><path d="M430 202 L430 222" stroke="#5B6068" stroke-width="3"/><path d="M430 230 L420 214 L440 214 Z" fill="#5B6068"/><rect x="250" y="235" width="360" height="105" rx="12" fill="#C8611C" stroke="#8f3f12" stroke-width="3"/><text x="430" y="298" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">そもそも大学で学ぶとは何か</text></svg></div>
 
 <div class="band">本講義は、この一番下の問いから始める。</div>
 
-<!-- 【S3】たとえば学校の先生なら、『うちの学校はどう変わるべきか』を突き詰めると、結局『そもそも学校って何をする所だっけ』に行き着きますよね。それと同じで、「どう変わるべきか」に答えるには、その下に降りないといけないんです。大学って何をする場なんだろう、と。［間］でも、そこにもまだ底がある。そもそも学ぶって何なんだ、という一番下の問いです。今日はここから、いちばん深いところから始めます。一緒に降りていきましょう。 -->
+<!-- 【S3】「どう変わるべきか」に答えるには、その下に降りないといけないんですね。大学って何をする場なんだろう、と。［間］でもそこにもまだ底がある。そもそも学ぶって何なんだ、という一番下の問いです。今日はここから、いちばん深いところから始めます。一緒に降りていきましょう。 -->
 
 ---
 
@@ -264,7 +213,7 @@ style: |
 
 <div class="takeaway">感想ではなく、数字で現在地を確かめる。</div>
 
-<!-- 【S5】まず土台になる調査を共有します。全国の大学・短大・高専の、113機関の機関長が答えたものです。［間］答えているのは現場の学生や教員ではなく、大学のトップ自身。数としては113と、決して多くはありません。それでも、経営の責任を負う人たちが今どう感じているか、その温度がわかる、いちばん新しい現在地です。 -->
+<!-- 【S5】まず土台になる調査を共有します。全国の大学・短大・高専、113機関の機関長が答えたものです。［間］昨年の秋に取られて、ついこの春に公開されたばかりの、いちばん新しい現在地です。 -->
 
 ---
 
@@ -272,7 +221,7 @@ style: |
 
 <div class="page-title">紙はできた</div>
 
-## ルールはできた。でも、回らない
+## 紙はできた。でも、回らない
 
 <div class="fig-area">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 900 300"><rect width="900" height="300" x="0" y="0" fill="none"></rect><path d="M328.5 16L328.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M424.5 16L424.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M521.5 16L521.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M617.5 16L617.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M713.5 16L713.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M810.5 16L810.5 260" fill="none" pointer-events="visible" stroke="#ececec" class="zr0-cls-0"></path><path d="M328.5 16L328.5 260" fill="none" pointer-events="visible" stroke="#cccccc" stroke-linecap="round" class="zr0-cls-0"></path><path d="M328 16.5L323 16.5" fill="none" pointer-events="visible" stroke="#cccccc" class="zr0-cls-0"></path><path d="M328 138.5L323 138.5" fill="none" pointer-events="visible" stroke="#cccccc" class="zr0-cls-0"></path><path d="M328 260.5L323 260.5" fill="none" pointer-events="visible" stroke="#cccccc" class="zr0-cls-0"></path><path d="M-266 -12l266 0l0 24l-266 0Z" transform="translate(320 77)" fill="none" pointer-events="visible" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:19px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;font-weight:bold;" transform="translate(320 77)" fill="#555555">ガイドラインを策定済＋策定中</text><path d="M-304 -12l304 0l0 24l-304 0Z" transform="translate(320 199)" fill="none" pointer-events="visible" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:19px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;font-weight:bold;" transform="translate(320 199)" fill="#555555">現場で実質的に機能させるのが困難</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(328 268)" fill="#555555">0%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(424.4 268)" fill="#555555">20%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(520.8 268)" fill="#555555">40%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(617.2 268)" fill="#555555">60%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(713.6 268)" fill="#555555">80%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;" y="8" transform="translate(810 268)" fill="#555555">100%</text><path d="M332 48.9L652.2 48.9A4 4 0 0 1 656.2 52.9L656.2 105.1L328 105.1L328 52.9A4 4 0 0 1 332 48.9" fill="#9aa0a6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-1"></path><path d="M332 170.9L737.6 170.9A4 4 0 0 1 741.6 174.9L741.6 227.1L328 227.1L328 174.9A4 4 0 0 1 332 170.9" fill="#C8611C" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-2"></path><text dominant-baseline="central" text-anchor="start" style="font-size:26px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;font-weight:bold;" transform="translate(661.242 77)" fill="#222">68.1%</text><text dominant-baseline="central" text-anchor="start" style="font-size:26px;font-family:"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif;font-weight:bold;" transform="translate(746.556 199)" fill="#222">85.8%</text><style ><![CDATA[.zr0-cls-0:hover {pointer-events:none;}.zr0-cls-1:hover {cursor:pointer;fill:rgba(169,176,182,1);}.zr0-cls-2:hover {cursor:pointer;fill:rgba(182,27,50,1);}]]></style></svg>
@@ -282,7 +231,7 @@ style: |
 
 <div class="takeaway">方針は7割で整備。難所は“実質化”85.8%。</div>
 
-<!-- 【S6】ガイドラインを見ると、策定済みと策定中を合わせて68.1%、約7割の機関が方針づくりに動いています。［間］ところが、その方針を現場で実質的に機能させるのは困難だ、と答えた割合は85.8%。紙はできた、でも回らない。ここに最初のずれがあります。 -->
+<!-- 【S6】ガイドラインを見ると、策定済みが45.1%、策定中を足すと約7割の機関が方針づくりに動いています。［間］ところが、その方針を現場で実質的に機能させるのが困難だと答えた割合は85.8%。紙はできた、でも回らない。ここに最初のずれがあります。 -->
 
 ---
 
@@ -302,7 +251,7 @@ style: |
 
 <div class="takeaway">94.6%が効率化に期待、リスク認識は拮抗。</div>
 
-<!-- 【S7】ここが今日いちばん見てほしい数字です。業務の効率化への期待は94.6%。さっきの113機関の機関長の、ほぼ全員が肯定しています。［間］一方で、思考力や批判的思考が下がるリスクへの認識は、肯定が47.3%、中立が46.4%でほぼ真っ二つ。効率化には迷いなく飛びつくのに、学習そのものへの影響は、まだ測りかねている。［間］仕事が楽になる話には全員が乗るのに、肝心の『学生が育つか』は、誰も腹を決めていない。この非対称さこそ、一緒に覚えておきたいんです。 -->
+<!-- 【S7】ここが今日いちばん見てほしい数字です。業務の効率化への期待は94.6%、ほぼ全員が肯定しています。［間］一方で、思考力や批判的思考が下がるリスクへの認識は、肯定が47.3%、中立が46.4%でほぼ真っ二つ。効率化には迷いなく飛びつくのに、学習そのものへの影響は、まだ測りかねている。この非対称さを、一緒に覚えておきたいんです。 -->
 
 ---
 
@@ -377,7 +326,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">出口が変わるなら、学びの問い直しは必然。</div>
 
-<!-- 【N-EXIT】まず出口の話からいきます。学生のみなさんの出口、つまり仕事や社会への関わり方が、AIで実際に変わり始めているんですね。出口が動けば、入口である学びも問い直さざるをえない。だから今日は「何を学ぶか」だけでなく「どう学べる人になるか」を一緒に考えます。［間］そして、出口が変わるなら、そもそも『学ぶ』って何だったのか、根っこから問い直さないといけない。次は、そこに降りていきます。 -->
+<!-- 【N-EXIT】まず出口の話からいきます。学生のみなさんの出口、つまり仕事や社会への関わり方が、AIで実際に変わり始めているんですね。出口が動けば、入口である学びも問い直さざるをえない。だから今日は「何を学ぶか」だけでなく「どう学べる人になるか」を一緒に考えます。 -->
 
 ---
 
@@ -426,7 +375,7 @@ AIは大学のあらゆる層に効く
 
 <div class="attr">参考：レイヴ＆ウェンガー(1991)／像の整理は田川</div>
 
-<!-- 【S10】変容は、自分が別の見え方を獲得すること。関係は、それが一人の頭の中ではなく、人と人の間で起こるということ。［間］職人の世界で、新入りが隅っこの雑用から始めて、だんだん中心の仕事を任され、一人前になっていく——あの『端から少しずつ参加して、いつのまにか変わっていく』過程そのものが学びだ、と考えた研究者がいます。レイヴとウェンガーですね。難しい名前がついていますが、中身は皆さんが職場で見てきた『見習いが一人前になる』あれと同じなんです。［間］三つ目の問いは、答えではなく問いを立てる力。四つ目の不確かさは、わからないまま、それでも一緒に歩む力。この四つ、どれもAIと自分だけでは閉じないんですよね。 -->
+<!-- 【S10】変容は、自分が別の見え方を獲得すること。関係は、それが一人の頭の中ではなく人と人の間で起こるということ。問いは、答えではなく問いを立てる力。そして不確かさ——わからないまま、それでも一緒に歩む力です。［間］この四つ、どれもAIと自分だけでは閉じないんですよね。 -->
 
 ---
 
@@ -442,7 +391,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">道具は変わる。目指す学びの構造は変わらない。</div>
 
-<!-- 【N-TAXO】学習目標の分類は、AIが来ても揺らがないんですよ。これは『ブルーム』という研究者が整理した、学びの段階のピラミッドです。一番下が『覚える』、その上が『分かる』『使う』、さらに上に『分析する』『良し悪しを評価する』『新しく創り出す』と積み上がっていく。［間］下の覚える・分かるは、もうAIに聞けば外に出せます。でも上のほうは人に残る——ただしこれは、ブルーム自身がそう言っているのではなく、私がブルームを物差しにして引いた線です。［間］つまりAIで『どう学ぶか』という手段は変わっても、『何を目指すか』という目標の形そのものは変わらない。古い真珠を、新しい糸で通し直すだけなんですね。ここを押さえておいてください。 -->
+<!-- 【N-TAXO】学習目標の分類は、AIが来ても揺らがないんですよ。Bloomのピラミッドでいう記憶や理解は道具で外部化できても、その上の分析・評価・創造という構造は残る。つまりAIで“どう学ぶか”という手段は変わっても、“何を目指すか”という目標の形そのものは変わらない、ここを押さえておいてください。 -->
 
 ---
 
@@ -471,7 +420,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">"弱い教育"こそ、ともに学ぶという営み。</div>
 
-<!-- 【S11】これは、長く人類学をリードしてきたティム・インゴルドという研究者の考えです。彼は、知識を上から下へ流し込むやり方を「強い教育」、先生も学生も一緒に手探りで分かっていくやり方を「弱い教育」と呼びました。［間］ふつう「強い」ほうが良さそうに聞こえますよね。でも彼が心配したのは、強すぎる教育が、学生をただの『知識の消費者』、お客さんにしてしまうこと。教育を、一人で学習サービスを受け取るだけのものに縮めてしまう——これを彼はラーニフィケーション、無理に訳せば『学びのお客様化』と呼んで批判しました。［間］皆さんも、教わるだけの授業より、誰かと一緒に悩んだ時間のほうが、記憶に残っていませんか。私たちが大事にしたいのは、こっちの弱い教育のほうなんです。 -->
+<!-- 【S11】インゴルドは、知識を上から下へ流し込む「強い教育」と、事物や人々とともに内側から知っていく「弱い教育」を対比しました。［間］彼が警戒したのは、学生を知識の消費者に変えてしまうこと。学習化、ラーニフィケーションと呼んで批判したんですね。私たちが大事にしたいのは、こっちの弱い教育のほうなんです。 -->
 
 ---
 
@@ -500,7 +449,7 @@ AIは大学のあらゆる層に効く
 
 <div class="band">AIに問える時代だからこそ、「何を問うか」を育てる場が要る。</div>
 
-<!-- 【N-LIBARTS】これは、アメリカの大学教育で広く読まれている、ボーエンとワトソンの本の一節です。たまたま私が翻訳しているので、紹介しますね。［間］AIに何でも問える時代に、本当に核となるのは、よい問いを立てて、返ってきた答えを評価する力。それはまさにリベラルアーツが昔から育ててきたものだ、と。今日の「学ぶ＝問い」と、ぴったり重なります。 -->
+<!-- 【N-LIBARTS】これは私がいま訳している『Teaching with AI』の一節です。AIに何でも問える時代に、本当に核となるのは、よい問いを立てて、返ってきた答えを評価する力。それはまさにリベラルアーツが昔から育ててきたものだ、と。今日の「学ぶ＝問い」と、ぴったり重なります。 -->
 
 ---
 
@@ -530,7 +479,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">知識は昔から無料化。残るのは“体験”。</div>
 
-<!-- 【N-OCW】実は知識が無料になったのは、最近の話ではないんです。2001年にMITが構想を発表して、翌年から講義を順次、無料で公開していった。正確には、講義のコンテンツが無料になった、ということですね。［間］2012年には『MOOC』、ムークと読みますが、ネットで世界中の誰もが一流大学の講義を受けられる仕組みも広まった。皆さんが学生の頃は、良い講義を聴くにはその大学に入るしかなかったですよね。それが、AIが来るずっと前から、もう崩れ始めていた。［間］講義をタダで配ってもMITの価値は揺らがなかった。ここから私はこう読んでいます——MITが本当に売っていたのは、配れる講義そのものではなく、そこで起きる体験のほうだったんだ、と。生成AIは、この20年の流れを加速しただけ。ここが今日の出発点です。 -->
+<!-- 【N-OCW】実は知識が無料になったのは最近の話ではないんです。2001年にMITが講義をまるごと無料公開して、2012年のMOOCで世界中の誰でも受けられるようになった。生成AIはこの20年来の流れを加速しただけなんですね。当のMITが出した答えは「価値はコンテンツではなく体験のほうにある」。ここが今日の出発点です。 -->
 
 ---
 
@@ -557,12 +506,12 @@ AIは大学のあらゆる層に効く
 # AIが、軸を動かした
 
 <div class="fig-area">
-<svg viewBox="0 0 880 360" width="100%" preserveAspectRatio="xMidYMid meet"><defs><marker id="arL2" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M11,1 L1,5 L11,9" fill="none" stroke="#5B6068" stroke-width="2"/></marker><marker id="arR2" markerWidth="12" markerHeight="12" refX="3" refY="5" orient="auto"><path d="M1,1 L11,5 L1,9" fill="none" stroke="#5B6068" stroke-width="2"/></marker><marker id="big" markerWidth="13" markerHeight="13" refX="4" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="#1A6BB0"/></marker></defs><line x1="60" y1="58" x2="820" y2="58" stroke="#5B6068" stroke-width="3" marker-start="url(#arL2)" marker-end="url(#arR2)"/><text x="60" y="40" font-size="19" font-weight="700" fill="#1A6BB0">自分一人でできる</text><text x="820" y="40" font-size="19" font-weight="700" fill="#C8611C" text-anchor="end">人と一緒でないとできない</text><rect x="60" y="120" width="540" height="66" fill="#D6E6F5"/><rect x="600" y="120" width="220" height="66" fill="#C8611C"/><rect x="60" y="120" width="760" height="66" rx="8" fill="none" stroke="#9aa0a6" stroke-width="1.5"/><text x="330" y="160" font-size="21" font-weight="700" fill="#1A6BB0" text-anchor="middle">AIで一人でできる</text><line x1="360" y1="108" x2="360" y2="194" stroke="#5B6068" stroke-width="2" stroke-dasharray="5 4"/><text x="360" y="102" font-size="16" font-weight="700" fill="#5B6068" text-anchor="middle">かつての境界</text><line x1="600" y1="108" x2="600" y2="194" stroke="#8f3f12" stroke-width="3"/><text x="600" y="102" font-size="16" font-weight="700" fill="#8f3f12" text-anchor="middle">いまの境界</text><line x1="362" y1="214" x2="588" y2="214" stroke="#1A6BB0" stroke-width="11" stroke-linecap="round" marker-end="url(#big)" opacity="0.9"/><text x="475" y="240" font-size="18" font-weight="700" fill="#1A6BB0" text-anchor="middle">AIが右へ広げた</text><line x1="710" y1="186" x2="710" y2="250" stroke="#C8611C" stroke-width="2"/><rect x="556" y="250" width="308" height="74" rx="12" fill="#FBEAD9" stroke="#C8611C" stroke-width="2"/><text x="710" y="280" font-size="19" font-weight="700" fill="#8f3f12" text-anchor="middle">AIと自分だけでは無理な所</text><text x="710" y="308" font-size="19" font-weight="700" fill="#8f3f12" text-anchor="middle">＝ 大学に残る価値</text></svg>
+<svg viewBox="0 0 880 360" width="100%" preserveAspectRatio="xMidYMid meet"><defs><marker id="arL2" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M11,1 L1,5 L11,9" fill="none" stroke="#5B6068" stroke-width="2"/></marker><marker id="arR2" markerWidth="12" markerHeight="12" refX="3" refY="5" orient="auto"><path d="M1,1 L11,5 L1,9" fill="none" stroke="#5B6068" stroke-width="2"/></marker><marker id="big" markerWidth="14" markerHeight="14" refX="4" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="#1A6BB0"/></marker></defs><line x1="70" y1="120" x2="810" y2="120" stroke="#5B6068" stroke-width="3" marker-start="url(#arL2)" marker-end="url(#arR2)"/><text x="70" y="98" font-size="18" font-weight="700" fill="#1A6BB0">自分一人でできる</text><text x="810" y="98" font-size="18" font-weight="700" fill="#C8611C" text-anchor="end">人と一緒でないとできない</text><rect x="60" y="200" width="640" height="64" rx="10" fill="#EAF2FA" stroke="#1A6BB0" stroke-width="1.5"/><text x="84" y="238" font-size="17" font-weight="700" fill="#1A6BB0">かつて大学が独占した知識伝達も、いまやAIで一人でできる</text><line x1="320" y1="300" x2="690" y2="300" stroke="#1A6BB0" stroke-width="16" stroke-linecap="round" marker-end="url(#big)" opacity="0.85"/><text x="330" y="338" font-size="16" font-weight="700" fill="#1A6BB0">「一人でできる」領域が右へ膨張</text><rect x="712" y="200" width="108" height="64" rx="10" fill="#8f3f12"/><text x="766" y="226" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">AIと自分</text><text x="766" y="246" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">だけでは</text><text x="766" y="333" font-size="14" font-weight="700" fill="#8f3f12" text-anchor="middle">絶対に無理な所</text></svg>
 </div>
 
 <div class="takeaway">大学に残る価値は、AIと自分だけでは無理な所へ。</div>
 
-<!-- 【S14】そこにAIが入ってきて、この軸そのものが動きました。［間］たとえば、教科書を読んで用語を覚えるのは、昔から一人でできましたよね。でも、ゼミで自分の意見を全否定されてカッとなる、ああいう経験は一人では起きない。それが右端です。［間］ところがAIが来て、かつて大学が独占していた知識の伝達まで、いまや一人でできてしまう。つまり『一人でできる』領域が、左からぐっと右へ膨らんだ。すると、右端に残るところ──AIと自分だけでは絶対にできないこと──ここにこそ、大学に残る価値が寄っていくわけです。 -->
+<!-- 【S14】そこにAIが入ってきて、この軸そのものが動きました。［間］かつて大学が独占していた知識の伝達も、いまやAIを使えば一人でできてしまう。つまり「一人でできる」領域が、ぐっと右へ膨らんだんですね。すると、右端に小さく残るところ──AIと自分だけでは絶対にできないこと──ここにこそ、大学に残る価値が寄っていくわけです。 -->
 
 ---
 
@@ -576,43 +525,11 @@ AIは大学のあらゆる層に効く
 <svg viewBox="0 0 880 330" width="100%" preserveAspectRatio="xMidYMid meet"><defs><marker id="ar3" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M1,1 L11,5 L1,9" fill="none" stroke="#5B6068" stroke-width="2"/></marker></defs><rect x="40" y="80" width="220" height="150" rx="12" fill="#F4F5F6" stroke="#5B6068" stroke-width="1.5"/><text x="150" y="108" font-size="16" font-weight="700" fill="#222" text-anchor="middle">伝統的授業＝一束</text><rect x="60" y="124" width="180" height="42" rx="8" fill="#EAF2FA" stroke="#1A6BB0" stroke-width="1.3"/><text x="150" y="151" font-size="14" font-weight="700" fill="#1A6BB0" text-anchor="middle">①知識の伝達</text><rect x="60" y="174" width="180" height="42" rx="8" fill="#FBEAD9" stroke="#C8611C" stroke-width="1.3"/><text x="150" y="201" font-size="14" font-weight="700" fill="#C8611C" text-anchor="middle">②ともに考える時間</text><line x1="282" y1="155" x2="372" y2="125" stroke="#5B6068" stroke-width="2.5" marker-end="url(#ar3)"/><line x1="282" y1="155" x2="372" y2="200" stroke="#5B6068" stroke-width="2.5" marker-end="url(#ar3)"/><text x="312" y="100" font-size="14" fill="#5B6068">ほどく</text><rect x="390" y="98" width="450" height="56" rx="10" fill="#EAF2FA" stroke="#1A6BB0" stroke-width="1.5"/><text x="412" y="123" font-size="15" font-weight="700" fill="#1A6BB0">①知識の伝達</text><text x="412" y="143" font-size="15" fill="#222">→ 自分・AI・非同期へ（いつでも一人で）</text><rect x="390" y="174" width="450" height="56" rx="10" fill="#FBEAD9" stroke="#C8611C" stroke-width="1.5"/><text x="412" y="199" font-size="15" font-weight="700" fill="#C8611C">②ともに考える時間</text><text x="412" y="219" font-size="15" fill="#222">→ 人が集まる同期時間へ（その場で）</text></svg>
 </div>
 
-<div class="band">これは「知識を捨てる」ではない。知識の獲得を外部化し、活用と変容に純化する。<br>教員の役割も、知識を配る<span class="hl">"専門家"</span>から、ともに考えを促す<span class="hl-dark">"ファシリテータ"</span>へ。</div>
+<div class="band">これは「知識を捨てる」ではない。知識の獲得を外部化し、活用と変容に純化する。</div>
 
 <div class="takeaway">①は外部化、②に人の時間を集中する。</div>
 
-<!-- 【S15】従来の授業って、実は二つのものが一束になっているんですね。①知識の伝達と、②みんなでともに考える時間。［間］この束を、いったんほどいてみます。①の知識の伝達は、自分やAIで、それぞれが好きな時間に——いわゆる『非同期』で、いつでも一人でできる。②のともに考える時間は、みんなが同じ時間に集まる『同期』の場へ集中させる。［間］これは知識を捨てるという話ではありません。知識の獲得を外に出して、活用と変容のほうに、授業を純化していく──そういう発想です。［間］このとき、教員の役割も変わります。知識を配る『専門家』から、ともに考えを促す『ファシリテータ』へ。 -->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">2シグマ</div>
-
-## 1対1指導の平均は、集団授業を 2σ 上回る（Bloom 1984）
-
-<div class="split-body"><div class="left">
-
-<svg viewBox="0 0 760 300" width="100%" style="max-height:300px" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="240" x2="730" y2="240" stroke="#5B6068" stroke-width="2"/><path d="M70,240 C150,240 190,80 250,80 C310,80 350,240 430,240" fill="#E4E6E9" stroke="#5B6068" stroke-width="2"/><path d="M290,240 C370,240 410,92 470,92 C530,92 570,240 650,240" fill="#FBEAD9" stroke="#C8611C" stroke-width="2.5"/><line x1="250" y1="240" x2="250" y2="96" stroke="#5B6068" stroke-width="2" stroke-dasharray="5 4"/><line x1="470" y1="240" x2="470" y2="108" stroke="#C8611C" stroke-width="2.5" stroke-dasharray="5 4"/><g text-anchor="middle" font-weight="800"><text x="250" y="266" font-size="16" fill="#5B6068">一斉授業</text><text x="250" y="286" font-size="14" fill="#5B6068">50%ile</text><text x="470" y="266" font-size="16" fill="#C8611C">1対1指導</text><text x="470" y="286" font-size="14" fill="#C8611C">98%ile</text></g><g stroke="#8f3f12" stroke-width="2.5" marker-end="url(#ar2s)"><line x1="256" y1="60" x2="464" y2="60"/></g><defs><marker id="ar2s" markerWidth="10" markerHeight="10" refX="7" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 Z" fill="#8f3f12"/></marker></defs><text x="360" y="50" text-anchor="middle" font-size="16" font-weight="800" fill="#8f3f12">＋2σ ＝ 偏差値+20</text></svg>
-
-<div class="caption">Bloom, B. S. (1984). The 2 Sigma Problem. <i>Educational Researcher</i>, 13(6), 4–16. <a href="https://doi.org/10.3102/0013189X013006004">doi.org/10.3102/0013189X013006004</a></div>
-
-</div><div class="right">
-
-<div class="cbox mid"><div class="h">3つの学習条件と効果量 g</div><div class="b">
-
-- 一斉授業（1対30）＝ <span class="hl">基準 g = 0</span>（50%ile）
-- 完全習得学習 ＝ <span class="hl">g ≈ 1.0</span>（84%ile）
-- <span class="red">1対1チュータリング ＝ g ≈ 2.0</span>（98%ile）
-
-</div></div>
-
-<div class="band">AIは、この「1対1の個別指導」を全員に近づけうる。</div>
-
-</div></div>
-
-<div class="takeaway">2シグマ＝偏差値+20。その個別最適化を、AIで全員に。</div>
-
-<!-- 【BLOOM2S】Bloomが1984年に示した有名な結果です。1対1の個別指導を受けた生徒の平均は、ふつうの一斉授業の上位2%あたり——2標準偏差ぶん上に来る。偏差値でいえば+20です。問題は「それを集団でどう実現するか」。AIの個別最適化は、この2シグマギャップを全員に近づけうる一手です。ただし、学びを2シグマ埋めるのは個別最適化だけではない——ここは後半につながります。 -->
+<!-- 【S15】従来の授業って、実は二つのものが一束になっているんですね。①知識の伝達と、②みんなでともに考える時間。［間］この束を、いったんほどいてみます。①は自分・AI・非同期へ。いつでも一人でできる。②は、人が集まる同期の時間へ集中させる。これは知識を捨てるという話ではありません。知識の獲得を外に出して、活用と変容のほうに、授業を純化していく──そういう発想です。 -->
 
 ---
 
@@ -630,7 +547,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">低次＝効率化はAI、高次＝創造は人と共同体へ。</div>
 
-<!-- 【N-MATRIX】さっきのBloomの6段階を、横一本に並べ直したのがこの図です。これは6段が地続きのスペクトルだと思ってください。［間］端の記憶や理解は、もうAIに聞けば一瞬で、ここを人間が抱え込む意味は薄れていきます。逆に端の評価や創造、基準を作ったり一次情報から何かを生み出したりは、人と人、共同体のなかでしかできない。真ん中の応用・分析は、人とAIが分担する『混ざる帯』ですね。［間］気をつけたいのは、効率化それ自体が目的になってしまうこと。記憶側をAIに任せて終わり、ではないんです。空いた時間を、右側の——人にしかできないところへ回せて、はじめて意味がある。最適化さえすればうまくいく、という幻想で止まらないこと。ここが大事です。 -->
+<!-- 【N-MATRIX】Bloomの6段階を横一本のスペクトルに置き直したのがこの図です。左の記憶や理解は、もうAIに聞けば一瞬で、ここを人間が抱え込む意味は薄れていきます。逆に右側の評価や創造、基準を作ったり一次情報から何かを生み出したりは、人と人、共同体のなかでしかできない。だから効率化される側と、人が引き受ける側を、きれいに分けて考えたいんです。 -->
 
 ---
 
@@ -647,7 +564,17 @@ AIは大学のあらゆる層に効く
 
 <div class="band">AIにできる「平均」を超える——そこに、人と大学の仕事が残る。</div>
 
-<!-- 【N-AVERAGE】これは、いま私が翻訳している本からの一節です。プロンプトが下手なら、AIの出力はちょうど昔のC評価、平均点の仕事になる、と。［間］裏を返せば、そこそこ平均的な仕事なら、もうAIでも出せてしまう——私はそう読みました。だからこそ、その平均を超えるところにこそ、人の、そして大学の仕事が残る。さっきの効率化と創造の図の、まさに右側の話です。 -->
+<!-- 【N-AVERAGE】訳書からもう一節。プロンプトが下手なら、AIの出力はちょうど昔のC評価、平均点の仕事になる、と。逆に言えば、平均点ならもうAIで足ります。だから、AIにできる水準を超えるところにこそ、人の、そして大学の仕事が残る。さっきの効率化と創造の図の、まさに右側の話です。 -->
+
+---
+
+<!-- _class: message -->
+
+# 「言われたことを理解する」学生から<br>「自律的に学べる」学生へ
+
+## AIを使いこなす土台は、自分で学びを駆動する力
+
+<!-- 【N-AUTONOMY】優等生って、言われたことを正確に理解してこなせる人、というイメージがありますよね。でもその力こそ、AIが一番得意な領域なんです。これからの大学が育てたいのは、自分で問いを立てて学びを回せる学生。AIを使いこなすにも、結局この自律性が土台になります。 -->
 
 ---
 
@@ -660,6 +587,30 @@ AIは大学のあらゆる層に効く
 ## 極論だからこそ、大学の輪郭が見える。
 
 <!-- 【CH5】ここからは、ミネルバ大学という極端な事例を一緒に見ていきます。模範解答として紹介するわけではありません。［間］むしろ、ここまで切り詰めたからこそ「大学に残る本質は何か」という輪郭が、はっきり見えてくる。そういう参照点として扱います。 -->
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">ミネルバ</div>
+
+# 極論モデルとしてのミネルバ
+
+<div class="fig-area">
+<table class="dtbl">
+<tr><th>項目</th><th>内容</th></tr>
+<tr><td class="l">創設</td><td class="l">Ben Nelson が創設</td></tr>
+<tr><td class="l">開校</td><td class="l">2014年</td></tr>
+<tr><td class="l">キャンパス</td><td class="l">7都市を移動して生活・学習</td></tr>
+<tr><td class="l">授業</td><td class="l">Forum上の少人数同期ゼミ「とされる」</td></tr>
+</table>
+</div>
+
+<div class="attr">出典：公開情報・報道に基づく（一部「とされる」と留保）</div>
+
+<div class="takeaway">“大学の本質はどこか”に極端な答えを出した実験。</div>
+
+<!-- 【S16】ミネルバは2014年に開校した、まだ新しい大学です。Ben Nelson という起業家が作りました。［間］特徴は、固定キャンパスを持たず、学生が世界の七つの都市を移動しながら暮らし、授業はすべてオンラインの「Forum」という仕組みの上で行われる、とされている点です。細部は留保しつつ、設計思想を一緒に読み解いていきましょう。 -->
 
 ---
 
@@ -734,9 +685,9 @@ AIは大学のあらゆる層に効く
 
 ## 一人でできることを大学がやるなら、それは大学でなくていい
 
-<div class="band">「自分一人でできること／人と一緒でないとできない」軸と、完全に一致する。</div>
+<div class="band">④で立てた軸と、完全に一致する。</div>
 
-<!-- 【S19】ミネルバの設計を一言にすると、こうなると思うんです。大学とは、自分一人では絶対にできないことだけを残した場である。［間］一人でもできること——知識を受け取ること——を大学の中心に据えるなら、それはもう大学でなくていい。これは、さっき『自分一人でできること／人と一緒でないとできないこと』で立てた、あの一本の軸と、ぴったり重なるんです。 -->
+<!-- 【S19】ミネルバの設計を一言にすると、こうなると思うんです。大学とは、自分一人では絶対にできないことだけを残した場である。［間］一人でもできること——知識を受け取ること——を大学の中心に据えるなら、それはもう大学でなくていい。これは、前のチャプターで私たちが立てた軸と、ぴったり重なります。 -->
 
 ---
 
@@ -748,13 +699,13 @@ AIは大学のあらゆる層に効く
 
 <div class="sections">
 <div class="cbox gray"><div class="h">再現の難しさ</div><div class="b">合格率2%台「とされる」極端な選抜性。少人数だから成立している面が大きい</div></div>
-<div class="cbox deep"><div class="h">模倣は苦戦</div><div class="b">類似大学で第1期生の約3割が中退との報道（2025年11月）</div></div>
+<div class="cbox deep"><div class="h">模倣は苦戦</div><div class="b">韓国の類似大学で第1期生の約3割が中退との報道（2025年11月）</div></div>
 <div class="cbox blue"><div class="h">検証の弱さ</div><div class="b">卒業生の長期アウトカムは自己申告中心で、独立した検証に乏しい</div></div>
 </div>
 
 <div class="band">「どこまで切ったら、それはもう大学でなくなるのか」——この問いを持ち帰ってほしい。</div>
 
-<!-- 【S20】最後に、極論の限界も正直に見ておきます。合格率も、報道では2%台と極端に低いとされ、少人数だから成り立つ面が大きい。［間］韓国のTaejae大学では、第一期生の約3割が中退した——これも2025年11月の報道一件による数字です。中退の理由は、選抜のきびしさや制度の違いなど色々あり得るので、『だからミネルバ型は失敗だ』とまでは言えません。ただ、そのまま真似るのは簡単ではなさそうだ、という手がかりにはなります。卒業生のその後も、まだ独立した検証は乏しい。［間］だからこそ、答えではなく、問いを持ち帰ってほしいんです。どこまで切ったら、それはもう大学でなくなるのか。 -->
+<!-- 【S20】最後に、極論の限界も正直に見ておきます。ミネルバは合格率が極端に低い、とされていて、少人数だから成り立つ面が大きい。韓国の類似大学では第一期生の三割が中退したという報道もあります。卒業生のその後も、まだ独立した検証は乏しい。［間］だからこそ、答えを持ち帰るのではなく、問いを持ち帰ってほしいんです。どこまで切ったら、それはもう大学でなくなるのか。 -->
 
 ---
 
@@ -766,7 +717,7 @@ AIは大学のあらゆる層に効く
 
 ## AIは、それを支える従属変数。
 
-<!-- 【CH6】ここから最後の章です。これまで「学ぶとは人の変容だ」と一緒に考えてきました。［間］その変容が起きる場を、私たちはどう呼べばいいのか。私は「コミュニティ」だと思っています。［間］そして、ここがいちばん間違えやすいんですが——AIは、その主役ではないんです。コミュニティという目的があって、はじめてAIの使いどころが決まる。私はこれを『AIは従属変数だ』と言っています。統計の言葉に聞こえるかもしれませんが、ここでは文字どおり、いつも人とコミュニティに『従う』脇役だ、という意味です。そんな話を、最後にさせてください。 -->
+<!-- 【CH6】ここから最後の章です。これまで「学ぶとは人の変容だ」と一緒に考えてきました。［間］その変容が起きる場を、私たちはどう呼べばいいのか。私は「コミュニティ」だと思っています。AIはその主役ではなく、あくまでそれを支える従属変数として置きたい。そんな話を最後にさせてください。 -->
 
 ---
 
@@ -777,12 +728,12 @@ AIは大学のあらゆる層に効く
 # 知識授受から、コミュニティへ
 
 <div class="fig-area">
-<svg viewBox="0 0 880 360" width="100%"><defs><marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6068"/></marker><marker id="arwR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8611C"/></marker></defs><rect x="20" y="40" width="320" height="220" rx="14" fill="#F5F6F7" stroke="#d6d8da"/><text x="180" y="74" text-anchor="middle" font-size="21" font-weight="700" fill="#5B6068">知識を授ける場</text><rect x="150" y="100" width="60" height="34" rx="6" fill="#5B6068"/><text x="180" y="123" text-anchor="middle" font-size="15" fill="#fff">教員</text><line x1="180" y1="138" x2="180" y2="196" stroke="#5B6068" stroke-width="6" marker-end="url(#arw)"/><text x="244" y="172" font-size="14" fill="#5B6068">一方向の伝達</text><rect x="100" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><rect x="156" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><rect x="212" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><text x="180" y="252" text-anchor="middle" font-size="13" fill="#7a7f86">受け取るだけの学生</text><line x1="356" y1="150" x2="516" y2="150" stroke="#C8611C" stroke-width="7" marker-end="url(#arwR)"/><text x="436" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="#C8611C">転換</text><rect x="540" y="40" width="320" height="220" rx="14" fill="#FBEAD9" stroke="#C8611C"/><text x="700" y="74" text-anchor="middle" font-size="21" font-weight="700" fill="#8f3f12">人が変容する共同体</text><circle cx="700" cy="168" r="64" fill="none" stroke="#C8611C" stroke-width="2" stroke-dasharray="5 5"/><circle cx="700" cy="112" r="18" fill="#C8611C"/><circle cx="752" cy="150" r="18" fill="#1A6BB0"/><circle cx="734" cy="210" r="18" fill="#C8611C"/><circle cx="666" cy="210" r="18" fill="#1A6BB0"/><circle cx="648" cy="150" r="18" fill="#C8611C"/><line x1="700" y1="112" x2="752" y2="150" stroke="#8f3f12" stroke-width="1.6"/><line x1="752" y1="150" x2="734" y2="210" stroke="#8f3f12" stroke-width="1.6"/><line x1="734" y1="210" x2="666" y2="210" stroke="#8f3f12" stroke-width="1.6"/><line x1="666" y1="210" x2="648" y2="150" stroke="#8f3f12" stroke-width="1.6"/><line x1="648" y1="150" x2="700" y2="112" stroke="#8f3f12" stroke-width="1.6"/><line x1="700" y1="112" x2="734" y2="210" stroke="#8f3f12" stroke-width="1.2" opacity="0.5"/><line x1="752" y1="150" x2="666" y2="210" stroke="#8f3f12" stroke-width="1.2" opacity="0.5"/><text x="440" y="312" text-anchor="middle" font-size="16" fill="#5B6068">AI ＝ この転換に<tspan font-weight="700" fill="#8f3f12">従う脇役（従属変数）</tspan>。順番を逆にしない</text></svg>
+<svg viewBox="0 0 880 360" width="100%"><defs><marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5B6068"/></marker><marker id="arwR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8611C"/></marker></defs><rect x="20" y="40" width="320" height="220" rx="14" fill="#F5F6F7" stroke="#d6d8da"/><text x="180" y="74" text-anchor="middle" font-size="21" font-weight="700" fill="#5B6068">知識を授ける場</text><rect x="150" y="100" width="60" height="34" rx="6" fill="#5B6068"/><text x="180" y="123" text-anchor="middle" font-size="15" fill="#fff">教員</text><line x1="180" y1="138" x2="180" y2="196" stroke="#5B6068" stroke-width="6" marker-end="url(#arw)"/><text x="244" y="172" font-size="14" fill="#5B6068">一方向の伝達</text><rect x="100" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><rect x="156" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><rect x="212" y="206" width="48" height="28" rx="6" fill="#cfd2d5"/><text x="180" y="252" text-anchor="middle" font-size="13" fill="#7a7f86">受け取るだけの学生</text><line x1="356" y1="150" x2="516" y2="150" stroke="#C8611C" stroke-width="7" marker-end="url(#arwR)"/><text x="436" y="138" text-anchor="middle" font-size="16" font-weight="700" fill="#C8611C">転換</text><rect x="540" y="40" width="320" height="220" rx="14" fill="#FBEAD9" stroke="#C8611C"/><text x="700" y="74" text-anchor="middle" font-size="21" font-weight="700" fill="#8f3f12">人が変容する共同体</text><circle cx="700" cy="168" r="64" fill="none" stroke="#C8611C" stroke-width="2" stroke-dasharray="5 5"/><circle cx="700" cy="112" r="18" fill="#C8611C"/><circle cx="752" cy="150" r="18" fill="#1A6BB0"/><circle cx="734" cy="210" r="18" fill="#C8611C"/><circle cx="666" cy="210" r="18" fill="#1A6BB0"/><circle cx="648" cy="150" r="18" fill="#C8611C"/><line x1="700" y1="112" x2="752" y2="150" stroke="#8f3f12" stroke-width="1.6"/><line x1="752" y1="150" x2="734" y2="210" stroke="#8f3f12" stroke-width="1.6"/><line x1="734" y1="210" x2="666" y2="210" stroke="#8f3f12" stroke-width="1.6"/><line x1="666" y1="210" x2="648" y2="150" stroke="#8f3f12" stroke-width="1.6"/><line x1="648" y1="150" x2="700" y2="112" stroke="#8f3f12" stroke-width="1.6"/><line x1="700" y1="112" x2="734" y2="210" stroke="#8f3f12" stroke-width="1.2" opacity="0.5"/><line x1="752" y1="150" x2="666" y2="210" stroke="#8f3f12" stroke-width="1.2" opacity="0.5"/><text x="440" y="312" text-anchor="middle" font-size="16" fill="#5B6068">AI ＝ この転換を支える<tspan font-weight="700" fill="#8f3f12">従属変数</tspan>（順番を逆にしない）</text></svg>
 </div>
 
 <div class="takeaway">まず共同体。AIは順番として、その後に置く。</div>
 
-<!-- 【S21】左の図、教員が話して学生は受け取るだけ。これが私たちの慣れた大学の姿でした。［間］でも右に移したい。人と人が輪になって、お互いに変わっていく共同体です。私の言う共同体は、仲良しサークルのことじゃありません。新入りが先輩の議論に少しずつ加わって、いつのまにか自分も問いを立てる側になっている——さっきの見習いの話と同じ、参加しながら変わっていく場のことです。［間］注意したいのは下の一行。AIはこの転換に従う脇役、従属変数なんです。AIを先に置いて、その後に共同体を考えるのではない。まず共同体があって、それを支えるためにAIを使う。順番を逆にしないこと、ここを大事にしたいと思っています。 -->
+<!-- 【S21】左の図、教員が話して学生は受け取るだけ。これが私たちの慣れた大学の姿でした。［間］でも右に移したい。人と人が輪になって、お互いに変わっていく共同体です。注意したいのは下の一行で、AIはこの転換を支える従属変数なんです。AIを先に置いて、その後に共同体を考えるのではない。まず共同体があって、それを支えるためにAIを使う。順番を逆にしないこと、ここを大事にしたいと思っています。 -->
 
 ---
 
@@ -794,15 +745,15 @@ AIは大学のあらゆる層に効く
 
 <div class="fig-area">
 
-<table class="dtbl" style="width:74%;">
-<tr><th>工業時代の大学</th><th style="width:46px;background:#fff;"></th><th>情報時代の大学</th></tr>
-<tr><td>標準化</td><td style="color:#C8611C;font-weight:800;">→</td><td>カスタマイズ</td></tr>
-<tr><td>単一化</td><td style="color:#C8611C;font-weight:800;">→</td><td>多様性</td></tr>
-<tr><td>競争的</td><td style="color:#C8611C;font-weight:800;">→</td><td>協働的</td></tr>
-<tr><td>官僚組織</td><td style="color:#C8611C;font-weight:800;">→</td><td>チーム組織</td></tr>
-<tr><td>中央管理</td><td style="color:#C8611C;font-weight:800;">→</td><td>エンパワーと責任</td></tr>
-<tr><td>従うこと</td><td style="color:#C8611C;font-weight:800;">→</td><td>主体性・自己主導</td></tr>
-<tr><td>専門家サービス</td><td style="color:#C8611C;font-weight:800;">→</td><td>セルフサービス</td></tr>
+<table class="dtbl">
+<tr><th>工業時代の大学</th><th>情報時代の大学</th></tr>
+<tr><td class="l">標準化</td><td class="l">カスタマイズ</td></tr>
+<tr><td class="l">単一化</td><td class="l">多様性</td></tr>
+<tr><td class="l">競争的</td><td class="l">協働的</td></tr>
+<tr><td class="l">官僚組織</td><td class="l">チーム組織</td></tr>
+<tr><td class="l">中央管理</td><td class="l">エンパワーと責任</td></tr>
+<tr><td class="l">従うこと</td><td class="l">主体性・自己主導</td></tr>
+<tr><td class="l">専門家サービス</td><td class="l">セルフサービス</td></tr>
 </table>
 
 <div class="attr">出典：ライゲルース他『情報化時代の学校をデザインする』（“大学”に読み替え）</div>
@@ -811,7 +762,7 @@ AIは大学のあらゆる層に効く
 
 <div class="takeaway">標準化・競争・管理から、多様・協働・主体性へ。</div>
 
-<!-- 【N-REIGE1】これはライゲルースが工業時代と情報時代の学校を対比した表を、大学に読み替えたものです。左の「標準化・競争・管理」が、僕らがいま当たり前だと思っている大学の姿ですね。［間］正直に言うと、右側が全部正義、というわけでもありません。標準化や評価の効率にも、ちゃんと利点はある。全部を右へ振るのではなく、どこを左に残して、どこを右へ動かすか——その線引きこそ、皆さんに後で考えてほしいことなんです。 -->
+<!-- 【N-REIGE1】これはライゲルースが工業時代と情報時代の学校を対比した表を、大学に読み替えたものなんですね。左の「標準化・競争・管理」が、僕らがいま当たり前だと思っている大学の姿です。でも右側、つまり多様で協働的で主体性に委ねる方向へ、もう設計図そのものを描き直す時期に来ていると思うんです。 -->
 
 ---
 
@@ -890,16 +841,6 @@ AIは大学のあらゆる層に効く
 
 ---
 
-<!-- _class: message -->
-
-# 「言われたことを理解する」学生から<br>「自律的に学べる」学生へ
-
-## AIを使いこなす土台は、自分で学びを駆動する力
-
-<!-- 【N-AUTONOMY】優等生って、言われたことを正確に理解してこなせる人、というイメージがありますよね。私も長く、そういう真面目さを『よくできる』と評価してきました。［間］でも、その『正確にこなす』力こそ、実はAIが一番得意なところなんです。真面目さが要らない、という話ではありません。その向ける先が変わる、ということ。これからの大学が育てたいのは、その上に『自分で問いを立てて学びを回す力』を一段重ねた学生です。AIを使いこなすにも、結局この自律性が土台になります。 -->
-
----
-
 <!-- _class: summary -->
 
 <div class="page-title">ALCの仕事</div>
@@ -972,7 +913,7 @@ AIは大学のあらゆる層に効く
 
 <div class="band">一人が動くと情報が集まり、風土が変わる。下からの改善と、上からの対話を両輪で。</div>
 
-<!-- 【ALC-RYORIN】事例③と④です。下からは、Difyという道具——プログラムが書けなくてもAIに仕事をさせられるもので、名前は覚えなくて大丈夫です——これで、シラバスから必要な本の番号や値段を自動でリストにする。これまで職員が一冊ずつ手で調べていた作業を、肩代わりさせています。［間］上からは、AI meetで学長から学生までが学び方を語る場をつくる。両方を回すと、自分のところにも自然と情報が集まってくる。その実感を持ち帰ってほしいです。 -->
+<!-- 【ALC-RYORIN】事例③と④です。下からはDifyで地味だけど効く自動化、上からはAI meetで学長から学生までが学び方を語る場をつくる。両方を回すと、自分のところにも自然と情報が集まってくる。その実感を持ち帰ってほしいです。 -->
 
 ---
 
@@ -1016,13 +957,13 @@ AIは大学のあらゆる層に効く
 
 ## 大学の知とコミュニティを使って、自ら問い、自ら学ぶ人へ
 
-<!-- 【ALC-3】私が育てたいのは、言われたことを正確にこなすだけの優等生、その先にいる人です。大学にある知とコミュニティを使い倒して、自分で問いを立て、自分で学んでいける人。AIは、そのための道具に過ぎません。 -->
+<!-- 【ALC-3】私が育てたいのは、言われたことをきちんと理解する優等生ではありません。大学にある知とコミュニティを使い倒して、自分で問いを立て、自分で学んでいける人です。AIはそのための道具に過ぎません。 -->
 
 ---
 
 <!-- _class: divider -->
 
-<div class="chapter-num">WORK ①-1</div>
+<div class="chapter-num">WORK ①</div>
 
 # 大学でしかできないことは何か
 
@@ -1036,7 +977,7 @@ AIは大学のあらゆる層に効く
 
 <div class="page-title">ねらい</div>
 
-# ワーク①-1のねらい
+# ワーク①のねらい
 
 <div class="sections">
 <div class="cbox mid"><div class="h">① 本質の発見</div><div class="b">「大学でしかできないこと」を、借り物でなく自分の言葉で見つける。いつ・誰と・何が、を具体で。</div></div>
@@ -1116,70 +1057,15 @@ AIは大学のあらゆる層に効く
 
 ---
 
-<!-- _class: divider -->
-
-<div class="chapter-num">WORK ①-2</div>
-
-# 理想の大学を、構想する
-
-## 「どう変わるべきか」を、自分たちで描く
-
-<!-- 【W12-CH】ワーク①の後半です。①-1では「大学でしかできないこと」を見つけました。①-2では、そこから一歩進んで、未来の大学そのものを構想します。冒頭で言った「2035年の大学を設計してみる」に、ここで戻ってきましょう。 -->
-
----
-
-<!-- _class: summary -->
-
-<div class="page-title">問い</div>
-
-## AI時代、あなたの“理想の大学”は？
-
-<div class="sections">
-<div class="cbox mid"><div class="h">問い</div><div class="b">あなたが実現したい大学を構想し、その実現に<span class="hl">何が必要か</span>を提案する。</div></div>
-<div class="grid2">
-<div class="cbox blue"><div class="h">今日の視点</div><div class="b">学ぶ＝変容／大学でしかできないこと／知識授受→コミュニティ／効率化→創造</div></div>
-<div class="cbox green"><div class="h">ICTで可能になること</div><div class="b">個別最適・非同期で学べる／遠隔で世界とつながる／AIが学びを見取る／データで伴走する</div></div>
-</div>
-</div>
-
-<div class="band">冒頭の「2035年の大学を構想する」に、ここで戻ってくる。</div>
-
-<!-- 【W12-1】問いはシンプルです。あなたが実現したい理想の大学はどんなものか。そして、それを実現するには何が要るのか。今日お話ししてきた視点——学ぶとは変容、大学でしかできないこと、知識授受からコミュニティへ——を手がかりに、自由に描いてみてください。 -->
-
----
-
-<!-- _class: fig -->
-
-<div class="page-title">進め方</div>
-
-## 理想像を、1枚で提案する（約30分）
-
-<div class="fig-area">
-<table class="dtbl">
-<tr><th>時間</th><th>やること</th></tr>
-<tr><td class="l">5分</td><td class="l">個人：実現したい大学を一言で書く</td></tr>
-<tr><td class="l">12分</td><td class="l">グループ：1つの理想像に束ね、「実現に必要なもの」を出す（制度・場・人・技術）</td></tr>
-<tr><td class="l">13分</td><td class="l">スライド1枚に：〈理想像〉＋〈必要な3つ〉＋〈最初の一歩〉→ 発表</td></tr>
-</table>
-</div>
-
-<div class="band">描いた理想像は、ワーク②（小規模大学の再建）で“具体”に落とす。</div>
-
-<div class="takeaway">発見(①-1)→構想(①-2)→実践(②)という構成になっています。</div>
-
-<!-- 【W12-2】進め方です。まず一人で理想の大学を一言で。次にグループで一つの理想像に束ねて、その実現に必要なものを出す。制度かもしれないし、場や人、技術かもしれません。最後にスライド1枚にまとめて提案してください。理想像・必要な3つ・最初の一歩。この構想が、後半のワーク②で“具体”になります。 -->
-
----
-
 <!-- _class: message -->
 
-# その2列の表を、<br>ワーク②に持っていってください
+# その2列の表を、<br>ワーク②に持っていこう
 
 ## 「大学はどう変わるか」ではない。私たちが、どう変えるか。
 
-<div class="band">このあと橋口先生から、民間の最前線。</div>
+<div class="band">このあと橋口先生から、民間の最前線。問い：民間の最適化の論理を、大学にそのまま持ち込んでよいか。</div>
 
-<!-- 【W5】今作った2列の表を、次のワーク②にそのまま持っていきます。左の列、大学でしかできないことは、今日ずっと話してきた「人の変容」や「ともに考える共同体」と重なるはずです。右の列は、AIや非同期に外部化できるもの。［間］「大学はどう変わるか」じゃないんです。私たちが、どう変えるか。［間］そして、これは先生たちだけの話ではありません。皆さん自身が、明日から試せることでもある。AIに答えを聞いたら、必ず誰かにぶつけて、問い返してもらう。それだけで、皆さんは『消費者』から『当事者』に変わります。［間］次のワーク②は、京都の小規模大学を3年で再建するという設定です。その前に、橋口先生から民間の最前線のお話があります。問いを一つ持っておいてください。民間の最適化の論理を、大学にそのまま持ち込んでいいのか。ここは決めつけずに、一緒に考えましょう。 -->
+<!-- 【W5】今作った2列の表を、次のワーク②にそのまま持っていきます。左の列、大学でしかできないことは、今日ずっと話してきた「人の変容」や「ともに考える共同体」と重なるはずです。右の列は、AIや非同期に外部化できるもの。［間］「大学はどう変わるか」じゃないんです。私たちが、どう変えるか。次のワーク②は、京都の小規模大学を3年で再建するという設定です。その前に、橋口先生から民間の最前線のお話があります。問いを一つ持っておいてください。民間の最適化の論理を、大学にそのまま持ち込んでいいのか。ここは決めつけずに、一緒に考えましょう。 -->
 
 ---
 
@@ -1187,19 +1073,38 @@ AIは大学のあらゆる層に効く
 
 <div class="page-title">参考文献</div>
 
-# 参考文献・リンク
+# 参考文献・出典
 
-- ティム・インゴルド『教育とは何か』古川不可知 訳, 亜紀書房 (2025)　[akishobo](https://akishoboshop.com/products/9784750518824)
-- C.M.ライゲルース & J.R.カノップ『情報時代の学校をデザインする』稲垣忠ほか訳, 北大路書房 (2018)　[kitaohji](https://www.kitaohji.com/book/b580176.html)
-- J. A. Bowen & C. E. Watson, *Teaching with AI*, 2nd ed., Johns Hopkins Univ. Press (2026)／田川 翔 訳・近刊　[aacu](https://www.aacu.org/publication/teaching-with-ai)
-- レイヴ & ウェンガー『状況に埋め込まれた学習——正統的周辺参加』産業図書 (1993)
-- 改訂版ブルーム・タキソノミー (Anderson & Krathwohl, 2001)／L. D. Fink, *Creating Significant Learning Experiences* (2003)
-- 大学教育学会 課題研究「高等教育機関における生成AI導入の実態調査」(2025, n=113)　[genai-higher-ed-jp.github.io](https://genai-higher-ed-jp.github.io/survey-2025-sep-oct/)
-- Minerva University　[minerva.edu](https://www.minerva.edu)　／　Taejae大学報道 (University World News, 2025-11)
-- MIT OpenCourseWare　[ocw.mit.edu](https://ocw.mit.edu)（知識は無料、価値は“体験”）
+- ティム・インゴルド『教育とは何か』古川不可知訳（原題 *Anthropology and/as Education*, 2nd ed., Routledge, 2018）
+- レイヴ, J. & ウェンガー, E.（1991）『状況に埋め込まれた学習——正統的周辺参加』
+- 大学教育学会 課題研究（2026）生成AI導入実態調査（2025年9–10月実施, n=113機関）
+- Minerva University／Taejae大学に関する報道（University World News, 2025年11月 ほか）
 
 <!-- 【REFS】最後に、今日お話しした内容の主な出典です。インゴルドの『教育とは何か』、レイヴとウェンガーの正統的周辺参加、大学教育学会の実態調査、それからミネルバとTaejaeに関する報道。気になったものは、ぜひあとで手に取ってみてください。 -->
 
+---
 
+<!-- _class: fig -->
 
+<div class="page-title">お土産</div>
+
+# 持ち帰り：観てほしい動画
+
+<div class="fig-area">
+
+<div class="step"><b>MIT OpenCourseWare</b>：知識は無料、価値は体験という思想。なぜ講義を全部タダで公開したのか。<br><span class="gry">URL：当日掲示／差し替え</span></div>
+
+<div class="step"><b>Minerva University</b>：大学の本質を再配置した極論モデル。キャンパスも講義も手放して何が残るか。<br><span class="gry">URL：当日掲示／差し替え</span></div>
+
+<div class="step"><b>ティム・インゴルド</b>：教育とは何か。「強い教育／弱い教育」から学びの向きを問い直す。<br><span class="gry">URL：当日掲示／差し替え</span></div>
+
+<div class="step"><b>ライゲルース</b>：情報化時代の学校／学習中心パラダイム。工業時代の型をどう抜けるか。<br><span class="gry">URL：当日掲示／差し替え</span></div>
+
+<div class="attr">※リンク（QR）は当日スライドに掲示します</div>
+
+</div>
+
+<div class="takeaway">今日の“種本”を、動画でも持ち帰ってください。</div>
+
+<!-- 【OMIYAGE】今日いろいろ話したけど、全部を覚えてほしいわけじゃないんです。気になったテーマが一つでもあったら、この動画から入ってみてください。種本の入口を四つだけ置いておきます。 -->
 

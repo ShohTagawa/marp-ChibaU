@@ -1,0 +1,23 @@
+{
+  "grid": { "left": 16, "right": 60, "top": 8, "bottom": 12, "containLabel": true },
+  "xAxis": { "type": "value", "name": "件", "axisLabel": { "fontSize": 15 }, "max": 18 },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["知識の習得・読書","思考・整理・探求","資格・試験・演習","AIとの壁打ち・対話","学外活動（一人旅等）","レポート作成"],
+    "axisLabel": { "fontSize": 18, "fontWeight": "bold" }
+  },
+  "series": [{
+    "type": "bar",
+    "barWidth": "62%",
+    "label": { "show": true, "position": "right", "formatter": "{c}", "fontSize": 19, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 16, "itemStyle": { "color": "#1A6BB0" } },
+      { "value": 11, "itemStyle": { "color": "#1A6BB0" } },
+      { "value": 10, "itemStyle": { "color": "#5B8FC0" } },
+      { "value": 7,  "itemStyle": { "color": "#1A6BB0" } },
+      { "value": 4,  "itemStyle": { "color": "#9aa0a6" } },
+      { "value": 2,  "itemStyle": { "color": "#9aa0a6" } }
+    ]
+  }]
+}

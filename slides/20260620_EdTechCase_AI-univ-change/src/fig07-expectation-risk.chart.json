@@ -1,19 +1,20 @@
 {
   "legend": { "top": 0, "data": ["肯定", "どちらとも言えない"], "textStyle": { "fontSize": 17 } },
-  "grid": { "left": 16, "right": 24, "top": 52, "bottom": 24, "containLabel": true },
-  "xAxis": {
+  "grid": { "left": 16, "right": 96, "top": 46, "bottom": 16, "containLabel": true },
+  "xAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 16 } },
+  "yAxis": {
     "type": "category",
+    "inverse": true,
     "data": ["業務効率化への期待", "思考力低下のリスク"],
-    "axisLabel": { "fontSize": 20, "fontWeight": "bold" }
+    "axisLabel": { "fontSize": 20, "fontWeight": "bold", "width": 300, "overflow": "break", "lineHeight": 24 }
   },
-  "yAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 16 } },
   "series": [
     {
       "name": "肯定",
       "type": "bar",
-      "barGap": "8%",
       "barWidth": "30%",
-      "label": { "show": true, "position": "top", "formatter": "{c}%", "fontSize": 22, "fontWeight": "bold", "color": "#C8611C" },
+      "barGap": "12%",
+      "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 22, "fontWeight": "bold", "color": "#C8611C" },
       "itemStyle": { "color": "#C8611C" },
       "data": [94.6, 47.3]
     },
@@ -21,7 +22,7 @@
       "name": "どちらとも言えない",
       "type": "bar",
       "barWidth": "30%",
-      "label": { "show": true, "position": "top", "formatter": "{c}%", "fontSize": 20, "color": "#5B6068" },
+      "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 20, "color": "#5B6068" },
       "itemStyle": { "color": "#9aa0a6" },
       "data": ["-", 46.4]
     }

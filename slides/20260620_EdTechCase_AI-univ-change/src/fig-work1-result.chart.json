@@ -1,0 +1,24 @@
+{
+  "grid": { "left": 16, "right": 60, "top": 8, "bottom": 12, "containLabel": true },
+  "xAxis": { "type": "value", "name": "件", "axisLabel": { "fontSize": 15 }, "max": 18 },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["対人交流・議論","人的ネットワーク・出会い","共同活動・共創","課外活動・実体験","専門的・体系的な学習","資格・キャリア形成","専門施設・設備"],
+    "axisLabel": { "fontSize": 18, "fontWeight": "bold" }
+  },
+  "series": [{
+    "type": "bar",
+    "barWidth": "62%",
+    "label": { "show": true, "position": "right", "formatter": "{c}", "fontSize": 19, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 16, "itemStyle": { "color": "#C8611C" } },
+      { "value": 16, "itemStyle": { "color": "#C8611C" } },
+      { "value": 10, "itemStyle": { "color": "#D98A4E" } },
+      { "value": 10, "itemStyle": { "color": "#D98A4E" } },
+      { "value": 9,  "itemStyle": { "color": "#9aa0a6" } },
+      { "value": 5,  "itemStyle": { "color": "#9aa0a6" } },
+      { "value": 2,  "itemStyle": { "color": "#9aa0a6" } }
+    ]
+  }]
+}

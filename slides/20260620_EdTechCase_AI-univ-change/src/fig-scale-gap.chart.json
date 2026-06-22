@@ -1,0 +1,21 @@
+{
+  "legend": { "top": 0, "itemGap": 60, "data": ["小規模(4,000人未満)","大規模(4,000人以上)"], "textStyle": { "fontSize": 16 } },
+  "grid": { "left": 16, "right": 70, "top": 50, "bottom": 16, "containLabel": true },
+  "xAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 15 } },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["有料AI 未提供","システム 未整備","職員支援 未実施","方針 予定なし"],
+    "axisLabel": { "fontSize": 18, "fontWeight": "bold" }
+  },
+  "series": [
+    { "name": "小規模(4,000人未満)", "type": "bar", "barWidth": "32%", "barGap": "12%",
+      "itemStyle": { "color": "#C8611C" },
+      "label": { "show": true, "position": "right", "formatter": "{c}", "fontSize": 16, "fontWeight": "bold", "color": "#C8611C" },
+      "data": [81.2, 60.0, 61.2, 37.6] },
+    { "name": "大規模(4,000人以上)", "type": "bar", "barWidth": "32%",
+      "itemStyle": { "color": "#9aa0a6" },
+      "label": { "show": true, "position": "right", "formatter": "{c}", "fontSize": 16, "color": "#5B6068" },
+      "data": [50.0, 21.4, 17.9, 14.3] }
+  ]
+}

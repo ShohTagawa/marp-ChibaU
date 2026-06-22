@@ -1,0 +1,23 @@
+{
+  "grid": { "left": 16, "right": 56, "top": 8, "bottom": 12, "containLabel": true },
+  "xAxis": { "type": "value", "name": "件", "axisLabel": { "fontSize": 15 }, "max": 12 },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["多様な人との出会い・交流","専門的な学び・研究","特殊な環境・経験","自己の成長・価値観の変容","対話を通じた共創・実践","その他（社会貢献・就職）"],
+    "axisLabel": { "fontSize": 18, "fontWeight": "bold" }
+  },
+  "series": [{
+    "type": "bar",
+    "barWidth": "62%",
+    "label": { "show": true, "position": "right", "formatter": "{c}", "fontSize": 19, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 10, "itemStyle": { "color": "#C8611C" } },
+      { "value": 8,  "itemStyle": { "color": "#C8611C" } },
+      { "value": 5,  "itemStyle": { "color": "#D98A4E" } },
+      { "value": 4,  "itemStyle": { "color": "#D98A4E" } },
+      { "value": 4,  "itemStyle": { "color": "#D98A4E" } },
+      { "value": 3,  "itemStyle": { "color": "#9aa0a6" } }
+    ]
+  }]
+}

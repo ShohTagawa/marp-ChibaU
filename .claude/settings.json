@@ -29,7 +29,17 @@
       "Bash(awk '/^---$/{c++} c>=2 && /^---$/{print \"page \"\\(c-1\\)\" starts at line \"NR}' slides/20260614_GenAI-Research_01_ethics-literacy/20260614_GenAI-Research_01_ethics-literacy.md)",
       "Bash(curl -sL \"https://www.soumu.go.jp/main_content/000646187.pdf\" -o cmp.pdf)",
       "Bash(pdftotext -layout cmp.pdf -)",
-      "Bash(cd /Users/sh/marp-ChibaU *)"
+      "Bash(cd /Users/sh/marp-ChibaU *)",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260623_InfoLit_11_security-tech/20260623_InfoLit_11_security-tech.md --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o /tmp/s5/v3.png)",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260623_InfoLit_11_security-tech/20260623_InfoLit_11_security-tech.md --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o /tmp/s5/chk.png)",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260623_InfoLit_11_security-tech/20260623_InfoLit_11_security-tech.md --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o /tmp/s5/fix.png)",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260623_InfoLit_11_security-tech/20260623_InfoLit_11_security-tech.md --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o /tmp/s5/grid.png)",
+      "Bash(npx @marp-team/marp-cli@latest slides/20260623_InfoLit_11_security-tech/20260623_InfoLit_11_security-tech.md --no-stdin --theme-set theme/academic.css --html --images png --allow-local-files -o /tmp/s5/n.png)",
+      "Bash(grep -iE \"\\\\.\\(pptx|pdf|key\\)$\")",
+      "Bash(pdfinfo lec07.pdf)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(pdfinfo -upw '' lec07.pdf)",
+      "Bash(pdfinfo -opw '' lec07.pdf)"
     ],
     "additionalDirectories": [
       "/Users/sh/marp-ChibaU/slides/20260614_GenAI-Research_01_ethics-literacy/out"

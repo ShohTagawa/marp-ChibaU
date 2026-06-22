@@ -1,0 +1,16 @@
+{
+  "grid": { "left": 16, "right": 64, "top": 8, "bottom": 12, "containLabel": true },
+  "xAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 15 } },
+  "yAxis": { "type": "category", "inverse": true,
+    "data": ["ガイドラインの実質化","技術進展への対応","人手・時間の不足","関係者の意識統一","倫理・法・プライバシー"],
+    "axisLabel": { "fontSize": 18, "fontWeight": "bold", "width": 230, "overflow": "break" } },
+  "series": [{ "type": "bar", "barWidth": "60%",
+    "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 19, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 85.8, "itemStyle": { "color": "#C8611C" } },
+      { "value": 83.2, "itemStyle": { "color": "#C8611C" } },
+      { "value": 77.0, "itemStyle": { "color": "#D98A4E" } },
+      { "value": 74.3, "itemStyle": { "color": "#D98A4E" } },
+      { "value": 72.6, "itemStyle": { "color": "#D98A4E" } }
+    ] }]
+}

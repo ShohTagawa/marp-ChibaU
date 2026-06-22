@@ -1,0 +1,13 @@
+{
+  "grid": { "left": 16, "right": 70, "top": 16, "bottom": 20, "containLabel": true },
+  "xAxis": { "type": "value", "max": 100, "axisLabel": { "formatter": "{value}%", "fontSize": 16 } },
+  "yAxis": { "type": "category", "inverse": true,
+    "data": ["協働 (augmentation)","委任 (automation)"],
+    "axisLabel": { "fontSize": 20, "fontWeight": "bold" } },
+  "series": [{ "type": "bar", "barWidth": "48%",
+    "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 24, "fontWeight": "bold", "color": "#222" },
+    "data": [
+      { "value": 57, "itemStyle": { "color": "#C8611C" } },
+      { "value": 43, "itemStyle": { "color": "#9aa0a6" } }
+    ] }]
+}

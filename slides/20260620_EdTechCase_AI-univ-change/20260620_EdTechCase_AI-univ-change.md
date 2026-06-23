@@ -1228,6 +1228,24 @@ style: |
 
 <!-- _class: fig -->
 
+<div class="page-title">結果②（自由記述）</div>
+
+## 学生の言葉そのまま＝知識のインプット・AIとの壁打ち
+
+<div class="fig-area">
+<img src="./src/wordcloud_solo_learning_ja.png" alt="「自分一人でできること」自由記述のワードクラウド。知識のインプット・AIとの壁打ち・資格試験勉強・考える思考・調べる調査などが大きく表示" style="max-height:380px;border-radius:8px">
+</div>
+
+<div class="attr">出典：本講義 ワーク①「自分一人でできること」自由記述（2026/6/20・11グループ）</div>
+
+<div class="takeaway"><span class="hl">知識のインプット</span>と<span class="blu">AIとの壁打ち</span>。＝AI・非同期へ外部化しやすい言葉が集まった。</div>
+
+<!-- 【W1-RESULT2-WC】こちらは同じ「自分一人でできる」を、分類せず学生の言葉のまま並べたワードクラウドです。大きく出ているのは知識のインプット、そしてAIとの壁打ち。前のグラフと同じ像が、生の言葉でもそのまま立ち上がっています。 -->
+
+---
+
+<!-- _class: fig -->
+
 <div class="page-title">結果③</div>
 
 ## なぜ大学か＝出会い・研究・変容

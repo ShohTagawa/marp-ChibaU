@@ -121,7 +121,7 @@ style: |
 <div class="callout-blue">評価軸</div>
 
 - **整合性 ・ 導入コスト ・ 運用コスト ・ 再学習 ・ 管理追従 ・ 現場拡張 ・ 既存連携（Box/Office）**（7観点）
-- 補足要素： ベンダー支援/人材育成 ・ **他大学での実績** ・ 将来性/ロックイン回避（Iceberg・推論コスト・モデル近接）
+- 補足要素： ベンダー支援/人材育成 ・ **他大学実績** ・ **リバースETL（AI実行＋人の承認）** ・ 将来性/ロックイン回避
 
 <div class="takeaway">3案を共通の評価軸で比較し、本学の前提に最も適合する構成を選ぶ</div>
 
@@ -829,6 +829,51 @@ style: |
 
 ---
 
+<!-- _class: summary -->
+
+<div class="page-title">リバースETL</div>
+
+## 分析の先：AIが起案・実行 → 人が承認 → 業務に反映（リバースETL）
+
+<div class="sections">
+<div class="sec-box">
+
+### GCP案 ◎
+
+- Gemini Enterprise Agent がアクション実行
+- Workspace Flows／Apps Script で Box・SaaS・Sheets に書き戻し
+- **承認ステップ（人の確認）を組み込める**
+
+</div>
+
+<div class="sec-box">
+
+### Azure案 ◎
+
+- **Power Automate が承認フローを標準装備**
+- Copilot Studio エージェントと連携
+- M365内の業務はMSの王道
+
+</div>
+
+<div class="sec-box">
+
+### 個社案 △
+
+- Snowflake/Databricks は分析側が強い
+- 書き戻しは Census/Hightouch や HULFT が別途
+- 承認フローも別実装が必要
+
+</div>
+
+</div>
+
+<div class="takeaway">AI実行＋人の承認はGCP・Azureがネイティブ／個社案は書き戻しツールが別途要</div>
+
+<!-- リバースETL＝分析の逆向き（データ基盤→業務システムへ書き戻す）。AIが起案・実行→人が承認→反映というhuman-in-the-loopの業務。GCP＝Gemini Agent＋Workspace Flows/Apps Scriptでネイティブ・承認ステップ可。Azure＝Power Automateの承認フロー＋Copilot Studio（MSの王道）。個社＝分析は強いが書き戻し（Census/Hightouch/HULFT）と承認は別途。本学はWorkspace運用なのでGCP案が素直。GCPとAzureが◎、本学前提ではGCPが native。 -->
+
+---
+
 <!-- _class: fig -->
 
 <div class="page-title">段階導入</div>
@@ -883,15 +928,12 @@ style: |
 
 ## 出典・参考（主要）
 
-- Google Cloud. *Connect Box / Gemini Enterprise connectors* . https://docs.cloud.google.com/gemini/enterprise/docs/connect-box
-- Google Cloud. *Introducing Gemini Enterprise Agent Platform（Cloud Next '26）* . https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform
-- Google Cloud. *BigLake / Iceberg tables・Connected Sheets・BigQuery pricing* . https://docs.cloud.google.com/bigquery/docs/iceberg-tables
-- Snowflake×Microsoft Fabric. *Apache Iceberg v3 双方向相互運用（2026/3）* . https://analyticsweek.com/apache-iceberg-zero-copy-snowflake-fabric-2026/
-- Apache Iceberg 公式 ／ Snowflake・Databricks 本番コスト（Revefi・tech-insider）. https://iceberg.apache.org/
-- 参考：NateRive「Apache Iceberg ― なぜ今、Iceberg なのか？」(Qiita). https://qiita.com/NateRive/items/e30d48dd162a49a94afe
-- a16z / Epoch AI. *LLM推論コスト低下（LLMflation）* . https://epoch.ai/data-insights/llm-inference-price-trends
-- Gemini 3.5 Flash 価格（2026/5）／Claude 価格（claude-api リファレンス）／M365 Copilot 教育価格・Snowflake/Databricks 教育プログラム
-- 千葉大学 役員・教職員数／学部・大学院学生数（令和7年5月1日現在・公表PDF）
+- **Google Cloud**：Connect Box ／ Gemini Enterprise Agent Platform（Cloud Next '26）／ BigLake・Iceberg・Connected Sheets・BigQuery 価格（docs.cloud.google.com）
+- **Iceberg**：Apache Iceberg 公式 ／ Snowflake×Fabric 相互運用（2026/3）／ NateRive「なぜ今 Iceberg」(Qiita)
+- **基盤コスト**：Snowflake クレジット・Databricks DBU 単価／本番費用（Revefi・CloudZero・tech-insider）
+- **推論コスト**：a16z LLMflation ／ Epoch AI 推論価格トレンド ／ Gemini 3.5 Flash・Claude 価格（claude-api）
+- **Microsoft**：M365 Copilot 教育価格 ／ Microsoft Fabric 価格
+- **千葉大学（公表値）**：役員・教職員数 ／ 学部・大学院学生数（令和7年5月1日現在）
 
 <!--
 - 価格・コネクタ・連携の事実はGoogle Cloud公式とベンダー比較・公表値に基づく。価格は2026年6月時点・定価ベースで、実導入時は見積・GA状況で再確認。詳細根拠は同フォルダ ANALYSIS_deep-comparison_2026.md を参照。

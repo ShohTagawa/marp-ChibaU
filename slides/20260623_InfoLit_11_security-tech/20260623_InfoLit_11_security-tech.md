@@ -90,9 +90,9 @@ style: |
 
 <div class="callout-blue">📺 受講のしかた</div>
 
-- 全体を **動画8本＋まとめ** に分けて配信
+- 全体を **動画8本＋はじめに/まとめ** に分けて配信
 - 各動画にこのスライド資料（PDF）が対応
-- 途中で止めて巻き戻してOK。<span class="hl">slido なし</span>
+- 自分のペースで確認して下さい。<span class="hl">slido なし</span>
 - 質問は Moodle の質問フォーラムへ
 
 <div class="callout-green" style="margin-top:14px">🗂 3つの山だけ覚える</div>
@@ -116,7 +116,7 @@ style: |
 </table>
 </div>
 
-<div class="ask">後半に<strong>「学生の質問に答える」動画</strong>を1本。学外アクセス・バックアップ・文献探し・執筆・ツールまで。<br>最後は<strong>今後の展開とプログラミングの学び方</strong>も。</div>
+<div class="ask">後半に<strong>「学生の質問に答える」動画</strong>を1本作りました。<br>最後は<strong>今後の学び方</strong>の参考事例を書いています。</div>
 
 </div>
 </div>
@@ -188,7 +188,7 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">つかみ</div>
+<div class="page-title">文字化けの経験、ありませんか？</div>
 
 ## なぜ「文字化け」は起きるのか
 
@@ -254,7 +254,7 @@ style: |
 </div></div>
 
 <div class="cbox orange"><div class="h">第8回の「符号化」とは別物</div><div class="b">
-あれは<strong>音・画像</strong>を標本化→量子化して数値にする話。<br>こちらは<strong>文字 ↔ 番号</strong>の対応表。混同しない。
+あれは<strong>音・画像</strong>を標本化→量子化して数値にする話。<br>こちらは<strong>文字 ↔ 番号</strong>の単なる対応表。
 </div></div>
 
 </div>
@@ -304,7 +304,7 @@ style: |
 </div>
 </div>
 
-<div class="takeaway">日本語は2バイト＋規格乱立。「どの表で読むか」がずれると化ける。</div>
+<div class="takeaway">日本語は2バイト＋規格乱立。「どの表で読むか」が異なると文字が化ける。</div>
 
 <!-- 規格乱立＝歴史的経緯。細部の規格名は暗記不要、「複数あって食い違うと化ける」が要点。次でUnicode/UTF-8による統一へ。 -->
 
@@ -401,7 +401,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="chapter-num">動画 2 ／ CHAPTER 2</div>
 
-# 何を、どんな状態で守るのか
+# 情報セキュリティ： <br>何を、どんな状態で守るのか
 
 ## 情報資産・リスク・インシデント
 
@@ -418,7 +418,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 <div class="fig-area" style="min-height:0">
 
 <div class="grid3" style="width:96%">
-<div class="cbox blue"><div class="h">① 情報資産</div><div class="b">守るべきもの。<br><span class="hl">個人情報・研究データ</span>・システム・ノウハウ。<br><span class="attr">＝あなたの卒論データも資産</span></div></div>
+<div class="cbox blue"><div class="h">① 情報資産</div><div class="b">守るべきもの。<br><span class="hl">個人情報・研究データ</span>・システム・ノウハウなど。<br><span class="attr">＝組織では重要度に応じて格付け・管理される</span></div></div>
 <div class="cbox orange"><div class="h">② リスク</div><div class="b">資産が<span class="hl">損なわれる可能性</span>。<br>外的要因（攻撃）と<br>内的要因（紛失・ミス）がある。</div></div>
 <div class="cbox red"><div class="h">③ インシデント</div><div class="b"><span class="hl">実際に損なわれた状態</span>。<br>漏えい・改ざん・<br>システム停止など。</div></div>
 </div>
@@ -460,15 +460,127 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 ---
 
+<!-- _class: fig -->
+
+<div class="page-title">性質の具体例</div>
+
+## 抽象論で終わらせない ── 身近な「守られている状態」
+
+<div class="fig-area" style="min-height:0">
+
+<table class="dtbl" style="width:94%; font-size:18px; line-height:1.4">
+<tr><th style="width:20%">性質</th><th>「守られている」＝こういう状態（身近な例）</th></tr>
+<tr><td class="l"><span class="red">機密性</span></td><td class="l">成績・個人情報を、<span class="hl">許可された教員だけ</span>が閲覧できる</td></tr>
+<tr><td class="l"><span class="red">完全性</span></td><td class="l">提出した論文データが、<span class="hl">勝手に書き換えられていない</span></td></tr>
+<tr><td class="l"><span class="red">可用性</span></td><td class="l">履修登録が、<span class="hl">締切日にもダウンせず</span>使える</td></tr>
+<tr><td class="l"><span class="hl-dark">真正性</span></td><td class="l">ログインしたのが<span class="hl">本人</span>だと確認できる（顔/指紋・パスキー）</td></tr>
+<tr><td class="l">責任追跡性</td><td class="l">誰がいつ閲覧・編集したかを、<span class="hl">後からログで追える</span></td></tr>
+<tr><td class="l">信頼性</td><td class="l">システムが誤作動なく、<span class="hl">期待どおり動く</span></td></tr>
+<tr><td class="l">否認防止</td><td class="l">「送っていない」と<span class="hl">後から言い逃れさせない</span>（電子署名）</td></tr>
+</table>
+
+</div>
+
+<div class="band" style="font-size:20px">この「状態」が崩れた瞬間が、<span class="red">インシデント</span>。だから性質ごとに対策を考える。</div>
+
+<div class="takeaway">7性質は抽象論でない。成績・論文・履修…すべて「守られている状態」のこと。</div>
+
+<!-- p12(7性質の表)を別スライドで具体化。CIA3つは赤、真正性は動画5(パスキー)へ橋渡し。「状態が崩れる＝インシデント」で動画2冒頭(資産/リスク/インシデント)と接続。例は学生に身近な大学・研究の場面で。出典:IPA情報セキュリティ読本の性質定義。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">リスクの考え方</div>
+
+## リスクは「ゼロ」にできない ── 許容できる水準まで
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 380 230" width="100%" style="max-height:300px"><defs><marker id="arRk" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#D98A2B"/></marker></defs><g font-size="13" text-anchor="middle"><line x1="40" y1="195" x2="350" y2="195" stroke="#999" stroke-width="1.5"/><text x="28" y="199" font-size="12" fill="#888">0</text><line x1="40" y1="150" x2="350" y2="150" stroke="#3C8A57" stroke-width="1.5" stroke-dasharray="6 4"/><text x="298" y="143" font-size="12" fill="#2d6a44" font-weight="700">許容できる水準</text><rect class="card" x="70" y="40" width="80" height="155" fill="#F3C9D2" stroke="#A6192E" stroke-width="1.8"/><text x="110" y="70" fill="#7d1322" font-weight="700">対策前</text><text x="110" y="214" fill="#555">高いリスク</text><rect class="card" x="230" y="158" width="80" height="37" fill="#DDEBC8" stroke="#3C8A57" stroke-width="1.8"/><text x="270" y="181" fill="#2d6a44" font-weight="700" font-size="12">対策後</text><text x="270" y="214" fill="#555">残留リスク</text><path d="M156,72 C198,72 202,150 226,156" stroke="#D98A2B" stroke-width="2" fill="none" marker-end="url(#arRk)"/><text x="196" y="106" fill="#a9781a" font-weight="700" font-size="12">対策で低減</text></g></svg>
+
+<div class="caption">図. 対策で許容水準まで下げる（0にすることが目的ではない）</div>
+
+</div>
+<div class="right">
+
+<div class="cbox gray"><div class="h">まず2つの言葉を分ける</div><div class="b">
+
+- <span class="red">ハザード</span>＝危害の<span class="hl">源そのもの</span>（個人情報・ネット接続・USB）
+- <span class="red">リスク</span>＝それが<span class="hl">害になる可能性</span>＝起こりやすさ×影響
+
+</div></div>
+
+<div class="cbox red"><div class="h">「ゼロリスク」は幻想</div><div class="b">
+リスクを完全に消す＝<span class="hl">便益も捨てる</span>こと。ネットを使わない・データを持たないでは、研究も生活も回らない。
+</div></div>
+
+<div class="cbox green"><div class="h">だから"管理（マネジメント）"する</div><div class="b">
+
+- <span class="hl">便益と引き換え</span>に、どこまで許すかを決める
+- 対策でリスクを<span class="red">許容できる水準</span>まで下げる
+- 下げ切れず残る分（<span class="hl">残留リスク</span>）は受け入れる
+
+</div></div>
+
+</div>
+</div>
+
+<div class="takeaway">リスク管理＝0にすることでなく、便益を含めて「許容できる」状態にすること。</div>
+
+<!-- 次スライド(情報マネジメント=ISMS/PDCA)の前提となる"リスクの考え方"。ハザード(源)とリスク(可能性=起こりやすさ×影響)を区別。ゼロリスクは便益を捨てること=非現実的。便益とのトレードオフで受容水準まで下げ、残留リスクは受け入れる、という管理の発想。動画2冒頭のリスク定義を深掘り。出典:IPA読本/リスクマネジメントの一般原則。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">情報マネジメント</div>
+
+## 対策は「回し続ける」── 情報セキュリティマネジメント
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 380 250" width="100%" style="max-height:240px"><defs><marker id="arPd" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6B6F76"/></marker></defs><g text-anchor="middle"><rect class="card" x="24" y="28" width="150" height="62" rx="9" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/><text x="99" y="54" font-weight="800" font-size="16" fill="#23527a">P ─ 計画</text><text x="99" y="76" font-size="13" fill="#555">方針・リスク評価</text><rect class="card" x="206" y="28" width="150" height="62" rx="9" fill="#eef7ef" stroke="#3C8A57" stroke-width="2"/><text x="281" y="54" font-weight="800" font-size="16" fill="#2d6a44">D ─ 実施</text><text x="281" y="76" font-size="13" fill="#555">対策・教育の実行</text><rect class="card" x="206" y="160" width="150" height="62" rx="9" fill="#fff7ec" stroke="#D98A2B" stroke-width="2"/><text x="281" y="186" font-weight="800" font-size="16" fill="#a9781a">C ─ 点検</text><text x="281" y="208" font-size="13" fill="#555">監査・評価</text><rect class="card" x="24" y="160" width="150" height="62" rx="9" fill="#fdecec" stroke="#A6192E" stroke-width="2"/><text x="99" y="186" font-weight="800" font-size="16" fill="#7d1322">A ─ 改善</text><text x="99" y="208" font-size="13" fill="#555">見直し・是正</text><text x="190" y="120" font-weight="800" font-size="18" fill="#999">PDCA</text><path d="M176,59 L204,59" stroke="#6B6F76" stroke-width="2" fill="none" marker-end="url(#arPd)"/><path d="M281,92 L281,158" stroke="#6B6F76" stroke-width="2" fill="none" marker-end="url(#arPd)"/><path d="M204,191 L176,191" stroke="#6B6F76" stroke-width="2" fill="none" marker-end="url(#arPd)"/><path d="M99,158 L99,92" stroke="#6B6F76" stroke-width="2" fill="none" marker-end="url(#arPd)"/></g></svg>
+
+<div class="caption">図. PDCAサイクルで継続的に改善する</div>
+
+</div>
+<div class="right">
+
+<div class="cbox blue"><div class="h">場当たり対策では守れない</div><div class="b">
+資産・リスク・インシデントを、<span class="hl">組織として継続的に管理</span>する枠組み＝<span class="red">情報セキュリティマネジメント（ISMS）</span>。
+</div></div>
+
+<div class="cbox green"><div class="h">セキュリティポリシー（3階層）</div><div class="b">
+
+- <span class="hl">基本方針</span>：何を守るか・経営の宣言
+- <span class="hl">対策基準</span>：守るための共通ルール
+- <span class="hl">実施手順</span>：現場の具体的なやり方
+
+</div></div>
+
+</div>
+</div>
+
+<div class="band" style="font-size:19px">技術だけでは守れない。<span class="hl">人と組織の穴</span>も大きいので、<span class="red">経営トップの関与</span>と全員の運用が要。</div>
+
+<div class="takeaway">守りは一度きりでなくPDCAで回す。技術＋ルール＋組織を同時に。</div>
+
+<!-- 資産/リスク/インシデント(動画2冒頭)・7つの性質を束ねる上位概念=マネジメント。ISMS/PDCA/セキュリティポリシー3階層。動画3「漏えい原因(人的ミスも約4割)→運用・経営の関与」への布石。出典:IPA情報セキュリティ読本。技術偏重を戒め「組織で回す」を強調。 -->
+
+---
+
 <!-- _class: divider -->
 
 <div class="chapter-num">動画 3 ／ CHAPTER 3</div>
 
-# 攻撃を「地図」で捉える
+# 攻撃のありようを俯瞰する
 
-## 不正アクセス・マルウェア・脆弱性・内部漏えい
+## 不正アクセス・マルウェア・脆弱性・漏えいの原因
 
-<!-- 第10回でマルウェアの種類・CIAは扱った。本動画は「攻撃の類型整理」「踏み台＝加害者」「感染プロセス」「脆弱性の分類」「内部漏えい6割」という未カバーの骨格を入れる。 -->
+<!-- 第10回でマルウェアの種類・CIAは扱った。本動画は「攻撃の類型整理」「踏み台＝加害者」「感染プロセス」「脆弱性の分類」「漏えい原因の最新動向(不正アクセスが最多)」という未カバーの骨格を入れる。 -->
 
 ---
 
@@ -492,7 +604,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 </div>
 
-<div class="takeaway">攻撃は6類型で地図化できる。要注意は「踏み台」── 自分が巻き込まれる側。</div>
+<div class="takeaway">攻撃は6類型で整理できる。要注意は「踏み台」── 自分が巻き込まれる側。</div>
 
 <!-- 出典:IPA読本。6類型を一覧で。最後の「踏み台」を次スライドの主題に繋ぐ。 -->
 
@@ -507,7 +619,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 420 230" width="100%" style="max-height:230px">
+<svg viewBox="0 0 420 230" width="100%" style="max-height:330px">
   <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#A6192E"/></marker></defs>
   <g font-size="14" text-anchor="middle">
     <rect class="card" x="14" y="92" width="92" height="46" rx="8" fill="#F8E5EA" stroke="#A6192E" stroke-width="2"/>
@@ -539,6 +651,10 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="band" style="font-size:19px">守るのは自分のためだけでない。<span class="hl">他人を攻撃しないため</span>でもある。だから更新・対策。</div>
 
+<div class="cbox gray"><div class="h">身近な実例 ── 千葉大学（2024年6月）</div><div class="b">
+本学センターの公開ウェブサーバが<span class="red">踏み台にされ、約6万件の迷惑メール配信</span>に悪用。事業者からの通知後すぐにアクセスを遮断。<br><span class="attr">出典：千葉大学公表（2024.6.20）／ScanNetSecurity（2024.7.2）</span>
+</div></div>
+
 </div>
 </div>
 
@@ -552,14 +668,14 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="page-title">感染のしくみ</div>
 
-## マルウェアはどう感染するか ── 1枚で追う
+## マルウェアはどう感染するか
 
 <div class="fig-area" style="margin-top:-4px">
 <svg viewBox="0 0 940 220" width="100%" style="max-height:250px">
   <defs><marker id="ar3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#A6192E"/></marker></defs>
   <g font-size="15" text-anchor="middle">
     <rect class="card" x="20" y="80" width="150" height="60" rx="9" fill="#eef4fa" stroke="#3E78B2" stroke-width="1.8"/>
-    <text x="95" y="104" font-weight="700">① 入口</text><text x="95" y="126" font-size="13" fill="#555">添付メール／偽サイト／USB</text>
+    <text x="95" y="104" font-weight="700">① 入口</text><text x="95" y="126" font-size="13" fill="#555">添付／偽サイト／USB</text>
     <text x="182" y="114" fill="#A6192E" font-size="22" font-weight="800">→</text>
     <rect class="card" x="200" y="80" width="160" height="60" rx="9" fill="#fff" stroke="#6B6F76" stroke-width="1.8"/>
     <text x="280" y="104" font-weight="700">② 脆弱性を突く</text><text x="280" y="126" font-size="13" fill="#555">古いOS・ソフトの穴</text>
@@ -576,9 +692,9 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 </svg>
 </div>
 
-<div class="band" style="font-size:20px">止めどころは <span class="red">②脆弱性</span>。穴さえ塞いでおけば、入口を踏んでも本体まで届きにくい。</div>
+<div class="band" style="font-size:20px">止めどころは <span class="red">②脆弱性</span>。穴さえ塞いでおけば、入口を踏んでも本体まで届かない場合が多い。</div>
 
-<div class="takeaway">感染は段階的。要は「脆弱性を塞ぐ」＝更新が最強の予防。</div>
+<div class="takeaway">感染は段階的。要は「脆弱性を塞ぐ」＝更新が私たちでもできる予防。</div>
 
 <!-- IPA読本のシーケンシャル感染図を5段階に整理。①種類(第10回既習)ではなく「過程」を見せるのが目的。次スライドで脆弱性そのものを定義。 -->
 
@@ -623,53 +739,44 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="takeaway">脆弱性＝攻撃の入口。システム的（更新）と人為的（習慣）の両輪で塞ぐ。</div>
 
-<!-- 第10回「更新でぜい弱性をふさぐ」を、脆弱性そのものの定義・分類へ拡張。人為的脆弱性が次スライド「内部漏えい6割」に繋がる。 -->
+<!-- 第10回「更新でぜい弱性をふさぐ」を、脆弱性そのものの定義・分類へ拡張。人為的脆弱性が次スライド「漏えいの原因(人的ミスも約4割)」に繋がる。 -->
 
 ---
 
 <!-- _class: split -->
 
-<div class="page-title">内側の穴</div>
+<div class="page-title">原因の今</div>
 
-## 漏えいの原因は、外より「内」が多い
+## 最多は「不正アクセス」── 近年、外が逆転
 
 <div class="split-body">
 <div class="left">
 
-<svg viewBox="0 0 360 220" width="100%" style="max-height:220px">
-  <g font-size="14" text-anchor="middle">
-    <circle cx="180" cy="110" r="92" fill="#eef4fa" stroke="#3E78B2" stroke-width="2"/>
-    <path d="M180,110 L180,18 A92,92 0 0,1 254,154 Z" fill="#F3C9D2"/>
-    <path d="M180,110 L254,154 A92,92 0 0,1 110,170 Z" fill="#F8DEE4"/>
-    <text x="150" y="70" font-weight="800" fill="#7d1322" font-size="20">内部 6割</text>
-    <text x="150" y="90" fill="#7d1322" font-size="12">紛失・誤送信・内部不正</text>
-    <text x="232" y="150" fill="#23527a" font-size="13">外部</text>
-    <text x="232" y="166" fill="#23527a" font-size="12">4割</text>
-  </g>
-</svg>
-<div class="caption">図. 情報漏えいの原因内訳（イメージ）</div>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="100%" style="max-height:300px" viewBox="0 0 640 460"><rect width="640" height="460" x="0" y="0" fill="none"></rect><polyline points="463.9 269.1 473.4 272.3 485.4 272.3" fill="none" pointer-events="visible" stroke="#A6192E" class="zr0-cls-0"></polyline><polyline points="172.6 257 162.9 259.4 150.9 259.4" fill="none" pointer-events="visible" stroke="#3E78B2" class="zr0-cls-0"></polyline><polyline points="211.3 114.8 204.2 107.8 192.2 107.8" fill="none" pointer-events="visible" stroke="#3C8A57" class="zr0-cls-0"></polyline><polyline points="285 73.1 282.7 63.4 270.7 63.4" fill="none" pointer-events="visible" stroke="#9AA0A6" class="zr0-cls-0"></polyline><path d="M320 69A151.8 151.8 0 1 1 228.3 341.8L272.8 283.1A78.2 78.2 0 1 0 320 142.6Z" fill="#A6192E" stroke="#fff" stroke-width="2" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-1"></path><path d="M228.3 341.8A151.8 151.8 0 0 1 182.7 156.1L249.3 187.5A78.2 78.2 0 0 0 272.8 283.1Z" fill="#3E78B2" stroke="#fff" stroke-width="2" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-2"></path><path d="M182.7 156.1A151.8 151.8 0 0 1 251.9 85.1L284.9 150.9A78.2 78.2 0 0 0 249.3 187.5Z" fill="#3C8A57" stroke="#fff" stroke-width="2" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M251.9 85.1A151.8 151.8 0 0 1 320 69L320 142.6A78.2 78.2 0 0 0 284.9 150.9Z" fill="#9AA0A6" stroke="#fff" stroke-width="2" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr0-cls-4"></path><text dominant-baseline="central" text-anchor="start" style="font-size:15px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(490.3746 272.3311)" fill="#1a1a1a">60%</text><text dominant-baseline="central" text-anchor="end" style="font-size:15px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(145.8769 259.4208)" fill="#1a1a1a">22%</text><text dominant-baseline="central" text-anchor="end" style="font-size:15px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(187.1727 107.8253)" fill="#1a1a1a">11%</text><text dominant-baseline="central" text-anchor="end" style="font-size:15px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(265.6864 63.3613)" fill="#1a1a1a">7%</text><path d="M-5 -5l554 0l0 26l-554 0Z" transform="translate(48 439)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr0-cls-5"></path><path d="M3.5 0L10.5 0A3.5 3.5 0 0 1 14 3.5L14 10.5A3.5 3.5 0 0 1 10.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(49 440)" fill="#A6192E" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-5"></path><text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;" x="19" y="7" transform="translate(49 440)" fill="#555555">不正アクセス・ウイルス</text><path d="M-1 -1l174 0l0 16l-174 0Z" transform="translate(49 440)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr0-cls-6"></path><path d="M3.5 0L10.5 0A3.5 3.5 0 0 1 14 3.5L14 10.5A3.5 3.5 0 0 1 10.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(233 440)" fill="#3E78B2" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-5"></path><text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;" x="19" y="7" transform="translate(233 440)" fill="#555555">誤表示・誤送信</text><path d="M-1 -1l118 0l0 16l-118 0Z" transform="translate(233 440)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr0-cls-6"></path><path d="M3.5 0L10.5 0A3.5 3.5 0 0 1 14 3.5L14 10.5A3.5 3.5 0 0 1 10.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(361 440)" fill="#3C8A57" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-5"></path><text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;" x="19" y="7" transform="translate(361 440)" fill="#555555">紛失・誤廃棄</text><path d="M-1 -1l104 0l0 16l-104 0Z" transform="translate(361 440)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="legend" class="zr0-cls-6"></path><path d="M3.5 0L10.5 0A3.5 3.5 0 0 1 14 3.5L14 10.5A3.5 3.5 0 0 1 10.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(475 440)" fill="#9AA0A6" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="round" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-5"></path><text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif;" x="19" y="7" transform="translate(475 440)" fill="#555555">持ち出し・盗難</text><path d="M-1 -1l118 0l0 16l-118 0Z" transform="translate(475 440)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="legend" class="zr0-cls-6"></path><style ><![CDATA[.zr0-cls-0:hover {cursor:pointer;}.zr0-cls-1:hover {cursor:pointer;fill:rgba(182,27,50,1);}.zr0-cls-2:hover {cursor:pointer;fill:rgba(68,132,195,1);}.zr0-cls-3:hover {cursor:pointer;fill:rgba(66,151,95,1);}.zr0-cls-4:hover {cursor:pointer;fill:rgba(169,176,182,1);}.zr0-cls-5:hover {pointer-events:none;}.zr0-cls-6:hover {cursor:pointer;fill:rgba(0,0,0,0);}]]></style></svg>
+
+<div class="caption" style="font-size:14px;line-height:1.4"><span style="color:#A6192E">■</span>不正アクセス・ウイルス（外部）≒<strong>60%</strong> ／ 誤送信・紛失・盗難（人的ミス）計≒40%<br>出典：東京商工リサーチ「2024年 上場企業の個人情報漏えい・紛失事故」2025年（189件・上場企業＋子会社）</div>
 
 </div>
 <div class="right">
 
-<div class="cbox red"><div class="h">内部要因の中身</div><div class="b">
+<div class="cbox red"><div class="h">最多は不正アクセス・ランサムウェア</div><div class="b">
 
-- <span class="hl">紛失・盗難</span>（PC・USB・スマホ）
-- <span class="hl">誤送信・誤公開</span>（宛先間違い・共有範囲ミス）
-- <span class="hl">内部不正</span>（持ち出し）
+- 上場企業の漏えい原因の<span class="hl">約6割（2024）</span>
+- <span class="hl">6年連続で最多</span>。ランサムで暗号化・公開
+- 大きい組織ほど<span class="red">標的</span>にされやすい
 
 </div></div>
 
-<div class="cbox green"><div class="h">だから</div><div class="b">
-ファイアウォールだけでは防げない。<br><span class="red">守りやすいルール</span>と、組織（経営）の関与が要る。
+<div class="cbox green"><div class="h">でも人的ミスも約4割</div><div class="b">
+誤送信・紛失・持ち出しで<span class="red">約4割</span>。個人レベルでは<span class="hl">むしろこちらが身近</span>。外の防御＋内の運用、両輪で守る。
 </div></div>
 
 </div>
 </div>
 
-<div class="takeaway">漏えいの多くは内側のミス。技術より「運用」が効く領域。</div>
+<div class="takeaway">件数の最多は外部の不正アクセスへ。だが人的ミスも約4割、両輪で守る。</div>
 
-<!-- IPA読本「情報漏えいの原因は内部が6割」。割合はイメージ図(正確な統計値は年で変動、口頭で出典補足)。人為的脆弱性の具体化。 -->
+<!-- 2024年TSR「上場企業の個人情報漏えい・紛失事故」(189件)に差替え。不正アクセス・ウイルス60.3%/誤表示・誤送信21.6%/紛失・誤廃棄10.5%/持ち出し・盗難7.4%。不正アクセスは6年連続で最多。旧JNSA2018(内部76%)から逆転して見えるが母集団が違う(TSRは上場企業＋子会社=標的型の主標的)点に注意。世の中のランサム増+大企業サンプルの両方が効く。件数最多は外部だが人的ミスも約4割で個人には依然重要、と二段で説明。元データ:src/fig-leak-cause-2024.chart.json。出典:東京商工リサーチ2025年公表。 -->
 
 ---
 
@@ -677,7 +784,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="chapter-num">動画 4 ／ CHAPTER 4</div>
 
-# 手口を知って、実務で守る
+# 手口を知って、守りを実践しよう
 
 ## ポート・バッファオーバーフロー・偽装ファイル・BEC
 
@@ -801,7 +908,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 </div></div>
 
-<div class="band" style="font-size:19px">開く前に<span class="hl">拡張子を確認</span>。心当たりのない添付は<span class="red">開かない</span>のが原則。</div>
+<div class="band" style="font-size:19px">開く前に<span class="hl">拡張子を確認</span>。<br>心当たりのない添付は<span class="red">開かない</span>のが原則。</div>
 
 </div>
 </div>
@@ -833,6 +940,10 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 メールの <span class="mono">From</span> は<span class="hl">自己申告</span>。<br>差出人は簡単に詐称できる。
 </div></div>
 
+<div class="cbox orange"><div class="h">実例：C-csirt注意喚起（フィッシング/決済詐欺）</div><div class="b">
+楽天カード・PayPayを装い「<span class="red">本日中・至急</span>」と急かすメール。<span class="hl">URLは正規ドメインでも悪用</span>され得る。急かされたら一度止まり<span class="red">公式窓口で確認</span>。
+</div></div>
+
 </div>
 <div class="right">
 
@@ -859,7 +970,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="chapter-num">動画 5 ／ CHAPTER 5</div>
 
-# 「あなた」を確かめる
+# 「あなた」であるかを確かめる
 
 ## 認証の最新形 ── パスワードレスへ
 
@@ -904,7 +1015,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="page-title">パスキー</div>
 
-## パスキー / FIDO2 ── 生体 × 公開鍵
+## パスキー ── 生体 × 公開鍵
 
 <div class="split-body">
 <div class="left">
@@ -931,7 +1042,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 </div></div>
 
-<div class="band" style="font-size:19px">Google・Apple・大学アカウントでも順次対応。<span class="hl">使えるなら今すぐ有効化を</span>。</div>
+<div class="band" style="font-size:19px">Google・Apple・大学アカウントでも順次対応。<span class="hl">使えるならぜひ使おう</span>。</div>
 
 </div>
 </div>
@@ -977,23 +1088,74 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 </div>
 <div class="right">
 
-<div class="cbox green"><div class="h">バグハンティングコンテスト2026</div><div class="b">
+<div style="display:flex;align-items:center;justify-content:center;height:100%">
+<svg viewBox="0 0 480 300" width="100%" style="max-width:430px">
+  <rect x="2" y="2" width="476" height="296" rx="18" fill="#A8DCE9"/>
+  <path d="M183 95 A82 82 0 1 0 183 231" fill="none" stroke="#111" stroke-width="58" stroke-linecap="round"/>
+  <path d="M183 95 A82 82 0 1 0 183 231" fill="none" stroke="#FFE000" stroke-width="44" stroke-linecap="round"/>
+  <ellipse cx="112" cy="118" rx="17" ry="22" fill="#fff" stroke="#111" stroke-width="4"/>
+  <ellipse cx="158" cy="106" rx="17" ry="22" fill="#fff" stroke="#111" stroke-width="4"/>
+  <path d="M101 118 Q112 103 123 118" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+  <path d="M147 106 Q158 91 169 106" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+  <text x="250" y="112" font-size="18" fill="#222" font-weight="600">千葉大学情報危機対策チーム</text>
+  <text x="250" y="138" font-size="17" fill="#222">シー・シーサート</text>
+  <text x="240" y="220" font-size="64" font-style="italic" font-weight="800" fill="#111">- csirt</text>
+</svg>
+</div>
 
-- Webサイトの<span class="hl">セキュリティホールを探す</span>
-- プログラミング初心者OK（講習あり）
-- 4名までのチーム（1名でも可）
-- 今日の「守る側」から<span class="red">「探す側」</span>を体験
+</div>
+</div>
+
+<div class="band">不安な問題や<span class="hl">インシデントの兆候</span>に気づいたら、ひとりで抱えず <span class="hl">C-csirt・情報環境機構の窓口に相談</span>してください。</div>
+
+<div class="takeaway">大学はC-csirtで守る。困ったら相談、興味があれば「探す側」も体験できる。</div>
+
+<!-- 第10回告知のコンテストを、組織(C-csirt)・発展概念(フォレンジク/ペネトレ)とともに再提示。情報セキュリティ分析(入門)など関連授業も口頭で。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">探す側を体験する</div>
+
+## 千葉大学 セキュリティバグハンティングコンテスト
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">ウェブの「穴」を探してみませんか？</div><div class="b">
+コンピュータやプログラミングに<span class="hl">詳しくなくても大丈夫</span>。第2タームに初心者向け講習あり。<span class="hl">1〜4名のチーム</span>で参加（1名でも可）。
+</div></div>
+
+<div class="cbox green"><div class="h">参加への入口</div><div class="b">
+
+- 参加者向けの<span class="hl">Moodleコース</span>に登録
+- <span class="hl">法律・倫理講習＋技術講習</span>（7/30・オンデマンド可）を受講しハンターライセンス取得
+- 関連授業：情報セキュリティ分析（入門）T2・木5
 
 </div></div>
 
-<div class="band" style="font-size:18px">申込〜7/28、講習会7/30（オンデマンド可）。詳細はMoodle／c-csirtのページへ。</div>
+
+</div>
+<div class="right">
+
+<div class="cbox orange"><div class="h">スケジュール</div><div class="b">
+
+- <span class="hl">参加申込</span>　… 7月末頃
+- <span class="hl">ライセンス講習</span>
+- オンデマンド視聴
+- <span class="hl">コンテスト</span>（レポート提出）
+
+</div></div>
+
+<div class="ask">「守る側」を学んだら、次は<strong>探す側</strong>へ。<br>初心者歓迎らしいです。まずは申込。</div>
 
 </div>
 </div>
 
-<div class="takeaway">大学はC-csirtで守る。興味があれば「探す側」も体験できる。</div>
+<div class="takeaway">脆弱性を「探す」実体験の場。プログラミング初心者でも、チームで挑戦できる。</div>
 
-<!-- 第10回告知のコンテストを、組織(C-csirt)・発展概念(フォレンジク/ペネトレ)とともに再提示。情報セキュリティ分析(入門)など関連授業も口頭で。 -->
+<!-- C-csirt主催のバグハンティングコンテスト告知(2026年度)。前スライドのC-csirt/「探す側」から自然につなぐ。日程は公式告知より。詳細・申込は公式Webサイト/Moodleへ誘導。締切(申込7/28)を口頭で強調。 -->
 
 ---
 
@@ -1030,7 +1192,7 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="band" style="font-size:19px">この動画は<span class="hl">「最初の一歩」と「どこで深く学ぶか」</span>を案内。情報技術寄り（②③）は少し詳しく。</div>
 
-<div class="takeaway">疑問は6テーマに整理できる。全部を今日やらず、入口と行き先を示す。</div>
+<div class="takeaway">疑問は6テーマに整理できた。出来る限り回答する。</div>
 
 <!-- 質問一覧を俯瞰。1動画で全部は教えられないので「地図＋入口＋行き先」に徹する。②③をこの後深掘り、①④⑤⑥は資源案内。 -->
 
@@ -1079,6 +1241,52 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <!-- _class: split -->
 
+<div class="page-title">VPNとは</div>
+
+## VPN ── 通信を暗号で「トンネル」に通す
+
+<div class="split-body">
+<div class="left">
+
+<div class="cbox blue"><div class="h">仕組み</div><div class="b">
+
+- 通信を<span class="hl">暗号化</span>して専用の「トンネル」に通す
+- 自宅PCを<span class="hl">「学内」に見せる</span>（学内IP扱い）
+
+</div></div>
+
+<div class="cbox green"><div class="h">2つの使いどころ</div><div class="b">
+
+- ① 学外から<span class="hl">電子ジャーナル・学内システム</span>へ
+- ② <span class="hl">公衆Wi-Fi</span>（カフェ・空港）での<span class="hl">盗み見対策</span>＝通信の暗号化
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox orange"><div class="h">セキュリティの勘どころ</div><div class="b">
+
+- 暗号化されるのは<span class="hl">VPN区間</span>。サイト側はHTTPS併用が基本
+- 接続中は<span class="hl">学内のルール</span>が適用される
+- <span class="red">怪しい無料VPNは使わない</span>（通信を覗かれる恐れ）
+- 設定は<span class="hl">情報環境機構・図書館の案内</span>へ
+
+</div></div>
+
+<div class="ask"><strong>学認（GakuNin）</strong>はVPN不要で出版社に直接ログイン。<br>用途で使い分ける。</div>
+
+</div>
+</div>
+
+<div class="takeaway">VPN＝暗号トンネル。学外アクセスと公衆Wi-Fiの盗み見対策、両方に効く。</div>
+
+<!-- 動画7のVPN深掘り(独立スライド)。②文献スライドで触れたVPNを、学外アクセス＋公衆Wi-Fi暗号化のセキュリティ観点で再説明。第8回(暗号・HTTPS)と接続。学認との使い分けも明示。具体的な接続手順は情報環境機構/図書館の最新案内へ誘導。 -->
+
+---
+
+<!-- _class: split -->
+
 <div class="page-title">③データを守る・残す</div>
 
 ## 集計・保存・管理 ── 失わない仕組み
@@ -1097,7 +1305,8 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="cbox green"><div class="h">クラウド・整理・研究データ</div><div class="b">
 
-- 共有リンクの<span class="hl">公開範囲</span>＝アクセス制御。最小限に
+- クラウドは<span class="hl">端末に残さない</span>＝紛失・盗難に強い
+- 反面 <span class="red">共有範囲ミス＝誤公開</span>が新たな穴（→動画3）。<span class="hl">公開範囲</span>は最小限に
 - フォルダは<span class="hl">命名規則＋日付</span>で迷子を防ぐ
 - Excelは<span class="hl">集計表→グラフ</span>の順（生データは別シート）
 - 研究データは<span class="hl">DMP・データ管理方針</span>に従う
@@ -1228,91 +1437,50 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <!-- 今後の展開。第8回(クラウド・AIの特徴)と接続。「道具は変わる→学び方を学ぶ」へ。次スライドでプログラミングの学び方。 -->
 
----
-
-<!-- _class: split -->
-
-<div class="page-title">プログラミングの学び方</div>
-
-## なぜ・何から・どう続けるか
-
-<div class="split-body">
-<div class="left">
-
-<div class="cbox blue"><div class="h">なぜ学ぶ？</div><div class="b">
-
-- 機械に<span class="hl">正確に指示する</span>＝論理の言語化
-- データを<span class="hl">自分で処理・可視化</span>できる
-- AIに任せきりにせず<span class="red">出力を検証</span>できる
-
-</div></div>
-
-<div class="cbox green"><div class="h">何から？</div><div class="b">
-
-- <span class="hl">Python＋データ分析</span>から（応用が広い）
-- <span class="hl">Colab</span>（第8回の砂場）ならインストール不要
-- 自分の研究・課題に<span class="hl">直結する小題材</span>で
-
-</div></div>
-
-</div>
-<div class="right">
-
-<div class="cbox orange"><div class="h">どう続ける？</div><div class="b">
-
-- <span class="hl">小さく作って動かす</span>→直す（写経より実装）
-- エラーは敵でなく先生。<span class="hl">AIに「なぜ？」</span>を聞く
-- <span class="hl">週15分でも毎日</span>。継続が最大の武器
-
-</div></div>
-
-<div class="ask">「全部わかってから」は来ない。<br><strong>動くものを小さく作りながら</strong>覚えるのが最短。</div>
-
-</div>
-</div>
-
-<div class="takeaway">何からより「小さく作り続ける」。Colabで今日から、AIを相棒に。</div>
-
-<!-- プログラミングの学び方。Colabは第8回で既出。AIを「答え製造機」でなく「壁打ち・なぜ説明役」に使う。研究直結の小題材＝動機が続く。 -->
 
 ---
 
-<!-- _class: split -->
+<!-- _class: fig -->
 
-<div class="page-title">次の一歩</div>
+<div class="page-title">学び方</div>
 
-## AIを相棒に、でも「分かる人」が使いこなす
+## 道具は変わる ── だから「学び方」を持つ
 
-<div class="split-body">
-<div class="left">
+<div class="fig-area" style="min-height:0">
 
-<div class="cbox blue"><div class="h">この授業が伝えたかったこと</div><div class="b">
+<div class="grid3" style="width:96%">
+<div class="cbox blue"><div class="h">① 手を動かす（小さく実験）</div><div class="b">
 
-- 仕組みを知る人ほど<span class="hl">AIを使いこなせる</span>
-- <span class="hl">浅く聞けば浅い／文脈を与えれば深い</span>（第8回）
-- 「便利」の裏側を知ると、<span class="hl">安全に・賢く</span>使える
-
-</div></div>
-
-</div>
-<div class="right">
-
-<div class="cbox green"><div class="h">千葉大の学び場・次の一歩</div><div class="b">
-
-- <span class="hl">EYeL!</span>・図書館講習：執筆・文献・データ
-- <span class="hl">情報セキュリティ分析(入門)</span>・バグハンティング
-- Colab・生成AIで<span class="hl">小さく試す</span>を習慣に
+- 悪影響のない範囲で<span class="hl">まず動かす</span>
+- 例：<span class="hl">Google Colab</span>でコードを書いて試す
+- 本を1冊買って<span class="hl">写経</span>（書き写して動かす）も効果的
+- 完璧を狙わず<span class="hl">小さく作り続ける</span>
 
 </div></div>
+<div class="cbox green"><div class="h">② 良質な教材で独習</div><div class="b">
 
-<div class="statement" style="font-size:22px">守る・作る・問う ──<br>この授業の先も、続けていこう。</div>
+- <span class="hl">3Blue1Brown</span>＝数学の直観
+- <span class="hl">Andrej Karpathy</span>＝AI/LLMを基礎から
+- 動画で<span class="hl">手を動かしながら</span>学ぶ
+
+</div></div>
+<div class="cbox orange"><div class="h">③ 人に聞く・コミュニティ</div><div class="b">
+
+- 現役の<span class="hl">エンジニアに聞く</span>
+- エンジニアは<span class="hl">コミュニティで学ぶ</span>ことも多い
+- 勉強会・Q&A・OSSに触れる
+
+</div></div>
+</div>
 
 </div>
-</div>
 
-<div class="takeaway">道具は変わる。仕組みを知り、小さく試し、問い続ける人が強い。</div>
+<div class="band" style="font-size:18px">おすすめ動画：<a href="https://www.youtube.com/watch?v=AFu7jzI0ExY">「CS教授に “コーディング” を聞く」（Tech Support／WIRED Japan）</a></div>
 
-<!-- 締め。第8回(AIの特徴・なぜ学ぶか)を回収して全体を閉じる。EYeL!・関連授業・Colabへ送り出す。「守る・作る・問う」で前向きに終える。 -->
+
+<div class="takeaway">小さく試す → 良質な教材 → 人に聞く。変化が前提だから、学び続ける。</div>
+
+<!-- 動画8。chapter題「プログラミングの学び方」を具体化(これまで欠けていたスライド)。①Colabで実験②YouTube良質教材(3Blue1Brown/Karpathy)③現役エンジニア・コミュニティ。「道具は変わる→学び方を持つ」を体現。次のまとめへ。 -->
 
 ---
 
@@ -1333,16 +1501,3 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <!-- 8動画を1枚で総括。文字コード／セキュリティ自衛／質問への回答／学び方が柱。試験・課題の観点でもある。 -->
 
----
-
-<!-- _class: qa -->
-
-<div class="page-title">課題・おわり</div>
-
-# 課題とおわりに
-
-## リフレクション＋課題は Moodle ／ 視聴・提出は 6/30（火）まで
-
-<div class="band" style="text-align:left">今日できる3つ：①拡張子表示をON ②大事なアカウントにパスキー/2要素認証 ③卒論データを3-2-1でバックアップ</div>
-
-<!-- 締め。課題=Moodleリフレクション＋設問。視聴期限は仮(6/30火)、要差し替え。質問は質問フォーラムで受付。「探す側」コンテスト・学び方も再案内。 -->

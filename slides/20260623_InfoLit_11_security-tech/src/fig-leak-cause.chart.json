@@ -1,0 +1,47 @@
+{
+  "grid": { "left": 172, "right": 92, "top": 6, "bottom": 30 },
+  "xAxis": {
+    "type": "value",
+    "name": "件数",
+    "max": 130,
+    "splitLine": { "show": true }
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "axisLabel": { "fontSize": 13 },
+    "data": [
+      "紛失・置忘れ",
+      "誤操作",
+      "不正アクセス",
+      "管理ミス",
+      "盗難",
+      "設定ミス",
+      "内部犯罪・内部不正行為",
+      "不正な情報持ち出し",
+      "バグ・セキュリティホール",
+      "その他",
+      "目的外使用",
+      "ワーム・ウイルス"
+    ]
+  },
+  "series": [{
+    "type": "bar",
+    "barWidth": "62%",
+    "label": { "show": true, "position": "right", "fontSize": 11, "color": "#333" },
+    "data": [
+      { "value": 116, "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "116 (26.2%)" } },
+      { "value": 109, "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "109 (24.6%)" } },
+      { "value": 90,  "itemStyle": { "color": "#3E78B2" }, "label": { "formatter": "90 (20.3%)" } },
+      { "value": 54,  "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "54 (12.2%)" } },
+      { "value": 17,  "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "17 (3.8%)" } },
+      { "value": 16,  "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "16 (3.6%)" } },
+      { "value": 13,  "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "13 (2.9%)" } },
+      { "value": 10,  "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "10 (2.3%)" } },
+      { "value": 8,   "itemStyle": { "color": "#3E78B2" }, "label": { "formatter": "8 (1.8%)" } },
+      { "value": 6,   "itemStyle": { "color": "#9AA0A6" }, "label": { "formatter": "6 (1.4%)" } },
+      { "value": 3,   "itemStyle": { "color": "#A6192E" }, "label": { "formatter": "3 (0.7%)" } },
+      { "value": 1,   "itemStyle": { "color": "#3E78B2" }, "label": { "formatter": "1 (0.2%)" } }
+    ]
+  }]
+}

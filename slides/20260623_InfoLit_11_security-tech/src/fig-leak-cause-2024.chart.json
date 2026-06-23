@@ -1,0 +1,18 @@
+{
+  "legend": { "bottom": 0, "left": "center", "itemWidth": 14, "itemHeight": 14, "textStyle": { "fontSize": 14 } },
+  "series": [{
+    "type": "pie",
+    "radius": ["34%", "66%"],
+    "center": ["50%", "48%"],
+    "avoidLabelOverlap": true,
+    "percentPrecision": 0,
+    "label": { "formatter": "{d}%", "fontSize": 15, "fontWeight": "bold" },
+    "labelLine": { "length": 10, "length2": 12 },
+    "data": [
+      { "value": 114, "name": "不正アクセス・ウイルス", "itemStyle": { "color": "#A6192E" } },
+      { "value": 41,  "name": "誤表示・誤送信",       "itemStyle": { "color": "#3E78B2" } },
+      { "value": 20,  "name": "紛失・誤廃棄",         "itemStyle": { "color": "#3C8A57" } },
+      { "value": 14,  "name": "持ち出し・盗難",       "itemStyle": { "color": "#9AA0A6" } }
+    ]
+  }]
+}

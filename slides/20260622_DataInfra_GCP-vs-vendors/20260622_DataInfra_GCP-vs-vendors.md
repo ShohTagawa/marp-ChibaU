@@ -836,6 +836,7 @@ style: |
 ## 分析の先：AIが起案・実行 → 人が承認 → 業務に反映（リバースETL）
 
 <div class="sections">
+
 <div class="sec-box">
 
 ### GCP案 ◎

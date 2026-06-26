@@ -1165,9 +1165,9 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 # 届いた質問に答える
 
-## 寄せられた疑問を、6つのテーマで
+## 6つのテーマと、リフレクションの声に
 
-<!-- 学生から事前に寄せられた質問(レポート執筆〜文献〜データ管理〜プレゼン〜進路〜ツール)を6グループに整理。IT寄り(学外アクセス・データ管理)は深め、他は「どこで学ぶか」を案内。1動画で全部は教えず「地図＋入口＋行き先」に徹する。 -->
+<!-- 学生から事前に寄せられた質問(レポート執筆〜文献〜データ管理〜プレゼン〜進路〜ツール)を6グループに整理＋第7-9回リフレクション(E/F/G列)で多かった声(ネットワークが難しい/生成AIが不安)に最後に回答。IT寄り(学外アクセス・データ管理)は深め、他は「どこで学ぶか」を案内。1動画で全部は教えず「地図＋入口＋行き先」に徹する。 -->
 
 ---
 
@@ -1192,9 +1192,11 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 <div class="band" style="font-size:19px">この動画は<span class="hl">「最初の一歩」と「どこで深く学ぶか」</span>を案内。情報技術寄り（②③）は少し詳しく。</div>
 
-<div class="takeaway">疑問は6テーマに整理できた。出来る限り回答する。</div>
+<div class="ask" style="margin-top:6px">さらに最後に、<strong>第7〜9回リフレクション</strong>で多かった<span class="hl">「ネットワークが難しい」「生成AIが不安」</span>にも答えます。</div>
 
-<!-- 質問一覧を俯瞰。1動画で全部は教えられないので「地図＋入口＋行き先」に徹する。②③をこの後深掘り、①④⑤⑥は資源案内。 -->
+<div class="takeaway">疑問は6テーマ＋リフレクションの声。出来る限り答える。</div>
+
+<!-- 質問一覧を俯瞰。1動画で全部は教えられないので「地図＋入口＋行き先」に徹する。②③をこの後深掘り、①④⑤⑥は資源案内。末尾2枚でリフレクション(E/F/G列)の声に回答。 -->
 
 ---
 
@@ -1402,6 +1404,198 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 
 ---
 
+<!-- _class: split -->
+
+<div class="page-title">リフレクションより①</div>
+
+## 「ネットワークは難しい」── 用語の壁を越えるコツ
+
+<div class="split-body">
+<div class="left">
+
+<div class="qbox"><span class="qh">リフレクションの声（第7〜9回）</span>「アルファベットの略語ばかりで覚えにくい」「プロトコルなど、用語が複雑で混乱する」</div>
+
+<div class="cbox blue"><div class="h">なぜ難しく感じるか</div><div class="b">
+
+- 横文字の略語が多い（<span class="mono">HTTP・TCP・IP…</span>）
+- 通信は<span class="hl">目に見えず抽象的</span>
+- 用語を<span class="hl">バラバラに暗記</span>しようとする
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">壁を越える4つのコツ</div><div class="b">
+
+- 略語は<span class="hl">分解して読む</span>：HTTP＝HyperText Transfer Protocol（文書をやり取りする約束）
+- <span class="hl">全体の流れ</span>から入り、各用語を後で当てはめる
+- <span class="hl">例え</span>に戻す（住所＝IP、部屋番号＝ポート、郵便局＝ルータ）
+- <span class="hl">図にする・手を動かす</span>。AIに図解させるのも手
+
+</div></div>
+
+<div class="ask">提出期限の分かりにくさ・送信トラブルはごめんなさい。<br>期限は<strong>Moodleで統一確認</strong>、不具合は<strong>個別に連絡</strong>を。</div>
+
+</div>
+</div>
+
+<div class="takeaway">用語は「分解＋全体像」で。例え・図・実機で見える化すれば自然に入る。</div>
+
+<!-- 第7-9回リフレクション(E列・G列)で最多の「ネットワークが難しい/略語がつらい」に回答。学生提案(メタファー・可視化・実機・体系化)をそのまま学習法として返す。略語は語源を開く、全体の流れから、例え(宅配便/住所/郵便局)に戻す、図解・実機。右下のaskはG列②の運営トラブル(提出期限の差・送信消失)へのお詫びと対応。動画8(学び方)への布石。 -->
+
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">リフレクションより②</div>
+
+## 生成AIのニュース ── 気になる4点を整理した
+
+<div class="fig-area" style="min-height:0">
+
+<div class="grid2" style="width:96%">
+<div class="cbox red"><div class="h">① 偽情報・ディープフェイク</div><div class="b">見分けのつかない偽動画・偽音声・フェイク画像。<span class="hl">拡散と悪用</span>がこわい。</div></div>
+<div class="cbox orange"><div class="h">② 思考の放棄・AI依存</div><div class="b">自分で考えなくなる。<span class="hl">人生の選択まで委ねて</span>いいのか。</div></div>
+<div class="cbox blue"><div class="h">③ 仕事・人間の価値</div><div class="b">仕事を奪われる？ <span class="hl">人間にしかできないこと</span>とは何か。</div></div>
+<div class="cbox green"><div class="h">④ 著作権・学習データ・責任</div><div class="b">学習データの許諾、著作権、<span class="hl">判断の責任の所在</span>。</div></div>
+</div>
+
+</div>
+
+<div class="band" style="font-size:19px">便利さに感動しつつ、<span class="hl">偽情報・依存・雇用・権利</span>に不安 ── この4点を順に見ていく。</div>
+
+<div class="takeaway">不安は4点に集約。次から一つずつ、向き合い方を考える。</div>
+
+<!-- F列を俯瞰する地図スライド。4テーマ(①偽情報②依存③仕事・価値④権利)を提示し、続く3枚で深掘り。具体ニュース(宮崎県27,000時間削減、政治的なAI画像利用、声優音声の無断使用、AIへの人生相談の是非など)は口頭で補足。総括の示唆(比喩・可視化の継続/用語フォロー/AIとの付き合い方の議論)はリフレクション①②の作りに反映済み。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">生成AI① 偽情報</div>
+
+## ディープフェイク ── 「見破る目」がいちばんの防御
+
+<div class="split-body">
+<div class="left">
+
+<div class="qbox"><span class="qh">リフレクションの声</span>有名人そっくりのAI動画、声優に酷似した無断生成音声、災害・犯罪のフェイク画像…見分けがつかず怖い。</div>
+
+<div class="cbox red"><div class="h">なぜ怖いか</div><div class="b">
+
+- 本物と<span class="hl">区別がつかない</span>品質に
+- SNSで<span class="hl">一瞬で拡散</span>、訂正は追いつかない
+- 政治・詐欺・名誉毀損に<span class="red">悪用</span>される
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">見破る・守る（この回の総まとめ）</div><div class="b">
+
+- <span class="hl">出所を確かめる</span>：誰が・いつ・一次情報か
+- <span class="hl">複数の情報源</span>で裏取り（クロスチェック）
+- 不自然さ（手・影・口元・音）に注意
+- 自分が<span class="red">拡散しない</span>。疑わしきは止める
+
+</div></div>
+
+<div class="band" style="font-size:19px">これは本回のテーマそのもの。<span class="hl">真正性</span>を疑い、出所を確かめる力が最大の防御。</div>
+
+</div>
+</div>
+
+<div class="takeaway">偽情報対策＝情報リテラシー。出所確認・裏取り・拡散しない。</div>
+
+<!-- F列①偽情報・ディープフェイクの深掘り。本回のセキュリティ(真正性)と直結させ「見破る目＝情報リテラシー」を総まとめ。具体例(トランプ大統領のAI画像政治利用、声優音声の無断使用、災害フェイク)は口頭で。技術的検知より「出所確認・裏取り・拡散しない」の行動を強調。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">生成AI②③ 依存と価値</div>
+
+## AIに任せる前に ── 思考力と「人の役割」
+
+<div class="split-body">
+<div class="left">
+
+<div class="qbox"><span class="qh">リフレクションの声</span>「自分で考えるのを放棄してしまう」「AIで書いてAIチェッカーを通す矛盾」「自分で書いた文章がAI判定された」</div>
+
+<div class="cbox orange"><div class="h">② 依存しすぎない使い方</div><div class="b">
+
+- AIは<span class="hl">下書き・壁打ちの相棒</span>。最終判断は自分
+- 出力は<span class="red">必ず検証</span>（事実・出典・論理）
+- 考える筋肉は<span class="hl">使わないと衰える</span>
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox blue"><div class="h">③ 人間にしかできないこと</div><div class="b">
+
+- <span class="hl">問いを立てる</span>・目的を決める
+- <span class="hl">文脈で判断</span>し、責任を負う
+- 人と関わる・価値観で選ぶ
+
+</div></div>
+
+<div class="ask">「AIに恋愛相談・人生相談」も話題に。<br>便利だが、<strong>重い判断・人との関係</strong>は人の領分。次の動画(学び方)で深める。</div>
+
+</div>
+</div>
+
+<div class="takeaway">AIは相棒、判断は自分。問い・文脈・責任は人間の役割。</div>
+
+<!-- F列②③の深掘り。②依存→「相棒だが検証必須」(動画7執筆スライド・動画8と一貫)、③仕事・人間の価値→「問い・文脈・責任」は人の役割、として動画8(これからと学び方)へ橋渡し。askは思春期の子のAI人生相談という具体ニュースを受けた論点。「考える筋肉は使って鍛える」を軸に。 -->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">生成AI④ 権利と責任</div>
+
+## 著作権・学習データ・責任 ── ルールは整備の途上
+
+<div class="split-body">
+<div class="left">
+
+<div class="qbox"><span class="qh">リフレクションの声</span>「学習に使った写真は許可を得ているのか」「著作権やモラルは今後どう解決するのか」「AIが決めたとき、責任は誰に」</div>
+
+<div class="cbox blue"><div class="h">いまの論点</div><div class="b">
+
+- 学習データの<span class="hl">許諾・対価</span>（訴訟・規制が進行中）
+- 出力が他人の著作物に<span class="hl">似すぎる</span>リスク
+- 誤りや損害の<span class="red">責任の所在</span>が曖昧
+
+</div></div>
+
+</div>
+<div class="right">
+
+<div class="cbox green"><div class="h">いま私たちにできること</div><div class="b">
+
+- <span class="hl">利用規約・ライセンス</span>を読む（商用可否・学習可否）
+- 引用は<span class="hl">出所を明示</span>、生成物も<span class="hl">使用を開示</span>
+- 個人情報・未公開データを<span class="red">入力しない</span>
+- 大学・学会の<span class="hl">生成AIガイドライン</span>に従う
+
+</div></div>
+
+<div class="band" style="font-size:18px"><span class="hl">第10回（著作権・個人情報）の続き</span>。ルールは発展途上 ── 出所明示と規約確認を習慣に。</div>
+
+</div>
+</div>
+
+<div class="takeaway">権利と責任は整備途上。規約を読み、出所を示し、機微情報は入れない。</div>
+
+<!-- F列④の深掘り。著作権・学習データの許諾・責任の所在という論点を提示し、第10回(著作権・個人情報)の続きとして接続。「今できること」=規約/ライセンス確認・出所明示・生成物の使用開示・機微情報を入力しない・大学/学会ガイドライン遵守、と行動に落とす。法整備は途上である旨を正直に伝える。 -->
+
+---
+
 <!-- _class: divider -->
 
 <div class="chapter-num">動画 8 ／ CHAPTER 8</div>
@@ -1493,11 +1687,11 @@ HTMLを「<span class="mono">文字コードUTF-8</span>で保存」と言った
 - **文字コード**：文字は番号。化けたら符号の食い違い。迷わず<span class="hl">UTF-8に統一</span>
 - **守る対象**：情報資産・リスク・インシデント。核は<span class="hl">CIA</span>＋真正性（＝認証）
 - **脅威の地図**：不正アクセス6類型。乗っ取られると<span class="hl">踏み台＝加害者</span>に
-- **脆弱性**：システム的（更新）と人為的（習慣）。漏えいは<span class="hl">内部が6割</span>
+- **脆弱性**：システム的（更新）と人為的（習慣）。漏えいは<span class="hl">内部も多い</span>
 - **実務の守り**：拡張子を見る・BECは別経路で確認・<span class="hl">不要ポートは閉じる</span>
 - **認証**：固定PW→OTP→送らない→<span class="hl">パスキー</span>（生体×公開鍵）
 - **質問の答え**：学外は<span class="hl">VPN／学認</span>、データは<span class="hl">3-2-1</span>、執筆・ツールは行き先を案内
-- **これから**：技術は変わる→<span class="hl">「学び方」を学ぶ</span>。プログラミングは小さく作り続ける
-
+- **これから**：技術は変わる→<span class="hl">「学び方」を学ぶ</span>。自分の手で試してみる。なぜ？やどうやって？を大切に。
+- 今回のスライドも、Claude Code Opus 4.8で作成し、田川の方で修正・確認しました。内容の責任は、田川にあります。
 <!-- 8動画を1枚で総括。文字コード／セキュリティ自衛／質問への回答／学び方が柱。試験・課題の観点でもある。 -->
 

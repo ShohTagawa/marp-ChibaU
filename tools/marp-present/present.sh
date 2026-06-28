@@ -43,7 +43,7 @@ echo "[1/2] marp: 発表用HTML(bespoke)を描画  → $DECK_NAME"
 # --allow-local-files は付けない：HTML出力には不要で、marp の Puppeteer 経路を起こす。
 #   画像は Chrome 側の --allow-file-access-from-files（下の起動オプション）で file:// から読める。
 npx --yes @marp-team/marp-cli@latest "$MD_ABS" --no-stdin \
-  --theme-set "$ROOT/theme/academic.css" "$ROOT/theme/ponchie.css" \
+  --theme-set "$ROOT"/theme/*.css \
   --html -o "$HTML" </dev/null >/dev/null
 
 echo "[2/2] Chrome で開く  (F=全画面 / P=発表者ビュー / ←→=ページ送り / O=一覧)"

@@ -15,110 +15,93 @@ html: true
     <linearGradient id="gCrim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3123a"/><stop offset="1" stop-color="#6f0c27"/></linearGradient>
     <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d6f8b"/><stop offset="1" stop-color="#0e4f63"/></linearGradient>
     <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a9d6f"/><stop offset="1" stop-color="#147a52"/></linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#a3123a" stop-opacity="0.13"/><stop offset="1" stop-color="#a3123a" stop-opacity="0"/></radialGradient>
-    <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f6c14b" stop-opacity="0.9"/><stop offset="1" stop-color="#f6c14b" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#a3123a" stop-opacity="0.12"/><stop offset="1" stop-color="#a3123a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f6c14b" stop-opacity="0.95"/><stop offset="1" stop-color="#f6c14b" stop-opacity="0"/></radialGradient>
     <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#3a2530" flood-opacity="0.22"/></filter>
-    <marker id="aR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#a3123a"/></marker>
-    <marker id="aT" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#1d6f8b"/></marker>
-    <marker id="aG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#9aa7b2"/></marker>
+    <marker id="aR" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#a3123a"/></marker>
+    <marker id="aT" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#1d6f8b"/></marker>
+    <marker id="aG" markerWidth="7" markerHeight="7" refX="5.5" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6 Z" fill="#2a9d6f"/></marker>
   </defs>
   <rect width="1280" height="720" fill="#ffffff"/>
-  <rect x="0" y="0" width="1280" height="50" fill="url(#gCrim)"/>
-  <text x="28" y="33" font-size="23" font-weight="700" fill="#ffffff">大学体験オントロジー ― 行動ログから LLM で“大学体験”を紡ぐ</text>
-  <text x="1260" y="20" font-size="11" fill="#ffffff" opacity="0.9" text-anchor="end">SPReAD 第2回 / AI for Science</text>
-  <text x="1260" y="39" font-size="11" fill="#ffffff" opacity="0.9" text-anchor="end">田川 翔・千葉大学 国際未来教育基幹</text>
-  <rect x="24" y="58" width="1232" height="52" rx="10" fill="#fdf0f4" stroke="#e7bccb" stroke-width="1.2"/>
-  <circle cx="52" cy="84" r="16" fill="url(#gCrim)"/><text x="52" y="91" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">?</text>
-  <text x="80" y="80" font-size="13.5" font-weight="700" fill="#a3123a">RQ</text>
-  <text x="112" y="80" font-size="13.5" fill="#243040">LLM は行動ログから、専門家が合意できる“大学体験”オントロジーをどこまで紡げ、どこで失敗するか？</text>
-  <g font-size="11">
-    <rect x="112" y="90" width="150" height="15" rx="7.5" fill="#fff" stroke="#e7bccb"/><text x="120" y="101" fill="#5a2233"><tspan font-weight="700" fill="#a3123a">RQ1 </tspan>人手との一致（F1・κ）</text>
-    <rect x="270" y="90" width="150" height="15" rx="7.5" fill="#fff" stroke="#e7bccb"/><text x="278" y="101" fill="#5a2233"><tspan font-weight="700" fill="#a3123a">RQ2 </tspan>幻覚はどこに出るか</text>
-    <rect x="428" y="90" width="186" height="15" rx="7.5" fill="#fff" stroke="#e7bccb"/><text x="436" y="101" fill="#5a2233"><tspan font-weight="700" fill="#a3123a">RQ3 </tspan>関係構造で何が新たに見えるか</text>
+  <rect x="0" y="0" width="1280" height="56" fill="url(#gCrim)"/>
+  <text x="30" y="37" font-size="24" font-weight="700" fill="#ffffff">大学体験オントロジーの発見 ― オプトイン行動ログから LLM で紡ぐ</text>
+  <text x="1262" y="22" font-size="12.5" fill="#ffffff" opacity="0.92" text-anchor="end">SPReAD 第2回 / AI for Science</text>
+  <text x="1262" y="43" font-size="12.5" fill="#ffffff" opacity="0.92" text-anchor="end">田川 翔・千葉大学 国際未来教育基幹</text>
+  <rect x="24" y="66" width="1232" height="74" rx="11" fill="#fdf0f4" stroke="#e7bccb" stroke-width="1.3"/>
+  <circle cx="56" cy="103" r="20" fill="url(#gCrim)"/><text x="56" y="111" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">?</text>
+  <text x="88" y="98" font-size="17" font-weight="700" fill="#a3123a">RQ　<tspan fill="#243040" font-weight="400" font-size="16">LLM は行動ログから、専門家が合意できる“大学体験”オントロジーをどこまで発見できるか？</tspan></text>
+  <g font-size="13.5" fill="#5a2233">
+    <text x="90" y="126"><tspan font-weight="700" fill="#a3123a">RQ1</tspan> 人手との一致（κ・被覆）</text>
+    <text x="430" y="126"><tspan font-weight="700" fill="#a3123a">RQ2</tspan> 何の問いに答えられるか（CQ充足）</text>
+    <text x="820" y="126"><tspan font-weight="700" fill="#a3123a">RQ3</tspan> 関係・転機で何が新たに見えるか</text>
   </g>
-  <text x="1238" y="80" font-size="10.5" fill="#8a6b74" text-anchor="end">測る研究（作る×評価）</text>
-  <text x="1238" y="100" font-size="10.5" fill="#8a6b74" text-anchor="end">機微データはローカル M4/MPS</text>
-  <circle cx="118" cy="210" r="40" fill="url(#gTeal)" filter="url(#sh)"/>
-  <rect x="100" y="196" width="36" height="26" rx="4" fill="none" stroke="#fff" stroke-width="2.2"/><line x1="100" y1="214" x2="136" y2="214" stroke="#fff" stroke-width="2.2"/><circle cx="118" cy="218" r="1.6" fill="#fff"/>
-  <text x="118" y="270" font-size="13" font-weight="700" fill="#0e4f63" text-anchor="middle">行動ログ</text>
-  <text x="118" y="287" font-size="11" fill="#5b6b78" text-anchor="middle">履修・施設・相談</text>
-  <circle cx="118" cy="350" r="34" fill="url(#gCrim)" filter="url(#sh)"/>
-  <rect x="106" y="346" width="24" height="18" rx="3" fill="none" stroke="#fff" stroke-width="2"/><path d="M110 346 v-5 a8 8 0 0 1 16 0 v5" fill="none" stroke="#fff" stroke-width="2"/>
-  <text x="118" y="404" font-size="12.5" font-weight="700" fill="#a3123a" text-anchor="middle">安全オプトインDB</text>
-  <text x="118" y="420" font-size="10.5" fill="#8a6b74" text-anchor="middle">同意・匿名化／企業と共同</text>
-  <path d="M168 250 q60 30 110 35" fill="none" stroke="#1d6f8b" stroke-width="6" marker-end="url(#aT)" opacity="0.9"/>
-  <circle cx="320" cy="300" r="44" fill="url(#gTeal)" filter="url(#sh)"/>
-  <rect x="300" y="282" width="40" height="36" rx="5" fill="none" stroke="#fff" stroke-width="2.4"/><text x="320" y="306" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">LLM</text>
-  <line x1="300" y1="290" x2="294" y2="290" stroke="#fff" stroke-width="2"/><line x1="300" y1="300" x2="294" y2="300" stroke="#fff" stroke-width="2"/><line x1="300" y1="310" x2="294" y2="310" stroke="#fff" stroke-width="2"/><line x1="340" y1="290" x2="346" y2="290" stroke="#fff" stroke-width="2"/><line x1="340" y1="300" x2="346" y2="300" stroke="#fff" stroke-width="2"/><line x1="340" y1="310" x2="346" y2="310" stroke="#fff" stroke-width="2"/>
-  <text x="320" y="364" font-size="13" font-weight="700" fill="#0e4f63" text-anchor="middle">LLM 抽出</text>
-  <text x="320" y="381" font-size="11" fill="#5b6b78" text-anchor="middle">LLM-wiki 型・根拠接地</text>
-  <text x="320" y="397" font-size="10" fill="#1d6f8b" text-anchor="middle">（Karpathy を大学体験へ）</text>
-  <path d="M372 300 h44" fill="none" stroke="#a3123a" stroke-width="7" marker-end="url(#aR)"/>
-  <ellipse cx="660" cy="300" rx="245" ry="150" fill="url(#glow)"/>
-  <rect x="430" y="150" width="470" height="300" rx="16" fill="#ffffff" stroke="#e7bccb" stroke-width="1.4" filter="url(#sh)"/>
-  <text x="450" y="178" font-size="14" font-weight="700" fill="#a3123a">大学体験オントロジー（知識グラフ）</text>
-  <text x="450" y="196" font-size="10.5" fill="#8a6b74">概念・関係・転機を有向グラフ化／各関係に根拠スパンを接地</text>
-  <g stroke-width="2" fill="none">
-    <line x1="542" y1="226" x2="610" y2="223" stroke="#1d6f8b" marker-end="url(#aT)"/>
-    <line x1="660" y1="226" x2="736" y2="237" stroke="#1d6f8b" marker-end="url(#aT)"/>
-    <line x1="752" y1="262" x2="722" y2="296" stroke="#a3123a" marker-end="url(#aR)"/>
-    <line x1="690" y1="332" x2="636" y2="358" stroke="#a3123a" marker-end="url(#aR)"/>
-    <line x1="634" y1="380" x2="716" y2="389" stroke="#a3123a" stroke-width="2.8" marker-end="url(#aR)"/>
-    <path d="M560 288 C 656 246 792 250 838 302" stroke="#2a9d6f" marker-end="url(#aG)"/>
-    <line x1="556" y1="316" x2="598" y2="356" stroke="#1d6f8b" stroke-dasharray="4 3" marker-end="url(#aT)"/>
+  <text x="44" y="170" font-size="16" font-weight="700" fill="#243040">方法　オプトイン行動ログ ▸ LLM で抽出 ▸ “みんなでアノテーション”＋専門家で検証・育成</text>
+  <circle cx="110" cy="250" r="46" fill="url(#gCrim)" filter="url(#sh)"/>
+  <rect x="92" y="234" width="36" height="28" rx="4" fill="none" stroke="#fff" stroke-width="2.4"/><line x1="92" y1="253" x2="128" y2="253" stroke="#fff" stroke-width="2.4"/><path d="M99 246 v-6 a8 8 0 0 1 16 0 v6" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="110" y="318" font-size="15" font-weight="700" fill="#a3123a" text-anchor="middle">オプトイン</text>
+  <text x="110" y="337" font-size="15" font-weight="700" fill="#a3123a" text-anchor="middle">行動ログ＋安全DB</text>
+  <text x="110" y="357" font-size="13" fill="#7a5763" text-anchor="middle">同意・匿名化／企業と共同</text>
+  <path d="M162 250 h44" fill="none" stroke="#5b6b78" stroke-width="6" marker-end="url(#aT)"/>
+  <circle cx="262" cy="250" r="46" fill="url(#gTeal)" filter="url(#sh)"/>
+  <rect x="242" y="232" width="40" height="36" rx="5" fill="none" stroke="#fff" stroke-width="2.6"/><text x="262" y="256" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">LLM</text>
+  <text x="262" y="318" font-size="15" font-weight="700" fill="#0e4f63" text-anchor="middle">LLM 抽出</text>
+  <text x="262" y="337" font-size="13" fill="#5b6b78" text-anchor="middle">根拠接地・スキーマ誘導</text>
+  <text x="262" y="356" font-size="12.5" fill="#1d6f8b" text-anchor="middle">（LLMs4OL / OntoGPT 系）</text>
+  <path d="M314 250 h40" fill="none" stroke="#a3123a" stroke-width="7" marker-end="url(#aR)"/>
+  <ellipse cx="650" cy="290" rx="240" ry="150" fill="url(#glow)"/>
+  <rect x="372" y="150" width="556" height="286" rx="16" fill="#ffffff" stroke="#e7bccb" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="392" y="180" font-size="16" font-weight="700" fill="#a3123a">大学体験オントロジー（発見された知識グラフ）</text>
+  <g stroke-width="2.4" fill="none">
+    <line x1="466" y1="222" x2="556" y2="216" stroke="#1d6f8b" marker-end="url(#aT)"/>
+    <line x1="612" y1="216" x2="694" y2="226" stroke="#1d6f8b" marker-end="url(#aT)"/>
+    <line x1="712" y1="254" x2="686" y2="288" stroke="#a3123a" marker-end="url(#aR)"/>
+    <line x1="654" y1="318" x2="600" y2="344" stroke="#a3123a" marker-end="url(#aR)"/>
+    <line x1="598" y1="368" x2="690" y2="380" stroke="#a3123a" stroke-width="3.4" marker-end="url(#aR)"/>
+    <path d="M500 286 C 600 244 760 250 824 300" stroke="#2a9d6f" marker-end="url(#aG)"/>
+    <line x1="496" y1="312" x2="556" y2="348" stroke="#1d6f8b" stroke-dasharray="5 4" marker-end="url(#aT)"/>
   </g>
-  <g font-size="10.5" text-anchor="middle">
-    <g><circle cx="520" cy="226" r="20" fill="#eaf3f6" stroke="#1d6f8b"/><text x="520" y="230" fill="#0e4f63">入学</text></g>
-    <g><circle cx="636" cy="222" r="22" fill="#eaf3f6" stroke="#1d6f8b"/><text x="636" y="226" fill="#0e4f63">履修・授業</text></g>
-    <g><circle cx="762" cy="240" r="24" fill="#eaf3f6" stroke="#1d6f8b"/><text x="762" y="237" fill="#0e4f63">授業外</text><text x="762" y="249" fill="#0e4f63">学習</text></g>
-    <g><circle cx="540" cy="300" r="22" fill="#eaf3f6" stroke="#1d6f8b"/><text x="540" y="304" fill="#0e4f63">居場所</text></g>
-    <g><circle cx="708" cy="316" r="22" fill="#fdeef2" stroke="#a3123a"/><text x="708" y="320" fill="#a3123a">つまずき</text></g>
-    <g><circle cx="612" cy="372" r="22" fill="#fdeef2" stroke="#a3123a"/><text x="612" y="376" fill="#a3123a">孤立感</text></g>
-    <g><circle cx="744" cy="392" r="24" fill="#a3123a" stroke="#6f0c27"/><text x="744" y="389" fill="#fff">履修</text><text x="744" y="401" fill="#fff">離脱</text></g>
-    <g><circle cx="852" cy="318" r="26" fill="#e7f5ee" stroke="#2a9d6f"/><text x="852" y="315" fill="#147a52">定着・</text><text x="852" y="327" fill="#147a52">自己効力</text></g>
+  <g font-size="13" text-anchor="middle">
+    <circle cx="448" cy="216" r="27" fill="#eaf3f6" stroke="#1d6f8b" stroke-width="1.4"/><text x="448" y="221" fill="#0e4f63">入学</text>
+    <circle cx="582" cy="208" r="30" fill="#eaf3f6" stroke="#1d6f8b" stroke-width="1.4"/><text x="582" y="205" fill="#0e4f63">履修・</text><text x="582" y="221" fill="#0e4f63">授業</text>
+    <circle cx="722" cy="226" r="32" fill="#eaf3f6" stroke="#1d6f8b" stroke-width="1.4"/><text x="722" y="223" fill="#0e4f63">授業外</text><text x="722" y="239" fill="#0e4f63">学習</text>
+    <circle cx="476" cy="300" r="30" fill="#eaf3f6" stroke="#1d6f8b" stroke-width="1.4"/><text x="476" y="305" fill="#0e4f63">居場所</text>
+    <circle cx="668" cy="306" r="30" fill="#fdeef2" stroke="#a3123a" stroke-width="1.4"/><text x="668" y="311" fill="#a3123a">つまずき</text>
+    <circle cx="566" cy="372" r="30" fill="#fdeef2" stroke="#a3123a" stroke-width="1.4"/><text x="566" y="377" fill="#a3123a">孤立感</text>
+    <circle cx="724" cy="392" r="33" fill="#a3123a" stroke="#6f0c27" stroke-width="1.4"/><text x="724" y="388" fill="#fff">履修</text><text x="724" y="404" fill="#fff">離脱</text>
+    <circle cx="858" cy="318" r="35" fill="#e7f5ee" stroke="#2a9d6f" stroke-width="1.4"/><text x="858" y="314" fill="#147a52">定着・</text><text x="858" y="330" fill="#147a52">自己効力</text>
   </g>
-  <text x="680" y="372" font-size="8.5" fill="#a3123a" text-anchor="middle">is-cause-of</text>
-  <text x="704" y="244" font-size="8.5" fill="#2a9d6f" text-anchor="middle">supports</text>
-  <text x="552" y="342" font-size="8.5" fill="#1d6f8b" text-anchor="middle">mitigates</text>
-  <rect x="446" y="416" width="210" height="22" rx="6" fill="#fbede2"/><text x="551" y="431" font-size="10" fill="#9a5a23" text-anchor="middle">従来＝単語の塊 ▶ 本手法＝関係グラフ</text>
-  <rect x="668" y="416" width="222" height="22" rx="6" fill="#fdf0f4"/><text x="779" y="431" font-size="10" font-weight="700" fill="#a3123a" text-anchor="middle">★ 大学“生活全体”＝国内外の白地</text>
-  <path d="M904 300 h44" fill="none" stroke="#5b6b78" stroke-width="6" marker-end="url(#aG)"/>
-  <circle cx="1000" cy="280" r="40" fill="url(#gCrim)" filter="url(#sh)"/>
-  <path d="M982 280 l10 10 l18 -20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1000" y="338" font-size="13" font-weight="700" fill="#a3123a" text-anchor="middle">検証（RA × AI）</text>
-  <g font-size="10" text-anchor="middle" fill="#243040">
-    <rect x="952" y="350" width="96" height="17" rx="8.5" fill="#fff" stroke="#cf9bad"/><text x="1000" y="362">一致 κ ≥ 0.6</text>
-    <rect x="952" y="371" width="96" height="17" rx="8.5" fill="#fff" stroke="#cf9bad"/><text x="1000" y="383">幻覚率 ↓</text>
-    <rect x="952" y="392" width="96" height="17" rx="8.5" fill="#fff" stroke="#cf9bad"/><text x="1000" y="404">被覆率・接地率</text>
+  <text x="648" y="372" font-size="11.5" fill="#a3123a" text-anchor="middle">is-cause-of</text>
+  <text x="690" y="246" font-size="11.5" fill="#2a9d6f" text-anchor="middle">supports</text>
+  <rect x="392" y="402" width="514" height="24" rx="7" fill="#fdf0f4"/><text x="649" y="419" font-size="13" font-weight="700" fill="#a3123a" text-anchor="middle">★ 大学“生活全体”の体験を機械可読化 ＝ 国内外の白地</text>
+  <path d="M932 290 h40" fill="none" stroke="#5b6b78" stroke-width="6" marker-end="url(#aG)"/>
+  <circle cx="1030" cy="250" r="46" fill="url(#gCrim)" filter="url(#sh)"/>
+  <path d="M1010 250 l12 12 l20 -24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1030" y="318" font-size="14.5" font-weight="700" fill="#a3123a" text-anchor="middle">検証・育成</text>
+  <g font-size="12" text-anchor="middle" fill="#243040">
+    <rect x="972" y="330" width="116" height="22" rx="11" fill="#fff" stroke="#cf9bad"/><text x="1030" y="345">みんなでアノテーション</text>
+    <rect x="972" y="356" width="116" height="22" rx="11" fill="#fff" stroke="#cf9bad"/><text x="1030" y="371">専門家κ・CQ充足</text>
+    <rect x="972" y="382" width="116" height="22" rx="11" fill="#fff" stroke="#cf9bad"/><text x="1030" y="397">被覆率・反復改善</text>
   </g>
-  <path d="M1085 300 q70 0 70 -70 q0 -45 -120 -52" fill="none" stroke="#9aa7b2" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#aT)"/>
-  <text x="1120" y="250" font-size="9.5" fill="#7c8893" text-anchor="middle">反復改善</text>
-  <rect x="24" y="452" width="1232" height="254" rx="14" fill="#f1faf5" stroke="#bfe2d6" stroke-width="1.2"/>
-  <rect x="24" y="452" width="7" height="254" rx="3" fill="#2a9d6f"/>
-  <text x="44" y="478" font-size="15" font-weight="700" fill="#147a52">未来像｜“萌芽”が育ち、大学体験が AI for Science の共通言語になる</text>
-  <circle cx="1130" cy="500" r="46" fill="url(#sun)"/><text x="1130" y="497" font-size="10.5" font-weight="700" fill="#b07d12" text-anchor="middle">AI for</text><text x="1130" y="510" font-size="10.5" font-weight="700" fill="#b07d12" text-anchor="middle">Science</text>
-  <path d="M150 660 C 150 600 250 600 360 560" fill="none" stroke="#2a9d6f" stroke-width="6"/>
-  <path d="M360 560 C 520 510 760 500 980 540" fill="none" stroke="#2a9d6f" stroke-width="7"/>
-  <ellipse cx="150" cy="662" rx="22" ry="13" fill="#8a5a2b"/><text x="150" y="666" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle">種</text>
-  <path d="M360 560 q-26 -22 -4 -44 q24 16 4 44" fill="#2a9d6f"/><path d="M360 560 q26 -18 6 -42 q-22 18 -6 42" fill="#34b07e"/>
-  <circle cx="980" cy="540" r="40" fill="#34b07e"/><circle cx="945" cy="520" r="26" fill="#2a9d6f"/><circle cx="1015" cy="522" r="26" fill="#2a9d6f"/>
-  <text x="150" y="694" font-size="11.5" font-weight="700" fill="#147a52" text-anchor="middle">本事業 6か月（PoC）</text>
-  <text x="150" y="709" font-size="10" fill="#3a6b56" text-anchor="middle">安全DB＋AI抽出＋試作</text>
-  <text x="372" y="528" font-size="11.5" font-weight="700" fill="#147a52" text-anchor="middle">次フェーズ</text>
-  <text x="372" y="543" font-size="10" fill="#3a6b56" text-anchor="middle">100名・継続運用</text>
-  <text x="980" y="596" font-size="11.5" font-weight="700" fill="#147a52" text-anchor="middle">将来：大学横断で標準化</text>
-  <g>
-    <line x1="980" y1="540" x2="640" y2="612" stroke="#bfe2d6" stroke-width="2"/><line x1="980" y1="540" x2="640" y2="650" stroke="#bfe2d6" stroke-width="2"/><line x1="980" y1="540" x2="640" y2="688" stroke="#bfe2d6" stroke-width="2"/>
-    <g><circle cx="600" cy="612" r="17" fill="url(#gGreen)"/><circle cx="600" cy="608" r="4" fill="#fff"/><path d="M593 620 a7 7 0 0 1 14 0" fill="#fff"/></g>
-    <text x="628" y="616" font-size="12" font-weight="700" fill="#147a52">学生</text><text x="690" y="616" font-size="11" fill="#3a6b56">文脈に応じた支援・自己理解</text>
-    <g><circle cx="600" cy="650" r="17" fill="url(#gGreen)"/><rect x="593" y="646" width="14" height="10" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M593 646 l7 -5 l7 5" fill="none" stroke="#fff" stroke-width="1.5"/></g>
-    <text x="628" y="654" font-size="12" font-weight="700" fill="#147a52">大学</text><text x="678" y="654" font-size="11" fill="#3a6b56">教学 IR を高度化・制度改善</text>
-    <g><circle cx="600" cy="688" r="17" fill="url(#gGreen)"/><circle cx="600" cy="688" r="8" fill="none" stroke="#fff" stroke-width="1.4"/><path d="M592 688 h16 M600 680 a10 8 0 0 0 0 16 a10 8 0 0 0 0 -16" fill="none" stroke="#fff" stroke-width="1.1"/></g>
-    <text x="628" y="692" font-size="12" font-weight="700" fill="#147a52">社会・他大学</text><text x="730" y="692" font-size="11" fill="#3a6b56">他ドメインへ波及・再現キット公開</text>
-  </g>
-  <rect x="1040" y="640" width="196" height="56" rx="9" fill="#ffffff" stroke="#bfe2d6"/>
-  <text x="1138" y="660" font-size="10.5" font-weight="700" fill="#147a52" text-anchor="middle">公募趣旨に呼応</text>
-  <text x="1138" y="676" font-size="9.5" fill="#3a6b56" text-anchor="middle">AI for Science の“萌芽”を</text>
-  <text x="1138" y="689" font-size="9.5" fill="#3a6b56" text-anchor="middle">教育研究で創出・波及</text>
-  <text x="44" y="717" font-size="9" fill="#9aa7b2">位置づけ：国内LA（緒方ら・九大M2B／日本学術会議2020）＝LMSログ→成績予測。本研究＝大学“生活全体”の体験をLLMで構造化（白地）。</text>
+  <rect x="356" y="446" width="430" height="26" rx="8" fill="#eef7f2" stroke="#bfe2d6"/><text x="368" y="464" font-size="12.5" fill="#147a52"><tspan font-weight="700">必達(IRB非依存)</tspan> 既存・合成ログで先行構築→発見＋再現キット公開</text>
+  <rect x="796" y="446" width="430" height="26" rx="8" fill="#fbf3ee" stroke="#e6c9b0"/><text x="808" y="464" font-size="12.5" fill="#9a5a23"><tspan font-weight="700">上積み(IRB承認時)</tspan> オプトイン行動ログ本収集でオントロジー拡張</text>
+  <rect x="24" y="482" width="1232" height="224" rx="14" fill="#f1faf5" stroke="#bfe2d6" stroke-width="1.3"/>
+  <rect x="24" y="482" width="8" height="224" rx="4" fill="#2a9d6f"/>
+  <text x="48" y="512" font-size="17" font-weight="700" fill="#147a52">未来像　“萌芽”が育ち、大学体験が AI for Science の共通言語に</text>
+  <circle cx="1158" cy="540" r="50" fill="url(#sun)"/><text x="1158" y="536" font-size="13" font-weight="700" fill="#a9770f" text-anchor="middle">AI for</text><text x="1158" y="553" font-size="13" font-weight="700" fill="#a9770f" text-anchor="middle">Science</text>
+  <path d="M120 690 C 130 628 250 622 360 588 C 520 538 760 536 980 576" fill="none" stroke="#2a9d6f" stroke-width="7"/>
+  <ellipse cx="118" cy="690" rx="26" ry="15" fill="#8a5a2b"/><text x="118" y="695" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">種</text>
+  <path d="M360 588 q-30 -26 -6 -50 q28 18 6 50" fill="#2a9d6f"/><path d="M360 588 q30 -22 8 -48 q-24 22 -8 48" fill="#34b07e"/>
+  <circle cx="980" cy="576" r="46" fill="#34b07e"/><circle cx="940" cy="552" r="30" fill="#2a9d6f"/><circle cx="1020" cy="554" r="30" fill="#2a9d6f"/>
+  <text x="120" y="636" font-size="14" font-weight="700" fill="#147a52" text-anchor="middle">本研究 6か月</text>
+  <text x="120" y="654" font-size="12.5" fill="#3a6b56" text-anchor="middle">シード版オントロジー＋再現キット</text>
+  <text x="372" y="566" font-size="14" font-weight="700" fill="#147a52" text-anchor="middle">次フェーズ</text>
+  <text x="372" y="584" font-size="12.5" fill="#3a6b56" text-anchor="middle">100名・行動ログ拡大</text>
+  <text x="980" y="540" font-size="14" font-weight="700" fill="#0f5a44" text-anchor="middle">将来</text>
+  <text x="980" y="640" font-size="12.5" fill="#147a52" text-anchor="middle">人とAIが読める大学基盤／AIエージェント</text>
+  <circle cx="300" cy="676" r="20" fill="url(#gGreen)"/><circle cx="300" cy="670" r="6" fill="#fff"/><path d="M290 688 a10 10 0 0 1 20 0" fill="#fff"/>
+  <text x="328" y="672" font-size="14.5" font-weight="700" fill="#147a52">学生</text><text x="328" y="691" font-size="12.5" fill="#3a6b56">文脈に応じた支援・自己理解</text>
+  <circle cx="560" cy="676" r="20" fill="url(#gGreen)"/><rect x="551" y="671" width="18" height="13" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M551 671 l9 -7 l9 7" fill="none" stroke="#fff" stroke-width="1.8"/>
+  <text x="588" y="672" font-size="14.5" font-weight="700" fill="#147a52">大学</text><text x="588" y="691" font-size="12.5" fill="#3a6b56">教学 IR を高度化</text>
+  <circle cx="800" cy="676" r="20" fill="url(#gGreen)"/><circle cx="800" cy="676" r="9" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M791 676 h18 M800 667 a11 9 0 0 0 0 18 a11 9 0 0 0 0 -18" fill="none" stroke="#fff" stroke-width="1.2"/>
+  <text x="828" y="672" font-size="14.5" font-weight="700" fill="#147a52">社会・他大学</text><text x="828" y="691" font-size="12.5" fill="#3a6b56">他ドメインへ波及・公開</text>
 </svg>

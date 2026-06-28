@@ -87,6 +87,28 @@ def get_image(shape):
         return None
 
 
+def image_ext(img):
+    """img.ext は MPO 等で例外を投げるので、失敗時は blob のマジックバイトで判定。"""
+    try:
+        e = (img.ext or "").lower()
+        if e:
+            return "jpg" if e == "jpeg" else e
+    except Exception:
+        pass
+    b = img.blob[:4]
+    if b[:3] == b"\xff\xd8\xff":          # JPEG / MPO
+        return "jpg"
+    if b[:4] == b"\x89PNG":
+        return "png"
+    if b[:3] == b"GIF":
+        return "gif"
+    if b[:2] in (b"II", b"MM"):
+        return "tiff"
+    if b[:2] == b"BM":
+        return "bmp"
+    return "png"
+
+
 ALIGN_MAP = {
     "CENTER (2)": "center", "RIGHT (3)": "right",
     "JUSTIFY (4)": "justify", "JUSTIFY_LOW (7)": "justify",
@@ -191,8 +213,7 @@ def walk(shapes, transform, slide, ctx, title_shape, lift_title):
         img = get_image(shape)
         if img is not None:
             fig[0] += 1
-            ext = (img.ext or "png").lower()
-            ext = "jpg" if ext == "jpeg" else ext
+            ext = image_ext(img)
             fname = f"fig{fig[0]:02d}-img.{ext}"
             (src_dir / fname).write_bytes(img.blob)
             g = geo_pct(transform, shape, W, H)
@@ -334,7 +355,11 @@ def render_slide(slide: Slide) -> str:
 STYLE_BLOCK = """style: |
   /* === pptx2marp: 座標再現レイヤ（色・字体は academic CSS に委ねる） === */
   section.ppt { padding: 0; }
-  section.ppt .ppt-canvas { position: absolute; inset: 0; }
+  /* キャンバスはヘッダー帯(--header-h)の下に置く＝元の上端コンテンツが帯に重ならない。
+     子要素は % 指定なので、この領域内に相対配置される（academic レイアウトに整合）。 */
+  section.ppt .ppt-canvas { position: absolute; inset: var(--header-h) 0 0 0; }
+  /* page-title は左タブ(--hdr-left-w)の斜めカット直後から始める＝タブ裏に隠れない。 */
+  section.ppt .page-title { left: calc(var(--hdr-left-w) - var(--hdr-slant) + var(--hdr-gap)); width: 44%; }
   section.ppt .ppt-box {
     position: absolute; box-sizing: border-box; overflow: hidden;
     display: flex; flex-direction: column; justify-content: flex-start;

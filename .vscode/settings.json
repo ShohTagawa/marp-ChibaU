@@ -1,6 +1,7 @@
 {
   "markdown.marp.themes": [
     "./theme/academic.css",
+    "./theme/chiba-deck.css",
     "./theme/ponchie.css"
   ],
   "markdown.marp.exportType": "pdf",

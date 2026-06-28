@@ -1,0 +1,146 @@
+/* @theme chiba-deck */
+/* ============================================================================
+   千葉大 academic テーマを継承した「PPTX再構築デック」共通の部品ライブラリ。
+   - 配色はデック側 style: の :root で --accent / --accent-dark / --accent-soft を上書き
+     （ガーネット #CC003D ／ ティール #0F766E ／ 濃紺 #1E3A6E）。
+   - 役割タグ・コールアウト・ステップ枠などを共通化し、同種スライドで部品と
+     “高さ”を揃える（前後ページで学習者の視線が動かないように）。
+   - ページ番号は左下。右下 約1/6×1/6 は PiP 動画用に常時あける（枠は描かない）。
+   ============================================================================ */
+@import "academic";
+
+:root {
+  --pip-w: 212px;          /* 右下PiP予約：幅 ≒ 1280/6 */
+  --pip-h: 122px;          /* 右下PiP予約：高さ ≒ 720/6 */
+  --tag-blue: #1A6BB0;
+  --tag-green: #2E9E5B;
+}
+
+/* ===== 文字をやや大きめに（最小18px厳守） ===== */
+section { font-size: 25px; line-height: 1.5; }
+section h1 { font-size: 44px; }
+section h2 { font-size: 33px; }
+section.summary .sec-box h3 { font-size: 25px; }
+section.summary .sec-box ul { font-size: 23px; }
+section.summary .sec-box li { margin: 4px 0; }
+
+/* ===== ページ番号は左下（右下は PiP 用にあける） ===== */
+section::after { left: 30px; right: auto; }
+
+/* ===== ページタイトル中央帯の既定位置（hdr-left ≒21% 用。デック側で上書き可） ===== */
+section .page-title { left: 18%; width: 33%; }
+
+/* ===== 右下 PiP 予約：下端の帯/引用/コールアウトは右1/6に入り込ませない ===== */
+.takeaway { margin-right: calc(var(--pip-w) + 8px); }
+.pip-safe { margin-right: calc(var(--pip-w) + 8px) !important; }
+
+/* ============================================================ */
+/* 役割タグ（PreFD：分析=青枠 / 設計=赤枠 / 参照=緑塗り）          */
+/* インライン配置＝H1基準なので、各スライドで縦位置が自然に揃う   */
+/* ============================================================ */
+.tag { display: inline-block; font-weight: 800; border-radius: 10px; padding: 2px 16px; line-height: 1.3; vertical-align: middle; white-space: nowrap; }
+.tag-analyze { color: var(--tag-blue); border: 2.5px solid var(--tag-blue); background: #EAF2FB; }
+.tag-design  { color: #C0182B; border: 2.5px solid #C0182B; background: #FCEAEC; }
+.tag-ref     { color: #fff; background: var(--tag-green); font-size: .78em; padding: 3px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.tag-accent  { color: #fff; background: var(--accent); }
+.tag-soft    { color: var(--accent-dark); background: var(--accent-soft); border: 2px solid var(--accent); }
+/* H1 のすぐ後ろに置く役割タグ（タイトル右に “設計” などを一定位置で） */
+h1 .tag, h2 .tag { font-size: 24px; margin-left: 12px; }
+.subhead { font-size: 27px; font-weight: 800; margin: 4px 0 12px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.subhead .tag { font-size: 23px; }
+
+/* ============================================================ */
+/* 角丸アウトライン枠（達成目標・要点など）                       */
+/* ============================================================ */
+.goal-box { border: 2.5px solid #2a2a2a; border-radius: 16px; padding: 16px 28px; font-size: 28px; line-height: 1.55; margin: 16px 0; }
+.goal-box b { color: var(--accent-dark); }
+.goal-box .ind { display: inline-block; margin-left: 1.4em; }
+
+/* ============================================================ */
+/* コールアウト枠（アウトライン型）：警告=オレンジ/補足=青/強調=accent */
+/* ============================================================ */
+.box-warn, .box-info, .box-accent, .why-callout {
+  border-radius: 12px; padding: 13px 24px; line-height: 1.5; font-size: 24px;
+}
+.box-warn   { border: 2.5px solid #E08A2B; background: #FCEFDD; color: #8a4b00; font-weight: 800; }
+.box-warn b { color: #C0182B; }
+.box-info   { border: 2.5px solid var(--tag-blue); background: #EAF2FB; color: #15436e; }
+.box-info b { color: var(--tag-blue); }
+.box-accent { border: 2.5px solid var(--accent); background: var(--accent-soft); color: var(--accent-dark); }
+.box-accent b { color: var(--accent-dark); }
+.why-callout { background: #FFF6E6; border: 2px solid #F0A500; }
+.why-callout .wh { font-weight: 800; color: #C0182B; font-size: 25px; margin-bottom: 4px; }
+.why-callout .em { color: var(--accent); font-weight: 800; }
+
+/* ============================================================ */
+/* ステップ枠（①結果→②証拠→③計画 などの順序ボックス）           */
+/* 同種スライドで同じ縦位置に来るよう margin-top を固定           */
+/* ============================================================ */
+.stepbox { background: var(--section-bg); border-left: 7px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 28px; margin: 10px 0; }
+.stepbox .st { font-size: 26px; line-height: 1.65; margin: 6px 0; }
+.stepbox .st b { color: var(--accent-dark); }
+.stepbox .st .em { color: var(--accent); font-weight: 800; }
+
+/* ============================================================ */
+/* ブラケットでグループ化した番号リスト（要件/学生/環境 等）       */
+/* ============================================================ */
+.bgroup { display: grid; grid-template-columns: 2.2em 1fr; column-gap: 14px; align-items: center; margin: 5px 0; }
+.bg-label { writing-mode: vertical-rl; text-orientation: upright; font-weight: 800; color: #2E7D46; letter-spacing: .12em; justify-self: center; }
+.bg-items { border-left: 4px solid #6FBF73; border-radius: 4px; padding: 3px 0 3px 16px; }
+.bg-items > div { font-size: 24px; line-height: 1.5; margin: 6px 0; }
+.bgroup b { color: #1a1a1a; }
+.num-loose { font-size: 24px; line-height: 1.5; margin: 8px 0 0 calc(2.2em + 30px); }
+.num-loose b { color: #1a1a1a; }
+
+/* ============================================================ */
+/* フロー：色枠＋矢印（分析 ⇒ 設計 など）                          */
+/* ============================================================ */
+.flowrow { display: flex; align-items: center; gap: 22px; margin: 12px 0; flex-wrap: wrap; }
+.fbox { font-size: 36px; font-weight: 800; border-radius: 12px; padding: 8px 38px; background: #fff; }
+.fbox.blue { color: var(--tag-blue); border: 3px solid var(--tag-blue); }
+.fbox.red  { color: var(--accent); border: 3px solid var(--accent); }
+.fbox.gray { color: #555; border: 3px solid #aaa; }
+.farrow { font-size: 34px; color: #5a5f66; }
+.lead-note { font-size: 25px; font-weight: 700; margin: 6px 0 2px; }
+
+/* ============================================================ */
+/* カード列（リッチな要点カード：影＋角丸）                        */
+/* ============================================================ */
+.cardrow { display: flex; gap: 16px; margin: 12px 0; align-items: stretch; }
+.pcard { flex: 1; background: #fff; border: 1.5px solid #e3e8f0; border-radius: 14px; padding: 14px 20px; box-shadow: 0 2px 7px rgba(0,0,0,.08); }
+.pcard .pc-h { font-size: 23px; font-weight: 800; color: #fff; background: var(--accent); border-radius: 8px; padding: 5px 0; text-align: center; margin-bottom: 10px; }
+.pcard ul { margin: 0 0 0 1.05em; padding: 0; font-size: 22px; line-height: 1.5; }
+.pcard li { margin: 6px 0; }
+.pcard li b, .pcard p b { color: var(--accent-dark); }
+
+/* ============================================================ */
+/* 例示の3段グリッド（①目的目標／②評価／③設計 など）             */
+/* ============================================================ */
+.ex-head { font-size: 27px; font-weight: 800; color: var(--accent-dark); margin: 2px 0 8px; }
+.exrow { display: grid; grid-template-columns: 1.7em 1fr; gap: 12px; background: var(--section-bg); border-radius: 10px; padding: 10px 18px; margin: 8px 0; font-size: 22px; line-height: 1.55; }
+.exrow .exn { font-weight: 800; color: var(--accent); font-size: 24px; }
+.exrow b { color: var(--accent-dark); }
+
+/* ============================================================ */
+/* まとめの番号付き要点                                           */
+/* ============================================================ */
+.wrap3 { font-size: 28px; line-height: 1.9; margin-top: 8px; }
+.wrap3 .ln { display: flex; align-items: center; gap: 12px; margin: 12px 0; }
+.wrap3 .no { font-weight: 800; color: var(--accent); }
+.wrap3 .tag { font-size: 23px; }
+
+/* ============================================================ */
+/* 引用（APA風：著者 (年). タイトル. 誌名は斜体, vol(no), pp.）    */
+/* ============================================================ */
+.cite { font-size: 19px; color: #666; margin-top: 8px; line-height: 1.5; }
+.cite em, .cite i, .cite .j { font-style: italic; }
+.cite a { color: var(--tag-blue); text-decoration: none; word-break: break-all; }
+section.refs em, section.refs i, section.refs .j { font-style: italic; }
+
+/* ============================================================ */
+/* セクション見出しスライド（モジュール扉：大きいタイトル＋目標枠） */
+/* ============================================================ */
+section.sec-open h1 { font-size: 64px; line-height: 1.12; margin: 8px 0 6px; }
+section.sec-open .sub { font-size: 26px; color: var(--muted); margin-bottom: 8px; }
+section.sec-open .foot { margin-top: auto; font-size: 20px; color: var(--muted); }
+section.sec-open .foot b { color: var(--accent-dark); }

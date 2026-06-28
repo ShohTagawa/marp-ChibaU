@@ -36,7 +36,9 @@ MD_ABS="$(cd "$(dirname "$MD")" && pwd)/$(basename "$MD")"
 DECK_DIR="$(dirname "$MD_ABS")"
 DECK_NAME="$(basename "${MD_ABS%.md}")"
 OUT="${2:-$DECK_DIR/out/$DECK_NAME.pdf}"
-THEME="$ROOT/theme/academic.css"
+# theme/ 配下の全 .css を登録する。デックは frontmatter の theme: 名で1つを選ぶ。
+# chiba-deck.css は @import "academic" するため academic.css も同時に渡す必要がある。
+THEMES=("$ROOT"/theme/*.css)
 CHUNK="${CHUNK:-20}"
 
 : "${CHROME_PATH:=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
@@ -56,7 +58,7 @@ echo "[1/4] marp: 全スライドを1つのHTMLに描画 (printToPDFを使わな
 # --no-stdin が必須：これが無いと VS Codeのタスク/ターミナル等の非対話実行で marp が
 # 標準入力を待って固まる（"Currently waiting data from stdin stream…"）。PDFが「動かない」主因。
 npx --yes @marp-team/marp-cli@latest "$MD_ABS" --no-stdin \
-  --theme-set "$THEME" --html --allow-local-files -o "$HTML" </dev/null >/dev/null
+  --theme-set "${THEMES[@]}" --html --allow-local-files -o "$HTML" </dev/null >/dev/null
 
 # スライド枚数を frontmatter 込みで数える(marpのページ数 == md内の --- 区切りブロック数)
 N="$(python3 - "$MD_ABS" <<'PY'

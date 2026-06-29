@@ -241,6 +241,7 @@ style: |
 
 - 予習復習では<span class="red">大いに活用OK</span>。課題ごとに使える範囲を明示
 - 使い方は<span class="red">必ず申告</span>（申告と乖離は0点）
+- AIの回答を<span class="red">そのまま提出は C評価</span>（自分の考え・検証の跡が見えない）
 
 </div></div>
 

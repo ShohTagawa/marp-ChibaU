@@ -130,8 +130,9 @@ section > header::after {
   content: "";
   position: absolute;
   bottom: 0;
-  /* page-title(18%〜50%) の中ほどから開始し、ブロックの裏に隠れたあと右端まで伸びる */
-  left: 40%;
+  /* 下線はヘッダー帯の全幅（左端から右端まで）。実運用の約87%がこれを明示しており既定化。
+     途中から始めたいデックだけ left を上書きする。 */
+  left: 0;
   right: 0;
   height: 4px;
   background: var(--accent);
@@ -474,7 +475,8 @@ section.fig .fig-area {
   padding: 8px 0;
   min-height: 320px;
 }
-section.fig .fig-area img { max-height: 380px; }
+/* 図は「高さ」優先で収める（幅で決めると縦にはみ出て見切れる＝最頻の修正）。 */
+section.fig .fig-area img { max-height: 380px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
 section.fig .placeholder {
   width: 80%; min-height: 320px;
   border: 2px dashed #bbb; border-radius: 8px;

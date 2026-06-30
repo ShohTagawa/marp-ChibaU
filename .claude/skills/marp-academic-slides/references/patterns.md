@@ -57,6 +57,34 @@ cover / divider / message / qa はヘッダー帯を表示しないので page-t
 
 ---
 
+## P1b: 標準の表紙（cover-hero）★これを既定で使う
+
+**用途**：`chiba-deck`・実運用の**標準表紙**。中央に大タイトル、下段に丸写真＋イベント/日付/発表者。`cover` より圧倒的に使われる（実測 cover-hero 164 / cover 8）。新規デックの表紙は原則これ。
+**ヘッダー帯**：あり（下線は全幅）。
+
+```markdown
+<!-- _class: cover-hero -->
+
+<div class="title-hero">
+<div class="title-small">{{上段の小見出し}}</div>
+<div class="title-big">{{メインタイトル}}</div>
+</div>
+
+<div class="title-foot">
+<div class="title-photo"><img src="./src/figXX-portrait.png" alt="発表者"></div>
+<div class="title-meta">
+<div class="title-event">{{イベント名}}</div>
+<div class="title-date">{{YYYY年MM月DD日}}</div>
+{{発表者・所属}}
+</div>
+</div>
+
+<!-- スピーカーノート -->
+```
+
+- 写真が無いときは `.title-photo` ごと省略してよい。
+- 「達成目標」などを中央に置きたいときは `<div class="goal-box" style="max-width:820px; margin:6px auto 0;">…</div>` を足す構成が定番。
+
 ## 自己紹介（intro）
 
 **用途**：演者紹介。名前（ふりがな付き）、所属、役割の説明、研究/興味分野を2カラムで。

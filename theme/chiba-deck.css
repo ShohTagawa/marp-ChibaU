@@ -14,7 +14,21 @@
   --pip-h: 122px;          /* 右下PiP予約：高さ ≒ 720/6 */
   --tag-blue: #1A6BB0;
   --tag-green: #2E9E5B;
+  /* 実運用の既定（多くのデックが frontmatter で毎回再指定していた値を既定化）：
+     ・ガーネット赤の三点セット（最頻配色）
+     ・左タイトル帯の幅 21%（page-title の既定 left:18%/width:33% と噛み合う）
+     別配色は frontmatter に `class: teal` / `class: navy`、個別変更は :root 上書き。
+     ヘッダー全幅下線は academic.css 側で既定化済み。 */
+  --accent: #CC003D;
+  --accent-dark: #8E0029;
+  --accent-soft: #FBE4EA;
+  --hdr-left-w: 21%;
 }
+
+/* ===== 配色プリセット：frontmatter に `class: teal` 等を書くと全スライドへ適用 ===== */
+section.garnet { --accent: #CC003D; --accent-dark: #8E0029; --accent-soft: #FBE4EA; }  /* 既定 */
+section.teal   { --accent: #0F574C; --accent-dark: #073A31; --accent-soft: #E3EEEB; }
+section.navy   { --accent: #19284A; --accent-dark: #0D192F; --accent-soft: #E7EAF2; }
 
 /* ===== 文字をやや大きめに（最小18px厳守） ===== */
 section { font-size: 25px; line-height: 1.5; }

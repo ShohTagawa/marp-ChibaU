@@ -22,12 +22,15 @@ description: Generate Japanese academic presentation slides as Marp markdown (ma
 marp-academic-slides/
 ├── SKILL.md                 (this file)
 ├── assets/
-│   ├── academic.css         Marpカスタムテーマ。デックと同じ階層にコピー/参照させる
 │   └── example-deck.md      10パターン全部入りの完成例
 └── references/
     ├── patterns.md          10スライドパターンの仕様とMarkdownスニペット
     └── density-guide.md     「スカスカ」回避のチェックリスト
 ```
+
+> **テーマCSSはこのスキルに同梱しない。** 正本はリポジトリ直下の `theme/academic.css`（基本）と
+> `theme/chiba-deck.css`（多くのデックが使う拡張テーマ）の2つだけ。スキル内や出力先にCSSをコピーしないこと
+> （古いコピーが本番とズレる事故の元）。
 
 参照タイミング：
 - スライドを設計する前に必ず **references/density-guide.md** に目を通す（短い）
@@ -37,7 +40,7 @@ marp-academic-slides/
 ## Workflow
 
 1. **要件確認**：発表タイトル・章構成・所属・ロゴパス・出力先パスを把握。情報が足りなければ `AskUserQuestion` を1回だけ使ってまとめて確認する。
-2. **テーマCSSを配置**：出力先ディレクトリに `assets/academic.css` をコピー（もしくは相対パスで参照可能なら参照のみ）。すでにあればスキップ。
+2. **テーマCSSは参照のみ（コピー禁止）**：正本は `theme/academic.css`（基本）と `theme/chiba-deck.css`（多くのデックが使う拡張）だけ。デックは frontmatter の `theme: academic|chiba-deck` と marp の `--theme-set` でこれを読む。スキル内や出力先にCSSをコピーしない。
 3. **パターン選択と密度確認**：references/patterns.md と density-guide.md を読み、各スライドに適切な型と最小コンテンツを決める。
 4. **再利用を先に探す**：新規作図・新規執筆の前に、似た図・概念スライドが過去の自分のデックや指定 pptx に無いか確認する。あれば描き直さず取り込む（図は `marp-reuse-figures` で `src/figNN-...` にPNGのままコピー、定番スライドは構成ごとコピーして字句を保つ）。取り込んだ媒体は必ず `src/` にコピーしてリンク切れを防ぐ。
 5. **Markdown を Write**：単一の `.md` に全スライドを書き出す。

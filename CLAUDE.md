@@ -33,7 +33,7 @@
 
 1. 新しいスライドを作る・既存スライドを編集するときは、必ず **`marp-academic-slides`** スキルを起動する(`.claude/skills/marp-academic-slides/` にプロジェクト同梱)
 2. スキル内の `references/patterns.md` と `references/density-guide.md` を読んでからスライド構造を決める
-3. テーマ CSS は **`theme/academic.css`** を使う(スキル内の `assets/academic.css` ではなく、こちらが正本)
+3. テーマ CSS は **`theme/` 直下のものだけが正本**：`theme/academic.css`（基本）と、それを `@import` して部品を足した **`theme/chiba-deck.css`（多くのスライドデックが使う実運用テーマ）**。どちらを使うかは後述の「### テーマは2層」を見る。**スキル配下・ホーム配下・出力先などに別コピーを置かない／コピーしない**（古いCSSが本番とズレる。過去コピーに `--header-h:50px` 等のロック違反あり）。
 4. 新しいスライドは **`slides/`** 配下に「**1デック = 1ディレクトリ**」で作る。ディレクトリ名は `YYYYMMDD_<イベント略号>_<時刻orコマ>_<内容>` 形式（例：`20260519_ALC_1210_AI-function`）
 5. **1デックの内部構造**：
    ```
@@ -57,6 +57,20 @@
    - `<img src="*.svg">` や `![](*.svg)` は PDF/PNG 書き出しで**空白になる**ので使わない（インラインSVGのみ）。
    - インラインSVGは**空行を含めない**（Markdownがブロックを打ち切りスライドが消える。render.mjs が1行化して回避）。
    - 手描きの構造図（フロー・概念図）は従来どおり手書きインラインSVGでよい。グラフ（データ可視化）だけ marp-echarts に寄せる。
+
+### テーマは2層（academic / chiba-deck）
+
+実際のデックの**大半は `chiba-deck` を使う**（実測：chiba-deck 109デック / academic 29デック）。
+
+| theme | 用途 | 中身 |
+|---|---|---|
+| `academic` | 基本テーマ（土台・少数の純学術デック） | ヘッダー帯・page-title・cover-hero・takeaway・fig/split/summary などの基盤 |
+| `chiba-deck` | **多くのスライドデックの実運用テーマ** | `@import "academic"` の上に 本文25px・**右下PiP動画予約**(`--pip-w/--pip-h`・ページ番号は左下)・部品ライブラリ(`box-accent`/`box-info`/`box-warn`/`stepbox`/`tag`系/`pcard`+`cardrow`/`cite`/`goal-box`/`flowrow`+`fbox`/`subhead`/`sec-open`)を追加 |
+
+- **新規の講義・PPTX再構築デックは原則 `theme: chiba-deck`**。学会ポスター的な純学術1デックだけ `academic` でよい。
+- 表紙は **`cover-hero` が標準**（旧 `cover` は使わない）。
+- `chiba-deck` は `@import "academic"` するので、**ビルド時は両方を渡す**：`--theme-set theme/academic.css theme/chiba-deck.css`（PDFは `tools/marp-pdf/build-pdf.sh` が自動で両方渡す）。
+- 配色はデック側 frontmatter で。**既定はガーネット赤**。`class: teal` / `class: navy` で系列配色に切替（chiba-deck同梱プリセット）。`--hdr-left-w:21%`・全幅下線・ガーネット三点は chiba-deck の既定なので、新規デックで再指定不要。
 
 ### フォントサイズの厳守ルール
 
@@ -98,6 +112,20 @@ footer: ''
 | `<span class="hl">…</span>` / `<span class="hl-dark">…</span>` | 赤系強調文字 |
 | `<div class="qa-grid">…</div>` | 質問/回答の2列レイアウト(偶奇で交互配置) |
 | `<div class="takeaway">要点</div>` | スライド下端固定の要点帯(28px固定) |
+
+上表は `academic` 基本テーマのクラス。**`theme: chiba-deck` のときは以下の部品が主力**（実デッキでの使用頻度が高い順）：
+
+| クラス | 用途 |
+|---|---|
+| `<!-- _class: cover-hero -->` | **標準の表紙**（中央タイトル＋丸写真＋メタ）。旧 `cover` の代わり |
+| `<div class="box-accent\|box-info\|box-warn">…</div>` | アウトライン型コールアウト(強調/補足/警告)。academicの `callout-*` の代わり |
+| `<div class="stepbox"><div class="st">…</div></div>` | 順序ステップ枠(①→②→③) |
+| `<span class="tag tag-accent\|tag-soft\|tag-analyze\|tag-design\|tag-ref">…</span>` | 役割ラベルのピル(H1直後に置くと縦位置が揃う) |
+| `<div class="cardrow"><div class="pcard"><div class="pc-h">見出し</div>…</div></div>` | 影付き要点カード列(等幅・等高) |
+| `<div class="cite">著者(年). …</div>` | APA風の出典行(19px) |
+| `<div class="goal-box">…</div>` / `<div class="subhead">…</div>` | 達成目標枠 / サブ見出し |
+| `<div class="flowrow"><div class="fbox blue\|red\|gray">…</div><span class="farrow">⇒</span>…</div>` | 色枠＋矢印フロー |
+| `class="pip-safe"` | 右下のPiP動画域に被らないよう右マージンを確保 |
 
 ## プレビュー・出力コマンド
 

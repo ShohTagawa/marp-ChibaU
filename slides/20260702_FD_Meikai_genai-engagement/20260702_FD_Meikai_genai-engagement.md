@@ -363,14 +363,14 @@ style: |
 
 ### 千葉大学での実践
 
-- アメリカ・カレッジ大学協会の教科書の翻訳
+- アメリカ大学・カレッジ協会（AAC&U）の教科書の翻訳
  **『Teaching with AI』（Bowen & Watson）**
 - 千葉大学 **全学の生成AI教育・支援**の設計
   - 学生向け「生成AI活用講座」
   - 教職員向け **15分セッション**（1回60分、体験型）
   - 学生参画による大学の価値の議論
 - 教育における研究
-  - 大学のUXをアプリと大学基盤
+  - アプリと大学基盤による大学UXの向上
   - AIクロス型の教育カリキュラムの比較
   
 <div class="voice">
@@ -483,7 +483,7 @@ style: |
 - **PCでのアクセス**を推奨します
 - 体験パートでは、隣の方と話しながら進めます
 
-<div class="callout-yellow"><span class="ss-tune" style="color:#A6192E !important">第二回目ご参加の先生へ</span><br>Google for Education から、ステッカー等のノベルティもご用意しています</div>
+<div class="callout-yellow"><span class="ss-tune" style="color:#A6192E !important">第2回ご参加の先生へ</span><br>Google for Education から、ステッカー等のノベルティもご用意しています</div>
 
 </div>
 </div>
@@ -609,7 +609,7 @@ style: |
 
 <ol class="astep">
 
-- <b>slido</b>」で検索 →　<b>slido.com/jp</b> を開き、下の青いバーの欄にコードを入力
+- 「<b>slido</b>」で検索 →　<b>slido.com/jp</b> を開き、下の青いバーの欄にコードを入力
 
 </ol>
 
@@ -628,12 +628,12 @@ style: |
 
 <div class="slido-note">【データ利用のお願い】Slido・ワークへの入力情報のうち、<strong>個人情報・機微情報を除いた</strong>内容を、本研修の改善や報告に用いる可能性があります。機密情報・特定される情報・知られたくない情報は入力なさらないようご注意ください。</div>
 
-<div class="takeaway">最初のアンケート（0-1〜0-2）に、いまのお考えで結構ですのでご回答ください</div>
+<div class="takeaway">最初のアンケート（0-1〜0-3）に、いまのお考えで結構ですのでご回答ください</div>
 
 <!--
 - まずSlidoに入ってください。QRかURLから。PCのほうが入力しやすいです。
 - 入力データは個人情報を除き、研修改善や調査研究に使わせていただくことがあります。機微な情報は入れないでください。
-- では最初のアンケート、肩の力を抜いて答えてみてください。【ここで Slido 0-1, 0-2, Pre を実施】
+- では最初のアンケート、肩の力を抜いて答えてみてください。【ここで Slido 0-1, 0-2, 0-3（Pre）を実施】
 -->
 
 ---
@@ -730,7 +730,7 @@ style: |
 
 <!--
 - いきなり結論は出さなくて結構です。この問いを頭の片隅に置きながら、これからの話を聞いてください。
-- 最後にこの問いに戻ってきます。今日の研修の"たいのオカシラ"です。
+- 最後にこの問いに戻ってきます。今日の研修の"目玉"です。
 -->
 
 ---
@@ -1190,20 +1190,20 @@ style: |
 </div>
 <div class="right">
 
-- 言語系の生成AIは、ルール集や、正しいデータ集ではなく、流暢さを鍛えたモデルである。
+- 言語系の生成AIは、ルール集でも正しいデータ集でもなく、「流暢さ」を鍛えたモデルです
 - 文法的に滑らかでも、<span class="red">事実かどうかは別問題</span>。断定口調で堂々と誤りうる
 
 <div class="cbox deep"><div class="h" style="font-size:26px">ハルシネーションは構造上の帰結</div><div class="b">
 
 - <span class="red">なぜ起きる</span>：「尤もらしさ」を最大化する仕組みは<span class="red">真偽を直接は照合しない</span>から
-- <span class="red">なぜ“原理的に”残る</span>：訓練も評価も<b>“当てずっぽう”を褒めてしまう</b>から（正直な「分かりません」より、当てにいく方が得!）
+- <span class="red">なぜ“原理的に”残る</span>：訓練も評価も<b>“当てずっぽう”を褒めてしまう</b>から（正直な「分かりません」より、当てにいく方が得！）
 
 </div></div>
 
 </div>
 </div>
 
-<div class="takeaway">流暢さが指標。中身が正しいかは、最後に人が必ず確かめることで、騙されない。</div>
+<div class="takeaway">「流暢さ」は正しさの保証ではない。中身は、最後に必ず人が確かめる。</div>
 
 ---
 
@@ -1232,7 +1232,7 @@ style: |
 
 </div>
 
-<div class="srcline"><b>出典:</b> ハルシネーション = Kalai et al. <i>Why Language Models Hallucinate</i> (Nature, 2026)／バイアス = 総務省「上手にネットと付き合おう」生成AI特集／個人情報 = 個人情報保護法（個人情報保護委員会 ppc.go.jp）</div>
+<div class="srcline"><b>出典:</b> ハルシネーション = Kalai et al. <i>Why Language Models Hallucinate</i> (OpenAI/arXiv, 2025)／バイアス = 総務省「上手にネットと付き合おう」生成AI特集／個人情報 = 個人情報保護法（個人情報保護委員会 ppc.go.jp）</div>
 
 <div class="takeaway">どれも「直せる不具合」ではなく、仕組みに由来する"性質"</div>
 
@@ -1397,7 +1397,7 @@ style: |
 <div class="left">
 
 <div class="figwrap"><img src="./src/fig06-rpg-fasttravel.jpg" alt="RPGの比喩。AI利用＝ファストトラベルで学習の道のりを飛ばすと、経験値ゼロのまま強敵に直面する" style="max-height:330px; max-width:100%; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.14);"></div>
-<div class="caption">AIで“場所ジャンプ”すると、経験値ゼロのまま強敵に直面 ── <br>力がつかない</div>
+<div class="caption">AIで“場所ジャンプ”すると、経験値ゼロのまま強敵に直面 ── <br>力がつかない (Nano Banana作成)</div>
 
 </div>
 <div class="right">
@@ -1484,7 +1484,7 @@ style: |
 <div class="srcline"><b>出典:</b> ICAI, <i>The Fundamental Values of Academic Integrity</i> (3rd ed.)／日本学術振興会『誠実な科学者の心得［第2版］』(2025)</div>
 </div>
 
-<div class="takeaway">この6つの価値は、AIの有無によらず不変。土台が崩れば高等教育は成り立たない</div>
+<div class="takeaway">この6つの価値は、AIの有無によらず不変。土台が崩れれば高等教育は成り立たない</div>
 
 <!--
 - 学問の誠実さには6つの価値があります。正直・信頼・公正・敬意・責任・勇気。これはAIがあろうとなかろうと変わらない、研究と教育の土台です。
@@ -1561,13 +1561,63 @@ style: |
 </div>
 </div>
 
-<div class="takeaway">どちらの"文脈"を学生が持つか ── それを作れるのは、教員です</div>
+<div class="takeaway">どちらの"文脈"を学生が持つか ── それを作れるのは、教員だと思います</div>
 
 <!--
-- 学生のAILの関わり方は、大きく2つに分かれます。
+- 学生のAIとの関わり方は、大きく2つに分かれます。
 - ①タイパ・コスパの道具として、早く楽に終わらせ、答えを提出する。短期的には得ですが、学ぶ機会を自ら明け渡しています。
 - ②創造性や社会貢献のための道具として、考えを広げ鍛える相棒にする。たたき台を作って、自分で吟味して超えていく。こちらは学び続ける力が育ちます。
 - どちらの文脈を学生が持つか。それを左右できるのは、ほかでもない教員です。
+-->
+
+---
+
+<!-- _class: fig econ-fig -->
+
+<div class="page-title">生成AIの活用領域</div>
+
+## 「経済的タスク」別のAI使用量 ── Anthropic Economic Index
+
+<style scoped>
+  section.econ-fig .econ-sub { font-size: 17.5px; line-height: 1.45; background: var(--accent-soft); border-left: 5px solid var(--accent); border-radius: 8px; padding: 8px 14px; margin: 4px 0 10px; color: #234; }
+  section.econ-fig .econ-sub strong { color: var(--accent-dark); }
+  section.econ-fig .econ-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 14px; }
+  section.econ-fig .ec { border: 1px solid #e2e7e6; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 7px rgba(0,0,0,.06); background: #fff; }
+  section.econ-fig .ec-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 12px; color: #fff; }
+  section.econ-fig .ec-n { font-size: 17px; font-weight: 800; line-height: 1.15; }
+  section.econ-fig .ec-en { display: block; font-size: 11.5px; font-weight: 600; opacity: .82; }
+  section.econ-fig .ec-p { font-size: 18px; font-weight: 800; background: rgba(255,255,255,.22); border-radius: 999px; padding: 1px 10px; white-space: nowrap; }
+  section.econ-fig .ec-b { padding: 6px 11px 8px; }
+  section.econ-fig .ec-t { display: flex; gap: 8px; align-items: baseline; font-size: 15px; line-height: 1.34; padding: 4px 0; border-bottom: 1px dashed #edefee; color: #2a2d33; }
+  section.econ-fig .ec-t:last-child { border-bottom: none; }
+  section.econ-fig .ec-t .v { margin-left: auto; font-weight: 800; white-space: nowrap; }
+  section.econ-fig .c1 .ec-h { background: #1f8a5f; } section.econ-fig .c1 .v { color: #1f8a5f; }
+  section.econ-fig .c2 .ec-h { background: #9a6320; } section.econ-fig .c2 .v { color: #9a6320; }
+  section.econ-fig .c3 .ec-h { background: #45459a; } section.econ-fig .c3 .v { color: #45459a; }
+  section.econ-fig .c4 .ec-h { background: #9a3535; } section.econ-fig .c4 .v { color: #9a3535; }
+  section.econ-fig .c5 .ec-h { background: #1f6a9a; } section.econ-fig .c5 .v { color: #1f6a9a; }
+  section.econ-fig .c6 .ec-h { background: #9a4530; } section.econ-fig .c6 .v { color: #9a4530; }
+</style>
+
+<div class="econ-sub">プライバシー保護下で <strong>400万件以上</strong> のClaude.ai会話を米国労働省 <strong>O*NET</strong> 職業分類に対応づけ<br>全体：① ソフト開発・Writingで約半分　② 約 <strong>36%</strong> の職業で利用　③ スキル増強 : 自動化 ＝ <strong>57 : 43</strong></div>
+
+<div class="econ-grid">
+<div class="ec c1"><div class="ec-h"><span class="ec-n">コンピュータ・数学<span class="ec-en">Computer &amp; Mathematical</span></span><span class="ec-p">37.2%</span></div><div class="ec-b"><div class="ec-t">ソフトウェア／Webアプリの開発・保守<span class="v">16.8%</span></div><div class="ec-t">システム・機械のプログラミング／デバッグ<span class="v">6.9%</span></div><div class="ec-t">データ管理・分析のためのDB設計・保守<span class="v">2.3%</span></div></div></div>
+<div class="ec c2"><div class="ec-h"><span class="ec-n">芸術・メディア<span class="ec-en">Arts &amp; Media</span></span><span class="ec-p">10.3%</span></div><div class="ec-b"><div class="ec-t">映画・TV・演劇・音楽の制作／実演<span class="v">1.8%</span></div><div class="ec-t">広報・戦略的コミュニケーションの管理<span class="v">1.3%</span></div><div class="ec-t">複数業界のマーケ・販促戦略の立案・実行<span class="v">1.2%</span></div></div></div>
+<div class="ec c3"><div class="ec-h"><span class="ec-n">教育・図書<span class="ec-en">Education &amp; Library</span></span><span class="ec-p">9.3%</span></div><div class="ec-b"><div class="ec-t">体系的な教育カリキュラム・教材の設計<span class="v">1.9%</span></div><div class="ec-t">多様な教育現場での科目の指導<span class="v">1.7%</span></div><div class="ec-t">書籍・文書の出版プロセスの管理<span class="v">1.4%</span></div></div></div>
+<div class="ec c4"><div class="ec-h"><span class="ec-n">事務・管理<span class="ec-en">Office &amp; Administrative</span></span><span class="ec-p">7.9%</span></div><div class="ec-b"><div class="ec-t">定型的なITシステムの運用・保守<span class="v">1.8%</span></div><div class="ec-t">総合的な顧客サービス・サポート<span class="v">0.7%</span></div><div class="ec-t">業務・研究データの記録・分析・報告<span class="v">0.6%</span></div></div></div>
+<div class="ec c5"><div class="ec-h"><span class="ec-n">自然・社会科学<span class="ec-en">Life, Physical &amp; Social Science</span></span><span class="ec-p">6.4%</span></div><div class="ec-b"><div class="ec-t">学術研究の実施と成果の発信<span class="v">1.2%</span></div><div class="ec-t">業務・研究データの記録・分析・報告<span class="v">0.5%</span></div><div class="ec-t">各種物質の化学分析・実験<span class="v">0.3%</span></div></div></div>
+<div class="ec c6"><div class="ec-h"><span class="ec-n">ビジネス・金融<span class="ec-en">Business &amp; Financial</span></span><span class="ec-p">5.9%</span></div><div class="ec-b"><div class="ec-t">財務データ分析と投資・予算戦略の立案<span class="v">0.8%</span></div><div class="ec-t">個人向けの資産アドバイス・教育<span class="v">0.8%</span></div><div class="ec-t">業務・研究データの記録・分析・報告<span class="v">0.4%</span></div></div></div>
+</div>
+
+<div class="srcline"><b>出典:</b> Handa, K. et al. (2025) <i>Which Economic Tasks are Performed with AI?</i> (Anthropic Economic Index). arXiv:2503.04761　／数値=全タスクに占める割合、各カテゴリ上位3タスク</div>
+
+<div class="takeaway">AIはすでに幅広い職業のタスクで使われている</div>
+
+<!--
+- 先ほどの研究を職業カテゴリ別に見たものです。職種名（タイトル）は省き、各カテゴリで実際にAIが使われている上位タスクを日本語にしました。
+- コンピュータ・数学が37%で突出。ソフト開発・Webアプリ保守だけで16.8%。芸術・メディア、教育・図書と続きます。
+- 教育(9.3%)では、カリキュラム・教材の設計、科目の指導が上位。先生方の業務とも重なります。次の「放置か、禁止か」につなげます。
 -->
 
 ---
@@ -1630,7 +1680,7 @@ style: |
 
 <!--
 - では放置すればよいかというと、それも危うい。学習目標そのものをAIに肩代わりさせ、力がつかないまま卒業する。これは長期的な"負債"です。
-- 逆に全面禁止も難しい。社会に出ればAtは使う前提です。Anthropicの分析では、すでに36%の職業タスクで何らかの形でAIが使われ、用途はスキル増強と自動化がおよそ6対4。不動産も事務も専門職も例外ではありません。
+- 逆に全面禁止も難しい。社会に出ればAIは使う前提です。Anthropicの分析では、すでに36%の職業タスクで何らかの形でAIが使われ、用途はスキル増強と自動化がおよそ6対4。不動産も事務も専門職も例外ではありません。
 - だから問いは「放置か禁止か」ではなく、「どう正しくマネジメントするか」に変わります。
 -->
 
@@ -1726,7 +1776,7 @@ style: |
 <span class="who">― 学生参画会議での学生の声</span>
 </div>
 <div class="voice">
-私はAIを、思考をブラッシュアップするためのツールだと考える。なので、私自身が主体的に「意図」を考え、その意図をアウトプットする手助けをしてもらう道具としてAIと関わっていきたい。</strong>
+私はAIを、思考をブラッシュアップするためのツールだと考える。なので、私自身が主体的に「意図」を考え、その意図をアウトプットする手助けをしてもらう道具としてAIと関わっていきたい。
 <span class="who">― 生成AI活用講座を受講した学生の声</span>
 </div>
 
@@ -1863,7 +1913,7 @@ style: |
 <div class="takeaway">隣の方と話したうえで、3列を埋めてみましょう（科目名・関わり方・なぜ）</div>
 
 <!--
-- ではワークです。Think-Pair-Share。まず自分で1分考え、隣の方と2分話し、最後にスプレッドシートに記入して会場で共有します。
+- ではワークです。Think-Pair-Share。まず自分で2分考え、隣の方と3分話し、最後にスプレッドシートに記入して会場で共有します。
 - 記入は3列。科目名、どう関わってほしいか、そしてなぜ。理由まで言葉にするのがポイントです。
 - 正解探しではありません。言葉にすること自体が目的です。では、まず隣の方とどうぞ。
 -->
@@ -1982,7 +2032,7 @@ style: |
 </div>
 <div class="t34-right">
 <img src="./src/google-champion.jpg" alt="講師の田川翔：Google for Education Certified Innovator バッジと Champion メダル、Gemini ピン">
-<div class="champ">💡 <strong>実は…</strong> 講師は <strong>Google for Edu｜Champion</strong>＋<strong>Certified Innovator</strong>・JPN26）。現場で実践しています。</div>
+<div class="champ">💡 <strong>実は…</strong> 講師は <strong>Google for Edu｜Champion</strong>＋<strong>Certified Innovator</strong>（JPN26）。現場で実践しています。</div>
 </div>
 </div>
 
@@ -2115,7 +2165,7 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">ケース②：マルチメディア生成</div>
+<div class="page-title">ケース③：マルチメディア生成</div>
 
 ## テキストから、画像も音楽も ── 教材づくりの幅が広がる
 
@@ -2137,7 +2187,7 @@ style: |
 </div>
 <div class="right">
 
-### 画像生成 （Nanobanana）
+### 画像生成 （Nano Banana）
 
 - 図解・ポンチ絵・スライド挿絵を**テキスト指示で一発**
 - スライドや配布資料の**挿絵づくりが速くなる**
@@ -2356,7 +2406,7 @@ Arizona State Univ.等で**教育効果を実証**
 <div class="takeaway">「教える」だけでなく「問い返す」AI ── 学生の自学の伴走者になりつつあります</div>
 
 <!--
-- ケース③ LearnLM の応用です。Geminiの試験準備機能では、たとえばTOEIC対策の模擬クイズ・弱点分析・フラッシュカードまで自動で作れます。
+- ケース⑦ LearnLM の応用です。Geminiの試験準備機能では、たとえばTOEIC対策の模擬クイズ・弱点分析・フラッシュカードまで自動で作れます。
 - 背景にあるのがLearnLM。答えを教えるのではなく、問い返して考えさせる設計です。
 - 学生が授業の外側で一人で学ぶ時間＝自学・学び直しを支えます。これは千葉大の例ですが、明海でも同じです。
 -->
@@ -2770,7 +2820,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 </div>
 
-<div class="takeaway">実感はいかがでしたか。AIが先生の支援ツールなると嬉しいです。</div>
+<div class="takeaway">実感はいかがでしたか。AIが先生の支援ツールになると嬉しいです。</div>
 
 <!--
 - 体験のあと、Session 2のまとめとして3つ Slido でうかがいます。
@@ -3362,7 +3412,7 @@ Arizona State Univ.等で**教育効果を実証**
 <!--
 - 答えのひとつが、教員の役割の変化です。知識の専門家から、学びのファシリテーターへ。
 - 残る価値、むしろ高まる価値は、問いを立てる力、議論を深める力、安心して失敗できる場をつくる力、一人ひとりに寄り添うコーチングです。
-- 知識の"配達"はAtに任せて、教員は学びの設計と伴走へ。AounのRobot-Proofやインゴルドの「弱い教育」も、同じ方向を指しています。教えることに加えて、コーチすること。教員にしかできない部分が、むしろ際立つ時代です。
+- 知識の"配達"はAIに任せて、教員は学びの設計と伴走へ。AounのRobot-Proofやインゴルドの「弱い教育」も、同じ方向を指しています。教えることに加えて、コーチすること。教員にしかできない部分が、むしろ際立つ時代です。
 -->
 
 
@@ -3373,7 +3423,7 @@ Arizona State Univ.等で**教育効果を実証**
 
 <div class="page-title">時間が余った場合：ワーク③</div>
 
-## 普段の課題を、MITの科目改善フローで「作り変えて」みよう
+## 普段の課題を、MITの科目改善フローで「作り変えて」みましょう
 
 <div class="split-body">
 <div class="left">
@@ -3506,7 +3556,7 @@ Arizona State Univ.等で**教育効果を実証**
 <!--
 - 最初の問いに戻ります。先生方は、ご自身の授業で、学生に生成AIとどう関わってほしいですか。
 - 今日の話を踏まえて、ご自身の言葉でひとつ、答えを持ち帰ってください。それが今日いちばんのお土産です。
-- "たいのオカシラ"、最初の問題提起をここで回収しました。一本の研修として、つながったでしょうか。
+- 冒頭の"目玉"、最初の問題提起をここで回収しました。一本の研修として、つながったでしょうか。
 -->
 
 ---
@@ -3517,29 +3567,41 @@ Arizona State Univ.等で**教育効果を実証**
 
 ## 第2回・第3回（ワーク・自由参加）
 
-<div class="split-body">
-<div class="left">
+<style scoped>
+  section .nx { display:flex; gap:26px; align-items:stretch; margin-top:16px; }
+  section .nx .sess { flex:1; border-radius:14px; padding:16px 22px 18px; box-shadow:0 2px 9px rgba(0,0,0,.07); }
+  section .nx .sess.s2 { background:#FFF6EC; border:1.5px solid #f0d3a8; }
+  section .nx .sess.s3 { background:#EEF4FA; border:1.5px solid #bcd4e8; }
+  section .nx .sess .sh { font-size:24px; font-weight:800; margin-bottom:6px; }
+  section .nx .sess.s2 .sh { color:#b5651d; }
+  section .nx .sess.s3 .sh { color:#1A5A8A; }
+  section .nx .sess .sth { font-size:18px; color:#5d6359; line-height:1.45; min-height:2.9em; padding-bottom:11px; margin-bottom:11px; border-bottom:1.5px dashed rgba(0,0,0,.13); }
+  section .nx .sess ul { font-size:20px; line-height:1.5; margin:0; padding-left:1.15em; }
+  section .nx .sess ul li { margin:6px 0; }
+  section .nx .sess ul b { color:var(--accent-dark); }
+</style>
 
-### 第2回｜つくってみる
+<div class="nx">
 
-<div class="callout-orange">生成AIの使い方レクチャー＋<strong>授業を面白くするアイデア形成</strong>。実際に手を動かします</div>
+<div class="sess s2">
+<div class="sh">第2回｜つくってみる</div>
+<div class="sth">生成AIの使い方レクチャー＋授業を面白くするアイデア形成。実際に生成AIを活用して作ってみます</div>
 
-### 第3回｜続ける
-
-<div class="callout-blue">第2回のフォローアップと<strong>マインド形成</strong>。様々なアイデアを試します</div>
+- どうAIを使えば**授業が面白くなる**かを考える
+- AIで**学びを損なわない課題設計・デザイン**
+- **AIが伴走するシナリオ課題**を実際に試す
 
 </div>
-<div class="right">
 
-### お持ち帰り頂きたいもの
+<div class="sess s3">
+<div class="sh">第3回｜続ける</div>
+<div class="sth">第2回のフォローアップとマインド形成。様々なアイデアを試します</div>
 
-- 今日の気づき(ぜひ、メモや写真でまとめて下さい)
-  - 次回伺わせて頂きます。
-- 質問は、ぜひお声がけください
-
-<div class="callout-green">「まず1つ、試してみる」── そこから始まります</div>
+- 実際にやってみた内容を共有頂く
+- **今後のAIと課題・カリキュラム**の関係を考える
 
 </div>
+
 </div>
 
 <div class="takeaway">第2回・第3回は自由参加です。ぜひご参加下さい。</div>
@@ -3571,7 +3633,7 @@ Arizona State Univ.等で**教育効果を実証**
 ## 参考文献・出典 ①（仕組み・リスク・影響）
 
 - Vaswani, A. et al. (2017). *Attention Is All You Need*. NeurIPS.
-- Kalai, A. et al. (2026). *Why Language Models Hallucinate*. Nature. https://www.nature.com/articles/s41586-026-10549-w
+- Kalai, A. T., Nachum, O., Vempala, S. S. et al. (2026). *Evaluating Large Language Models for Accuracy Incentivizes Hallucinations*. Nature, 653, 1047–1051. https://www.nature.com/articles/s41586-026-10549-w（プレプリント題 *Why Language Models Hallucinate*, arXiv:2509.04664, 2025）
 - 総務省「上手にネットと付き合おう」生成AI特集. https://www.soumu.go.jp/use_the_internet_wisely/special/generativeai/
 - 個人情報保護委員会. https://www.ppc.go.jp/
 - ICAI (2021). *The Fundamental Values of Academic Integrity* (3rd ed.). academicintegrity.org
@@ -3608,4 +3670,34 @@ Arizona State Univ.等で**教育効果を実証**
 <!--
 - こちらは教育と授業設計、ツール関連の出典です。Teaching with AIは私が翻訳中の本です。
 - 不動産教育の文献は、ご関心があれば個別にPDFをお送りします。本日はありがとうございました。
+-->
+
+---
+
+<!-- _class: summary -->
+
+<div class="page-title">本資料について</div>
+
+## この資料作成における、「AIの使用」の開示
+
+<style scoped>
+  section .disc { display:flex; flex-direction:column; gap:14px; margin-top:18px; max-width:1060px; }
+  section .disc .drow { display:flex; align-items:center; gap:20px; background:#fff; border:1.5px solid #dde6e4; border-left:6px solid var(--accent); border-radius:12px; padding:15px 24px; box-shadow:0 1px 6px rgba(0,0,0,.06); }
+  section .disc .dic { flex:0 0 auto; font-size:30px; }
+  section .disc .dl { flex:0 0 290px; font-weight:800; font-size:20px; color:var(--accent-dark); }
+  section .disc .dv { flex:1; font-size:20px; line-height:1.45; color:#2a3a3a; }
+  section .disc .dv b { color:var(--accent-dark); }
+</style>
+
+<div class="disc">
+<div class="drow"><span class="dic">🧭</span><span class="dl">企画・キュレーション／<br>元スライド</span><span class="dv"><b>講師（田川）が作成</b>。構成・主張・素材の選定は人が判断しています</span></div>
+<div class="drow"><span class="dic">🎨</span><span class="dl">デザイン・清書</span><span class="dv"><b>Claude Opus 4.8</b> を使用しました（レイアウト・図版・体裁の整形）</span></div>
+<div class="drow"><span class="dic">✅</span><span class="dl">最終責任</span><span class="dv">内容・誤りを含め、<b>すべて講師にあります</b></span></div>
+</div>
+
+
+<!--
+- 最後に、この資料自身の作りかたも開示しておきます。これは今日お話しした「使ったら開示する」の実践です。
+- 企画・キュレーション・元スライドは私が作成し、構成や主張、素材の選定はすべて人が判断しています。デザインと清書にClaude Opus 4.8を使いました。
+- そして最終的な責任は、誤りも含めてすべて私にあります。本日はありがとうございました。
 -->

@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- 情報リテラシ 期末試験（日本語版） ／ 35問・第4回→第11回順・選択肢固定(ABCD)・英訳は仮訳 -->
+  <question type="category">
+    <category>
+      <text>$module$/top/期末試験_日本語 のデフォルト</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text>情報リテラシ 期末試験（日本語版）</text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+<!-- Q1 第4回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DIKW_情報の定義</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>DIKWモデルにおいて『情報(Information)』の説明として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>DIKWは「データ→情報→知識→知恵」の4段階。Aは『データ』、Cは『知識』、Dは『知恵』の説明で誤り。情報リテラシの一側面は、このデータから情報・知識へと変換する技術である。</p><p style="color:#888;font-size:90%">出典：第4回 DIKWモデル　（第4回 情報とコミュニケーション／理解必須／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>客観的な事実など、整理されていない状態のもの</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>データを何らかの基準で整理・分析し、解釈できるようにした状態</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>情報をまとめて体系化・構造化した状態</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>知識を正しく認識して、価値観やモラルにした状態</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q2 第4回 理解必須 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_コミュニケーション_AからB</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>ある人Aが別の人Bに情報を伝えるとき、その「伝わり方」の説明として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>コミュニケーションは「送り手が符号化→媒体→受け手が再構築」という過程であり、『送った』＝『伝わった』とは限らない。だからこそ相手の立場に立って伝える工夫が要る。</p><p style="color:#888;font-size:90%">出典：第4回 情報とコミュニケーション（コミュニケーションモデル）　（第4回 情報とコミュニケーション／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>情報は媒体（電波・紙・音声など）を通りさえすれば、Aの意図どおり100％同じ意味でBに伝わる。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>受け手Bは記号をそのまま受け取るだけで、解釈や意味の再構築は行わない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Aは伝えたいことを言葉や図などの記号に変換（符号化）して送り、Bはそれを自分の知識や経験を通して解釈（再構築）する。そのため送り手の意図と受け手の理解にはズレが生じうる。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>図や表情はあくまで補助であり、伝えたいことを言葉にして送りさえすれば誤解は生じない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q3 第4回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_生成AIとの向き合い方</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>生成AIとの向き合い方を「AIは道具、判断は自分」と表すとき、この考え方に最も合致する行動はどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>生成AIは下書きや壁打ちの道具として有用だが、問いを立てること・文脈に照らして判断すること・結果に責任を負うことは人間の役割であり、出力は必ず検証する。Aは丸投げ、Cは全否定の極論、Dは無批判にAIを優先する誤り。</p><p style="color:#888;font-size:90%">出典：第4回／第11回 生成AIとの向き合い方　（第4回 情報とコミュニケーション／理解必須／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>レポートの問いの設定から結論まですべて生成AIに任せ、出力をそのまま提出する</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>生成AIを下書きや壁打ちの道具として使いつつ、問いを立て・文脈で判断し・結果に責任を負うのは自分だと考えて出力を必ず検証する</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>生成AIは誤りを含むことがあるので、研究や学習には一切使わないようにする</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>生成AIの出力は人間より優れているので、自分の考えと食い違ったら常にAIの答えを採用する</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q4 第4回 ひねり 正解B・C(複数) -->
+  <question type="multichoice">
+    <name>
+      <text>Q_生成AI指針_2つ選べ</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>千葉大学の学生が「A先生の授業では生成AIでのレポート下書きOKだったから、B先生の授業や卒論でも当然OKだろう」と考えている。「千葉大学の教育・学習における生成AIの利用についての指針」を踏まえた最も適切な対応を2つ選べ。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>指針では課題等での生成AI利用可否は基本的に各授業の担当教員が判断する（B）。研究・卒論では研究倫理の理解、利用箇所の把握と結果への責任が必須で、誤った文献・コードの問題もある（C）。A（一律に決まる）・D（学生が自由判断）は誤り。</p><p style="color:#888;font-size:90%">出典：小テスト1 Q6（生成AI指針・利用可否の判断者）をひねり　（第4回 情報とコミュニケーション／ひねり／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>false</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="-50" format="plain_text">
+      <text>大学全体で一律に許可・禁止が決まっているため、どの授業・卒論でも同じ扱いになると考えてよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50" format="plain_text">
+      <text>生成AIの利用可否は基本的に各授業の担当教員が決めるため、B先生の授業の指示・条件を個別に確認すべきである</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="50" format="plain_text">
+      <text>研究で使用できるかは研究倫理の理解が必要で、AIを利用した箇所を把握しておくことや結果に責任を取れることが必須となるほか、誤った文献リストやコードを出すなどの問題も多い</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="-50" format="plain_text">
+      <text>利用可否は学生自身が自由に判断してよく、教員の指示に従う必要はない</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q5 第4回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_相関は因果ではない</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>データ分析でよく言われる『相関は因果ではない』とは、どういうことか。最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>相関は因果を意味しない。第三の要因（交絡）が両方に影響して見かけの相関が生じることがある（例：アイス販売と水難事故は『気温』が交絡）。相関係数が高くても原因・結果の向きは決まらず、因果があっても相関が出ないこともある。</p><p style="color:#888;font-size:90%">出典：第4回 データ分析（相関と因果・交絡）　（第4回 情報とコミュニケーション／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>2つの事柄に相関（一方が増減すると他方も増減する関係）があっても、第三の要因（交絡）による『見かけの相関』のことがあり、一方が他方の原因とは限らない</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>相関があれば必ず一方がもう一方の原因なので、どちらか一方を変えれば結果も必ず変わる</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>相関係数が高いほど、原因と結果のどちらが先かという向きまで確実に決まる</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>因果関係がある2つの事柄の間には、相関は決して現れない</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q6 第5回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_PC構成図_穴埋め</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>次の図はPCの主要部品を表す。〔①＿＿＿：全体の頭脳として計算と制御を行う ／ ②メインメモリ：CPUが直接読み書きする作業机 ／ ③＿＿＿：画像描画やAIの学習などの超並列処理に特化〕　①と③に入る部品の組み合わせとして最も適切なものはどれか。</p><p><img src="@@PLUGINFILE@@/fig_pc.svg" alt="figure" /></p><p><em>※ 上の図の「？」に入る語を答えてください。</em></p>]]></text>
+      <file name="fig_pc.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMTkwIiB3aWR0aD0iNjAwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIzMjAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj5QQ+OBruS4u+imgemDqOWTgTwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjQyIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjEwIiBmaWxsPSIjRkJFOUVDIiBzdHJva2U9IiNBNjE5MkUiIHN0cm9rZS13aWR0aD0iMi41Ii8+Cjx0ZXh0IHg9IjExMCIgeT0iODQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNBNjE5MkUiPuKRoOOAgO+8nzwvdGV4dD4KPHRleHQgeD0iMTEwIiB5PSIxMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiPuWFqOS9k+OBrumgreiEszwvdGV4dD48dGV4dCB4PSIxMTAiIHk9IjEzNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyI+6KiI566X44Go5Yi25b6hPC90ZXh0Pgo8cmVjdCB4PSIyMzAiIHk9IjQyIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjEwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzRTc4QjIiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSIzMjAiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIj7ikaEg44Oh44Kk44Oz44Oh44Oi44OqPC90ZXh0Pgo8dGV4dCB4PSIzMjAiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyI+Q1BV44GM55u05o6l6Kqt44G/5pu444GNPC90ZXh0Pjx0ZXh0IHg9IjMyMCIgeT0iMTM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIj7jgZnjgovkvZzmpa3mnLo8L3RleHQ+CjxyZWN0IHg9IjQ0MCIgeT0iNDIiIHdpZHRoPSIxODAiIGhlaWdodD0iMTIwIiByeD0iMTAiIGZpbGw9IiNGQkU5RUMiIHN0cm9rZT0iI0E2MTkyRSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KPHRleHQgeD0iNTMwIiB5PSI4NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI0E2MTkyRSI+4pGi44CA77yfPC90ZXh0Pgo8dGV4dCB4PSI1MzAiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyI+55S75YOP5o+P55S744O7QUnlrabnv5I8L3RleHQ+PHRleHQgeD0iNTMwIiB5PSIxMzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiPuOBrui2heS4puWIl+WHpueQhjwvdGV4dD4KPC9zdmc+</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>CPU＝頭脳（計算と制御）、メモリ＝作業机、GPU＝超並列。構成図の穴埋めで各部品の役割を識別できるかを問う。</p><p style="color:#888;font-size:90%">出典：第5回 コンピュータの中身（構成図）　（第5回 コンピュータの仕組み／理解必須／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>①CPU ・ ③GPU</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>①GPU ・ ③CPU</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>①SSD ・ ③CPU</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>①メモリ ・ ③マザーボード</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q7 第5回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_記憶装置の階層_穴埋め</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>次の図はコンピュータの記憶装置の階層を、上ほど高速・小容量、下ほど低速・大容量に並べたものである。〔①レジスタ（CPU内部）→ ②＿＿＿ → ③主記憶（メインメモリ）→ ④補助記憶（HDD/SSD）〕　②に入る、主記憶より高速で、頻繁に使うデータをCPUの近くにコピーしてCPUの待ち時間を減らす記憶として最も適切なものはどれか。</p><p><img src="@@PLUGINFILE@@/fig_mem.svg" alt="figure" /></p><p><em>※ 上の図の「？」に入る語を答えてください。</em></p>]]></text>
+      <file name="fig_mem.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMjgwIiB3aWR0aD0iNTIwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIyODAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj7oqJjmhrboo4Xnva7jga7pmo7lsaQ8L3RleHQ+CjxyZWN0IHg9IjE5MCIgeT0iNDAiIHdpZHRoPSIxODAiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSIjM0U3OEIyIi8+PHRleHQgeD0iMjgwIiB5PSI2NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9IjcwMCI+4pGg44Os44K444K544K/77yIQ1BV5YaF6YOo77yJPC90ZXh0Pgo8cmVjdCB4PSIxNTAiIHk9IjkyIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjQ2IiByeD0iNiIgZmlsbD0iI0ZCRTlFQyIgc3Ryb2tlPSIjQTYxOTJFIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjI4MCIgeT0iMTIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjQTYxOTJFIj7ikaHjgIDvvJ88L3RleHQ+CjxyZWN0IHg9IjExMCIgeT0iMTUwIiB3aWR0aD0iMzQwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0iIzdmYWVkYiIvPjx0ZXh0IHg9IjI4MCIgeT0iMTc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIiBmaWxsPSIjZmZmIiBmb250LXdlaWdodD0iNzAwIj7ikaLkuLvoqJjmhrbvvIjjg6HjgqTjg7Pjg6Hjg6Ljg6rvvIk8L3RleHQ+CjxyZWN0IHg9IjcwIiB5PSIyMDIiIHdpZHRoPSI0MjAiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSIjY2ZlMGYwIi8+PHRleHQgeD0iMjgwIiB5PSIyMjciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiPuKRo+ijnOWKqeiomOaGtu+8iEhERC9TU0TvvIk8L3RleHQ+Cjx0ZXh0IHg9IjUyNSIgeT0iNTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1NTUiPumrmOmAn+ODu+Wwj+WuuemHjzwvdGV4dD4KPGxpbmUgeDE9IjUyNSIgeTE9IjY2IiB4Mj0iNTI1IiB5Mj0iMjIwIiBzdHJva2U9IiNiYmIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNhKSIvPgo8ZGVmcz48bWFya2VyIGlkPSJhIiBtYXJrZXJXaWR0aD0iOCIgbWFya2VySGVpZ2h0PSI4IiByZWZYPSI0IiByZWZZPSI2IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDQsNiBMOCwwIFoiIGZpbGw9IiNiYmIiLz48L21hcmtlcj48L2RlZnM+Cjx0ZXh0IHg9IjUyNSIgeT0iMjM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSIjNTU1Ij7kvY7pgJ/jg7vlpKflrrnph488L3RleHQ+Cjwvc3ZnPg==</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>記憶装置は「速いが小さい（レジスタ・キャッシュ）」と「遅いが大きい（主記憶・補助記憶）」のトレードオフを階層で補い合う。②はキャッシュメモリ。</p><p style="color:#888;font-size:90%">出典：第5回 コンピュータの中身（記憶装置の階層）　（第5回 コンピュータの仕組み／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>キャッシュメモリ</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>仮想記憶</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>ビデオメモリ</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>クラウドストレージ</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q8 第5回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_記憶階層_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>記憶装置をレジスタ・キャッシュ・主記憶・補助記憶のように階層化する利点として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>速くて高価な記憶（レジスタ・キャッシュ）と、遅いが安く大容量の記憶（主記憶・補助記憶）を階層に組み合わせ、よく使うデータを上位に置くことで速さと容量を両立できる。価格・速度の均一化、不揮発化、データ自動増加といった効果はない。</p><p style="color:#888;font-size:90%">出典：第5回 コンピュータの構成（記憶装置の階層）　（第5回 コンピュータの仕組み／なぜ便利／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>高速だが小容量の記憶と、低速だが大容量の記憶を組み合わせ、速さと容量の両方をバランスよく実現できるから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>階層を増やすほど、すべての記憶装置が同じ速度・同じ価格になるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>記憶を階層に分けると、電源を切っても主記憶装置を含むすべてのデータが消えなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>階層化すると、CPUが計算をしなくてもデータが自動的にバックアップされるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q9 第5回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ハルシネーション</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>生成AIの『ハルシネーション』とは何か。最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>ハルシネーションは生成AIが誤った情報を生成する現象で、学習データの誤り・偏り・鮮度（カットオフ）が原因。出力は信頼性の高い情報源で正確性や出典を確認する必要がある。Aはディープフェイク、Cはカットオフの説明と異なり誤り、Dはプロンプトのコツで別論点。</p><p style="color:#888;font-size:90%">出典：第4回／第5回 生成AI活用の注意点　（第5回 コンピュータの仕組み／理解必須／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>悪意を持って意図的に作られた偽の動画や画像（ディープフェイク）のこと</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>生成AIが、もっともらしいが誤った情報を生成してしまう現象のこと</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>学習データのカットオフ（最新時点）以降の情報を取得する機能のこと</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>プロンプトに役割・タスク・背景・形式の4要素を入れる手法のこと</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q10 第5回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_OSとアプリ</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>OS（オペレーティングシステム）とアプリケーションの関係として、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>OS（資源管理の土台）とアプリ（目的を果たす道具）の役割分担。アプリはOSがないと動作できず、OSの種類が違えば同じアプリはそのままでは動かない（OS依存）。Windows/macOSとWord/Chromeの例で考える。</p><p style="color:#888;font-size:90%">出典：第5回 コンピュータの中身（OS／アプリケーション）　（第5回 コンピュータの仕組み／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>アプリがハードウェアやソフトの資源を管理し、OSはその上で特定の目的を果たす道具である。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>OSは「土台」として資源（ハード・ソフト）を管理・制御し、アプリは特定の目的を果たす。アプリはOSがないと動作できない。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>OSとアプリケーションは同じもので、呼び方が違うだけである。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>アプリはOSの機能を利用して動くが、OSを別の種類に入れ替えても同じアプリがそのまま動作する。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q11 第5回 ひねり 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_大規模言語モデルの仕組み</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>ChatGPT のような大規模言語モデル（生成AI）が文章を作る仕組みとして、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>統計的な次トークン予測という仕組みゆえに、もっともらしい誤り（ハルシネーション）が起こりうる。仕組みの理解が生成AIの適切な利用・注意点の前提になる。</p><p style="color:#888;font-size:90%">出典：小テスト1 Q10（大規模言語モデルの仕組み）をひねり　（第5回 コンピュータの仕組み／ひねり／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>人間があらかじめ用意した『この質問にはこう答える』という膨大な問答集の中から、一致する答えを探して返している。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>大量のテキストから学習した統計的な確率に基づいて、文脈に続く『次に来そうな単語（トークン）』を予測することを繰り返して文章を生成する。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>インターネットに常時接続してリアルタイムに正しい答えを検索して返しているので、事実を誤ることはない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>文章の意味を人間と同じように理解し、事実かどうかを自分で判断してから答えている。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q12 第5回 理解必須 正解D -->
+  <question type="multichoice">
+    <name>
+      <text>Q_CPUとGPU</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>CPU と GPU の性質の違いとして、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>GPUの「超並列」という性質が生成AIの学習・推論を支える。CPUは汎用の頭脳、GPUは並列特化で役割が異なる（上位互換でも描画専用でもない）。</p><p style="color:#888;font-size:90%">出典：第5回 コンピュータの中身（CPU／GPU）　（第5回 コンピュータの仕組み／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>CPUは単純な計算を一度に大量にこなす超並列処理が得意で、GPUは複雑な処理を1つずつ順番に行うのが得意である。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>GPUはCPUの上位互換であり、CPUが行う処理をすべてGPUがより速くこなせる。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>GPUは画面表示のための描画専用の装置で、AIの学習のような計算には使えない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>CPUは複雑な処理や各装置の制御を担う汎用の頭脳、GPUは画像描画や単純計算の超並列処理に特化しており、3DグラフィックスやAIの学習に向く。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q13 第6回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_アナログのデジタル化_穴埋め</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>次の図はアナログ情報をデジタル化する流れである。〔アナログ信号 → ①標本化（一定間隔で値を取り出す）→ ②＿＿＿（取り出した値を決められた段階値に近似する）→ ③符号化（0と1の列に変換）→ デジタルデータ〕　②に入る語として最も適切なものはどれか。</p><p><img src="@@PLUGINFILE@@/fig_ad.svg" alt="figure" /></p><p><em>※ 上の図の「？」に入る語を答えてください。</em></p>]]></text>
+      <file name="fig_ad.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NzAgMTMwIiB3aWR0aD0iNzAwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIzODUiIHk9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj7jgqLjg4rjg63jgrDmg4XloLHjga7jg4fjgrjjgr/jg6vljJY8L3RleHQ+CjxyZWN0IHg9IjEwIiB5PSI0NiIgd2lkdGg9IjExOCIgaGVpZ2h0PSI1NiIgcng9IjgiIGZpbGw9IiNlZWY3ZWYiIHN0cm9rZT0iIzNDOEE1NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNjkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7jgqLjg4rjg63jgrDkv6Hlj7c8L3RleHQ+PHRleHQgeD0iMTQwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSIxNjAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjM0U3OEIyIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyMTkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7ikaDmqJnmnKzljJY8L3RleHQ+PHRleHQgeD0iMjkwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSIzMTAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI0ZCRTlFQyIgc3Ryb2tlPSIjQTYxOTJFIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIzNjkiIHk9Ijg0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjQTYxOTJFIj7ikaHjgIDvvJ88L3RleHQ+PHRleHQgeD0iNDQwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSI0NjAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjM0U3OEIyIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI1MTkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7ikaLnrKblj7fljJY8L3RleHQ+PHRleHQgeD0iNTkwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSI2MTAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2VlZjdlZiIgc3Ryb2tlPSIjM0M4QTU3IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI2NjkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7jg4fjgrjjgr/jg6vjg4fjg7zjgr88L3RleHQ+Cjwvc3ZnPg==</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>アナログ→デジタル変換の3段階（標本化・量子化・符号化）。②は取り出した値を段階値に近似する『量子化』。</p><p style="color:#888;font-size:90%">出典：第6回 情報の表現（アナログのディジタル化）　（第6回 情報の表現／理解必須／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>量子化</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>暗号化</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>圧縮</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>復号</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q14 第6回 確認 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2の補数_範囲</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>負の整数を2の補数で表現するとき，8桁の2進数で表現できる数値の範囲を10進数で表したものはどれか。（平成24年度春期ITパスポート試験公開問題 問52）</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>2の補数表現では最上位ビットが符号を兼ね、0の表現が1つで済むため負側が正側より1つ多い（非対称）。8桁では -2^7〜2^7-1 ＝ -128〜127。現在のコンピュータの標準表現。</p><p style="color:#888;font-size:90%">出典：確認問題4 / 平成24年春ITパス 問52　（第6回 情報の表現／確認／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>-128〜127</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-255〜256</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-256〜255</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-127〜128</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q15 第6回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_情報量_最小ビット数</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>n ビットのビット列では 2ⁿ 種類の状態を区別できる（2¹=2, 2²=4, 2³=8, 2⁴=16, 2⁵=32, 2⁶=64, 2⁷=128, 2⁸=256）。ある実験装置に互いに区別したい状態が全部で 40 種類あるとき、この 40 種類すべてを一意に符号化するために必要な最小のビット数 n はいくつか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>2ⁿ ≧ 40 を満たす最小の n を探す。2⁵=32 は不足、2⁶=64 で条件を満たすので n=6（24パターン余る）。Aは不足、Cは満たすが最小でない、Dは状態数とビット数の混同。</p><p style="color:#888;font-size:90%">出典：第6回 符号化の原理（情報量）　（第6回 情報の表現／理解必須／難）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>5 ビット</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>6 ビット</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>8 ビット</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>40 ビット</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q16 第6回 理解必須 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_画像のデータ量</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>画像のデジタル化では、同じ画素数でも色（階調）の表し方でデータ量が変わる。1画素あたりのビット数は階調を表すのに必要なビット数（2ⁿ 階調には n ビット）である。8×8＝64画素の画像を「256階調のグレースケール（1画素＝8ビット）」で表したときのデータ量は何バイトか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>256階調＝2⁸なので1画素＝8ビット＝1バイト。64画素×1バイト＝64バイト。Aは単純2値（1画素1ビット）、Bは4色（2ビット）、DはRGBフルカラー（24ビット）に対応。</p><p style="color:#888;font-size:90%">出典：第6回 画像のデジタル化　（第6回 情報の表現／理解必須／難）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>8 バイト</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>16 バイト</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>64 バイト</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>192 バイト</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q17 第6回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_デジタル化_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>アナログの音や画像をデジタル化（0と1で表現）すると便利な理由として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>デジタル化すると0と1の列になり、複製・伝送で値が崩れにくく（劣化に強い）、音・画像・文字を同じ0/1として一律に処理・統合できる。標本化・量子化で一部は失われるため『完全保存』ではなく、必ず小さくなる・自動訂正されるわけでもない。</p><p style="color:#888;font-size:90%">出典：第6回 情報のデジタル化（標本化→量子化→符号化）　（第6回 情報の表現／なぜ便利／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>コピーや伝送をくり返しても劣化しにくく、種類の違うデータをまとめて同じ方法で処理・統合しやすいから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>デジタル化すると、元のアナログ情報を一切失わずに必ず完全に保存できるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>デジタル化すると、データ量が必ず元のアナログより小さくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>デジタル化すると、計算をしなくても情報の中身が自動的に正しく訂正されるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q18 第6回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2の補数_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>コンピュータが負の数を「2の補数」で表すと便利な理由として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>2の補数では「A − B」を「A ＋（Bの2の補数）」として加算器だけで実行でき、減算専用のハードが要らない（回路が簡単）。表せる範囲はビット数で決まり無限ではなく、整数表現なので丸め誤差とは無関係、桁数が10進と一致するわけでもない。</p><p style="color:#888;font-size:90%">出典：第6回 数値の表現（符号付き整数・2の補数）　（第6回 情報の表現／なぜ便利／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>引き算を足し算と同じ回路で計算でき、減算用の専用回路を別に用意しなくてよいから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2の補数を使うと、表せる数の範囲が無限大になるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2の補数にすると、小数の丸め誤差が一切発生しなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2の補数では、同じビット数でも10進数と同じ桁数の数を表せるようになるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q19 第6回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DBの正規化</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>リレーショナルデータベースで、巨大な1つの表をそのまま使わず、適切に複数の表に分割して設計する『正規化』の主な利点として、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>正規化の主目的は、同じ情報の重複を減らし、更新時の不整合（更新異常）を防ぐこと（B）。Aは逆で、正規化は結合が増えて読み出しはむしろ遅くなりがち（速度のためには、あえて重複を持たせる非正規化を行う）。Cは重複を増やす冗長化で正規化と反対。Dは正規化ではむしろ結合(join)が必要になる、という現実的な誤解。</p><p style="color:#888;font-size:90%">出典：第6回 リレーショナルDBの正規化　（第6回 情報の表現／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>表を分けるほど検索（読み出し）が必ず速くなるので、性能を上げるために行う。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>同じ情報の重複が減るため、更新のときに一部だけ直し忘れて生じる矛盾（不整合）を防ぎやすくなる。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>同じデータを複数の表にコピーして冗長に持たせ、1つの表が壊れても復元できるようにする。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>表どうしが完全に独立し、表を結合（join）する必要が一切なくなる。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q20 第7回 確認 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_サブネットマスクの役割</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>サブネットマスクの役割として，適切なものはどれか。（平成28年度春期ITパスポート試験公開問題 問70）</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>サブネットマスクはIPアドレスをネットワーク部とホスト部に区分する。Aは NAT、Bは ARP、Dは DNS の説明で、混同しないこと。同一LAN判定（AND計算）の前提となる概念。</p><p style="color:#888;font-size:90%">出典：確認問題 / 平成28春ITパス 問70　（第7回 ネットワーク構成／確認／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>インターネットと内部ネットワークを中継するときのグローバルIPアドレスとプライベートIPアドレスを対応付ける。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>IPアドレスからEthernet上のMACアドレスを割り出す。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>IPアドレスに含まれるネットワークアドレスと，そのネットワークに属する個々のコンピュータのホストアドレスを区分する。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>通信相手先のドメイン名とIPアドレスを対応付ける。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q21 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_プロトコル_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>通信のルール（プロトコル）を世界で共通に取り決めておく利点として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>プロトコルは通信の共通の約束事。世界共通に定めることで、作り手や機種が違っても同じ手順で相互接続できる（相互運用性）。遅延ゼロ・自動暗号化・機器1種類化はいずれも誤り。</p><p style="color:#888;font-size:90%">出典：第8回 ネットワークとプロトコル　（第8回 インターネット・クラウド／なぜ便利／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>メーカーやOSの異なる機器どうしでも、同じ手順に従うことで相互に通信できるようになるから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>プロトコルを統一すると、通信に必要な物理的な距離が短くなり遅延がゼロになるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>共通ルールにすれば、通信内容が自動的に暗号化され盗聴されなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>世界中で同じルールを使えば、各国がそれぞれ独自の機器を作らなくてよくなり機器の種類が1種類に統一されるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q22 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_TCPIP階層化_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>通信の仕組み（TCP/IPなど）を複数の階層に分けて設計する利点として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>階層化の利点は役割分担と独立性。下位層（有線/無線）を変えても上位層（アプリ）はそのまま使え、各層を別々に開発・交換できる。速度向上・直接到達・自動圧縮は無関係。</p><p style="color:#888;font-size:90%">出典：第8回 TCP/IPと階層モデル　（第8回 インターネット・クラウド／なぜ便利／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>ある層の中身を変えても他の層に影響しにくく、各層を独立に開発・改良・置き換えできるから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>階層を増やすほど通信速度が必ず速くなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>層に分けると、途中の機器を経由しなくても直接相手に届くようになるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>階層化すると、送るデータ量が階層の数だけ自動的に圧縮されるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q23 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_パケット交換_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>通信データを小さなパケットに分割して送る「パケット交換」の利点として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>パケット交換はデータを小分けにして送るため、同じ回線を多数の通信が共有でき、障害時もパケットごとに別経路へ迂回できる（効率・耐障害性）。暗号化されるわけでも宛先指定が不要になるわけでもなく、回線の独占はむしろ回線交換（電話）の特徴。</p><p style="color:#888;font-size:90%">出典：第8回 ネットワーク（回線交換 vs パケット交換）　（第8回 インターネット・クラウド／なぜ便利／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>1本の回線を多数の通信で共有でき、一部の経路に障害が起きても別の経路に迂回しやすいから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>パケットに分けると、通信の途中で内容が必ず暗号化され盗聴されなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>データを分割すると、宛先を指定しなくても自動的に正しい相手だけに届くから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>パケット交換では、通信中ずっと1組の相手だけが回線を独占できるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q24 第8回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_IPv6</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>世界中の機器がインターネットにつながり、従来の IPv4 アドレス（32ビット）が不足してきた。これに対応するために導入された IPv6 の説明として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>IPv4は32ビット（約43億個）で枯渇が問題化した。IPv6はアドレスを128ビットに拡張し、事実上ほぼ無限の機器に固有アドレスを割り当てられる。ドメイン名で代替するものでも、暗号規格でも、速度を上げるものでもない。</p><p style="color:#888;font-size:90%">出典：第8回 IPアドレス（IPv4の枯渇とIPv6）　（第8回 インターネット・クラウド／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>アドレスを128ビットに拡張し、事実上ほぼ無限といえる数の機器に固有のアドレスを割り当てられるようにしたもの</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>IPアドレスそのものを廃止し、ドメイン名だけで通信できるようにしたもの</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>通信内容を暗号化して盗聴を防ぐことを目的に作られた、新しい暗号規格</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>IPv4の32ビットはそのままで、通信速度だけを6倍に高めたもの</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q25 第9回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DNS_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Webサイトなどへのアクセスにドメイン名とDNSを使うと便利な理由として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>DNSは覚えやすいドメイン名をIPアドレスに変換する。人は名前で指定でき、サーバ移転でIPが変わっても対応を更新すれば同じ名前を使い続けられる。暗号化・IP廃止・経由ルータ削減とは無関係。</p><p style="color:#888;font-size:90%">出典：第9回 DNS（名前解決）　（第9回 ネットワークサービス／なぜ便利／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>人は覚えやすい名前で指定でき、対応するIPアドレスが変わっても同じ名前のまま使い続けられるから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>ドメイン名を使うと、通信が暗号化されて盗聴されなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>DNSを使うと、IPアドレスそのものが不要になり世界中のIPアドレスを廃止できるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>ドメイン名にすると、通信に経由するルータの数がゼロになるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q26 第10回 確認 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_著作権の発生時点</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>著作者の権利である著作権が発生するのはどの時点か。（平成27年度秋期ITパスポート試験公開問題 問1）</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>著作権は登録などの手続を要さず創作と同時に発生する（無方式主義）。特許権など産業財産権との本質的な違いであり、なぜ無断利用が問題になるかを理解する土台。</p><p style="color:#888;font-size:90%">出典：確認問題7 / 平成27秋ITパス 問1　（第10回 情報倫理・セキュリティ／確認／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>著作物を文化庁に登録したとき</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>著作物を創作したとき</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>著作物を他人に譲渡したとき</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>著作物を複製したとき</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q27 第10回 確認 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_引用の要件_誤り</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>次に示す著作権上の引用についての説明のうち，間違っているものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>適法な引用は原文を改変せず明瞭に区別し出所を明示するのが要件。「自分の言葉に言い換える」のは引用ではない（Bが間違い）。引用部分は「」で括るなどし、原文をそのまま使う。</p><p style="color:#888;font-size:90%">出典：確認問題7 / 著作権・引用　（第10回 情報倫理・セキュリティ／確認／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>公表済みの著作物であること</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>原文をそのまま使うのではなく，自分の言葉で表現すること</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>自分の意見が「主」であり，引用部分が「従」となっていること</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>「報道」や「批評」「研究」を目的としたものであること</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q28 第10回 ひねり 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ネット画像の著作権</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>ブログ記事を書くために、ネット上で見つけた他人の写真とイラストを「ネットにあるものは自由に使える」と考えて無断で掲載しようとしている人がいる。情報社会で守るべきこと・規範に照らして、最も適切な指摘はどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>「ネットの情報は全て自由に使える/著作権を気にしなくてよい」は誤り。ネット上の画像にも著作権があり、利用条件・ライセンスを確認し必要なら許諾を得る。A・C・Dはいずれも誤解で不適切。</p><p style="color:#888;font-size:90%">出典：小テスト1 Q9（情報社会の規範・著作権）をひねり　（第10回 情報倫理・セキュリティ／ひねり／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>インターネット上に公開されている情報や画像は、著作権を気にせず自由に利用してよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>ネット上の情報・画像にも著作権などの権利があり、自由に使えるとは限らないため、利用条件やライセンスを確認し必要に応じて許諾を得るべきである</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>出典を一切示さなければ、誰の作品か分からないので権利侵害にはならない</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>商用でなく個人ブログであれば、いかなる画像も無断で使ってよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q29 第10回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ダークパターン</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>あるWebサイトを開いたら「すべて同意」のボタンが大きく目立つ色で表示され、「拒否」や「設定」は小さく分かりにくい場所にあった。このような表示は何と呼ばれ、利用者はどう振る舞うのが適切か。最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>閲覧履歴はCookieで広告会社に記憶され追跡広告になりうる。「同意」を目立たせ「拒否」を探しにくくする設計＝ダークパターンは利用者を一方向へ誘導する。仕組みを知って一拍置き、自分のデータの渡し方を自分で選ぶ。A・C・Dは用語の誤用。</p><p style="color:#888;font-size:90%">出典：第10回 Cookieと外部送信規律／ダークパターン　（第10回 情報倫理・セキュリティ／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>ユニバーサルデザインと呼ばれ、誰にとっても等しく親切なので迷わず同意してよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>ダークパターンと呼ばれ、誘導に気づいて一拍置き、自分が許可する範囲を確認してから選ぶべきである</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>フェイルオーバーと呼ばれ、障害時の切替表示なのでそのまま閉じてよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>オプトインと呼ばれ、何も押さなくても自動的に拒否が選ばれる仕組みである</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q30 第10回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_情プラ法_匿名でも特定</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>匿名アカウントでネット上の誹謗中傷をしたり犯行予告を書き込んだりしても「匿名だから自分だとはバレない」と考える人がいる。この考えが誤りである理由として、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>2025年4月施行の情プラ法（旧プロバイダ責任制限法を強化）は大手SNSに削除の迅速化・透明化を義務付け、発信者情報開示命令で投稿者を特定できる。犯行予告は業務妨害罪等で逮捕されうる。匿名でも法的責任から逃れられない。A・C・Dは事実無根。</p><p style="color:#888;font-size:90%">出典：第10回 情プラ法と発信者情報開示命令　（第10回 情報倫理・セキュリティ／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>SNSの利用規約に同意した時点で、全員の本名が公開されるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>情プラ法に基づく発信者情報開示命令などにより、投稿者を特定する仕組みが整っているから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>投稿に使われた端末のIPアドレスさえ分かれば、誰でも法的手続なしに即座に氏名と住所を割り出せるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>無料のSNSでは、登録時に入力した本名が常にプロフィールへ自動表示される設定になっているから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q31 第11回 確認 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_WPA2の暗号化範囲</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>WPA2による暗号化を設定したアクセスポイントがある。このアクセスポイントを経由して，PCをインターネット上のWebサーバに接続するとき，WPA2による暗号化の効果が及ぶ範囲として，適切なものはどれか。（平成28年度秋期ITパスポート試験公開問題 問79）</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>WPA2は無線区間（PC〜アクセスポイント間）だけを暗号化する。その先の有線区間まで保護されると誤解せず、暗号化の適用範囲を正しく切り分ける。（原典：平成28年秋ITパス 問79）</p><p style="color:#888;font-size:90%">出典：確認問題 / 平成28秋ITパス 問79　（第11回 情報倫理・セキュリティ(暗号等)／確認／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>PCからWebサーバまで</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>PCからファイアウォールまで</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>PCからアクセスポイントまで</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>アクセスポイントからWebサーバまで</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q32 第11回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2要素認証_なぜ便利</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>パスワードに加えてスマホへのコード送信なども使う「2要素認証」の利点として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>2要素認証は知識（パスワード）・所持（スマホ等）・生体など異なる種類の証拠を2つ組み合わせる。一方が漏れても、もう一方がなければログインできず被害を防ぎやすい（多層防御）。パスワード不要・自動暗号化・速度2倍はいずれも誤り。</p><p style="color:#888;font-size:90%">出典：第11回 認証（認証の3要素・多要素認証）　（第11回 情報倫理・セキュリティ(暗号等)／なぜ便利／易）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>パスワードが漏れても、もう一方の要素がなければ侵入されにくく、片方が破られても守りが残るから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2要素認証にすると、パスワードを覚える必要が完全になくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2つの要素を使うと、通信が自動的に暗号化されて盗聴されなくなるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>2要素認証にすると、サーバへのアクセス速度が2倍になるから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q33 第11回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_公開鍵暗号_鍵の向き</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>XさんがYさんに、第三者には読まれず「Yさんだけが読める」メールを公開鍵暗号で送りたい。X・Yはそれぞれ自分の公開鍵と秘密鍵を1組ずつ持ち、公開鍵は誰でも入手できる状態で公開されている。このとき、暗号化と復号に使う鍵の組合せとして正しく、かつ通信路を盗聴している第三者がこのメールを読めない理由として正しいものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>秘匿通信では受信者Yの鍵ペアを使う。Xは公開されているYの公開鍵で暗号化し、その暗号文は対になるYの秘密鍵でしか復号できない（Yしか持たない）。Bは『自分の秘密鍵で暗号化』＝実は署名で、対の公開鍵で誰でも復号でき秘匿にならない。Cは暗号化/復号の語順は教科書どおりだが鍵の持ち主を取り違え、復号できるのはXだけでYが読めない。Dは共通鍵暗号で、鍵配送問題を抱える別方式。</p><p style="color:#888;font-size:90%">出典：第11回 公開鍵暗号（鍵の非対称性）　（第11回 情報倫理・セキュリティ(暗号等)／理解必須／難）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Xは『Yの公開鍵』で暗号化して送り、Yは『Yの秘密鍵』で復号する。盗聴者はYの公開鍵を入手できるが、それで暗号化された文を復号できるのは対になるYの秘密鍵だけで、その鍵はYしか持たないため読めない。</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Xは『Xの秘密鍵』で暗号化して送り、Yは『Xの公開鍵』で復号する。盗聴者はXの秘密鍵を持っていないため復号できず、本文を読めない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Xは『Xの公開鍵』で暗号化して送り、Yは『Xの秘密鍵』で復号する。公開鍵で暗号化し対になる秘密鍵で戻すという公開鍵暗号の基本どおりで、秘密鍵をXしか持たないため盗聴者は読めない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>XとYは事前に共有した1つの共通鍵で暗号化・復号を行う。この共通鍵は2人だけが知っており公開されていないため、盗聴者は鍵を知らず読めない。</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q34 第11回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_踏み台_更新の社会的責任</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>「自分のPCには大事なデータもないし、狙われても困るのは自分だけだ」と考えてOSやソフトの更新を放置している人がいる。更新の放置が「自分だけの問題では済まず、他者や社会にも影響しうる」理由として、最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>乗っ取られたPCやIoT機器が中継地点（踏み台）としてDDoSやスパム配信に悪用される（千葉大でも2024年に公開サーバが踏み台にされ約6万件の迷惑メール配信に悪用）。被害者がそのまま加害者になりうるため、更新は『自分だけの問題』では済まない社会的責任である（正解B）。Aは『他人に及ばない』という誤った思い込み、Cは『新しい版ほど危険＝更新しない方が安全』という典型的な誤解（実際は更新で既知の脆弱性が塞がれる）、Dはデータの有無と感染を混同した誤り。</p><p style="color:#888;font-size:90%">出典：第11回 不正アクセスの6類型と『踏み台』　（第11回 情報倫理・セキュリティ(暗号等)／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>更新を放置して被害を受けても、その影響は自分のPCの中だけにとどまり、他人に及ぶことは決してないから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>乗っ取られたPCが『踏み台』にされ、攻撃の中継地点として他者への加害に加担させられうるから</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>ソフトは新しい版ほど未知の脆弱性を多く抱えるので、更新しないでおくほうがむしろ安全だから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>保存しているデータが無ければ、マルウェアはそもそもPCに感染することができないから</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q35 第11回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_学び方を学ぶ</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>生成AIやクラウドなど個々の道具が次々と変わる時代に、情報リテラシーとして身につけるべき姿勢として最も適切なものはどれか。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>個々の道具は短命なので、操作の暗記より『学び方』そのものを身につけることが重要。小さく試す・良質な教材・人に聞くといった方法で「なぜ」「どうやって」を自分の手で確かめ続ける。Aは手順暗記、Cは他者任せ、Dは学習方略の効果差の無視。</p><p style="color:#888;font-size:90%">出典：第11回 まとめ（「学び方」を学ぶ）　（第11回 情報倫理・セキュリティ(暗号等)／理解必須／標準）</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>特定のアプリの操作手順を完璧に暗記すれば、技術が変わっても困らない</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>道具そのものよりも『学び方』を身につけ、小さく試す・良質な教材で学ぶ・人に聞くといった方法で『なぜ』『どうやって』を自分の手で確かめ続ける</text>
+      <feedback format="html">
+        <text>正解。</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>新しい技術は専門家に任せ、自分は今使える道具だけを使い続ければよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>学び方は人それぞれなので、効果の差は気にせず最も楽な方法を選べばよい</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

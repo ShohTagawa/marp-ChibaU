@@ -39,8 +39,10 @@ marp-academic-slides/
 1. **要件確認**：発表タイトル・章構成・所属・ロゴパス・出力先パスを把握。情報が足りなければ `AskUserQuestion` を1回だけ使ってまとめて確認する。
 2. **テーマCSSを配置**：出力先ディレクトリに `assets/academic.css` をコピー（もしくは相対パスで参照可能なら参照のみ）。すでにあればスキップ。
 3. **パターン選択と密度確認**：references/patterns.md と density-guide.md を読み、各スライドに適切な型と最小コンテンツを決める。
-4. **Markdown を Write**：単一の `.md` に全スライドを書き出す。
-5. **使い方を提示**：プレビュー/PDF 出力コマンドを最後に1-2行で示す。
+4. **再利用を先に探す**：新規作図・新規執筆の前に、似た図・概念スライドが過去の自分のデックや指定 pptx に無いか確認する。あれば描き直さず取り込む（図は `marp-reuse-figures` で `src/figNN-...` にPNGのままコピー、定番スライドは構成ごとコピーして字句を保つ）。取り込んだ媒体は必ず `src/` にコピーしてリンク切れを防ぐ。
+5. **Markdown を Write**：単一の `.md` に全スライドを書き出す。
+6. **描画して目視確認（必須）**：`--html --no-stdin` 付きで PNG を出力し、該当スライドを Read で開いて「反映・見切れ・対象取り違え」を確認してから完了報告する（CLAUDE.md「必須確認ループ」）。markdownのdiffだけで「できました」と言わない。
+7. **使い方を提示**：プレビュー/PDF 出力コマンドを最後に1-2行で示す。
 
 ## Output rules
 
@@ -77,9 +79,9 @@ slides/
    - 番号はスライド出現順、a/bで枝番（例：`fig01a-...`, `fig01b-...`）
 4. **共通素材**：複数デックで再利用するロゴ・アイコンは `slides/assets/` に置く（例：`chiba-logo.png`）。デック固有素材はここに置かない
 5. **ユーザーから素材を受け取ったとき**：`画面収録 YYYY-MM-DD HH.MM.SS.mov` のような名前で渡されることが多い。即、上記命名規則でリネームして `src/` に移すことを提案する
-6. **出力（PDF/HTML/PNG）**：`out/` フォルダに書き出す。Marp CLIの `-o` フラグで指定：
+6. **出力（PDF/HTML/PNG）**：`out/` フォルダに書き出す。Marp CLIの `-o` フラグで指定（`--html` と `--no-stdin` は必須）：
    ```bash
-   npx @marp-team/marp-cli@latest slides/<deck>/<deck>.md --pdf --allow-local-files -o slides/<deck>/out/<deck>.pdf
+   npx @marp-team/marp-cli@latest slides/<deck>/<deck>.md --no-stdin --html --pdf --allow-local-files -o slides/<deck>/out/<deck>.pdf
    ```
 7. **新規デック作成手順**：
    1. `mkdir -p slides/<deck-name>/{src,out}` でフォルダを先に作る
@@ -197,7 +199,9 @@ style: |
 ファイルを書いた後、ユーザーに以下を1-2行で伝える：
 
 - 保存先パス
-- プレビュー：`npx @marp-team/marp-cli@latest --preview <file>.md` または VS Code Marp 拡張
-- PDF 出力：`npx @marp-team/marp-cli@latest <file>.md --pdf --allow-local-files`
+- プレビュー：`npx @marp-team/marp-cli@latest "<file>.md" --no-stdin --html --preview` または VS Code Marp 拡張
+- PDF 出力：`npx @marp-team/marp-cli@latest "<file>.md" --no-stdin --html --pdf --allow-local-files`
+
+> **`--html` と `--no-stdin` は全 marp コマンドで必須**。`--html` が無いとインラインSVG/生HTMLが文字列化して図が崩れ、`--no-stdin` が無いと非対話実行で標準入力待ちでハングする。
 
 長い説明や所感は不要。必要な情報だけ。

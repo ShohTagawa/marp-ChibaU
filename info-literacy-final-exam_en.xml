@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- Information Literacy Final Exam (English draft translation) ／ 35問・第4回→第11回順・選択肢固定(ABCD)・英訳は仮訳 -->
+  <question type="category">
+    <category>
+      <text>$module$/top/期末試験_English のデフォルト</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text>Information Literacy Final Exam (English draft translation)</text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+<!-- Q1 第4回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DIKW_情報の定義 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In the DIKW model, which of the following is the most appropriate description of "Information"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>DIKW consists of four stages: data, information, knowledge, and wisdom. A describes "data," C describes "knowledge," and D describes "wisdom," so they are incorrect. One aspect of information literacy is the skill of converting this data into information and knowledge.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Objective facts and the like, in an unorganized state</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Data that has been organized and analyzed according to some criterion so that it can be interpreted</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A state in which information has been compiled, systematized, and structured</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A state in which knowledge has been correctly understood and turned into values and morals</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q2 第4回 理解必須 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_コミュニケーション_AからB (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When a person A conveys information to another person B, which of the following is the most appropriate description of how it is "transmitted"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Communication is a process in which "the sender encodes, it passes through a medium, and the receiver reconstructs," so "having sent" does not necessarily mean "having conveyed." That is precisely why one must make an effort to communicate from the other party's perspective.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>As long as information passes through a medium (radio waves, paper, sound, etc.), it is conveyed to B with 100% identical meaning, exactly as A intended.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>The receiver B merely takes in the signs as they are and does not perform any interpretation or reconstruction of meaning.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>A converts what they want to convey into signs such as words or diagrams (encoding) and sends them, and B interprets (reconstructs) them through their own knowledge and experience. As a result, a gap can arise between the sender's intention and the receiver's understanding.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Diagrams and facial expressions are merely supplementary, so as long as what one wants to convey is put into words and sent, no misunderstanding will arise.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q3 第4回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_生成AIとの向き合い方 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When the stance toward generative AI is expressed as "AI is a tool; judgment is your own," which of the following behaviors best aligns with this way of thinking?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Generative AI is useful as a tool for drafting and brainstorming, but posing the questions, making judgments in light of the context, and taking responsibility for the results are the human's role, and the output must always be verified. A is wholesale delegation, C is an extreme of total rejection, and D is the error of uncritically prioritizing the AI.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Leaving everything to generative AI, from setting the question of a report to its conclusion, and submitting the output as is</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Using generative AI as a tool for drafting and brainstorming, while considering that posing the questions, judging things in context, and taking responsibility for the results are your own duty, and always verifying the output</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because generative AI can contain errors, avoiding using it at all for research or study</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because the output of generative AI is superior to that of humans, always adopting the AI's answer whenever it conflicts with your own thinking</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q4 第4回 ひねり 正解B・C(複数) -->
+  <question type="multichoice">
+    <name>
+      <text>Q_生成AI指針_2つ選べ (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Chiba University student is thinking, "Since drafting a report with generative AI was OK in Professor A's class, it must of course be OK in Professor B's class and for my graduation thesis too." Based on the "Guidelines on the Use of Generative AI in Education and Learning at Chiba University," select the two most appropriate responses.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Under the guidelines, whether generative AI may be used for assignments and the like is in principle judged by the instructor in charge of each class (B). For research and the graduation thesis, an understanding of research ethics, keeping track of where AI was used, and responsibility for the results are essential, and there are also problems of incorrect references and code (C). A (decided uniformly) and D (the student decides freely) are incorrect.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>false</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="-50" format="plain_text">
+      <text>Because permission or prohibition is decided uniformly across the entire university, one may assume that the same treatment applies to any class or to the graduation thesis</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50" format="plain_text">
+      <text>Because whether generative AI may be used is in principle decided by the instructor in charge of each class, one should individually confirm the instructions and conditions of Professor B's class</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="50" format="plain_text">
+      <text>Whether it can be used in research requires an understanding of research ethics; it is essential to keep track of where AI was used and to be able to take responsibility for the results, and there are also many problems such as producing incorrect reference lists or code</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="-50" format="plain_text">
+      <text>Whether it may be used is for the student themselves to decide freely, and there is no need to follow the instructor's instructions</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q5 第4回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_相関は因果ではない (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What does the saying often heard in data analysis, "correlation is not causation," mean? Choose the most appropriate option.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Correlation does not imply causation. A third factor (a confounder) can affect both and produce a spurious correlation (e.g., ice cream sales and drowning accidents are confounded by "temperature"). Even if the correlation coefficient is high, the direction of cause and effect is not determined, and there are cases where no correlation appears even when causation exists.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Even if two things are correlated (a relationship in which when one increases or decreases the other does too), there can be a "spurious correlation" due to a third factor (a confounder), and one is not necessarily the cause of the other</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>If there is a correlation, one is necessarily the cause of the other, so changing either one will necessarily change the result as well</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>The higher the correlation coefficient, the more certainly even the direction of which is cause and which is effect is determined</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Between two things that have a causal relationship, a correlation never appears</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q6 第5回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_PC構成図_穴埋め (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The following figure represents the main components of a PC. [① ____: serves as the overall "brain," performing computation and control / ② Main memory: a working desk that the CPU reads from and writes to directly / ③ ____: specialized for massively parallel processing such as image rendering and AI training] Which combination is most appropriate for ① and ③?</p><p><img src="@@PLUGINFILE@@/fig_pc.svg" alt="figure" /></p><p><em>* Fill in the blank marked &quot;?&quot; in the figure above.</em></p>]]></text>
+      <file name="fig_pc.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMTkwIiB3aWR0aD0iNjAwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIzMjAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj5NYWluIGNvbXBvbmVudHMgb2YgYSBQQzwvdGV4dD4KPHJlY3QgeD0iMjAiIHk9IjQyIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjEwIiBmaWxsPSIjRkJFOUVDIiBzdHJva2U9IiNBNjE5MkUiIHN0cm9rZS13aWR0aD0iMi41Ii8+Cjx0ZXh0IHg9IjExMCIgeT0iODQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNBNjE5MkUiPuKRoOOAgO+8nzwvdGV4dD4KPHRleHQgeD0iMTEwIiB5PSIxMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiPkJyYWluIG9mIHRoZSB3aG9sZTwvdGV4dD48dGV4dCB4PSIxMTAiIHk9IjEzNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyI+Y29tcHV0YXRpb24gJiBjb250cm9sPC90ZXh0Pgo8cmVjdCB4PSIyMzAiIHk9IjQyIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjEwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzRTc4QjIiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSIzMjAiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIj7ikaEgTWFpbiBtZW1vcnk8L3RleHQ+Cjx0ZXh0IHg9IjMyMCIgeT0iMTE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIj50aGUgd29yayBkZXNrIHRoZTwvdGV4dD48dGV4dCB4PSIzMjAiIHk9IjEzNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyI+Q1BVIHJlYWRzL3dyaXRlczwvdGV4dD4KPHJlY3QgeD0iNDQwIiB5PSI0MiIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxMjAiIHJ4PSIxMCIgZmlsbD0iI0ZCRTlFQyIgc3Ryb2tlPSIjQTYxOTJFIiBzdHJva2Utd2lkdGg9IjIuNSIvPgo8dGV4dCB4PSI1MzAiIHk9Ijg0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjQTYxOTJFIj7ikaLjgIDvvJ88L3RleHQ+Cjx0ZXh0IHg9IjUzMCIgeT0iMTE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIj5ncmFwaGljcyAmIEFJIGxlYXJuaW5nPC90ZXh0Pjx0ZXh0IHg9IjUzMCIgeT0iMTM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIj5tYXNzaXZlbHkgcGFyYWxsZWw8L3RleHQ+Cjwvc3ZnPg==</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The CPU is the "brain" (computation and control), memory is the "working desk," and the GPU handles massively parallel processing. This figure-completion item asks whether you can identify the role of each component.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>① CPU and ③ GPU</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>① GPU and ③ CPU</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>① SSD and ③ CPU</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>① Memory and ③ Motherboard</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q7 第5回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_記憶装置の階層_穴埋め (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The following figure arranges a computer's memory hierarchy so that the higher levels are faster with smaller capacity and the lower levels are slower with larger capacity. [① Registers (inside the CPU) → ② ____ → ③ Main memory → ④ Secondary storage (HDD/SSD)] Which is most appropriate for ② — a form of storage that is faster than main memory and reduces the CPU's wait time by copying frequently used data close to the CPU?</p><p><img src="@@PLUGINFILE@@/fig_mem.svg" alt="figure" /></p><p><em>* Fill in the blank marked &quot;?&quot; in the figure above.</em></p>]]></text>
+      <file name="fig_mem.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NjAgMjgwIiB3aWR0aD0iNTIwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIyODAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj5NZW1vcnkgaGllcmFyY2h5PC90ZXh0Pgo8cmVjdCB4PSIxOTAiIHk9IjQwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0iIzNFNzhCMiIvPjx0ZXh0IHg9IjI4MCIgeT0iNjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiNmZmYiIGZvbnQtd2VpZ2h0PSI3MDAiPuKRoCBSZWdpc3RlciAoaW5zaWRlIENQVSk8L3RleHQ+CjxyZWN0IHg9IjE1MCIgeT0iOTIiIHdpZHRoPSIyNjAiIGhlaWdodD0iNDYiIHJ4PSI2IiBmaWxsPSIjRkJFOUVDIiBzdHJva2U9IiNBNjE5MkUiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjgwIiB5PSIxMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNBNjE5MkUiPuKRoeOAgO+8nzwvdGV4dD4KPHJlY3QgeD0iMTEwIiB5PSIxNTAiIHdpZHRoPSIzNDAiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSIjN2ZhZWRiIi8+PHRleHQgeD0iMjgwIiB5PSIxNzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiNmZmYiIGZvbnQtd2VpZ2h0PSI3MDAiPuKRoiBNYWluIG1lbW9yeTwvdGV4dD4KPHJlY3QgeD0iNzAiIHk9IjIwMiIgd2lkdGg9IjQyMCIgaGVpZ2h0PSI0MCIgcng9IjYiIGZpbGw9IiNjZmUwZjAiLz48dGV4dCB4PSIyODAiIHk9IjIyNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCI+4pGjIEF1eGlsaWFyeSBzdG9yYWdlIChIREQvU1NEKTwvdGV4dD4KPHRleHQgeD0iNTI1IiB5PSI1OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzU1NSI+RmFzdCAvIHNtYWxsPC90ZXh0Pgo8bGluZSB4MT0iNTI1IiB5MT0iNjYiIHgyPSI1MjUiIHkyPSIyMjAiIHN0cm9rZT0iI2JiYiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2EpIi8+CjxkZWZzPjxtYXJrZXIgaWQ9ImEiIG1hcmtlcldpZHRoPSI4IiBtYXJrZXJIZWlnaHQ9IjgiIHJlZlg9IjQiIHJlZlk9IjYiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMNCw2IEw4LDAgWiIgZmlsbD0iI2JiYiIvPjwvbWFya2VyPjwvZGVmcz4KPHRleHQgeD0iNTI1IiB5PSIyMzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1NTUiPlNsb3cgLyBsYXJnZTwvdGV4dD4KPC9zdmc+</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The memory hierarchy compensates for the trade-off between "fast but small" (registers, cache) and "slow but large" (main memory, secondary storage) by layering them. The answer for ② is cache memory.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Cache memory</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Virtual memory</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Video memory</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Cloud storage</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q8 第5回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_記憶階層_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate advantage of organizing storage devices into a hierarchy such as registers, cache, main memory, and secondary storage?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>By combining fast and expensive storage (registers and cache) with slow but cheap, large-capacity storage (main memory and secondary storage) into a hierarchy, and placing frequently used data in the upper levels, you can achieve both speed and capacity. The hierarchy does not equalize price and speed, make storage non-volatile, or automatically increase data.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because it combines fast but small-capacity storage with slow but large-capacity storage, achieving a good balance of both speed and capacity.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because the more layers you add, the more all storage devices come to have the same speed and the same price.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because dividing storage into layers prevents all data—including the data in main memory—from being lost even when the power is turned off.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because the layering causes data to be automatically backed up without the CPU having to perform any computation.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q9 第5回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ハルシネーション (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is a 'hallucination' in generative AI? Which of the following is the most appropriate description?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A hallucination is a phenomenon in which generative AI produces incorrect information, caused by errors, biases, or staleness (the cutoff) of the training data. Its output must be checked for accuracy and sources against reliable references. Option A describes a deepfake, Option C differs from the explanation of the cutoff and is incorrect, and Option D concerns prompting tips and is a separate issue.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>A fake video or image created intentionally with malicious intent (a deepfake).</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>A phenomenon in which generative AI produces plausible-sounding but incorrect information.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A feature that retrieves information dated after the cutoff (the most recent point) of the training data.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A technique of including the four elements of role, task, background, and format in a prompt.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q10 第5回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_OSとアプリ (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following best describes the relationship between an OS (operating system) and applications?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The division of roles between the OS (the foundation that manages resources) and applications (tools that serve a purpose). Applications cannot run without an OS, and the same application will not run unchanged if the OS type differs (OS dependence). Think of it with examples such as Windows/macOS and Word/Chrome.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Applications manage hardware and software resources, and the OS is a tool that serves a specific purpose on top of them.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>The OS, as the "foundation," manages and controls resources (hardware and software), while applications serve specific purposes. Applications cannot run without an OS.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>The OS and applications are the same thing, merely called by different names.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Applications run by using the OS's functions, but even if you replace the OS with a different type, the same application will run unchanged.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q11 第5回 ひねり 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_大規模言語モデルの仕組み (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following best describes how a large language model (generative AI) such as ChatGPT produces text?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Because the mechanism is statistical next-token prediction, plausible-sounding errors (hallucinations) can occur. Understanding this mechanism is a prerequisite for the appropriate use of, and precautions regarding, generative AI.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>It searches through a huge collection of question-and-answer pairs prepared in advance by humans that say "answer this question this way," and returns the matching answer.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Based on statistical probabilities learned from large amounts of text, it generates text by repeatedly predicting the "likely next word (token)" that follows the context.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because it is constantly connected to the internet and searches for the correct answer in real time, it never gets facts wrong.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It understands the meaning of text the same way humans do, and answers only after judging for itself whether something is factual.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q12 第5回 理解必須 正解D -->
+  <question type="multichoice">
+    <name>
+      <text>Q_CPUとGPU (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following best describes the difference in characteristics between a CPU and a GPU?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The GPU's "massively parallel" nature underpins the training and inference of generative AI. The CPU is a general-purpose brain and the GPU specializes in parallel processing, so they play different roles (the GPU is neither a superset nor dedicated solely to rendering).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>A CPU excels at massively parallel processing that performs huge numbers of simple calculations at once, while a GPU excels at performing complex processing one step at a time in sequence.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A GPU is a superset of a CPU, and can perform everything a CPU does, only faster.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>A GPU is a device dedicated to rendering for screen display, and cannot be used for computations such as training AI.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>A CPU is a general-purpose brain that handles complex processing and controls each device, while a GPU specializes in massively parallel processing for image rendering and simple calculations, making it well suited to 3D graphics and training AI.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q13 第6回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_アナログのデジタル化_穴埋め (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The following diagram shows the flow of digitizing analog information. [Analog signal → (1) sampling (taking values at fixed intervals) → (2) ____ (approximating the extracted values to predetermined discrete levels) → (3) encoding (converting into a sequence of 0s and 1s) → digital data]. Which of the following is the most appropriate term to fill in (2)?</p><p><img src="@@PLUGINFILE@@/fig_ad.svg" alt="figure" /></p><p><em>* Fill in the blank marked &quot;?&quot; in the figure above.</em></p>]]></text>
+      <file name="fig_ad.svg" path="/" encoding="base64">PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NzAgMTMwIiB3aWR0aD0iNzAwIj48c3R5bGU+dGV4dHtmb250LWZhbWlseTonWXUgR290aGljJywnSGlyYWdpbm8gU2FucycsJ05vdG8gU2FucyBKUCcsc2Fucy1zZXJpZn08L3N0eWxlPgo8dGV4dCB4PSIzODUiIHk9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj5EaWdpdGl6aW5nIGFuYWxvZyBpbmZvcm1hdGlvbjwvdGV4dD4KPHJlY3QgeD0iMTAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2VlZjdlZiIgc3Ryb2tlPSIjM0M4QTU3IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI2OSIgeT0iODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkFuYWxvZyBzaWduYWw8L3RleHQ+PHRleHQgeD0iMTQwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSIxNjAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjM0U3OEIyIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyMTkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7ikaAgU2FtcGxpbmc8L3RleHQ+PHRleHQgeD0iMjkwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSIzMTAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI0ZCRTlFQyIgc3Ryb2tlPSIjQTYxOTJFIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIzNjkiIHk9Ijg0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjQTYxOTJFIj7ikaHjgIDvvJ88L3RleHQ+PHRleHQgeD0iNDQwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSI0NjAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjM0U3OEIyIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI1MTkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj7ikaIgRW5jb2Rpbmc8L3RleHQ+PHRleHQgeD0iNTkwIiB5PSI4MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0E2MTkyRSIgZm9udC13ZWlnaHQ9IjgwMCI+4oaSPC90ZXh0Pgo8cmVjdCB4PSI2MTAiIHk9IjQ2IiB3aWR0aD0iMTE4IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2VlZjdlZiIgc3Ryb2tlPSIjM0M4QTU3IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI2NjkiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj5EaWdpdGFsIGRhdGE8L3RleHQ+Cjwvc3ZnPg==</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The three stages of analog-to-digital conversion (sampling, quantization, encoding). Step (2) is "quantization," which approximates the extracted values to discrete levels.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Quantization</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Encryption</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Compression</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Decryption</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q14 第6回 確認 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2の補数_範囲 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When negative integers are represented using two's complement, which of the following expresses, in decimal, the range of values that can be represented with an 8-digit binary number? (Public exam question, IT Passport Examination, Spring 2012, Question 52)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>In two's complement representation, the most significant bit also serves as the sign, and there is only one representation of zero, so there is one more value on the negative side than on the positive side (asymmetric). With 8 digits, the range is -2^7 to 2^7-1, i.e., -128 to 127. This is the standard representation in today's computers.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>-128 to 127</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-255 to 256</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-256 to 255</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>-127 to 128</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q15 第6回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_情報量_最小ビット数 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>An n-bit string can distinguish 2ⁿ different states (2¹=2, 2²=4, 2³=8, 2⁴=16, 2⁵=32, 2⁶=64, 2⁷=128, 2⁸=256). If an experimental device has a total of 40 states that must be told apart, what is the minimum number of bits n needed to uniquely encode all 40 states?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Find the smallest n satisfying 2ⁿ ≥ 40. 2⁵=32 is too few, while 2⁶=64 meets the condition, so n=6 (with 24 patterns left over). Option A is insufficient, C satisfies the condition but is not the minimum, and D confuses the number of states with the number of bits.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>5 bits</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>6 bits</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>8 bits</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>40 bits</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q16 第6回 理解必須 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_画像のデータ量 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When digitizing an image, the data size changes depending on how color (gradation) is represented, even for the same number of pixels. The number of bits per pixel is the number of bits needed to represent the gradation (n bits for 2ⁿ levels). What is the data size, in bytes, of an 8×8 = 64-pixel image represented as a 256-level grayscale image (1 pixel = 8 bits)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Since 256 levels = 2⁸, each pixel is 8 bits = 1 byte. 64 pixels × 1 byte = 64 bytes. Option A corresponds to simple binary (1 bit per pixel), B to 4 colors (2 bits), and D to RGB full color (24 bits).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>8 bytes</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>16 bytes</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>64 bytes</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>192 bytes</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q17 第6回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_デジタル化_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate reason why it is convenient to digitize (represent as 0s and 1s) analog sound and images?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Digitization turns information into a sequence of 0s and 1s, whose values are unlikely to be corrupted during copying and transmission (resistance to degradation), and lets sound, images, and text all be processed and integrated uniformly as the same 0s and 1s. Because sampling and quantization discard some information, it is not 'complete preservation,' nor is the data necessarily smaller or automatically corrected.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because the data resists degradation even after repeated copying and transmission, and different kinds of data can be processed and integrated together using the same method.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because digitization always preserves the original analog information completely, without losing any of it.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because digitization always makes the data size smaller than the original analog data.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because once digitized, the content of the information is automatically corrected without any computation.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q18 第6回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2の補数_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate reason why it is convenient for a computer to represent negative numbers using two's complement?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>With two's complement, 'A − B' can be executed using only an adder as 'A + (two's complement of B),' so no dedicated subtraction hardware is required (simpler circuitry). The representable range is determined by the number of bits and is not infinite; since this is an integer representation it has nothing to do with rounding errors, and the number of digits does not match decimal.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because subtraction can be computed with the same circuit as addition, so no separate dedicated subtraction circuit is needed.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using two's complement makes the range of representable numbers infinite.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using two's complement eliminates rounding errors in fractions entirely.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because with two's complement, the same number of bits can represent numbers with as many digits as in decimal.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q19 第6回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DBの正規化 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In a relational database, instead of using one huge table as-is, “normalization”—a design that divides it appropriately into multiple tables—has which of the following as its main advantage? Choose the most appropriate one.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The main purpose of normalization is to reduce duplication of the same information and to prevent inconsistencies (update anomalies) on updating (B). A is the opposite: normalization tends to increase joins and slow reads (for speed one deliberately denormalizes by keeping duplication). C is redundancy that increases duplication, the opposite of normalization. D is wrong because normalization actually requires joins—all realistic misconceptions.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Because the more the tables are divided, the faster searches (reads) always become, so it is done to improve performance.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Because reducing duplication of the same information makes it easier to prevent inconsistencies that arise when, upon updating, only some copies are forgotten to be corrected.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>To hold the same data redundantly by copying it across multiple tables, so that the data can be restored even if one table is damaged.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because the tables become completely independent and there is no longer any need to join tables at all.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q20 第7回 確認 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_サブネットマスクの役割 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following correctly describes the role of a subnet mask? (Spring 2016 IT Passport Examination, publicly released question, Q70)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A subnet mask separates an IP address into its network portion and its host portion. Option A describes NAT, B describes ARP, and D describes DNS, so these must not be confused. This concept underlies the determination of whether two hosts are on the same LAN (the AND operation).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>When relaying between the internet and an internal network, it maps global IP addresses to private IP addresses.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It determines the Ethernet MAC address that corresponds to an IP address.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>It separates an IP address into the network address and the host address that identifies each individual computer belonging to that network.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It maps the domain name of a communication partner to its IP address.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q21 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_プロトコル_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate advantage of agreeing on common communication rules (protocols) worldwide?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A protocol is a shared set of agreed-upon rules for communication. By defining them in common worldwide, devices can interconnect using the same procedure even when their makers or models differ (interoperability). Zero latency, automatic encryption, and reduction to a single device type are all incorrect.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because devices from different manufacturers or running different operating systems can communicate with one another by following the same procedure.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because unifying protocols shortens the physical distance required for communication, reducing latency to zero.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because adopting common rules automatically encrypts the content of communication, making eavesdropping impossible.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using the same rules worldwide means each country no longer needs to build its own devices, so the variety of devices is unified into a single type.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q22 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_TCPIP階層化_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate advantage of designing a communication system (such as TCP/IP) as multiple layers?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The advantage of layering is the separation of roles and independence between layers. Even if a lower layer (wired/wireless) is changed, the upper layer (applications) can be used as is, and each layer can be developed and replaced separately. Speed improvement, direct delivery, and automatic compression are irrelevant.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because changing the internals of one layer is unlikely to affect other layers, so each layer can be developed, improved, and replaced independently.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because the more layers you add, the faster the communication speed always becomes.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because dividing into layers allows data to reach the partner directly without passing through any intermediate devices.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because layering automatically compresses the data being sent by a factor equal to the number of layers.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q23 第8回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_パケット交換_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate advantage of "packet switching," in which communication data is divided into small packets for transmission?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>In packet switching, data is sent in small pieces, so a single line can be shared by many communications, and when a fault occurs each packet can be rerouted along a different path (efficiency and fault tolerance). It does not encrypt the data, nor does it remove the need to specify a destination; monopolizing the line is rather a feature of circuit switching (the telephone network).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because a single line can be shared by many communications, and even if a fault occurs on part of a route, traffic can easily be rerouted along another path.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because dividing data into packets always encrypts the content during transmission, making eavesdropping impossible.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because dividing the data means it is automatically delivered only to the correct partner without specifying a destination.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because in packet switching, a single pair of partners can monopolize the line throughout the entire communication.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q24 第8回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_IPv6 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>As devices around the world connect to the internet, the conventional IPv4 address (32 bits) has become insufficient. Which of the following most appropriately describes IPv6, which was introduced to address this?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>IPv4 uses 32 bits (about 4.3 billion addresses), and its exhaustion became a problem. IPv6 extends addresses to 128 bits, allowing unique addresses to be assigned to a virtually unlimited number of devices. It does not replace addresses with domain names, is not an encryption standard, and does not increase speed.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>It extends addresses to 128 bits, making it possible to assign a unique address to a virtually unlimited number of devices.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It abolishes IP addresses themselves, enabling communication using only domain names.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It is a new encryption standard created to prevent eavesdropping by encrypting the content of communication.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It keeps IPv4's 32 bits as they are and merely increases the communication speed sixfold.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q25 第9回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_DNS_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the most appropriate reason why it is convenient to use domain names and DNS to access websites and the like?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>DNS translates easy-to-remember domain names into IP addresses. People can specify sites by name, and even if the IP changes when a server is relocated, the same name can keep being used by updating the mapping. It has nothing to do with encryption, abolishing IP addresses, or reducing the number of routers traversed.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Because people can specify sites by easy-to-remember names, and can keep using the same name even if the corresponding IP address changes.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using domain names encrypts the communication so it cannot be eavesdropped on.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using DNS makes IP addresses themselves unnecessary, allowing all IP addresses worldwide to be abolished.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because using domain names reduces the number of routers the communication passes through to zero.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q26 第10回 確認 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_著作権の発生時点 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>At what point does copyright, the right of an author, come into existence? (FY2015 Autumn IT Passport Examination, public question, Q1)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Copyright comes into existence simultaneously with creation, requiring no procedures such as registration (the principle of no formalities). This is an essential difference from industrial property rights such as patents, and it forms the basis for understanding why unauthorized use is a problem.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>When the work is registered with the Agency for Cultural Affairs</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>When the work is created</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>When the work is transferred to another person</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>When the work is reproduced</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q27 第10回 確認 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_引用の要件_誤り (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Among the following explanations about quotation under copyright law, which one is incorrect?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A lawful quotation requires that the original text be used without alteration, clearly distinguished, and its source explicitly indicated. 'Paraphrasing in your own words' is not a quotation (so B is incorrect). The quoted portion should be enclosed in quotation marks and use the original text as-is.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>The work must already have been made public.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Rather than using the original text as-is, it should be expressed in your own words.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Your own opinion is the 'principal' part and the quoted portion is 'subordinate.'</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>The purpose must be 'reporting,' 'criticism,' or 'research.'</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q28 第10回 ひねり 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ネット画像の著作権 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Someone is about to post, without permission, another person's photos and illustrations found online to write a blog post, thinking that 'anything on the internet can be used freely.' In light of the rules and norms that must be observed in the information society, which of the following is the most appropriate point to make?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The idea that 'all information on the internet can be used freely / copyright need not be considered' is wrong. Images on the internet are also copyrighted; you should check the terms of use and license and obtain permission if necessary. Options A, C, and D are all misconceptions and inappropriate.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Information and images published on the internet may be used freely without worrying about copyright.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Information and images on the internet also carry rights such as copyright and cannot necessarily be used freely, so you should check the terms of use and license and obtain permission as needed.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>If you do not indicate the source at all, no one can tell whose work it is, so it does not constitute infringement.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>As long as it is a personal blog and not commercial, any image may be used without permission.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q29 第10回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_ダークパターン (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>When you open a certain website, the 'Agree to all' button is displayed large and in a conspicuous color, while 'Reject' and 'Settings' are placed in small, hard-to-find spots. What is such a display called, and how should the user appropriately behave? Choose the most appropriate answer.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Browsing history is stored by advertising companies via cookies and can become targeted advertising. A design that makes 'Agree' conspicuous and 'Reject' hard to find—a dark pattern—steers the user in one direction. Knowing the mechanism, pause for a moment and decide for yourself how to hand over your data. Options A, C, and D misuse the terminology.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>It is called universal design, and since it is equally considerate to everyone, you may agree without hesitation.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>It is called a dark pattern, and you should notice the nudging, pause for a moment, and choose only after confirming the scope you are willing to permit.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It is called failover, a switching display shown during a malfunction, so you may simply close it.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>It is called opt-in, a mechanism in which 'reject' is automatically selected even if you press nothing.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q30 第10回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_情プラ法_匿名でも特定 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Some people think, 'Since I'm anonymous, no one will know it's me,' even when they post defamatory remarks or write threats of crimes online using an anonymous account. Which of the following is the most appropriate reason why this thinking is mistaken?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>The Information Distribution Platform Act, which took effect in April 2025 (strengthening the former Provider Liability Limitation Act), obligates major SNS to speed up and make transparent the removal of content, and posters can be identified via sender information disclosure orders. Crime threats can lead to arrest for offenses such as obstruction of business. Even anonymously, one cannot escape legal liability. Options A, C, and D are baseless.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Because the moment you agree to the SNS terms of use, everyone's real name is made public.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Because, under the Information Distribution Platform Act, mechanisms to identify posters—such as sender information disclosure orders—are in place.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because anyone can instantly determine a poster's name and address without legal procedures, as long as they know the IP address of the device used for the post.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because on free SNS, the real name entered at registration is always set to be automatically displayed on the profile.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q31 第11回 確認 正解C -->
+  <question type="multichoice">
+    <name>
+      <text>Q_WPA2の暗号化範囲 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>There is an access point configured with WPA2 encryption. When a PC connects through this access point to a web server on the Internet, which of the following is the appropriate range over which WPA2 encryption takes effect? (IT Passport Examination, Autumn 2016, public question No. 79)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>WPA2 encrypts only the wireless segment (between the PC and the access point). Do not mistakenly assume that protection extends to the wired segment beyond it; correctly delimit the scope to which the encryption applies. "</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>From the PC to the web server</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>From the PC to the firewall</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>From the PC to the access point</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>From the access point to the web server</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q32 第11回 なぜ便利 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_2要素認証_なぜ便利 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following best describes the advantage of "two-factor authentication," which uses something additional to a password, such as sending a code to a smartphone?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Two-factor authentication combines two pieces of evidence of different kinds, such as knowledge (a password), possession (a smartphone, etc.), or biometrics. Even if one is leaked, a login cannot be completed without the other, making it easier to prevent damage (defense in depth). "No password needed," "automatic encryption," and "doubled speed" are all incorrect.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>Even if the password is leaked, it is hard to break in without the other factor, so protection remains even when one factor is compromised</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>With two-factor authentication, you no longer need to remember a password at all</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Using two factors automatically encrypts the communication so that it cannot be eavesdropped</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>With two-factor authentication, the access speed to the server doubles</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q33 第11回 理解必須 正解A -->
+  <question type="multichoice">
+    <name>
+      <text>Q_公開鍵暗号_鍵の向き (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>X wants to send Y an email using public-key cryptography that cannot be read by any third party and "can be read only by Y." X and Y each hold one pair consisting of their own public key and private key, and the public keys are published so that anyone can obtain them. Which of the following correctly states the combination of keys used for encryption and decryption, and also correctly states the reason a third party eavesdropping on the communication channel cannot read this email?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>For confidential communication, the recipient Y's key pair is used. X encrypts with Y's published public key, and the resulting ciphertext can be decrypted only with the paired Y's private key (which only Y holds). Option B "encrypts with one's own private key," which is actually a signature: anyone can decrypt it with the paired public key, so it provides no confidentiality. Option C uses the textbook ordering of encryption/decryption, but mistakes the key owners, so only X could decrypt and Y cannot read it. Option D is symmetric-key (shared-key) cryptography, a different scheme that suffers from the key-distribution problem.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="100" format="plain_text">
+      <text>X encrypts with "Y's public key" and sends it, and Y decrypts with "Y's private key." An eavesdropper can obtain Y's public key, but only the paired Y's private key can decrypt text encrypted with it, and since only Y holds that key, the eavesdropper cannot read it.</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>X encrypts with "X's private key" and sends it, and Y decrypts with "X's public key." Since the eavesdropper does not hold X's private key, they cannot decrypt it and cannot read the message body.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>X encrypts with "X's public key" and sends it, and Y decrypts with "X's private key." This follows the basic principle of public-key cryptography of encrypting with a public key and reverting with the paired private key, and since only X holds the private key, the eavesdropper cannot read it.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>X and Y encrypt and decrypt using a single shared key agreed upon in advance. Since only the two of them know this shared key and it is not published, the eavesdropper does not know the key and cannot read it.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q34 第11回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_踏み台_更新の社会的責任 (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Some people leave their OS and software unupdated, thinking, "My PC has no important data, and if I'm targeted, I'm the only one who suffers." Which of the following is the most appropriate reason that neglecting updates "is not merely one's own problem and can affect others and society as well"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A hijacked PC or IoT device can be exploited as a relay point (stepping stone) for DDoS attacks or spam distribution (at Chiba University in 2024, a public server was used as a stepping stone to send about 60,000 spam emails). Because a victim can in turn become a perpetrator, updating is a social responsibility and not merely "one's own problem" (correct answer B). Option A is the mistaken belief that the impact "does not reach others"; option C is the typical misconception that "newer versions are more dangerous, so it is safer not to update" (in reality, updates close known vulnerabilities); option D confuses the presence of data with infection.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>Even if you suffer damage from neglecting updates, the impact stays only within your own PC and never extends to others</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>A hijacked PC can be used as a "stepping stone," forced to serve as a relay point and complicit in harming others</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Because newer versions of software harbor more unknown vulnerabilities, it is actually safer not to update</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>If you store no data, malware cannot infect the PC in the first place</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- Q35 第11回 理解必須 正解B -->
+  <question type="multichoice">
+    <name>
+      <text>Q_学び方を学ぶ (EN)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In an era when individual tools such as generative AI and cloud services keep changing one after another, which of the following is the most appropriate attitude to acquire as part of information literacy?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Because individual tools are short-lived, it is more important to acquire "how to learn" itself than to memorize operations. Through methods such as trying things on a small scale, using good materials, and asking others, keep verifying the "why" and "how" with your own hands. Option A is rote memorization of procedures, C is leaving things to others, and D ignores differences in the effectiveness of learning strategies.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>false</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text></text>
+    </incorrectfeedback>
+    <answer fraction="0" format="plain_text">
+      <text>If you perfectly memorize the operating procedures of a specific app, you will have no trouble even when the technology changes</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="plain_text">
+      <text>Rather than the tools themselves, acquire "how to learn," and keep verifying the "why" and "how" with your own hands through methods such as trying things on a small scale, learning from good materials, and asking others</text>
+      <feedback format="html">
+        <text>Correct.</text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Leave new technologies to the experts, and just keep using only the tools you can use right now</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="plain_text">
+      <text>Since everyone learns differently, don't worry about differences in effectiveness and just choose the easiest method</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

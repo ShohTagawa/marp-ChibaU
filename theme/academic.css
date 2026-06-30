@@ -371,6 +371,30 @@ section.fig:has(.takeaway) .fig-area {
 }
 
 /* ============================================================ */
+/* 本文ゾーンの縦配分 — タイトル/takeaway を動かさず中身だけ再配置  */
+/*                                                              */
+/* 見出しと takeaway の「間」を <div class="body">…</div> で囲むと、 */
+/* そのゾーンが残りの縦スペースを埋め、配分だけをクラスで選べる：    */
+/*   （既定）         上詰め（現状維持）                           */
+/*   _class: vcenter  本文ゾーンを上下中央                         */
+/*   _class: vspread  上下に均等配分（space-between）              */
+/*   _class: vtop     明示的に上詰め                              */
+/* takeaway が無い場合も同じ（本文ゾーンが下端 --bottom-pad まで）。 */
+/* 見出し(h2/h3)と .takeaway は .body の外に置く＝固定アンカー。   */
+/* 数値(px)で各スライドを微調整しない。配分はこの仕組みに任せる。   */
+/* ============================================================ */
+section .body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* 既定は上詰め */
+}
+.body.vtop,    section.vtop    .body { justify-content: flex-start; }
+.body.vcenter, section.vcenter .body { justify-content: center; }
+.body.vspread, section.vspread .body { justify-content: space-between; }
+
+/* ============================================================ */
 /* SLIDE PATTERN CLASSES                                        */
 /* Apply with <!-- _class: <name> --> on individual slides.     */
 /* ============================================================ */

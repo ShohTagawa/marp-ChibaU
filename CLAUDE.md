@@ -112,6 +112,8 @@ footer: ''
 | `<span class="hl">…</span>` / `<span class="hl-dark">…</span>` | 赤系強調文字 |
 | `<div class="qa-grid">…</div>` | 質問/回答の2列レイアウト(偶奇で交互配置) |
 | `<div class="takeaway">要点</div>` | スライド下端固定の要点帯(28px固定) |
+| `<div class="body">…</div>` | 見出しとtakeawayの「間」を囲む本文ゾーン。残りの縦スペースを埋める |
+| `<!-- _class: vcenter \| vspread \| vtop -->` | `.body`ゾーンの縦配分(中央/均等/上詰め)。タイトル・takeawayは動かさない |
 
 上表は `academic` 基本テーマのクラス。**`theme: chiba-deck` のときは以下の部品が主力**（実デッキでの使用頻度が高い順）：
 

@@ -672,6 +672,63 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <!-- _class: split -->
 
+<div class="page-title">Transformerの中身</div>
+
+## 「注目 → 考える」を、何層も重ねる
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 380 362" width="100%" style="max-height:360px">
+<g text-anchor="middle" font-family="sans-serif">
+<rect x="78" y="10" width="224" height="42" rx="9" fill="#fff" stroke="#5B6068" stroke-width="1.8"/>
+<text x="190" y="36" font-size="17" font-weight="700" fill="#33373b">語の並び「猫 が 魚 を」</text>
+<text x="190" y="70" font-size="22" font-weight="800" fill="#C8611C">↓</text>
+<rect x="52" y="80" width="276" height="48" rx="9" fill="#EAF2FB" stroke="#1A6BB0" stroke-width="2"/>
+<text x="190" y="101" font-size="16" font-weight="800" fill="#1A6BB0">① 埋め込み（数のベクトルに）</text>
+<text x="190" y="120" font-size="14" fill="#5B6068">＋ 位置情報を足す</text>
+<text x="190" y="146" font-size="22" font-weight="800" fill="#C8611C">↓</text>
+<rect x="38" y="156" width="304" height="120" rx="11" fill="#FBEEE6" stroke="#C8611C" stroke-width="2.5"/>
+<text x="190" y="178" font-size="15" font-weight="800" fill="#8f3f12">思考ブロック（× N 層 くりかえし）</text>
+<rect x="56" y="188" width="268" height="36" rx="7" fill="#fff" stroke="#C8611C" stroke-width="1.6"/>
+<text x="190" y="211" font-size="15" font-weight="800" fill="#8f3f12">② 自己注意：語どうしの関係を見る</text>
+<rect x="56" y="230" width="268" height="36" rx="7" fill="#fff" stroke="#9aa0a6" stroke-width="1.6"/>
+<text x="190" y="253" font-size="15" font-weight="700" fill="#3a3f45">③ 変換：情報をまとめ直す</text>
+<text x="190" y="294" font-size="22" font-weight="800" fill="#C8611C">↓</text>
+<rect x="52" y="304" width="276" height="50" rx="9" fill="#0F766E" stroke="#0b5a54" stroke-width="2"/>
+<text x="190" y="326" font-size="16" font-weight="800" fill="#fff">④ 次の1語を予測</text>
+<text x="190" y="345" font-size="14" fill="#E7F3F0">候補ごとの確率を出す</text>
+</g>
+</svg>
+
+</div>
+<div class="right">
+
+### いちもじGPTの中身も、これ
+
+- **①埋め込み**で言葉を数に（前ページ）
+- **②自己注意**で語どうしの関係を見る
+- **③変換**でまとめ直す（②③で1ブロック）
+- この**ブロックを何層も重ねる**ほど深く読める
+- 最後に**次の1語の確率**を出して選ぶ
+
+<div class="callout-gray">層を重ね、規模を大きくするほど賢くなる → このあと</div>
+
+</div>
+</div>
+
+<div class="takeaway">埋め込み →〔注意 → 変換〕× N層 → 次の語予測。これが Transformer＝GPT の中身</div>
+
+<!--
+- Transformerの中身。やっていることは4段。①埋め込みで言葉を数のベクトルに(前ページ)。②自己注意で語どうしの関係を見る。③変換(フィードフォワード)で情報をまとめ直す。②③のセットが「思考ブロック」で、これを何層も重ねる。④最後に次の1語の確率を出して選ぶ。
+- いちもじGPTのコードもまさにこの構造(Embedding→Block×n層→出力)。100行で書ける。層を重ね規模を大きくするほど深く読めるようになる→次の「規模と創発」へ。
+- 出典:Vaswani et al. 2017。細部はいちもじGPTのノートで手を動かして確認できます。
+-->
+
+---
+
+<!-- _class: split -->
+
 <div class="page-title">仕組み④　学習</div>
 
 ## 「中身」はAIが学び、「学び方」は人が決める
@@ -693,15 +750,19 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 </div>
 <div class="right">
 
-### 学習＝「間違い」を小さくする
+### 学習＝「次の一語あて」の猛特訓
 
 <div class="callout-gray">
-① 予測する（順伝播）<br>
+① 次の1語を<strong>予測</strong>する（順伝播）<br>
 ② 正解とのズレ＝<strong>損失</strong>を測る<br>
-③ ズレが減る向きに数字を微調整（逆伝播）
+③ ズレが減る向きに<strong>重み</strong>を微調整（逆伝播）
 </div>
 
-これを大量のテキストで繰り返すのが<strong>事前学習</strong>。次の語をより上手に当てられるようになる。
+これを“大量のテキスト × 何百万回”繰り返すのが<strong>事前学習</strong>。
+
+<div class="callout-green">
+<strong>学習</strong>は重い“1回”／<strong>推論（生成）</strong>は固定の重みで軽く“反復”
+</div>
 
 </div>
 </div>
@@ -712,6 +773,48 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 - 仕組み(4)。2つの数字を区別。パラメータ=AIが学習で自動調整する無数の数字(脳の中身・重み)。ハイパーパラメータ=層の数・学習率など「学習の進め方の設定」で、人間が学習前に決める。いちもじGPTで触ったダイヤルが後者。
 - 学習の正体:①予測(順伝播)→②正解とのズレ=損失を計算→③ズレが減る向きにパラメータを少し更新(逆伝播)。これを大量のテキストで延々繰り返す=事前学習。次の語を当てる練習を通じて賢くなる。
 - さっきのいちもじGPTの学習曲線(損失が下がっていくグラフ)が、まさにこれ。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">流暢さ ≠ 正しさ</div>
+
+## なぜ、堂々と間違える？（ハルシネーション）
+
+<div class="split-body">
+<div class="left">
+
+- 生成AIは「正しさのデータベース」ではなく、<strong>「流暢さ」を鍛えた</strong>モデル
+- 文法的に滑らかでも、<span class="red">中身が事実とは限らない</span>。断定口調で堂々と誤る
+
+<div class="callout-yellow">
+仕組みに戻ると：AIは「ありそうな続き」を出すだけで、<strong>真偽を直接は照合しない</strong>。だから、それらしく誤る（＝ハルシネーション）。
+</div>
+
+</div>
+<div class="right">
+
+<div class="gquote">
+なぜ“原理的に”残る？──学習も評価も、正直な「分かりません」より <strong>“当てにいく”方が高得点</strong>になりやすいから。推測が報われ、棄権が損をする。
+<span class="src">出典：Kalai et al. 2025「Why Language Models Hallucinate」(OpenAI / arXiv)</span>
+</div>
+
+<div class="callout-gray">
+「<strong>不確実なら『分かりません』、確信度も添えて</strong>」と頼むと多少減る（完全には消えない・最後は人が確認）
+</div>
+
+</div>
+</div>
+
+<div class="takeaway">「流暢さ」は正しさの保証ではない。引用・数値・固有名は、自分で裏取りして使う</div>
+
+<!--
+- 仕組みから来る一番大事な帰結:なぜ堂々と間違えるか(ハルシネーション)。生成AIは「正しさのDB」でなく「流暢さ」を鍛えたモデル。文法的に滑らかでも中身が事実とは限らない。
+- 仕組みに戻ると腑に落ちる:AIは「ありそうな続き」を出すだけで、真偽を直接は照合しない。だからそれらしく誤る。
+- なぜ原理的に残るか:学習も評価も、正直な「分かりません」より"当てにいく"方が高得点になりやすいから(推測が報われ、棄権が損)。出典 Kalai et al. 2025「Why Language Models Hallucinate」。
+- 対策:「不確実なら分かりませんと言って、確信度も添えて」と頼むと多少減るが完全には消えない。引用・数値・固有名は自分で裏取り。STEP④の「結果の解釈」につながる。
 -->
 
 ---
@@ -810,11 +913,12 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">STEP② まとめ</div>
 
-## 仕組みは、この3つだけ覚えて帰る
+## 仕組みは、これだけ覚えて帰る
 
 - 生成AIは「**次の1語**」を予測して、つなげているだけ（自己回帰）
 - その心臓部が **Transformer / Attention**（各語が他の語との関係を見る）
-- **学習＝損失を下げる**。規模を上げると賢くなる（創発）
+- **学習＝損失を下げる**猛特訓。規模を上げると賢くなる（創発）
+- **流暢さ ≠ 正しさ**。だから“それらしく”間違える（→ 検証して使う）
 - Colab＝**ブラウザで・無料GPUで・Python**を動かせる実験室
 
 <div class="takeaway">“魔法”ではなく“予測の積み重ね”。だから得意・不得意も説明できる</div>
@@ -1037,9 +1141,9 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 <div class="uc-col col-ug">
 <div class="uc-h">🎓 学部生</div>
 
-- 授業データやアンケートを**グラフで可視化**
-- レポートの**図表づくり**を Colab で
-- Web の公開データを**取得して分析**（APIの体験）
+- 「**高校成績やSATで大学GPAを予測**」を体験（satgpa）
+- アンケート結果を**その場でグラフ化**
+- Web の公開データを**APIで取得**して分析
 - Gemini に**コードの意味を質問**しながら学ぶ
 
 </div>
@@ -1047,20 +1151,20 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 <div class="uc-col col-grad">
 <div class="uc-h">🔬 大学院生</div>
 
-- 研究データの**前処理・統計・作図**を再現可能に
+- 「**予算は学力を上げる？**」支出×学力の相関（CASchools）
+- **クラスサイズと学力**の関係を散布図で
 - **機械学習**を小さく試作（分類・回帰・予測）
-- 論文の**手法を再現**・パラメータを変えて実験
-- 重い計算は**無料GPU**で回す
+- 研究データの前処理・作図を**再現可能**に・重い計算は**無料GPU**
 
 </div>
 
 <div class="uc-col col-staff">
 <div class="uc-h">🏢 教職員</div>
 
-- 授業評価の自由記述を**集計・分類**
+- 授業評価の自由記述を **Gemini で分類・感情分析**
 - 成績・出席データを**可視化**して傾向把握
-- 定型の集計処理を**自動化**（毎回同じ作業を1度書く）
-- Gemini に**分析を下書き**させて時短
+- 「**教育水準と経済水準**」を国際比較（Our World in Data）
+- 定型の集計処理を**自動化**（1度書けば毎回使える）
 
 </div>
 

@@ -2000,7 +2000,44 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">Gemini app ①</div>
+<div class="page-title">より良いプロンプトの書き方</div>
+
+## Google検索の「キーワード」ではなく、人に教える文体で
+
+<div class="split-body">
+<div class="left">
+
+![alt text](src/fig03-prompt-template.png)
+<div class="caption">図. おすすめな簡易プロンプト</div>
+
+</div>
+<div class="right">
+
+### 良いプロンプトの型（Google 4要素）
+
+- **ペルソナ**：AIに何者として振る舞ってほしいか
+- **タスク**：何をしてほしいか
+- **背景情報**：判断に必要な前提・参考資料
+- **形式**：文字数・構造・語調
+
+<small>出所：[Google プロンプト初級ガイド](https://support.google.com/a/users/answer/14200040)</small>
+
+</div>
+</div>
+
+<div class="takeaway">「マニュアルで人に教えるように」プロンプトを打つと、回答品質が一段上がる</div>
+
+<!--
+- 多くの人がGoogle検索の延長でAIに「○○ ○○ ○○」とキーワードを投げている。これだとAIは推測で動くので、品質が落ちる。
+- ファイル（PDF、画像、スプレッドシート）をそのまま添付できるので、文脈を渡すのが容易。
+- 「人にマニュアルを書く」感覚を意識すると、自然と背景・タスク・制約が揃う。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース①：Chrome連携</div>
 
 ## Chromeに統合 ─ 論文・規程を「開いたまま」読む
 
@@ -2035,46 +2072,335 @@ style: |
 - 研究では英語論文や市場レポートを開いたまま「この章の要点は?」、事務でも長い学内規程やマニュアルを開いて「この場合の手続きは?」と聞くと、該当箇所を引用付きで返してくれます。
 - 動画は30秒ほど、規程ページで実演します。
 -->
+---
+<!-- _class: split -->
+
+<div class="page-title">ケース②：Canvas編集</div>
+
+## 「キャッチーに」「短く」「論理的に」を即時反映、AIと"協働"編集
+
+<div class="split-body">
+<div class="left">
+
+<video controls src="src/fig11-canvas-editing.mov" poster="src/fig11-canvas-editing.png" style="max-height:386px;max-width:100%;border-radius:8px;display:block;margin:0 auto" title="Title"></video>
+<div class="caption">図. AIと協働で編集する</div>
+
+</div>
+<div class="right">
+
+### 使い方
+
+- 草稿をCanvasに出す
+- 「**もっとキャッチーに**」「**論理を強化**」と指示
+- Geminiがその指示に従って書き換える
+- 人間側も同じ文章を編集可能
+  - 差分が見えるので**苦手な点に気づける**
+- 更に、**スライド作成**、インフォグラフ作成も可能
+  - 配置のアイデア出しに便利
+  - 簡単な説明ならそのまま利用可能
+
+</div>
+</div>
+
+<div class="takeaway">「編集プロセス」を伴走することが生成AIで可能</div>
+
+<!--
+- これは「文章を書く」のではなく「文章を磨く」AIの使い方。
+- Canvasは差分が見えるので、添削の理由が学べる。指導の補助として有用。
+- 学生に「自分で書き、AIに磨いてもらう」習慣をつけてもらうのに最適。
+-->
 
 ---
 
 <!-- _class: split -->
 
-<div class="page-title">Gemini app ②</div>
+<div class="page-title">ケース②：マルチメディア生成</div>
 
-## 自由記述アンケートを「数分で俯瞰」── 集計を、解釈の時間に
+## テキストから、画像も音楽も ── 教材づくりの幅が広がる
+
+<style scoped>
+  section .nbimg { width: 100%; max-height: 388px; border-radius: 10px; border: 1px solid #e3e8f0; box-shadow: 0 2px 10px rgba(0,0,0,.13); display: block; }
+  section .mm-video { width: 180px; height: 180px; object-fit: cover; border-radius: 8px; display: block; margin: 6px auto 4px; background: #000; }
+  section .src-note { font-size: 14px; color: #7a8581; line-height: 1.4; }
+  section .right h3 { margin: 9px 0 4px; }
+  section .right ul { margin: 3px 0; }
+  section .right li { line-height: 1.4; }
+</style>
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="./src/fig10-qualitative-analysis.mov" poster="./src/fig10-qualitative-analysis.png" title="Spreadsheetを集計AIに：自由記述の質的分析" style="width:100%;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18)"></video>
-
-<div class="caption">図. 自由記述の質的分析（千葉大環境の例）</div>
+<img class="nbimg" src="./src/fig07-nanobanana.png" alt="Geminiの画像生成（Nano Banana）で作った『AIクロス型』教育モデルの概念図">
+<div class="caption">図. Gemini 画像生成（通称 Nano Banana）で作成した概念図</div>
 
 </div>
 <div class="right">
 
-### こんな“読むのが大変”を一気に
+### 画像生成 （Nanobanana）
 
-- 授業評価・FD後アンケート・**問合せログ**の自由記述
-- **Spreadsheetを集計AIに** ＝ 頻出テーマ抽出・分類を数分で
-- 分類軸を隣の列に足すと**精度を比較検証**できる
+- 図解・ポンチ絵・スライド挿絵を**テキスト指示で一発**
+- スライドや配布資料の**挿絵づくりが速くなる**
 
-<div class="callout-green">AIが下ごしらえ。<strong>最終判断は人</strong>が行います</div>
+### 音楽生成
+
+- **30秒の短曲**（暗記ソング・授業BGM）も作れる
+  - マニュアルを歌っている大学もあるとか…
+
+<video controls class="mm-video" src="./src/fig06-music-generation.mp4" poster="./src/fig06-music-generation.png" title="30秒の音楽生成（学校アカウント）"></video>
+<div class="src-note">※ 類似曲がある場合、著作権・商用利用は要確認</div>
 
 </div>
 </div>
 
-<div class="takeaway">“読む”時間を“解釈する”時間に変える ── 最終判断は人が行います</div>
+<div class="takeaway">文章だけでなく、音・画像まで ── 教材づくりの「小ネタ」が一気に増える</div>
 
 <!--
-- もうひとつGeminiの業務活用を。授業評価やFD後アンケート、窓口の問合せログ。こうした自由記述は「読むのが大変」で後回しになりがちです。
-- GeminiとSpreadsheetを組み合わせると、数分で頻出テーマを抽出し分類できます。これも千葉大の例ですが、明海の皆さんのアカウントで同じことができます。
-- 大事なのは、AIが下ごしらえをして、最終判断は人が行うこと。読む時間を、解釈する時間に振り替えるのが狙いです。動画は30秒ほど実演します。
+- 生成AIはテキストだけでなく、画像も音楽も作れる。
+- 画像：Geminiの画像生成（通称Nano Banana）。手描き風の概念図・ポンチ絵もテキスト指示で出せるので、スライドや配布資料の挿絵づくりが速い。左の図もその一例。
+- 音楽：学校アカウントなら30秒の短曲。暗記ソングや授業BGMの小ネタに。公開・商用は著作権に注意。
 -->
 
 ---
 
+<!-- _class: split -->
+
+<div class="page-title">ケース④：マルチメディア分析</div>
+
+## 音声・OCRの処理 → m4aもJPEGも、そのまま投げ込むだけ
+
+<div class="split-body">
+<div class="left">
+
+<video controls src="src/fig12-audio-ocr.mov" poster="src/fig12-audio-ocr.png" style="max-height:386px;max-width:100%;border-radius:8px;display:block;margin:0 auto" title="Title"></video>
+
+<div class="caption">図. 音声・画像をテキスト化</div>
+
+</div>
+<div class="right">
+
+### できること
+
+- **議事録**：会議録音→構造化要約
+- **手書きノート**：撮影→OCR→検索可能化
+- **板書**：写真→学生配布用テキスト
+  - 課題の添削理由を理解するのに、学生も使える
+
+### 注意
+
+- 動画処理は、以下の点で微妙
+  - 秒数がずれる、要約される
+  - 動画の画面の認識と合わない
+
+</div>
+</div>
+
+<div class="takeaway">「アナログ素材を一気にデジタル化」する入口としても機能する</div>
+
+<!--
+- 音声・画像から構造化テキストを出せる。研究のインタビュー文字起こしに非常に強い。
+- 板書の写真をOCRして配布資料化、研究室の手書きノートをアーカイブ化、など応用が広い。
+- 個人情報を含む場合は、必ずコアサービス内で完結させ、外部に出さないこと。
+-->
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース⑤：アプリ連携</div>
+
+## ＠でClassroom・Drive・Gmailを呼び出し、書き込む
+
+<div class="split-body">
+<div class="left">
+
+![alt text](src/fig04a-at-mention-calendar.png)
+
+<div class="caption">図. ＠で呼び出せるGoogleカレンダー</div>
+
+</div>
+<div class="right">
+
+### 事前にONにする2つのスイッチ
+
+- Gemini設定の**外側＋内側の連携ボタン** 
+- Gmailの**スマート機能をON**
+<img src="src/fig04b-gmail-smart-features.png" alt="alt text" width="300">
+### できること
+
+- 授業日程を**Classroomに一括投入**/予定確認
+- Driveから「○○のスライド/ファイルある？」で検索
+- **件名・本文を過去返信例から学習**して下書き
+
+</div>
+</div>
+
+<div class="takeaway">連携を一度ONにすれば、Geminiが「執事」のように振る舞い始める</div>
+
+<!--
+- ＠マークを押すと、Google Workspaceの全アプリが呼び出せる。これが連携の入口。
+- Classroom投入：シラバスから抽出した日程を一括登録できる。出てきた灰色の枠が「成功」のサイン。
+- Drive検索：ファイル名を覚えていなくても、内容から見つけてくれる。
+- Gmail下書き：これまでの返信スタイル（署名・文字数・敬語レベル）を学習して、自分らしい返信案を出してくれる。これだけで業務時間がかなり減る。
+-->
+---
+<!-- _class: split -->
+
+<div class="page-title">ケース⑥：範囲指定検索</div>
+
+## URLスコープを指定して、信頼できる範囲だけ読ませる
+
+<div class="split-body">
+<div class="left">
+<video controls src="src/fig08-domain-scoped-search.mov" poster="src/fig08-domain-scoped-search.png" style="max-height:386px;max-width:100%;border-radius:8px;display:block;margin:0 auto" title="Title"></video>
+<div class="caption">図. ドメイン指定で根拠の出所を縛る</div>
+
+</div>
+<div class="right">
+
+### 使い方
+
+- **ドメインを指定**して情報源を縛る
+  - 例：千葉大の各学科のDP本文を取得
+- 参照可能なGoogle doc/slideなども引用できる。
+  - URLを貼るだけ
+  - PDFなどで出力して再アップデートするのは不要
+- コンテキストを充実でき、性能を引き出しやすい
+  - クロール不可などで一部参照できない場合がある
+
+</div>
+</div>
+
+<div class="takeaway">「どこから取ったか」を制御できれば、AIの出力が利用しやすくなる</div>
+
+<!--
+- URLやドメインを指定すると、AIはそこだけを読みに行く。出所が分かるので、引用としても使える。
+- Claudeの例：千葉大全学科のディプロマポリシーをURLスコープで指定し、各学科の文字数を一気に比較したらすぐ表になって出てきた。これは衝撃。
+- 「あの情報、どこから？」が分かるだけで、AI出力の信頼度が変わる。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース⑦：LearnLMで学習</div>
+
+## 答えを「教えず」「学びを支援する」ようにチューニングされたAI
+
+<div class="split-body">
+<div class="left">
+
+<video controls src="src/fig05-learnlm-demo.mov" poster="src/fig05-learnlm-demo.png" style="max-height:386px;max-width:100%;border-radius:8px;display:block;margin:0 auto" title="Title"></video>
+
+<div class="caption">図. LearnLM：教えるのではなく問い返す</div>
+
+</div>
+<div class="right">
+
+### LearnLMの5原則
+
+- **能動学習**を促す
+- **認知負荷**を管理する
+- **学習者に適応**する
+- **好奇心を刺激**する
+- **メタ認知**を深める
+
+Arizona State Univ.等で**教育効果を実証** 
+<small>※[Google DeepMindによるLearnLM論文 (arXiv:2412.16429)](https://arxiv.org/abs/2412.16429)</small>
+
+</div>
+</div>
+
+<div class="takeaway">「答え」ではなく「考え方」を引き出すモード</div>
+
+<!--
+- LearnLMはGoogleが教育向けに開発した特殊AI。教育研究者が5つの原則に基づいてチューニング。
+- アリゾナ州立大などで効果検証され、実際に論文が出ている。
+- 普通のAIに「答え教えて」と言うと答える。LearnLMは「まず何が分からない？」と返してくる。
+- 学生に「依存しない使い方」を覚えてもらうための入口として最適。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">試験対策（LearnLMの応用）</div>
+
+## 学習・試験対策まで ─ 例：TOEIC 対策
+
+<div class="split-body">
+<div class="left">
+
+<img src="./src/google-toeic.png" alt="Gemini の試験準備機能（TOEIC対策）" style="width:100%;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18)">
+
+<div class="caption">図. Geminiの試験準備機能（TOEIC対策）</div>
+
+</div>
+<div class="right">
+
+### 例：TOEIC 対策まで自動で
+
+- 模擬クイズ・弱点分析・**フラッシュカード**を自動生成
+  - PDFを導入後、問題作成依頼でインタラクティブな問題・回答パネルになる
+
+<div class="prompt" style="margin-top:10px;">
+<span class="lab">TOEIC問題のプロンプトの書き方</span><br>
+「TOEICの練習問題を作成して下さい。<strong>大問◯</strong>を中心に。」
+<div style="font-size:14px;color:#5a6764;margin-top:7px;line-height:1.5;">※ 章の指定や機能の指定は不要　／　リスニングはまだ対応していないらしい</div>
+</div>
+
+<div class="srcline"><b>出典:</b> Google for Education「Gemini の試験準備機能が TOEIC 対策に利用可能に」</div>
+
+</div>
+</div>
+
+<div class="takeaway">「教える」だけでなく「問い返す」AI ── 学生の自学の伴走者になりつつあります</div>
+
+<!--
+- ケース③ LearnLM の応用です。Geminiの試験準備機能では、たとえばTOEIC対策の模擬クイズ・弱点分析・フラッシュカードまで自動で作れます。
+- 背景にあるのがLearnLM。答えを教えるのではなく、問い返して考えさせる設計です。
+- 学生が授業の外側で一人で学ぶ時間＝自学・学び直しを支えます。これは千葉大の例ですが、明海でも同じです。
+-->
+
+---
+
+<!-- _class: split -->
+
+<div class="page-title">ケース⑧:Gems（教務の実演）</div>
+
+## よく使うプロンプトを「Gem」にして固定化 ── シラバス点検
+
+<div class="split-body">
+<div class="left">
+
+<video controls src="./src/fig20-gem-syllabus.mov" poster="./src/fig20-gem-syllabus.png" title="シラバスチェッカーGemのデモ" style="width:100%;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18)"></video>
+
+<div class="caption">図. シラバスチェッカーGem（千葉大の記入規則の例）</div>
+
+</div>
+<div class="right">
+
+### 役割を固定した“自分専用AI”
+
+- シラバスをアップ→**記入規則に照らして解析・評価**
+- 学内で**共有**でき、使うほど精度が育つ
+- 同じ要領で様々なGemも作成可能
+  - 授業ワーク伴走Gem
+  - スライド作成Gem
+  - Gemを創るGem
+
+<div class="callout-gray">Gem＝Geminiの機能の一つ。役割を固定した“自分専用AI”エキスパート<br>組織内で共有・配布可能</div>
+
+</div>
+</div>
+
+<div class="takeaway">毎回打つ指示はGem化して固定 ── 教務の定型作業がチームの資産になります</div>
+
+<!--
+- 最後に教務の実演です。Geminiには「Gem」という、役割を固定した自分専用AIを作る機能があります。シラバスをアップすると記入規則に照らして解析・評価してくれるシラバスチェッカー。
+- これは千葉大の記入規則で作った例ですが、明海の記入規則に読み替えれば同じように使えます。学内で共有すればチームの資産に。
+- 同じ要領で4択問題を出すGem、授業ワークの伴走Gemも作れます。動画は30秒ほど。
+-->
+
+---
 <!-- _class: fig -->
 
 <div class="page-title">NotebookLM</div>
@@ -2086,10 +2412,9 @@ style: |
 </div>
 
 <div class="caption">左＝読み込ませた資料、中央＝<strong>出典つき</strong>の回答、右＝要約・クイズ・音声解説・マインドマップ等への変換
-<div class="srcline">デモ：千葉大での NotebookLM 活用（教務・教材づくり支援）</div>
 </div>
 
-<div class="takeaway">「ネット上の知識」ではなく「先生の資料」に基づいて答えるのが強みです</div>
+<div class="takeaway">「AI/ネット上の知識」ではなく「与えた資料」に基づいて答えるのが強み</div>
 
 <!--
 - NotebookLMは、自分の資料を読ませて使う道具です。配布資料、論文、シラバスを入れると、それだけに基づいて要約・クイズ・音声解説・下書きを作ってくれます。
@@ -2101,9 +2426,9 @@ style: |
 
 <!-- _class: split -->
 
-<div class="page-title">NotebookLM 実演</div>
+<div class="page-title">NotebookLM 応用</div>
 
-## 事務マニュアルを「対話で引ける」状態に ── マニュアルBot
+## 事務マニュアルを「対話で引ける」状態に ── マニュアル参照Bot
 
 <div class="split-body">
 <div class="left">
@@ -2118,7 +2443,8 @@ style: |
 ### 作り方は3ステップ
 
 - ① マニュアルPDF/Webを**ソース登録**
-- ② テスト質問で精度確認 → ③ **共有リンク**で部署に配布
+- ② テスト質問で精度確認
+- ③ **共有リンク**で部署内に配布
 - 回答は**引用付き**で根拠ページを表示／更新はソース差し替えだけ
 
 <div class="srcline">💡 研究なら：公募要領＋審査基準＋自分の論文を入れ「審査委員視点の質問10個」（科研費）</div>
@@ -2136,11 +2462,65 @@ style: |
 
 ---
 
+<!-- _class: split -->
+
+<div class="page-title">NotebookLMの教材利用</div>
+
+## 「先生のスライド」が、学生の自学教材になる ── リメディアルにも
+
+<div class="split-body">
+<div class="left">
+
+<svg viewBox="0 0 430 330" width="100%" style="max-height:330px" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrN" markerWidth="11" markerHeight="11" refX="4" refY="5" orient="auto"><path d="M1,1 L1,9 L9,5 Z" fill="#00736B"/></marker></defs><rect x="65" y="14" width="300" height="68" rx="12" fill="#EDEEF0" stroke="#5B6068" stroke-width="2"/><text x="215" y="44" font-size="19" font-weight="800" fill="#5B6068" text-anchor="middle">先生のスライド・配布資料</text><text x="215" y="68" font-size="16" fill="#5B6068" text-anchor="middle">講義資料・シラバス・過去問</text><line x1="215" y1="84" x2="215" y2="120" stroke="#00736B" stroke-width="3" marker-end="url(#arrN)"/><rect x="65" y="124" width="300" height="64" rx="12" fill="#00736B" stroke="#004D45" stroke-width="2.5"/><text x="215" y="153" font-size="20" font-weight="800" fill="#fff" text-anchor="middle">NotebookLM</text><text x="215" y="177" font-size="16" fill="#E3F1EF" text-anchor="middle">資料に基づき・出典つきで答える</text><line x1="215" y1="190" x2="215" y2="226" stroke="#00736B" stroke-width="3" marker-end="url(#arrN)"/><rect x="35" y="230" width="360" height="86" rx="12" fill="#E3F1EF" stroke="#00736B" stroke-width="2"/><text x="215" y="258" font-size="19" font-weight="800" fill="#004D45" text-anchor="middle">学生が自分のペースで復習</text><text x="215" y="284" font-size="16" fill="#3a4744" text-anchor="middle">要約・クイズ・音声解説・質問</text><text x="215" y="306" font-size="15" fill="#3a4744" text-anchor="middle">＝ 高校範囲の学び直し（リメディアル）にも</text></svg>
+
+<div class="caption">図. 先生の資料 → NotebookLM → 学生の自学</div>
+
+</div>
+<div class="right">
+
+### こんな広がり方も
+
+- 大学によっては、**高校範囲の学び直し（リメディアル）** にNotebookLMを提供
+- 先生の**講義スライド・配布資料**を読ませれば、**出典つきで答える自学教材**に
+  - マインドマップで構造化できるのが秀逸
+- 学生は**要約・クイズ・音声解説・質問**で、自分のペースで復習できる
+
+<div class="callout-green"><strong>既存の資料</strong>が、そのまま「問いかけられる教材」に</div>
+
+</div>
+</div>
+
+<div class="takeaway">先生の資料が、学生が“対話して個別最適に学べる教材”に変わります</div>
+
+<!--
+- NotebookLMの広がり方をもう一つ。大学によっては、入学後の学び直し＝リメディアル、高校範囲の復習にNotebookLMを提供しているところもあります。
+- ポイントは、特別な教材を新しく作り込まなくていいこと。先生がいま持っている講義スライドや配布資料を読ませるだけで、出典つきで答える自学教材になります。
+- 学生はそれを使って、要約・クイズ・音声解説・質問で、自分のペースで復習できる。先生の資料が、学生が対話して学べる教材に変わります。
+-->
+
+---
+
 <!-- _class: summary -->
 
-<div class="page-title">Workspace Studio</div>
+<div class="page-title">Workspace Studioの概要</div>
 
-## 定型作業の自動化 ＝「つなぐ自動化」＋AIの判断
+## 定型作業の自動化 ＝「つなぐ自動化(iPaaS)」＋ Geminiの判断
+
+<style scoped>
+  section .ws-label { font-size: 18px; font-weight: 800; color: var(--accent-dark); margin: 8px 0 2px; }
+  section .ws-label .n { display:inline-block; background:var(--accent); color:#fff; border-radius:50%; width:22px; height:22px; line-height:22px; text-align:center; font-size:14px; margin-right:7px; }
+  section .evo { margin: 2px 0 2px; }
+  section .catalog { display:flex; flex-direction:column; gap:9px; margin-top:5px; }
+  section .cat-row { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+  section .cat-lead { flex:0 0 168px; font-size:17px; font-weight:800; color:#fff; border-radius:8px; padding:6px 12px; text-align:center; white-space:nowrap; }
+  section .cat-lead.st { background:#1A6BB0; } section .cat-lead.ai { background:var(--accent); } section .cat-lead.out { background:#B7791F; }
+  section .cat-chip { font-size:17px; line-height:1.2; border-radius:999px; padding:5px 14px; border:1px solid; }
+  section .cat-chip.st { background:#EAF2FB; border-color:#cfe0f2; color:#1f3a52; }
+  section .cat-chip.ai { background:#E3F1EF; border-color:#c2e0db; color:#1f4540; }
+  section .cat-chip.out { background:#FBF1DF; border-color:#e8d4a8; color:#6b521f; }
+</style>
+
+<div class="ws-label"><span class="n">1</span>自動化方法の変化</div>
 
 <div class="evo">
 <div class="evo-box evo-past">
@@ -2159,83 +2539,131 @@ style: |
 </div>
 </div>
 
-<div class="recipe-flow">
-<div class="rf-box rf-trigger"><span class="rf-tag">きっかけ</span><div class="rf-body">フォームに回答が届いたら</div></div>
-<div class="arrow">→</div>
-<div class="rf-box rf-ai"><span class="rf-tag">処理（AI）</span><div class="rf-body">内容を読み、分類・要約・下書き</div></div>
-<div class="arrow">→</div>
-<div class="rf-box rf-out"><span class="rf-tag">出力</span><div class="rf-body">下書き保存・通知・記録</div></div>
+<div class="ws-label"><span class="n">2</span>設定すること（部品を選んで並べるだけ）</div>
+
+<div class="catalog">
+<div class="cat-row"><span class="cat-lead st">きっかけ（スターター）</span><span class="cat-chip st">メール受信</span><span class="cat-chip st">フォーム回答</span><span class="cat-chip st">予定・時刻</span><span class="cat-chip st">チャット／ファイル追加</span></div>
+<div class="cat-row"><span class="cat-lead ai">処理（AI）</span><span class="cat-chip ai">要約・抽出</span><span class="cat-chip ai">分類（決定）</span><span class="cat-chip ai">条件分岐</span><span class="cat-chip ai">Gemini／Gem に相談</span></div>
+<div class="cat-row"><span class="cat-lead out">出力</span><span class="cat-chip out">メール下書き・ラベル</span><span class="cat-chip out">Chat 通知</span><span class="cat-chip out">Sheets 行追加</span><span class="cat-chip out">Drive 保存／タスク</span></div>
 </div>
 
-<div class="srcline"><b>定義の出典:</b> 「Gemini を使用して Workspace 全体で定型タスクを自動化（プログラミング不要）」Google Workspace 管理者ヘルプ</div>
+<div class="srcline"><b>定義の出典:</b> 「Gemini を使用して Workspace 全体で定型タスクを自動化（プログラミング不要）」Google Workspace 管理者ヘルプ <a href="https://support.google.com/a/users/answer/16430812">support.google.com/a/users/answer/16430812</a></div>
 
-<div class="takeaway">「きっかけ→処理→出力」を言葉で並べるだけ。コードは書きません</div>
+<div class="takeaway">ノーコード、Geminiで分岐・自動抽出、WSと連携</div>
 
 <!--
-- Workspace Studioは時間の都合で概要だけ。要は「定型作業の自動化」です。
-- これまで人が手作業でやっていたコピペや転記を、まずアプリ連携で自動化したのがiPaaS。そこにGeminiの判断を足したのがWorkspace Studioです。
-- 作り方は「きっかけ→処理→出力」を言葉で並べるだけ。たとえば「フォームに回答が来たら→内容を分類して→下書きを作る」。コードは書きません。詳しくは第2回のワークで扱います。
+- Workspace Studioは、Workspaceの中の定型作業をAIに肩代わりさせる道具です。
+- 位置づけは、手作業 → アプリ連携の自動化(iPaaS) → そこにGeminiの判断が加わったAIエージェント、という進化形。
+- 部品は「きっかけ（スターター）→処理→出力」を言葉で並べるだけ。ノーコードで、Gmail・Drive・Sheets・Chatの中で完結し、頭脳はGeminiです。
 -->
 
 ---
 
+<!-- _class: summary -->
+
+<div class="page-title">Workspace Studioの利用例</div>
+
+## 立場別の「これ、自動化したい」── 例
+
+<div class="prac">
+
+<div class="prac-col">
+<div class="pc-h">🏢 事務・教務</div>
+
+- 問い合わせに**回答ドラフト**＋対応表に記録
+- 会議記録から**ToDo（担当・期限）を抽出**→Chat通知・ToDoに追加
+- 授業評価の自由記述を**分類＋感情分析**→サマリー
+- 打合せ候補日を**Calendarに反映**
+
+</div>
+
+<div class="prac-col">
+<div class="pc-h">🔬 研究</div>
+
+- 論文PDFを**目的・手法・結果に要約**→管理表に追記
+- 音声メモを**実験記録・アイデアに清書**→ノート
+- ゼミ・会議で学生が進捗を報告すると、**学びのログ**を書き出し
+
+</div>
+
+<div class="prac-col">
+<div class="pc-h">🎓 学生（参考）</div>
+
+- 課題・締切を**Tasks登録＋リマインド**
+- 長文メールを**3点に要約**→Chat
+- 目上への**メール下書き**を自動生成
+
+</div>
+
+</div>
+
+<div class="callout-green">作り方は<strong>「言葉でたのむ」</strong>だけ。良い自動化は<strong>"コピー用リンク"</strong>で学内に共有できます</div>
+
+<style scoped>
+  section .fav-h { font-size: 17px; font-weight: 800; color: var(--accent-dark); margin: 12px 0 6px; }
+  section .fav { display: flex; gap: 10px; }
+  section .fav .fchip { flex: 1; background: #fff; border: 1.5px solid #c2e0db; border-left: 5px solid var(--accent); border-radius: 12px; padding: 8px 12px; font-size: 16px; line-height: 1.34; color: #21413c; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  section .fav .fchip b { color: var(--accent-dark); display: block; font-size: 16.5px; margin-bottom: 2px; }
+</style>
+
+<div class="fav-h">💡 特に便利だった自動化（おすすめ）</div>
+<div class="fav">
+<div class="fchip"><b>✅ ToDoの自動作成</b>会議メモなどから課題を抽出</div>
+<div class="fchip"><b>📰 毎朝のAIニュース</b>要約して Chat に自動配信</div>
+<div class="fchip"><b>📅 カレンダー自動作成</b>予定・日程を自動で登録</div>
+<div class="fchip"><b>📚 論文の書誌情報</b>フォルダに入れると自動抽出</div>
+</div>
+
+<div class="takeaway">毎週くり返す「ちょっと面倒」を、ひとつずつ自動化</div>
+
+<!--
+- ユースケースを立場別に。事務・教務では、問い合わせの回答ドラフト、会議記録からのToDo抽出、授業評価の自由記述の分類・感情分析、日程のCalendar仮反映。
+- 研究では、論文PDFの要約を管理表に追記、音声メモの清書、Meetログから学びのログ。
+- 学生も参考に。締切リマインド、長文メールの3点要約、メール下書き。どれも「きっかけ→処理→出力」で書け、最終判断・送信は人が行います。
+-->
+
+---
+
+
 <!-- _class: split -->
 
-<div class="page-title">Gems（教務の実演）</div>
+<div class="page-title">使いこなし方・学び方の型</div>
 
-## よく使うプロンプトを「Gem」にして固定化 ── シラバス点検
+## AI活用は、「OODAループ」で回すのはどうでしょう
 
 <div class="split-body">
 <div class="left">
 
-<video controls src="./src/fig20-gem-syllabus.mov" poster="./src/fig20-gem-syllabus.png" title="シラバスチェッカーGemのデモ" style="width:100%;border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.18)"></video>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 730 620" preserveAspectRatio="xMidYMid meet" style="max-height:382px;max-width:100%;height:auto;display:block;margin:0 auto" font-family="'Helvetica Neue', 'Hiragino Sans', sans-serif"><defs><marker id="ooda-arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L11,4 z" fill="#00736B"/></marker></defs><rect x="215" y="235" width="170" height="130" rx="6" ry="6" fill="#fff" stroke="#00736B" stroke-width="3"/><text x="300" y="283" text-anchor="middle" font-size="28" font-weight="700" fill="#00736B">OODA</text><text x="300" y="313" text-anchor="middle" font-size="20" fill="#333">Loop</text><text x="300" y="345" text-anchor="middle" font-size="16" fill="#666">(主語：人間)</text><path d="M 380 130 A 240 240 0 0 1 470 220" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><path d="M 470 380 A 240 240 0 0 1 380 470" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><path d="M 220 470 A 240 240 0 0 1 130 380" fill="none" stroke="#00736B" stroke-width="4" stroke-dasharray="8,6" marker-end="url(#ooda-arrow)"/><path d="M 130 220 A 240 240 0 0 1 220 130" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><circle cx="300" cy="80" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="300" y="73" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Observe</text><text x="300" y="103" text-anchor="middle" font-size="17" fill="#333">観る</text><text x="230" y="45" text-anchor="end" font-size="18" font-weight="600" fill="#333">AIの出力を見る</text><text x="230" y="68" text-anchor="end" font-size="15" fill="#666">（HITLで確認）</text><circle cx="520" cy="300" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="520" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Orient</text><text x="520" y="323" text-anchor="middle" font-size="17" fill="#333">状況判断</text><text x="560" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">自分の知識と照らす</text><circle cx="300" cy="520" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="300" y="513" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Decide</text><text x="300" y="543" text-anchor="middle" font-size="17" fill="#333">意思決定</text><text x="370" y="555" text-anchor="start" font-size="18" font-weight="600" fill="#333">採用 / 修正 / 棄却</text><text x="370" y="578" text-anchor="start" font-size="15" fill="#666">（使うかどうか決める）</text><circle cx="80" cy="300" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="80" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Act</text><text x="80" y="323" text-anchor="middle" font-size="17" fill="#333">実行</text><text x="40" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">再プロンプト／実装</text><g><rect x="425" y="40" width="190" height="110" rx="8" ry="8" fill="#fff8e1" stroke="#e65100" stroke-width="2.5"/><text x="520" y="76" text-anchor="middle" font-size="24" font-weight="700" fill="#e65100">Pause（確認）</text><text x="520" y="106" text-anchor="middle" font-size="17" fill="#333">私はこの出力を</text><text x="520" y="130" text-anchor="middle" font-size="17" fill="#333"><tspan font-weight="700">評価できる</tspan>か？</text><line x1="520" y1="150" x2="520" y2="240" stroke="#e65100" stroke-width="2.5"/></g></svg>
 
-<div class="caption">図. シラバスチェッカーGem（千葉大の記入規則の例）</div>
+<div class="caption">OODAループを“AI活用版”に修正。主語は常に「人間（先生ご自身）」</div>
 
 </div>
 <div class="right">
 
-### 役割を固定した“自分専用AI”
+### 先生のAI活用サイクル
 
-- シラバスをアップ→**記入規則に照らして解析・評価**
-- 学内で**共有**でき、使うほど精度が育つ
-- 同じ要領で**4択問題Gem**・授業ワーク伴走Gemも
+- **Observe**：AIの出力を、まず観る
+- **Orient**：ご自身の**専門知識**と照らす
+- **Decide**：採用／修正／棄却を決める
+- **Act**：授業準備・業務に使う、または再依頼
 
-<div class="callout-gray">Gem＝Geminiの機能の一つ。役割を固定した“自分専用AI”</div>
+### 「積み上げ式」より「回す」
+
+- 完璧に理解してから、ではなく**まず使う**
+- 活用は**自分が評価できる範囲**で
+- 出力は一歩**立ち止まって確認**（幻覚・偏りは残る）
+- この姿勢こそ、学生に見せたい<b>“良い文脈”</b>
 
 </div>
 </div>
 
-<div class="takeaway">毎回打つ指示はGem化して固定 ── 教務の定型作業がチームの資産になります</div>
+<div class="takeaway">「まず使う → 評価する → 工夫する」サイクルが、先生自身のAI活用力を高める鍵</div>
 
 <!--
-- 最後に教務の実演です。Geminiには「Gem」という、役割を固定した自分専用AIを作る機能があります。シラバスをアップすると記入規則に照らして解析・評価してくれるシラバスチェッカー。
-- これは千葉大の記入規則で作った例ですが、明海の記入規則に読み替えれば同じように使えます。学内で共有すればチームの資産に。
-- 同じ要領で4択問題を出すGem、授業ワークの伴走Gemも作れます。動画は30秒ほど。
--->
-
----
-
-<!-- _class: fig -->
-
-<div class="page-title">使いこなしの型</div>
-
-## AIの使い方・学び方は「OODAループ」で回す
-
-<div class="fig-area">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 730 620" preserveAspectRatio="xMidYMid meet" style="height:400px;width:auto;max-width:96%" font-family="'Helvetica Neue', 'Hiragino Sans', sans-serif"><defs><marker id="ooda-arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L11,4 z" fill="#00736B"/></marker></defs><rect x="215" y="235" width="170" height="130" rx="6" ry="6" fill="#fff" stroke="#00736B" stroke-width="3"/><text x="300" y="283" text-anchor="middle" font-size="28" font-weight="700" fill="#00736B">OODA</text><text x="300" y="313" text-anchor="middle" font-size="20" fill="#333">Loop</text><text x="300" y="345" text-anchor="middle" font-size="16" fill="#666">(主語：人間)</text><path d="M 380 130 A 240 240 0 0 1 470 220" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><path d="M 470 380 A 240 240 0 0 1 380 470" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><path d="M 220 470 A 240 240 0 0 1 130 380" fill="none" stroke="#00736B" stroke-width="4" stroke-dasharray="8,6" marker-end="url(#ooda-arrow)"/><path d="M 130 220 A 240 240 0 0 1 220 130" fill="none" stroke="#00736B" stroke-width="4" marker-end="url(#ooda-arrow)"/><circle cx="300" cy="80" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="300" y="73" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Observe</text><text x="300" y="103" text-anchor="middle" font-size="17" fill="#333">観る</text><text x="230" y="45" text-anchor="end" font-size="18" font-weight="600" fill="#333">AIの出力を見る</text><text x="230" y="68" text-anchor="end" font-size="15" fill="#666">（HITLで確認）</text><circle cx="520" cy="300" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="520" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Orient</text><text x="520" y="323" text-anchor="middle" font-size="17" fill="#333">状況判断</text><text x="560" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">自分の知識と照らす</text><circle cx="300" cy="520" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="300" y="513" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Decide</text><text x="300" y="543" text-anchor="middle" font-size="17" fill="#333">意思決定</text><text x="370" y="555" text-anchor="start" font-size="18" font-weight="600" fill="#333">採用 / 修正 / 棄却</text><text x="370" y="578" text-anchor="start" font-size="15" fill="#666">（使うかどうか決める）</text><circle cx="80" cy="300" r="60" fill="#E2F1EF" stroke="#00736B" stroke-width="3"/><text x="80" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#00736B">Act</text><text x="80" y="323" text-anchor="middle" font-size="17" fill="#333">実行</text><text x="40" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">再プロンプト／実装</text><g><rect x="425" y="40" width="190" height="110" rx="8" ry="8" fill="#fff8e1" stroke="#e65100" stroke-width="2.5"/><text x="520" y="76" text-anchor="middle" font-size="24" font-weight="700" fill="#e65100">Pause（確認）</text><text x="520" y="106" text-anchor="middle" font-size="17" fill="#333">私はこの出力を</text><text x="520" y="130" text-anchor="middle" font-size="17" fill="#333"><tspan font-weight="700">評価できる</tspan>か？</text><line x1="520" y1="150" x2="520" y2="240" stroke="#e65100" stroke-width="2.5"/></g></svg>
-</div>
-
-<div class="caption">Observe（出力を観る）→ Orient（自分の知識と照らす）→ Decide（採用・修正・棄却）→ Act（使う／再依頼）
-<div class="srcline">主語は常に「人間」。AIの出力を評価できる範囲で活用する</div>
-</div>
-
-<div class="takeaway">積み上げ式ではなく「まず使い、評価し、回す」── 評価できる範囲が活用の範囲</div>
-
-<!--
-- AIの使い方には型があります。OODAループです。元は意思決定のモデルですが、AI活用版にするとこうなります。
-- Observe、AIの出力を観る。Orient、自分の知識と照らす。Decide、採用するか・直すか・捨てるかを決める。Act、使うか、もう一度頼む。
-- 大事なのは、主語が常に人間だということ。そして「自分が評価できる範囲」でだけ活用する。評価できないものをそのまま使うのが、いちばん危険です。
+- AIの使い方には型があります。OODAループ。主語は常に人間、ここでは先生ご自身です。
+- Observe観る、Orient専門知識と照らす、Decide採用か修正か棄却か、Act使うか再依頼か。
+- 完璧に理解してからではなく、まず使って評価する。評価できる範囲で活用する。そしてこの姿勢こそ、学生に見せたい“良い文脈”そのものです。
 -->
 
 ---
@@ -2249,26 +2677,29 @@ style: |
 <div class="split-body">
 <div class="left">
 
-### やってみること（提出物なし・10分ほど）
+### やってみること（10分ほど）
 
-- 先ほど**紹介したもの**をもとに、**横の人**と一緒に試してみましょう
+- 先ほど**紹介した機能**をもとに、Geminiを**横の先生**と一緒に試してみましょう
 - **Gemini** に1つ質問する／できれば **NotebookLM** に資料を1つ読ませる
-- 「**これは便利／これは怪しい**」を口に出してみる
+- 「**これは便利／これは怪しい**」を確認
 
-<div class="srcline">→ <a href="https://gemini.google.com/">Gemini（gemini.google.com）</a> ／ <a href="https://notebooklm.google.com/">NotebookLM（notebooklm.google.com）</a></div>
+<div class="srcline">→ <a href="https://gemini.google.com/">Gemini（gemini.google.com）</a> ／ <br><a href="https://notebooklm.google.com/">NotebookLM（notebooklm.google.com）</a></div>
 
 </div>
 <div class="right">
 
 ### おすすめの最初の一手
 
-- 「この英語論文の要点を3つに」
-- 「来週の授業のミニクイズを5問」
-- 「この問い合わせメールへの返信案を」
+- 「◯◯のワークを実施するGemを作って」
+- 来週の授業のPDFを与え、「ミニクイズを5問」
+- Canvasをonにして「この内容のスライド案を」
 
-<div class="callout-yellow">うまくいかなくて当然。<strong>OODAで「直して再依頼」</strong>を体感してください</div>
+<div class="callout-yellow">一発目は高い精度の回答は出ません<br><strong>OODAで「直して再依頼」</strong>を体感してください</div>
 
 </div>
+
+<div class="callout-green" style="grid-column:1/-1; margin-top:2px;">💬 終わったら、<strong>感想を全体で共有</strong>いただけますと幸いです（可能性を感じた点・引っかかった点など）</div>
+
 </div>
 
 <div class="takeaway">完璧を狙わず、まず触る。「評価しながら使う」感覚をつかみましょう</div>
@@ -2327,7 +2758,7 @@ style: |
 <div class="poll">
 <div class="pno">2-3</div>
 <div class="pbody">
-<div class="pq">今日、実際に使ってみてどうでしたか？<span class="ptype single">3択</span></div>
+<div class="pq">今日、ワークで実際に使ってみてどうでしたか？<span class="ptype single">3択</span></div>
 <div class="popts">
 <span class="popt">① 期待が持てそう</span>
 <span class="popt">② まだ何とも言えない・分からない</span>
@@ -2338,7 +2769,7 @@ style: |
 
 </div>
 
-<div class="takeaway">実感はいかがでしたか。次は“学びを守りつつ、教育を面白くする”授業・評価の設計へ</div>
+<div class="takeaway">実感はいかがでしたか。AIが先生の支援ツールなると嬉しいです。</div>
 
 <!--
 - 体験のあと、Session 2のまとめとして3つ Slido でうかがいます。
@@ -2376,60 +2807,19 @@ style: |
 
 ---
 
-<!-- _class: split -->
-
-<div class="page-title">教員の役割の変化</div>
-
-## 「知識の専門家」から「学びのファシリテーター」へ
-
-<div class="split-body">
-<div class="left">
-
-### 残る価値・高まる価値
-
-- **問いを立てる**力、議論を**深める**力
-- 学生が**安心して失敗できる「場」**をつくる力
-- 一人ひとりに**寄り添う**コーチング
-
-<div class="callout-green">知識の"配達"はAIに任せ、教員は<strong>学びの設計と伴走</strong>へ</div>
-
-</div>
-<div class="right">
-
-### 場づくりが、これまで以上に効く
-
-- 工業時代＝標準化・競争 → 情報化時代＝**協働・主体性**
-- 「弱い教育」＝ともに、内側から知る学び
-- 1対1指導の知見を、**AI＋教員**で実装できる
-
-<div class="srcline"><b>出典:</b> Bowen &amp; Watson <i>Teaching with AI</i> (2026)／Aoun <i>Robot-Proof</i> (MIT Press)／インゴルド『教育とは何か』(2025)</div>
-
-</div>
-</div>
-
-<div class="takeaway">Teaching に加え、Coaching へ ── 教員にしかできない部分が、むしろ際立ちます</div>
-
-<!--
-- 答えのひとつが、教員の役割の変化です。知識の専門家から、学びのファシリテーターへ。
-- 残る価値、むしろ高まる価値は、問いを立てる力、議論を深める力、安心して失敗できる場をつくる力、一人ひとりに寄り添うコーチングです。
-- 知識の"配達"はAtに任せて、教員は学びの設計と伴走へ。AounのRobot-Proofやインゴルドの「弱い教育」も、同じ方向を指しています。教えることに加えて、コーチすること。教員にしかできない部分が、むしろ際立つ時代です。
--->
-
----
-
 <!-- _class: fig -->
 
-<div class="page-title">学習目標とAIの関係</div>
+<div class="page-title">枠組み：学習目標とAIの関係</div>
 
 ## Bloomの学習目標分類から考える ──  学びを再デザインする指標
 
 <div class="fig-area">
-<svg viewBox="0 0 880 360" style="height:430px;width:auto;max-width:100%;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B6068"/></marker></defs><line x1="20" y1="44" x2="860" y2="44" stroke="#5B6068" stroke-width="2" marker-end="url(#arrB)"/><g><rect x="20" y="70" width="135" height="220" rx="6" fill="#E4E6E9"/><text x="87" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">記憶</text><text x="87" y="176" font-size="15" fill="#5B6068" text-anchor="middle">事実や概念を</text><text x="87" y="198" font-size="15" fill="#5B6068" text-anchor="middle">暗記している</text><text x="87" y="244" font-size="13" fill="#8a3f12" text-anchor="middle">例：用語・法令</text></g><g><rect x="160" y="70" width="135" height="220" rx="6" fill="#C9D6E3"/><text x="227" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">理解</text><text x="227" y="176" font-size="15" fill="#5B6068" text-anchor="middle">学習内容を</text><text x="227" y="198" font-size="15" fill="#5B6068" text-anchor="middle">説明できる</text><text x="227" y="244" font-size="13" fill="#8a3f12" text-anchor="middle">例：制度の説明</text></g><g><rect x="300" y="70" width="135" height="220" rx="6" fill="#9FBDD8"/><text x="367" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">応用</text><text x="367" y="176" font-size="15" fill="#1A6BB0" text-anchor="middle">他の場面・状況に</text><text x="367" y="198" font-size="15" fill="#1A6BB0" text-anchor="middle">使用できる</text><text x="367" y="244" font-size="13" fill="#1A6BB0" text-anchor="middle">例：他物件へ適用</text></g><g><rect x="440" y="70" width="135" height="220" rx="6" fill="#1A6BB0"/><text x="507" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">分析</text><text x="507" y="176" font-size="15" fill="#fff" text-anchor="middle">要素に分け</text><text x="507" y="198" font-size="15" fill="#fff" text-anchor="middle">関係性を指摘</text><text x="507" y="244" font-size="13" fill="#dbe7f3" text-anchor="middle">例：市場要因の分解</text></g><g><rect x="580" y="70" width="135" height="220" rx="6" fill="#C0344A"/><text x="647" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">評価</text><text x="647" y="176" font-size="15" fill="#fff" text-anchor="middle">事物・判断を</text><text x="647" y="198" font-size="15" fill="#fff" text-anchor="middle">比較し評価する</text><text x="647" y="244" font-size="13" fill="#f5d6db" text-anchor="middle">例：物件比較の良否</text></g><g><rect x="720" y="70" width="140" height="220" rx="6" fill="#C8611C"/><text x="790" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">創造</text><text x="790" y="176" font-size="15" fill="#fff" text-anchor="middle">学習を応用し</text><text x="790" y="198" font-size="15" fill="#fff" text-anchor="middle">新しい価値を作る</text><text x="790" y="244" font-size="13" fill="#f6ddca" text-anchor="middle">例：新しい活用提案</text></g><text x="440" y="330" font-size="17" fill="#222" text-anchor="middle">記憶・理解はAIへ外部化 ── 創造は、人の深い思考を土台に AI×人で共創する</text></svg>
+<svg viewBox="0 36 880 310" style="width:100%;height:auto;max-width:1160px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B6068"/></marker></defs><line x1="20" y1="44" x2="860" y2="44" stroke="#5B6068" stroke-width="2" marker-end="url(#arrB)"/><g><rect x="20" y="70" width="135" height="220" rx="6" fill="#E4E6E9"/><text x="87" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">記憶</text><text x="87" y="176" font-size="15" fill="#5B6068" text-anchor="middle">事実や概念を</text><text x="87" y="198" font-size="15" fill="#5B6068" text-anchor="middle">暗記している</text><text x="87" y="244" font-size="13" fill="#8a3f12" text-anchor="middle">例：用語・法令</text></g><g><rect x="160" y="70" width="135" height="220" rx="6" fill="#C9D6E3"/><text x="227" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">理解</text><text x="227" y="176" font-size="15" fill="#5B6068" text-anchor="middle">学習内容を</text><text x="227" y="198" font-size="15" fill="#5B6068" text-anchor="middle">説明できる</text><text x="227" y="244" font-size="13" fill="#8a3f12" text-anchor="middle">例：制度の説明</text></g><g><rect x="300" y="70" width="135" height="220" rx="6" fill="#9FBDD8"/><text x="367" y="100" font-size="18" fill="#222" font-weight="bold" text-anchor="middle">応用</text><text x="367" y="176" font-size="15" fill="#1A6BB0" text-anchor="middle">他の場面・状況に</text><text x="367" y="198" font-size="15" fill="#1A6BB0" text-anchor="middle">使用できる</text><text x="367" y="244" font-size="13" fill="#1A6BB0" text-anchor="middle">例：他物件へ適用</text></g><g><rect x="440" y="70" width="135" height="220" rx="6" fill="#1A6BB0"/><text x="507" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">分析</text><text x="507" y="176" font-size="15" fill="#fff" text-anchor="middle">要素に分け</text><text x="507" y="198" font-size="15" fill="#fff" text-anchor="middle">関係性を指摘</text><text x="507" y="244" font-size="13" fill="#dbe7f3" text-anchor="middle">例：市場要因の分解</text></g><g><rect x="580" y="70" width="135" height="220" rx="6" fill="#C0344A"/><text x="647" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">評価</text><text x="647" y="176" font-size="15" fill="#fff" text-anchor="middle">事物・判断を</text><text x="647" y="198" font-size="15" fill="#fff" text-anchor="middle">比較し評価する</text><text x="647" y="244" font-size="13" fill="#f5d6db" text-anchor="middle">例：物件比較の良否</text></g><g><rect x="720" y="70" width="140" height="220" rx="6" fill="#C8611C"/><text x="790" y="100" font-size="18" fill="#fff" font-weight="bold" text-anchor="middle">創造</text><text x="790" y="176" font-size="15" fill="#fff" text-anchor="middle">学習を応用し</text><text x="790" y="198" font-size="15" fill="#fff" text-anchor="middle">新しい価値を作る</text><text x="790" y="244" font-size="13" fill="#f6ddca" text-anchor="middle">例：新しい活用提案</text></g><text x="440" y="330" font-size="17" fill="#222" text-anchor="middle">左から全部ないと、右に到達しない/AIが得意・悪影響を与えるレイヤーがある/授業の到達点はどこ？</text></svg>
 </div>
 
 <div class="attr">※改訂版ブルーム・タキソノミー（Anderson &amp; Krathwohl, 2001／原著 Bloom 1956）。左の整理は栗田&amp;中村(2023)を参考</div>
 
-<div class="takeaway">記憶・理解はAIへ、評価・創造は人×AIで ── 設計はこの軸から考える</div>
+<div class="takeaway">出口から考える → 評価・創造は人×AIで出来ることが必要</div>
 
 <!--
 - 役割の変化を、学びの「目標」の側から裏づけます。さきほどの2シグマとは別の、同じブルームによる『学習目標分類』、1956年の原著・2001年の改訂版です。
@@ -2438,25 +2828,404 @@ style: |
 - 不動産でいえば、評価＝複数物件を比べて良否を判断、創造＝新しい活用や再生のプランを提案。ここが人の領域です。気をつけたいのは、効率化それ自体が目的になること。空いた時間を右側＝人にしかできない所へ回せて、はじめて意味があります。
 - ※直前の『2シグマ問題』は Bloom (1984) の別研究です。混同しないように。
 -->
+---
+
+<!-- _class: split -->
+
+<div class="page-title">守りの設計：課題と評価を考える</div>
+
+## 学びを損なわないために ─ 授業の目標について、学生が思考することを担保する
+
+<div class="callout-orange" style="margin:4px 0 12px;">🤔 <b>中学生に聞かれたらどうします？</b>　「AIの方が英語を書くのが上手いのに、英語を学ぶ必要があるの？」</div>
+
+<div class="split-body">
+<div class="left">
+
+### 考え方の例
+- **到達目標までの思考/試行の"過程"** を、<br>AIに肩代わりさせない
+  - 学生が自ら思考する部分をAIが代替するのはNG
+  - 非本質・既習の部分に、道具として使うのは許容
+  - 課題をより面白くする上で使うのは許容
+<div class="callout-green">守るべきは目標に至るまでの思考。<br>手段（AI可否）は目標から逆算して決める。</div>
+
+</div>
+<div class="right">
+
+### 足場かけ・足場はずし
+
+- 序盤は**足場かけ**（AIで理解を支える）
+- 終盤は**足場はずし**（AIなしで到達を確認）
+- 「いつ・どこで使うか」を**学習段階で変える**
+  - どこまでAIを使ってよいかを**授業・課題毎に明示**
+  
+### 目標達成
+- 到達目標や評価を再考すべき場合もある
+  - より遠くまで行ける可能性
+
+
+<div class="srcline">学部生か大学院生か、最初からか後半か ── 文脈で判断は変わる</div>
+
+</div>
+</div>
+
+<div class="takeaway">AIは良いか悪いか、では無く、デザインの問題</div>
+
+<!--
+- まず守りの設計です。大原則は、科目の到達目標を絶対に動かさないこと。目標を達成する過程そのものをAIに肩代わりさせてはいけません。
+- そのうえで「どこまで使ってよいか」を課題ごとに明示する。守るべきは目標で、AIの可否は目標から逆算して決めます。
+- 使い方の工夫が足場かけ・足場はずしです。序盤はAIで理解を支え、終盤はAIなしで到達を確認する。学部生か院生か、最初からか後半か。文脈で判断は変わります。
+-->
+---
+
+<!-- _class: summary -->
+
+<div class="page-title">既存評価への影響</div>
+
+<style scoped>
+  section table.ev2 { border-collapse: collapse; font-size: 17px; margin: 0; }
+  section table.ev2 th { background: var(--accent); color:#fff; font-weight:800; padding:3px 12px; text-align:center; line-height:1.12; }
+  section table.ev2 th.lbl { text-align:left; }
+  section table.ev2 td { border:1px solid #d8dde6; padding:1px 12px; text-align:center; }
+  section table.ev2 td.m { text-align:left; font-weight:700; color:#2a3a3a; background:#f4f8f7; white-space:nowrap; }
+  section table.ev2 .dbl { color:#0F766E; font-weight:800; font-size:19px; }
+  section table.ev2 .sng { color:#9aa5a2; font-size:18px; }
+  section table.ev2 td.hot { background:#FCEAEA; }
+  section table.ev2 td.bt { border-top:2.5px solid #C0392B; }
+  section table.ev2 td.bb { border-bottom:2.5px solid #C0392B; }
+  section table.ev2 td.bl { border-left:2.5px solid #C0392B; }
+  section table.ev2 td.br { border-right:2.5px solid #C0392B; }
+  section .redcap { color:#B23B2E; font-weight:800; font-size:15px; text-align:left; margin:8px 0 0; }
+  section .ev-row { display:flex; gap:48px; align-items:center; margin-top:10px; }
+  section .ev-left { flex:0 0 auto; min-width:0; }
+  section .ev-right { flex:1 1 auto; display:flex; flex-direction:column; gap:16px; justify-content:center; }
+  section .ev-right .m-hot, section .ev-right .m-cool { border-radius:12px; padding:16px 20px; font-size:20px; line-height:1.55; }
+  section .ev-right .m-hot { background:#FBF1F0; border:1.5px solid #f0d3cf; }
+  section .ev-right .m-cool { background:var(--accent-soft); border:1.5px solid #c2e0db; }
+  section .ev-right .mh { font-weight:800; display:block; margin-bottom:6px; font-size:22px; }
+  section .ev-right .m-hot .mh { color:#B23B2E; }
+  section .ev-right .m-cool .mh { color:var(--accent-dark); }
+  section .ev-right b { color:#2a3a3a; }
+</style>
+
+## テキストで完結する既存評価ほど、生成AIの影響が大きい
+
+<div class="ev-row">
+<div class="ev-left">
+
+<table class="ev2">
+<tr><th class="lbl"></th><th>知識・<br>理解</th><th>思考・<br>判断</th><th>技能</th><th>関心・<br>意欲</th><th>態度</th></tr>
+<tr><td class="m">筆記試験</td><td class="hot bt bl"><span class="dbl">◎</span></td><td class="hot bt br"><span class="sng">○</span></td><td></td><td></td><td></td></tr>
+<tr><td class="m">論述課題</td><td class="hot bl"><span class="sng">○</span></td><td class="hot br"><span class="dbl">◎</span></td><td></td><td></td><td></td></tr>
+<tr><td class="m">レポート課題</td><td class="hot bb bl"><span class="sng">○</span></td><td class="hot bb br"><span class="dbl">◎</span></td><td><span class="sng">○</span></td><td><span class="sng">○</span></td><td><span class="dbl">◎</span></td></tr>
+<tr><td class="m">観察法</td><td><span class="sng">○</span></td><td><span class="sng">○</span></td><td><span class="dbl">◎</span></td><td><span class="dbl">◎</span></td><td><span class="sng">○</span></td></tr>
+<tr><td class="m">口述（面接）試験</td><td><span class="dbl">◎</span></td><td><span class="dbl">◎</span></td><td></td><td><span class="dbl">◎</span></td><td><span class="sng">○</span></td></tr>
+<tr><td class="m">実技・実演</td><td></td><td><span class="sng">○</span></td><td><span class="dbl">◎</span></td><td><span class="sng">○</span></td><td><span class="sng">○</span></td></tr>
+<tr><td class="m">ポートフォリオ</td><td></td><td></td><td><span class="sng">○</span></td><td><span class="sng">○</span></td><td><span class="sng">○</span></td></tr>
+<tr><td class="m">自己評価</td><td></td><td></td><td></td><td><span class="dbl">◎</span></td><td><span class="sng">○</span></td></tr>
+</table>
+
+<div class="redcap">🟥 赤枠＝生成AIのインパクト大</div>
+
+</div>
+<div class="ev-right">
+<div class="m-hot"><span class="mh">⚠ 既存評価ほど“まずい”</span>テキストで完結する <b>筆記・論述・レポート</b>（知識・思考）は、生成AIが最も得意な領域＝<b>そのままでは代替されやすい</b></div>
+<div class="m-cool"><span class="mh">✓ だから評価を広げる</span>AIの影響が小さい <b>観察・口述・実技・ポートフォリオ・自己評価</b>（技能・関心・態度）を組み合わせる</div>
+</div>
+</div>
+
+<div class="srcline" style="text-align:right; margin-top:6px;">中島 (2016) を 吉田 (2023) が生成AIの影響を加えて更新</div>
+
+<div class="takeaway">テキストで完結する既存評価はAIの影響大 ── 課題と評価の再設計が必要</div>
+
+<!--
+- 守りの設計に続けて、評価方法の地図を一枚。評価は「目標の性質」に合わせて選ぶのが基本です（中島2016）。
+- 知識は客観試験・論述で測れますが、技能や態度はレポート・発表・口述・観察・実演でこそ測れる。
+- AIで「完成物」だけを見ると知識（高次）に偏りがち。発表・口述・観察を足すと、AIに任せにくい技能・態度まで評価でき、これが次の「評価対象を広げる」につながります。
+-->
+---
+
+<!-- _class: fig -->
+
+<div class="page-title">MITの科目改善フロー</div>
+
+## MIT式、AIの課題改善フロー ── 課題を「AI対応に」作り変える
+
+<div style="display:flex; gap:22px; align-items:flex-start; margin-top:8px;">
+
+<div style="flex:1; min-width:0; text-align:center;">
+<img src="./src/fig70-mit-flow.png" alt="MIT式 AIの課題改善フロー：授業計画の開始→①既存課題をAIに入力し回答を生成→②AIの回答を分析・評価→③AIとの対話で深掘り→④課題の限界と必要性を把握し課題を見直す。継続的な見直しのオプションは ①課題へのAI組み込み・②小テストで補完・③反転授業" style="max-width:100%; max-height:440px; border:1px solid #ddd; border-radius:8px; box-shadow:0 3px 12px rgba(0,0,0,.12);">
+</div>
+
+<div style="flex:0 0 30%; background:var(--accent-soft); border:1.5px solid #c2e0db; border-left:5px solid var(--accent); border-radius:10px; padding:14px 17px; font-size:18px; line-height:1.62; color:#234;">
+<strong style="color:var(--accent-dark);">重要な原則</strong><br>
+・AI利用ポリシーと根拠を<strong>事前に</strong>学生へ明確に伝える<br>
+・全学生への<strong>公平なAIアクセス</strong>とプライバシー配慮を担保する<br><br>
+<span style="font-size:15px; color:#5a6764;">類似の情報は阪大HPにも：<br><a href="https://www.tlsc.osaka-u.ac.jp/project/generative_ai/assessment_ai.html" style="color:var(--accent); word-break:break-all;">tlsc.osaka-u.ac.jp/project/generative_ai/assessment_ai.html</a></span>
+</div>
+
+</div>
+
+<div class="takeaway">「AIで解けない課題」探しより、「AIを使ってこそ深まる課題」へ作り変える</div>
+
+<!--
+- 守りの次は攻めです。課題そのものを作り変えます。これがMITの『科目改善フロー』。
+- 上の4ステップ：授業計画の開始から、①まず既存の課題をAIに入力して解かせる、②その回答を分析・評価する、③AIと対話してさらに深掘り、④課題の限界と必要性を把握して、課題を見直す。
+- 見直しの選択肢が下の3つ。①課題自体にAIをどう組み込むか（事前はAIなし・本課題は可否と引用を明確化・事後はリフレクション）、②週1の低負荷な小テストで補う、③反転授業にする。
+- AIに解かせて満点が出るなら作り変えのサインです。さきほどのBloomでいう評価・創造＝人の領域へ寄せる。不動産なら、利害関係者の対話、現場の判断、新しい活用提案。これを次のワークで実際に試します。
+-->
+
+---
+
+
+<!-- _class: summary -->
+
+<div class="page-title">AI利用ポリシーの共有</div>
+
+## 課題に「AIをどこまで使ってよいか」を書く ── 学生と事前に共有する7つの問い
+
+<style scoped>
+  section .qlist { display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; margin-top:12px; }
+  section .qlist .qi { display:flex; gap:11px; align-items:flex-start; font-size:19px; line-height:1.45; background:#fff; border:1.5px solid #dde6e4; border-left:5px solid var(--accent); border-radius:10px; padding:11px 16px; }
+  section .qlist .qi .qn { flex:none; font-weight:800; color:#fff; background:var(--accent); border-radius:999px; width:25px; height:25px; line-height:25px; text-align:center; font-size:15px; }
+  section .qlist .qi > span.qtxt { flex:1; min-width:0; }
+  section .qlist .qi.full { grid-column:1 / -1; }
+</style>
+
+<div class="callout-green">事前に、授業での<strong>生成AI利用ポリシー</strong>を学生と共有しておく</div>
+
+<div class="qlist">
+<div class="qi"><span class="qn">1</span><span class="qtxt">AIの使用が<strong>許可／禁止されるのはいつ・なぜ</strong>か？</span></div>
+<div class="qi"><span class="qn">2</span><span class="qtxt">AIとの<strong>ブレインストーミング</strong>はカンニングにあたるのか？</span></div>
+<div class="qi"><span class="qn">3</span><span class="qtxt">AIはこの授業で学習を<strong>強化／妨げ</strong>うるのか？</span></div>
+<div class="qi"><span class="qn">4</span><span class="qtxt">許可する場合、学生は<strong>使ったプロンプトを提出</strong>すべきか？</span></div>
+<div class="qi"><span class="qn">5</span><span class="qtxt">AIの使用は、どのように<strong>クレジット（明記）</strong>すべきか？</span></div>
+<div class="qi"><span class="qn">6</span><span class="qtxt">AIの<strong>限界</strong>についての注意喚起</span></div>
+<div class="qi full"><span class="qn">7</span><span class="qtxt"><strong>AI検出ツール</strong>の使用方針 ── <strong>検出率は100%ではない</strong>ため、結果を盲信せず参考にとどめる</span></div>
+</div>
+
+<div class="srcline"><b>出典:</b> Bowen &amp; Watson, AAC&amp;U 2024 ／訳書『AI時代の大学教育（Teaching with AI）』</div>
+
+<div class="takeaway">「禁止／許可」を曖昧にしない ── 課題ごとに、AIの使い方を言葉にして示す</div>
+
+<!--
+- 守りの設計を具体化します。Bowen & Watsonが挙げる「課題に書いておくべき7つの問い」です。
+- いつ・なぜ許可/禁止するのか、ブレストはカンニングか、プロンプトの提出を求めるか、どうクレジットするか、AIの限界、検出ツールの扱い。
+- 大事なのは、これを事前に・課題ごとに、言葉にして学生と共有しておくことです。
+-->
 
 ---
 
 <!-- _class: summary -->
 
-<div class="page-title">学びにとって良い方法</div>
+<div class="page-title">ポリシーの文例</div>
+
+## そのまま使える ── シラバスに載せる「生成AIポリシー」の例
 
 <style scoped>
-  section table.lit { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 18px; }
-  section table.lit th { background: var(--accent); color: #fff; font-weight: 800; padding: 7px 10px; text-align: left; font-size: 17px; }
-  section table.lit td { border-bottom: 1px solid #e2e7e6; padding: 7px 10px; vertical-align: top; line-height: 1.4; }
-  section table.lit td.eff { text-align: center; white-space: nowrap; font-weight: 800; }
-  section .eb { display: inline-block; border-radius: 999px; padding: 2px 12px; font-size: 16px; font-weight: 800; color: #fff; }
-  section .eb.hi { background: #0F766E; } section .eb.mid { background: #9a5a00; } section .eb.lo { background: #7c8488; }
+  section .policy { font-size:18px; line-height:1.6; background:#F2F7F6; border-left:6px solid var(--accent); border-radius:8px; padding:13px 22px; margin:8px 0; color:#2a2d33; }
+  section .policy p { margin:0 0 10px; }
+  section .policy p:last-child { margin-bottom:0; }
+  section .policy strong { color:var(--accent-dark); }
+  section .policy .resp { display:block; margin-top:4px; font-size:15.5px; color:#5a6764; }
 </style>
 
-## 効果のある学習方法 ── 「効果が高い」ほど一人では難しい <span style="font-size:18px;font-weight:600;color:#5B6068">（Dunlosky et al. 2013）</span>
+<div class="policy">
+<p>このコースの目標の一つは、<strong>効果的に書き、伝える力</strong>を学ぶことです。これは練習が要ります。AIで素早く生産することも期待しますが、<strong>そもそも質の高い文章を自分で作り、直し、見分ける力</strong>も必要です。AIが自分を介さずに仕上げられるなら、それは「雇われるに値するスキルを持っていない」ということ。だから、練習しよう。</p>
+<p>そのため<strong>コースの前半は、AIのサポートを一切禁止</strong>します。この苦労やもどかしさは、ゲームのレベル上げの訓練のようなもの。自分の手で取り組む人が、力を得ます。</p>
+<p>一方<strong>後半は、特定の状況下でAIの使用を認める</strong>ことがあります。その際は、使ったプロンプトと応答の提出を求める場合があります。</p>
+<p>AIリテラシーは重要な新しいスキルです。ただしAIは<strong>「幻覚」── 事実のように見えるものを生成</strong>することに注意。利点と危険の両方を、批判的に考える必要があります。<span class="resp">※ 最終的な成果物、およびAIの制限・バイアスの可能性については、学生本人が責任を負う。このポリシーは必要に応じて変更する。</span></p>
+</div>
 
-<div style="text-align:right;font-size:15px;color:#8a8f96;margin:-4px 2px 2px">※個人差はあります</div>
+<div class="srcline"><b>出典:</b> Bowen &amp; Watson, AAC&amp;U 2024（課題における記載例）</div>
+
+<div class="takeaway">前半は「足場」を外して鍛え、後半は使い方を学ぶ ── 学習段階で線を引く</div>
+
+<!--
+- これは、そのままシラバスに載せられるポリシーの文例です。Bowen & Watsonの例を訳したもの。
+- 前半はAIを一切禁止して、自分の手で書く力を鍛える。後半は状況次第で許可し、使ったプロンプトの提出を求める。
+- AIの幻覚に注意し、最終的な責任は学生本人が負う。先生方の科目に合わせて、文言を調整して使ってください。
+-->
+
+---
+
+<!-- _class: summary -->
+
+<div class="page-title">[参考] 評価のアップデート</div>
+
+<style scoped>
+  section .axis-grid { grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 8px; }
+  section .axis { padding: 12px 17px; border-left-width: 6px; }
+  section .axis .ax-h { font-size: 20px; margin-bottom: 4px; }
+  section .axis .ax-b { font-size: 16.5px; line-height: 1.4; }
+  section .ev-col { display: flex; gap: 26px; align-items: stretch; margin-top: 10px; }
+  section .ev-h { font-size: 22px; font-weight: 800; color: var(--accent-dark); margin: 0 0 11px; }
+  section .evf { display: flex; flex-direction: column; gap: 11px; }
+  section .evf .ch { border-radius: 10px; padding: 12px 17px; font-size: 18.5px; line-height: 1.4; }
+  section .evf .c1 { background: #EAF2FB; border-left: 4px solid #1A6BB0; } section .evf .c1 b { color: #1A6BB0; }
+  section .evf .c2 { background: var(--accent-soft); border-left: 4px solid var(--accent); } section .evf .c2 b { color: var(--accent-dark); }
+  section .evf .c3 { background: #FBF1DF; border-left: 4px solid #B7791F; } section .evf .c3 b { color: #9a6314; }
+</style>
+
+## 「使ったかどうか」で線を引かない ── 大学教育学会 2026.6 の議論から
+
+<div class="ev-col">
+<div style="flex:0 0 54%;">
+<div class="ev-h">① 判断は「6つの軸」で</div>
+<div class="axis-grid">
+<div class="axis"><div class="ax-h">① 学習目標の達成</div><div class="ax-b">育てたい力が損なわれていないか</div></div>
+<div class="axis"><div class="ax-h">② 思考の主体性</div><div class="ax-b">考える過程を学生が担っているか</div></div>
+<div class="axis"><div class="ax-h">③ 評価の妥当性</div><div class="ax-b">提出物が到達度を反映するか</div></div>
+<div class="axis"><div class="ax-h">④ 学問的誠実性</div><div class="ax-b">過程を説明でき、欺瞞がないか</div></div>
+<div class="axis"><div class="ax-h">⑤ 文脈依存性</div><div class="ax-b">科目・到達段階・目的で変わる</div></div>
+<div class="axis"><div class="ax-h">⑥ 評価の公平性</div><div class="ax-b">使う/使わない学生に同じ基準か</div></div>
+</div>
+</div>
+<div style="flex:1;">
+<div class="ev-h">② 評価対象を広げる</div>
+<div class="evf">
+<div class="ch c1"><b>成果物</b>：最終レポート</div>
+<div class="ch c2"><b>＋ 対話記録</b>：AIとのやりとり</div>
+<div class="ch c3"><b>＋ 振り返り</b>：学びの自己説明</div>
+</div>
+<div style="font-size:17.5px;line-height:1.5;margin-top:13px;color:#333;">完成物だけでなく<strong>過程と省察</strong>も。評価軸は「使ったか」でなく<strong>本人の中に学びが起きたか</strong>＝つながりの形成（コネクティビズム）</div>
+</div>
+</div>
+
+<div class="srcline">大学教育学会 2026.6 の議論より（田口先生・中島先生 ほか）／コネクティビズム = G. Siemens</div>
+
+<div class="takeaway">「使用の有無」で線を引かず、"成果物＋過程＋省察"で「学びが起きたか」を評価する</div>
+
+---
+<!-- _class: split -->
+
+<div class="page-title">攻めの設計：真正な課題を創る</div>
+
+## 現実の「真正な課題」を中心に ── AIで高次の学びへ
+
+<style scoped>
+  section .princ { display:flex; flex-direction:column; gap:7px; margin-top:4px; }
+  section .princ .pr { display:flex; align-items:baseline; gap:10px; background:#fff; border:1.5px solid #dde6e4; border-left:5px solid var(--accent); border-radius:9px; padding:7px 14px; }
+  section .princ .pn { flex:0 0 auto; font-weight:800; color:#fff; background:var(--accent); border-radius:6px; padding:1px 9px; font-size:15px; }
+  section .princ .pt { font-size:17px; line-height:1.35; }
+  section .princ .pt b { color:var(--accent-dark); }
+</style>
+
+<div class="split-body">
+<div class="left">
+
+### 真正な課題が満たす5原理（メリル）
+
+<div class="princ">
+<div class="pr"><span class="pn">①</span><span class="pt"><b>問題</b>：現実に起こりそうな問題に挑む</span></div>
+<div class="pr"><span class="pn">②</span><span class="pt"><b>活性化</b>：すでに知っている知識を動員する</span></div>
+<div class="pr"><span class="pn">③</span><span class="pt"><b>例示</b>：Tell me でなく <b>Show me</b></span></div>
+<div class="pr"><span class="pn">④</span><span class="pt"><b>応用</b>：やってみる機会がある（<b>Let me</b>）</span></div>
+<div class="pr"><span class="pn">⑤</span><span class="pt"><b>統合</b>：現場で活かし、振り返る</span></div>
+</div>
+
+</div>
+<div class="right">
+
+### 課題中心型の授業設計
+
+- 現実社会の課題を**学習の中心**に据える（課題中心型）
+  - 真正な課題とも言われる
+  - 通常は、手間がかかりすぎて実施が難しい
+- **「指令書」**を渡せば、教科書＋AIで**自習**できる
+  - （RPGの設計者の発想）
+- **AIの伴走やシナリオ提示**があるからこそ、これまで難しかった**本質的な課題**が成立 → **早期に高次目標**へ
+- 講義が「知識を伝授する」から「学びを実践する」に
+
+
+</div>
+</div>
+
+<div class="srcline">出典: メリルの第一原理（鈴木克明 2015『研修設計マニュアル』北大路書房）／課題中心型インストラクション（ライゲルース 他／ブランチ＝メリル 2013）</div>
+
+<div class="takeaway">「解ける課題」より、現実に挑む“真正な課題”を ── AIは課題を創り・支える側に</div>
+
+<!--
+- 攻めの設計の核心。学びの中心に「真正な課題（現実に起こりそうな問題）」を置く課題中心型の設計です。
+- 良い課題はメリルの第一原理を満たす：問題・活性化・例示(Show me)・応用(Let me)・統合。
+- ここでAIが効く。指令書（手順）を渡せば学生は教科書＋AIで自習でき、追加の知識もAIが補う。だから講義しなくても、早期に高次の目標へ到達できる。教員の仕事は「教える」から「真正な課題を設計する」へ。
+-->
+
+---
+
+<!-- _class: split refs-sm -->
+
+<div class="page-title">不動産教育×生成AI</div>
+
+## 調べたところ、実践研究が始まっています
+
+<style scoped>
+  section.refs-sm .left ul { font-size: 22px; line-height: 1.6; }
+  section.refs-sm .left h3 { font-size: 24px; }
+  section.refs-sm .right h3 { font-size: 22px; }
+  section.refs-sm .callout-yellow { font-size: 22px; line-height: 1.5; }
+  section.refs-sm table.lit, section.refs-sm .lit { font-size: 19px; }
+  section.refs-sm .lit th { font-size: 18px; }
+  section.refs-sm .lit td { padding: 8px 11px; }
+  section.refs-sm .srcline { font-size: 16px; }
+  section.refs-sm .callout-green { font-size: 18px; line-height: 1.45; padding: 9px 16px; margin-top: 6px; }
+</style>
+
+<div class="split-body">
+<div class="left">
+
+### 既存研究
+
+- **都市計画・参加型設計**では、<br>理解の深化・議論の活性化・批判的思考の促進が報告
+- 不動産教育そのものでは、<br>**シナリオ分析・利害関係者対話**が有望
+- ただし**定量的な学習効果の実証はまだ薄い**
+
+<div class="callout-yellow"> 経済・都市計画などの知見を、<strong>不動産教育に応用できる段階</strong></div>
+
+</div>
+<div class="right">
+
+### 代表的な事例
+
+<table class="lit">
+<tr><th>事例</th><th>効果</th></tr>
+<tr><td class="tag">利害関係者対話のLLMシミュレーション</td><td>都市空間の批判的解釈を促す</td></tr>
+<tr><td class="tag">シリアスゲーム（AI支援）</td><td>理解深化・批判的思考の向上（実証）</td></tr>
+<tr><td class="tag">参加型ワークショップ×GenAI</td><td>技能差をならし議論を活性化</td></tr>
+</table>
+
+<div class="srcline">Lozano-Paredes (2026)／Ahmed et al. (2023)／von Brackel-Schmidt et al. (2024) ほか（Scopus）</div>
+
+</div>
+</div>
+
+<div class="callout-green">この後の <strong>第2回・第3回のFD</strong> では、これらの事例を題材に <strong>実際に皆さんで作って、試してみます</strong></div>
+
+<div class="takeaway">不動産分野は「これから」。先生方の実践が、研究の最前線になります</div>
+
+<!--
+- 不動産教育に引きつけます。文献を調べると、隣接する都市計画や参加型設計では、AIを使った教育の実践研究が始まっています。
+- 利害関係者の対話をAIでシミュレーションして批判的解釈を促す。AI支援のシリアスゲームで理解と批判的思考を高める。参加型ワークショップで技能差をならし議論を活性化する。こうした効果が報告されています。
+- ただし不動産教育そのものでの定量的な実証はまだ薄い。逆に言えば、先生方の実践が、この分野の研究の最前線になりえます。
+-->
+---
+
+<!-- _class: summary -->
+
+<div class="page-title">学生が自ら学ぶを支援する</div>
+
+<style scoped>
+  section table.lit { width: 100%; border-collapse: collapse; margin-top: 2px; font-size: 17.5px; }
+  section table.lit th { background: var(--accent); color: #fff; font-weight: 800; padding: 5px 10px; text-align: left; font-size: 16px; }
+  section table.lit td { border-bottom: 1px solid #e2e7e6; padding: 6px 10px; vertical-align: top; line-height: 1.4; }
+  section table.lit td.eff { text-align: center; white-space: nowrap; font-weight: 800; }
+  section .eb { display: inline-block; border-radius: 999px; padding: 2px 12px; font-size: 15.5px; font-weight: 800; color: #fff; }
+  section .eb.hi { background: #0F766E; } section .eb.mid { background: #9a5a00; } section .eb.lo { background: #7c8488; }
+  section.summary > h2 { margin-bottom: 8px; }
+  section.summary .callout-green { font-size: 18px; padding: 9px 16px; margin-top: 8px; }
+  section.summary .srcline { margin-top: 6px; }
+</style>
+
+## 効果のある学習方法 ── 「効果が高い」ほど一人では難しい <span style="font-size:18px;font-weight:600;color:#5B6068">※個人差はあります</span>
 
 <table class="lit">
 <tr><th style="width:14%">テクニック</th><th style="width:34%">内容・方法</th><th style="width:9%">効果</th><th style="width:43%">主な理由</th></tr>
@@ -2483,159 +3252,10 @@ style: |
 
 ---
 
-<!-- _class: split -->
-
-<div class="page-title">守りの設計</div>
-
-## 学びを損なわないために ─ 授業の目標は守る
-
-<div class="split-body">
-<div class="left">
-
-### 原則
-
-- **科目の到達目標は、絶対に動かさない**
-- 目標を達成する"過程"を、AIに肩代わりさせない
-- 「どこまでAIを使ってよいか」を**課題ごとに明示**する
-
-<div class="callout-green">守るべきは目標。手段（AI可否）は目標から逆算して決める</div>
-
-</div>
-<div class="right">
-
-### 足場かけ・足場はずし
-
-- 序盤は**足場かけ**（AIで理解を支える）
-- 終盤は**足場はずし**（AIなしで到達を確認）
-- 「いつ・どこで使うか」を**学習段階で変える**
-
-<div class="srcline">学部生か大学院生か、最初からか後半か ── 文脈で判断は変わる</div>
-
-</div>
-</div>
-
-<div class="takeaway">目標を守れば、AIは「敵」ではなく「足場」になります</div>
-
-<!--
-- まず守りの設計です。大原則は、科目の到達目標を絶対に動かさないこと。目標を達成する過程そのものをAIに肩代わりさせてはいけません。
-- そのうえで「どこまで使ってよいか」を課題ごとに明示する。守るべきは目標で、AIの可否は目標から逆算して決めます。
-- 使い方の工夫が足場かけ・足場はずしです。序盤はAIで理解を支え、終盤はAIなしで到達を確認する。学部生か院生か、最初からか後半か。文脈で判断は変わります。
--->
-
----
-
-<!-- _class: summary -->
-
-<div class="page-title">評価の判断軸</div>
-
-## 「AIを使ったか」ではなく、6つの軸で考える
-
-<div class="axis-grid">
-<div class="axis"><div class="ax-h">① 学習目標の達成</div><div class="ax-b">育てたい力が、その利用で損なわれていないか</div></div>
-<div class="axis"><div class="ax-h">② 思考の主体性</div><div class="ax-b">考える過程を学生自身が担っているか</div></div>
-<div class="axis"><div class="ax-h">③ 評価の妥当性</div><div class="ax-b">提出物が到達度を正しく反映しているか</div></div>
-<div class="axis"><div class="ax-h">④ 学問的誠実性</div><div class="ax-b">作成過程を説明でき、欺瞞を含まないか</div></div>
-<div class="axis"><div class="ax-h">⑤ 文脈依存性</div><div class="ax-b">科目特性・到達段階・目的で判断は変わる</div></div>
-<div class="axis"><div class="ax-h">⑥ 評価の公平性</div><div class="ax-b">使う学生・使わない学生に同じ基準は妥当か</div></div>
-</div>
-
-<div class="srcline">大学教育学会での議論より（田口先生まとめ）。④以外は、教員自身が考えないと判断が難しい軸です</div>
-
-<div class="takeaway">「使用の有無」で線を引かず、学びが起きたかで評価する</div>
-
-<!--
-- 評価です。「AIを使ったかどうか」で線を引くのは、もう限界です。代わりに6つの軸で考えます。
-- 学習目標の達成、思考の主体性、評価の妥当性、学問的誠実性、文脈依存性、評価の公平性。これは大学教育学会での議論、田口先生のまとめです。
-- 注目してほしいのは、4番の学問的誠実性以外は、教員自身が考えないと判断できない軸だということ。だからこそ、評価設計は教員の専門性そのものなのです。
--->
-
----
-
-<!-- _class: split -->
-
-<div class="page-title">評価対象を広げる</div>
-
-## 完成物「だけ」では、学びの質は測れない
-
-<div class="split-body">
-<div class="left">
-
-### 何を評価対象にするか
-
-<div class="recipe-flow" style="margin-top:4px">
-<div class="rf-box rf-trigger" style="flex:1"><span class="rf-tag">成果物</span><div class="rf-body" style="font-size:17px">最終レポート</div></div>
-<div class="arrow">＋</div>
-<div class="rf-box rf-ai" style="flex:1"><span class="rf-tag">対話記録</span><div class="rf-body" style="font-size:17px">AIとのやりとり</div></div>
-<div class="arrow">＋</div>
-<div class="rf-box rf-out" style="flex:1"><span class="rf-tag">振り返り</span><div class="rf-body" style="font-size:17px">学びの自己説明</div></div>
-</div>
-
-完成物に、**過程**と**省察**を加えて評価する。
-
-</div>
-<div class="right">
-
-### 理論的な背骨
-
-- 評価軸は「使ったか」ではなく、**本人の中に学びが起きたか**
-- 学び＝**つながりの形成・維持**（コネクティビズム）
-
-<div class="srcline"><b>出典:</b> 大学教育学会・中島先生の発表より／コネクティビズム = G. Siemens</div>
-
-</div>
-</div>
-
-<div class="takeaway">「成果物＋AIとの対話記録＋振り返り」を、ひとそろいで評価する</div>
-
-<!--
-- 評価対象も広げます。完成物だけを見ても、学びの質は測れません。
-- そこで「成果物＋AIとの対話記録＋振り返り」をひとそろいで評価します。最終レポートに、AIとどうやりとりしたかの記録と、何を学んだかの自己説明を加えるわけです。
-- 背骨にあるのは、評価軸は「使ったか」ではなく「本人の中に学びが起きたか」だという考え方。学びとは、つながりの形成と維持だ、というコネクティビズムです。大学教育学会の中島先生の発表に基づいています。
--->
-
----
 
 <!-- _class: fig -->
 
-<div class="page-title">MITの科目改善フロー</div>
-
-## 課題を「真正な不動産課題」へ作り変える ── MITの科目改善フロー
-
-<style scoped>
-  section .mitopt { display:flex; gap:12px; margin-top:4px; }
-  section .ocard { flex:1; background:#fff; border:1.5px solid #dde6e4; border-top:5px solid var(--accent); border-radius:10px; padding:8px 12px; }
-  section .ocard .oh { font-size:18px; font-weight:800; color:var(--accent-dark); margin-bottom:3px; }
-  section .ocard .ob { font-size:15px; color:#3a4744; line-height:1.4; }
-</style>
-
-<div class="fig-area">
-<svg viewBox="0 0 900 150" width="100%" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrM" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#C0344A"/></marker></defs><rect x="4" y="55" width="120" height="40" rx="8" fill="#5B6068"/><text x="64" y="80" font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">授業計画の開始</text><line x1="126" y1="75" x2="150" y2="75" stroke="#C0344A" stroke-width="2.5" marker-end="url(#arrM)"/><g><rect x="152" y="48" width="160" height="54" rx="8" fill="#FDE7EF" stroke="#C0344A" stroke-width="1.5"/><text x="232" y="70" font-size="14" fill="#222" text-anchor="middle">①既存課題をAIに</text><text x="232" y="89" font-size="14" fill="#222" text-anchor="middle">入力し回答を生成</text></g><line x1="314" y1="75" x2="338" y2="75" stroke="#C0344A" stroke-width="2.5" marker-end="url(#arrM)"/><g><rect x="340" y="48" width="160" height="54" rx="8" fill="#FDE7EF" stroke="#C0344A" stroke-width="1.5"/><text x="420" y="70" font-size="14" fill="#222" text-anchor="middle">②AIの回答を</text><text x="420" y="89" font-size="14" fill="#222" text-anchor="middle">分析・評価</text></g><line x1="502" y1="75" x2="526" y2="75" stroke="#C0344A" stroke-width="2.5" marker-end="url(#arrM)"/><g><rect x="528" y="48" width="160" height="54" rx="8" fill="#FDE7EF" stroke="#C0344A" stroke-width="1.5"/><text x="608" y="70" font-size="14" fill="#222" text-anchor="middle">③AIとの対話で</text><text x="608" y="89" font-size="14" fill="#222" text-anchor="middle">深掘りする</text></g><line x1="690" y1="75" x2="714" y2="75" stroke="#C0344A" stroke-width="2.5" marker-end="url(#arrM)"/><g><rect x="716" y="42" width="180" height="66" rx="8" fill="#C0344A"/><text x="806" y="64" font-size="14" fill="#fff" text-anchor="middle">④課題の限界・必要性</text><text x="806" y="83" font-size="14" fill="#fff" text-anchor="middle">を把握し、</text><text x="806" y="100" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">課題を見直す</text></g></svg>
-</div>
-
-<div class="mitopt">
-<div class="ocard"><div class="oh">① 課題へのAI組み込み</div><div class="ob">事前=AI不使用／本課題=利用可否と引用を明確化／事後=リフレクション（自分の予想との比較）</div></div>
-<div class="ocard"><div class="oh">② 小テストで補完</div><div class="ob">毎週・低負荷のテスト。AI依存を防ぎ、知識定着と応用力を育てる</div></div>
-<div class="ocard"><div class="oh">③ 反転授業</div><div class="ob">事前に動画/資料で学習（AI可）。対面は演習・グループワークで能動的に</div></div>
-</div>
-
-<div class="callout-green">AIに解かせて満点が出る課題は、作り変えのサイン。<strong>利害関係者対話・現場判断・新しい活用提案（＝評価・創造）</strong>を、不動産の真正な課題の中心へ</div>
-
-<div class="srcline"><b>参考:</b> MIT 科目改善フロー（図の文言は阪大解説等を参照して再構成）／大阪大学 教育学習支援センター <a href="https://www.tlsc.osaka-u.ac.jp/project/generative_ai/assessment_ai.html">生成AIと評価</a>／Bowen &amp; Watson <i>Teaching with AI</i>。次のワーク③で実際に試します</div>
-
-<div class="takeaway">「AIで解けない課題」探しより、「AIを使ってこそ深まる課題」へ作り変える</div>
-
-<!--
-- 守りの次は攻めです。課題そのものを作り変えます。これがMITの『科目改善フロー』。
-- 上の4ステップ：授業計画の開始から、①まず既存の課題をAIに入力して解かせる、②その回答を分析・評価する、③AIと対話してさらに深掘り、④課題の限界と必要性を把握して、課題を見直す。
-- 見直しの選択肢が下の3つ。①課題自体にAIをどう組み込むか（事前はAIなし・本課題は可否と引用を明確化・事後はリフレクション）、②週1の低負荷な小テストで補う、③反転授業にする。
-- AIに解かせて満点が出るなら作り変えのサインです。さきほどのBloomでいう評価・創造＝人の領域へ寄せる。不動産なら、利害関係者の対話、現場の判断、新しい活用提案。これを次のワークで実際に試します。
--->
-
----
-
-<!-- _class: fig -->
-
-<div class="page-title">なぜ「場」が効くのか</div>
+<div class="page-title">個別最適な学びの実現</div>
 
 ## ブルームの「2シグマ問題」── 個別指導の威力
 
@@ -2655,49 +3275,6 @@ style: |
 - ところがAIと教員を組み合わせれば、この個別最適に近づける可能性が出てきました。ここにAI時代の教育の希望があります。図の橙が一斉授業、緑が1対1指導。緑が橙より2σ＝偏差値20ぶん右にずれているのが見えます。
 -->
 
----
-
-<!-- _class: split refs-sm -->
-
-<div class="page-title">不動産教育×生成AI</div>
-
-## 周辺分野では、実践研究が始まっています
-
-<div class="split-body">
-<div class="left">
-
-### 何がわかっているか
-
-- **都市計画・参加型設計**では、理解の深化・議論の活性化・批判的思考の促進が報告
-- 不動産教育そのものでは、**シナリオ分析・利害関係者対話**が有望
-- ただし**定量的な学習効果の実証はまだ薄い**
-
-<div class="callout-yellow">＝ 都市計画・参加型設計の知見を、<strong>不動産教育に応用できる段階</strong></div>
-
-</div>
-<div class="right">
-
-### 代表的な事例
-
-<table class="lit">
-<tr><th>事例</th><th>効果</th></tr>
-<tr><td class="tag">利害関係者対話のLLMシミュレーション</td><td>都市空間の批判的解釈を促す</td></tr>
-<tr><td class="tag">シリアスゲーム（AI支援）</td><td>理解深化・批判的思考の向上（実証）</td></tr>
-<tr><td class="tag">参加型ワークショップ×GenAI</td><td>技能差をならし議論を活性化</td></tr>
-</table>
-
-<div class="srcline">Lozano-Paredes (2026)／Ahmed et al. (2023)／von Brackel-Schmidt et al. (2024) ほか（Scopus）</div>
-
-</div>
-</div>
-
-<div class="takeaway">不動産分野は「これから」。先生方の実践が、研究の最前線になりえます</div>
-
-<!--
-- 不動産教育に引きつけます。文献を調べると、隣接する都市計画や参加型設計では、AIを使った教育の実践研究が始まっています。
-- 利害関係者の対話をAIでシミュレーションして批判的解釈を促す。AI支援のシリアスゲームで理解と批判的思考を高める。参加型ワークショップで技能差をならし議論を活性化する。こうした効果が報告されています。
-- ただし不動産教育そのものでの定量的な実証はまだ薄い。逆に言えば、先生方の実践が、この分野の研究の最前線になりえます。
--->
 
 ---
 
@@ -2745,10 +3322,54 @@ style: |
 -->
 
 ---
+<!-- _class: split -->
+
+<div class="page-title">教員の役割の変化</div>
+
+## 「知識の専門家」から「学びのファシリテーター」へ
+
+<div class="split-body">
+<div class="left">
+
+### 残る価値・高まる価値
+
+- **問いを立てる**力、議論を**深める**力
+- 学生が **安心して失敗できる「場」** をつくる力
+- 一人ひとりに**寄り添う**コーチング
+
+<div class="callout-green">教えなくても、学びは作れる<br>教員は<strong>学びの設計と伴走</strong>へ</div>
+
+
+</div>
+<div class="right">
+
+### 場づくりが、これまで以上に効く
+
+- 工業時代＝標準化・競争 → 
+情報化時代＝**協働・主体性**
+- 「弱い教育」＝ともに、内側から知る学び
+- 1対1指導の知見を、**AI＋教員**で実装できる
+
+<div class="srcline"><b>出典:</b> ライゲルース &amp; カノップ『情報時代の学校をデザインする ── 学習者中心の教育に変える6つのアイデア』(稲垣忠ほか訳)／Bowen &amp; Watson <i>Teaching with AI</i> (2026)／Aoun <i>Robot-Proof</i>／インゴルド『教育とは何か』(2025)</div>
+
+</div>
+</div>
+
+<div class="takeaway">Teaching に加え、Coaching へ ── 教員にしかできない部分が、むしろ際立ちます</div>
+
+<!--
+- 答えのひとつが、教員の役割の変化です。知識の専門家から、学びのファシリテーターへ。
+- 残る価値、むしろ高まる価値は、問いを立てる力、議論を深める力、安心して失敗できる場をつくる力、一人ひとりに寄り添うコーチングです。
+- 知識の"配達"はAtに任せて、教員は学びの設計と伴走へ。AounのRobot-Proofやインゴルドの「弱い教育」も、同じ方向を指しています。教えることに加えて、コーチすること。教員にしかできない部分が、むしろ際立つ時代です。
+-->
+
+
+
+---
 
 <!-- _class: split work -->
 
-<div class="page-title">ワーク③</div>
+<div class="page-title">時間が余った場合：ワーク③</div>
 
 ## 普段の課題を、MITの科目改善フローで「作り変えて」みよう
 
@@ -2777,7 +3398,7 @@ style: |
 </div>
 </div>
 
-<div class="takeaway">「AIに解かせてみる」が、課題を磨く最短の方法です</div>
+<div class="takeaway">「AIに解かせてみる」から始める→時間がない場合、次回に実施</div>
 
 <!--
 - 最後のワークです。手順1、普段出している課題を1つ思い浮かべる。手順2、それをGeminiに実際に解かせて、さきほどのMITの科目改善フローで、どう作り変えるか修正点を考える。不動産のシナリオ問題でも構いません。たとえば、新駅開業で沿線物件の価値がどう動くか、複数の立場でシミュレーションさせてみる、とか。手順3、気づきをSlidoで共有。
@@ -2862,7 +3483,8 @@ style: |
 - **業務活用**：「安全なAI」を選び、OODAで「評価しながら使う」
 - **授業設計**：目標は守り、評価は6軸で。完成物＋対話記録＋振り返りを見る
 - **未来**：2シグマ問題の解消、協働の高度化、真正な課題による深い学びへ
-- いちばんの要点 ── **学生に良い"文脈"を作れるのは、教職員と環境(大学の場)だと思います。**
+- **教員像**：今以上に、ファシリテーターへ。
+- **学生に良い"文脈"を作れるのは、教職員と環境(大学の場)** だと思います。
 
 <!--
 - 振り返ります。関わり方は、禁止でも放置でもなく文脈を作る。ポリシー、透明性、価値を語る、の3つ。
@@ -2918,7 +3540,7 @@ style: |
 </div>
 </div>
 
-<div class="takeaway">第2回・第3回は自由参加。気になる回だけのご参加で結構です</div>
+<div class="takeaway">第2回・第3回は自由参加です。ぜひご参加下さい。</div>
 
 <!--
 - 次回のご案内です。第2回は実際に手を動かして、授業を面白くするアイデアを形にします。第3回はそのフォローアップとマインド形成です。どちらも自由参加です。

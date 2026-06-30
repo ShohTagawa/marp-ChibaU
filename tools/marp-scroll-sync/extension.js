@@ -35,7 +35,11 @@ function isMarpDoc(doc) {
 
 /**
  * 各スライドの開始行(0-based)を返す。marp-core のページ分割と一致するよう、
- * frontmatter を除外し、コードフェンス内を無視し、setext 見出し（直前が非空行の ---）を除外する。
+ * frontmatter を除外し、コードフェンス内と HTMLコメント内（発表者ノート等）を無視し、
+ * setext 見出し（段落テキスト直後の ---）は区切りに数えない。
+ * ただし直前が空行、または直前行で HTMLコメントが閉じた（-->）場合は区切り＝marp と一致。
+ *   例: ノート `<!-- … -->` の直後に `---` を置く書き方は、marp ではページ区切りになる。
+ *       これを取りこぼすと以降のスライドが1枚ずつズレる（同期・逆引きが別の場所へ飛ぶ）。
  */
 function slideStartLines(text) {
   const lines = text.split(/\r?\n/);
@@ -47,16 +51,35 @@ function slideStartLines(text) {
     i = j + 1; // frontmatter の閉じ --- の次行から最初のスライド
   }
   starts.push(i);
-  let inFence = false;
+  let inFence = false;            // コードフェンス ``` / ~~~ の内側か
+  let inComment = false;          // 複数行 HTMLコメント <!-- … --> の内側か
+  let prevClosedComment = false;  // 直前の行で HTMLコメントが閉じたか（--> 直後の --- 判定用）
   for (let k = i; k < lines.length; k++) {
     const line = lines[k];
     const t = line.trim();
-    if (/^(```|~~~)/.test(t)) { inFence = !inFence; continue; }
-    if (inFence) continue;
+    // コメント内：閉じ --> を探すだけ。中の --- や ``` は区切り扱いしない
+    if (inComment) {
+      if (/-->/.test(line)) inComment = false;
+      prevClosedComment = !inComment; // この行で閉じたら、次行の --- 判定に使う
+      continue;
+    }
+    // コードフェンス内：閉じ記号を探すだけ
+    if (inFence) {
+      if (/^(```|~~~)/.test(t)) inFence = false;
+      prevClosedComment = false;
+      continue;
+    }
+    if (/^(```|~~~)/.test(t)) { inFence = true; prevClosedComment = false; continue; }
+    // この行で開いて同一行内で閉じない HTMLコメント → 複数行コメントに入る
+    if (/<!--/.test(line) && !/-->/.test(line.slice(line.indexOf('<!--') + 4))) {
+      inComment = true; prevClosedComment = false; continue;
+    }
     if (/^---+\s*$/.test(line)) {
       const prev = k > 0 ? lines[k - 1].trim() : '';
-      if (prev === '') starts.push(k + 1); // 直前が空行 → スライド区切り
+      // 直前が空行 OR 直前行で HTMLコメントが閉じた（-->）→ スライド区切り（marp と一致）
+      if (prev === '' || prevClosedComment) starts.push(k + 1);
     }
+    prevClosedComment = false;
   }
   return starts;
 }

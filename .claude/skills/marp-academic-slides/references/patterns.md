@@ -14,6 +14,50 @@
 
 cover / divider / message / qa はヘッダー帯を表示しないので page-title も書かない（書いても表示されない）。
 
+## 縦配分と横並び（全パターン共通の整え方）
+
+位置の微調整を **px で1枚ずつ書かない**。次の2つで「アンカー固定・中身だけ再配置」する。
+
+### 縦：見出し/takeaway を固定し、間を配分
+
+見出し(`##`)と `<div class="takeaway">` は固定アンカー。その「間」を `<div class="body">…</div>` で囲み、配分はクラスで選ぶ。takeaway が無くても下端まで同じ。
+
+| 書き方 | 挙動 |
+|---|---|
+| （無指定） | 上詰め |
+| `<!-- _class: vcenter -->` | 間を上下中央 |
+| `<!-- _class: vspread -->` | 上下に均等配分 |
+
+```markdown
+<!-- _class: vcenter -->
+<div class="page-title">…</div>
+
+## 見出し（固定）
+
+<div class="body">
+
+- 内容（ここだけ再配置される）
+
+</div>
+
+<div class="takeaway">要点（固定）</div>
+```
+
+`summary` は `.sections`、`split` は `.split-body` がそのまま「間」として効くので、`<!-- _class: summary vcenter -->` のようにクラスを足すだけでよい（`.body` で包む必要はない）。
+
+### 横：等幅・等高の列
+
+兄弟ブロックの幅・高さを揃えるときは `<div class="cols">` で囲む（インラインの `display:flex; flex:1` を1枚ずつ書かない）。
+
+```markdown
+<div class="cols">
+<div class="box-info">左：自動で等幅・等高</div>
+<div class="box-accent">右：内容が長くても高さが揃う</div>
+</div>
+```
+
+上揃えにしたいときだけ `<div class="cols top">`。
+
 ## パターン一覧
 
 | # | クラス | 用途 |

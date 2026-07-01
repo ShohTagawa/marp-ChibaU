@@ -383,16 +383,27 @@ section.fig:has(.takeaway) .fig-area {
 /* 見出し(h2/h3)と .takeaway は .body の外に置く＝固定アンカー。   */
 /* 数値(px)で各スライドを微調整しない。配分はこの仕組みに任せる。   */
 /* ============================================================ */
-section .body {
+section .body,
+section.summary .sections {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;   /* 既定は上詰め */
 }
-.body.vtop,    section.vtop    .body { justify-content: flex-start; }
-.body.vcenter, section.vcenter .body { justify-content: center; }
-.body.vspread, section.vspread .body { justify-content: space-between; }
+.body.vtop,    section.vtop    .body, section.vtop    .sections { justify-content: flex-start; }
+.body.vcenter, section.vcenter .body, section.vcenter .sections { justify-content: center; }
+.body.vspread, section.vspread .body, section.vspread .sections { justify-content: space-between; }
+/* split は2カラム：縦中央は列を align-items で中央寄せ（高特異度で既定の start を上書き） */
+section.split.vcenter .split-body { align-items: center; }
+
+/* ---- 横並び：等幅・等高の列（兄弟ブロックの幅・高さを揃える） ---------- */
+/* <div class="cols"><div>…</div><div>…</div></div> を使う。               */
+/* 列は等幅(flex:1 1 0)・等高(align-items:stretch)。上揃えは .cols.top。   */
+/* インラインの display:flex / flex:1 を1枚ずつ書かず、これで揃える。       */
+.cols { display: flex; gap: 24px; align-items: stretch; margin: 8px 0; }
+.cols > * { flex: 1 1 0; min-width: 0; }
+.cols.top { align-items: flex-start; }
 
 /* ============================================================ */
 /* SLIDE PATTERN CLASSES                                        */

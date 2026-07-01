@@ -24,7 +24,7 @@ html: true
   </defs>
   <rect width="1280" height="720" fill="#ffffff"/>
   <rect x="0" y="0" width="1280" height="56" fill="url(#gCrim)"/>
-  <text x="30" y="37" font-size="24" font-weight="700" fill="#ffffff">大学体験オントロジーの発見 ― オプトイン行動ログから LLM で紡ぐ</text>
+  <text x="30" y="37" font-size="23" font-weight="700" fill="#ffffff">人とAIが協働する大学へ ― 行動ログから LLM で「大学体験オントロジー」を発見</text>
   <text x="1262" y="22" font-size="12.5" fill="#ffffff" opacity="0.92" text-anchor="end">SPReAD 第2回 / AI for Science</text>
   <text x="1262" y="43" font-size="12.5" fill="#ffffff" opacity="0.92" text-anchor="end">田川 翔・千葉大学 国際未来教育基幹</text>
   <rect x="24" y="66" width="1232" height="74" rx="11" fill="#fdf0f4" stroke="#e7bccb" stroke-width="1.3"/>
@@ -38,9 +38,10 @@ html: true
   <text x="44" y="170" font-size="16" font-weight="700" fill="#243040">方法　オプトイン行動ログ ▸ LLM で抽出 ▸ “みんなでアノテーション”＋専門家で検証・育成</text>
   <circle cx="110" cy="250" r="46" fill="url(#gCrim)" filter="url(#sh)"/>
   <rect x="92" y="234" width="36" height="28" rx="4" fill="none" stroke="#fff" stroke-width="2.4"/><line x1="92" y1="253" x2="128" y2="253" stroke="#fff" stroke-width="2.4"/><path d="M99 246 v-6 a8 8 0 0 1 16 0 v6" fill="none" stroke="#fff" stroke-width="2"/>
-  <text x="110" y="318" font-size="15" font-weight="700" fill="#a3123a" text-anchor="middle">オプトイン</text>
-  <text x="110" y="337" font-size="15" font-weight="700" fill="#a3123a" text-anchor="middle">行動ログ＋安全DB</text>
-  <text x="110" y="357" font-size="13" fill="#7a5763" text-anchor="middle">同意・匿名化／企業と共同</text>
+  <text x="110" y="316" font-size="15" font-weight="700" fill="#a3123a" text-anchor="middle">オプトイン行動ログ</text>
+  <text x="110" y="335" font-size="14" font-weight="700" fill="#a3123a" text-anchor="middle">＋ 安全DB（設計・テスト）</text>
+  <text x="110" y="356" font-size="12.5" fill="#7a5763" text-anchor="middle">同意・匿名化・アクセス制御</text>
+  <text x="110" y="373" font-size="12.5" fill="#7a5763" text-anchor="middle">／企業と共同</text>
   <path d="M162 250 h44" fill="none" stroke="#5b6b78" stroke-width="6" marker-end="url(#aT)"/>
   <circle cx="262" cy="250" r="46" fill="url(#gTeal)" filter="url(#sh)"/>
   <rect x="242" y="232" width="40" height="36" rx="5" fill="none" stroke="#fff" stroke-width="2.6"/><text x="262" y="256" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">LLM</text>
@@ -104,4 +105,5 @@ html: true
   <text x="588" y="672" font-size="14.5" font-weight="700" fill="#147a52">大学</text><text x="588" y="691" font-size="12.5" fill="#3a6b56">教学 IR を高度化</text>
   <circle cx="800" cy="676" r="20" fill="url(#gGreen)"/><circle cx="800" cy="676" r="9" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M791 676 h18 M800 667 a11 9 0 0 0 0 18 a11 9 0 0 0 0 -18" fill="none" stroke="#fff" stroke-width="1.2"/>
   <text x="828" y="672" font-size="14.5" font-weight="700" fill="#147a52">社会・他大学</text><text x="828" y="691" font-size="12.5" fill="#3a6b56">他ドメインへ波及・公開</text>
+  <text x="30" y="716" font-size="10.5" fill="#9aa7b2">※学生用アプリ・データ基盤の本体整備は別途予算措置を予定。本研究費は抽出・発見・検証・公開に集中する。</text>
 </svg>

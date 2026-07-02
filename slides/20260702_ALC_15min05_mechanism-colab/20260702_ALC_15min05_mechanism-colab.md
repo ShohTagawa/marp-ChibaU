@@ -34,12 +34,6 @@ style: |
   .demo-card .dc-bar { background: #eef1f4; font-size: 16px; font-weight: 700; color: #3a3f45; padding: 6px 16px; border-bottom: 1px solid #e0e4e9; }
   .demo-card .dc-body { font-size: 18px; line-height: 1.6; padding: 12px 18px; background: #fff; color: #2a2d33; text-align: left; }
   .demo-card .dc-note { font-size: 16px; color: #8a4b00; }
-  /* ===== 動画プレースホルダー（実演録画を後日挿入｜横幅のみ指定で差し替え） ===== */
-  .video-ph { width: 470px; max-width: 100%; aspect-ratio: 16 / 9; margin: 2px auto; border: 3px dashed #C8611C; border-radius: 12px; background: #FBEEE6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #9a3412; box-sizing: border-box; }
-  .video-ph.full { width: 680px; }
-  .video-ph .vp-play { width: 0; height: 0; border-style: solid; border-width: 17px 0 17px 29px; border-color: transparent transparent transparent #C8611C; }
-  .video-ph .vp-label { font-size: 19px; font-weight: 700; }
-  .video-ph .vp-file { font-size: 14px; color: #b06a3a; font-family: monospace; }
   /* ===== 今回の構成（4ステップアジェンダ：時間ラベル＋色ピル＋箇条書き） ===== */
   .agenda { display: flex; flex-direction: column; gap: 9px; margin-top: 2px; }
   .agenda-row { display: flex; align-items: center; gap: 20px; border: 1.5px solid #dfe3e8; border-radius: 14px; padding: 8px 22px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
@@ -138,7 +132,7 @@ style: |
 </div>
 <div class="title-meta">
 <div class="title-event">ALC 15-min sessions ・ 第5回　｜　15-min × 3<br>学びを変える！研究を深める！生成AI活用術</div>
-<div class="title-date">2026/7/2（木）　難易度 ★★★</div>
+<div class="title-date">2026/7/2（木）　難易度 ★★☆</div>
 <div class="title-affil">千葉大学 国際未来教育基幹<br>田川 翔（専門：高等教育論・地球惑星科学）</div>
 </div>
 </div>
@@ -162,7 +156,7 @@ style: |
 
 <div class="sec-box">
 
-### ① ログイン＆Colabを開く
+### ① Google WSにログイン出来るか＆Colabを開けるかご確認下さい
 
 - PCで千葉大学 **Google Workspace** にログイン
 - ブラウザで **<code><a href="https://colab.research.google.com/">colab.research.google.com</a></code>** を開ける状態に
@@ -178,14 +172,14 @@ style: |
 <div class="sq-text">
 
 - **slido** にアクセス（QR・右にURL）
-- コード入力なら **<code>ALC-AI2-01</code>**
+- コード入力なら **<code>ALC-AI2-05</code>**
 - オンラインの方も同じ slido へ
 
 </div>
 <div class="sq-qr">
 <img src="./src/slido-qr.png" alt="slido QRコード">
 </div>
-<div class="sq-url"><a href="https://app.sli.do/event/iJQ71dhpuqstH3wbGSYpRD">app.sli.do/event/iJQ71dhpuqstH3wbGSYpRD</a></div>
+<div class="sq-url"><a href="https://app.sli.do/event/ov6zxx76xpTBm8wTrAFRZB">app.sli.do/event/ov6zxx76xpTBm8wTrAFRZB</a></div>
 </div>
 
 </div>
@@ -206,7 +200,7 @@ style: |
 
 <div class="page-title">今回の構成</div>
 
-## まず動かす → 仕組み → つくる → 共有（4ステップ）
+## いつもと違います： まず動かす → 仕組み → つくる → 共有（4ステップ）
 
 <div class="agenda">
 
@@ -220,8 +214,8 @@ style: |
 </div>
 <div class="agenda-list">
 
-- Colab を開いて、**「いちもじGPT」を言われるがまま実行**
-- ChatGPT と同じ仕組みのAIを、一から動かしてみる
+- Colab を開いて、**「いちもじGPT」をまずは、何も考えずに実行**
+- とても小さな(生成?)AIを、一からつくってみる体験
 
 </div>
 </div>
@@ -276,7 +270,7 @@ style: |
 
 </div>
 
-<div class="takeaway">今日のゴール：生成AIの“なかみ”を体で理解し、Colab を自分の道具にして帰る</div>
+<div class="takeaway">今日のゴール：生成AIの“なかみ”を体で理解し、同時に、Colab も使える道具にしましょう</div>
 
 <!--
 - 60分の流れ。①最初の約10分は手を動かす(いちもじGPTを実行)。②次の15分が座学(ColabとAIの仕組み)。③次の15分でColabで色々作る(教育データ分析)。④最後15分で結果の解釈と気づきの共有。
@@ -303,7 +297,7 @@ style: |
 
 <!-- _class: message -->
 
-# 仕組みを、知ると分かるかも。<br>まず “AIを一から” 作ってみる
+# 仕組みを知ると、リスクも利点も分かるかも。<br>まず “AIを一から” 作ってみる
 
 ## ChatGPT の超ミニverを、自分の Colab で
 
@@ -339,7 +333,7 @@ style: |
 
 <div class="caption">教材：アンドレイ・カーパシー氏の nanoGPT を土台に作成（学習データ＝夏目漱石『こころ』）</div>
 
-<div class="takeaway">たった100行ほどのコードに、生成AIの考え方が丸ごと入っている</div>
+<div class="takeaway">たった100行ほどのコードに、生成AIの考え方のエッセンシャルが入っている</div>
 
 <!--
 - いちもじGPTの正体。やっていることは「ここまでの文章を読んで、次に来る1文字を予測し、つなげる」。これを延々と繰り返すだけ。
@@ -349,44 +343,31 @@ style: |
 
 ---
 
-<!-- _class: split -->
+<!-- _class: summary -->
 
 <div class="page-title">手順（ハンズオン）</div>
 
 ## いちもじGPTを動かす（上から順に▶）
 
-<div class="split-body">
-<div class="left">
-
 <div class="stepcol">
 <div class="stepc"><span class="sn">1</span><span class="sb"><b>Colabのリンク</b>を開く（slidoで配布）</span></div>
-<div class="stepc"><span class="sn">2</span><span class="sb">メニュー <code>ランタイム → ランタイムのタイプを変更</code> で <b>GPU</b> を選ぶ</span></div>
-<div class="stepc"><span class="sn">3</span><span class="sb">セルを<b>上から順に</b> ▶（または <code>Shift+Enter</code>）で実行</span></div>
-<div class="stepc"><span class="sn">4</span><span class="sb">学習が終わったら、<b>文章を生成</b>して遊ぶ</span></div>
+<div class="stepc"><span class="sn">2</span><span class="sb">メニュー <code>ランタイム → ランタイムのタイプを変更</code> で <b>GPU</b> を選ぶ(T4)</span></div>
+<div class="stepc"><span class="sn">3</span><span class="sb">セルを<b>上から順に</b> ▶を押して実行（または <code>Shift+Enter</code>）</span></div>
+<div class="stepc"><span class="sn">4</span><span class="sb">途中の<b>データ選択</b>で、AIに覚えさせる文章を選び <b><code>input.txt</code> をアップロード</b>（しなければサンプルで進む）</span></div>
+<div class="stepc"><span class="sn">5</span><span class="sb">学習が終わったら、<b>文章を生成</b>して触ってみる</span></div>
 </div>
 
-</div>
-<div class="right">
-
-<div class="video-ph">
-<div class="vp-play"></div>
-<div class="vp-label">いちもじGPT 実行（録画予定）</div>
-<div class="vp-file">./src/fig01-ichimoji-run.mov</div>
-</div>
-
-<div class="callout-yellow">
-分からない用語があっても <strong>止まらないで</strong>。まずは“言われるがまま”最後まで動かすのが目的。
-</div>
-
-</div>
+<div class="callout-yellow" style="margin-top:14px;">
+分からない用語があっても <strong>止まらないで</strong>。まずは最後まで動かすのが目的。
 </div>
 
 <div class="takeaway">迷ったら「ランタイムを再起動して、もう一度上から▶」。失敗してOK</div>
 
 <!--
-- 手順は4つ。①slidoで配るColabリンクを開く。②ランタイムのタイプをGPUに(学習が速くなる)。③上から順に▶で実行。④学習後に文章生成。
-- ここでは中身の理解は不要。"言われるがまま"最後まで動かすことが目的。エラーが出たら「ランタイム→ランタイムを再起動」して、もう一度上から実行。
-- 後日、実際の画面録画に差し替え(横幅だけ指定で挿入)。差し替えタグ：<video controls src="./src/fig01-ichimoji-run.mov" width="470"></video>
+- 手順は5つ。①slidoで配るColabリンクを開く。②ランタイムのタイプをGPUに(学習が速くなる)。③上から順に▶で実行。
+- ④途中に「学習させる文章を選ぶ」セルが出る。シェイクスピア/夏目漱石などから選び、自分のテキストで試したい人は input.txt をアップロード。何もアップロードしなければ、選んだサンプルデータでそのまま進む。ここで“AIに何を覚えさせるか”を決めているのがポイント。
+- ⑤学習後に文章を生成して遊ぶ。
+- 中身の理解は不要。"言われるがまま"最後まで動かすことが目的。エラーが出たら「ランタイム→ランタイムを再起動」して、もう一度上から実行。実演は当日Colabの実画面で行う(録画は使わない)。
 -->
 
 ---
@@ -398,13 +379,16 @@ style: |
 ## 学習が進むほど、AIは“ことば”を覚えていく
 
 <div class="growth">
-<div class="grow-row"><div class="grow-badge gb0">学習0回（まっさら）</div><div class="grow-text">。 」ゝ く ｜ ぁゔ ヽ — でたらめな記号の羅列</div></div>
+<div class="grow-row"><div class="grow-badge gb0">学習0回（まっさら）</div><div class="grow-text">。 」ゝ く ｜ ぁゔ ヽ — でたらめな文字の羅列</div></div>
 <div class="grow-row"><div class="grow-badge gb1">500回ごろ</div><div class="grow-text">の して のに きた わたし の とき — ひらがなは並ぶが意味は不明</div></div>
 <div class="grow-row"><div class="grow-badge gb2">2000回ごろ</div><div class="grow-text">わたし は その ひと の こと を かんがえて いた — 単語・文らしくなる</div></div>
 <div class="grow-row"><div class="grow-badge gb3">学習後</div><div class="grow-text">わたし は その とき はじめて せんせい の かお を みた の である — 漱石“っぽく”なる</div></div>
 </div>
 
-<div class="caption">学習データは『こころ』を<strong>ひらがなの分かち書き</strong>にしたもの。だから出力も漢字なし・かな主体（出力例のイメージ）</div>
+<div class="caption">学習データは「シェイクスピアの全集」か、夏目漱石の『こころ』を<strong>ひらがなの分かち書き</strong>にしたもの。<br>だから出力も英語だけか、漢字なし・かな主体（出力例のイメージ）</div>
+<div class="caption">最初にエンコードしており、そこで知らない文字は出てきません。 
+<br>(なお、通常は、1文字ずつではなく、token単位で行われています。)</div>
+
 
 <div class="takeaway">「予測のくりかえし」だけで、ことばが立ち上がってくる — これが生成AIの正体</div>
 
@@ -434,10 +418,10 @@ style: |
 
 <div class="page-title">Google Colab とは</div>
 
-## ブラウザだけで Python が動く、無料の実験室
+## ブラウザだけで Python が動く、無料の実験室(lab)
 
 <div class="gquote">
-「Colab（正式名称 Colaboratory）では、<strong>ブラウザ上で Python を記述、実行できます</strong>。環境構築が不要・GPU に料金なしでアクセス・簡単に共有。」
+「Colab（正式名称 Colaboratory）では、<strong>ブラウザ上で Python を記述、実行できます</strong>。<br>環境構築が不要・GPU に料金なしでアクセス・簡単に共有。」
 <span class="src">出典：Google Colab 公式（よくある質問）<a href="https://research.google.com/colaboratory/faq.html">research.google.com/colaboratory/faq.html</a></span>
 </div>
 
@@ -463,14 +447,13 @@ style: |
 
 ### ③ 1つにまとまる
 
-- **コード＋説明＋結果**を1冊に
-- **Driveに保存**・Googleドキュメント感覚で**共有**
+- **コード＋説明＋結果**を1冊に→**Driveに保存**・Googleドキュメント感覚で**共有**
 
 </div>
 
 </div>
 
-<div class="takeaway">いちもじGPTの“重い学習”も、Colabが借りてくるGoogleのGPUが動かしてくれる</div>
+<div class="takeaway">今は、Geminiによる分析支援も利用可能</div>
 
 <!--
 - Google Colabとは、一言で「ブラウザの中でPythonを書いて動かせる、Googleの無料クラウド環境」。自分のPCに何も入れず、ネットの先のGoogleのマシンを借りて計算する。
@@ -484,7 +467,7 @@ style: |
 
 <div class="page-title">Colabの使い方</div>
 
-## 覚えるのは、この4つだけ
+## 使う上で覚えるのは、この4つだけ
 
 <div class="sections">
 
@@ -502,7 +485,7 @@ style: |
 
 ### つまずいたら
 
-- メニュー **<code>ランタイム → ランタイムを再起動</code>** → もう一度上から▶
+- メニュー **<code>ランタイム → ランタイムを再起動</code>** <br>→ もう一度上から▶
 - 速くしたい計算は **GPU** に切り替え
 
 </div>
@@ -632,7 +615,7 @@ style: |
 <div class="takeaway">言葉を「数」に翻訳して、はじめてAIは計算できる（いちもじGPTのエンコードがこれ）</div>
 
 <!--
-- 仕組み(2)。コンピュータは数しか扱えない。だfrom まず文章をトークンに区切り、各トークンを数のベクトル(埋め込み)に変換する。
+- 仕組み(2)。コンピュータは数しか扱えない。だから、まず文章をトークンに区切り、各トークンを数のベクトル(埋め込み)に変換する。
 - トークン化:いちもじGPTは1文字=1トークンだったが、本物のGPTは「サブワード(BPE)」という、よく出る語のかたまりを単位にする。"林檎"はひとかたまり、珍しい長い語は複数のかけらに分かれる。
 - 埋め込み:似た意味・似た使われ方の語ほど、数の空間で近くに配置されるよう大量テキストから学習。さらにTransformerは語順を直接見ないので、位置情報も足す。
 -->
@@ -659,7 +642,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 <span class="src">出典：Vaswani et al. 2017, arXiv:1706.03762 ／ Google Research Blog（2017）</span>
 </div>
 
-<div class="takeaway">GPT＝<strong>G</strong>enerative <strong>P</strong>re-trained <strong>T</strong>ransformer。Transformerを「次の語の生成」に特化させた応用</div>
+<div class="takeaway">GPT＝<strong>G</strong>enerative <strong>P</strong>re-trained <strong>T</strong>ransformer、「次の語の生成」に特化させた応用</div>
 
 <!--
 - 仕組み(3)。Transformerの心臓部がSelf-Attention(自己注意)。ある語を処理するとき、文中の他のすべての語と比べて「どの語とどれくらい関係が強いか」を計算し、関係の強い語に注目して意味を決める。
@@ -674,7 +657,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">Transformerの中身</div>
 
-## 「注目 → 考える」を、何層も重ねる
+## 「注目 → 考える」を、重ねる
 
 <div class="split-body">
 <div class="left">
@@ -706,13 +689,13 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 ### いちもじGPTの中身も、これ
 
-- **①埋め込み**で言葉を数に（前ページ）
+- **①埋め込み**で言葉を数に
 - **②自己注意**で語どうしの関係を見る
 - **③変換**でまとめ直す（②③で1ブロック）
 - この**ブロックを何層も重ねる**ほど深く読める
 - 最後に**次の1語の確率**を出して選ぶ
 
-<div class="callout-gray">層を重ね、規模を大きくするほど賢くなる → このあと</div>
+<div class="callout-gray">層を重ね、規模を大きくするほど賢くなる </div>
 
 </div>
 </div>
@@ -758,7 +741,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 ③ ズレが減る向きに<strong>重み</strong>を微調整（逆伝播）
 </div>
 
-これを“大量のテキスト × 何百万回”繰り返すのが<strong>事前学習</strong>。
+“大量のテキスト × 何百万回”繰り返すのが<strong>事前学習</strong>。
 
 <div class="callout-green">
 <strong>学習</strong>は重い“1回”／<strong>推論（生成）</strong>は固定の重みで軽く“反復”
@@ -842,13 +825,14 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 - 小さいモデルには無かった能力が、ある規模で**急に現れる**例が報告
 - ＝シンプルな予測のくりかえしが、規模を得て**知的にふるまう**
+- コンテキスト内学習が出来るようになる
 
 </div>
 
 </div>
 
 <div class="callout-yellow">
-ただし「創発」は<strong>評価の測り方による“見かけ”</strong>という慎重な指摘もある（学術的に議論中）。「規模を上げると質的に新しいことができるように見える」と、控えめに理解しておく。
+ただし「創発」は<strong>評価の測り方による“見かけ”</strong>という慎重な指摘もある（議論中）。「規模を上げると質的に新しいことができるように見える」と、控えめに理解しておく。
 </div>
 
 <div class="takeaway">いちもじGPTは最小版。中身の芯は同じで、違いは「規模」と「仕上げ」だけ</div>
@@ -876,15 +860,16 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 - 学習データもパラメータも**けた違いに大きい**
 - 文字でなく**サブワード**でトークン化
+- 複数のエキスパート部分で構成される
 
 </div>
 
 <div class="sec-box">
 
-### ② 仕上げの追加学習
+### ② 仕上げの追加学習と推論
 
 - 事前学習の後、**人間の好みに合わせる学習**（指示への従順さ・安全性）を追加
-- だから“対話”が成り立つ
+- 推論やAI agent的に動いてツールを使えるようになっている。
 
 </div>
 
@@ -892,7 +877,6 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 ### ③ マルチモーダル
 
-- **Gemini**＝Googleの基盤モデル
 - 文字だけでなく**画像・音声・コード**も扱える
 
 </div>
@@ -917,8 +901,9 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 - 生成AIは「**次の1語**」を予測して、つなげているだけ（自己回帰）
 - その心臓部が **Transformer / Attention**（各語が他の語との関係を見る）
-- **学習＝損失を下げる**猛特訓。規模を上げると賢くなる（創発）
-- **流暢さ ≠ 正しさ**。だから“それらしく”間違える（→ 検証して使う）
+- **学習＝損失を下げる**トレーニング。
+- 規模を上げると賢くなって、できることが増える（創発）
+- **流暢さ ≠ 正しさ**。だから“それらしく”間違えるので、ハルシネーションは仕方ない（→ 検証して使う）
 - Colab＝**ブラウザで・無料GPUで・Python**を動かせる実験室
 
 <div class="takeaway">“魔法”ではなく“予測の積み重ね”。だから得意・不得意も説明できる</div>
@@ -950,7 +935,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">Colabでできること</div>
 
-## まず動かして、結果から学べる
+## 動かして、結果から学べる
 
 <div class="sections">
 
@@ -978,7 +963,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 今日は身近な題材として <strong>教育のオープンデータ</strong>（学校・学力・進学などの公開データ）を使います。「環境は学力にどう効く？」「成績から成績を予測できる？」を、手を動かして確かめます。
 </div>
 
-<div class="takeaway">コードが書けなくても、まず実行→結果を見る→問いを深める、で学べる</div>
+<div class="takeaway">今や、コードを書けなくても読めれば使える。実行→結果を見る→問いを深める、で学べる</div>
 
 <!--
 - Colabでできることは幅広い。データの可視化(グラフ化)、EDA(探索的データ分析=まずデータを眺めて問いを立てる)、機械学習入門(予測・分類)、そしてGeminiにデータ分析を丸ごと頼む。
@@ -1004,9 +989,9 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 </div>
 
 <div class="mcard mc-b">
-<span class="mc-tag">B ・ Geminiに頼む</span>
-<div class="mc-h">データ分析を AI に丸投げ</div>
-<div class="mc-b">教育データを読み込み、<b>Gemini に言葉で「分析して」</b>と頼む。分析ノートが自動でできる。</div>
+<span class="mc-tag">B ・ 分析＋Gemini</span>
+<div class="mc-h">自分で分析→後半でGemini</div>
+<div class="mc-b">教育データを<b>まず自分で可視化・相関</b>。後半は <b>Gemini に「分析して」</b>と依頼（使える環境なら）。</div>
 <div class="mc-l">▶ <a href="https://colab.research.google.com/">Colabリンク（当日 slido で配布）</a></div>
 </div>
 
@@ -1019,11 +1004,14 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 </div>
 
+<div class="caption" style="margin-top:8px;">🧭 これらのノートブックの<strong>コードは生成AI（Claude Opus）で作成</strong>し、Claude Fable で検証しています（最終責任は作成者）。</div>
+
 <div class="takeaway">まずは1つでOK。AからでもBからでも、自分の興味で選んで動かそう</div>
 
 <!--
 - 今日のノートは3つ。A「はじめてのColab」=超入門(Colabが初めての人向け)。B「Geminiにデータ分析を頼む」=言葉で頼んで分析ノートを自動生成。C「EDA+機械学習入門」=教育データを自分で可視化→予測まで。
 - まず1つでOK。Colabが不安ならA、AIに任せてみたいならB、手を動かしたいならC。リンクは当日slidoで配布(各自Driveにコピーして使う)。
+- ノートのコードはClaude Opusで生成しFableで検証している点も一言触れる（"AIでコードを書く"こと自体が今日のテーマの実例）。
 - このあと、BとCの中身を1枚ずつ見ます。
 -->
 
@@ -1033,46 +1021,48 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">ノートB</div>
 
-## Gemini にデータ分析を頼む（言葉だけで）
+## まず自分で分析 → 後半で Gemini に頼む
 
 <div class="split-body">
 <div class="left">
 
-<div class="prompt">
-<span class="lab">言葉でたのむ：</span>「この学校データ（CASchools.csv）の傾向を可視化して。<strong>学力（テスト点）に効いていそうな要因</strong>を、相関や散布図で調べて、わかったことを日本語で要約して。」
+<div class="stepcol">
+<div class="stepc"><span class="sn">1</span><span class="sb"><b>前半：自分で分析</b>。CASchools を読み込み、<b>相関・散布図</b>で「学力に効く要因」を可視化（全員できる）</span></div>
+<div class="stepc"><span class="sn">2</span><span class="sb"><b>後半：Gemini に頼む</b>（発展）。同じ分析を<b>言葉で依頼</b>して自動生成</span></div>
 </div>
 
-<div class="caption">Colabの「データサイエンス・エージェント」（Gemini）に頼む</div>
+<div class="prompt">
+<span class="lab">Geminiに頼む例：</span>「CASchools.csv の傾向を可視化して。<strong>学力に効く要因</strong>を相関・散布図で調べ、日本語で要約して。」
+</div>
 
-<div class="callout-gray">
-データをアップ → Gemini の<strong>サイドパネル</strong>で目的を書く → AIが<strong>手順を立てて</strong>前処理・グラフ・要約まで自動で組む。
+<div class="callout-yellow">
+⚠️ Gemini パネルは<strong>アカウント・地域・組織の設定で表示されないことがある</strong>。出なければ前半だけでOK。
 </div>
 
 </div>
 <div class="right">
 
 <div class="demo-card">
-<div class="dc-bar">できあがり ｜ 自動生成された分析ノート</div>
+<div class="dc-bar">後半 ｜ Geminiが自動生成する分析ノート（使える環境なら）</div>
 <div class="dc-body">
 ① データを読み込み・要約<br>
 ② 欠損やばらつきを確認<br>
 ③ <strong>相関ヒートマップ／散布図</strong>を作図<br>
 ④ 「<strong>貧困層の割合が高い学区ほど点が低い傾向</strong>」等を日本語で要約<br>
-<span class="dc-note">※ 出力は必ず自分で検証。もっともらしく間違えることがある。</span>
+<span class="dc-note">※ 前半で自分が出した結果と見くらべる。出力は必ず検証。</span>
 </div>
 </div>
 
 </div>
 </div>
 
-<div class="takeaway">「言葉で頼む」だけで、分析の下書きが組み上がる — 検証は自分の仕事</div>
+<div class="takeaway">まず自分で分析 → 後半でGeminiに丸投げ。使えなくても学びは完結、検証は自分の仕事</div>
 
 <!--
-- ノートB。Colabに搭載された「データサイエンス・エージェント(Gemini)」に、データ分析を言葉で頼む。梅雨分析でやったのと同じ流れを、教育データで。
-- 流れ:CSVをアップ→画面のGeminiサイドパネルで目的を自然言語で書く→AIがまず手順(プラン)を立て、前処理・可視化・要約まで含む実行可能なノートを自動生成。"承認して実行"で取り込む。
-- 例:カリフォルニアの学校データで「学力に効く要因を調べて」と頼むと、相関ヒートマップや散布図を作り「貧困層の割合が高い学区ほど点が低い傾向」等を要約してくれる。
-- 重要な注意:出力はもっともらしく間違えることがある。必ず自分で検証する。機密データは入れない。アップしたファイルはセッション終了で消える。
-- 機能名やUIは更新が速いので、当日の画面で確認します。
+- ノートB。構成を変更：まず全員が「自分で分析」(CASchoolsを読み込み→相関→散布図)を体験し、後半で(発展として)Geminiに同じ分析を言葉で頼む。
+- 重要：Geminiのデータサイエンスエージェントはアカウント・地域・組織設定で表示されないことがある。出ない場合は前半だけで今日の目標は達成、と伝える。
+- Geminiが使える人は、前半で自分が出した相関・散布図と、Geminiの結果を見くらべる。同じ結論か？違いはどこか？＝最後の解釈は人間の仕事。
+- 注意:出力はもっともらしく間違える→必ず検証。機密データは入れない。アップしたファイルはセッション終了で消える。UIは更新が速いので当日の画面で確認。
 -->
 
 ---
@@ -1143,7 +1133,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 - 「**高校成績やSATで大学GPAを予測**」を体験（satgpa）
 - アンケート結果を**その場でグラフ化**
-- Web の公開データを**APIで取得**して分析
+- オープンデータを**APIで取得**して分析
 - Gemini に**コードの意味を質問**しながら学ぶ
 
 </div>
@@ -1153,7 +1143,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 - 「**予算は学力を上げる？**」支出×学力の相関（CASchools）
 - **クラスサイズと学力**の関係を散布図で
-- **機械学習**を小さく試作（分類・回帰・予測）
+- **機械学習**を小さく試す（分類・回帰・予測）
 - 研究データの前処理・作図を**再現可能**に・重い計算は**無料GPU**
 
 </div>
@@ -1161,16 +1151,15 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 <div class="uc-col col-staff">
 <div class="uc-h">🏢 教職員</div>
 
-- 授業評価の自由記述を **Gemini で分類・感情分析**
-- 成績・出席データを**可視化**して傾向把握
-- 「**教育水準と経済水準**」を国際比較（Our World in Data）
+- 大規模データを**可視化**して傾向把握
+- 「**教育水準と経済水準**(国際)や「国内統計」データを可視化
 - 定型の集計処理を**自動化**（1度書けば毎回使える）
 
 </div>
 
 </div>
 
-<div class="takeaway">「自分の手元のデータ」を1つ、Colab に載せてみるのが第一歩</div>
+<div class="takeaway">「機密ではないデータ」を、Colab に載せて試してみるのが第一歩</div>
 
 <!--
 - 立場別の使いどころ。学部生:授業データ・アンケートの可視化、レポート図表、公開データ取得、Geminiにコードを質問しながら学ぶ。
@@ -1185,7 +1174,7 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">うまくやるコツ</div>
 
-## Gemini に頼むコツ ＆ 注意点
+## Colab上のGemini に頼むコツ ＆ 注意点
 
 <div class="sections">
 
@@ -1415,8 +1404,11 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 - 教育オープンデータ（Rdatasets：CASchools / satgpa）. https://vincentarelbundock.github.io/Rdatasets/
 - 本シリーズ案内（千葉大ALC）. https://alc.chiba-u.jp/eyr/2026/04/03/2026ai.html
 
+<div class="caption" style="margin-top:10px;">🧭 ハンズオンのノートブックは <strong>Claude Opus で作成し、検証</strong>しました。本資料はデザインと一部の表現をAIに任せました。ノートブック内の誤りにご注意ください。コンテンツの責任は作成者（田川 翔）が負います。生成AIの出力には誤りが含まれることがあるため、重要な引用はご自身で裏取りのうえご利用ください。</div>
+
 <!--
 - 出典。Colab公式FAQ・データサイエンスエージェント・Gemini提供発表、生成AIの仕組み(Transformer原論文・GPT・創発・Gemini)、いちもじGPTの土台nanoGPT、教育データ(Rdatasets)、シリーズ案内。
+- 制作クレジット：Opusで作成・Fableで検証・最終責任は作成者、を明示（ドキュメントとノートブック末尾に共通で記載）。
 - スライド配布時にここから辿れるようにしてある。原論文URLは移設されることがあるのでarXiv版を併記。
 -->
 

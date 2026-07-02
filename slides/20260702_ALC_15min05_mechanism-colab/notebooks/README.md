@@ -7,7 +7,7 @@
 |---|---|---|---|---|
 | 03 | `03_ichimo_gpt.ipynb` | **STEP①** まず動かす | ChatGPTと同じ Transformer を一から作る「いちもじGPT」。次の1文字を予測してつなげる生成AIを体験 | 約10分 |
 | 04 | `04_hajimete_no_colab.ipynb` | STEP③ A・超入門 | Colab の超入門（セル実行・GPU・ファイル・保存）。Colab がはじめての人向け | 約10分 |
-| 05 | `05_gemini_data_analysis_education.ipynb` | STEP③ B・Geminiに頼む | 教育データ(CASchools)を **Gemini（データサイエンス・エージェント）** に分析してもらう＋自分でも書けるEDA | 約15分 |
+| 05 | `05_gemini_data_analysis_education.ipynb` | STEP③ B・分析＋Gemini | 教育データ(CASchools)を**まず自分でEDA**（相関・散布図）→ 後半で（使える環境なら）**Gemini（データサイエンス・エージェント）** に同じ分析を頼んで見くらべる | 約15分 |
 | 06 | `06_eda_ml_education.ipynb` | STEP③ C・自分で書く | 教育データ(satgpa)で EDA →（線形回帰で）大学GPAを予測 → 評価。機械学習入門 | 約15分 |
 
 ## 使うデータ（教育系オープンデータ）

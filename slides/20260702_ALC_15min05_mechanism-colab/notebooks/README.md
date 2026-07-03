@@ -24,3 +24,6 @@
 - Google Colab（公式FAQ） <https://research.google.com/colaboratory/faq.html>
 - Data Science Agent in Colab（Gemini） <https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/>
 - いちもじGPT の土台：nanoGPT（A. Karpathy, MIT License） <https://github.com/karpathy/nanoGPT>
+
+## 制作クレジット
+本ノートブック群のコードは **Claude Opus で作成**し、**Claude Fable で検証**しました。最終的な責任は作成者（千葉大学 田川 翔）が負います。

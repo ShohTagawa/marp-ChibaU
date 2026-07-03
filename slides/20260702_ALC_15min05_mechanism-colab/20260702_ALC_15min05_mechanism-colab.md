@@ -960,14 +960,14 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 </div>
 
 <div class="callout-blue">
-今日は身近な題材として <strong>教育のオープンデータ</strong>（学校・学力・進学などの公開データ）を使います。「環境は学力にどう効く？」「成績から成績を予測できる？」を、手を動かして確かめます。
+今日の題材は2つ。<strong>世界の地震のリアルタイムデータ</strong>（ノートB）と、<strong>教育のオープンデータ</strong>（ノートC）。「いま地球のどこで地震が起きている？」「高校の成績から大学の成績を予測できる？」を、手を動かして確かめます。
 </div>
 
 <div class="takeaway">今や、コードを書けなくても読めれば使える。実行→結果を見る→問いを深める、で学べる</div>
 
 <!--
 - Colabでできることは幅広い。データの可視化(グラフ化)、EDA(探索的データ分析=まずデータを眺めて問いを立てる)、機械学習入門(予測・分類)、そしてGeminiにデータ分析を丸ごと頼む。
-- 今日の題材は「教育のオープンデータ」。学校・学力・進学などの公開データで、大学の学び・研究に近いテーマを扱う。
+- 今日の題材は2つ。「世界の地震のリアルタイムデータ」(ノートB)と「教育のオープンデータ」(ノートC)。研究の生データと、大学の学びに近いテーマの両方を扱う。
 - ポイント:完璧に理解してから動かすのでなく、まず動かして結果を見て、そこから問いを深める。
 -->
 
@@ -989,9 +989,9 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 </div>
 
 <div class="mcard mc-b">
-<span class="mc-tag">B ・ 分析＋Gemini</span>
-<div class="mc-h">自分で分析→後半でGemini</div>
-<div class="mc-b">教育データを<b>まず自分で可視化・相関</b>。後半は <b>Gemini に「分析して」</b>と依頼（使える環境なら）。</div>
+<span class="mc-tag">B ・ 地震データ</span>
+<div class="mc-h">世界の地震を“生データ”で見る</div>
+<div class="mc-b">本物の<b>地震波形（M6.4）</b>を取得してグラフ化し、<b>USGSの世界の地震をリアルタイム監視</b>。数字の羅列が「情報」になる瞬間。</div>
 <div class="mc-l">▶ <a href="https://colab.research.google.com/">Colabリンク（当日 slido で配布）</a></div>
 </div>
 
@@ -1021,48 +1021,45 @@ Self-Attention＝各語が、文中の<strong>他のすべての語との関連�
 
 <div class="page-title">ノートB</div>
 
-## まず自分で分析 → 後半で Gemini に頼む
+## 地震のオープンデータを、“生”のまま触る
 
 <div class="split-body">
 <div class="left">
 
 <div class="stepcol">
-<div class="stepc"><span class="sn">1</span><span class="sb"><b>前半：自分で分析</b>。CASchools を読み込み、<b>相関・散布図</b>で「学力に効く要因」を可視化（全員できる）</span></div>
-<div class="stepc"><span class="sn">2</span><span class="sb"><b>後半：Gemini に頼む</b>（発展）。同じ分析を<b>言葉で依頼</b>して自動生成</span></div>
-</div>
-
-<div class="prompt">
-<span class="lab">Geminiに頼む例：</span>「CASchools.csv の傾向を可視化して。<strong>学力に効く要因</strong>を相関・散布図で調べ、日本語で要約して。」
+<div class="stepc"><span class="sn">1</span><span class="sb"><b>本物の地震波形</b>を取得：2022年 ファーンデール地震（<b>M6.4</b>）を、UCバークレーの観測点から10分ぶん</span></div>
+<div class="stepc"><span class="sn">2</span><span class="sb">数字の羅列（<b>データ</b>）をグラフ化 → <b>P波・S波の到着</b>が見える（＝<b>情報</b>になる瞬間）</span></div>
+<div class="stepc"><span class="sn">3</span><span class="sb"><b>USGS の世界の地震</b>を<b>リアルタイム監視</b>＋過去24時間を散布図に</span></div>
 </div>
 
 <div class="callout-yellow">
-⚠️ Gemini パネルは<strong>アカウント・地域・組織の設定で表示されないことがある</strong>。出なければ前半だけでOK。
+⚠️ リアルタイム監視のセルは<strong>止めるまで動き続けます</strong>（セル左の ■ で停止）。世界では小さな地震が絶えず起きています。
 </div>
 
 </div>
 <div class="right">
 
 <div class="demo-card">
-<div class="dc-bar">後半 ｜ Geminiが自動生成する分析ノート（使える環境なら）</div>
+<div class="dc-bar">できあがり ｜ 「データ → 情報」を3回体験</div>
 <div class="dc-body">
-① データを読み込み・要約<br>
-② 欠損やばらつきを確認<br>
-③ <strong>相関ヒートマップ／散布図</strong>を作図<br>
-④ 「<strong>貧困層の割合が高い学区ほど点が低い傾向</strong>」等を日本語で要約<br>
-<span class="dc-note">※ 前半で自分が出した結果と見くらべる。出力は必ず検証。</span>
+① 生データ＝<strong>ただの数字の羅列</strong>（波形の最初の20点）<br>
+② グラフにすると <strong>P波・S波</strong> がはっきり見える<br>
+③ 生のJSONが流れ、<strong>M2.0以上でハイライト</strong><br>
+④ 24時間の地震を「時刻×マグニチュード」で一望<br>
+<span class="dc-note">※ 数字のままでは読めない。可視化してはじめて「情報」になる。</span>
 </div>
 </div>
 
 </div>
 </div>
 
-<div class="takeaway">まず自分で分析 → 後半でGeminiに丸投げ。使えなくても学びは完結、検証は自分の仕事</div>
+<div class="takeaway">ただの数字の羅列が、グラフになった瞬間「情報」に変わる — 研究の生データを体験</div>
 
 <!--
-- ノートB。構成を変更：まず全員が「自分で分析」(CASchoolsを読み込み→相関→散布図)を体験し、後半で(発展として)Geminiに同じ分析を言葉で頼む。
-- 重要：Geminiのデータサイエンスエージェントはアカウント・地域・組織設定で表示されないことがある。出ない場合は前半だけで今日の目標は達成、と伝える。
-- Geminiが使える人は、前半で自分が出した相関・散布図と、Geminiの結果を見くらべる。同じ結論か？違いはどこか？＝最後の解釈は人間の仕事。
-- 注意:出力はもっともらしく間違える→必ず検証。機密データは入れない。アップしたファイルはセッション終了で消える。UIは更新が速いので当日の画面で確認。
+- ノートB。地球科学の"生データ"体験。①2022年ファーンデール地震(M6.4)の実波形を、ObsPyでUCバークレーBKS観測点(NCEDC)から取得。まず数字の羅列(データ)を見せてから、グラフ化してP波・S波の到着を見る＝「データが情報になる瞬間」。
+- ②USGSの「過去1時間の全地震」フィード(オープンデータ)をリアルタイム監視。生のJSONが流れ、M2.0以上でハイライト。世界では小さな地震が絶えず起きている。
+- 重要な運用注意：監視セルは無限ループ。止めるときはセル左の■。③最後に過去24時間の地震を時刻×マグニチュードの散布図に。
+- 専門でなくても「上から▶」で動く。研究で使う一次データに触れるのが狙い。講師の専門(地球惑星科学)ともつながる題材。
 -->
 
 ---

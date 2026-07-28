@@ -1,0 +1,16 @@
+{
+  "legend": { "top": 0, "itemGap": 22, "textStyle": { "fontSize": 15 } },
+  "grid": { "left": 60, "right": 24, "top": 46, "bottom": 52 },
+  "xAxis": {
+    "type": "category",
+    "axisLabel": { "fontSize": 15, "lineHeight": 18, "interval": 0 },
+    "data": ["Ground\n知識の接地", "Prereq\n前提推論", "Neighbor\n近傍推薦", "Evidence\n実験の証拠", "Locate\n章の索引"]
+  },
+  "yAxis": { "type": "value", "name": "EM (%)", "max": 90 },
+  "series": [
+    { "name": "Gemini-3-Flash", "type": "bar", "data": [63.4, 34.8, 33.4, 47.4, 81.7], "itemStyle": { "color": "#A6192E" } },
+    { "name": "Gemma-4-31B-IT", "type": "bar", "data": [50.6, 28.3, 15.0, 43.3, 73.4], "itemStyle": { "color": "#1A6BB0" } },
+    { "name": "GPT-5.2", "type": "bar", "data": [50.8, 17.9, 13.1, 41.6, 70.1], "itemStyle": { "color": "#D98C1F" } },
+    { "name": "ランダム推測", "type": "bar", "data": [6.7, 6.7, 6.7, 6.7, 6.7], "itemStyle": { "color": "#C8CCD0" } }
+  ]
+}

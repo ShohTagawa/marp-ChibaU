@@ -1,0 +1,49 @@
+{
+  "grid": { "left": 170, "right": 70, "top": 10, "bottom": 40 },
+  "xAxis": { "type": "value", "name": "Overall EM (%)", "max": 100, "nameLocation": "middle", "nameGap": 28 },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "axisLabel": { "fontSize": 15 },
+    "data": [
+      "Gemini-3-Flash",
+      "Gemini-2.5-Flash",
+      "Gemma-4-31B-IT",
+      "GPT-5.2",
+      "Qwen3-32B",
+      "Ministral-3-14B-It",
+      "GLM-4.7-Flash",
+      "GPT-5-mini",
+      "GPT-4o",
+      "LLaMA-3-8B-Instruct",
+      "ランダム推測"
+    ]
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "62%",
+      "label": { "show": true, "position": "right", "fontSize": 15, "fontWeight": "bold", "formatter": "{c}" },
+      "data": [
+        { "value": 57.1, "itemStyle": { "color": "#A6192E" } },
+        { "value": 48.3, "itemStyle": { "color": "#C4707D" } },
+        { "value": 46.4, "itemStyle": { "color": "#C4707D" } },
+        { "value": 42.8, "itemStyle": { "color": "#C4707D" } },
+        { "value": 42.6, "itemStyle": { "color": "#C4707D" } },
+        { "value": 37.5, "itemStyle": { "color": "#C4707D" } },
+        { "value": 31.7, "itemStyle": { "color": "#C4707D" } },
+        { "value": 31.7, "itemStyle": { "color": "#C4707D" } },
+        { "value": 31.1, "itemStyle": { "color": "#C4707D" } },
+        { "value": 7.2, "itemStyle": { "color": "#9AA0A6" } },
+        { "value": 6.7, "itemStyle": { "color": "#C8CCD0" } }
+      ],
+      "markLine": {
+        "silent": true,
+        "symbol": "none",
+        "lineStyle": { "color": "#6b7280", "type": "dashed", "width": 1.5 },
+        "label": { "formatter": "ランダム 6.7", "fontSize": 13, "color": "#6b7280", "position": "insideEndTop" },
+        "data": [{ "xAxis": 6.7 }]
+      }
+    }
+  ]
+}

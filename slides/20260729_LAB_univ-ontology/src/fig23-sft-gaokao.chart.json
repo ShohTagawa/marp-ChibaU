@@ -1,0 +1,42 @@
+{
+  "grid": { "left": 190, "right": 80, "top": 8, "bottom": 42 },
+  "xAxis": { "type": "value", "name": "GaokaoBench 合計スコア", "max": 1100, "nameLocation": "middle", "nameGap": 28 },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "axisLabel": { "fontSize": 15 },
+    "data": [
+      "+ K12-Train-Text（本論文）",
+      "+ DataFlow",
+      "+ OpenHermes",
+      "+ SmolTalk",
+      "+ Infinity",
+      "+ Tulu-3",
+      "+ WizardLM",
+      "+ UltraChat",
+      "+ LMSYS",
+      "公式 Instruct 版",
+      "素の Base モデル"
+    ]
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "62%",
+      "label": { "show": true, "position": "right", "fontSize": 14, "fontWeight": "bold", "formatter": "{c}" },
+      "data": [
+        { "value": 1009.96, "itemStyle": { "color": "#A6192E" } },
+        { "value": 985.91, "itemStyle": { "color": "#C4707D" } },
+        { "value": 966.84, "itemStyle": { "color": "#C4707D" } },
+        { "value": 963.6, "itemStyle": { "color": "#C4707D" } },
+        { "value": 953.73, "itemStyle": { "color": "#C4707D" } },
+        { "value": 951.65, "itemStyle": { "color": "#C4707D" } },
+        { "value": 922.75, "itemStyle": { "color": "#C4707D" } },
+        { "value": 902.64, "itemStyle": { "color": "#C4707D" } },
+        { "value": 782.36, "itemStyle": { "color": "#C4707D" } },
+        { "value": 895.37, "itemStyle": { "color": "#9AA0A6" } },
+        { "value": 445.42, "itemStyle": { "color": "#C8CCD0" } }
+      ]
+    }
+  ]
+}

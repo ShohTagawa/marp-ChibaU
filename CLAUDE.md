@@ -33,6 +33,8 @@
 
 1. 新しいスライドを作る・既存スライドを編集するときは、必ず **`marp-academic-slides`** スキルを起動する(`.claude/skills/marp-academic-slides/` にプロジェクト同梱)
 2. スキル内の `references/patterns.md` と `references/density-guide.md` を読んでからスライド構造を決める
+   - **作り始める前に [docs/revision-map_2026H1.md](docs/revision-map_2026H1.md) の A群（添削濃厚）デックをよく見る**。A群は田川先生の添削が濃く反映された「好みの正解集」。デザイン・言い回し・構成はここから学び、まず似た回・似た用途のA群デックを2〜3本開いて型を掴んでから書く（例：デザイン基準= `20260623_ALC_15min04_workspace-studio`、講義= `20260602_InfoLit_8_network`、研修= `20260702_FD_Meikai_genai-engagement`、講演= `20260620_EdTechCase_AI-univ-change`）
+   - **C群（pptx変換のみ）のデックはデザイン・文体の参照元にしない**（体裁がClaude任せで添削されていない）
 3. テーマ CSS は **`theme/` 直下のものだけが正本**：`theme/academic.css`（基本）と、それを `@import` して部品を足した **`theme/chiba-deck.css`（多くのスライドデックが使う実運用テーマ）**。どちらを使うかは後述の「### テーマは2層」を見る。**スキル配下・ホーム配下・出力先などに別コピーを置かない／コピーしない**（古いCSSが本番とズレる。過去コピーに `--header-h:50px` 等のロック違反あり）。
 4. 新しいスライドは **`slides/`** 配下に「**1デック = 1ディレクトリ**」で作る。ディレクトリ名は `YYYYMMDD_<イベント略号>_<時刻orコマ>_<内容>` 形式（例：`20260519_ALC_1210_AI-function`）
 5. **1デックの内部構造**：
@@ -197,6 +199,21 @@ python3 tools/pptx2marp/pptx2marp.py <input.pptx> --name <deck-name> --title "<�
 
 表は HTML テーブルで再現。WMF/EMF 画像・動画・ネイティブグラフは再現不可のため位置に注記が入る
 （グラフは `marp-echarts` で作り直し推奨）。
+
+### 原文忠実の原則（pptx・既存スライドからの取り込み全般）
+
+**原典の文言は一字一句そのままコピーする。** 変換・移植の際に、要約・言い換え・「改善」を勝手に行わない。
+原文に誤字があってもまず原文どおりに写し、直したい場合は**変更候補の一覧を提示して承認を得てから**変える。
+レイアウトの都合で文を分割・改行するのは可（字句は変えない）。
+
+変換・移植後は必ず機械突合する：
+
+```bash
+python3 tools/pptx2marp/check-fidelity.py <original.pptx> <converted.md>
+```
+
+- 忠実率と MISSING（原文どおりに見つからない段落）の一覧が出る。**MISSING はゼロが原則**。
+- 意図的に省略した段落（ページ番号・日付・重複ヘッダー等）が MISSING に出る場合は、その一覧を**ユーザーに報告**して了承を得る。黙って落とさない。
 
 ## 自分の既存スライドの「図だけ」を再利用する（marp-reuse-figures）
 

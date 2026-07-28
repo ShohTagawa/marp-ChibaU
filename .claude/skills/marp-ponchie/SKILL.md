@@ -52,6 +52,10 @@ marp-ponchie/
 - **SVG内に空行を入れない**。markdown-it/Marp は空行でHTMLブロックを分断し、生のSVGがテキストとして漏れて描画が壊れる。要素間に空行を置かないこと。
 - ロゴ等の画像は `<image href="./src/ファイル名">`。出力時に `--allow-local-files` 必須。
 - 文字最小は **11px**（ポンチ絵は密度優先で本文より小さくてよい）。ただし読めること。タイトル・キーメッセージは大きく（22〜30px）コントラストを効かせる。
+- **フロー矢印はSVGの最後（最前面）に描く**。パネルの後に足すと背面に隠れて「矢印を最前面に」の修正指示になる。
+- **並列パネルは上端・下端・高さを揃える**。1枚だけ高さが違うと必ず差し戻される。縦が窮屈なら文字を削るのでなく viewBox 内の配分を見直す。
+- **隅の凡例・注記（●数字＝…等）は被りの常習犯**。他要素との間隔を最終PNGで必ず確認。2行に割ってよい。
+- **専門用語は性質の言葉に言い換える**（例：ACIDトランザクション→「例外なく処理」）。役員・本部向けは特に平易に。レイヤーの色は**意味で分ける**（出口・成果のレイヤーは基盤色と別系統に）。
 - VS Codeプレビューでは未許可タグがサニタイズされるので `.vscode/settings.json` の `markdown.marp.html` 許可リストに `svg/g/rect/circle/path/text/polygon/polyline/line/defs/marker/image/linearGradient/radialGradient/stop/filter/feDropShadow/ellipse` を入れておく（PDFは marp-cli `--html` でこの許可リストに関係なく出る）。
 
 ### Frontmatter テンプレ

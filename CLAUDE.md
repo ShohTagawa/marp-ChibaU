@@ -35,7 +35,7 @@
 2. スキル内の `references/patterns.md` と `references/density-guide.md` を読んでからスライド構造を決める
    - **作り始める前に [docs/revision-map_2026H1.md](docs/revision-map_2026H1.md) の A群（添削濃厚）デックをよく見る**。A群は田川先生の添削が濃く反映された「好みの正解集」。デザイン・言い回し・構成はここから学び、まず似た回・似た用途のA群デックを2〜3本開いて型を掴んでから書く（例：デザイン基準= `20260623_ALC_15min04_workspace-studio`、講義= `20260602_InfoLit_8_network`、研修= `20260702_FD_Meikai_genai-engagement`、講演= `20260620_EdTechCase_AI-univ-change`）
    - **C群（pptx変換のみ）のデックはデザイン・文体の参照元にしない**（体裁がClaude任せで添削されていない）
-3. テーマ CSS は **`theme/` 直下のものだけが正本**：`theme/academic.css`（基本）と、それを `@import` して部品を足した **`theme/chiba-deck.css`（多くのスライドデックが使う実運用テーマ）**。どちらを使うかは後述の「### テーマは2層」を見る。**スキル配下・ホーム配下・出力先などに別コピーを置かない／コピーしない**（古いCSSが本番とズレる。過去コピーに `--header-h:50px` 等のロック違反あり）。
+3. テーマ CSS は **`theme/` 直下のものだけが正本**：`theme/academic.css`（基本）、それを `@import` して部品を足した `theme/chiba-deck.css`（既存デックの実運用テーマ）、同じく `@import` して本文を『伝わるデザインの基本』のルールで組み直した **`theme/tsutawaru-academic.css`（新規デックの推奨）**。どれを使うかは後述の「### テーマは3種」を見る。**スキル配下・ホーム配下・出力先などに別コピーを置かない／コピーしない**（古いCSSが本番とズレる。過去コピーに `--header-h:50px` 等のロック違反あり）。
 4. 新しいスライドは **`slides/`** 配下に「**1デック = 1ディレクトリ**」で作る。ディレクトリ名は `YYYYMMDD_<イベント略号>_<時刻orコマ>_<内容>` 形式（例：`20260519_ALC_1210_AI-function`）
 5. **1デックの内部構造**：
    ```
@@ -60,16 +60,21 @@
    - インラインSVGは**空行を含めない**（Markdownがブロックを打ち切りスライドが消える。render.mjs が1行化して回避）。
    - 手描きの構造図（フロー・概念図）は従来どおり手書きインラインSVGでよい。グラフ（データ可視化）だけ marp-echarts に寄せる。
 
-### テーマは2層（academic / chiba-deck）
+### テーマは3種（academic / chiba-deck / tsutawaru-academic）
 
-実際のデックの**大半は `chiba-deck` を使う**（実測：chiba-deck 109デック / academic 29デック）。
+既存デックの大半は `chiba-deck`（実測：chiba-deck 109デック / academic 29デック）。
+**新規デックは `tsutawaru-academic` を第一候補にする。**
 
 | theme | 用途 | 中身 |
 |---|---|---|
 | `academic` | 基本テーマ（土台・少数の純学術デック） | ヘッダー帯・page-title・cover-hero・takeaway・fig/split/summary などの基盤 |
-| `chiba-deck` | **多くのスライドデックの実運用テーマ** | `@import "academic"` の上に 本文25px・**右下PiP動画予約**(`--pip-w/--pip-h`・ページ番号は左下)・部品ライブラリ(`box-accent`/`box-info`/`box-warn`/`stepbox`/`tag`系/`pcard`+`cardrow`/`cite`/`goal-box`/`flowrow`+`fbox`/`subhead`/`sec-open`)を追加 |
+| `chiba-deck` | 既存デックの実運用テーマ | `@import "academic"` の上に 本文25px・**右下PiP動画予約**(`--pip-w/--pip-h`・ページ番号は左下)・部品ライブラリ(`box-accent`/`box-info`/`box-warn`/`stepbox`/`tag`系/`pcard`+`cardrow`/`cite`/`goal-box`/`flowrow`+`fbox`/`subhead`/`sec-open`)を追加 |
+| **`tsutawaru-academic`** | **新規デックの推奨。『伝わるデザインの基本』準拠** | `@import "academic"` の上に本文だけを本のルールで再定義。**囲みを最小化**し、太さ・余白・揃えで構造を作る。3色・文字サイズ3種・行長28字・表は罫線3本。既存の `box-*` / `callout-*` 系は落ち着いた1形式に自動で寄る。詳細は [docs/tsutawaru-guide.md](docs/tsutawaru-guide.md) |
 
-- **新規の講義・PPTX再構築デックは原則 `theme: chiba-deck`**。学会ポスター的な純学術1デックだけ `academic` でよい。
+- **新規デックは原則 `theme: tsutawaru-academic`**（囲み過多・文字過多を構造的に防ぐ）。既存デックの改修で部品を大量に使っている場合のみ `chiba-deck` を継続、学会ポスター的な純学術デックだけ `academic`。
+- `tsutawaru-academic` のビルドは `--theme-set theme/academic.css theme/tsutawaru-academic.css`。`chiba-deck` とは**併用しない**。
+- 書き終えたら `node tools/tsutawaru-lint.mjs slides/<deck-name>` で囲み過多・文字数過多・18px未満・体言止め・煽り語を点検する（**目視確認の代わりにはならない**）。
+- グラフは `--theme tsutawaru` を付けて焼く：`node tools/echarts-render/render.mjs <opt> <out.svg> 760x400 --theme tsutawaru`。
 - 表紙は **`cover-hero` が標準**（旧 `cover` は使わない）。
 - `chiba-deck` は `@import "academic"` するので、**ビルド時は両方を渡す**：`--theme-set theme/academic.css theme/chiba-deck.css`（PDFは `tools/marp-pdf/build-pdf.sh` が自動で両方渡す）。
 - 配色はデック側 frontmatter で。**既定はガーネット赤**。`class: teal` / `class: navy` で系列配色に切替（chiba-deck同梱プリセット）。`--hdr-left-w:21%`・全幅下線・ガーネット三点は chiba-deck の既定なので、新規デックで再指定不要。

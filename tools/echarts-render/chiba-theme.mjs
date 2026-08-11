@@ -5,7 +5,10 @@ export const CHIBA_COLORS = [
   '#A6192E', '#3E78B2', '#3C8A57', '#D98A2B', '#6B6F76', '#7d1322', '#8FB3D9', '#A9D08E'
 ];
 
-const JP_FONT = '"Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,sans-serif';
+// フォント名は必ず「単一引用符」で囲む。ECharts の SSR は font-family をそのまま
+// style="…" 属性に埋め込むため、二重引用符だと属性が途中で閉じ、スライドに
+// インライン埋め込みしたときにグラフの文字が全部消える。
+const JP_FONT = "'Hiragino Sans','Yu Gothic',YuGothic,'Noto Sans JP',Meiryo,sans-serif";
 const INK = '#1a1a1a';
 const SUB = '#555555';
 const AXIS = '#cccccc';

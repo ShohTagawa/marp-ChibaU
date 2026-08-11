@@ -2,25 +2,46 @@
 // ECharts の option を静的SVGに焼き出す（SSR・ブラウザ不要）。
 //
 // 使い方:
-//   node render.mjs <option.(json|mjs|js) | -> <out.svg> [WxH] [--no-theme]
+//   node render.mjs <option.(json|mjs|js) | -> <out.svg> [WxH] [--theme <name>] [--no-theme]
 //   echo '<json>' | node render.mjs - out.svg 800x450
 //
 //   <option>   ECharts の setOption に渡すオブジェクト。
 //              .json なら JSON、.mjs/.js なら `export default {…}`、'-' は標準入力(JSON)。
 //   <out.svg>  出力先。Marp では slides/<deck>/src/figNN-<name>.svg に置く規約。
 //   [WxH]      ピクセル。既定 800x450（16:9）。.fig-area に入れると幅100%で自動縮小。
-//   --no-theme 千葉大テーマを当てず素のEChartsで描く。
+//   --theme    chiba（既定・千葉大カラー）/ tsutawaru（『伝わるデザインの基本』準拠：
+//              強調1系列＋グレー、目盛は粗く、影・角丸なし、CUD配慮）。
+//              theme/tsutawaru-academic.css を使うデックでは tsutawaru を指定する。
+//   --no-theme テーマを当てず素のEChartsで描く。
 //
 // 例: node render.mjs sales.json ../../slides/<deck>/src/fig03-sales.svg 800x450
 
 import * as echarts from 'echarts';
 import { chibaTheme } from './chiba-theme.mjs';
+import { tsutawaruTheme } from './tsutawaru-theme.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve, extname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const args = process.argv.slice(2).filter(a => a !== '--no-theme');
-const noTheme = process.argv.includes('--no-theme');
+const rawArgs = process.argv.slice(2);
+const noTheme = rawArgs.includes('--no-theme');
+// --theme <name> / --theme=<name>。既定は chiba。
+// tsutawaru = 『伝わるデザインの基本』準拠（theme/tsutawaru-academic.css と対）
+let themeName = 'chiba';
+const args = [];
+for (let i = 0; i < rawArgs.length; i++) {
+  const a = rawArgs[i];
+  if (a === '--no-theme') continue;
+  if (a === '--theme') { themeName = rawArgs[++i]; continue; }
+  if (a.startsWith('--theme=')) { themeName = a.slice(8); continue; }
+  if (a === '--tsutawaru') { themeName = 'tsutawaru'; continue; }
+  args.push(a);
+}
+const THEMES = { chiba: chibaTheme, tsutawaru: tsutawaruTheme };
+if (!noTheme && !THEMES[themeName]) {
+  console.error(`unknown theme: ${themeName} (available: ${Object.keys(THEMES).join(', ')})`);
+  process.exit(1);
+}
 const [optionArg, outArg, sizeArg = '800x450'] = args;
 
 if (!optionArg || !outArg) {
@@ -54,9 +75,9 @@ if (!option || typeof option !== 'object') {
 // 静的SVGなのでアニメーションは常にオフ
 option.animation = false;
 
-if (noTheme) echarts.registerTheme('chiba', {}); else echarts.registerTheme('chiba', chibaTheme);
+echarts.registerTheme('deck', noTheme ? {} : THEMES[themeName]);
 
-const chart = echarts.init(null, 'chiba', { renderer: 'svg', ssr: true, width, height });
+const chart = echarts.init(null, 'deck', { renderer: 'svg', ssr: true, width, height });
 chart.setOption(option);
 let svg = chart.renderToSVGString();
 chart.dispose();

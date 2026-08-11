@@ -34,6 +34,14 @@ Marp の PDF/PNG 化（Chrome）では、**`<img src="chart.svg">` や `![](char
      slides/<deck>/src/figNN-<name>.chart.json \
      /tmp/figNN.svg 800x450
    ```
+   - **デックが `theme: tsutawaru-academic` なら `--theme tsutawaru` を付ける**（『伝わるデザインの基本』準拠：
+     強調1系列＋残りグレー・目盛は粗く・影と角丸なし・凡例より直接ラベル・赤緑対比を避ける）。
+     `tools/echarts-render/tsutawaru-theme.mjs` の `focusColors(n, i)` で「1本だけ強調」の色配列を作れる。
+     ルールの根拠は [docs/tsutawaru-guide.md](../../../docs/tsutawaru-guide.md) の第5節。
+   - **`textStyle.fontFamily` のフォント名は必ず単一引用符で書く。** ECharts の SSR は font-family を
+     `style="…"` 属性にそのまま埋め込むため、二重引用符だと属性が途中で閉じ、スライドに埋め込んだとき
+     **グラフの文字が全部消えることがある**（実測：5書体指定で全消失、3書体指定では消えず＝並び次第で
+     出たり消えたりする）。両テーマとも単一引用符に修正済み。
    - 初回のみ `cd tools/echarts-render && npm install`（echarts 導入。`node_modules` は gitignore 済み）。
    - サイズは横長カテゴリが多いなら `960x450` 等に。出力SVGは `width/height` を外し `viewBox` のみ → スライド幅に自動フィット。
 4. **インライン埋め込み**：焼いた `/tmp/figNN.svg` の中身を、図表中心型(fig)スライドの `.fig-area` に貼る：

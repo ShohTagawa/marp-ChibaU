@@ -17,11 +17,23 @@ footer: ''
 <div class="title-foot">
 <div class="title-photo">図版なし</div>
 <div class="title-meta">
-<div class="title-event">『伝わるデザインの基本 増補改訂3版』に沿って本文を組み直す</div>
+<div class="title-event">『伝わるデザインの基本 増補改訂3版』準拠</div>
 <div class="title-date">2026年8月10日</div>
 <div>千葉大学</div>
 </div>
 </div>
+
+---
+
+<!-- _class: cover-left -->
+
+<div class="pre">表紙の第2形式（左揃え・強い階層）</div>
+
+# 伝わる資料は、<br>ルールで作れる
+
+<div class="sub">小さな前置き → 大きなタイトル → 下端にメタ情報、の3段だけ</div>
+
+<div class="meta">2026年8月10日　千葉大学</div>
 
 ---
 
@@ -45,6 +57,39 @@ footer: ''
 </div>
 
 <div class="takeaway">構造は囲みではなく、太さ・余白・揃えでつくる</div>
+
+---
+
+<div class="page-title">箇条書きの別解</div>
+
+## 項目が4つなら、2×2の塗りカードでもよい
+
+<div class="body">
+
+<div class="grid2">
+<div class="fill">
+<div class="t">余白</div>
+<div class="d">スライドの周囲に1文字分以上とる。詰まったらページを分ける。</div>
+</div>
+<div class="fill">
+<div class="t">揃え</div>
+<div class="d">上と左は必ず揃える。中央揃えと左揃えを1枚の中で混ぜない。</div>
+</div>
+<div class="fill">
+<div class="t">グループ化</div>
+<div class="d">項目の中は近く、項目の間は広くとる。近いものが仲間に見える。</div>
+</div>
+<div class="fill">
+<div class="t">強弱</div>
+<div class="d">太さと大きさで差をつける。強調の数は絞るほど、よく効くようになる。</div>
+</div>
+</div>
+
+<p class="note wide">カードは塗りだけ（枠線なし）。等幅・等高・間隔は均等にする。</p>
+
+</div>
+
+<div class="takeaway">カードにするなら塗りだけ。4原則はこのテーマの下地</div>
 
 ---
 
@@ -134,6 +179,65 @@ footer: ''
 
 ---
 
+<div class="page-title">折れ線グラフ</div>
+
+## 系列名は凡例でなく、線の先に書く
+
+<div class="tcols fig-left">
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 760 400"><rect width="760" height="400" x="0" y="0" fill="none"></rect><path d="M29 367.5L652 367.5" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M29 252.5L652 252.5" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M29 138.5L652 138.5" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M29 24.5L652 24.5" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M29 367L652 367" fill="none" pointer-events="visible" stroke="#262626" stroke-width="1.5" stroke-linecap="round" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" transform="translate(18.96 367)" fill="#5F5F5F">0</text><text dominant-baseline="central" text-anchor="end" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" transform="translate(18.96 252.6667)" fill="#5F5F5F">1</text><text dominant-baseline="central" text-anchor="end" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" transform="translate(18.96 138.3333)" fill="#5F5F5F">2</text><text dominant-baseline="central" text-anchor="end" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" transform="translate(18.96 24)" fill="#5F5F5F">3</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(28.96 377)" fill="#262626">10月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(98.1867 377)" fill="#262626">11月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(167.4133 377)" fill="#262626">12月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(236.64 377)" fill="#262626">1月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(305.8667 377)" fill="#262626">2月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(375.0933 377)" fill="#262626">3月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(444.32 377)" fill="#262626">4月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(513.5467 377)" fill="#262626">5月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(582.7733 377)" fill="#262626">6月</text><text dominant-baseline="central" text-anchor="middle" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" y="8.5" transform="translate(652 377)" fill="#262626">7月</text><g clip-path="url(#zr0-c0)"><path d="M29 198.9L98.2 144.1L167.4 90.3L236.6 86.9L305.9 106.3L375.1 125.8L444.3 78.9L513.5 181.8L582.8 322.4L652 308.7" fill="none" pointer-events="visible" stroke="#A6192E" stroke-width="2.5" stroke-linejoin="bevel" class="zr0-cls-2"></path></g><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,28.96,198.93)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,98.1867,144.05)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,167.4133,90.3133)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,236.64,86.8833)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,305.8667,106.32)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,375.0933,125.7567)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,444.32,78.88)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,513.5467,181.78)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,582.7733,322.41)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.5,0,0,4.5,652,308.69)" fill="#A6192E" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr0-cls-3"></path><text dominant-baseline="central" text-anchor="start" style="font-size:17px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:700;" transform="translate(662 308.69)" fill="#262626">囲み密度</text><path d="M29 212.5L652 212.5" fill="none" pointer-events="visible" stroke="#5F5F5F" stroke-dasharray="4,2" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-4"></path><text dominant-baseline="central" text-anchor="end" style="font-size:15px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" xml:space="preserve" y="-7.5" transform="translate(647 207.65)" fill="#5F5F5F">全体平均 1.35</text><defs ><clipPath id="zr0-c0"><path d="M27 22.8l627 0l0 345.5l-627 0Z" fill="#000" class="zr0-cls-1"></path></clipPath></defs><style ><![CDATA[.zr0-cls-0:hover {pointer-events:none;}.zr0-cls-1:hover {cursor:pointer;fill:rgba(0,0,0,1);}.zr0-cls-2:hover {cursor:pointer;}.zr0-cls-3:hover {cursor:pointer;fill:rgba(182,27,50,1);}.zr0-cls-4:hover {cursor:pointer;stroke-width:3;}]]></style></svg>
+
+<div class="cap">月別の囲み密度（2025年10月〜2026年7月、slides/ 実測）</div>
+
+</div>
+<div>
+
+<div class="blist">
+<div class="t">プロットは●、線は太らせない</div>
+<div class="d">影もスムージングも付けない。</div>
+<div class="t">基準線は細い破線で添える</div>
+<div class="d">全体平均1.35と比べて各月の高低が読める。</div>
+<div class="t">添削の反映が始まった6月に急減</div>
+<div class="d">2.52から0.39枠/枚まで下がり、以後この水準で推移する。</div>
+</div>
+
+</div>
+</div>
+
+<div class="takeaway">凡例の往復をなくすと、グラフは速く読める</div>
+
+---
+
+<div class="page-title">図と写真</div>
+
+## 図と説明文は、離さずグループにする
+
+<div class="body">
+
+<div class="figrow">
+<div>
+
+<div class="ph">[写真：観察した材料A・B]</div>
+<div class="cap">観察した2種類の材料</div>
+<div class="d">写真とキャプションと説明文を、この距離のまま動かさない。</div>
+
+</div>
+<div>
+
+<div class="ph">[図解：処理 → 抽出の手順]</div>
+<div class="cap">処理の流れ</div>
+<div class="d">どの文がどの図の説明かを、近さだけで示せる。</div>
+
+</div>
+</div>
+
+<p class="note wide">キャプションは図の直下1行分に置く。グループ内は近く、グループ同士は広く。</p>
+
+</div>
+
+---
+
 <div class="page-title">囲みたくなったら</div>
 
 ## 囲む前に、代わりの手が3つある
@@ -182,9 +286,9 @@ footer: ''
 |---|---|
 | 色 | 背景・文字・メインの3色。強調色は1色だけ |
 | 文字サイズ | 見出し34px／本文23px／補足19px の3種類 |
-| 行間・字間 | 行間1.7（文字サイズの0.7文字分）／字間5% |
-| 行長 | 28文字で折り返し（本文幅は画面の約55%） |
-| 囲み | 塗りのみ／細枠のみ／囲まない、の3形式だけ。丸み3pxで統一 |
+| 文字組 | 行間1.7／字間5%／28文字で折り返し |
+| 定位置 | タイトルはヘッダー直下、takeawayは下端28pxに固定 |
+| 囲み | 塗りのみ／細枠のみ／囲まない、の3形式。丸み3pxで統一 |
 | 表 | 罫線は上端・見出し下・下端の3本。縦罫はなし |
 | 強調 | 太さ・大きさ・色の3手段のみ。併用は2つまで |
 

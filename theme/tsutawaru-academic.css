@@ -66,6 +66,46 @@ section.em-orange { --em: #B45309; }
 section.em-blue   { --em: #2166AC; }
 
 /* ============================================================================
+   1b. ヘッダー題字・page-title は「文字量に合わせて自動幅」
+       academic.css は幅が固定%（--hdr-left-w / --pt-left / --pt-width）で、
+       デックの題名の長さごとに3つの値を手調整する必要があった。
+       tsutawaru では既定を fit-content にして調整を不要にする。
+
+       デック側で固定したい時だけ frontmatter で上書きする：
+         style: |
+           :root { --hdr-left-w: 30%; --pt-center: 40%; --pt-width: 26%; }
+       ・--hdr-left-w   … 題字帯の幅（既定 fit-content＝文字に追従）
+       ・--hdr-left-max … 題字帯の上限幅（超えたら…で省略）
+       ・--pt-center    … page-title 帯の「中心」の位置（既定 50%＝画面中央）
+       ・--pt-width     … page-title 帯の幅（既定 fit-content）
+   ============================================================================ */
+:root {
+  --hdr-left-w: fit-content;
+  --hdr-left-max: 38%;
+  --pt-center: 50%;
+  --pt-max: 40%;
+}
+section > header .hdr-left {
+  width: var(--hdr-left-w);
+  max-width: var(--hdr-left-max);
+  /* 右端の斜めカットが文字を切らないよう、カット幅ぶんの余白を足す */
+  padding: 0 calc(16px + var(--hdr-slant)) 0 32px;
+}
+/* cover-hero は academic 側が 26% を強制するので、自動幅に戻す */
+section.cover-hero { --hdr-left-w: fit-content; }
+
+section .page-title {
+  /* 「中心位置」で指定する。左端合わせの計算（--pt-left）は不要になる */
+  left: var(--pt-center);
+  transform: translateX(-50%);
+  width: var(--pt-width, fit-content);
+  max-width: var(--pt-max);
+  padding: 0 calc(28px + var(--hdr-slant));
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================================
    2. 本文の組版
       p.203 五大注意点：余白が足りない／揃っていない／フォントがよくない／
             行間が狭い／文字に強弱がない
@@ -112,15 +152,23 @@ section.fig .fig-area { justify-content: flex-start; }
         見出し(h2 34px) / 本文(23px) / 補足(19px)
       小見出しはサイズを変えず太字にする（＝サイズの種類を増やさない）
    ============================================================================ */
-section h2 {
+/* タイトルは「常に同じ位置・同じサイズ」。
+   ・位置＝ヘッダー直下（section の padding-top が固定なので、h1/h2 を
+     スライドの先頭に書けば毎回同じ高さから始まる。タイトルの前に別の
+     要素を置かない）
+   ・サイズ＝34px に統一。# で書いても ## で書いても同じ見た目になる
+     （cover / divider / message / qa など全画面型だけは各自の大きさ）。
+   ・min-height で1行ぶんの高さを確保し、本文の開始位置も揃える。 */
+section h2,
+section h1 {
   font-size: 34px;              /* ジャンプ率 34/23 = 1.5 */
   font-weight: 700;
   color: var(--ink);
   letter-spacing: 0.02em;
   line-height: 1.35;
+  min-height: 1.35em;
   margin: 0 0 .5em;
 }
-section h1 { font-size: 40px; letter-spacing: 0.02em; line-height: 1.3; }
 
 /* h3／.sh＝節レベルの小見出し。囲まずに「短い縦罫＋メインの色の太字」で示す。
    p.161 の良い例がこの形（枠で囲わない）。
@@ -136,8 +184,11 @@ section h3, .sh {
   letter-spacing: 0.02em;
   line-height: 1.4;
 }
-/* 小見出しの前は空ける（グループの区切り） */
-* + section h3, .body > * + h3, .body > * + .sh { margin-top: var(--gap-group); }
+/* 小見出しの前は空ける（グループの区切り）。
+   直前に兄弟要素がある h3 だけに効かせる。タイトル(h2)直後の h3 は詰める。 */
+section * + h3, section * + .sh { margin-top: var(--gap-group); }
+section h1 + h3, section h2 + h3, section .page-title + h3,
+section h1 + .sh, section h2 + .sh, section .page-title + .sh { margin-top: 0; }
 
 /* スライドの主張1文（p.181「1スライド1メッセージ」） */
 .lead {
@@ -175,18 +226,26 @@ section li > ul, section li > ol { margin-top: .35em; margin-bottom: .2em; }
 .plain > li::before, ul.plain > li::before { content: none; }
 .plain > li, ul.plain > li { padding-left: 0; }
 
-/* .blist＝p.205 After の型：小見出し（同サイズの太字）＋説明（細字）を余白でグループ化。
+/* .t／.d＝小見出し（同サイズの太字）と説明（細字）。どこでも使える汎用ペア。
+   サイズは本文と同じ＝サイズの種類を増やさない（p.77） */
+.t { font-weight: 700; color: var(--ink); margin: 0; line-height: 1.6; }
+.d { font-weight: 400; margin: 0; line-height: 1.7; }
+
+/* .blist＝p.205 After の型：.t／.d を余白でグループ化。
    囲みも記号もインデントも使わない。左端は一直線。 */
 .blist { margin: 0 0 var(--gap-para); }
-.blist .t {
-  font-weight: 700; color: var(--ink);
-  margin: 0; line-height: 1.6;   /* サイズは本文と同じ＝サイズの種類を増やさない（p.77） */
-}
-.blist .d {
-  font-weight: 400; margin: 0 0 var(--gap-group);  /* 項目間はゆったり（p.78） */
-  line-height: 1.7;
-}
+.blist .d { margin: 0 0 var(--gap-group); }   /* 項目間はゆったり（p.78） */
 .blist .d:last-child { margin-bottom: 0; }
+
+/* .grid2＝p.205 別解2 の型：項目4つを 2×2 の塗りカードに分ける。
+   カードは .fill（塗りだけ・枠なし）。等幅・等高・間隔均等（p.175）。 */
+.grid2 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 18px var(--gap-group);
+  margin: .6em 0;
+  align-items: stretch;
+}
+.grid2 > * { min-width: 0; }
 
 /* ============================================================================
    5. 囲み — 「枠を付けるのは最低限に」（p.174）
@@ -413,6 +472,14 @@ section figure { margin: 0 0 var(--gap-group); }
 section figure figcaption { margin-top: 1em; }     /* 1行分（p.157） */
 /* 輪郭のはっきりしない図の下敷き（p.152「枠・背景の色は薄い灰色」／p.209） */
 .figbg { background: var(--fill-2); padding: .8em; border-radius: var(--radius); }
+/* 写真・図のプレースホルダ（実画像が来るまでの仮置き。中身に何を入れるか書く） */
+.ph {
+  background: var(--fill);
+  min-height: 260px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-weak); font-size: 19px;
+  border-radius: var(--radius);
+}
 
 /* 2カラム — 16:9 で行長を伸ばさないための基本形（p.208/p.214）
    図やグラフを左、短い箇条書きを右に置くのが本の After のかたち */
@@ -434,11 +501,54 @@ section svg text, section svg tspan { font-family: var(--font-jp); }
    ============================================================================ */
 section.cover   { background: var(--bg); }          /* グラデーション廃止（p.104） */
 section.message { background: var(--bg); }
-section.message h1 { color: var(--accent); }
+section.message h1 { color: var(--accent); font-size: 56px; }
+
+/* ----- 表紙（左揃え・強い階層）＝p.204 After の型 -------------------------
+   小さな前置き → 大きな太いタイトル → 下端にメタ情報、の3段の強弱。
+   変な位置で改行しない・中央揃えと左揃えを混在させない（p.204）。
+   <!-- _class: cover-left --> で使う。cover-hero の代わりの控えめな表紙。 */
+section.cover-left {
+  background: var(--accent);
+  color: #fff;
+  display: flex !important; flex-direction: column !important;
+  justify-content: center !important; align-items: flex-start !important;
+  padding: 0 110px 120px;
+}
+section.cover-left > header,
+section.cover-left .page-title { display: none; }
+section.cover-left::after { display: none !important; }
+section.cover-left .pre {
+  font-size: 24px; font-weight: 400; color: rgba(255,255,255,.85);
+  margin-bottom: 14px; letter-spacing: .04em;
+}
+section.cover-left h1 {
+  font-size: 60px; line-height: 1.3; color: #fff;
+  min-height: 0; margin: 0 0 18px; letter-spacing: .02em;
+}
+section.cover-left .sub { font-size: 26px; color: rgba(255,255,255,.85); }
+section.cover-left .meta {
+  position: absolute; left: 110px; bottom: 60px;
+  font-size: 20px; color: rgba(255,255,255,.92); line-height: 1.7;
+}
 
 /* takeaway：塗りだけ・枠なし・丸みは統一値・左揃え（p.100/p.98/p.70）。
-   サイズ28pxは CLAUDE.md の不変則どおり据え置き。 */
+   サイズ28pxは CLAUDE.md の不変則どおり据え置き。
+
+   位置は「絶対配置」で固定する。academic は in-flow（flexの最下部押し込み）
+   だったため、パターンや前後の要素で帯の位置が微妙に揺れた。tsutawaru では
+   常に 下端から28px・左右 side-pad・高さ min 66px（1行ぶん）に固定し、
+   どのスライドでも帯が完全に同じ場所・同じサイズに出る。
+   2行になっても下端は動かない（上に伸びる）。 */
 .takeaway {
+  position: absolute;
+  left: var(--side-pad);
+  right: var(--side-pad);
+  bottom: var(--takeaway-bottom);
+  margin: 0;
+  min-height: 66px;               /* 28px×1.45行＋上下パディング＝1行時の高さで固定 */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   background: var(--accent-soft);
   border: none; border-radius: var(--radius);
   color: var(--accent-dark);
@@ -447,11 +557,18 @@ section.message h1 { color: var(--accent); }
   padding: .45em .7em;
   text-align: left;
   box-shadow: none;
+  z-index: 5;
 }
-/* 塗りすら置きたくない時：上罫線だけで示す */
+/* 塗りすら置きたくない時：上罫線だけで示す（位置・サイズは同じ） */
 .takeaway.rule-only {
   background: none; border-top: 2px solid var(--accent);
   border-radius: 0; padding: .45em 0 0; color: var(--accent-dark);
+}
+/* 本文が帯に入り込まないよう、帯があるスライドは下を予約する。
+   academic 側の !important 指定（28px）より後勝ちで上書きする。 */
+section:has(.takeaway),
+section.fig:has(.takeaway) {
+  padding-bottom: var(--takeaway-reserve, 118px) !important;
 }
 
 /* 引用・コード：枠と塗りを両方使わない（p.100） */

@@ -98,7 +98,15 @@ function lintSlide(text, startLine, out, push) {
   const clean = stripNoise(text);
 
   // ---- 囲みの数（p.174 / p.212） ----
-  const boxes = (clean.match(BOX_CLASS) || []).length;
+  // .grid2（等幅・等高の整列カード＝p.205 別解2 の型）はグリッド全体で1つと数える。
+  // 本が問題にするのは「バラバラに散った囲み」であって、均等に整列したカード群ではない。
+  let boxSrc = clean;
+  let gridUnits = 0;
+  if (/class="[^"]*\bgrid2\b/.test(clean)) {
+    gridUnits = (clean.match(/class="[^"]*\bgrid2\b/g) || []).length;
+    boxSrc = clean.replace(/class="[^"]*\bfill\b[^"]*"/g, 'class=""');
+  }
+  const boxes = (boxSrc.match(BOX_CLASS) || []).length + gridUnits;
   out.boxes += boxes;
   if (boxes >= RULES.BOX_WARN) {
     push('warn', startLine, `囲みが${boxes}個`,

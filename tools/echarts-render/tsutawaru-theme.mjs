@@ -16,7 +16,7 @@
 // フォント名は必ず「単一引用符」で囲む。
 // ECharts の SSR は font-family をそのまま style="…" 属性に埋め込むため、
 // 二重引用符を使うと属性が途中で閉じ、インライン埋め込み時に文字が全部消える。
-const JP_FONT =
+export const JP_FONT =
   "'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif";
 
 // 4色ルール（p.190）に合わせ、グラフの既定は「メインの色＋無彩色」だけ。

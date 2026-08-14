@@ -1,0 +1,40 @@
+{
+  "grid": {
+    "left": 8,
+    "right": 90,
+    "top": 12,
+    "bottom": 8,
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "interval": 25,
+    "axisLabel": { "formatter": "{value}%", "fontSize": 17 }
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["日本", "米国", "ドイツ", "中国"],
+    "axisLabel": { "fontSize": 22, "fontWeight": "bold" }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "50%",
+      "label": {
+        "show": true,
+        "position": "right",
+        "fontSize": 25,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        { "value": 55.2, "itemStyle": { "color": "#2F6B3A" }, "label": { "formatter": "55.2%" } },
+        { "value": 90.6, "itemStyle": { "color": "#BDBDBD" }, "label": { "formatter": "90.6%" } },
+        { "value": 90.3, "itemStyle": { "color": "#BDBDBD" }, "label": { "formatter": "90.3%" } },
+        { "value": 95.8, "itemStyle": { "color": "#BDBDBD" }, "label": { "formatter": "95.8%" } }
+      ]
+    }
+  ]
+}

@@ -187,6 +187,19 @@ function rewriteAssets(html, webview, docDir) {
   });
 }
 
+/**
+ * repoRoot/theme/*.css を全部拾って絶対パスで返す。
+ * chiba-deck / tsutawaru-academic は `@import "academic"` するので academic.css を先頭に置く。
+ * （テーマを増やしてもここを書き換えなくていいように、固定リストにはしない）
+ */
+function themeFiles(repoRoot) {
+  const dir = path.join(repoRoot, 'theme');
+  let names;
+  try { names = fs.readdirSync(dir).filter(n => n.endsWith('.css')); } catch (_) { return []; }
+  names.sort((a, b) => (a === 'academic.css' ? -1 : b === 'academic.css' ? 1 : a.localeCompare(b)));
+  return names.map(n => path.join(dir, n));
+}
+
 /** marp-core でデッキを描画し {html, css} を返す（テーマも読み込む） */
 function renderDeck(webview, doc) {
   const docDir = path.dirname(doc.uri.fsPath);
@@ -198,8 +211,8 @@ function renderDeck(webview, doc) {
       if (t.map && t.nesting === 1) t.attrSet('data-line', String(t.map[0]));
     }
   });
-  for (const rel of ['theme/academic.css', 'theme/ponchie.css']) {
-    try { marp.themeSet.add(fs.readFileSync(path.join(repoRoot, rel), 'utf8')); } catch (_) { /* 任意 */ }
+  for (const abs of themeFiles(repoRoot)) {
+    try { marp.themeSet.add(fs.readFileSync(abs, 'utf8')); } catch (_) { /* 任意 */ }
   }
   const { html, css } = marp.render(doc.getText());
   return { html: rewriteAssets(html, webview, docDir), css };
@@ -214,7 +227,7 @@ function buildHtml(webview, doc, initialIndex) {
   return /* html */ `<!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy"
-  content="default-src 'none'; img-src ${cspSource} https: data:; style-src ${cspSource} 'unsafe-inline'; script-src 'unsafe-inline'; font-src ${cspSource} https: data:;">
+  content="default-src 'none'; img-src ${cspSource} https: data:; style-src ${cspSource} https: 'unsafe-inline'; script-src 'unsafe-inline'; font-src ${cspSource} https: data:;">
 <style>
   html,body { margin:0; padding:0; background:#4a4a4f; }
   #wrap { padding:16px 16px 60vh; }
@@ -683,9 +696,7 @@ async function present() {
   // 画像の相対参照(./src, ../assets)がそのまま解決できるよう、出力は md と同じディレクトリに置く
   const outHtml = path.join(deckDir, '.marp-present.html');
 
-  const themeArgs = ['theme/academic.css', 'theme/ponchie.css']
-    .map(r => path.join(repoRoot, r))
-    .filter(p => fs.existsSync(p))
+  const themeArgs = themeFiles(repoRoot)
     .map(p => `--theme-set ${JSON.stringify(p)}`)
     .join(' ');
 

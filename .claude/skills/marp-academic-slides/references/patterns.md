@@ -117,15 +117,16 @@ cover / divider / message / qa はヘッダー帯を表示しないので page-t
 <div class="title-foot">
 <div class="title-photo"><img src="./src/figXX-portrait.png" alt="発表者"></div>
 <div class="title-meta">
-<div class="title-event">{{イベント名}}</div>
-<div class="title-date">{{YYYY年MM月DD日}}</div>
-{{発表者・所属}}
+<div class="title-event">{{イベント名・日時・会場}}</div>
+<div class="title-name">{{発表者名}}</div>
+<div class="title-affil">{{所属・肩書}}</div>
 </div>
 </div>
 
 <!-- スピーカーノート -->
 ```
 
+- **`theme: tsutawaru-academic` では発表者名を `.title-name`、所属を `.title-affil` で書く**（名前46px・所属24px。タイトル88px／前置き33px も既定）。日付だけを1行に置くときは従来どおり `.title-date`。
 - 写真が無いときは `.title-photo` ごと省略してよい。
 - 「達成目標」などを中央に置きたいときは `<div class="goal-box" style="max-width:820px; margin:6px auto 0;">…</div>` を足す構成が定番。
 

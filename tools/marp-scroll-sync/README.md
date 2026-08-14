@@ -10,7 +10,7 @@
 - **文字サイズ/色の微調整**：エディタで文字を選択し、プレビュー下部のツールバー `A− [px] A+ 🎨 ✕` または **Cmd+Alt+= / Cmd+Alt+−** で `font-size` を **1px 刻み**で増減、色も変更。テーマ CSS は触らず、その箇所だけ `<span class="ss-tune" style="…!important">` を**原稿(.md)にインライン挿入**して上書きする(既に付いていれば数値だけ更新)。ツールバーが開いている間は **↑ / ↓** でも増減可。`✕` で解除
 - **現在スライドをブラウザでプレゼン**：`Marp: Present`(ツールバーの ▶)で marp-cli(`--html`)が発表用 HTML を生成し、編集中のページから既定ブラウザで開く
 - ファイル編集で自動再レンダリング(0.7s デバウンス。サイズ/色の微調整は即時・無スクロールで反映)
-- `theme/academic.css` / `theme/ponchie.css` を自動適用、ローカル画像(`../assets/…`, `./src/…`)も表示
+- **`theme/` 直下の `*.css` を全部自動適用**(`academic` / `chiba-deck` / `tsutawaru-academic` / `ponchie`)。`@import "academic"` を解決できるよう `academic.css` を先頭に読む。テーマを増やしても拡張のコード修正は不要。ローカル画像(`../assets/…`, `./src/…`)も表示
 
 ## 使い方
 1. `marp: true` の `.md` を開く

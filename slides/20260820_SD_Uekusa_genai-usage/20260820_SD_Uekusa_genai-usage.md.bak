@@ -1,0 +1,1858 @@
+---
+marp: true
+theme: tsutawaru-academic
+paginate: true
+size: 16:9
+header: '<div class="hdr-left">生成AIの活用法について</div><img class="hdr-logo" src="./src/uekusa-logo.png" alt="植草学園大学">'
+footer: ''
+style: |
+  /* 植草学園SD研修版の配色（このデッキ限定の上書き。テーマ既定は変更しない） */
+  :root {
+    --accent: #2F6B3A;
+    --accent-dark: #1E4A27;
+    --accent-soft: #EAF3EA;
+    --section-bg: #F3F8F2;
+    /* ── ヘッダー幅の調整つまみ（値は現在の既定。数字を変えると効く） ── */
+    --hdr-left-w: fit-content;  /* 左の題字帯の幅。固定したいときは例: 26% */
+    --hdr-left-max: 38%;        /* 題字帯の上限幅（超えたら…で省略） */
+    --pt-center: 44.3%;           /* 中央page-title帯の中心位置（50%=画面中央） */
+    --pt-width: 38%;    /* page-title帯の幅。fit-contentも可能。固定したいときは例: 26% */
+    --pt-max: 40%;              /* page-title帯の上限幅 */
+    /* 行長。テーマ既定は28em（=約27字）で、16:9だと右が大きく余り
+       27〜30字の行が「ます」だけ折り返す。42em（=約40字）まで伸ばす */
+    --measure: 42em;
+  }
+  /* ── 素のMarkdown箇条書きを「太字見出し＋説明」型（blist相当）で描く ──
+     書き方:  - **見出しの文**
+              説明の文。          ← divタグ不要 */
+  section ul > li::before { content: none; }
+  section ul > li { padding-left: 0; margin: 0 0 var(--gap-group); }
+  section ul > li > strong:first-child { display: block; line-height: 1.6; }
+  section ul > li > strong:first-child + br { display: none; }
+  /* 項目を塗りで囲む。使い方: <div class="boxed"> で箇条書きを包むだけ */
+  .boxed ul > li {
+    background: var(--fill); border-radius: var(--radius);
+    padding: 11px 20px; margin: 0 0 11px;
+  }
+  .boxed ul > li:last-child { margin-bottom: 0; }
+---
+
+<!--
+差し替え残件（確定後にこのメモを消す）：
+1) ワークシートのシナリオ一覧（S62）
+2) 提出先の URL・QR（S63・S64）
+3) 事前アンケート結果のグラフ（S69。データ受領後に ECharts で作成）
+確定済み: Slido = コード uekusa-ai26 / https://app.sli.do/event/wZgLG7PtvyyqKiE5iGjvdD / QR=src/slido-qr.png
+-->
+
+<!-- _class: cover-hero -->
+
+<div class="title-hero">
+<div class="title-small">令和8年度 第1回 学校法人植草学園SD（職員）研修</div>
+<div class="title-big">生成AIの活用法について</div>
+</div>
+
+<div class="title-foot">
+<div class="title-photo"><img src="../assets/profile.jpg" alt="田川 翔"></div>
+<div class="title-meta">
+<div class="title-event">2026年8月20日（木）9:00–11:35　さくらホール</div>
+<div class="title-name">田川 翔</div>
+<div class="title-affil">千葉大学 国際未来教育基幹／高等教育センター 助教</div>
+</div>
+</div>
+
+<!-- 開場中はこの表紙を投影。8:55からS2のSlido案内に切り替える。 -->
+
+---
+
+<div class="page-title">Slido</div>
+
+## はじめに、お手元でSlidoを開いてください
+
+<div class="box-info"><b>Slidoとは</b>　スマホやPCから匿名で回答・質問できるWebサービスです。導入も登録も不要です。</div>
+
+<div class="tcols fig-right">
+<div>
+
+- **スマホの方は、QRコードを読み取ってください**
+  カメラをかざすと回答画面が開きます。
+- **PCの方は、slido.com から参加できます**
+  参加コード uekusa-ai26 を入力 or   <a href="https://app.sli.do/event/wZgLG7PtvyyqKiE5iGjvdD">直リンク</a>
+
+回答はすべて匿名です。
+個人情報・機密情報は入力しないで下さい。  
+本研修の振り返りと改善にのみ使います。
+
+</div>
+<div style="align-self:center; text-align:center;">
+<img src="./src/slido-qr.png" alt="Slido参加用QRコード" style="height:250px; width:auto;">
+<div class="cap">参加コード：uekusa-ai26（slido.com で入力）</div>
+
+</div>
+</div>
+<div class="takeaway">本日はSlidoで、皆さんに伺いながら進めます。もしよければ、今日の期待を記入下さい！</div>
+
+<!-- 8:55から投影。接続できない方には近くの方と画面共有をお願いする。9:00になったら理事長挨拶へ。 -->
+
+---
+
+<!-- _class: message -->
+
+# ご参加ありがとうございます
+
+## 9時5分ごろから、講師のパートを始めます
+
+<!-- 理事長挨拶の間はこの画面。挨拶が終わったら次へ。 -->
+
+---
+
+<!-- _class: cover-hero -->
+
+<div class="title-hero">
+<div class="title-small">令和8年度 第1回 学校法人植草学園SD（職員）研修</div>
+<div class="title-big">生成AIの活用法について</div>
+</div>
+
+<div class="title-foot">
+<div class="title-photo"><img src="../assets/profile.jpg" alt="田川 翔"></div>
+<div class="title-meta">
+<div class="title-event">2026年8月20日（木）9:00–11:35　さくらホール</div>
+<div class="title-name">田川 翔</div>
+<div class="title-affil">千葉大学 国際未来教育基幹／高等教育センター 助教</div>
+</div>
+</div>
+
+<!-- 理事長挨拶のあと、講師パートの開始時にこの表紙を再度投影して名乗る。 -->
+
+---
+
+<div class="page-title">自己紹介</div>
+
+<style scoped>
+  /* このスライドだけ一回り大きく（投影時の可読性）。数字を変えると効く */
+  section   { font-size: 26px; }   /* 本文（.d の説明文） */
+  section h2 { font-size: 36px; }  /* 見出し */
+  .cap      { font-size: 22px; }   /* 写真の見出しラベル */
+</style>
+
+## 理学から民間を経て、大学教育の仕事をしています
+
+<div class="body">
+
+<div class="figrow">
+<div>
+
+<img src="./src/fig04a-intro-earth.png" alt="地球内部の研究" style="height:220px; width:auto;">
+<div class="cap">理学（地球科学）</div>
+<div class="d">地球の内部を実験で調べる研究者でした。</div>
+
+</div>
+<div>
+
+<img src="./src/fig04b-intro-cargo.jpg" alt="貨物航空" style="height:220px; width:auto;">
+<div class="cap">民間（航空貨物）</div>
+<div class="d">現場のオペレーションと改善を経験しました。</div>
+
+</div>
+<div>
+
+<img src="./src/fig04c-intro-ffp.png" alt="大学教育" style="height:220px; width:auto;">
+<div class="cap">大学教育</div>
+<div class="d">いまは千葉大学で、AIを「教える・学ぶ」に生かす仕事をしています。</div>
+
+</div>
+</div>
+
+</div>
+
+<div class="takeaway">千葉大学、特に附属図書館で、教職協働のもと、AIの活用を広げています。</div>
+
+<!-- 30秒〜1分。経歴の詳細より「現場出身」であることを伝える。 -->
+
+---
+
+<div class="page-title">なぜAIを自分は気にしているのか</div>
+
+## AIは生き残るための「相棒」にできる
+
+<div class="tcols fig-left">
+<div>
+
+- **地球科学から物流へ、物流から教育へ**
+  毎回、学び直しをしてきました。
+  学びに繋がる道具に関心があり、AIは最大の関心です。
+- **仕事(大学の出口)から考えるとAIは優れた道具です**
+  有効に活用すれば、成長も成果にも繋がると感じました。
+- **AIは「学び直しの伴走者」になり得ます**
+  自分の成長に繋がる使い方を考えるようになりました。
+  今、翻訳も行っています。
+
+</div>
+<div style="align-self:center; text-align:center;">
+
+<img src="./src/fig05-book.png" alt="訳書『AI時代の大学教育』の書影" style="height:290px; width:auto;">
+<div class="cap">Bowen &amp; Watson『Teaching with AI』<br>邦題『AI時代の大学教育』近刊（田川 訳）</div>
+
+</div>
+</div>
+
+<div class="takeaway">大学における生成AIの位置づけに、様々な側面で関心を持っています。</div>
+
+<!-- 1分。理学の博士を取ったのがコロナ禍と重なり、「大学自体が大変・学び方が変わる」という問題意識からオンライン教育支援の研究を始めた、という実話。分野を移るたびのゼロからの学び直しが本当にしんどかった、という実感を素直に語る。ここが後半の「使えないこともAIに聞ける」に効いてくる。 -->
+
+---
+
+<div class="page-title">今日の構造</div>
+
+## 前半で仕組みを知り、後半で実際に手を動かします
+
+<div class="body">
+
+| 時間 | すること |
+|---|---|
+| 9:05 – 9:34 | 前半1：生成AIとは何かを、仕組みから知る |
+| 9:36 – 10:03 | 前半2：大学の教育・業務・戦略にどう関わるかを考える |
+| 10:13 – 10:22 | 後半1：道具ごとの得意技を知る |
+| 10:22 – 11:15 | 後半2：**グループワーク＆ミニコンペ**：シナリオを選んで実際に試す |
+| 11:15 – 11:35 | 共有、まとめ、振り返り |
+
+<p class="note wide">途中に3分と10分の休憩を挟みます。</p>
+
+</div>
+<div class="takeaway">今日の最終ゴールは、「使って」、「修正して」、「AIへの意見を持って頂く」ことです。</div>
+
+
+<!-- 時間割を30秒で。ワークがあること、移動があり得ることを予告する。 -->
+
+---
+
+<div class="page-title">前半のねらい</div>
+
+## 今日聞けば、安心して「まず試す」を始められます
+
+<div class="tcols" style="grid-template-columns:1.55fr 1fr;">
+<div class="boxed" style="padding-left:28px;">
+
+- **生成AIが何者かを、仕組みから説明できるようになります**
+  魔法ではなく確率の機械だと分かると、怖さが減ります。
+- **危ない使い方と安全な使い方の線引きができるようになります**
+  入力してよい情報の判断と、設定の確認方法を持ち帰れます。
+- **自分の仕事のどこで試すか、見当がつくようになります**
+  後半のワークで、実際に手を動かして確かめます。
+
+</div>
+<div style="align-self:center;">
+<svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="知る・線引きする・試すの3段の階段を上る図" style="width:100%; height:auto;">
+<rect x="20" y="230" width="125" height="60" fill="#F1F1F1"/>
+<rect x="145" y="185" width="125" height="105" fill="#F1F1F1"/>
+<rect x="270" y="140" width="125" height="150" fill="#F1F1F1"/>
+<path d="M20 230 H145 V185 H270 V140 H395" fill="none" stroke="#2F6B3A" stroke-width="4"/>
+<line x1="20" y1="290" x2="395" y2="290" stroke="#262626" stroke-width="2"/>
+<text x="82" y="268" font-size="19" font-weight="700" fill="#262626" text-anchor="middle">知る</text>
+<text x="207" y="248" font-size="19" font-weight="700" fill="#262626" text-anchor="middle">試す</text>
+<text x="332" y="200" font-size="17" font-weight="700" fill="#262626" text-anchor="middle"><tspan x="332">AIとの</tspan><tspan x="332" dy="23">関わり方を</tspan><tspan x="332" dy="23">形成する</tspan></text>
+<circle cx="332" cy="96" r="13" fill="none" stroke="#2F6B3A" stroke-width="3"/>
+<line x1="332" y1="109" x2="332" y2="126" stroke="#2F6B3A" stroke-width="3"/>
+<line x1="314" y1="117" x2="350" y2="112" stroke="#2F6B3A" stroke-width="3"/>
+<line x1="332" y1="126" x2="322" y2="140" stroke="#2F6B3A" stroke-width="3"/>
+<line x1="332" y1="126" x2="343" y2="140" stroke="#2F6B3A" stroke-width="3"/>
+</svg>
+</div>
+</div>
+
+<div class="takeaway">知る → 試す → 自分なりのAIとの関わり方をつくる</div>
+
+<!-- 「〇〇できるようになる」を具体的に3つ宣言する。 -->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">前半1 ｜ 9:07 – 9:34</div>
+
+# 生成AIとは何か
+
+## 仕組みが分かれば、怖さは減ります
+
+<!-- 章扉。ここからSlidoアンケート1へ。 -->
+
+---
+
+<div class="page-title">Slido ①</div>
+
+## まず、皆さんの現在地を3問、伺わせてください
+
+<div class="body">
+
+- **1-①　生成AIをどのくらいの頻度で使っていますか（択一）**
+  毎日 ／ 週に数回 ／ 月に数回 ／ 使ったことがない
+- **1-②　何に使っていますか（複数選択）**
+  文章の下書き ／ 調べもの ／ 翻訳 ／ 資料づくり ／ その他 ／ まだ使っていない
+- **1-③　AIにどんな印象を持っていますか（択一）**
+  期待が大きい ／ どちらかといえば期待 ／ どちらかといえば不安 ／ 不安が大きい
+
+</div>
+
+<div class="takeaway">正解はありません。いまの実感のままお答えください</div>
+
+<!-- 【ここで Slido 1-①〜③ を実施】結果を画面に映し、分布を一言ずつ拾う。1-③の結果は最後（Slido最終問い）ともう一度比べる、と予告する。 -->
+
+---
+
+<div class="page-title">社会全体の状況 ①</div>
+
+## 方針づくりは、7割近くの機関まで行き渡りました
+
+<div class="tcols fig-left">
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 720 240"><rect width="720" height="240" x="0" y="0" fill="none"></rect><path d="M8 112.2l317.5 0l0 51.7l-317.5 0Z" fill="#2F6B3A" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-0"></path><path d="M325.5 112.2l161.9 0l0 51.7l-161.9 0Z" fill="#9CBFA3" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-1"></path><path d="M487.4 112.2l224.6 0l0 51.7l-224.6 0Z" fill="#BDBDBD" ecmeta_series_index="2" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-2"></path><text dominant-baseline="central" text-anchor="middle" style="font-size:28px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(166.752 138)" fill="#FFFFFF">45.1%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:28px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(406.464 138)" fill="#262626">23.0%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:28px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(599.712 138)" fill="#262626">31.9%</text><path d="M-5 -5l342 0l0 31l-342 0Z" transform="translate(194 9)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr0-cls-3"></path><path d="M2.5 0L11.5 0A2.5 2.5 0 0 1 14 2.5L14 7.5A2.5 2.5 0 0 1 11.5 10L2.5 10A2.5 2.5 0 0 1 0 7.5L0 2.5A2.5 2.5 0 0 1 2.5 0" transform="translate(194 14.5)" fill="#2F6B3A" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-3"></path><text dominant-baseline="central" text-anchor="start" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" x="19" y="5" transform="translate(194 14.5)" fill="#262626">策定済み</text><path d="M0 -5.5l103 0l0 21l-103 0Z" transform="translate(194 14.5)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr0-cls-4"></path><path d="M2.5 0L11.5 0A2.5 2.5 0 0 1 14 2.5L14 7.5A2.5 2.5 0 0 1 11.5 10L2.5 10A2.5 2.5 0 0 1 0 7.5L0 2.5A2.5 2.5 0 0 1 2.5 0" transform="translate(319 14.5)" fill="#9CBFA3" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-3"></path><text dominant-baseline="central" text-anchor="start" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" x="19" y="5" transform="translate(319 14.5)" fill="#262626">策定中</text><path d="M0 -5.5l82 0l0 21l-82 0Z" transform="translate(319 14.5)" fill="none" pointer-events="visible" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr0-cls-4"></path><path d="M2.5 0L11.5 0A2.5 2.5 0 0 1 14 2.5L14 7.5A2.5 2.5 0 0 1 11.5 10L2.5 10A2.5 2.5 0 0 1 0 7.5L0 2.5A2.5 2.5 0 0 1 2.5 0" transform="translate(423 14.5)" fill="#BDBDBD" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr0-cls-3"></path><text dominant-baseline="central" text-anchor="start" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" x="19" y="5" transform="translate(423 14.5)" fill="#262626">予定なし</text><path d="M0 -5.5l103 0l0 21l-103 0Z" transform="translate(423 14.5)" fill="none" pointer-events="visible" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" class="zr0-cls-4"></path><style ><![CDATA[.zr0-cls-0:hover {cursor:pointer;fill:rgba(51,117,63,1);}.zr0-cls-1:hover {cursor:pointer;fill:rgba(171,210,179,1);}.zr0-cls-2:hover {cursor:pointer;fill:rgba(207,207,207,1);}.zr0-cls-3:hover {pointer-events:none;}.zr0-cls-4:hover {cursor:pointer;fill:rgba(0,0,0,0);}]]></style></svg>
+
+<div class="cap">生成AI利用のガイドライン策定状況</div>
+<div class="cite">大学教育学会 課題研究「高等教育における生成AI利用のガイドラインに関する研究」（2025年9–10月調査、n=113機関・回答率9.8%）</div>
+
+</div>
+<div>
+
+- **策定済み45.1%と策定中23.0%で、合わせて68.1%です**
+  「予定なし」は31.9%です。
+- **策定済み機関の66.7%は初版のままです**
+  見直しの運用体制はまだ十分ではないと報告されています。
+- **85.8%が「実質的に機能させるのが困難」と答えています**
+  技術進展への対応83.2%、リソース準備77.0%が続きます。
+
+</div>
+</div>
+
+<div class="takeaway">策定は進みました。難しいのは、実質的に機能させることです</div>
+
+<!-- 大学業界全体の現在地①。方針は行き渡ったが、初版のまま・実質化が難しいという状態。植草だけの話ではないと伝える。 -->
+
+---
+
+<div class="page-title">社会全体の状況 ②</div>
+
+## 難しいのは、学内で使えるようにする支援と、学生の把握です
+
+<div class="tcols fig-left">
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 720 330"><rect width="720" height="330" x="0" y="0" fill="none"></rect><path d="M152.5 16L152.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M247.5 16L247.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M343.5 16L343.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M439.5 16L439.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M534.5 16L534.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M630.5 16L630.5 288" fill="none" pointer-events="visible" stroke="#E4E4E4" class="zr0-cls-0"></path><path d="M152 16L152 288" fill="none" pointer-events="visible" stroke="#262626" stroke-width="1.5" stroke-linecap="round" class="zr0-cls-0"></path><path d="M-126 -13l126 0l0 26l-126 0Z" transform="translate(142 61.3333)" fill="none" pointer-events="visible" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(142 61.3333)" fill="#262626">教員への支援</text><path d="M-126 -13l126 0l0 26l-126 0Z" transform="translate(142 152)" fill="none" pointer-events="visible" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(142 152)" fill="#262626">職員への支援</text><path d="M-126 -13l126 0l0 26l-126 0Z" transform="translate(142 242.6667)" fill="none" pointer-events="visible" class="zr0-cls-0"></path><text dominant-baseline="central" text-anchor="end" style="font-size:21px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(142 242.6667)" fill="#262626">学生への支援</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(152 298)" fill="#5F5F5F">0%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(247.6 298)" fill="#5F5F5F">20%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(343.2 298)" fill="#5F5F5F">40%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(438.8 298)" fill="#5F5F5F">60%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(534.4 298)" fill="#5F5F5F">80%</text><text dominant-baseline="central" text-anchor="middle" style="font-size:16px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;" y="8" transform="translate(630 298)" fill="#5F5F5F">100%</text><path d="M152 40.5l237.1 0l0 41.7l-237.1 0Z" fill="#BDBDBD" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-1"></path><path d="M152 131.1l240.9 0l0 41.7l-240.9 0Z" fill="#2F6B3A" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-2"></path><path d="M152 221.8l224.2 0l0 41.7l-224.2 0Z" fill="#BDBDBD" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr0-cls-1"></path><text dominant-baseline="central" text-anchor="start" style="font-size:26px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(394.088 61.3333)" fill="#262626">49.6%</text><text dominant-baseline="central" text-anchor="start" style="font-size:26px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(397.912 152)" fill="#262626">50.4%</text><text dominant-baseline="central" text-anchor="start" style="font-size:26px;font-family:'BIZ UDPGothic','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic Medium','Noto Sans JP',Meiryo,sans-serif;font-weight:bold;" transform="translate(381.182 242.6667)" fill="#262626">46.9%</text><style ><![CDATA[.zr0-cls-0:hover {pointer-events:none;}.zr0-cls-1:hover {cursor:pointer;fill:rgba(207,207,207,1);}.zr0-cls-2:hover {cursor:pointer;fill:rgba(51,117,63,1);}]]></style></svg>
+
+<div class="cap">生成AIの活用支援が「特に行っていない」機関の割合</div>
+<div class="cite">大学教育学会 課題研究「高等教育における生成AI利用のガイドラインに関する研究」（2025年9–10月調査、n=113機関・回答率9.8%）</div>
+
+</div>
+<div>
+
+- **支援は約半数の機関が「特に行っていない」**
+  職員向け50.4%、教員向け49.6%、学生向け46.9%。
+- **入学前の学生のAI利用を、85.9%が把握していません**
+  「限定的にしか把握していない」49.6%＋「全く把握していない」36.3%。
+- **最も多い心配は「思考力・判断力の低下」47.3%です**
+  「学修成果の格差が広がる」40.9%が続きます。
+
+</div>
+</div>
+
+<div class="takeaway">今後の重点は、学生のリテラシー教育75.2%と教職員研修70.8%</div>
+
+<!-- 大学業界全体の現在地②。方針は進んだが支援が届いておらず、学生の実態も把握できていない。だから今日のようなSD研修が重点施策の上位に挙がっている、と今日ここに集まった意味づけにつなげる。なお「学生がAIで解いたのでは」という評価の真正性・不正利用に関する設問はこの調査には無いので、口頭で補う場合は調査結果としては語らない。 -->
+
+---
+
+<div class="page-title">生成AIの変化</div>
+
+## AIの性能は急伸し、使う側が追いついていません
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig10-capability-overhang.png" alt="AIモデルの性能と組織の活用の差" style="height:340px; width:auto;">
+<div class="cap">性能の伸び（曲線）と組織の活用（直線）の差（出所：Anthropic）</div>
+
+</div>
+<div>
+
+- **モデルの性能は、毎年大きく伸びています**
+  1年前にできなかったことが、今年はできるようになっています。
+- **私たちの使い方は、ゆるやかにしか変わりません**
+  この差は Capability Overhang（性能の余り）と呼ばれます。
+- **「前に試してダメだった」は、当てになりません**
+  数か月おきに試し直す価値があります。
+
+</div>
+</div>
+
+<div class="takeaway">まずは、試してみることが重要です</div>
+
+<!-- 性能ギャップの話。去年の印象で判断しない、が要点。 -->
+
+---
+
+<div class="page-title">使い方の変遷</div>
+
+## AIは「聞く相手」から、「任せる相手」へ変わってきました
+
+<div class="body">
+
+<div class="flow">
+<div class="fbox">聞くと答えが返る<span class="big">チャット</span></div>
+<div class="arw"></div>
+<div class="fbox">検索やファイルも扱う<span class="big">ツール連携</span></div>
+<div class="arw"></div>
+<div class="fbox">手順を立てて作業する<span class="big">エージェント</span></div>
+</div>
+
+- **はじまりは、一問一答のチャットでした**
+  2022年末に公開されたChatGPTは、聞いたことに文章で答える道具でした。
+- **次に、AIが外の道具を使えるようになりました**
+  Web検索やファイルの読み込みを、会話の中でこなします。
+- **いまは、目的を渡すと自分で手順を立てて進めます**
+  調べて、まとめて、下書きまでが一続きになり、人は途中の確認と最後の判断に回ります。
+
+</div>
+
+<div class="takeaway">変わったのは性能だけでなく、AIに任せられる範囲です</div>
+
+<!-- 未来といっても数年先ではなく、すでに始まっている変化だと伝える。「どこまで任せるか」の線引きは後半の使い分けで扱う、と予告する。 -->
+
+---
+
+<div class="page-title">未来の例</div>
+
+## プログラムを書けない人でも、動くものを作れるようになりました
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig12-cli-ide.png" alt="AIとの対話でスライドを編集している画面" style="height:340px; width:auto;">
+<div class="cap">AIとの対話でファイル編集を進めている画面</div>
+
+</div>
+<div>
+
+- **言葉で頼むと、AIがコードを書いて実行します**
+  この資料自体も、AIとの対話で組み立てています。
+- **集計・変換・定型処理は「頼める仕事」になりました**
+  事務の自動化にも、同じやり方で手が届きます。
+- **「作れる人」の範囲が大きく広がっています**
+  専門家でなくても、試作までは自分でできます。
+
+</div>
+</div>
+
+<!-- 実演気味に。「この資料もAIと作った」で身近さを出す。 -->
+
+---
+
+<div class="page-title">一言で言うと ①</div>
+
+## 生成AIは、「次に来そうな言葉」を選び続けています
+
+<div class="tcols" style="grid-template-columns:1fr 1.2fr;">
+<div style="align-self:center;">
+<svg viewBox="0 0 520 375" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="「吾輩は」に続く語の予測確率の棒グラフ" style="width:100%; height:auto;">
+<rect x="14" y="14" width="108" height="46" rx="3" fill="#EAF3EA"/>
+<text x="68" y="45" font-size="25" font-weight="700" fill="#1E4A27" text-anchor="middle">吾輩は</text>
+<text x="136" y="45" font-size="19" fill="#5F5F5F">の次に来る語は？</text>
+<line x1="104" y1="80" x2="104" y2="358" stroke="#262626" stroke-width="2"/>
+<text x="94" y="112" font-size="21" font-weight="700" fill="#262626" text-anchor="end">、</text>
+<rect x="104" y="97" width="325" height="30" fill="#2F6B3A"/>
+<text x="439" y="112" font-size="18" font-weight="700" fill="#262626" dominant-baseline="middle">11.5%</text>
+<text x="94" y="166" font-size="21" font-weight="700" fill="#262626" text-anchor="end">猫</text>
+<rect x="104" y="151" width="280" height="30" fill="#BDBDBD"/>
+<text x="394" y="166" font-size="18" fill="#5F5F5F" dominant-baseline="middle">9.9%</text>
+<text x="94" y="220" font-size="21" font-weight="700" fill="#262626" text-anchor="end">犬</text>
+<rect x="104" y="205" width="113" height="30" fill="#BDBDBD"/>
+<text x="227" y="220" font-size="18" fill="#5F5F5F" dominant-baseline="middle">4.0%</text>
+<text x="94" y="274" font-size="21" font-weight="700" fill="#262626" text-anchor="end">ネコ</text>
+<rect x="104" y="259" width="51" height="30" fill="#BDBDBD"/>
+<text x="165" y="274" font-size="18" fill="#5F5F5F" dominant-baseline="middle">1.8%</text>
+<text x="94" y="328" font-size="21" font-weight="700" fill="#262626" text-anchor="end">「</text>
+<rect x="104" y="313" width="25" height="30" fill="#BDBDBD"/>
+<text x="139" y="328" font-size="18" fill="#5F5F5F" dominant-baseline="middle">0.9%</text>
+</svg>
+<div class="cap">候補ごとに確率を出し、そこから次の一語を選びます</div>
+
+</div>
+<div>
+
+- **一語ずつ、確率の高い続きを選んでいます**
+  選んだ語を文末に足して、また次の一語を選びます。
+- **文章全体の設計図を持っているわけではありません**
+  それでも、続け方の巧みさで文章が成立します。
+- **「それらしいが違う」は、この仕組みの副作用です**
+  後で出てくるハルシネーションの根っこです。
+
+</div>
+</div>
+
+<div class="takeaway">生成AIは「次の一語」を当て続ける機械です</div>
+
+<!-- 今日いちばん持ち帰ってほしい1枚その1。Slidoの4択クイズはここから出す。 -->
+
+---
+
+<div class="page-title">一言で言うと ②</div>
+
+## 中身はルール集ではなく、巨大な「数字の塊」です
+
+<div class="tcols" style="grid-template-columns:1fr 1.2fr;">
+<div style="align-self:center;">
+<svg viewBox="0 0 500 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="人が書いたルールではなく、学習で決まった数字の並びであることを示す図" style="width:100%; height:auto;">
+<rect x="14" y="10" width="472" height="122" rx="3" fill="#FAFAFA" stroke="#D6D6D6" stroke-width="1.5"/>
+<text x="34" y="42" font-size="19" font-weight="700" fill="#6E6E6E">人が書いたルール</text>
+<rect x="372" y="20" width="100" height="30" rx="3" fill="#E4E4E4"/>
+<text x="422" y="41" font-size="17" font-weight="700" fill="#6E6E6E" text-anchor="middle">ではない</text>
+<text x="34" y="80" font-size="17" fill="#8A8A8A">もし「吾輩は」なら → 「猫」と出す</text>
+<text x="34" y="112" font-size="17" fill="#8A8A8A">もし「今日は」なら → 「晴れ」と出す</text>
+<path d="M240 142 L260 142 L250 166 Z" fill="#262626"/>
+<rect x="14" y="176" width="472" height="206" rx="3" fill="#EAF3EA" stroke="#2F6B3A" stroke-width="2.5"/>
+<text x="34" y="209" font-size="19" font-weight="700" fill="#1E4A27">学習で決まった、膨大な数字（重み）</text>
+<text x="40" y="252" font-size="18" fill="#262626">0.83</text>
+<text x="118" y="252" font-size="18" fill="#262626">-0.12</text>
+<text x="196" y="252" font-size="18" fill="#262626">0.47</text>
+<text x="274" y="252" font-size="18" fill="#262626">0.05</text>
+<text x="352" y="252" font-size="18" fill="#262626">-0.61</text>
+<text x="430" y="252" font-size="18" fill="#262626">0.29</text>
+<text x="40" y="288" font-size="18" fill="#262626">0.74</text>
+<text x="118" y="288" font-size="18" fill="#262626">-0.38</text>
+<text x="196" y="288" font-size="18" fill="#262626">0.16</text>
+<text x="274" y="288" font-size="18" fill="#262626">0.92</text>
+<text x="352" y="288" font-size="18" fill="#262626">-0.05</text>
+<text x="430" y="288" font-size="18" fill="#262626">0.41</text>
+<text x="40" y="324" font-size="18" fill="#262626">0.68</text>
+<text x="118" y="324" font-size="18" fill="#262626">-0.23</text>
+<text x="196" y="324" font-size="18" fill="#262626">0.57</text>
+<text x="274" y="324" font-size="18" fill="#262626">0.31</text>
+<text x="352" y="324" font-size="18" fill="#262626">-0.77</text>
+<text x="430" y="324" font-size="18" fill="#262626">0.14</text>
+<text x="40" y="360" font-size="18" fill="#262626">0.52</text>
+<text x="118" y="360" font-size="18" fill="#262626">0.09</text>
+<text x="196" y="360" font-size="18" fill="#262626">-0.44</text>
+<text x="274" y="360" font-size="18" fill="#262626">0.86</text>
+<text x="352" y="360" font-size="18" fill="#262626">0.23</text>
+<text x="430" y="360" font-size="18" fill="#262626">-0.31</text>
+</svg>
+<div class="cap">実際にはこの数字が何十億個も並んでいます</div>
+
+</div>
+<div>
+
+- **「もし〜なら」を人が書いたプログラムではありません**
+  言葉のつながり方が、膨大な数値として記録されています。
+- **この数値は「重み」と呼ばれます**
+  学習とは、この数を少しずつ直していく作業です。
+- **だから、答えの理由をたどることが難しいのです**
+  作った本人にも、個々の答えの根拠は読み切れません。
+
+</div>
+</div>
+
+<!-- ルールベースとの対比。「なぜその答えか」を説明しにくい理由もここにある。 -->
+
+---
+
+<div class="page-title">一言で言うと ③</div>
+
+## 最近のAIは、答える前に「考える時間」を取ります
+
+<div class="body">
+
+<div class="flow">
+<div class="fbox">質問を<span class="big">受け取る</span></div>
+<div class="arw"></div>
+<div class="fbox">途中の筋道を<span class="big">書き出す</span></div>
+<div class="arw"></div>
+<div class="fbox">見直してから<span class="big">答える</span></div>
+</div>
+
+- **いきなり答えず、考えの途中を書き出してから答えます**
+  reasoning（推論の積み増し）と呼ばれる方式です。
+- **一回の計算ではなく、何度も回して精度を上げます**
+  難しい問題ほど、時間をかけるほうが正確になります。
+- **「少し待つと賢くなる」を覚えておくと得をします**
+  急ぎの下書きと、じっくりの検討で使い分けられます。
+
+</div>
+
+<!-- reasoningは1回の計算ではなく反復。技術的に正確に。 -->
+
+---
+
+<div class="page-title">作り方 ①</div>
+
+## 学習とは、例に合わせて数を調整する作業です
+
+<div class="tcols fig-left">
+<div>
+
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="散布図と当てはめた直線">
+<line x1="70" y1="360" x2="710" y2="360" stroke="#262626" stroke-width="2"/>
+<line x1="70" y1="360" x2="70" y2="30" stroke="#262626" stroke-width="2"/>
+<text x="390" y="400" font-size="18" fill="#5F5F5F" text-anchor="middle">手がかり（入力）</text>
+<text x="34" y="200" font-size="18" fill="#5F5F5F" text-anchor="middle" transform="rotate(-90 34 200)">答え（出力）</text>
+<circle cx="130" cy="320" r="8" fill="#8A8A8A"/>
+<circle cx="200" cy="285" r="8" fill="#8A8A8A"/>
+<circle cx="265" cy="300" r="8" fill="#8A8A8A"/>
+<circle cx="330" cy="235" r="8" fill="#8A8A8A"/>
+<circle cx="400" cy="215" r="8" fill="#8A8A8A"/>
+<circle cx="470" cy="170" r="8" fill="#8A8A8A"/>
+<circle cx="540" cy="185" r="8" fill="#8A8A8A"/>
+<circle cx="610" cy="115" r="8" fill="#8A8A8A"/>
+<circle cx="665" cy="95" r="8" fill="#8A8A8A"/>
+<line x1="95" y1="345" x2="700" y2="75" stroke="#2F6B3A" stroke-width="4"/>
+<text x="700" y="48" font-size="20" font-weight="bold" fill="#2F6B3A" text-anchor="end">いちばん合う線を探す</text>
+</svg>
+
+<div class="cap">全部の点は覚えず、ズレが最小になる線を選びます（最小二乗法）</div>
+
+</div>
+<div>
+
+- **データを丸暗記するのではありません**
+  点とのズレが最小になるように、線の傾きを決めます。
+- **生成AIも、原理はこれと同じです**
+  「次の一語」の外れが減るように、大量の文章で重みを直します。
+- **覚えた「事実」ではなく、覚えた「傾向」で答えます**
+  だから、知らないことにも、それらしく答えてしまいます。
+
+</div>
+</div>
+
+<!-- 最小二乗法の喩え。「厳密な数列の暗記ではない」ことを図で見せる。 -->
+
+---
+
+<div class="page-title">作り方 ②</div>
+
+## 育てた重みを固定して、答えを組み立てて見せています
+
+<div class="body">
+
+<div class="flow">
+<div class="fbox">学習<span class="big">重みを育てる</span></div>
+<div class="arw"></div>
+<div class="fbox">推論<span class="big">重みで答える</span></div>
+<div class="arw"></div>
+<div class="fbox">アプリ<span class="big">見せて対話する</span></div>
+</div>
+
+- **学習は工場、推論は店頭に例えられます**
+  私たちが普段触っているのは、推論の段階です。
+- **ChatGPTは「モデル＋見せるアプリ」の組み合わせです**
+  画面の使いやすさと、中身のモデルの性能は別の要素です。
+- **同じモデルでも、アプリが違えば体験は変わります**
+  各社の道具の違いは、後半で具体的に紹介します。
+
+</div>
+
+<!-- 学習と推論の分離。「ChatGPT＝可視化するシステム込みの製品」という整理。 -->
+
+---
+
+<div class="page-title">AIの種類</div>
+
+## ひとくちにAIと言っても、4つの型があります
+
+<div class="body">
+
+<div class="grid2">
+<div class="fill">
+<div class="t">特化型</div>
+<div class="d">画像生成・翻訳・文字起こしなど、一つの仕事に絞ったAIです。</div>
+</div>
+<div class="fill">
+<div class="t">クラウド型（なんでも型）</div>
+<div class="d">ChatGPT・Gemini・Claudeなど。ブラウザから使う大型モデルです。</div>
+</div>
+<div class="fill">
+<div class="t">道具に組み込まれた型</div>
+<div class="d">WordやGmailの中で動きます。気づかずに使っていることもあります。</div>
+</div>
+<div class="fill">
+<div class="t">手元で動く型</div>
+<div class="d">自分のPCの中で完結します。データを外に出さない使い方ができます。</div>
+</div>
+</div>
+
+</div>
+
+<div class="takeaway">どの型を使っているかで、注意すべき点が変わります</div>
+
+<!-- 分類は入れ子にしない。次の「危険性」への橋渡し。 -->
+
+---
+
+<div class="page-title">危険性 ①</div>
+
+## 無料のAIは、入力が学習に使われることがあります
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig19-gemini-privacy.png" alt="データの扱いをAIに尋ねた画面" style="height:330px; width:auto;">
+<div class="cap">「私のデータはどう扱われますか」と表示を確かめた例</div>
+
+</div>
+<div>
+
+- **初期設定のままだと、入力内容が改善に使われる場合があります**
+  サービスごとに規約が違います。
+- **設定でオフにできるものが多くあります（オプトアウト）**
+  ChatGPTにもGeminiにも、学習利用を止める設定があります。
+- **データの扱いを確かめる習慣を持ってください**
+  規約をAIに貼って尋ねる方法もあります。
+
+</div>
+</div>
+
+<div class="takeaway">使い始める前に、データの扱いを一度だけ確認してください</div>
+
+<!-- オプトアウトという言葉と、確認の習慣。設定画面は当日デモでもよい。 -->
+
+---
+
+<div class="page-title">危険性 ②</div>
+
+## 任せきりにすると、考える力が細っていきます
+
+<div class="body">
+
+- **AIに書かせ続けた群は、脳の結びつきが最も弱かったという報告があります**
+  自分の文章なのに、内容を思い出せない傾向も見られました。
+- **この現象は「認知的負債（cognitive debt）」と名づけられました**
+  楽をした分の「考えなかった時間」が、借金のように積み上がります。
+- **防ぎ方は、先に自分で考えてから使うことです**
+  要点だけでも自分の言葉で出してから、AIに渡します。
+
+<p class="note wide">Kosmyna et al. (2025) "Your Brain on ChatGPT"（arXiv:2506.08872）。54名の小規模実験で、査読前のプレプリントです。方法への批判もあり、結論はまだ動く可能性があります。</p>
+
+</div>
+
+<!-- MITの研究。数字の断定は避け、一次論文の定性的記述だけを使う。プレプリントである旨を必ず口頭でも添える。 -->
+
+---
+
+<div class="page-title">危険性 ③</div>
+
+## 職場に「見えないAI利用」が生まれ始めています
+
+<div class="body">
+
+- **許可していない個人契約のAIに、仕事の情報を入れてしまう**
+  組織が把握できない利用は「シャドーAI」と呼ばれます。
+- **悪気がなくても、規程や契約に反することがあります**
+  学生の情報・人事情報・非公開の文書は、特に危険です。
+- **禁止するだけでは、隠れて使われるようになるだけです**
+  「安全に使える道」を組織として用意することが、実効的な対策です。
+
+</div>
+
+<div class="takeaway">迷ったら「この情報を外部に出せるか」で判断してください</div>
+
+<!-- シャドーAI。責める話ではなく、組織で道を作る話につなげる。 -->
+
+---
+
+<div class="page-title">危険性 ④</div>
+
+## 著作権は、「学習」と「生成」を分けて考えます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig22-copyright-flow.png" alt="学習段階と生成段階の著作権の整理" style="height:310px; width:auto;">
+<div class="cap">学習段階と生成・利用段階では、あてはまるルールが違います</div>
+<div class="cite">文化審議会 著作権分科会「AIと著作権に関する考え方について」（2024年3月）</div>
+
+</div>
+<div>
+
+- **学習段階：日本では、原則として許諾なく学習に使えます**
+  著作権法30条の4。ただし条件と例外があります。
+- **生成段階：出力が既存の作品に似ていれば、侵害になり得ます**
+  「AIが作ったから自由」にはなりません。
+- **生成物を公開・配布するときは、人が作った場合と同じ基準で確かめます**
+  既存作品との類似と依拠が、判断の軸になります。
+
+</div>
+</div>
+
+<!-- 広報物にAI画像を使う場面が増えるので、職員にも直結する話。 -->
+
+---
+
+<div class="page-title">注意点 ①</div>
+
+## 知らないことも、それらしく答えてしまいます
+
+<div class="body">
+
+- **ハルシネーション：事実でない内容を、自信ありげに出します**
+  実在しない文献を、書式まで整えて作った例もあります。
+- **カットオフ：AIの知識には「収集時点」の期限があります**
+  それ以降の出来事は、検索機能を使わない限り知りません。
+- **対策は、出典を出させて原典で確かめることです**
+  大事な数字・固有名詞ほど、二次確認を挟みます。
+
+</div>
+
+<div class="takeaway">事実の最終確認は、人の仕事として残ります</div>
+
+<!-- 「仕組み上そうなる」と前半1の内容につなげると腹落ちしやすい。 -->
+
+---
+
+<div class="page-title">注意点 ②</div>
+
+## 「平均」を当てにいく性質が、偏りを生みます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig24-ai-bias.jpg" alt="生成AIが描いた均質な人物画像の例" style="height:330px; width:auto;">
+<div class="cap">生成AIに「医療従事者」を描かせた例。似た属性に偏ります</div>
+
+</div>
+<div>
+
+- **学習データの偏りが、そのまま出力に現れます**
+  特定の属性ばかりが描かれる、といった形で表面化します。
+- **文章でも同じことが起きます**
+  「ふつう」「一般的」の中身が、データ由来で偏っています。
+- **目の前の相手に当てはめる前に、一拍おいてください**
+  教育・保育・福祉の現場では、特に注意が必要です。
+
+</div>
+</div>
+
+<!-- バイアス。植草の専門分野（保育・福祉・看護）に引きつける。 -->
+
+---
+
+<div class="page-title">注意点 ③</div>
+
+## 「守られているか」は、画面の表示で確かめられます
+
+<div class="body">
+
+<div class="figrow">
+<div>
+
+<img src="./src/fig25a-data-protection.png" alt="Geminiのデータ保護の表示" style="height:200px; width:auto;">
+<div class="cap">Google側のデータ保護の表示例</div>
+
+</div>
+<div>
+
+<img src="./src/fig25b-copilot-shield.png" alt="Copilotの保護マーク" style="height:200px; width:auto;">
+<div class="cap">Microsoft側の保護マークの例</div>
+
+</div>
+</div>
+
+- **組織契約の有無で、入力の守られ方が変わります**
+  保護が効くのは、組織アカウントで入ったときです。
+- **本学園では当面、無料版・個人利用の前提で考えてください**
+  追加のAI契約がないため、入力の選び方が安全の要です。
+
+</div>
+
+<!-- 千葉大の「学校版だから安全」はここでは成立しない。表示を見る習慣＋入力を選ぶ、の2本立てで話す。 -->
+
+---
+
+<div class="page-title">使い方の工夫</div>
+
+## 一発で正解を求めず、直しながら使います
+
+<div class="tcols fig-left">
+<div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 730 620" preserveAspectRatio="xMidYMid meet" style="max-height:382px;max-width:100%;height:auto;display:block;margin:0 auto" font-family="'Helvetica Neue', 'Hiragino Sans', sans-serif"><defs><marker id="ooda-arrow-uk" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L11,4 z" fill="#2F6B3A"/></marker></defs><rect x="215" y="235" width="170" height="130" rx="6" ry="6" fill="#fff" stroke="#2F6B3A" stroke-width="3"/><text x="300" y="283" text-anchor="middle" font-size="28" font-weight="700" fill="#2F6B3A">OODA</text><text x="300" y="313" text-anchor="middle" font-size="20" fill="#333">Loop</text><text x="300" y="345" text-anchor="middle" font-size="16" fill="#666">(主語：人間)</text><path d="M 380 130 A 240 240 0 0 1 470 220" fill="none" stroke="#2F6B3A" stroke-width="4" marker-end="url(#ooda-arrow-uk)"/><path d="M 470 380 A 240 240 0 0 1 380 470" fill="none" stroke="#2F6B3A" stroke-width="4" marker-end="url(#ooda-arrow-uk)"/><path d="M 220 470 A 240 240 0 0 1 130 380" fill="none" stroke="#2F6B3A" stroke-width="4" stroke-dasharray="8,6" marker-end="url(#ooda-arrow-uk)"/><path d="M 130 220 A 240 240 0 0 1 220 130" fill="none" stroke="#2F6B3A" stroke-width="4" marker-end="url(#ooda-arrow-uk)"/><circle cx="300" cy="80" r="60" fill="#EAF3EA" stroke="#2F6B3A" stroke-width="3"/><text x="300" y="73" text-anchor="middle" font-size="26" font-weight="700" fill="#2F6B3A">Observe</text><text x="300" y="103" text-anchor="middle" font-size="17" fill="#333">観る</text><text x="230" y="45" text-anchor="end" font-size="18" font-weight="600" fill="#333">AIの出力を見る</text><text x="230" y="68" text-anchor="end" font-size="15" fill="#666">（HITLで確認）</text><circle cx="520" cy="300" r="60" fill="#EAF3EA" stroke="#2F6B3A" stroke-width="3"/><text x="520" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#2F6B3A">Orient</text><text x="520" y="323" text-anchor="middle" font-size="17" fill="#333">状況判断</text><text x="560" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">自分の知識と照らす</text><circle cx="300" cy="520" r="60" fill="#EAF3EA" stroke="#2F6B3A" stroke-width="3"/><text x="300" y="513" text-anchor="middle" font-size="26" font-weight="700" fill="#2F6B3A">Decide</text><text x="300" y="543" text-anchor="middle" font-size="17" fill="#333">意思決定</text><text x="370" y="555" text-anchor="start" font-size="18" font-weight="600" fill="#333">採用 / 修正 / 棄却</text><text x="370" y="578" text-anchor="start" font-size="15" fill="#666">（使うかどうか決める）</text><circle cx="80" cy="300" r="60" fill="#EAF3EA" stroke="#2F6B3A" stroke-width="3"/><text x="80" y="293" text-anchor="middle" font-size="26" font-weight="700" fill="#2F6B3A">Act</text><text x="80" y="323" text-anchor="middle" font-size="17" fill="#333">実行</text><text x="40" y="400" text-anchor="middle" font-size="18" font-weight="600" fill="#333">再プロンプト／実装</text><g><rect x="425" y="40" width="190" height="110" rx="8" ry="8" fill="#FBF6EC" stroke="#B45309" stroke-width="2.5"/><text x="520" y="76" text-anchor="middle" font-size="24" font-weight="700" fill="#B45309">Pause（確認）</text><text x="520" y="106" text-anchor="middle" font-size="17" fill="#333">私はこの出力を</text><text x="520" y="130" text-anchor="middle" font-size="17" fill="#333"><tspan font-weight="700">評価できる</tspan>か？</text><line x1="520" y1="150" x2="520" y2="240" stroke="#B45309" stroke-width="2.5"/></g></svg>
+<div class="cap">出力を観て、自分の知識と照らし、直して再依頼するループ</div>
+
+</div>
+<div>
+
+- **観る → 照らす → 決める → 再依頼、を回します**
+  途中に「私はこの出力を評価できるか」の確認を挟みます。
+- **最初の答えの出来は、それほど重要ではありません**
+  2周目・3周目で急に良くなります。
+- **使わないことには、上手になりません**
+  小さな仕事で回数を稼ぐのが、上達の近道です。
+
+</div>
+</div>
+
+<div class="takeaway">「試す → 直す」を回した人から、上手になっていきます</div>
+
+<!-- OODAループ。ワークでもこのループを体験してもらう、と予告。 -->
+
+---
+
+<div class="page-title">中心的な価値</div>
+
+## 日本のAI原則は、「人間中心」を土台に置いています
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig27-ai-principles-pyramid.png" alt="人間中心のAI社会原則の三層構造" style="height:330px; width:auto;">
+<div class="cap">基本理念からビジョン、原則へと階層で示されています</div>
+
+</div>
+<div>
+
+- **国の原則は「人間中心のAI社会原則」です（2019年決定）**
+  人間の尊厳・多様性・持続可能性を基本理念に置いています。
+- **AIは人の能力を広げる道具と位置づけられています**
+  人を置き換えることが目的ではありません。
+- **判断と責任は、人の側に残します**
+  今日の研修の判断基準も、ここに置きます。
+
+<div class="cite">統合イノベーション戦略推進会議決定「人間中心のAI社会原則」（2019年3月）</div>
+
+</div>
+</div>
+
+<!-- 価値の話で前半1を締める。「怖がる」でも「盲信する」でもない軸。 -->
+
+---
+
+<!-- _class: message -->
+
+# 皆さんは、どんな未来を想像しますか
+
+## 仕組みと注意点を知ったうえで、それぞれの現場から考えたいのです
+
+<!-- 10秒だけ間を取る。答えは求めず、次のSlidoへ。 -->
+
+---
+
+<div class="page-title">Slido ②</div>
+
+## 前半1の締めに、2問だけ伺います
+
+<div class="body">
+
+- **2-①　前半1で最も伝えたかったことは、どれでしょう（4択クイズ）**
+  選択肢はSlidoの画面でご覧ください。
+- **2-②　いま、AIについて困っていることは何ですか（自由記述）**
+  後半のワークと、最後の質疑で拾います。
+- **回答が終わった方から、少し休憩してください**
+  2分後に、前半2を始めます。
+
+</div>
+
+<div class="takeaway">回答後、2分だけ休憩します。9:36に再開します</div>
+
+<!-- 【ここで Slido 2-①② を実施】クイズの正解は「次の一語を当て続ける機械」。正答分布を見て一言。 -->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">前半2 ｜ 9:36 – 10:03</div>
+
+# 生成AIと大学教育
+
+## 学生・業務・大学戦略の3つの面から考えます
+
+<!-- 章扉。ここからは大学の話。 -->
+
+---
+
+<div class="page-title">前半2のねらい</div>
+
+## 3つの「関わり方」を、順番に考えます
+
+<div class="body">
+
+- **① 学生とAI ── 教育の場面でどう向き合うか**
+  「守り」と「攻め」に分けて整理します。
+- **② 業務とAI ── 事務・運営の仕事でどう使うか**
+  データを軸にした考え方を紹介します。
+- **③ 大学とAI ── 学園全体の戦略にどう関わるか**
+  AIが「環境」になった時代の立ち位置を考えます。
+
+</div>
+
+<div class="takeaway">教員の話にも、職員の話にも、両方に関わります</div>
+
+<!-- SD研修なので職員・教員の両方に効く構成だと最初に言う。 -->
+
+---
+
+<div class="page-title">影響の整理</div>
+
+## AIの影響は、授業だけでなく大学の全部に及びます
+
+<div class="body">
+
+| 階層 | 教育 | 業務 | 経営 |
+|---|---|---|---|
+| 全学 | 方針・学修支援のかたち | 規程・問い合わせ対応 | 戦略・広報・入試 |
+| 部署・課程 | カリキュラム・課題設計 | 定型文書・集計・引き継ぎ | データに基づく改善 |
+| 個人 | 授業準備・添削の支援 | メール・資料の下書き | 企画の壁打ち |
+
+<p class="note wide">整理：田川（2025）を植草学園向けに再構成しています。</p>
+
+</div>
+
+<div class="takeaway">ご自分の持ち場の行に、今日の話を当てはめてください</div>
+
+<!-- 3×3の地図。以降のスライドがこの地図のどこの話かを都度指す。 -->
+
+---
+
+<div class="page-title">① 学生とAI</div>
+
+## 「卒業後にどう働くか」から逆算して考えます
+
+<div class="body">
+
+<div class="flow">
+<div class="fbox">卒業後の仕事<span class="big">AIと協働する</span></div>
+<div class="arw"></div>
+<div class="fbox">在学中に<span class="big">育てる力を決める</span></div>
+<div class="arw"></div>
+<div class="fbox">授業・課題を<span class="big">設計し直す</span></div>
+</div>
+
+- **卒業生は、AIがある職場に出ていきます**
+  保育・福祉・教育・医療の現場でも、記録と事務から使われ始めています。
+- **「使えない」も「任せきり」も、どちらも困ります**
+  使いどころを自分で判断できる人を育てたいのです。
+- **だから、入口の禁止ではなく出口から設計します**
+  この視点で「守り」と「攻め」を見ていきます。
+
+</div>
+
+<!-- 出口から考える。植草の学部（保育・福祉等）に引きつける。 -->
+
+---
+
+<div class="page-title">守り ①</div>
+
+## まず「うちのルール」を決めて、学生に見せます
+
+<div class="body">
+
+- **全学レベル：学園としての基本方針を示します**
+  してよいこと・いけないことの、共通の土台になります。
+- **科目レベル：授業ごとに使える範囲をシラバスに書きます**
+  科目によって適切な範囲は違って構いません。
+- **透明性：使ったら「使った」と書かせます**
+  隠す理由をなくすことが、指導の入り口になります。
+
+</div>
+
+<div class="takeaway">「どこまで使ってよいか」を、先に言葉にして示します</div>
+
+<!-- ポリシーの二層構造＋透明性。ルールがないと指導もできない。 -->
+
+---
+
+<div class="page-title">守り ②</div>
+
+## 疑わしい提出物への対応は、手順を先に決めておきます
+
+<div class="body">
+
+- **卒業論文や学外投稿には、それぞれの制限があります**
+  媒体ごとに「AIを使ってよい範囲」が違うことを学生に教えます。
+- **「AIらしい文章だ」という印象だけでの断定は避けます**
+  検出ツールの判定は確実ではなく、冤罪の危険があります。
+- **本人にしか答えられない問いで、学びを確かめます**
+  面談や口頭での確認を、対応手順に組み込みます。
+
+</div>
+
+<div class="takeaway">断定より確認。対応の手順を決めてから運用します</div>
+
+<!-- 違反対応。感情的にならず、手続きで守る。教員だけでなく教務・学生課にも関わる。 -->
+
+---
+
+<div class="page-title">守り ③</div>
+
+## 課題そのものを、AIがある前提に作り替えます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig36-mit-flow.png" alt="課題をAIに解かせて見直す4段階の流れ" style="height:340px; width:auto;">
+<div class="cap">MITの科目改善フロー。まず課題をAIに解かせてみます</div>
+
+</div>
+<div>
+
+- **いまの課題を、まずAIに解かせてみます**
+  どこまで解けるかで、課題の弱点が見えます。
+- **AIで済む部分と、本人にしか出せない部分を分けます**
+  実習・現場・自分の意見を求める部分を厚くします。
+- **結果だけでなく、途中のプロセスも評価に含めます**
+  下書きの提出や口頭での説明を組み合わせます。
+
+</div>
+</div>
+
+<!-- MITフロー。後半ワークの「課題を作り替える」シナリオの種でもある。 -->
+
+---
+
+<div class="page-title">守り ④</div>
+
+## 研究での利用は、分野と投稿先のルールに合わせます
+
+<div class="body">
+
+- **学会誌・出版社ごとに、AI利用の規定が違います**
+  執筆補助の可否も、開示の要否も分かれています。
+- **共通しているのは「責任は著者にある」です**
+  AIは著者になれない、が国際的な標準になっています。
+- **使ったら方法や謝辞に明記するのが安全側です**
+  迷ったら、投稿規程を確認してから使います。
+
+</div>
+
+<div class="takeaway">研究利用の合言葉は「規定の確認」と「開示」です</div>
+
+<!-- 研究での関わり方。紀要・学会発表を持つ教員向け。 -->
+
+---
+
+<div class="page-title">攻め ①</div>
+
+## 手持ちの資料を、「質問できる教材」に変えられます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig38-notebooklm.png" alt="NotebookLMの画面" style="height:340px; width:auto;">
+<div class="cap">NotebookLM。読み込ませた資料だけを根拠に、出典つきで答えます</div>
+
+</div>
+<div>
+
+- **配布資料やマニュアルを読み込ませて、質問相手にします**
+  回答には出典がつき、元の資料に戻って確かめられます。
+- **「答えを教えず、考えを引き出す」教材も作れます**
+  課題デザインの新しい選択肢になります。
+- **これまで難しかった課題が、AIの伴走で成立します**
+  シナリオ型・シミュレーション型の演習が組めます。
+
+</div>
+</div>
+
+<!-- 攻めの代表例。後半のGoogle系紹介への伏線。 -->
+
+---
+
+<div class="page-title">攻め ②</div>
+
+## 学生が自分で学ぶ力を、AIで下支えできます
+
+<div class="body">
+
+- **分からないことを、気兼ねなく何度でも聞けます**
+  人に聞きにくいことほど、AIが受け皿になります。
+- **練習問題・要約・言い換えを、自分用に作れます**
+  その学生の弱点に合わせた教材が手に入ります。
+- **ただし「聞けば済む」で止まらせない仕掛けが要ります**
+  先に自分で考える手順とセットで教えます。
+
+</div>
+
+<div class="takeaway">自学の支援と、考えさせる仕掛けをセットで渡します</div>
+
+<!-- 自分で学ぶ。認知的負債の話と対にして「使わせ方」を語る。 -->
+
+---
+
+<div class="page-title">② 業務とAI</div>
+
+## 業務のAI活用は、「データを整える」から始まります
+
+<div class="body">
+
+<div class="flow">
+<div class="fbox">データを<span class="big">作る</span></div>
+<div class="arw"></div>
+<div class="fbox">AIに<span class="big">読ませる</span></div>
+<div class="arw"></div>
+<div class="fbox">結果を<span class="big">確かめて直す</span></div>
+</div>
+
+- **AIは、読ませたものの範囲でしか手伝えません**
+  マニュアル・議事録・過去文書が、AIの「材料」になります。
+- **紙のまま・頭の中のままでは、AIに渡せません**
+  記録をデータにすること自体が、業務のAI化の第一歩です。
+- **整えたデータは、部署の共有財産になります**
+  属人化の解消と引き継ぎにも効きます。
+
+</div>
+
+<!-- DX戦略の核。「AI導入」の前に「データづくり」。 -->
+
+---
+
+<div class="page-title">任せる範囲</div>
+
+## 任せるのは、「結果を自分で判断できる仕事」からです
+
+<div class="body">
+
+- **出力の良し悪しを見極められる仕事から始めます**
+  判断できない領域は、下書きと案出しまでに留めます。
+- **確認と修正のループを、仕事の手順に組み込みます**
+  一発完成を期待しないほうが、結局早く終わります。
+- **結果の責任は、使った人が持ちます**
+  「AIがそう言ったから」は理由になりません。
+
+</div>
+
+<div class="takeaway">判断できる範囲で任せ、ループで質を上げます</div>
+
+<!-- 前半1のOODAを業務に適用。後半の「使い分け」の予告。 -->
+
+---
+
+<div class="page-title">仕組みを配る</div>
+
+## 1人の工夫を、部署の仕組みに育てます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig42-manual-bot.png" alt="事務マニュアルを対話で引ける状態にした画面" style="height:340px; width:auto;">
+<div class="cap">事務マニュアルを「対話で引ける」状態にした例</div>
+
+</div>
+<div>
+
+- **良い使い方を見つけたら、作り込んで共有します**
+  プロンプトや設定は、リンク1つで配れます。
+- **マニュアルの案内役は、職員の実務と相性のよい例です**
+  新人の問い合わせにも、ベテランの負担減にも効きます。
+- **「配る文化」が、組織のAI活用の速さを決めます**
+  後半のワークの提出と共有も、その練習です。
+
+</div>
+</div>
+
+<!-- みんなで作って配る。1人の便利で終わらせない。 -->
+
+---
+
+<div class="page-title">Slido ③</div>
+
+## いま使っていて「便利」なことを教えてください
+
+<div class="body">
+
+- **3-①　使っていて便利だと感じるのは、どれですか（複数選択）**
+  文章の下書き ／ 要約 ／ 翻訳 ／ 調べもの ／ 資料づくり ／ まだ使っていない
+- **自由記述には「便利にしたい仕事」もどうぞ**
+  後半のワークでシナリオを選ぶ材料になります。
+- **結果は画面に映して、いくつか拾ってコメントします**
+  「まだ使っていない」も大事な情報です。
+
+</div>
+
+<div class="takeaway">隣の方の「便利」が、明日の自分のヒントになります</div>
+
+<!-- 【ここで Slido 3-① を実施】結果の分布を見ながら次のスライドの3方向につなぐ。 -->
+
+---
+
+<div class="page-title">使いたい方向</div>
+
+## 会場の「便利」を、3つの方向に整理します
+
+<div class="body">
+
+- **時間を返してもらう使い方**
+  下書き・要約・定型処理。まず量の多い仕事から始めます。
+- **質を上げる使い方**
+  壁打ち・別案出し・チェック。自分の判断は残したまま使います。
+- **できることを増やす使い方**
+  教材づくり・データ分析。これまで諦めていた仕事に手が届きます。
+
+</div>
+
+<div class="takeaway">節約した時間を、人にしかできない仕事に回します</div>
+
+<!-- Slido結果を受けて整理。効率化で終わらせず「何に時間を使うか」へ。 -->
+
+---
+
+<div class="page-title">作り手になる</div>
+
+## ルールは「守るもの」から「作るもの」に変わります
+
+<div class="body">
+
+- **AIの変化は速く、完成したルールを待てません**
+  待っている間も、現場では使われ続けます。
+- **現場の私たちが、使いながらルールを育てます**
+  小さく試して、問題が見えたら直す進め方です。
+- **「作り手」の目で見ると、考え方が変わります**
+  今日の後半のワークは、その最初の一歩です。
+
+</div>
+
+<div class="takeaway">私たちは、ルールと仕組みの作り手になれます</div>
+
+<!-- マインドの転換。受け身から作り手へ。 -->
+
+---
+
+<!-- _class: message -->
+
+# AIは、道具から「環境」になりました
+
+## 電気やインターネットと同じ層で、大学の全体に効いてきます
+
+<!-- ③大学戦略の導入。1枚で切り替える。 -->
+
+---
+
+<div class="page-title">③ 大学とAI</div>
+
+## 募集から卒業まで、あらゆる接点に影響します
+
+<div class="body">
+
+- **入試・広報：受験生は、AIで大学を調べて比べています**
+  大学の情報がAIに正しく読まれるかどうかが、新しい論点です。
+- **教育・学生支援：学び方と課題の意味が変わります**
+  前半2の①で見たとおりです。
+- **経営・事務：定型業務の作り直しが始まっています**
+  浮いた時間をどこに使うかが、次の問いになります。
+
+</div>
+
+<div class="takeaway">「うちのどこに効くか」を、地図で考えます</div>
+
+<!-- 影響の整理（3×3の表）をもう一度指しながら話す。 -->
+
+---
+
+<div class="page-title">大学の戦略</div>
+
+## 規模の小さい学園ほど、動きの速さで差をつけられます
+
+<div class="body">
+
+- **全部を一度にやる必要はありません**
+  効く場所を選んで、小さく始めて、広げます。
+- **人を育てる投資が、いちばん息の長い戦略です**
+  今日のような研修と、日常の共有の場を続けます。
+- **学園の理念に照らして、「使わない領域」も決めます**
+  人が向き合うべき場面は、人に残します。
+
+</div>
+
+<div class="takeaway">小さく始めて、共有で広げる。それが現実的な戦略です</div>
+
+<!-- 大規模校の真似ではなく、機動力で勝つ話。 -->
+
+---
+
+<div class="page-title">前半のまとめ</div>
+
+## ここまでの要点を4つに絞ります
+
+<div class="body">
+
+- **生成AIは「次の一語」を選び続ける、確率の機械です**
+- **危険は、設定の確認と入力の選び方で大きく減らせます**
+- **教育は出口から、業務はデータから考えます**
+- **ルールは待つものではなく、現場で育てるものです**
+
+</div>
+
+<!-- 前半の総括。4行だけ、ゆっくり読む。 -->
+
+---
+
+<div class="page-title">ワークの予告</div>
+
+## 後半は、班ごとにシナリオを選んで実際に試します
+
+<div class="body">
+
+- **ワークシートには、複数のシナリオが載っています**
+  班の中で相談して、1つ選んで取り組みます。
+- **班は、使う道具のまとまりで分かれています**
+  手元にない道具の班だった場合は、同じアルファベットの他の班に移って構いません。
+- **成果は「1枚もの」で、11:15までに提出します**
+  詳しい手順は、道具の紹介のあとに説明します。
+
+</div>
+
+<div class="takeaway">休憩のあいだに、班と道具の確認をお願いします</div>
+
+<!-- ワークの概要だけ先に。詳細は後半で。 -->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">休憩 ｜ 10:03 – 10:13</div>
+
+# 10分休憩
+
+## 10:13 に再開します。班の移動はこの間にどうぞ
+
+<!-- 休憩中はこの画面を出したままにする。 -->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">後半 ｜ 10:13 – 11:22</div>
+
+# 道具の得意技と、試すワーク
+
+## 3つの道具の得意技を知ってから、班で実際に試します
+
+<!-- 後半の章扉。10:13再開。 -->
+
+---
+
+<div class="page-title">Google系</div>
+
+## Google系は、「資料を読ませて質問する」が得意です
+
+<div class="body">
+
+| 道具 | 得意なこと |
+|---|---|
+| Gemini（無料版） | 文章の下書き・要約・翻訳。長い資料を読ませて、その場で質問できます |
+| NotebookLM | 手持ちの資料だけを根拠に、出典つきで答えるノートを作れます |
+| スプレッドシート＋AI | アンケート自由記述の分類・要約など、集計の手伝いができます |
+
+<p class="note wide">学園のGoogleアカウントでの利用可否は管理者設定によります。今日は無料版でできる範囲を紹介します。</p>
+
+</div>
+
+<div class="takeaway">「読ませてから聞く」と、答えの当たりが良くなります</div>
+
+<!-- Google系3分。NotebookLMは前半2の攻め①の再登場なので簡潔に。 -->
+
+---
+
+<div class="page-title">MS系</div>
+
+## MS系は、Officeの中で完結できるのが持ち味です
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig54a-copilot-create.png" alt="Copilotの作成ハブの画面" style="height:330px; width:auto;">
+<div class="cap">有償契約で使える「作成」機能の例（画像・資料の一括生成）</div>
+
+</div>
+<div>
+
+- **無料のCopilotでも、文章・要約・画像生成は試せます**
+  ブラウザから copilot.microsoft.com で使えます。
+- **WordやExcelの中で使うには、追加の契約が必要です**
+  本学園では、現時点でこの契約はありません。
+- **「Officeの中で完結する」のがMS系の強みです**
+  今日は、将来の判断材料として姿だけ知っておいてください。
+
+</div>
+</div>
+
+<!-- MS系1分。事務系アカウントのみ・Copilotサブスクなし、を正確に。 -->
+
+---
+
+<div class="page-title">Canva</div>
+
+## Canvaは、デザインの叩き台づくりが数分で始められます
+
+<div class="body">
+
+- **ポスター・掲示・SNS画像の下地を、AIが数案出します**
+  文字の言い換え（Magic Write）も日本語で使えます。
+- **写真の背景消しや、サイズ違いへの展開が得意です**
+  広報物を作り直す手間が減ります。
+- **本学園では、広報関係の約20名がすでに使っています**
+  興味のある方は、Canvaのワーク班で体験できます。
+
+</div>
+
+<div class="takeaway">見た目の叩き台はAIに任せて、仕上げに時間を使います</div>
+
+<!-- Canva2分。使える人が限られる点は正直に伝える。 -->
+
+---
+
+<div class="page-title">頼み方</div>
+
+## 良い頼み方は、検索の「キーワード」ではなく文章です
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig56-prompt-template.png" alt="プロンプトの4要素のテンプレート" style="height:330px; width:auto;">
+<div class="cap">役割・課題・背景・形式の4要素で書く型</div>
+
+</div>
+<div>
+
+- **役割・課題・背景・形式の4要素を書きます**
+  Googleのガイドが勧める、基本の型です。
+- **人に仕事を頼むときと、同じ書き方をします**
+  「あなたは◯◯です。◯◯のために◯◯を作ってください」。
+- **見本を1つ付けると、出力が安定します**
+  「この形式で」と実物を見せるのが、いちばん速い伝え方です。
+
+<div class="cite">Google「Gemini for Google Workspace プロンプトガイド」</div>
+
+</div>
+</div>
+
+<!-- プロンプトの基本。ワーク中に画面に戻せるよう覚えておく。 -->
+
+---
+
+<div class="page-title">Gem</div>
+
+## よく使う頼み方は、「専用の相棒」として保存できます
+
+<div class="tcols fig-left">
+<div>
+
+<img src="./src/fig57-gem-syllabus.png" alt="シラバス点検用のGemの画面" style="height:330px; width:auto;">
+<div class="cap">シラバスの点検係として作ったGemの例</div>
+
+</div>
+<div>
+
+- **Gemは、指示をあらかじめ仕込んだ自分専用のAIです**
+  例：シラバスの点検係、文書の様式チェック係。
+- **Gemに仕込む指示文も、AIに書かせられます**
+  「Gemを作るGem」を最初に用意すると早く進みます。
+- **作った指示文は、コピーして同僚に渡せます**
+  前半2で話した「配る文化」の受け皿になります。
+
+</div>
+</div>
+
+<!-- Gemを作るGem。ChatGPTのGPTs、CopilotのエージェントもTLで同型と一言。 -->
+
+---
+
+<div class="page-title">使い分け</div>
+
+## 任せてよいかは、2つの問いで決まります
+
+<div class="body">
+
+- **問い①：出てきた結果を、自分で判断できますか**
+  判断できるなら任せられます。できないなら、案出しまでにします。
+- **問い②：結果の利用に、責任が生じますか**
+  外に出る文書・成績・お金に関わるものは、必ず人の確認を通します。
+- **2つの問いの答えは、仕事ごとに変わります**
+  同じ道具でも、場面によって使い方を変えるのが正解です。
+
+</div>
+
+<div class="takeaway">「判断できるか」「責任が生じるか」で任せ方を決めます</div>
+
+<!-- ワーク前の判断基準その1。 -->
+
+---
+
+<div class="page-title">使い方</div>
+
+## 出てきた答えに、すぐ飛びつかないでください
+
+<div class="body">
+
+- **答えをいったん閉じて、まず自分で考えます**
+  自分の案を持ってから見比べると、鵜呑みを防げます。
+- **物足りなければ、頼み方を直して再依頼します**
+  役割・背景・形式を足すだけで、答えは大きく変わります。
+- **「一往復で終わり」をやめると、質が安定します**
+  前半で見たループの実践です。
+
+</div>
+
+<div class="takeaway">考えてから使う。直してから受け取る。この順番です</div>
+
+<!-- ワーク前の判断基準その2。認知的負債の予防ともつながる。 -->
+
+---
+
+<div class="page-title">試し方</div>
+
+## 「たぶん使える」と思って、試してから判断します
+
+<div class="body">
+
+- **「なんらかの形でAIは使えるはずだ」から入ります**
+  無理だと決める前に、一度だけ試します。
+- **良い使い方が見つかったら、作り込んで人に配ります**
+  Gem化・手順書化・リンク共有まで進めて、ひと区切りです。
+- **今日のワークは、この2つの練習です**
+  シナリオを選んで、実際に手を動かします。
+
+</div>
+
+<div class="takeaway">試す → 見つける → 配る。ここまでがワンセットです</div>
+
+<!-- ワーク直前の心構え。ここからワークの具体へ。 -->
+
+---
+
+<div class="page-title">ワークの進め方</div>
+
+## ここからは、班で手を動かす時間です
+
+<div class="body">
+
+| 時間 | すること |
+|---|---|
+| はじめの5分 | ワークシートのシナリオから、班で1つ選びます |
+| 〜11:10 | 実際にAIで試します（約45分） |
+| 〜11:15 | 「やったこと」を1枚にまとめて提出します |
+| 11:15〜 | 5つの班に、1分ずつ結果を伺います |
+
+- **質問があれば、手を挙げてください**
+  進め方は班にお任せします。分担も相談も自由です。
+- **進め方そのものを、AIに聞くのも歓迎です**
+  「このシナリオをどう進めればいい？」から始められます。
+
+</div>
+
+<!-- ワーク運営の要。時間割は常にこの画面に戻れるようにする。 -->
+
+---
+
+<div class="page-title">シナリオ</div>
+
+## シナリオは、班で1つ選んでください
+
+<div class="tcols fig-left">
+<div>
+
+<div class="ph">[ワークシートのシナリオ一覧をここに掲載（受領後に差し替え）]</div>
+
+</div>
+<div>
+
+- **詳しい内容は、お手元のワークシートをご覧ください**
+  迷ったら「いちばん時間を取られている仕事」に近いものを選びます。
+- **途中でシナリオを変えても構いません**
+  行き詰まったら、別の題材で試し直してください。
+
+</div>
+</div>
+
+<div class="takeaway">正解探しではなく、道具の感触をつかむ時間です</div>
+
+<!-- シナリオ一覧はワークシート確定後に差し替える。 -->
+
+---
+
+<div class="page-title">提出と共有</div>
+
+## 成果は「1枚もの」で、全員が提出します
+
+<div class="tcols fig-right">
+<div>
+
+- **どんなことを試したかを、1枚にまとめます**
+  形式は自由です。箇条書きで構いません。
+- **スクリーンショットや作った物があれば添えてください**
+  ファイルで共有する場合は、リンクも付けてください。
+- **締切は11:15です**
+  発表は、この提出物を映しながら行います。
+
+</div>
+<div>
+
+<div class="ph">[提出先のQRコード<br>（確定後に差し替え）]</div>
+<div class="cap">提出先URL：（確定後に差し替え）</div>
+
+</div>
+</div>
+
+<div class="takeaway">うまくいかなかった記録も、立派な成果です</div>
+
+<!-- 提出のハードルを下げる。「失敗の記録も歓迎」を必ず言う。 -->
+
+---
+
+<!-- _class: vcenter -->
+
+<div class="page-title">ワーク中</div>
+
+## 困ったら、手を挙げてください
+
+<div class="tcols fig-right">
+<div>
+
+<div class="datarow"><span>提出の締切</span><span class="v"><span class="num">11:15</span></span></div>
+<div class="datarow"><span>結果の共有</span><span class="v"><span class="num">1分</span><span class="unit">×5班</span></span></div>
+
+<p class="note">進め方に迷ったら、AIに聞くのも歓迎です。</p>
+
+</div>
+<div>
+
+<div class="ph">[提出先のQRコード<br>（確定後に差し替え）]</div>
+
+</div>
+</div>
+
+<!-- ワーク中はこの画面を出したままにする。机間巡視。 -->
+
+---
+
+<!-- _class: message -->
+
+# お疲れさまでした ── 手を止めてください
+
+## 提出がまだの班は、リンクからお願いします
+
+<!-- 11:12ごろ表示。1〜2分で回収を締める。 -->
+
+---
+
+<div class="page-title">共有</div>
+
+## 5つの班に、1分ずつ伺います
+
+<div class="body">
+
+- **何を試しましたか**
+  選んだシナリオと使った道具を、一言でどうぞ。
+- **何に気づきましたか**
+  うまくいった点も、いかなかった点も歓迎です。
+- **明日から使えそうですか**
+  率直な手応えを聞かせてください。
+
+<p class="note wide">発表を聞きながら、Slidoへの感想の入力もお願いします。</p>
+
+</div>
+
+<!-- 【ここで Slido 感想（自由記述）を開いておく】5班×1分。時間が押したら3班に減らす。 -->
+
+---
+
+<!-- _class: divider -->
+
+<div class="chapter-num">まとめ ｜ 11:22 – 11:35</div>
+
+# まとめ
+
+## AIを味方にするために
+
+<!-- まとめの章扉。 -->
+
+---
+
+<div class="page-title">関わり方</div>
+
+## AIは、知らないと怖く、知ればそんなに怖くありません
+
+<div class="body">
+
+- **AIは仕事の仕方を変えますが、仕事の本質は変えません**
+  判断と責任、人と向き合う部分は残ります。
+- **使い方が分からないことも、AIに聞けます**
+  「聞ける相手がいる」だけで、一人で抱える場面が減ります。
+- **とりあえず試して、AIを味方にしてください**
+  今日のワークの続きを、明日の仕事で一つだけやってみてください。
+
+</div>
+
+<div class="takeaway">とりあえず試す。それがAIを味方にする近道です</div>
+
+<!-- 着地のメッセージ。デザインシートの文言を崩さない。 -->
+
+---
+
+<div class="page-title">事前アンケート</div>
+
+## 最後に、学園の皆さんの回答を見てみます
+
+<div class="body">
+
+<div class="ph">[事前アンケートの結果グラフ（データ受領後に作成します）]</div>
+
+<p class="note wide">集計の結果に沿って、当日その場でコメントします。</p>
+
+</div>
+
+<!-- 大学運営上の調査結果。データ受領後にEChartsでグラフ化して差し替える。 -->
+
+---
+
+<div class="page-title">Slido ④</div>
+
+## 今日の気付きを、一言で教えてください
+
+<div class="body">
+
+- **4-①　今日いちばんの気付きは何ですか（自由記述）**
+  小さなことほど歓迎です。画面でいくつか紹介します。
+- **迷ったら「明日試すこと」を書いてください**
+  具体的なほど、行動につながります。
+- **他の方の投稿も、画面でご覧ください**
+  「その手があったか」を持ち帰るのが狙いです。
+
+</div>
+
+<!-- 【ここで Slido 4-① を実施】3分。投稿をいくつか読み上げる。 -->
+
+---
+
+<div class="page-title">Slido ⑤</div>
+
+## 最後の1問です。率直にお答えください
+
+<div class="body">
+
+- **5-①　「AIと上手く付き合いたい」と思えましたか（5段階）**
+  冒頭に伺った印象（1-③）からの変化を、その場で見ます。
+- **どちらに振れても、率直な回答がいちばんの収穫です**
+  結果は、今後の研修の改善に使います。
+- **困りごとが残った方は、このあとの質疑でどうぞ**
+  11:40から、任意参加の質疑応答の時間があります。
+
+</div>
+
+<!-- 【ここで Slido 5-① を実施】1-③の結果と並べて映すと変化が見える。 -->
+
+---
+
+<!-- _class: message -->
+
+# 試した人から、AIは味方になります
+
+## 今日の一歩を、明日も一つだけ続けてください
+
+<!-- 講師からのまとめメッセージ。10秒で締める。 -->
+
+---
+
+<!-- _class: qa -->
+
+<div class="page-title">おわりに</div>
+
+# ありがとうございました
+
+## 質疑応答は 11:40 から（任意参加）です
+
+<!-- 本資料は講師の企画・監修のもと、生成AI（Claude）を用いて作成し、内容は講師が確認しています。学長講評（11:35〜）の間はこの画面のまま。 -->

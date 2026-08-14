@@ -108,6 +108,59 @@ footer: ''
 ---
 ```
 
+### ヘッダー幅つまみは新規デックに毎回同梱する（2026-08-14 ユーザー依頼）
+
+新規デックの frontmatter には、テーマに応じた「ヘッダー幅の調整つまみ」を **既定値のままコメント付きで必ず入れる**。
+既定値のままなら見た目は変わらず、ユーザーが数字を触るだけで調整できる状態にしておくのが目的。
+
+`theme: tsutawaru-academic` の場合（実効値＝テーマ既定を明示）：
+
+```yaml
+style: |
+  :root {
+    /* ── ヘッダー幅の調整つまみ（値は既定。数字を変えると効く） ── */
+    --hdr-left-w: fit-content;  /* 左の題字帯の幅。固定したいときは例: 26% */
+    --hdr-left-max: 38%;        /* 題字帯の上限幅（超えたら…で省略） */
+    --pt-center: 50%;           /* 中央page-title帯の中心位置（50%=画面中央） */
+    --pt-width: fit-content;    /* page-title帯の幅。固定したいときは例: 26% */
+    --pt-max: 40%;              /* page-title帯の上限幅 */
+  }
+```
+
+### 本文の箇条書きは素のMarkdownで書く（divを増やさない・2026-08-14 ユーザー依頼）
+
+ユーザーは**divだらけのmdを嫌う**（「編集しやすい形にして」）。tsutawaru系デックの本文箇条書きは
+`.blist`/`.t`/`.d` のdiv入れ子ではなく、**素のMarkdownリスト＋デッキ限定CSS**で書く：
+
+```markdown
+- **見出しの文（太字＝旧 .t 相当）**
+  説明の文（旧 .d 相当）。divタグは書かない。
+```
+
+frontmatter の `style:` に次のモジュールを同梱する（Marpは soft break を `<br>` にするため、最後の1行が必須）：
+
+```css
+section ul > li::before { content: none; }
+section ul > li { padding-left: 0; margin: 0 0 var(--gap-group); }
+section ul > li > strong:first-child { display: block; line-height: 1.6; }
+section ul > li > strong:first-child + br { display: none; }
+```
+
+実例: `slides/20260820_SD_Uekusa_genai-usage`（blist 54ブロックをこの形に変換済み・見た目は同一）。
+
+`theme: academic` / `chiba-deck` の場合（既定を崩さないよう**コメントアウトで同梱**し、使うときに外す）：
+
+```yaml
+style: |
+  :root {
+    /* ── ヘッダー幅の調整つまみ（使うときにコメントを外して数値を調整） ──
+    --hdr-left-w: 21%;   左の題字帯の幅
+    --pt-width: 32%;     中央page-title帯の幅（折り返すなら広く）
+    --hdr-gap: 4px;      帯間の白い隙間。0=密着 / -4px=重ねる
+    */
+  }
+```
+
 ### 各スライドのページタイトル
 
 スライド本文の冒頭に1行：

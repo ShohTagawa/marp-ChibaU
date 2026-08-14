@@ -1,0 +1,37 @@
+{
+  "grid": { "left": 16, "right": 78, "top": 10, "bottom": 10, "containLabel": true },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "interval": 20,
+    "axisLabel": { "formatter": "{value}%", "fontSize": 16 }
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": [
+      "カリキュラムへのAI統合",
+      "学生のAIリテラシー育成",
+      "ガバナンス・ポリシーの確立",
+      "AI技術の実装",
+      "教員研修（FD）の加速",
+      "運営・管理の効率化（最下位）"
+    ],
+    "axisLabel": { "fontSize": 19, "fontWeight": "bold", "width": 235, "overflow": "break", "lineHeight": 23 }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "52%",
+      "label": { "show": true, "position": "right", "formatter": "{c}%", "fontSize": 21, "fontWeight": "bold", "color": "#262626" },
+      "data": [
+        { "value": 66.1, "itemStyle": { "color": "#2F6B3A" } },
+        { "value": 59.1, "itemStyle": { "color": "#2F6B3A" } },
+        { "value": 58.1, "itemStyle": { "color": "#2F6B3A" } },
+        { "value": 55.9, "itemStyle": { "color": "#2F6B3A" } },
+        { "value": 50.5, "itemStyle": { "color": "#2F6B3A" } },
+        { "value": 1.6, "itemStyle": { "color": "#BDBDBD" } }
+      ]
+    }
+  ]
+}

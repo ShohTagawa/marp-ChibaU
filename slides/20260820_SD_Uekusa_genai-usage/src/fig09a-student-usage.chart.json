@@ -1,0 +1,73 @@
+{
+  "grid": {
+    "left": 34,
+    "right": 90,
+    "top": 12,
+    "bottom": 8,
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "interval": 25,
+    "axisLabel": {
+      "formatter": "{value}%",
+      "fontSize": 17
+    }
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": [
+      "2023年",
+      "2024年",
+      "2025年"
+    ],
+    "axisLabel": {
+      "fontSize": 22,
+      "fontWeight": "bold"
+    }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "50%",
+      "label": {
+        "show": true,
+        "position": "right",
+        "fontSize": 25,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        {
+          "value": 46.7,
+          "itemStyle": {
+            "color": "#BDBDBD"
+          },
+          "label": {
+            "formatter": "46.7%"
+          }
+        },
+        {
+          "value": 68.2,
+          "itemStyle": {
+            "color": "#9CBFA3"
+          },
+          "label": {
+            "formatter": "68.2%"
+          }
+        },
+        {
+          "value": 92.2,
+          "itemStyle": {
+            "color": "#2F6B3A"
+          },
+          "label": {
+            "formatter": "92.2%"
+          }
+        }
+      ]
+    }
+  ]
+}

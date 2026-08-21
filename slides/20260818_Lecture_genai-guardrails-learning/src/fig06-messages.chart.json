@@ -2,6 +2,7 @@
   "grid": { "left": 150, "right": 90, "top": 16, "bottom": 40 },
   "xAxis": { "type": "value", "max": 80, "axisLabel": { "fontSize": 19, "formatter": "{value}%" } },
   "yAxis": { "type": "category", "data": ["GPT Tutor", "GPT Base"],
+             "axisLabel": { "fontSize": 23, "fontWeight": "bold" } },
   "series": [
     { "type": "bar", "barWidth": "46%",
       "itemStyle": { "color": "#8A8A8A" },

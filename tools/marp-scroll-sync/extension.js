@@ -74,6 +74,10 @@ function slideStartLines(text) {
     if (/<!--/.test(line) && !/-->/.test(line.slice(line.indexOf('<!--') + 4))) {
       inComment = true; prevClosedComment = false; continue;
     }
+    // 1行で完結する HTMLコメント（発表者ノート等）。marp では HTMLブロックが -->
+    // の行で終わるので、直後の --- はページ区切りになる。複数行コメントと同じ扱いにする。
+    // これを落とすと、ノート直後に --- を書いたデックだけ枚数が足りなくなる（例: 73枚→69枚）。
+    if (/^<!--/.test(t) && /-->$/.test(t)) { prevClosedComment = true; continue; }
     if (/^---+\s*$/.test(line)) {
       const prev = k > 0 ? lines[k - 1].trim() : '';
       // 直前が空行 OR 直前行で HTMLコメントが閉じた（-->）→ スライド区切り（marp と一致）
@@ -174,9 +178,13 @@ function updateStatus(editor) {
   }
 }
 
-/** 相対ローカル画像参照を webview uri に書き換える */
+/**
+ * 相対ローカル画像・動画参照を webview uri に書き換える。
+ * poster も対象にすること：<video poster="./src/…png"> を書き換えないと、
+ * 動画の1枚目が出ずに黒い箱になる（CSP の media-src も合わせて必要）。
+ */
 function rewriteAssets(html, webview, docDir) {
-  return html.replace(/(\bsrc\s*=\s*|\bxlink:href\s*=\s*|\bhref\s*=\s*)(["'])([^"']+)\2/g, (full, attr, q, val) => {
+  return html.replace(/(\bsrc\s*=\s*|\bposter\s*=\s*|\bxlink:href\s*=\s*|\bhref\s*=\s*)(["'])([^"']+)\2/g, (full, attr, q, val) => {
     if (/^(https?:|data:|#|\/\/)/.test(val)) return full;       // 外部 / data / アンカーは触らない
     if (/^[a-zA-Z]+:/.test(val)) return full;                   // スキーム付きは触らない
     const abs = path.resolve(docDir, val);
@@ -227,7 +235,7 @@ function buildHtml(webview, doc, initialIndex) {
   return /* html */ `<!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy"
-  content="default-src 'none'; img-src ${cspSource} https: data:; style-src ${cspSource} https: 'unsafe-inline'; script-src 'unsafe-inline'; font-src ${cspSource} https: data:;">
+  content="default-src 'none'; img-src ${cspSource} https: data:; media-src ${cspSource} https: data: blob:; style-src ${cspSource} https: 'unsafe-inline'; script-src 'unsafe-inline'; font-src ${cspSource} https: data:;">
 <style>
   html,body { margin:0; padding:0; background:#4a4a4f; }
   #wrap { padding:16px 16px 60vh; }
@@ -281,15 +289,28 @@ function buildHtml(webview, doc, initialIndex) {
   const initial = ${Number.isInteger(initialIndex) ? initialIndex : 0};
   function slides(){ return Array.from(document.querySelectorAll('div.marpit > svg[data-marpit-svg]')); }
   const badge = document.getElementById('badge');
+  let cur = initial;          // いま選ばれているスライド（キー送りの起点）
+  let navMode = false;        // キーでスライドを送っている最中か（true の間は ↑↓ を必ずページ送りに使う）
   function highlight(i){
     const ss = slides();
-    ss.forEach((s,idx)=>s.classList.toggle('current-slide', idx===i));
-    if (badge) badge.textContent = 'Slide ' + (i+1) + '/' + ss.length;
+    cur = Math.max(0, Math.min(ss.length - 1, i));
+    ss.forEach((s,idx)=>s.classList.toggle('current-slide', idx===cur));
+    if (badge) badge.textContent = 'Slide ' + (cur+1) + '/' + ss.length;
   }
   function scrollTo(i){
     const s = slides()[i];
     if (s){ s.scrollIntoView({behavior:'smooth', block:'start'}); highlight(i); }
   }
+  // キーでのスライド送り。プレビューを動かし、原稿のカーソルも同じスライドへ（フォーカスは奪わない）
+  function goTo(i){
+    const ss = slides(); if (!ss.length) return;
+    const n = Math.max(0, Math.min(ss.length - 1, i));
+    if (n === cur) return;
+    navMode = true;
+    scrollTo(n);
+    vscode.postMessage({type:'gotoSlide', index:n});
+  }
+  function go(d){ goTo(cur + d); }
   // クリック逆引き: ポインタ直下のテキストノードを精密に取り、その文字列で原稿を照合させる。
   // 併せて要素の実寸 font-size(px) を読み、サイズ増減の起点として送る。
   function probeUnderPointer(ev){
@@ -310,6 +331,7 @@ function buildHtml(webview, doc, initialIndex) {
     return { text, px, line };
   }
   document.addEventListener('click', (ev)=>{
+    navMode = false;   // クリックし直したらページ送りモードを抜ける（↑↓ がサイズ調整に戻る）
     if (ev.target && ev.target.closest && ev.target.closest('#tuner')) return; // ツールバーは逆引き対象外
     const svg = ev.target && ev.target.closest ? ev.target.closest('svg[data-marpit-svg]') : null;
     if (!svg) return;
@@ -338,12 +360,23 @@ function buildHtml(webview, doc, initialIndex) {
   tColor.addEventListener('input', ()=>vscode.postMessage({type:'tune', op:'color', value:tColor.value}));
   Array.from(document.querySelectorAll('#tuner .sw')).forEach(b=>
     b.addEventListener('click', ()=>vscode.postMessage({type:'tune', op:'color', value:b.getAttribute('data-c')})));
-  // 選択中は ↑↓ でも ±1px（色ピッカー操作中は除く）
+  // キー操作
+  //   ↑ / ↓        … スライドを1枚送る（原稿側で文字を選んでいる間は従来どおり ±1px）
+  //   PageUp/Down・j/k・Shift+↑↓ … 文字を選んでいても必ずスライド送り
+  //   Home / End   … 先頭 / 末尾のスライドへ
   window.addEventListener('keydown', (ev)=>{
-    if (!tActive) return;
     if (ev.target && ev.target.id === 'tColor') return;
-    if (ev.key === 'ArrowUp'){ ev.preventDefault(); vscode.postMessage({type:'tune', op:'inc'}); }
-    else if (ev.key === 'ArrowDown'){ ev.preventDefault(); vscode.postMessage({type:'tune', op:'dec'}); }
+    if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    const k = ev.key;
+    if (k === 'PageDown' || k === 'j'){ ev.preventDefault(); go(+1); return; }
+    if (k === 'PageUp'   || k === 'k'){ ev.preventDefault(); go(-1); return; }
+    if (k === 'Home'){ ev.preventDefault(); goTo(0); return; }
+    if (k === 'End'){  ev.preventDefault(); goTo(slides().length - 1); return; }
+    if (k !== 'ArrowUp' && k !== 'ArrowDown') return;
+    ev.preventDefault();
+    const tuning = tActive && !navMode && !ev.shiftKey;   // 文字を選んでいて、かつページ送り中でなければサイズ調整
+    if (tuning) vscode.postMessage({type:'tune', op: k === 'ArrowUp' ? 'inc' : 'dec'});
+    else go(k === 'ArrowDown' ? +1 : -1);
   });
   window.addEventListener('message', e=>{
     const m = e.data || {};
@@ -453,7 +486,20 @@ function openPreview(context) {
         const pos = new vscode.Position(ln, 0);
         ed.selection = new vscode.Selection(pos, pos);
         ed.revealRange(new vscode.Range(pos, pos), vscode.TextEditorRevealType.AtTop);
-        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: false });
+        // 余白クリック＝「スライドを選ぶ」操作。フォーカスはプレビューに残し、続けて ↑↓ で送れるようにする
+        vscode.window.showTextDocument(ed.document, { viewColumn: ed.viewColumn, preserveFocus: true });
+        return;
+      }
+
+      // ↑↓ 等でのスライド送り。原稿のカーソルだけ動かし、プレビューのフォーカスは奪わない
+      if (m.type === 'gotoSlide' && slideStarts[m.index] !== undefined) {
+        const ln = slideStarts[m.index];
+        const pos = new vscode.Position(ln, 0);
+        ed.selection = new vscode.Selection(pos, pos);
+        ed.revealRange(new vscode.Range(pos, pos), vscode.TextEditorRevealType.AtTop);
+        lastScrollIndex = m.index;      // プレビューは既に動いているので押し戻さない
+        updateStatus(ed);               // ステータスバーの Slide n/N を更新
+        return;
       }
     }, null, context.subscriptions);
   }

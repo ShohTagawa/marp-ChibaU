@@ -1,0 +1,78 @@
+{
+  "grid": {
+    "left": 8,
+    "right": 150,
+    "top": 16,
+    "bottom": 16
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "show": false
+  },
+  "yAxis": {
+    "type": "category",
+    "data": [
+      ""
+    ],
+    "show": false
+  },
+  "series": [
+    {
+      "name": "正しい答え",
+      "type": "bar",
+      "stack": "a",
+      "barWidth": 74,
+      "itemStyle": {
+        "color": "#A6192E"
+      },
+      "label": {
+        "show": true,
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "color": "#fff",
+        "formatter": "正解 51%"
+      },
+      "data": [
+        51
+      ]
+    },
+    {
+      "name": "論理の誤り",
+      "type": "bar",
+      "stack": "a",
+      "itemStyle": {
+        "color": "#8A8A8A"
+      },
+      "label": {
+        "show": true,
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "color": "#fff",
+        "formatter": "考え方の誤り 42%"
+      },
+      "data": [
+        42
+      ]
+    },
+    {
+      "name": "計算の誤り",
+      "type": "bar",
+      "stack": "a",
+      "itemStyle": {
+        "color": "#BDBDBD"
+      },
+      "label": {
+        "show": true,
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "color": "#262626",
+        "position": "right",
+        "formatter": "計算ミス 8%"
+      },
+      "data": [
+        8
+      ]
+    }
+  ]
+}

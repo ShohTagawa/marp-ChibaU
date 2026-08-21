@@ -1,0 +1,95 @@
+{
+  "legend": {
+    "top": 0,
+    "left": "center",
+    "itemWidth": 18,
+    "itemHeight": 12,
+    "itemGap": 24,
+    "textStyle": {
+      "fontSize": 19,
+      "fontWeight": "bold"
+    },
+    "data": [
+      "小規模（4,000人未満）",
+      "大規模（4,000人以上）"
+    ]
+  },
+  "grid": {
+    "left": 16,
+    "right": 78,
+    "top": 46,
+    "bottom": 8,
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "axisLabel": {
+      "formatter": "{value}%",
+      "fontSize": 16
+    },
+    "interval": 20
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": [
+      "職員への支援が未実施",
+      "有料AIが未提供",
+      "システムが未整備",
+      "方針を決める予定なし"
+    ],
+    "axisLabel": {
+      "fontSize": 19,
+      "fontWeight": "bold",
+      "width": 210,
+      "overflow": "break",
+      "lineHeight": 24
+    }
+  },
+  "series": [
+    {
+      "name": "小規模（4,000人未満）",
+      "type": "bar",
+      "barWidth": "38%",
+      "itemStyle": {
+        "color": "#2F6B3A"
+      },
+      "label": {
+        "show": true,
+        "position": "right",
+        "formatter": "{c}%",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        61.2,
+        81.2,
+        60,
+        37.6
+      ]
+    },
+    {
+      "name": "大規模（4,000人以上）",
+      "type": "bar",
+      "barWidth": "38%",
+      "itemStyle": {
+        "color": "#BDBDBD"
+      },
+      "label": {
+        "show": true,
+        "position": "right",
+        "formatter": "{c}%",
+        "fontSize": 20,
+        "color": "#5F5F5F"
+      },
+      "data": [
+        17.9,
+        50,
+        21.4,
+        14.3
+      ]
+    }
+  ]
+}

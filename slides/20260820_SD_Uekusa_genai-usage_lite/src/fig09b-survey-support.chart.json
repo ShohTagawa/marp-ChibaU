@@ -1,0 +1,76 @@
+{
+  "grid": {
+    "left": 16,
+    "right": 90,
+    "top": 16,
+    "bottom": 16,
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "axisLabel": {
+      "formatter": "{value}%",
+      "fontSize": 16
+    },
+    "interval": 20
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": [
+      "教員への支援",
+      "職員への支援",
+      "学生への支援"
+    ],
+    "axisLabel": {
+      "fontSize": 21,
+      "fontWeight": "bold",
+      "width": 200,
+      "overflow": "break",
+      "lineHeight": 26
+    }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "46%",
+      "label": {
+        "show": true,
+        "position": "right",
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        {
+          "value": 49.6,
+          "itemStyle": {
+            "color": "#BDBDBD"
+          },
+          "label": {
+            "formatter": "49.6%"
+          }
+        },
+        {
+          "value": 50.4,
+          "itemStyle": {
+            "color": "#2F6B3A"
+          },
+          "label": {
+            "formatter": "50.4%"
+          }
+        },
+        {
+          "value": 46.9,
+          "itemStyle": {
+            "color": "#BDBDBD"
+          },
+          "label": {
+            "formatter": "46.9%"
+          }
+        }
+      ]
+    }
+  ]
+}

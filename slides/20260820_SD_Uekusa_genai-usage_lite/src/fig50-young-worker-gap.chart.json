@@ -1,0 +1,45 @@
+{
+  "grid": {
+    "left": 178,
+    "right": 122,
+    "top": 8,
+    "bottom": 34,
+    "containLabel": false
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 24,
+    "interval": 6,
+    "axisLabel": {
+      "formatter": "{value}%",
+      "fontSize": 16
+    }
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": ["2025年7月", "2026年6月"],
+    "axisLabel": {
+      "fontSize": 21,
+      "fontWeight": "bold"
+    }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "50%",
+      "label": {
+        "show": true,
+        "position": "right",
+        "formatter": "▼{c}%",
+        "fontSize": 27,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        { "value": 15, "itemStyle": { "color": "#BDBDBD" } },
+        { "value": 19, "itemStyle": { "color": "#2F6B3A" } }
+      ]
+    }
+  ]
+}

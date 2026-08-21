@@ -1,0 +1,58 @@
+{
+  "grid": {
+    "left": 16,
+    "right": 86,
+    "top": 12,
+    "bottom": 12,
+    "containLabel": true
+  },
+  "xAxis": {
+    "type": "value",
+    "max": 100,
+    "axisLabel": {
+      "formatter": "{value}%",
+      "fontSize": 16
+    },
+    "interval": 20
+  },
+  "yAxis": {
+    "type": "category",
+    "inverse": true,
+    "data": [
+      "現場の従業員",
+      "経営層"
+    ],
+    "axisLabel": {
+      "fontSize": 21,
+      "fontWeight": "bold"
+    }
+  },
+  "series": [
+    {
+      "type": "bar",
+      "barWidth": "44%",
+      "label": {
+        "show": true,
+        "position": "right",
+        "formatter": "{c}%",
+        "fontSize": 28,
+        "fontWeight": "bold",
+        "color": "#262626"
+      },
+      "data": [
+        {
+          "value": 40,
+          "itemStyle": {
+            "color": "#2F6B3A"
+          }
+        },
+        {
+          "value": 2,
+          "itemStyle": {
+            "color": "#BDBDBD"
+          }
+        }
+      ]
+    }
+  ]
+}

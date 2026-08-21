@@ -1,0 +1,80 @@
+{
+  "grid": {
+    "left": 110,
+    "right": 50,
+    "top": 30,
+    "bottom": 92
+  },
+  "legend": {
+    "show": true,
+    "bottom": 0,
+    "left": "center",
+    "itemGap": 40,
+    "textStyle": {
+      "fontSize": 21
+    }
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "練習中（AIを使える）",
+      "試験（AIなし）"
+    ],
+    "axisLabel": {
+      "fontSize": 22,
+      "fontWeight": "bold"
+    },
+    "axisLine": {
+      "onZero": false
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "min": -40,
+    "max": 140,
+    "axisLabel": {
+      "fontSize": 19,
+      "formatter": "{value}%"
+    }
+  },
+  "series": [
+    {
+      "name": "GPT Base（そのままのChatGPT型）",
+      "type": "bar",
+      "barWidth": "28%",
+      "itemStyle": {
+        "color": "#8A8A8A"
+      },
+      "label": {
+        "show": true,
+        "position": "top",
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "formatter": "{@[1]}%"
+      },
+      "data": [
+        48,
+        -17
+      ]
+    },
+    {
+      "name": "GPT Tutor（ガードレール付き）",
+      "type": "bar",
+      "barWidth": "28%",
+      "itemStyle": {
+        "color": "#A6192E"
+      },
+      "label": {
+        "show": true,
+        "position": "top",
+        "fontSize": 24,
+        "fontWeight": "bold",
+        "formatter": "{@[1]}%"
+      },
+      "data": [
+        127,
+        -1
+      ]
+    }
+  ]
+}

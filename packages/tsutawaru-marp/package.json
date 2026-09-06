@@ -1,0 +1,17 @@
+{
+  "name": "tsutawaru-marp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "『伝わるデザインの基本』準拠の Marp スライドテーマ＋ツール一式（tsutawaru-academic）",
+  "scripts": {
+    "pdf": "bash tools/marp-pdf/build-pdf.sh",
+    "pdf:safe": "CHUNK=12 bash tools/marp-pdf/build-pdf.sh",
+    "present": "bash tools/marp-present/present.sh",
+    "lint": "node tools/tsutawaru-lint.mjs slides",
+    "demo:png": "npx --yes @marp-team/marp-cli@latest slides/demo-tsutawaru/demo-tsutawaru.md --no-stdin --theme-set theme/academic.css theme/tsutawaru-academic.css --html --images png --allow-local-files -o slides/demo-tsutawaru/out/demo-tsutawaru.png",
+    "demo:pdf": "bash tools/marp-pdf/build-pdf.sh slides/demo-tsutawaru/demo-tsutawaru.md"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0"
+  }
+}

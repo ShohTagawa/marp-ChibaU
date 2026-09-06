@@ -1,0 +1,18 @@
+# Marp 出力（out/ に書き出す規約。成果物はコミットしない）
+slides/*/out/
+*.pdf
+
+# marp PDF ビルドの中間HTML（通常は自動削除される保険）
+.marp-pdfbuild-*.html
+# marp プレゼン用HTML（present.sh が md と同階層に描画）
+.marp-present.html
+
+# Node
+node_modules/
+package-lock.json
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+.idea/

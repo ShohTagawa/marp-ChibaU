@@ -1,0 +1,5 @@
+# GitHub の「Sponsor」ボタンを出すための設定。
+# 使うものだけコメントを外して自分のアカウント名を記入する（全部コメントのままなら何も表示されない）。
+# github: [your-github-username]
+# ko_fi: your-kofi-name
+# custom: ["https://example.com/donate"]

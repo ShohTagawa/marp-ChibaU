@@ -1,0 +1,11 @@
+# GitHub がリポジトリ右側に「Cite this repository」ボタンを出すためのファイル。
+# 公開後、repository-code の URL を実際のリポジトリに書き換える。
+cff-version: 1.2.0
+message: "このテーマ・ツールを使った資料や紹介記事・論文では、引用または謝辞での言及をお願いします（任意）。"
+title: "tsutawaru-marp"
+type: software
+authors:
+  - family-names: "Tagawa"
+    given-names: "Shoh"
+abstract: "『伝わるデザインの基本』のレイアウトルールをCSSに実装した Marp スライドテーマとツール一式"
+# repository-code: "https://github.com/<your-account>/tsutawaru-marp"

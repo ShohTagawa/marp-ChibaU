@@ -1,0 +1,603 @@
+/* @theme tsutawaru-academic */
+/* ============================================================================
+   tsutawaru-academic — 『伝わるデザインの基本 増補改訂3版』準拠テーマ
+   （高橋佑磨・片山なつ 著／技術評論社）
+
+   academic.css を @import して、**本文（メイン領域）だけ**を本のルールで組み直す。
+   ヘッダー帯・ロゴ・page-title・ページ番号・フォントは academic.css のまま触らない。
+
+   ビルド時は2枚とも渡す：
+     --theme-set theme/academic.css theme/tsutawaru-academic.css
+
+   このテーマが解こうとしている課題：
+     (A) 囲み枠が多すぎる → p.212「囲みすぎは絶対にNGです。」
+     (B) 1枚の文字数が多すぎる → p.202「ルール通りにいかないのは、多くの場合、
+         情報が多すぎたり、内容が洗練されていないことが原因」
+
+   コメントの「p.NNN」は書籍のノンブル。設計判断はすべて紙面で確認済み。
+   ============================================================================ */
+@import "academic";
+
+/* ============================================================================
+   1. 配色 — 合計4色まで。既定は3色運用。
+      p.190「合計4色まで」＝ 背景色／文字の基本色／メインの色／強調の色
+      p.192「さらにシンプルに」＝ 4色のうち2色を同じにして3色
+      p.196「強調の色を複数使わない」＝ 強調色は1色
+      p.184「彩度の高すぎる標準色は使わない」／p.205「原色（彩度の高すぎる赤や緑、
+            黄色）を使わない」→ 赤は朱ではなく“えんじ”寄り #A6192E
+      p.193/p.198 文字は真っ黒ではなく明度を数〜10%上げた灰
+      灰色は色数に数えない（p.185「灰色を使って色数を減らす」）
+   ============================================================================ */
+:root {
+  /* ① 背景色 */
+  --bg: #ffffff;
+  /* ② 文字の基本色（黒ではない） */
+  --ink: #262626;
+  --text: #262626;              /* academic.css の変数名にも合わせる */
+  --ink-weak: #6E6E6E;          /* 重要度の低い情報（p.202「重要度の低い情報は小さく」） */
+  --muted: #6E6E6E;
+  /* ③ メインの色 — えんじ寄りの赤（原色を避ける） */
+  --accent: #A6192E;
+  --accent-dark: #7D1322;
+  --accent-soft: #F6E9EC;
+  /* ④ 強調の色 — 既定はメインと同じ（＝3色運用）。
+        4色目が要るデックだけ frontmatter で --em を上書きする。
+        p.195「赤や緑を避け、オレンジや青を使う」→ 4色目はオレンジ #B45309 か青 #2166AC */
+  --em: var(--accent);
+  /* 無彩色（色数に数えない） */
+  --rule: #D6D6D6;              /* 罫線 */
+  --rule-strong: #262626;       /* 表の主罫線 */
+  --fill: #F1F1F1;              /* 塗りだけの囲み */
+  --fill-2: #FAFAFA;            /* ゼブラ表の薄い行 */
+
+  /* 行長の上限（p.80「スライドは1行20文字前後」／
+     p.179「16:9では本文幅はスライド幅の約1/2〜2/3」）
+     28em ≒ 644px ≒ 本文領域の55% → 本の 1/2〜2/3 に収まる */
+  --measure: 28em;
+  /* 段落後の間隔 = 0.5行（p.78）。1.7行送りの半分 */
+  --gap-para: .85em;
+  /* グループ間の間隔（p.78/79「項目内の行間 < 項目同士の間隔」） */
+  --gap-group: 1.5em;
+}
+
+/* 4色目を使うプリセット。frontmatter に `class: em-orange` / `class: em-blue` */
+section.em-orange { --em: #B45309; }
+section.em-blue   { --em: #2166AC; }
+
+/* ============================================================================
+   1b. ヘッダー題字・page-title は「文字量に合わせて自動幅」
+       academic.css は幅が固定%（--hdr-left-w / --pt-left / --pt-width）で、
+       デックの題名の長さごとに3つの値を手調整する必要があった。
+       tsutawaru では既定を fit-content にして調整を不要にする。
+
+       デック側で固定したい時だけ frontmatter で上書きする：
+         style: |
+           :root { --hdr-left-w: 30%; --pt-center: 40%; --pt-width: 26%; }
+       ・--hdr-left-w   … 題字帯の幅（既定 fit-content＝文字に追従）
+       ・--hdr-left-max … 題字帯の上限幅（超えたら…で省略）
+       ・--pt-center    … page-title 帯の「中心」の位置（既定 50%＝画面中央）
+       ・--pt-width     … page-title 帯の幅（既定 fit-content）
+   ============================================================================ */
+:root {
+  --hdr-left-w: fit-content;
+  --hdr-left-max: 38%;
+  --pt-center: 50%;
+  --pt-max: 40%;
+}
+section > header .hdr-left {
+  width: var(--hdr-left-w);
+  max-width: var(--hdr-left-max);
+  /* 右端の斜めカットが文字を切らないよう、カット幅ぶんの余白を足す */
+  padding: 0 calc(16px + var(--hdr-slant)) 0 32px;
+}
+/* cover-hero は academic 側が 26% を強制するので、自動幅に戻す */
+section.cover-hero { --hdr-left-w: fit-content; }
+
+section .page-title {
+  /* 「中心位置」で指定する。左端合わせの計算（--pt-left）は不要になる */
+  left: var(--pt-center);
+  transform: translateX(-50%);
+  width: var(--pt-width, fit-content);
+  max-width: var(--pt-max);
+  padding: 0 calc(28px + var(--hdr-slant));
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================================
+   2. 本文の組版
+      p.203 五大注意点：余白が足りない／揃っていない／フォントがよくない／
+            行間が狭い／文字に強弱がない
+      p.62  行間 = 文字サイズの 0.5〜1文字分（長文0.9・箇条書き0.7が最適）
+      p.203 行間 = 文字サイズの1.5倍程度
+      p.67  字間 = 文字サイズの 5〜10%
+      p.18-19 / p.212 本文は太らせない（太字は圧迫感・可読性低下）
+   ============================================================================ */
+section {
+  font-size: 23px;
+  line-height: 1.7;             /* = 0.7文字分。p.62 箇条書きの最適値 */
+  letter-spacing: 0.05em;       /* = 5%。p.67 */
+  color: var(--ink);
+  font-weight: 400;             /* p.18-19 本文は細く */
+  font-feature-settings: "palt" 0;
+}
+
+/* 長めの文章ブロックは行間を広げる（p.62 長文の最適 0.9文字分 = 1.9） */
+.longform, .longform p { line-height: 1.9; }
+
+/* 行長を抑える（p.80 / p.179）。表・図・グラフは対象外 */
+section > p, section > ul, section > ol,
+.body > p, .body > ul, .body > ol,
+.blist, .lead, .note { max-width: var(--measure); }
+.wide { max-width: none !important; }   /* 意図的に全幅にしたい時の逃げ道 */
+
+/* 段落間隔 = 0.5行（p.78）。空白行では空けない（p.78「開きすぎ」） */
+section p { margin: 0 0 var(--gap-para); }
+section p:last-child { margin-bottom: 0; }
+
+/* 揃えは左揃え（p.70「使ってよいのは左揃えか両端揃え」・中央揃えは避ける）
+   p.148「上・左は必ず揃える」 */
+section, section.fig h2, section.fig .fig-area, .takeaway { text-align: left; }
+section.fig .fig-area { justify-content: flex-start; }
+
+/* ============================================================================
+   3. 見出しの階層 — サイズは増やさない、強弱は「太さ」で作る
+      p.77「スライドなどの資料では、4種類以上のフォントサイズを使わないほうが無難」
+      p.76「3つ以上の方法（フォント・太さ・サイズ・色）を併用するのは避ける」＝併用は2つまで
+      p.160 ジャンプ率 = 見出しサイズ ÷ 本文サイズ
+      p.205 の作例では【小見出しと本文は同じサイズ。差は“太さ”だけ】
+
+      1枚のスライドで使ってよいサイズは3種類：
+        見出し(h2 34px) / 本文(23px) / 補足(19px)
+      小見出しはサイズを変えず太字にする（＝サイズの種類を増やさない）
+   ============================================================================ */
+/* タイトルは「常に同じ位置・同じサイズ」。
+   ・位置＝ヘッダー直下（section の padding-top が固定なので、h1/h2 を
+     スライドの先頭に書けば毎回同じ高さから始まる。タイトルの前に別の
+     要素を置かない）
+   ・サイズ＝34px に統一。# で書いても ## で書いても同じ見た目になる
+     （cover / divider / message / qa など全画面型だけは各自の大きさ）。
+   ・min-height で1行ぶんの高さを確保し、本文の開始位置も揃える。 */
+section h2,
+section h1 {
+  font-size: 34px;              /* ジャンプ率 34/23 = 1.5 */
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  min-height: 1.35em;
+  margin: 0 0 .5em;
+}
+
+/* h3／.sh＝節レベルの小見出し。囲まずに「短い縦罫＋メインの色の太字」で示す。
+   p.161 の良い例がこの形（枠で囲わない）。
+   p.76「冒頭に『・』や下線は、あまり目立たず充分な強調にならない」
+   p.78「小見出しには段落間隔を設定せず、本文にのみ設ける」→ margin-bottom は詰める */
+section h3, .sh {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  border-left: 5px solid var(--accent);
+  padding-left: .45em;
+  margin: 0 0 .25em;            /* 小見出しの直後は空けない（p.78） */
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+/* 小見出しの前は空ける（グループの区切り）。
+   直前に兄弟要素がある h3 だけに効かせる。タイトル(h2)直後の h3 は詰める。 */
+section * + h3, section * + .sh { margin-top: var(--gap-group); }
+section h1 + h3, section h2 + h3, section .page-title + h3,
+section h1 + .sh, section h2 + .sh, section .page-title + .sh { margin-top: 0; }
+
+/* スライドの主張1文（p.181「1スライド1メッセージ」） */
+.lead {
+  font-size: 26px; font-weight: 700; color: var(--ink);
+  line-height: 1.5; margin: 0 0 .6em;
+}
+/* 補足・注記（p.202「重要度の低い情報は文字サイズを小さくする」） */
+.note, .cap, section figure figcaption, .cite {
+  font-size: 19px; color: var(--ink-weak); line-height: 1.55; letter-spacing: 0.03em;
+}
+
+/* ============================================================================
+   4. 箇条書き
+      p.74  2行目以降のぶら下げ = 1文字分
+      p.78  項目内の行間 < 項目同士の間隔
+      p.205 単純な箇条書きにナカグロ（・）は不要
+      p.77  入れ子はインデントでなく「太さ・大きさの強弱」で示し、左端は一直線に揃える
+   ============================================================================ */
+section ul { list-style: none; margin: 0 0 var(--gap-para); padding-left: 0; }
+section ul > li {
+  position: relative;
+  padding-left: 1em;            /* ぶら下げ1文字分（p.74） */
+  margin: 0 0 .45em;            /* 項目内(1.7行送り) < 項目間 */
+}
+section ul > li::before {
+  content: "●";
+  position: absolute; left: 0; top: 0;
+  font-size: .42em; line-height: 4.1;
+  color: var(--accent);
+}
+section ol { margin: 0 0 var(--gap-para) 1.4em; padding: 0; }
+section ol > li { margin: 0 0 .45em; padding-left: .1em; }
+section li > ul, section li > ol { margin-top: .35em; margin-bottom: .2em; }
+/* 記号を一切出さない箇条書き（p.205 の After 型） */
+.plain > li::before, ul.plain > li::before { content: none; }
+.plain > li, ul.plain > li { padding-left: 0; }
+
+/* .t／.d＝小見出し（同サイズの太字）と説明（細字）。どこでも使える汎用ペア。
+   サイズは本文と同じ＝サイズの種類を増やさない（p.77） */
+.t { font-weight: 700; color: var(--ink); margin: 0; line-height: 1.6; }
+.d { font-weight: 400; margin: 0; line-height: 1.7; }
+
+/* .blist＝p.205 After の型：.t／.d を余白でグループ化。
+   囲みも記号もインデントも使わない。左端は一直線。 */
+.blist { margin: 0 0 var(--gap-para); }
+.blist .d { margin: 0 0 var(--gap-group); }   /* 項目間はゆったり（p.78） */
+.blist .d:last-child { margin-bottom: 0; }
+
+/* .grid2＝p.205 別解2 の型：項目4つを 2×2 の塗りカードに分ける。
+   カードは .fill（塗りだけ・枠なし）。等幅・等高・間隔均等（p.175）。 */
+.grid2 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 18px var(--gap-group);
+  margin: .6em 0;
+  align-items: stretch;
+}
+.grid2 > * { min-width: 0; }
+
+/* ============================================================================
+   5. 囲み — 「枠を付けるのは最低限に」（p.174）
+      p.212 囲みたい時の代替は3段階
+        ① 枠線を減らして「塗り」だけで囲む      → .fill
+        ② 線で囲むより「背景色」で枠を作る       → .fill（同上）
+        ③ グループ化・揃え・余白で囲む必要をなくす → .group（囲まない）
+      p.100 色を使うのは「塗り」か「枠」のどちらか一方だけ
+      p.97  1つの資料の中では囲みの形を1種類に統一する
+      p.98  角丸は「丸みを最低限に」かつ「丸みを統一」→ 半径は 3px 固定・全部品共通
+      p.106 囲みの内側は上下左右1文字分以上の余白。短い語句なら0.5文字分（p.107）
+      p.104 影・グラデーション・立体感は消す
+   ============================================================================ */
+:root { --radius: 3px; }        /* 丸みは1つの値に統一（p.98/p.99） */
+
+/* ① 塗りだけ（枠線なし） */
+.fill {
+  background: var(--fill); border: none; border-radius: var(--radius);
+  padding: 1em; box-shadow: none;
+}
+/* ② 白地＋細い枠だけ（塗りに色を付けない） */
+.rule-box {
+  background: #fff; border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 1em; box-shadow: none;
+}
+/* メインの色を1箇所だけ差したい時。塗りか枠のどちらか一方（p.100） */
+.fill.accent     { background: var(--accent-soft); }
+.rule-box.accent { border-color: var(--accent); background: #fff; }
+/* 1行の短い語句は余白0.5文字分（p.107） */
+.fill.tight, .rule-box.tight { padding: .4em .6em; }
+/* ③ 囲まない。余白と揃えだけでグループを作る（p.220「枠で囲むのではなく、余白を使ったグループ化」） */
+.group { margin: 0 0 var(--gap-group); }
+.group:last-child { margin-bottom: 0; }
+
+/* ---- 既存デックの囲み系クラスを“落ち着いた1形式”に寄せる ------------------
+   theme を tsutawaru-academic に差し替えるだけで、色ベタ・色枠・影・角丸の
+   ばらつきが消える。形は1種類（p.97）、丸みは統一（p.98）、影は無し（p.104）。 */
+.box-accent, .box-info, .box-warn, .why-callout,
+.callout-gray, .callout-green, .callout-pink,
+.callout-orange, .callout-yellow, .callout-blue,
+.stepbox, .goal-box, .exrow, .pcard,
+section.summary .sec-box {
+  background: var(--fill);
+  border: none;
+  border-left: 4px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.7;
+  padding: .8em 1em;
+  box-shadow: none;
+  text-shadow: none;
+}
+/* 最重要の1つだけメインの色を差す（強調色は1色・p.196） */
+.box-accent, .callout-pink, .goal-box, .stepbox { border-left-color: var(--accent); }
+.box-warn { border-left-color: var(--ink-weak); }
+.box-accent b, .box-info b, .box-warn b, .why-callout .em,
+.stepbox .st b, .stepbox .st .em, .pcard li b, .pcard p b, .exrow b, .goal-box b {
+  color: var(--em); font-weight: 700;
+}
+.stepbox .st, .pcard ul, .exrow, .why-callout .wh, .goal-box { font-size: 1em; }
+.pcard .pc-h {
+  background: none; color: var(--accent); font-weight: 700;
+  text-align: left; padding: 0 0 .15em; font-size: 1em; border-radius: 0;
+}
+/* カード列は「等幅・等高・間隔は均等」（p.175「枠は揃えて配置」「間隔が均一になるように」） */
+.cardrow { display: flex; gap: var(--gap-group); align-items: stretch; margin: .6em 0; }
+.cardrow > .pcard { flex: 1 1 0; min-width: 0; }
+
+/* 役割タグ：枠と塗りの両方に色を付けない（p.100）→ 塗りだけの1形式に統一 */
+.tag, .tag-analyze, .tag-design, .tag-ref, .tag-accent, .tag-soft {
+  display: inline-block; border: none; border-radius: var(--radius);
+  background: var(--fill); color: var(--ink);
+  font-weight: 700; font-size: .8em; padding: .1em .55em;
+  box-shadow: none; letter-spacing: 0.02em;
+}
+.tag-accent, .tag-soft { background: var(--accent-soft); color: var(--accent-dark); }
+.subhead { font-size: 26px; font-weight: 700; margin: 0 0 .25em; }
+.subhead .tag { font-size: .72em; }
+
+/* ============================================================================
+   6. 強調 — 手段は3つだけ、併用は2つまで、強調は最低限
+      p.52  許される強調は「太さ」「大きさ」「色」。輪郭・影・立体感・反射は禁止
+      p.55  UD的に許すのは「落ち着いた色」「太字」「下線」の3種
+      p.76  3つ以上の併用は避ける
+      p.161 「強弱を明確にするには、強調する箇所を減らすのが一番」
+            構造の強調（小見出し）と内容の強調（本文中の重要文）は差別化する
+   ============================================================================ */
+/* 内容の強調（本文中）＝ 黒の太字。色は使わない（p.161 の良い例） */
+section strong, section b { font-weight: 700; color: inherit; }
+/* ここぞの1箇所だけ色（強調色は1色・p.196） */
+.hl, .hl-dark, .em, em { color: var(--em); font-weight: 700; font-style: normal; }
+/* 下線マーカー（p.55 で許可、p.208 の作例が使っている手） */
+.mark {
+  font-weight: 700;
+  background: linear-gradient(transparent 62%, rgba(180,83,9,.28) 62%);
+}
+/* 禁止された装飾を潰す（p.52/p.104） */
+section *, section .fill, section .rule-box { text-shadow: none !important; }
+section img, section figure { box-shadow: none; }
+
+/* 数字の強調 — 数字は大きく、単位は小さく（p.46：単位は数字のおよそ半分） */
+.num  { font-size: 1.8em; font-weight: 700; line-height: 1; letter-spacing: 0;
+        font-variant-numeric: tabular-nums; }
+.unit { font-size: .9em;  font-weight: 400; margin-left: .12em; }   /* ≒ .num の半分 */
+
+/* データ行（p.207 After 型：横罫だけで区切り、数値は右、単位は小さく） */
+.datarow {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: baseline; gap: 1em;
+  border-bottom: 1px solid var(--rule);
+  padding: .4em 0;
+}
+.datarow:first-of-type { border-top: 1px solid var(--rule); }
+.datarow > .v { text-align: right; white-space: nowrap; }
+
+/* ============================================================================
+   7. 表 — 罫線は3本だけ、縦罫はゼロ
+      p.136 必要な罫線＝上端／ヘッダー行とデータ行の間／下端 の3本。縦罫線は0本
+      p.139 セル内の余白は「セル内文字サイズと同程度」
+      p.136 数値は右揃え、単語や文は左揃え
+      p.137 横に長い表は1行おきに薄い背景（罫線の代わり）
+   ============================================================================ */
+section table {
+  display: table;                                  /* 既定テーマの display:block/width:max-content を戻す */
+  border-collapse: collapse;
+  width: 100%; min-width: 0; max-width: none;
+  margin: .6em 0 1em;
+  font-size: 21px;
+  line-height: 1.6;
+  border-top: 1.5px solid var(--rule-strong);     /* ① 上端 */
+}
+/* 既定テーマは tr 自体に border-top を持っており、これが行ごとの横罫になる。
+   罫線は3本だけにするため、行の罫線と背景を消す（p.136）。 */
+section table tr { border-top: none; border-bottom: none; background-color: transparent; }
+section table th, section table td {
+  border: none;
+  padding: .5em .9em;                              /* ≒ 文字サイズと同程度（p.139） */
+  text-align: left; vertical-align: top;
+  letter-spacing: 0.02em;
+}
+section table thead th {
+  font-weight: 700; color: var(--ink); background: transparent;
+  border-bottom: 1.5px solid var(--rule-strong);   /* ② ヘッダー行の下 */
+}
+section table tbody tr:last-child td {
+  border-bottom: 1.5px solid var(--rule-strong);   /* ③ 下端 */
+}
+/* Marp 既定テーマの縞模様を消す。罫線は3本、それ以外の区切りは出さない（p.136）。
+   既定側が :nth-child を使うので、こちらも同じ詳細度以上で打ち消す。 */
+section table:not(.zebra) tbody tr:nth-child(n),
+section table:not(.zebra) tbody tr:nth-child(n) th,
+section table:not(.zebra) tbody tr:nth-child(n) td { background: transparent; }
+/* 数値列（p.136） */
+section table td.n, section table th.n {
+  text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+/* 行数が多い表は、罫線の代わりに1行おきの薄い背景で区切ってもよい（p.137）。
+   使う時だけ <table class="zebra"> と明示する。 */
+section table.zebra tbody tr:nth-child(even),
+section table.zebra tbody tr:nth-child(even) td { background: var(--fill-2); }
+section table.zebra tbody tr td { border-bottom: none; }
+
+/* ============================================================================
+   8. フロー図 — 悪目立ちさせない
+      p.206「囲みの塗りや枠線の色は最小限に」「囲みのサイズを統一する」
+            「囲みの位置は上下左右をきれいに揃える」
+      p.111 枠の幅・形は文字数に依存させず統一（等幅・等高・ベースライン揃え）
+      p.103 矢印の代替は「線＋矢じり」か「三角形」。矢じりの大きさと柄の太さを統一（p.102）
+      p.98  角の尖った四角なら丸みの心配はいらない
+   ============================================================================ */
+.flow { display: flex; align-items: stretch; margin: .8em 0 var(--gap-para); }
+.flow > .fbox {
+  flex: 1 1 0; min-width: 0;
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  border-radius: 0;                    /* 角は直角（p.98） */
+  padding: .7em .6em;
+  text-align: center;
+  font-size: 1em; font-weight: 400; line-height: 1.45;
+  color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: none;
+}
+.flow > .fbox .big { font-size: 1.45em; font-weight: 700; display: block; line-height: 1.25; }
+/* 矢印＝小さな黒い三角。大きさは全部同じ（p.102） */
+.flow > .arw {
+  flex: 0 0 auto; align-self: center; margin: 0 .55em;
+  width: 0; height: 0;
+  border-left: 13px solid var(--ink);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+}
+/* 他テーマ由来の .flowrow / .farrow も同じ見た目に寄せる */
+.flowrow { display: flex; align-items: center; gap: .55em; margin: .8em 0; flex-wrap: nowrap; }
+.flowrow > .fbox {
+  flex: 1 1 0; min-width: 0; background: #fff; color: var(--ink);
+  border: 1.5px solid var(--ink); border-radius: 0;
+  font-size: 1.1em; font-weight: 700; padding: .55em .6em; text-align: center;
+}
+.flowrow > .fbox.blue, .flowrow > .fbox.red, .flowrow > .fbox.gray {
+  color: var(--ink); border-color: var(--ink);
+}
+.farrow { font-size: 1.1em; color: var(--ink); }
+
+/* ============================================================================
+   9. 図・写真・キャプション
+      p.209「関連する要素同士を近づけて、グループ化を明確にする」
+            「図の輪郭が不明瞭な場合は四角い囲みや背景をつけることが効果的」
+      p.157 図とキャプションの間隔は行間と同程度（＝1行分）
+      p.79  グループ内の間隔 ≦ グループ間の間隔（逆転させない）
+   ============================================================================ */
+/* 並べた枠は「等幅・等高・間隔均等」（p.175「枠は揃えて配置」「間隔が均一になるように」）。
+   列を flex 縦積みにして、中の囲みが列の高さいっぱいまで伸びるようにする。 */
+.figrow { display: flex; gap: var(--gap-group); align-items: stretch; margin: .6em 0; }
+.figrow > * { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.figrow > * > .fill,
+.figrow > * > .rule-box,
+.figrow > * > .group,
+.figrow > * > p { flex: 1 1 auto; }
+.figrow .cap { flex: 0 0 auto; margin-top: .5em; }  /* グループ内は近く */
+section figure { margin: 0 0 var(--gap-group); }
+section figure figcaption { margin-top: 1em; }     /* 1行分（p.157） */
+/* 輪郭のはっきりしない図の下敷き（p.152「枠・背景の色は薄い灰色」／p.209） */
+.figbg { background: var(--fill-2); padding: .8em; border-radius: var(--radius); }
+/* 写真・図のプレースホルダ（実画像が来るまでの仮置き。中身に何を入れるか書く） */
+.ph {
+  background: var(--fill);
+  min-height: 260px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-weak); font-size: 19px;
+  border-radius: var(--radius);
+}
+
+/* 2カラム — 16:9 で行長を伸ばさないための基本形（p.208/p.214）
+   図やグラフを左、短い箇条書きを右に置くのが本の After のかたち */
+.tcols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-group); align-items: start; }
+.tcols.fig-left  { grid-template-columns: 1.15fr 1fr; }
+.tcols.fig-right { grid-template-columns: 1fr 1.15fr; }
+.tcols > * { min-width: 0; }
+.tcols p, .tcols li, .tcols .blist { max-width: none; }   /* 既に行長が半分になっている */
+.cols { gap: var(--gap-group); }
+
+/* 図の中の文字も同じゴシック体にする（p.20「図の中だけ別書体」を防ぐ） */
+section svg text, section svg tspan { font-family: var(--font-jp); }
+
+/* ============================================================================
+   10. 帯・全面スライドの装飾を落とす
+      p.104 消すべき装飾は「影／グラデーション／枠線／立体感」
+      p.221 文字の背景に写真・複雑な背景は避ける
+      p.174 枠を付けるのは最低限に
+   ============================================================================ */
+section.cover   { background: var(--bg); }          /* グラデーション廃止（p.104） */
+section.message { background: var(--bg); }
+section.message h1 { color: var(--accent); font-size: 56px; }
+
+/* ----- 表紙（cover-hero）の文字サイズ ------------------------------------
+   academic の既定（タイトル72px／前置き40px／メタ26px）は、投影したときに
+   タイトルが小さく・前置きが大きすぎた。p.77 の「ジャンプ率を上げる」に従い、
+   タイトルを大きく・前置きを小さくして主従をはっきりさせる。
+   講師名は .title-name、所属は .title-affil で書く（.title-date は日付用に残す）。 */
+section.cover-hero .title-big   { font-size: 88px; }
+section.cover-hero .title-small { font-size: 33px; }
+section.cover-hero .title-name {
+  font-size: 46px; font-weight: 700; line-height: 1.3; margin-bottom: 14px;
+}
+section.cover-hero .title-affil { font-size: 24px; }
+
+/* ----- 表紙（左揃え・強い階層）＝p.204 After の型 -------------------------
+   小さな前置き → 大きな太いタイトル → 下端にメタ情報、の3段の強弱。
+   変な位置で改行しない・中央揃えと左揃えを混在させない（p.204）。
+   <!-- _class: cover-left --> で使う。cover-hero の代わりの控えめな表紙。 */
+section.cover-left {
+  background: var(--accent);
+  color: #fff;
+  display: flex !important; flex-direction: column !important;
+  justify-content: center !important; align-items: flex-start !important;
+  padding: 0 110px 120px;
+}
+section.cover-left > header,
+section.cover-left .page-title { display: none; }
+section.cover-left::after { display: none !important; }
+section.cover-left .pre {
+  font-size: 24px; font-weight: 400; color: rgba(255,255,255,.85);
+  margin-bottom: 14px; letter-spacing: .04em;
+}
+section.cover-left h1 {
+  font-size: 60px; line-height: 1.3; color: #fff;
+  min-height: 0; margin: 0 0 18px; letter-spacing: .02em;
+}
+section.cover-left .sub { font-size: 26px; color: rgba(255,255,255,.85); }
+section.cover-left .meta {
+  position: absolute; left: 110px; bottom: 60px;
+  font-size: 20px; color: rgba(255,255,255,.92); line-height: 1.7;
+}
+
+/* takeaway：塗りだけ・枠なし・丸みは統一値・左揃え（p.100/p.98/p.70）。
+   サイズ28pxは CLAUDE.md の不変則どおり据え置き。
+
+   位置は「絶対配置」で固定する。academic は in-flow（flexの最下部押し込み）
+   だったため、パターンや前後の要素で帯の位置が微妙に揺れた。tsutawaru では
+   常に 下端から28px・左右 side-pad・高さ min 66px（1行ぶん）に固定し、
+   どのスライドでも帯が完全に同じ場所・同じサイズに出る。
+   2行になっても下端は動かない（上に伸びる）。 */
+.takeaway {
+  position: absolute;
+  left: var(--side-pad);
+  right: var(--side-pad);
+  bottom: var(--takeaway-bottom);
+  margin: 0;
+  min-height: 66px;               /* 28px×1.45行＋上下パディング＝1行時の高さで固定 */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: var(--accent-soft);
+  border: none; border-radius: var(--radius);
+  color: var(--accent-dark);
+  font-size: 28px; font-weight: 700;
+  line-height: 1.45; letter-spacing: 0.02em;
+  padding: .45em .7em;
+  text-align: left;
+  box-shadow: none;
+  z-index: 5;
+}
+/* 塗りすら置きたくない時：上罫線だけで示す（位置・サイズは同じ） */
+.takeaway.rule-only {
+  background: none; border-top: 2px solid var(--accent);
+  border-radius: 0; padding: .45em 0 0; color: var(--accent-dark);
+}
+/* 本文が帯に入り込まないよう、帯があるスライドは下を予約する。
+   academic 側の !important 指定（28px）より後勝ちで上書きする。 */
+section:has(.takeaway),
+section.fig:has(.takeaway) {
+  padding-bottom: var(--takeaway-reserve, 118px) !important;
+}
+
+/* 引用・コード：枠と塗りを両方使わない（p.100） */
+section blockquote {
+  border-left: 3px solid var(--rule); background: none;
+  margin: 0 0 var(--gap-para); padding: .1em 0 .1em 1em; color: var(--ink-weak);
+}
+section pre  { background: var(--fill); border: none; border-radius: var(--radius); font-size: 19px; }
+section code { background: var(--fill); border-radius: 2px; }
+
+/* 参考文献（重要度が低い＝小さく：p.202） */
+section.refs ul, section.refs ol { font-size: 19px; line-height: 1.7; }
+section.refs li::before { content: none; }
+section.refs li { padding-left: 1.5em; text-indent: -1.5em; }
+
+/* ============================================================================
+   11. 縦の配分ヘルパは academic.css の .body / vcenter / vspread をそのまま使う。
+       スライドに収まらない時は font-size を下げず、次のどれかで直す（p.202）：
+         ① 図表の数やサイズを変える ② 文字数を減らす
+         ③ ページを分割する        ④ 重要度の低い情報を小さくする
+   ============================================================================ */

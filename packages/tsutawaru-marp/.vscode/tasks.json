@@ -1,0 +1,56 @@
+{
+  // Marp スライドを「落ちずに」ベクターPDF化するタスク。追加拡張は不要。
+  //
+  // ■ ボタンで実行:
+  //   VS Code 標準の「NPM スクリプト」ビュー（エクスプローラー内）の "pdf" の ▶ を押す。
+  //   → 最後に編集したデックを自動でPDF化する（package.json の scripts）。
+  //
+  // ■ 開いているファイルを確実に対象にしたいとき:
+  //   その .md を開いて ⌘⇧B（このタスク。${file} を対象にする）。
+  //
+  // 仕組みは tools/marp-pdf/build-pdf.sh（全スライドを1HTMLに描画 → ページ範囲ごとに
+  // 分割印刷 → pdfunite で結合）。marp 実行時に --html を付与済み（インラインSVG対策）。
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // ── ⌘⇧B：開いている .md をPDF化（チャンク既定20）──
+      "label": "Marp: PDF出力（開いているファイル）",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/marp-pdf/build-pdf.sh",
+      "args": ["${file}"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "CHROME_PATH": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      // ── 落ちるとき用：1チャンクの枚数を指定 ──
+      "label": "Marp: PDF出力（チャンク指定）",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/marp-pdf/build-pdf.sh",
+      "args": ["${file}"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "CHUNK": "${input:marpChunk}",
+          "CHROME_PATH": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "marpChunk",
+      "type": "promptString",
+      "description": "1チャンクのページ数（落ちるなら小さく。Enterで既定20）",
+      "default": "20"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "markdown.marp.themes": [
+    "./theme/academic.css",
+    "./theme/tsutawaru-academic.css"
+  ],
+  "markdown.marp.exportType": "pdf",
+  "markdown.marp.pdf.outlines": "both",
+  "markdown.marp.html": "all",
+  "files.associations": {
+    "*.md": "markdown"
+  },
+  "npm.autoDetect": "on",
+  "npm.scriptExplorerAction": "run"
+}

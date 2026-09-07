@@ -27,7 +27,7 @@ npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin \
   --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
 
-`--html` と `--no-stdin` は必須（CLAUDE.md 参照）。PDF は `tools/marp-pdf/build-pdf.sh` を使う。
+`--html` と `--no-stdin` は必須（CLAUDE.md 参照）。PDF は `npm run pdf -- slides/<deck>/<deck>.md`（実体 `tools/marp-pdf/build-pdf.mjs`・mac/Windows 共通）を使う。
 
 ---
 

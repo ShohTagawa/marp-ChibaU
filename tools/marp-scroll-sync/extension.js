@@ -743,16 +743,28 @@ async function present() {
   // 画像の相対参照(./src, ../assets)がそのまま解決できるよう、出力は md と同じディレクトリに置く
   const outHtml = path.join(deckDir, '.marp-present.html');
 
-  const themeArgs = themeFiles(repoRoot)
-    .map(p => `--theme-set ${JSON.stringify(p)}`)
-    .join(' ');
-
   // 統合ターミナルで実行する。child_process と違い実シェル環境(PATH完備)を継ぎ、
-  // 出力も見えるので無音ハングしない。生成成功後に bespoke の #<ページ> で既定ブラウザを開く。
-  const openUrl = `file://${outHtml}#${page}`;
-  const cmd = `npx --yes @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} `
-            + `${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)} `
-            + `&& open ${JSON.stringify(openUrl)}`;
+  // 出力も見えるので無音ハングしない。
+  // 描画→ブラウザ起動は tools/marp-present/present.mjs に任せる（theme/*.css を全部渡し、
+  // Chrome の場所を OS ごとに自動検出。mac の `open` / Windows の `start` の違いも吸収）。
+  // present.mjs が無い（このリポジトリ外で使っている）ときだけ従来の npx + open/start に戻る。
+  const presentScript = path.join(repoRoot, 'tools', 'marp-present', 'present.mjs');
+  let cmd;
+  if (fs.existsSync(presentScript)) {
+    cmd = `node ${JSON.stringify(presentScript)} ${JSON.stringify(mdPath)} --page ${page}`;
+  } else {
+    const themeArgs = themeFiles(repoRoot)
+      .map(p => `--theme-set ${JSON.stringify(p)}`)
+      .join(' ');
+    const openUrl = `file://${outHtml}#${page}`;
+    const opener = process.platform === 'win32' ? `start "" ${JSON.stringify(openUrl)}`
+                 : process.platform === 'darwin' ? `open ${JSON.stringify(openUrl)}`
+                 : `xdg-open ${JSON.stringify(openUrl)}`;
+    const joiner = process.platform === 'win32' ? ';' : '&&';
+    cmd = `npx --yes @marp-team/marp-cli@latest ${JSON.stringify(mdPath)} `
+        + `${themeArgs} --html --allow-local-files -o ${JSON.stringify(outHtml)} `
+        + `${joiner} ${opener}`;
+  }
 
   if (!presentTerminal || presentTerminal.exitStatus !== undefined) {
     presentTerminal = vscode.window.createTerminal({ name: 'Marp Present', cwd: repoRoot });

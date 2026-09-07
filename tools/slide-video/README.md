@@ -13,7 +13,7 @@ Marpデックの各スライドに書いた **読み上げ原稿（HTMLコメン
 
 - `gcloud` が認証済み（`gcloud auth login`）。既定プロジェクトは `helical-ascent-503601-m5`
 - そのプロジェクトで **Cloud Text-to-Speech API が有効**（`gcloud services enable texttospeech.googleapis.com`）
-- `ffmpeg`（`brew install ffmpeg`）
+- `ffmpeg`（mac: `brew install ffmpeg` / Windows: `winget install Gyan.FFmpeg`）
 
 ## 使い方
 

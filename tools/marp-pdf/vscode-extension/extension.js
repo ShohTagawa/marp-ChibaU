@@ -1,19 +1,40 @@
-// Marp ChibaU PDF — エディタ右上ツールバーに「📄 PDF出力」ボタンを足すだけの最小ローカル拡張。
-// 実体は tools/marp-pdf/build-pdf.sh（全スライドを1HTMLに描画 → ページ範囲ごとに分割印刷
-// → pdfunite で結合）。Chrome の printToPDF を一括で呼ばないので落ちず、ベクター品質を維持する。
+// Marp ChibaU PDF — エディタ右上ツールバー／ステータスバーに「▶ プレゼン」「📄 PDF出力」ボタンを足す最小ローカル拡張。
+// 実体は tools/marp-pdf/build-pdf.mjs（全スライドを1HTMLに描画 → ページ範囲ごとに分割印刷
+// → pdf-lib で結合）と tools/marp-present/present.mjs。Node スクリプトなので mac / Windows / Linux 共通。
+// Chrome の printToPDF を一括で呼ばないので落ちず、ベクター品質を維持する。
 // 依存パッケージなし・マーケット非経由・全コードここに見えている。
 const vscode = require('vscode');
 const cp = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-// GUI(Dock/Finder)から起動した VS Code の拡張ホストは ~/.zshrc を読まず PATH が最小になり、
-// npx / node / pdfunite / python3 を見失うことがある。既知の場所を明示的に足して回避。
+const IS_WIN = process.platform === 'win32';
+
+// GUI(Dock/Finder/スタートメニュー)から起動した VS Code の拡張ホストはシェルの rc を読まず PATH が
+// 最小になり、node / npm を見失うことがある。既知の場所を明示的に足して回避。
 function buildPath(existing) {
-  const extra = ['/opt/homebrew/bin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin'];
-  const cur = (existing || '').split(':').filter(Boolean);
+  const extra = IS_WIN
+    ? [
+        path.join(process.env.ProgramFiles || 'C:\\Program Files', 'nodejs'),
+        path.join(process.env.APPDATA || '', 'npm'),
+        path.join(process.env.LOCALAPPDATA || '', 'Programs', 'nodejs'),
+      ]
+    : ['/opt/homebrew/bin', '/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin'];
+  const cur = (existing || '').split(path.delimiter).filter(Boolean);
   const seen = new Set();
-  return [...extra, ...cur].filter((p) => (seen.has(p) ? false : (seen.add(p), true))).join(':');
+  return [...extra, ...cur].filter((p) => (seen.has(p) ? false : (seen.add(p), true))).join(path.delimiter);
+}
+
+// node 実行ファイルを決める：設定 marpChibau.nodePath → PATH 上の node → OS 標準の場所。
+function resolveNode(env) {
+  const cfg = vscode.workspace.getConfiguration('marpChibau').get('nodePath', '');
+  if (cfg && fs.existsSync(cfg)) { return cfg; }
+  const exe = IS_WIN ? 'node.exe' : 'node';
+  for (const dir of (env.PATH || '').split(path.delimiter)) {
+    const cand = path.join(dir, exe);
+    if (dir && fs.existsSync(cand)) { return cand; }
+  }
+  return 'node'; // 最後の手段：spawn に任せる
 }
 
 const TIMEOUT_MS = 5 * 60 * 1000;
@@ -37,23 +58,25 @@ function activate(context) {
       return;
     }
     const root = folder.uri.fsPath;
-    const script = path.join(root, 'tools', 'marp-pdf', 'build-pdf.sh');
+    const script = path.join(root, 'tools', 'marp-pdf', 'build-pdf.mjs');
     if (!fs.existsSync(script)) {
-      vscode.window.showErrorMessage('Marp PDF: tools/marp-pdf/build-pdf.sh が見つかりません（' + root + '）。');
+      vscode.window.showErrorMessage('Marp PDF: tools/marp-pdf/build-pdf.mjs が見つかりません（' + root + '）。');
       return;
     }
 
     const chunk = vscode.workspace.getConfiguration('marpChibau').get('chunkSize', 0);
     const env = Object.assign({}, process.env);
     env.PATH = buildPath(env.PATH);
-    if (!env.CHROME_PATH) {
-      env.CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-    }
+    // Chrome の場所はスクリプト側が OS ごとに自動検出する。固定したいときだけ設定 marpChibau.chromePath。
+    const chromeCfg = vscode.workspace.getConfiguration('marpChibau').get('chromePath', '');
+    if (chromeCfg) { env.CHROME_PATH = chromeCfg; }
     if (chunk && chunk > 0) { env.CHUNK = String(chunk); }
+    const nodeBin = resolveNode(env);
 
     out.clear();
     out.show(true); // 進捗が見えるよう出力パネルを前面に
-    out.appendLine('=== Marp PDF build (v2) ===');
+    out.appendLine('=== Marp PDF build (v3, node) ===');
+    out.appendLine('node   : ' + nodeBin);
     out.appendLine('script : ' + script);
     out.appendLine('md     : ' + mdPath);
     out.appendLine('PATH   : ' + env.PATH);
@@ -63,10 +86,11 @@ function activate(context) {
       { location: vscode.ProgressLocation.Notification, title: 'Marp: ベクターPDFを書き出し中…', cancellable: true },
       (progress, token) => new Promise((resolve) => {
         // stdin は 'ignore'：何かが入力待ちになっても EOF を受けて固まらない。
-        const child = cp.spawn('bash', [script, mdPath], {
+        const child = cp.spawn(nodeBin, [script, mdPath], {
           cwd: root,
           env,
           stdio: ['ignore', 'pipe', 'pipe'],
+          windowsHide: true,
         });
 
         let lastPdf = null;
@@ -147,20 +171,21 @@ function activate(context) {
       return;
     }
     const root = folder.uri.fsPath;
-    const script = path.join(root, 'tools', 'marp-present', 'present.sh');
+    const script = path.join(root, 'tools', 'marp-present', 'present.mjs');
     if (!fs.existsSync(script)) {
-      vscode.window.showErrorMessage('Marp プレゼン: tools/marp-present/present.sh が見つかりません（' + root + '）。');
+      vscode.window.showErrorMessage('Marp プレゼン: tools/marp-present/present.mjs が見つかりません（' + root + '）。');
       return;
     }
 
     const env = Object.assign({}, process.env);
     env.PATH = buildPath(env.PATH);
-    if (!env.CHROME_PATH) {
-      env.CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-    }
+    const chromeCfg = vscode.workspace.getConfiguration('marpChibau').get('chromePath', '');
+    if (chromeCfg) { env.CHROME_PATH = chromeCfg; }
+    const nodeBin = resolveNode(env);
 
     out.clear();
     out.appendLine('=== Marp Present ===');
+    out.appendLine('node   : ' + nodeBin);
     out.appendLine('script : ' + script);
     out.appendLine('md     : ' + mdPath);
     out.appendLine('---');
@@ -168,7 +193,7 @@ function activate(context) {
     await vscode.window.withProgress(
       { location: vscode.ProgressLocation.Notification, title: 'Marp: 発表用HTMLを描画して Chrome を起動中…', cancellable: false },
       () => new Promise((resolve) => {
-        const child = cp.spawn('bash', [script, mdPath], { cwd: root, env, stdio: ['ignore', 'pipe', 'pipe'] });
+        const child = cp.spawn(nodeBin, [script, mdPath], { cwd: root, env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
         const onData = (buf) => out.append(buf.toString());
         child.stdout.on('data', onData);
         child.stderr.on('data', onData);

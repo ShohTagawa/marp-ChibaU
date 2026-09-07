@@ -1,0 +1,8 @@
+# 改行コードの統一（mac / Windows 混在環境）
+# * text=auto は付けない（既存ファイルの一括正規化を避ける）。実行スクリプトだけ LF を強制する。
+# bash は CRLF のシェルスクリプトを "$'\r': command not found" で失敗させるため、
+# Windows の core.autocrlf=true でチェックアウトしても LF のままにする。
+*.sh   text eol=lf
+*.mjs  text eol=lf
+*.py   text eol=lf
+*.css  text eol=lf

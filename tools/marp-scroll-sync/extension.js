@@ -245,7 +245,8 @@ function buildHtml(webview, doc, initialIndex) {
     cursor:default; scroll-margin-top:12px; border:3px solid transparent;
   }
   div.marpit > svg.current-slide { border-color:#4aa3ff; }
-  .badge { position:fixed; top:8px; right:14px; z-index:9;
+  /* デック側の .badge と衝突しないよう ss- 接頭辞（プレビュー専用UI） */
+  .ss-badge { position:fixed; top:8px; right:14px; z-index:9;
     background:#222a; color:#fff; font:600 12px/1.4 sans-serif;
     padding:3px 9px; border-radius:9px; pointer-events:none; }
   /* サイズ/色 微調整ツールバー（下部中央・常駐） */
@@ -268,7 +269,7 @@ function buildHtml(webview, doc, initialIndex) {
 <style id="deck-css">${css}</style>
 </head>
 <body>
-<div class="badge" id="badge"></div>
+<div class="ss-badge" id="badge"></div>
 <div id="wrap">${html}</div>
 <div id="tuner" data-active="0" title="エディタで文字を選択してから操作（↑↓でも±1px）">
   <button id="tDec" title="−1px (↓)">A−</button>

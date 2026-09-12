@@ -602,3 +602,226 @@ section.refs li { padding-left: 1.5em; text-indent: -1.5em; }
          ① 図表の数やサイズを変える ② 文字数を減らす
          ③ ページを分割する        ④ 重要度の低い情報を小さくする
    ============================================================================ */
+
+/* ============================================================================
+   12. 演習（ハンズオン）スライド — <!-- _class: split work handson -->
+       研修動画で「講師が実画面を見せながら、手順を横に出す」ための型。
+       左2/3＝画面（収録では実画面をここに重ねる。スライド単体では薄い下敷きに
+       「ここにGeminiの画面」と書いておく）／右1/3＝縦長の手順パネル（ワイプ）。
+       右パネルは「塗りだけ」の囲み（p.212 ①）。手順は番号＋文字だけで枠は付けない
+       （p.174「枠を付けるのは最低限に」）。貼る文は白地＋左の細い罫（塗りの中に
+       白地を置くので、色は塗りか枠のどちらか一方＝p.100）。
+       使い方：
+         <div class="split-body">
+           <div class="left"><div class="screen">ここにGeminiの画面</div></div>
+           <div class="right">
+             <div class="steps">
+               <div class="step"><span class="sn">1</span><span class="sb">…<span class="chk">→ 成功の目印</span></span></div>
+             </div>
+             <div class="prompt"><span class="lab">貼る文</span>…</div>
+           </div>
+         </div>
+         <div class="takeaway">…</div>
+       right/left を入れ替えたいときは <!-- _class: split work handson flip -->
+   ============================================================================ */
+:root {
+  --handson-screen: 1.7fr;        /* 左（画面）の幅 */
+  --handson-panel: 1fr;           /* 右（手順）の幅 ＝ 約37%（1/3より少し広い。文字が入る幅） */
+  --handson-label: "やること";     /* 右パネルの見出し。frontmatter で変えられる */
+}
+section.work .split-body,
+section.handson .split-body {
+  grid-template-columns: var(--handson-screen) var(--handson-panel);
+  gap: var(--gap-group);
+  align-items: stretch;
+  min-height: 440px;              /* ヘッダー直下〜takeaway 帯の上までを使い切る */
+}
+section.work.flip .split-body,
+section.handson.flip .split-body {
+  grid-template-columns: var(--handson-panel) var(--handson-screen);
+}
+section.work.flip .split-body .left,
+section.handson.flip .split-body .left { order: 2; }
+
+/* 左＝画面の置き場。画像があればそのまま、無ければ薄い下敷きに説明文 */
+section.work .split-body .left,
+section.handson .split-body .left {
+  display: flex; flex-direction: column; min-height: 0;
+}
+section.work .split-body .left .screen,
+section.handson .split-body .left .screen {
+  flex: 1 1 auto;
+  background: var(--fill-2);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-weak); font-size: 19px; text-align: center;
+  padding: 1em;
+}
+section.work .split-body .left img,
+section.handson .split-body .left img {
+  max-width: 100%; max-height: 430px; width: auto; height: auto;
+  object-fit: contain; border-radius: var(--radius); box-shadow: none;
+}
+
+/* 右＝縦長の手順パネル（塗りだけ） */
+section.work .split-body .right,
+section.handson .split-body .right {
+  background: var(--fill);
+  border-radius: var(--radius);
+  padding: .7em .8em .8em;
+  display: flex; flex-direction: column; gap: .55em;
+  min-height: 0; overflow: hidden;   /* 入り切らない＝手順3つ・各2行・貼る文3行を超えている。文字は下げずに削る */
+}
+section.work .split-body .right::before,
+section.handson .split-body .right::before {
+  content: var(--handson-label);
+  font-size: 19px; font-weight: 700; color: var(--accent);
+  letter-spacing: .04em; line-height: 1.2;
+}
+section.work .split-body .right h3,
+section.handson .split-body .right h3 { font-size: 21px; margin: 0; }
+section.work .split-body .right p,
+section.handson .split-body .right p { margin: 0; max-width: none; }
+
+/* 手順：番号＋文字だけ。枠は付けない */
+.steps { display: flex; flex-direction: column; gap: .45em; margin: 0; }
+.step  { display: flex; align-items: flex-start; gap: .5em; }
+.step .sn {
+  flex: 0 0 auto; width: 1.5em; height: 1.5em; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  font-weight: 700; font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: .1em;
+}
+.step .sb { flex: 1 1 auto; min-width: 0; font-size: 19px; line-height: 1.45; color: var(--ink); letter-spacing: .03em; }
+.step .sb b { color: var(--accent-dark); font-weight: 700; }
+.step .sb .chk { display: block; font-size: 18px; color: var(--ink-weak); line-height: 1.4; margin-top: .05em; }
+
+/* 貼る文：白地＋左の細い罫。コピーしやすいよう1ブロック */
+.prompt {
+  background: #fff; border: none; border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: .5em .7em; font-size: 18px; line-height: 1.5; color: var(--ink);
+  letter-spacing: .03em; overflow-wrap: anywhere;
+}
+.prompt .lab { display: block; font-weight: 700; color: var(--accent); font-size: 18px; margin-bottom: .1em; }
+.prompt .ph  { color: var(--accent-dark); font-weight: 700; }   /* 〔　〕受講者が埋める箇所 */
+
+/* 判定表（◎○△×）：罫線3本の表のまま、行を詰め、記号列だけ太く大きく */
+table.judge { width: 100%; margin: .1em 0 0; }
+table.judge td { padding: .12em .4em; font-size: 19px; line-height: 1.4; }
+table.judge td.m {
+  width: 1.6em; text-align: center;
+  font-weight: 700; font-size: 1.1em; color: var(--accent);
+}
+
+/* 演習スライド以外（通常の split）に .steps / .prompt を置いたときも同じ見た目 */
+section.split .split-body .right .steps + .prompt,
+section.split .split-body .left .steps + .prompt { margin-top: .3em; }
+
+/* ============================================================================
+   12b. 演習（ハンズオン）スライド・画面大きめ — <!-- _class: split work handson-2 -->
+       ヘッダー直下から、スライドの左端・下端までを「画面」にする。
+       収録では実画面（動画）をこの領域に重ねる前提。Markdown は handson と同じで、
+       class を handson-2 に変えるだけで切り替わる。
+
+       画面の縦横比は --handson2-ratio（既定 4/3＝横4:縦3）。画面の高さは
+       720 − ヘッダー56 ＝ 664px で固定なので、幅は比率で決まる：
+         4/3 → 画面 885px ／ 右列 395px（既定）
+         5/4 → 画面 830px ／ 右列 450px（右列の文字が多いとき。class に r5-4）
+       右列に「見出し → 手順パネル → takeaway」を縦に積む。
+       takeaway は 28px 固定のまま（右列幅で約12字/行）。
+
+       入る量の目安（右列 395px のとき）：
+         見出し2〜3行／手順3つ・各2行以内／貼る文3〜4行／takeaway 2行以内
+       超えると手順パネルの下が隠れる。文字を小さくせず、文を削る。
+       左右を入れ替えるなら flip を足す（画面が右、手順が左）。
+   ============================================================================ */
+:root {
+  --slide-h: 720px;
+  --handson2-ratio: 4 / 3;
+  --handson2-pad: 18px;
+  --handson2-foot: 46px;          /* 右列の下に空ける高さ（ページ番号 18px＋下余白18px が入る） */
+  --handson2-screen-bg: #E6E6E6;  /* 画面の下敷き（灰は色数に数えない） */
+}
+section.handson-2.r5-4 { --handson2-ratio: 5 / 4; }
+/* 「（3分）」のような短い語句を途中で割らない：<span class="nb">（3分）</span> */
+.nb { white-space: nowrap; }
+
+section.handson-2,
+section.handson-2:has(.takeaway) {
+  display: grid !important;
+  grid-template-columns:
+    calc((var(--slide-h) - var(--header-h)) * var(--handson2-ratio))
+    minmax(0, 1fr);
+  /* 見出し／手順パネル／takeaway／下端の余白行（ページ番号の分）。
+     画面（.left）は4行すべてにまたがるので下端まで届き、右列だけ下が空く。 */
+  grid-template-rows: auto minmax(0, 1fr) auto var(--handson2-foot);
+  gap: 0;
+  padding: var(--header-h) 0 0 0 !important;
+  justify-content: stretch !important;
+  align-content: stretch !important;
+  align-items: stretch !important;
+}
+section.handson-2 > .split-body { display: contents; }
+
+/* 画面：ヘッダー直下から下端まで、左端に密着 */
+section.handson-2 .split-body > .left {
+  grid-column: 1; grid-row: 1 / -1;
+  display: flex; flex-direction: column;
+  min-width: 0; min-height: 0;
+  background: var(--handson2-screen-bg);
+  overflow: hidden;
+}
+section.handson-2 .split-body > .left .screen {
+  flex: 1 1 auto;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border-radius: 0; padding: 1em;
+  color: var(--ink-weak); font-size: 19px; text-align: center;
+}
+section.handson-2 .split-body > .left img {
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  object-fit: contain; object-position: center; border-radius: 0; box-shadow: none;
+}
+
+/* 右列：見出し */
+section.handson-2 > h2,
+section.handson-2 > h1 {
+  grid-column: 2; grid-row: 1;
+  font-size: 24px; line-height: 1.4; letter-spacing: .02em;
+  text-wrap: balance;                      /* 行の長さを揃え、最後の行に1〜2字だけ残さない */
+  min-height: 0; margin: 0;
+  padding: 14px var(--handson2-pad) 10px;
+}
+/* 右列：手順パネル（塗りだけ）。見出しが「何をするか」を言うのでラベルは出さない */
+section.handson-2 .split-body > .right {
+  grid-column: 2; grid-row: 2;
+  align-self: start; max-height: 100%;     /* 中身の高さで止め、下に灰色の空きを作らない */
+  box-sizing: border-box;                  /* 上限は余白込みで効かせる（下の takeaway に重ならない） */
+  margin: 0 var(--handson2-pad);
+  background: var(--fill); border-radius: var(--radius);
+  padding: .55em .65em;
+  display: flex; flex-direction: column; gap: .5em;
+  min-width: 0; min-height: 0; overflow: hidden;
+}
+section.handson-2 .split-body > .right::before { content: none; }
+section.handson-2 .split-body > .right p { margin: 0; max-width: none; }
+/* 右列：takeaway（位置固定をやめ、右列の最下段に置く。28px は据え置き） */
+section.handson-2 > .takeaway {
+  position: static; left: auto; right: auto; bottom: auto;
+  grid-column: 2; grid-row: 3;
+  margin: .5em var(--handson2-pad) 0;      /* 下の余白は --handson2-foot の行が持つ */
+  min-height: 0;
+  text-wrap: balance;
+}
+
+/* flip：画面を右、手順を左に */
+section.handson-2.flip {
+  grid-template-columns:
+    minmax(0, 1fr)
+    calc((var(--slide-h) - var(--header-h)) * var(--handson2-ratio));
+}
+section.handson-2.flip .split-body > .left { grid-column: 2; }
+section.handson-2.flip > h2, section.handson-2.flip > h1,
+section.handson-2.flip .split-body > .right,
+section.handson-2.flip > .takeaway { grid-column: 1; }

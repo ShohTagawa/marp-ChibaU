@@ -39,7 +39,7 @@ slides/<deck-name>/
 
 ```bash
 npx @marp-team/marp-cli@latest "slides/<deck>/<deck>.md" --theme-set theme/academic.css --html --preview
-tools/marp-pdf/build-pdf.sh "slides/<deck>/<deck>.md"
+npm run pdf -- "slides/<deck>/<deck>.md"     # 実体 tools/marp-pdf/build-pdf.mjs（mac/Windows 共通）
 ```
 
 ## 対応・制約

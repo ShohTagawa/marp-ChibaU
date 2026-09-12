@@ -25,9 +25,8 @@ slides/intro-demo.[0-9][0-9][0-9].png
 *~
 .idea/
 
-# Node
+# Node（package-lock.json は mac/Windows で同じ版を使うため追跡する）
 node_modules/
-package-lock.json
 
 # 著作権物（再配布禁止・マスタリングTCP/IP 入門編 第6版 図面ファイル）
 tcpip-kyozai/

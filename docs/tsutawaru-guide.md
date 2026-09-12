@@ -27,7 +27,7 @@ npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin \
   --html --images png --allow-local-files -o "$DECK/out/<deck-name>.png"
 ```
 
-`--html` と `--no-stdin` は必須（CLAUDE.md 参照）。PDF は `tools/marp-pdf/build-pdf.sh` を使う。
+`--html` と `--no-stdin` は必須（CLAUDE.md 参照）。PDF は `npm run pdf -- slides/<deck>/<deck>.md`（実体 `tools/marp-pdf/build-pdf.mjs`・mac/Windows 共通）を使う。
 
 ---
 
@@ -135,6 +135,8 @@ style: |
 | `.mark` | 下線マーカー強調 | p.55 許可される装飾／p.208 の作例 |
 | `.hl` / `.em` | 色の強調（1枚に1箇所） | p.196 強調色は1色／p.161 強調は最低限 |
 | `<table class="zebra">` | 行が多い表を1行おきの薄い背景で区切る | p.137 |
+| `split work handson`（`_class:`）＋ `.screen` / `.steps` `.step` `.sn` `.sb` `.chk` / `.prompt` `.lab` `.ph` / `table.judge` | **演習（ハンズオン）型**。左≈63%＝画面（`.screen` は薄い下敷き。収録では実画面を重ねる）、右≈37%＝縦長の手順パネル（塗りだけ・見出しは `--handson-label`、既定「やること」）。手順は番号＋文字だけ、貼る文は白地＋左罫、判定表◎○△×は罫線3本。左右を入れ替えるなら `flip` を足す。**目安：手順3つ・各2行以内、貼る文3行以内**（超えると右下が隠れる。文字を下げずに削る） | p.212 ①／p.174／p.100 |
+| `split work handson-2`（`_class:`） | **演習型・画面大きめ**。ヘッダー直下からスライドの左端・下端までを画面にする（収録で実画面を重ねる）。縦横比は `--handson2-ratio`（既定 4/3＝画面885×664px・右列395px。`r5-4` を足すと5/4＝画面830px・右列450px）。右列に見出し24px→手順パネル（中身の高さで止まる）→takeaway 28px を縦に積み、最下段46pxはページ番号の分。Markdown は handson と同じで class だけ変える。左右入れ替えは `flip`。短い語句を割らないときは `<span class="nb">（3分）</span>`。**目安：見出し2〜3行、手順3つ・各2行以内、貼る文4行以内、takeaway 2行以内** | p.212 ①／p.174 |
 
 強調の手段は**太さ・大きさ・色の3つだけ**（p.52）。**併用は2つまで**（p.76）。
 輪郭・影・立体感・反射は使わない（p.52）。
@@ -247,3 +249,5 @@ node tools/tsutawaru-lint.mjs slides --summary              # 全デックの集
 | 9 | p.209 図と写真（図とキャプションと説明文をグループ化） |
 | 10 | p.212 囲みの代替3段階（takeaway は rule-only 型） |
 | 11 | p.136 表（罫線3本・縦罫なし） |
+| 12–13 | 演習（ハンズオン）型 `split work handson`：手順＋貼る文／手順＋判定表（2026-09-12 追加） |
+| 14–15 | 演習型・画面大きめ `split work handson-2`：4:3の画面を左端・下端まで。右列に見出し・手順・takeaway（2026-09-12 追加） |

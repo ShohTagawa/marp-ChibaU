@@ -1,0 +1,187 @@
+/* @theme google-edu */
+/*
+  google-edu — Google for Education 配布資料の体裁を再現するテーマ。
+  千葉大テーマ（academic / chiba-deck / tsutawaru-academic）とは系統が別なので @import しない。
+  用途：Google 公式ガイドの日本語仮訳など、原典のレイアウトを保つ必要があるデック限定。
+  設計基準：1280x720（原典 720x405pt = 1000x563 を 1.28 倍）
+*/
+
+:root {
+  --g-blue:   #4285F4;
+  --g-blue-d: #1967D2;
+  --g-link:   #1A73E8;
+  --g-green:  #34A853;
+  --g-red:    #EA4335;
+  --g-yellow: #FBBC05;
+  --g-ink:    #202124;
+  --g-body:   #3C4043;
+  --g-sub:    #5F6368;
+  --g-grey50: #F8F9FA;
+  --g-tint:   #F3F6FC;
+  --g-tint2:  #F4F6FD;
+  --g-chip:   #D2E3FC;
+  --g-line:   #E6EAF8;
+  --pad-x: 66px;
+  --pad-y: 44px;
+}
+
+section {
+  width: 1280px; height: 720px;
+  padding: var(--pad-y) var(--pad-x);
+  background: #fff;
+  color: var(--g-body);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px; line-height: 1.62;
+  font-feature-settings: "palt" 1;
+  letter-spacing: .01em;
+  position: relative; overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+}
+
+section > footer {
+  position: absolute; right: 50px; bottom: 16px;
+  margin: 0; padding: 0; font-size: 0; z-index: 20;
+}
+section > footer img { width: 140px; height: auto; }
+section.dark > footer { display: none; }
+
+h1, h2, h3, p, ul, ol { margin: 0; }
+b, strong { font-weight: 700; color: inherit; }
+a { color: var(--g-link); text-decoration: underline; }
+em { font-style: normal; color: var(--g-sub); }
+
+/* ---------- 見出し ---------- */
+.h-page {                       /* ページ見出し（黒・太） */
+  font-size: 33px; font-weight: 700; color: var(--g-ink);
+  line-height: 1.25; letter-spacing: 0;
+}
+.h-sec {                        /* カード内見出し */
+  font-size: 25px; font-weight: 700; color: var(--g-ink); line-height: 1.3;
+}
+.blue { color: var(--g-blue); }
+.blue-d { color: var(--g-blue-d); }
+.green { color: var(--g-green); }
+.sub { color: var(--g-sub); }
+.small { font-size: 15px; line-height: 1.6; }
+.xsmall { font-size: 13px; line-height: 1.55; }
+
+/* ---------- チップ / ピル ---------- */
+.chip {                         /* 淡青の小さなラベル（表紙など） */
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--g-chip); color: var(--g-body);
+  border-radius: 999px; padding: 7px 18px 7px 12px;
+  font-size: 16px; font-weight: 500;
+}
+.chip svg { width: 20px; height: 20px; }
+.chip-outline {
+  background: #fff; color: var(--g-blue-d);
+  border: 1.5px solid var(--g-blue); padding: 6px 18px;
+}
+.pill {                         /* 章タイトルの色付きピル */
+  display: inline-block; border-radius: 999px;
+  padding: 12px 30px; color: #fff; font-weight: 700; font-size: 21px;
+  line-height: 1.15; text-align: center;
+}
+.pill-blue   { background: var(--g-blue); }
+.pill-green  { background: var(--g-green); }
+.pill-red    { background: var(--g-red); }
+.pill-yellow { background: var(--g-yellow); }
+
+/* ---------- カード ---------- */
+.card       { background: var(--g-grey50); border-radius: 22px; padding: 30px 34px; }
+.card-tint  { background: var(--g-tint2); border-radius: 26px; padding: 34px 38px; }
+.card-white { background: #fff; border-radius: 26px; padding: 30px 34px; }
+
+/* 青枠の注記ボックス（左上に丸アイコンが乗る） */
+.note {
+  position: relative; border: 1.5px solid var(--g-blue);
+  border-radius: 14px; background: #fff;
+  padding: 20px 22px; font-size: 15px; line-height: 1.62; color: var(--g-body);
+}
+.note.icon { margin-top: 18px; }
+.note.icon > .note-badge {
+  position: absolute; left: 18px; top: -18px; width: 36px; height: 36px;
+  line-height: 0;
+}
+.note.icon > .inner { padding-top: 8px; }
+
+/* ---------- 箇条書き ---------- */
+.arrows { list-style: none; padding: 0; margin: 0; }
+.arrows li {
+  position: relative; padding-left: 30px; margin: 0 0 16px;
+  font-size: 17px; line-height: 1.6;
+}
+.arrows li::before {
+  content: "→"; position: absolute; left: 0; top: 0;
+  color: var(--g-blue); font-weight: 700;
+}
+.dots { list-style: none; padding: 0; margin: 0; }
+.dots li {
+  position: relative; padding-left: 20px; margin: 0 0 13px;
+  font-size: 15px; line-height: 1.6;
+}
+.dots li::before {
+  content: ""; position: absolute; left: 3px; top: .62em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--g-body);
+}
+
+/* ---------- レイアウト ---------- */
+.row { display: flex; gap: 30px; }
+.col { flex: 1; min-width: 0; }
+.stack { display: flex; flex-direction: column; }
+
+/* ---------- 3列テーブル（プロンプト集） ---------- */
+.gtable {
+  width: 100%; border-collapse: collapse; table-layout: fixed;
+  font-size: 13px; line-height: 1.55; background: var(--g-grey50);
+  border-radius: 18px; overflow: hidden;
+}
+.gtable th {
+  font-size: 17px; font-weight: 700; color: var(--g-ink); text-align: left;
+  padding: 12px 16px 10px; vertical-align: bottom;
+  border-bottom: 3px solid var(--g-blue);
+}
+.gtable td {
+  padding: 12px 16px; vertical-align: top;
+  border-bottom: 1px solid rgba(60,64,67,.09);
+}
+.gtable tr:last-child td { border-bottom: 0; }
+.gtable col.c1 { width: 25%; }
+.gtable col.c2 { width: 43%; }
+.gtable col.c3 { width: 32%; }
+.gtable .c1cell, .gtable .c3cell { background: var(--g-line); }
+.gtable-green  th { border-bottom-color: var(--g-green); }
+.gtable-green  .c1cell, .gtable-green  .c3cell { background: #E9F2ED; }
+.gtable-red    th { border-bottom-color: var(--g-red); }
+.gtable-red    .c1cell, .gtable-red    .c3cell { background: #F7EDED; }
+.gtable-yellow th { border-bottom-color: #F9AB00; }
+.gtable-yellow .c1cell, .gtable-yellow .c3cell { background: #F8EFD5; }
+
+/* Pro tip 行 */
+.protip { display: flex; align-items: flex-start; gap: 14px; }
+.protip .tag {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  background: #fff; border-radius: 999px; padding: 5px 14px 5px 10px;
+  font-size: 13px; font-weight: 700; color: var(--g-body);
+  box-shadow: 0 1px 3px rgba(60,64,67,.22);
+}
+.protip .tag svg { width: 15px; height: 15px; }
+.protip .txt { font-size: 12.5px; line-height: 1.5; color: var(--g-body); padding-top: 4px; }
+
+/* ---------- 引用プロンプト ---------- */
+.prompt { font-size: 16px; line-height: 1.62; }
+.at { color: var(--g-green); font-weight: 700; }
+
+/* ---------- 区切りスライド ---------- */
+.divider-rule {
+  position: absolute; left: 190px; right: 0; top: 355px; height: 1px; background: #DADCE0;
+}
+.divider-rule::before {
+  content: ""; position: absolute; left: 0; top: -1.5px; width: 165px; height: 4px;
+  background: var(--g-blue);
+}
+
+/* ---------- 図版 ---------- */
+.fig { display: block; }
+img.plain { display: block; }

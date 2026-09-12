@@ -1,11 +1,23 @@
 {
   "name": "marp-chibau",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "千葉大スタイルMarpスライド。PDF出力はベクター分割方式（tools/marp-pdf）。",
+  "description": "千葉大スタイルMarpスライド。PDF出力はベクター分割方式（tools/marp-pdf）。mac / Windows 共通。",
   "scripts": {
-    "pdf": "bash tools/marp-pdf/build-pdf.sh",
-    "pdf:safe": "CHUNK=12 bash tools/marp-pdf/build-pdf.sh",
-    "present": "bash tools/marp-present/present.sh"
+    "setup": "node tools/setup.mjs",
+    "setup:check": "node tools/setup.mjs --check",
+    "pdf": "node tools/marp-pdf/build-pdf.mjs",
+    "pdf:safe": "node tools/marp-pdf/build-pdf.mjs --chunk 12",
+    "present": "node tools/marp-present/present.mjs",
+    "png": "node tools/marp-png.mjs",
+    "lint": "node tools/tsutawaru-lint.mjs",
+    "marp": "marp --no-stdin --html"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1",
+    "pdf-lib": "^1.17.1"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

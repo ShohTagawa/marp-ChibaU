@@ -137,6 +137,25 @@ footer: ''
 | `<div class="flowrow"><div class="fbox blue\|red\|gray">…</div><span class="farrow">⇒</span>…</div>` | 色枠＋矢印フロー |
 | `class="pip-safe"` | 右下のPiP動画域に被らないよう右マージンを確保 |
 
+## 環境（mac / Windows 共通）
+
+このリポジトリは **mac と Windows の両方で編集・出力できる**。ビルド系は全部 Node スクリプト（`tools/**/*.mjs`）で、
+bash・brew・poppler・symlink に依存しない。新しいPCでは最初に一度だけ：
+
+```bash
+npm run setup          # npm install（marp-cli / pdf-lib / echarts / marp-core）＋ ローカルVS Code拡張2つのリンク＋Chrome等の確認
+npm run setup:check    # 状態確認だけ
+```
+
+- 必要なのは **Node.js 20+ と Google Chrome（または Edge）** だけ。Python は pptx 取り込み時のみ、ffmpeg は文字起こし時のみ。
+- Windows では `python3` ではなく **`python`** を使う（`python3` は Microsoft Store のスタブになりがち）。
+- シェルは mac=zsh/bash、Windows=PowerShell か Git Bash。以下の `npx …` コマンドはどちらでも同じ書き方で通る
+  （PowerShell では `$DECK="slides/<deck-name>"` のように変数代入だけ書式が違う）。
+- 改行コードは `.gitattributes` で `*.sh / *.mjs / *.py / *.css` を LF 固定（Windows の autocrlf でも bash スクリプトが壊れない）。
+- フォント：テーマの第一候補 **BIZ UDPGothic** は Windows 標準搭載、mac は同名フォントが無ければ次候補（Hiragino）に落ちる。
+  両OSで同じ見え方にしたい場合は Windows 側の描画を正とし、mac で BIZ UDPGothic を入れる。
+- `packages/tsutawaru-marp/` は配布用の独立コピー（旧 bash 版ツール同梱）。このリポジトリでの作業には使わない。
+
 ## プレビュー・出力コマンド
 
 > **⚠️ `--html` は全コマンドで必須。** これを付け忘れると、インラインSVGや `<div>` などの生HTMLが
@@ -150,6 +169,9 @@ footer: ''
 ```bash
 # 変数（このDIRが正本ルート）
 DECK=slides/<deck-name>
+
+# 目視確認用の全ページPNG（下の --images png と同じ。theme/*.css を全部渡し --html --no-stdin 付き。mac/Windows 共通）
+npm run png -- "$DECK/<deck-name>.md"        # → $DECK/out/<deck-name>.NNN.png
 
 # プレビュー
 npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set theme/academic.css --html --preview
@@ -171,24 +193,29 @@ npx @marp-team/marp-cli@latest "$DECK/<deck-name>.md" --no-stdin --theme-set the
 **原因**：壊れたスライドではない。Chrome の `printToPDF` は1回の印刷で serialize するページの累積量が
 多いほど落ちる（Skiaの上限）。個々のスライドは正常に描画できるのに、全80枚などを一括で渡すと超える。
 
-**解決（ベクター品質を保ったまま）**：専用ビルドスクリプトを使う。全スライドを1つのHTMLに描画し、
-ページ範囲（既定20枚）ごとに分割印刷 → `pdfunite` で結合する。ベクターのまま・ページ番号も連番のまま。
+**解決（ベクター品質を保ったまま）**：専用ビルドスクリプト（Node・**mac / Windows 共通**）を使う。全スライドを1つのHTMLに描画し、
+ページ範囲（既定20枚）ごとに分割印刷 → `pdf-lib` で結合する。ベクターのまま・ページ番号も連番のまま。poppler（pdfunite）は不要。
 
 ```bash
-tools/marp-pdf/build-pdf.sh slides/<deck-name>/<deck-name>.md
-# 出力先を変えるなら第2引数 / 1チャンクの枚数を減らすなら CHUNK=15 を前置
+npm run pdf -- slides/<deck-name>/<deck-name>.md          # 実体: node tools/marp-pdf/build-pdf.mjs
+npm run pdf -- slides/<deck>/<deck>.md out.pdf --chunk 12  # 出力先は第2引数 / 落ちるなら --chunk を小さく
+npm run pdf                                                 # 引数なし＝最後に編集したデック
+# 旧来の tools/marp-pdf/build-pdf.sh も残してある（.mjs を呼ぶだけのラッパー。bash がある環境向け）
 ```
 
-VS Code からは（自作ローカル拡張 `tools/marp-pdf/vscode-extension/` が右上ツールバーに2ボタンを出す。
-`~/.vscode/extensions/marp-chibau-pdf` への symlink で読み込む。**symlink先は `$HOME` 基準で貼ること**＝
-ユーザー名を直書き（旧 `/Users/shoh/…`）すると名前変更でリンクが切れ、ボタンが消える。再インストールは同フォルダのREADME）：
-- **▶ ボタン（プレゼン）**：開いているデックを bespoke HTML にして Chrome で全画面プレゼン（**F**=全画面 / **P**=発表者ビュー / **←→**=ページ送り / **O**=一覧）。実体は `tools/marp-present/present.sh`。
+Chrome は OS ごとの標準インストール先（mac `/Applications`、Windows `Program Files` の Chrome/Edge）を自動検出する。
+別の場所にあるときだけ環境変数 `CHROME_PATH` で指定。
+
+VS Code からは（自作ローカル拡張 `tools/marp-pdf/vscode-extension/` が右上ツールバーとステータスバーに2ボタンを出す。
+`~/.vscode/extensions/marp-chibau-pdf` へのリンクで読み込む。**リンクは `npm run setup` で貼る**（mac=symlink、Windows=ジャンクション。
+ユーザー名を直書き（旧 `/Users/shoh/…`）すると名前変更でリンクが切れ、ボタンが消える。詳細は同フォルダのREADME）：
+- **▶ ボタン（プレゼン）**：開いているデックを bespoke HTML にして Chrome で全画面プレゼン（**F**=全画面 / **P**=発表者ビュー / **←→**=ページ送り / **O**=一覧）。実体は `tools/marp-present/present.mjs`。
 - **📄 ボタン（PDF）**（おすすめ）：開いているデックをそのままベクターPDF化。チャンク数は設定 `marpChibau.chunkSize`（0=既定20、落ちるなら12）。
-- **NPM スクリプト ▶**（標準機能）：エクスプローラーの「NPM スクリプト」で `pdf`／`pdf:safe`／`present`（`package.json`）。
-- **⌘⇧B**（標準機能）：開いている `.md` をPDF化（`.vscode/tasks.json`）。
+- **NPM スクリプト ▶**（標準機能）：エクスプローラーの「NPM スクリプト」で `pdf`／`pdf:safe`／`present`／`png`／`lint`（`package.json`）。
+- **⌘⇧B / Ctrl+Shift+B**（標準機能）：開いている `.md` をPDF化（`.vscode/tasks.json`。他に プレゼン／PNG出力／セットアップ のタスクあり）。
 
 > ⚠️ **PNG経由（`--images png` → img2pdf）は使わない**。ラスタ化で文字がにじみ、学生から見づらいと苦情が出る。
-> 必ず上記スクリプト（ベクター）で出すこと。`pdfunite` は poppler（`brew install poppler`）に含まれる。
+> 必ず上記スクリプト（ベクター）で出すこと。
 
 VS Code では `.vscode/settings.json` で `markdown.marp.themes` が `./theme/academic.css` を指しているので、Marp 拡張のプレビューがそのまま使える。
 

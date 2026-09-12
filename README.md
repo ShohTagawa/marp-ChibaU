@@ -21,11 +21,29 @@ marp-ChibaU/
         └── chiba-logo.png             # ロゴ画像
 ```
 
-## 別のPCでの立ち上げ
+## 別のPCでの立ち上げ（mac / Windows 共通）
+
+前提は **Node.js 20+** と **Google Chrome（または Edge）** だけ。
 
 1. このリポジトリを git clone する
-2. Claude Code をプロジェクトディレクトリで起動 — `.claude/skills/marp-academic-slides/` が自動認識される
-3. VS Code でディレクトリを開く — `.vscode/settings.json` により Marp 拡張がテーマを自動で読み込む
+2. ルートで `npm run setup` を一度実行する
+   - `npm install`（marp-cli / pdf-lib / echarts）
+   - ローカル VS Code 拡張（▶プレゼン・📄PDF ボタン、同期プレビュー）を `~/.vscode/extensions` にリンク
+     （mac はシンボリックリンク、Windows はジャンクション。管理者権限不要）
+   - Chrome / Python / ffmpeg の有無を表示
+3. VS Code でディレクトリを開き「Developer: Reload Window」 — `.vscode/settings.json` により Marp 拡張がテーマを自動で読み込む
+4. Claude Code をプロジェクトディレクトリで起動 — `.claude/skills/` が自動認識される
+
+日常のコマンド（どのOSでも同じ）：
+
+```bash
+npm run pdf     -- slides/<deck>/<deck>.md   # 落ちないベクターPDF → slides/<deck>/out/
+npm run present -- slides/<deck>/<deck>.md   # Chrome で全画面プレゼン（F=全画面 / P=発表者ビュー）
+npm run png     -- slides/<deck>/<deck>.md   # 全ページ PNG（目視確認用）
+npm run lint    -- slides/<deck>             # tsutawaru 体裁チェック
+```
+
+引数を省くと「最後に編集したデック」が対象になる。
 
 ## VS Code での編集
 

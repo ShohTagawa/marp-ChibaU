@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" font-family="'Hiragino Sans', 'Helvetica Neue', sans-serif">
+  <!-- Background -->
+  <rect x="0" y="0" width="1000" height="540" fill="#f3f3f1"/>
+
+  <!-- Linear (adoption) flat-ish line -->
+  <line x1="60" y1="450" x2="950" y2="450" stroke="#3fbfa3" stroke-width="5"/>
+
+  <!-- Exponential (AI capability) curve -->
+  <path d="M 60 448 C 250 446, 380 430, 500 380 S 720 220, 880 30"
+        fill="none" stroke="#f28072" stroke-width="5"/>
+
+  <!-- Data point circles on the curve -->
+  <circle cx="260" cy="442" r="7" fill="#f3f3f1" stroke="#f28072" stroke-width="3"/>
+  <circle cx="430" cy="408" r="7" fill="#f3f3f1" stroke="#f28072" stroke-width="3"/>
+  <circle cx="580" cy="330" r="7" fill="#f3f3f1" stroke="#f28072" stroke-width="3"/>
+  <circle cx="700" cy="240" r="7" fill="#f3f3f1" stroke="#f28072" stroke-width="3"/>
+  <circle cx="800" cy="140" r="7" fill="#f3f3f1" stroke="#f28072" stroke-width="3"/>
+
+  <!-- AI curve label -->
+  <text x="320" y="240" font-size="32" font-weight="600" fill="#f28072">AIモデルの</text>
+  <text x="320" y="282" font-size="32" font-weight="600" fill="#f28072">指数関数的成長</text>
+
+  <!-- Adoption line label -->
+  <text x="940" y="492" text-anchor="end" font-size="28" font-weight="600" fill="#3fbfa3">企業導入の線的な成長</text>
+
+  <!-- Gap highlight (yellow circle + label) -->
+  <circle cx="790" cy="335" r="95" fill="#fff39a" opacity="0.85"/>
+  <text x="790" y="328" text-anchor="middle" font-size="32" font-weight="700" fill="#222">大きな</text>
+  <text x="790" y="368" text-anchor="middle" font-size="32" font-weight="700" fill="#222">ギャップがある</text>
+
+  <!-- Source -->
+  <text x="20" y="528" font-size="16" fill="#666">出所：Anthropic</text>
+</svg>

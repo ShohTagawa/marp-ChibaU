@@ -9,10 +9,10 @@
 このフォルダの中身：
 
 ```
-slides/20260915_GenAItraining/
+slides/20260914_GenAItraining/
   README.md                         ← この設計書
   スライド計画.md                    ← 1枚ごとの指示書（型／出すもの／流用元／原稿の対応／画面切替）。先生が添削してから Opus に渡す
-  20260915_GenAItraining_1_literacy-optout/原稿_動画1.md   … 8 まで（デック本体は未作成）
+  20260914_GenAItraining_1_literacy-optout/原稿_動画1.md   … 8 まで（デック本体は未作成）
   transcript/元音声_文字起こし_2026-09.md   ← 先に録った音声の文字起こし（動画1・2の土台）＋Chollet の引用
   src/                              ← 8本で共有する図（元デックからコピー。src/README.md に一覧）
   refs/README.md                    ← 出典の所在（論文PDFのローカルパス・URL・検証状況）
@@ -208,15 +208,15 @@ slides/20260915_GenAItraining/
 ### 5.1 ディレクトリ（1動画＝1デック。シリーズの親フォルダにまとめてある）
 
 ```
-slides/20260915_GenAItraining/
-  20260915_GenAItraining_1_literacy-optout/      原稿_動画1.md ← 作成済み
-  20260915_GenAItraining_2_prompting-gem/         原稿_動画2.md ← 作成済み
-  20260915_GenAItraining_3_gem-grading/           原稿_動画3.md ← 作成済み
-  20260915_GenAItraining_4_workspace-studio/      原稿_動画4.md ← 作成済み
-  20260915_GenAItraining_5_notebook/              原稿_動画5.md ← 作成済み
-  20260915_GenAItraining_6_mechanism/             原稿_動画6.md ← 作成済み
-  20260915_GenAItraining_7_risks/                 原稿_動画7.md ← 作成済み
-  20260915_GenAItraining_8_check-wrapup/          原稿_動画8.md ← 作成済み
+slides/20260914_GenAItraining/
+  20260914_GenAItraining_1_literacy-optout/      原稿_動画1.md ← 作成済み
+  20260914_GenAItraining_2_prompting-gem/         原稿_動画2.md ← 作成済み
+  20260914_GenAItraining_3_gem-grading/           原稿_動画3.md ← 作成済み
+  20260914_GenAItraining_4_workspace-studio/      原稿_動画4.md ← 作成済み
+  20260914_GenAItraining_5_notebook/              原稿_動画5.md ← 作成済み
+  20260914_GenAItraining_6_mechanism/             原稿_動画6.md ← 作成済み
+  20260914_GenAItraining_7_risks/                 原稿_動画7.md ← 作成済み
+  20260914_GenAItraining_8_check-wrapup/          原稿_動画8.md ← 作成済み
   src/  transcript/  refs/
 ```
 

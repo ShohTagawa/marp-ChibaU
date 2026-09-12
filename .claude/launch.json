@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kizuki-board",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "REAL_AI=1 PORT=8080 /Users/shoh/moral-lesson-app/dev.sh"],
+      "port": 8080
+    }
+  ]
+}

@@ -293,3 +293,109 @@ footer: ''
 | 強調 | 太さ・大きさ・色の3手段のみ。併用は2つまで |
 
 </div>
+
+---
+
+<!-- _class: split work handson -->
+
+<div class="page-title">演習 1-1</div>
+
+## 大学アカウントで入っているかを確かめ、データの扱いを読む（3分）
+
+<div class="split-body">
+<div class="left">
+<div class="screen">ここに Gemini の画面（収録時は実画面を重ねる）</div>
+</div>
+<div class="right">
+<div class="steps">
+<div class="step"><span class="sn">1</span><span class="sb"><b>gemini.google.com</b> を開く<span class="chk">→ 横長の入力欄が見えれば正しい画面</span></span></div>
+<div class="step"><span class="sn">2</span><span class="sb">右上のアイコンが<b>大学のメールアドレス</b>か確かめる<span class="chk">→ 個人のGmailなら切り替える</span></span></div>
+<div class="step"><span class="sn">3</span><span class="sb">左下の設定 →〈<b>アクティビティ</b>〉でデータの扱いを読む</span></div>
+</div>
+<div class="prompt"><span class="lab">貼る文</span>このAIに入力した情報はどう扱われますか。学習に使われますか。大学のアカウントと個人のアカウントで違いはありますか。</div>
+</div>
+</div>
+
+<div class="takeaway">「学習されない」と読めたら成功</div>
+
+---
+
+<!-- _class: split work handson -->
+
+<div class="page-title">演習 5-2</div>
+
+## スタジオでスライドを作らせ、◎○△×で判定する（2分）
+
+<div class="split-body">
+<div class="left">
+<div class="screen">ここに Gemini Notebook の画面</div>
+</div>
+<div class="right">
+<div class="steps">
+<div class="step"><span class="sn">1</span><span class="sb">右の〈スタジオ〉→［スライド］<span class="chk">→ カスタマイズ画面が開けば正しい</span></span></div>
+<div class="step"><span class="sn">2</span><span class="sb">指示欄に貼る文を入れて、1〜2分待つ</span></div>
+<div class="step"><span class="sn">3</span><span class="sb">1枚ずつ判定。×△は「〔直したいこと〕を直して作り直して」</span></div>
+</div>
+<table class="judge">
+<tr><td class="m">◎</td><td>そのまま使える</td></tr>
+<tr><td class="m">○</td><td>おおむね正しいが、言葉足らず</td></tr>
+<tr><td class="m">△</td><td>分野の作法から外れている</td></tr>
+<tr><td class="m">×</td><td>誤り。学生が読んだら困る</td></tr>
+</table>
+</div>
+</div>
+
+<div class="takeaway">構成を指示しないと「平均点の構成」になる</div>
+
+---
+
+<!-- _class: split work handson-2 r5-4 -->
+
+<div class="page-title">演習 1-1</div>
+
+## 大学アカウントで入っているかを確かめ、データの扱いを読む<span class="nb">（3分）</span>
+
+<div class="split-body">
+<div class="left">
+<div class="screen">ここに Gemini の画面（5:4・右列を広く）</div>
+</div>
+<div class="right">
+<div class="steps">
+<div class="step"><span class="sn">1</span><span class="sb"><b>gemini.google.com</b> を開く<span class="chk">→ 横長の入力欄が見えれば正しい画面</span></span></div>
+<div class="step"><span class="sn">2</span><span class="sb">右上のアイコンが<b>大学のメールアドレス</b>か確かめる</span></div>
+<div class="step"><span class="sn">3</span><span class="sb">左下の設定 →〈<b>アクティビティ</b>〉でデータの扱いを読む</span></div>
+</div>
+<div class="prompt"><span class="lab">貼る文</span>このAIに入力した情報はどう扱われますか。学習に使われますか。大学のアカウントと個人のアカウントで違いはありますか。</div>
+</div>
+</div>
+
+<div class="takeaway">「学習されない」と読めたら成功</div>
+
+---
+
+<!-- _class: split work handson-2 -->
+
+<div class="page-title">演習 5-2</div>
+
+## スタジオでスライドを作らせ、判定する<span class="nb">（2分）</span>
+
+<div class="split-body">
+<div class="left">
+<div class="screen">ここに Gemini Notebook の画面（4:3）</div>
+</div>
+<div class="right">
+<div class="steps">
+<div class="step"><span class="sn">1</span><span class="sb">〈スタジオ〉→［スライド］</span></div>
+<div class="step"><span class="sn">2</span><span class="sb">指示欄に貼る文を入れて待つ</span></div>
+<div class="step"><span class="sn">3</span><span class="sb">1枚ずつ判定して、直させる</span></div>
+</div>
+<table class="judge">
+<tr><td class="m">◎</td><td>そのまま使える</td></tr>
+<tr><td class="m">○</td><td>言葉足らず</td></tr>
+<tr><td class="m">△</td><td>分野の作法から外れる</td></tr>
+<tr><td class="m">×</td><td>誤り</td></tr>
+</table>
+</div>
+</div>
+
+<div class="takeaway">構成を指示しないと平均点になる</div>
